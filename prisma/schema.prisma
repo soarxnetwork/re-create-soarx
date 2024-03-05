@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid()) 
+  username String @unique
+  profilePhoto  String
+  externalUserId String @unique
+  admin Admin @default(User)
+  
+  orders Order[]
+  events Event[] @relation("EventCreator")
+  blogs Blog[] @relation("BlogCreator")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+enum Admin {
+  Superadmin
+  Admin
+  User
+}
+
+
+model Event {
+  id String @id @default(uuid()) 
+  title String
+  date DateTime
+  description String
+  imageUrl String
+  location String
+  slug String? @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  price Float?
+  
+
+  creatorId String 
+  creator User @relation(name: "EventCreator", fields: [creatorId], references: [id])
+
+  Order Order[]
+  @@index([id], name: "id_index")
+  @@index([creatorId], name: "creatorId_index")
+  @@index([title], name: "search_index")  
+}
+
+
+model Blog {
+  id String @id @default(uuid()) 
+  title String
+  content String
+  imageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  creatorId String 
+  creator User @relation(name: "BlogCreator", fields: [creatorId], references: [id])
+}
+
+
+model Order {
+  id String @id @default(uuid()) 
+  amount Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId String
+  eventId String
+  event Event @relation(fields: [eventId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+  @@index([id], name: "id_index")
+  @@index([userId], name: "userId_index")
+  @@index([amount], name: "amount_index")
+}
