@@ -72,6 +72,15 @@ const Header = ({ admin }: User) => {
                   >
                     <Link href="/about">About</Link>
                   </li>
+                  <li
+                    className={
+                      pathname.includes("/dsa")
+                        ? "active rounded-md"
+                        : "rounded-md"
+                    }
+                  >
+                    <Link href="/dsa">Dsa</Link>
+                  </li>
                   {admin === Admin.Superadmin && (
                     <li
                       className={
@@ -85,10 +94,10 @@ const Header = ({ admin }: User) => {
                   )}
                 </ul>
               </div>
-              <div className="btn-primary rounded-md white flex items-center gap-2">
+              {/* <div className="btn-primary rounded-md white flex items-center gap-2">
                 <AiOutlineMail className="bg-transparent fill-white" />
                 Contact Us
-              </div>
+              </div> */}
               {isClient && (
                 <>
                   <SignedOut>

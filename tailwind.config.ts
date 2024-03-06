@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         primary: "#0061FF",
         textColor: "#545759",
+        dsaPrimary: "#6674CC",
+        dsaSecondary: "#f8f8fd",
       },
     },
   },

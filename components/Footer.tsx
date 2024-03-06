@@ -25,8 +25,9 @@ const Footer = () => {
               />
             </div>
             <p>
-              SoarX is a dynamic nationwide community dedicated to empowering
-              students through impactful events, sessions, and hackathons.
+              {/* SoarX  */}
+              is a dynamic nationwide community dedicated to empowering students
+              through impactful events, sessions, and hackathons.
             </p>
           </div>
           <div className="footer-content">
@@ -52,12 +53,12 @@ const Footer = () => {
                   +91 7988237971
                 </a>
               </div>
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <AiOutlineMail className="text-xl font-medium" />{" "}
                 <a href="mailto:soarxnetwork@gmail.com" title="email">
                   soarxnetwork@gmail.com
                 </a>
-              </div>
+              </div> */}
 
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">
