@@ -3,6 +3,7 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
 import { Event } from "@prisma/client";
+import Link from "next/link";
 
 interface EventProps {
   events: Event[];
@@ -18,7 +19,11 @@ const EventPage = ({ events }: EventProps) => {
         <section className="all-events pt-8">
           <div className="grid-4">
             {events.map((e) => (
-              <div className="events-box aim-box" key={e.id}>
+              <Link
+                href={`/event/${decodeURI(e.slug!)}`}
+                className="events-box aim-box"
+                key={e.id}
+              >
                 <div className="events-img">
                   <Image
                     width={700}
@@ -41,7 +46,7 @@ const EventPage = ({ events }: EventProps) => {
                       </Link>
                     </div> */}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

@@ -7,6 +7,10 @@ import CurriculumDsa from "./_components/CurriculumDsa";
 import OverviewDsa from "./_components/OverviewDsa";
 import LecturesDsa from "./_components/LecturesDsa";
 import BrandDsa from "./_components/BrandDsa";
+import PlacementDsa from "./_components/PlacementDsa";
+import ProfileDsa from "./_components/ProfileDsa";
+import CertifiedDsa from "./_components/CertifiedDsa";
+import FaqDsa from "./_components/FaqDsa";
 
 const DsaPage = () => {
   return (
@@ -17,6 +21,10 @@ const DsaPage = () => {
       <OverviewDsa />
       <LecturesDsa />
       <BrandDsa />
+      <PlacementDsa />
+      <ProfileDsa />
+      <CertifiedDsa />
+      <FaqDsa />
     </section>
   );
 };

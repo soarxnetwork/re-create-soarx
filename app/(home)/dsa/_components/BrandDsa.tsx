@@ -20,7 +20,7 @@ const BrandDsa = () => {
     "/images/airtel.png",
   ];
   return (
-    <article className=" bg-dsaSecondary py-6">
+    <article className=" bg-dsaSecondary py-12">
       <div className="container space-y-8">
         <h3 className=" text-3xl font-semibold text-center">
           Thousands of our students achieved their{" "}

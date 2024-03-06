@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroDsa = () => {
   return (
-    <article className=" grid sm:grid-cols-2 grid-cols-1 text-start container gap-16 items-center justify-between">
+    <article className=" grid sm:grid-cols-2 grid-cols-1 text-start container gap-16 items-center justify-between py-12">
       <div className=" space-y-8 font-semibold">
         <h3 className="text-5xl ">
           Get <span className=" text-dsaPrimary font-bold">Placement</span>{" "}

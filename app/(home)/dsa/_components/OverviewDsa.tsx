@@ -4,16 +4,16 @@ import React from "react";
 
 const OverviewDsa = () => {
   return (
-    <article className=" bg-dsaSecondary w-full py-6 ">
+    <article className=" bg-dsaSecondary w-full  py-12 ">
       <div className="container space-y-6">
         <div className=" ">
-          <h3 className=" font-bold text-2xl">BATCH OVERVIEW</h3>
+          <h3 className=" font-bold text-3xl">BATCH OVERVIEW</h3>
         </div>
         <div className="grid sm:grid-cols-2 grid-cols-1 justify-between gap-8">
           <div>
             {itemOverview.map((item) => (
               <div key={item}>
-                <p className="text-lg">{item}</p>
+                <p className="text-xl">{item}</p>
               </div>
             ))}
           </div>
