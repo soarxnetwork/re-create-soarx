@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useTransition } from "react";
+import React, { useRef, useState, useTransition } from "react";
 import { InputText } from "primereact/inputtext";
 import { Calendar } from "primereact/calendar";
 import { InputTextarea } from "primereact/inputtextarea";
@@ -11,6 +11,8 @@ import ImageUpload from "@/app/(admin)/_components/ImageUpload";
 import { createEvent, editEvent } from "@/actions/event";
 import { useRouter } from "next/navigation";
 import { Event } from "@prisma/client";
+
+import { Toast } from "primereact/toast";
 
 const EditEvent = ({
   creatorId,
@@ -48,16 +50,28 @@ const EditEvent = ({
     startTransition(() =>
       editEvent(eventData)
         .then(() => {
+          showSuccess();
           router.push("/admin/events");
         })
         .catch((err) => console.log(err))
     );
   };
 
+  const toast = useRef<any>(null);
+
+  const showSuccess = () => {
+    toast.current.show({
+      severity: "success",
+      summary: "Success",
+      detail: "Succesfully Edit Event",
+      life: 3000,
+    });
+  };
+
   return (
     <>
+      <Toast ref={toast} position="bottom-right" />;
       <h2 className="text-2xl font-medium">Add Event</h2>
-
       <form className="flex flex-col gap-5 pt-9" onSubmit={handleSubmit}>
         <div className="flex w-full gap-5 e-nfg">
           <input
@@ -123,7 +137,7 @@ const EditEvent = ({
 
         <div className="flex items-center gap-4">
           <button className="btn-primary" type="submit" disabled={isPending}>
-            Submit
+            {isPending ? "Submitting..." : "Submit"}
           </button>
           <button
             className="btn-primary"
