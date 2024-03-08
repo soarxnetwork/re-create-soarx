@@ -1122,3 +1122,7 @@ input {
 .containerImageCerti {
   @apply sm:place-self-end place-self-center;
 }
+
+.fl-col-ic {
+  @apply flex items-center flex-col;
+}

@@ -1,7 +1,7 @@
+import { baseURL } from "@/constants";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseURL = "https://www.soarx.tech";
   return {
     rules: [
       {

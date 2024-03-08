@@ -1,8 +1,9 @@
 import React from "react";
-import EditEvent from "../_components/EditEvent";
 import { getEvent } from "@/services/events";
-import { getCurrentUser } from "@/services/user";
 import { Metadata } from "next";
+import FormEvent from "../../add/_components/FormEvent";
+import { EventSchema } from "@/schema/event";
+import { editEvent } from "@/actions/event";
 
 interface AdminEditPageProps {
   params: {
@@ -21,8 +22,9 @@ export async function generateMetadata({
 }
 
 const AdminEdiPage = async ({ params }: AdminEditPageProps) => {
-  const event = await getEvent(params.id);
-  return <EditEvent {...event!} />;
+  const event = (await getEvent(params.id)) as EventSchema;
+
+  return <FormEvent event={event!} action={editEvent} />;
 };
 
 export default AdminEdiPage;

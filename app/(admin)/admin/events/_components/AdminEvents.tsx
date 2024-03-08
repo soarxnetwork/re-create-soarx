@@ -59,44 +59,48 @@ const AdminEvents = ({ events }: EventProps) => {
       </div>
       <section className="all-events pt-8">
         <div className="grid-4">
-          {events.map((e) => (
-            <div className="events-box aim-box" key={e.id}>
-              <div className="events-img">
-                <Image
-                  src={e.imageUrl}
-                  alt="Banner"
-                  className="img-responsive"
-                  width={300}
-                  height={200}
-                />
-              </div>
-              <div className="event-content">
-                <h2 className="text-2xl font-medium">{e.title}</h2>
-                <p className="pt-2">{e.description.slice(0, 180) + "..."}</p>
-                <p className="pt-2 flex items-center gap-2 font-medium">
-                  <AiOutlineCalendar />
-                  {formatDate(e.createdAt)}
-                </p>
-                <div className="flex items-center gap-3">
-                  {/* <Link href={`/admin/events/edit/${e.id}`}>
+          {events
+            .sort(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+            )
+            .map((e) => (
+              <div className="events-box aim-box" key={e.id}>
+                <div className="events-img">
+                  <Image
+                    src={e.imageUrl}
+                    alt="Banner"
+                    className="img-responsive"
+                    width={300}
+                    height={200}
+                  />
+                </div>
+                <div className="event-content">
+                  <h2 className="text-2xl font-medium">{e.title}</h2>
+                  <p className="pt-2">{e.description.slice(0, 180) + "..."}</p>
+                  <p className="pt-2 flex items-center gap-2 font-medium">
+                    <AiOutlineCalendar />
+                    {formatDate(e.date)}
+                  </p>
+                  <div className="flex items-center gap-3">
+                    {/* <Link href={`/admin/events/edit/${e.id}`}>
                     <button className="btn-primary mt-4">Edit</button>
                   </Link> */}
-                  <button
-                    className="btn-primary red mt-4"
-                    onClick={() => confirm2(e.id)}
-                  >
-                    Delete
-                  </button>
-                  <Link
-                    href={`/admin/event/edit/${e.id}`}
-                    className="btn-primary red mt-4"
-                  >
-                    Edit
-                  </Link>
+                    <button
+                      className="btn-primary red mt-4"
+                      onClick={() => confirm2(e.id)}
+                    >
+                      Delete
+                    </button>
+                    <Link
+                      href={`/admin/event/edit/${e.id}`}
+                      className="btn-primary red mt-4"
+                    >
+                      Edit
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
     </>

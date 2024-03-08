@@ -4,13 +4,17 @@ import { updateAdminPermission } from "@/actions/user";
 import { Admin, User } from "@prisma/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Toast } from "primereact/toast";
+
 interface Props extends User {
   users: User[];
 }
 export const permissionOptions = ["Admin", "User", "Superadmin"];
 
 const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
+  const toast = useRef<any>(null);
+
   const router = useRouter();
   const [permission, setPermission] = useState<Record<string, string>>({});
 
@@ -25,10 +29,12 @@ const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
           await updateAdminPermission({ id, admin: permission[id] as Admin });
         }
       }
+      showSuccess();
       router.push("/admin/events");
       return;
     } catch (err) {
       console.error(err);
+      throw err;
     }
   };
 
@@ -42,9 +48,19 @@ const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
       </h1>
     );
 
+  const showSuccess = () => {
+    toast.current.show({
+      severity: "success",
+      summary: "Success",
+      detail: "Permission updated",
+      life: 3000,
+    });
+  };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
+        <Toast ref={toast} position="bottom-right" />
         {users
           .filter((user) => user.id !== currentUserId)
           .map(({ username, admin, id }) => {

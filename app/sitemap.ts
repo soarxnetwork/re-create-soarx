@@ -1,9 +1,8 @@
+import { baseURL } from "@/constants";
 import { getAllEvents } from "@/services/events";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseURL = "https://www.soarx.tech";
-
   let eventsEntries: MetadataRoute.Sitemap = [];
 
   try {
