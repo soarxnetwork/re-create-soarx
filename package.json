@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.11",
     "@prisma/client": "^5.10.2",
     "@uploadthing/react": "^6.3.2",
+    "@vercel/analytics": "^1.2.2",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
     "hamburger-react": "^2.5.0",

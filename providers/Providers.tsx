@@ -1,5 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import { PrimeReactProvider } from "primereact/api";
+import { Analytics } from "@vercel/analytics/react";
 
 import React from "react";
 
@@ -10,7 +11,10 @@ interface ProvidersProps {
 const Providers = ({ children }: ProvidersProps) => {
   return (
     <ClerkProvider>
-      <PrimeReactProvider>{children}</PrimeReactProvider>
+      <PrimeReactProvider>
+        {children}
+        <Analytics />
+      </PrimeReactProvider>
     </ClerkProvider>
   );
 };
