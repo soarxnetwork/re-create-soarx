@@ -11,6 +11,12 @@ import PlacementDsa from "./_components/PlacementDsa";
 import ProfileDsa from "./_components/ProfileDsa";
 import CertifiedDsa from "./_components/CertifiedDsa";
 import FaqDsa from "./_components/FaqDsa";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "DSA",
+  description: "DSA Course Page",
+};
 
 const DsaPage = () => {
   return (
