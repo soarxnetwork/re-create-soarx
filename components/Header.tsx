@@ -17,7 +17,7 @@ const Header = ({ admin }: User) => {
   }, []);
   return (
     <header>
-      <div className="mt-6">
+      <div className="mt-6 pr-40">
         <nav id="main-navbar" className="navbar container rounded-lg ">
           <div className=" flex items-center justify-between">
             <Link href={"/"}>
@@ -30,7 +30,9 @@ const Header = ({ admin }: User) => {
                   sizes="100vw"
                   alt="Header Logo"
                 />
+                <span className="text-2xl font-semibold text-[#DAACFF]"> Soar<span className="text-[#9241d4]">X</span></span>
               </div>
+              
             </Link>
             <div
               className="mbl-bars"
@@ -41,7 +43,7 @@ const Header = ({ admin }: User) => {
             <div
               className={
                 showNavbar
-                  ? "flex items-center side-nav-flex justify-between gap-52 active"
+                  ? "flex items-center side-nav-flex justify-between gap-52 bg-[#9241d40d]"
                   : "flex items-center side-nav-flex justify-between gap-52"
               }
             >
@@ -49,7 +51,7 @@ const Header = ({ admin }: User) => {
                 <ul className="flex items-center nav-ul font-normal text-lg text-black gap-8">
                   <li
                     className={
-                      pathname === "/" ? "active rounded-md" : "rounded-md"
+                      pathname === "/" ? "bg-[#9241d40d] rounded-md" : "rounded-md"
                     }
                   >
                     <Link href="/">Home</Link>
@@ -57,7 +59,7 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname.includes("/events")
-                        ? "active rounded-md"
+                        ? "bg-[#9241d40d] rounded-md"
                         : "rounded-md"
                     }
                   >
@@ -66,7 +68,7 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname.includes("/about")
-                        ? "active rounded-md"
+                        ? "bg-[#9241d40d] rounded-md"
                         : "rounded-md"
                     }
                   >
@@ -75,7 +77,7 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname.includes("/dsa")
-                        ? "active rounded-md"
+                        ? "bg-[#9241d40d] rounded-md"
                         : "rounded-md"
                     }
                   >
@@ -85,7 +87,7 @@ const Header = ({ admin }: User) => {
                     <li
                       className={
                         pathname.includes("/admin")
-                          ? "active rounded-md"
+                          ? "bg-[#9241d40d] rounded-md"
                           : "rounded-md"
                       }
                     >
@@ -101,7 +103,7 @@ const Header = ({ admin }: User) => {
               {isClient && (
                 <>
                   <SignedOut>
-                    <Link href="/sign-in">Sign in</Link>
+                    <Link href="/sign-in" className="bg-[#9241d4] px-4 py-[4px] rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF]">Sign in</Link>
                   </SignedOut>
                   <SignedIn>
                     <UserButton afterSignOutUrl="/" />

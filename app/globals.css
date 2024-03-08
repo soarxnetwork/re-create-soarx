@@ -89,7 +89,6 @@ p {
   -o-transition: 0.3s all ease-in-out;
   background: var(--secondary-color);
 }
-
 .container {
   max-width: 1200px;
   margin: auto;
@@ -1116,4 +1115,13 @@ input {
 
 .containerBrand {
   @apply grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 items-center;
+}
+:hover.instagram-footer-button{
+  background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+  border: none;
+}
+.nav-div{
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1360px;
 }

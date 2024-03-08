@@ -12,13 +12,16 @@ const Discord = () => {
             Join Our Discord Community
           </div>
           <div className="text-700 text-2xl mb-5">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-            numquam eligendi quos.
+            Join our discord server and get the latest updates now!
           </div>
+          <a href="https://discord.gg/tH6Cm3fRza">
           <button className="flex items-center gap-2 m-auto text-white btn-primary ">
+            
             <FaDiscord className=" fill-white" />
+            
             Join Now
           </button>
+          </a>
         </div>
       </div>
     </section>
