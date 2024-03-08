@@ -27,7 +27,7 @@ const LecturesDsa = () => {
   ];
   return (
     <article>
-      <div className="container">
+      <div className="container py-12">
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ">
           {itemLectures.map((item) => {
             return (

@@ -14,6 +14,7 @@ export default authMiddleware({
     "/admin(.*)",
     "/api/trpc(.*)",
     "/api/uploadthing(.*)",
+    "/dsa",
   ],
   ignoredRoutes: ["/no-auth-in-this-route"],
 });

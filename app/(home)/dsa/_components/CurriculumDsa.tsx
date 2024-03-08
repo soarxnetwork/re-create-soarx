@@ -10,32 +10,33 @@ const CurriculumDsa = () => {
     setIsDropdown({ ...isDropdown, [title]: !isDropdown[title] });
 
   return (
-    <article className="container mx-auto space-y-8">
+    <article className="container mx-auto space-y-8 py-12">
       <h3 className=" text-3xl font-bold text-center">ALPHA PLUS CURRICULUM</h3>
       {itemDropdown.map((item) => {
         return (
-          <motion.div
-            layout
-            className=" bg-dsaSecondary p-4 space-y-4 "
-            key={item.title}
-          >
+          <motion.div layout className=" bg-dsaSecondary p-4 " key={item.title}>
             <div
               className="justify-between flex items-center"
               onClick={() => handleClick(item.title)}
             >
-              <h4 className=" font-bold text-xl">{item.title}</h4>
+              <h4 className=" font-semibold text-2xl">{item.title}</h4>
               <IoMdArrowDropdown size={32} />
             </div>
-            <AnimatePresence>
-              {isDropdown[item.title] &&
-                item.items.map((subItem) => {
-                  return (
-                    <motion.div key={subItem}>
-                      <p>{subItem}</p>
-                    </motion.div>
-                  );
-                })}
-            </AnimatePresence>
+            {item.items.map((subItem) => {
+              return (
+                <motion.p
+                  initial={{ height: 0 }}
+                  animate={{
+                    height: isDropdown[item.title] ? "auto" : 0,
+                    visibility: isDropdown[item.title] ? "visible" : "hidden",
+                  }}
+                  transition={{ type: "spring" }}
+                  key={subItem}
+                >
+                  {subItem}
+                </motion.p>
+              );
+            })}
           </motion.div>
         );
       })}

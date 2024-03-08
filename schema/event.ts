@@ -7,8 +7,15 @@ export const eventSchema = z.object({
     message: "Too short",
   }),
   date: z.date(),
-  description: z.string(),
-  location: z.string(),
+  description: z.string().min(2, {
+    message: "Too short",
+  }),
+  location: z.string().min(2, {
+    message: "Too short",
+  }),
+  slug: z.string().min(2, {
+    message: "Too short",
+  }),
   imageUrl: z.string(),
   updatedAt: z.date().optional(),
   creatorId: z.string(),
@@ -21,6 +28,7 @@ export const eventInitialValues = {
   location: "",
   imageUrl: "",
   creatorId: "",
+  slug: "",
 };
 export const eventFormResolver = zodResolver(eventSchema);
 export type EventSchema = z.infer<typeof eventSchema>;

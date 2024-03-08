@@ -3,6 +3,8 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
 import { Event } from "@prisma/client";
+import Link from "next/link";
+import Events from "./Events";
 
 interface EventProps {
   events: Event[];
@@ -11,41 +13,40 @@ interface EventProps {
 const EventPage = ({ events }: EventProps) => {
   return (
     <section className="section ">
-      <div className="container ">
+      <article className="container ">
         <div className="pt-24">
           <h1 className="text-5xl">Ongoing Events</h1>
         </div>
-        <section className="all-events pt-8">
+        <div className="all-events pt-8">
           <div className="grid-4">
-            {events.map((e) => (
-              <div className="events-box aim-box" key={e.id}>
-                <div className="events-img">
-                  <Image
-                    width={700}
-                    height={500}
-                    src={e.imageUrl}
-                    alt="Banner"
-                    className="img-responsive"
-                  />
-                </div>
-                <div className="event-content">
-                  <h2 className="text-2xl font-medium">{e.title}</h2>
-
-                  <p className="pt-2 flex items-center gap-2 font-medium">
-                    <AiOutlineCalendar />
-                    {formatDate(e.createdAt)}
-                  </p>
-                  {/* <div className="flex items-center gap-3">
-                      <Link href={`/${e.eventSlug}`}>
-                        <button className="btn-primary mt-4">View</button>
-                      </Link>
-                    </div> */}
-                </div>
-              </div>
-            ))}
+            {events
+              .filter((event) => new Date(event.date) > new Date())
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              )
+              .map((e) => (
+                <Events key={e.id} {...e} />
+              ))}
           </div>
-        </section>
-      </div>
+        </div>
+        <div>
+          <h1 className="text-5xl">Past Events</h1>
+        </div>
+        <div className="all-events pt-8">
+          <div className="grid-4">
+            {events
+              .filter((event) => new Date(event.date) < new Date())
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime()
+              )
+              .map((e) => (
+                <Events key={e.id} {...e} />
+              ))}
+          </div>
+        </div>
+      </article>
     </section>
   );
 };

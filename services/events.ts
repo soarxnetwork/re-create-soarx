@@ -27,3 +27,18 @@ export const getEvent = async (id: string) => {
     console.error(err);
   }
 };
+
+export const getEventBySlug = async (slug: string) => {
+  try {
+    return await db.event.findUnique({
+      where: {
+        slug,
+      },
+      include: {
+        creator: true,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
