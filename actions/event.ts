@@ -11,6 +11,8 @@ export const createEvent = async (data: EventSchema) => {
       },
     });
     revalidatePath("/admin/events");
+    revalidatePath("/admin/current-events");
+    revalidatePath("/admin/past-events");
     revalidatePath("/events");
   } catch (err) {
     console.error(err);
@@ -29,6 +31,8 @@ export const editEvent = async (data: EventSchema) => {
       },
     });
     revalidatePath("/admin/events");
+    revalidatePath("/admin/current-events");
+    revalidatePath("/admin/past-events");
     revalidatePath("/events");
     revalidatePath(`/event/${data.id}`);
   } catch (err) {

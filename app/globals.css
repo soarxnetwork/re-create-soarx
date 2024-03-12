@@ -402,6 +402,9 @@ header {
 .event-content {
   padding: 20px;
 }
+p {
+  text-wrap: balance;
+}
 
 /* EVENTS PAGE END */
 
@@ -1117,11 +1120,11 @@ input {
 .containerBrand {
   @apply grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-8 items-center;
 }
-:hover.instagram-footer-button{
+:hover.instagram-footer-button {
   background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
   border: none;
 }
-.nav-div{
+.nav-div {
   margin-left: 0;
   margin-right: 0;
   max-width: 1360px;
@@ -1131,6 +1134,15 @@ input {
   @apply sm:place-self-end place-self-center;
 }
 
+/* ! edawg */
 .fl-col-ic {
   @apply flex items-center flex-col;
+}
+
+.inputDsa2 {
+  @apply w-full px-4 py-2 rounded-md border-2 border-gray-300 focus:outline-none focus:border-gray-600;
+}
+
+.headingResponsibility {
+  @apply lg:hidden block text-center;
 }

@@ -1,5 +1,6 @@
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import FormInputSearch from "./FormInputSearch";
 
 interface ContentProps {
   onSidebarHide: () => void;
@@ -22,9 +23,11 @@ export default function Content({ onSidebarHide, children }: ContentProps) {
           <div className="w-full sm:flex p-2 mb-5 items-end pt-10">
             <div className="sm:flex-grow flex items-center justify-between">
               <div>
-                <div className="flex items-center">
-                  <MdOutlineKeyboardDoubleArrowRight />
+                <div className="flex items-center w-full gap-4">
                   <div className="ml-2">{getCurrentDate()}</div>
+                  <div>
+                    <FormInputSearch />
+                  </div>
                 </div>
               </div>
               <HiOutlineBars3BottomRight

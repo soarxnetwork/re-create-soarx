@@ -29,6 +29,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.8.1",
     "react-portable-text": "^0.6.0",
     "svix": "^1.20.0",
     "swiper": "^11.0.7",

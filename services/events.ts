@@ -42,3 +42,28 @@ export const getEventBySlug = async (slug: string) => {
     console.error(err);
   }
 };
+
+export const getEventsWithSearch = async (search: string) => {
+  try {
+    return await db.event.findMany({
+      where: {
+        OR: [
+          {
+            title: {
+              contains: search,
+              mode: "insensitive",
+            },
+          },
+          {
+            description: {
+              contains: search,
+              mode: "insensitive",
+            },
+          },
+        ],
+      },
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};

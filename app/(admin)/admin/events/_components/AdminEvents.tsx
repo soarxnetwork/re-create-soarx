@@ -10,10 +10,12 @@ import { formatDate } from "@/utils/formatDate";
 import Image from "next/image";
 import { Event } from "@prisma/client";
 import { deleteEvent } from "@/actions/event";
+import AdminEventsCard from "./AdminEventsCard";
 interface EventProps {
   events: Event[];
+  label: string;
 }
-const AdminEvents = ({ events }: EventProps) => {
+const AdminEvents = ({ events, label }: EventProps) => {
   const toast = useRef<any>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -52,54 +54,21 @@ const AdminEvents = ({ events }: EventProps) => {
       <Toast ref={toast} />
       <ConfirmDialog />
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-medium">All Events</h2>
+        <h2 className="text-2xl font-medium">{label}</h2>
         <Link href={"/admin/event/add"}>
-          <button className="btn-primary">Add Events</button>
+          <button className="btn-primary" disabled={isPending}>
+            Add Events
+          </button>
         </Link>
       </div>
       <section className="all-events pt-8">
-        <div className="grid-4">
+        <div className="grid-4 ">
           {events
             .sort(
               (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
             )
             .map((e) => (
-              <div className="events-box aim-box" key={e.id}>
-                <div className="events-img">
-                  <Image
-                    src={e.imageUrl}
-                    alt="Banner"
-                    className="img-responsive"
-                    width={300}
-                    height={200}
-                  />
-                </div>
-                <div className="event-content">
-                  <h2 className="text-2xl font-medium">{e.title}</h2>
-                  <p className="pt-2">{e.description.slice(0, 180) + "..."}</p>
-                  <p className="pt-2 flex items-center gap-2 font-medium">
-                    <AiOutlineCalendar />
-                    {formatDate(e.date)}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    {/* <Link href={`/admin/events/edit/${e.id}`}>
-                    <button className="btn-primary mt-4">Edit</button>
-                  </Link> */}
-                    <button
-                      className="btn-primary red mt-4"
-                      onClick={() => confirm2(e.id)}
-                    >
-                      Delete
-                    </button>
-                    <Link
-                      href={`/admin/event/edit/${e.id}`}
-                      className="btn-primary red mt-4"
-                    >
-                      Edit
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <AdminEventsCard key={e.id} {...e} confirm2={confirm2} />
             ))}
         </div>
       </section>

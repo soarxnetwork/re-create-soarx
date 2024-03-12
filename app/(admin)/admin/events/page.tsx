@@ -12,7 +12,7 @@ const AdminEventsPage = async () => {
   const events = await getAllEvents();
   return (
     <>
-      <AdminEvents events={events!} />
+      <AdminEvents events={events!} label="All Events" />
     </>
   );
 };

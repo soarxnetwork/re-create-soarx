@@ -18,6 +18,13 @@ const config: Config = {
         textColor: "#545759",
         dsaPrimary: "#6674CC",
         dsaSecondary: "#f8f8fd",
+        // ! Second DSA
+        secondDsaPrimary: "#2F89FC",
+        secondDsaBlack: "#2C3454",
+        secondDsaWhite: "#FDFDFE",
+        secondDsaSecondary: "#293F88",
+        secondDsaBg: "#F7F8FA",
+        advantageDsa: "#FAF0F1",
       },
     },
   },

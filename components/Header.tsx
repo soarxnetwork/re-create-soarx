@@ -1,16 +1,44 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 import { Fade as Hamburger } from "hamburger-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
+import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
+
 const Header = ({ admin }: User) => {
+  const router = useRouter();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [selectedDsa, setSelectedDsa] = useState<null | typeof dsa>(null);
+
+  const dsa = [
+    {
+      name: "DSA 1",
+      code: "/dsa",
+    },
+    {
+      name: "DSA 2",
+      code: "/dsa2",
+    },
+  ];
+
+  const handleChange = (e: DropdownChangeEvent) => {
+    setSelectedDsa(e.value);
+    router.push(e.value.code);
+  };
+
+  const actualDsa = dsa.find((d) => d.code === pathname);
+
+  useEffect(() => {
+    if (pathname.includes(actualDsa?.code!)) {
+      setSelectedDsa(null);
+    }
+  }, [pathname, actualDsa]);
 
   useEffect(() => {
     setIsClient(true);
@@ -30,9 +58,11 @@ const Header = ({ admin }: User) => {
                   sizes="100vw"
                   alt="Header Logo"
                 />
-                <span className="text-2xl font-semibold text-[#DAACFF]"> Soar<span className="text-[#9241d4]">X</span></span>
+                <span className="text-2xl font-semibold text-[#DAACFF]">
+                  {" "}
+                  Soar<span className="text-[#9241d4]">X</span>
+                </span>
               </div>
-              
             </Link>
             <div
               className="mbl-bars"
@@ -51,7 +81,9 @@ const Header = ({ admin }: User) => {
                 <ul className="flex items-center nav-ul font-normal text-lg text-black gap-8">
                   <li
                     className={
-                      pathname === "/" ? "bg-[#9241d40d] rounded-md" : "rounded-md"
+                      pathname === "/"
+                        ? "bg-[#9241d40d] rounded-md"
+                        : "rounded-md"
                     }
                   >
                     <Link href="/">Home</Link>
@@ -74,7 +106,7 @@ const Header = ({ admin }: User) => {
                   >
                     <Link href="/about">About</Link>
                   </li>
-                  <li
+                  {/* <li
                     className={
                       pathname.includes("/dsa")
                         ? "bg-[#9241d40d] rounded-md"
@@ -82,7 +114,17 @@ const Header = ({ admin }: User) => {
                     }
                   >
                     <Link href="/dsa">Dsa</Link>
-                  </li>
+                  </li> */}
+
+                  <Dropdown
+                    value={selectedDsa}
+                    onChange={handleChange}
+                    options={dsa}
+                    optionLabel="name"
+                    placeholder={actualDsa?.name || "Select Dsa"}
+                    className="w-full md:w-14rem"
+                  />
+
                   {admin === Admin.Superadmin && (
                     <li
                       className={
@@ -103,7 +145,12 @@ const Header = ({ admin }: User) => {
               {isClient && (
                 <>
                   <SignedOut>
-                    <Link href="/sign-in" className="bg-[#9241d4] px-4 py-[4px] rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF]">Sign in</Link>
+                    <Link
+                      href="/sign-in"
+                      className="bg-[#9241d4] px-4 py-[4px] rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF]"
+                    >
+                      Sign in
+                    </Link>
                   </SignedOut>
                   <SignedIn>
                     <UserButton afterSignOutUrl="/" />

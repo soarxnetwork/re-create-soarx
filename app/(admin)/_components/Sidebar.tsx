@@ -9,7 +9,7 @@ import { MdOutlineEmojiEvents } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { User } from "@prisma/client";
 import Link from "next/link";
-import { FaUser } from "react-icons/fa";
+import { FaEarlybirds, FaUser, FaVenus } from "react-icons/fa";
 
 interface SideBarProps {
   onSidebarHide: () => void;
@@ -24,6 +24,18 @@ const sidebarItems = [
     title: "All Events",
     icons: <MdOutlineEmojiEvents />,
     links: "/admin/events",
+  },
+  {
+    id: "3",
+    title: "Past Events",
+    icons: <FaVenus />,
+    links: "/admin/past-events",
+  },
+  {
+    id: "4",
+    title: "Current Events",
+    icons: <FaEarlybirds />,
+    links: "/admin/current-events",
   },
   {
     id: "2",
