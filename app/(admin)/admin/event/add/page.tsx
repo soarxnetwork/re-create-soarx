@@ -1,5 +1,4 @@
 import React from "react";
-import AddEvent from "./_components/AddEvent";
 import { getCurrentUser } from "@/services/user";
 import { Metadata } from "next";
 import FormEvent from "./_components/FormEvent";
