@@ -18,12 +18,12 @@ const Header = ({ admin }: User) => {
 
   const dsa = [
     {
-      name: "DSA 1",
-      code: "/dsa",
+      name: "Campus Ambassador",
+      code: "/Campus",
     },
     {
-      name: "DSA 2",
-      code: "/dsa2",
+      name: "DSA",
+      code: "/DSA",
     },
   ];
 
@@ -97,7 +97,7 @@ const Header = ({ admin }: User) => {
                   >
                     <Link href="/events">Events</Link>
                   </li>
-                  <li
+                  {/* <li
                     className={
                       pathname.includes("/about")
                         ? "bg-[#9241d40d] rounded-md"
@@ -105,7 +105,7 @@ const Header = ({ admin }: User) => {
                     }
                   >
                     <Link href="/about">About</Link>
-                  </li>
+                  </li> */}
                   {/* <li
                     className={
                       pathname.includes("/dsa")
