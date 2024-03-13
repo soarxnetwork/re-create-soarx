@@ -1,0 +1,14 @@
+import React from 'react'
+
+function RefundPage() {
+  return (
+    <div className='mt-[15%]'>
+        <h1 className='w-full text-center font-bold text-[#000000]'>REFUND & CANCELLATION POLICY</h1>
+        <p className='py-10 px-32 text-[1.2rem] text-center'>
+        There is a strict no refund & no cancellation policy. You are entitled to a refund only in the case where you have not been allotted the course after payment.
+        </p>
+    </div>
+  )
+}
+
+export default RefundPage
