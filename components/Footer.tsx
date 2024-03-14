@@ -38,10 +38,12 @@ const Footer = () => {
             <h3>Quick Links</h3>
             <ul className="flex flex-col gap-3">
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Privacy_policy"}>Privacy Policy</Link>
+                <Link href={"/privacy"}>Privacy Policy</Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Refund"}>Refund & Cancellation Policy</Link>
+                <Link href={"/refund-policy"}>
+                  Refund & Cancellation Policy
+                </Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
                 <Link href={"/terms"}>Terms & Conditions</Link>

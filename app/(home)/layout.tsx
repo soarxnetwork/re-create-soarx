@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { getCurrentUser } from "@/services/user";
 import React from "react";
 
@@ -11,7 +12,8 @@ const HomeLayout = async ({ children }: HomeLayoutProps) => {
   return (
     <>
       <div className="container">
-      <Header {...user!} />
+        <Header {...user!} />
+      </div>
       <main className="">{children}</main>
       <Footer />
     </>
