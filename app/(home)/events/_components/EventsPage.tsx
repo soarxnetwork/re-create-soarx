@@ -5,6 +5,8 @@ import { formatDate } from "@/utils/formatDate";
 import { Event } from "@prisma/client";
 import Link from "next/link";
 import Events from "./Events";
+import Pagination from "@/app/(admin)/_components/Pagination";
+import { useSearchParams } from "next/navigation";
 
 interface EventProps {
   events: Event[];
@@ -46,6 +48,9 @@ const EventPage = ({ events }: EventProps) => {
               ))}
           </div>
         </div>
+        {/* <div className="mt-5 flex w-full justify-center">
+          <Pagination totalPages={totalPages} />
+        </div> */}
       </article>
     </section>
   );

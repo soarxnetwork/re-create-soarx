@@ -8,7 +8,7 @@ const BannerDsa = () => {
           <h4 className=" text-2xl font-bold text-white">
             Become a HackerEarth Campus Ambassador today!
           </h4>
-          <button className=" px-6 py-3 text-xl text-black rounded-lg bg-white font-medium mx-auto">
+          <button className=" px-6 py-3 text-xl text-black rounded-lg bg-white font-medium btnMx ">
             Apply now
           </button>
         </div>

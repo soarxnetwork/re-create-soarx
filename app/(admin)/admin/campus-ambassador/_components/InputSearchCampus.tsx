@@ -3,13 +3,13 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
-const FormInputSearch = () => {
+const InputSearchCampus = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push(`/admin/events/${search}?page=1`);
+    router.push(`/admin/campus-ambassador/${search}`);
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearch(e.target.value);
@@ -17,7 +17,7 @@ const FormInputSearch = () => {
   return (
     <form action="" className="relative" onSubmit={onSubmit}>
       <input
-        placeholder="Search Events..."
+        placeholder="Search CA..."
         className=" p-2 pl-4"
         onChange={handleChange}
         value={search}
@@ -32,4 +32,4 @@ const FormInputSearch = () => {
   );
 };
 
-export default FormInputSearch;
+export default InputSearchCampus;

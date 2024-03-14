@@ -1,4 +1,4 @@
-export const yearsDsa2 = ["2023", "2024", "2025", "2026"];
+export const yearsDsa2 = [2023, 2024, 2025, 2026];
 
 export const formDataDsa2 = [
   {

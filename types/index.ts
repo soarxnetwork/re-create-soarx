@@ -14,3 +14,10 @@ export interface EventWithCreator {
 export interface BlogWithCreator {
   blogs: BlogCreator[];
 }
+
+export interface SearchParamsType {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}

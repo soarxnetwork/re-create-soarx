@@ -1,6 +1,12 @@
 import React from "react";
-import { getAllEvents } from "@/services/events";
+import {
+  getAllCurrentEventWithPagination,
+  getAllEvents,
+  getAllEventsWithPagination,
+} from "@/services/events";
 import { Metadata } from "next";
+import { SearchParamsType } from "@/types";
+import Pagination from "../../_components/Pagination";
 import AdminEvents from "../events/_components/AdminEvents";
 
 export const metadata: Metadata = {
@@ -8,14 +14,18 @@ export const metadata: Metadata = {
   description: "Events Page",
 };
 
-const CurrentEventsPage = async () => {
-  const events = await getAllEvents();
-  const currentEvents = events?.filter(
-    (event) => new Date(event.date) > new Date()
-  );
+const CurrentEventsPage = async ({ searchParams }: SearchParamsType) => {
+  const currentPage = Number(searchParams?.page) || 1;
+
+  const events = await getAllCurrentEventWithPagination(currentPage);
   return (
     <>
-      <AdminEvents events={currentEvents!} label="Current Events" />
+      <section className=" space-y-8">
+        <AdminEvents events={events.currentEvents} label="All Events" />
+        <article className=" flex items-center justify-center ">
+          <Pagination totalPages={events.totalPages} />
+        </article>
+      </section>
     </>
   );
 };

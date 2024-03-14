@@ -11,16 +11,10 @@ export const dsa2Schema = z.object({
   collegeLocation: z.string().min(2, {
     message: "Too short",
   }),
-  graduationYear: z.enum(["2022", "2023", "2024", "2025", "2026"]),
-  inCodingClub: z.string().min(2, {
-    message: "Too short",
-  }),
-  stream: z.string().min(2, {
-    message: "Too short",
-  }),
-  strenghtStem: z.string().min(2, {
-    message: "Too short",
-  }),
+  graduationYear: z.string(),
+  inCodingClub: z.string().optional(),
+  stream: z.string().optional(),
+  strenghtStem: z.string().optional(),
 });
 export type Dsa2Schema = z.infer<typeof dsa2Schema>;
 export const defaultValuesDsa2: Dsa2Schema = {

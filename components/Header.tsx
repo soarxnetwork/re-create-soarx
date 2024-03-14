@@ -18,12 +18,12 @@ const Header = ({ admin }: User) => {
 
   const dsa = [
     {
-      name: "DSA 1",
-      code: "/dsa",
+      name: "DSA Classes",
+      code: "/dsa-live-classes",
     },
     {
-      name: "DSA 2",
-      code: "/dsa2",
+      name: "Campus Ambassador",
+      code: "/campus-ambassador",
     },
   ];
 
@@ -97,15 +97,7 @@ const Header = ({ admin }: User) => {
                   >
                     <Link href="/events">Events</Link>
                   </li>
-                  <li
-                    className={
-                      pathname.includes("/about")
-                        ? "bg-[#9241d40d] rounded-md"
-                        : "rounded-md"
-                    }
-                  >
-                    <Link href="/about">About</Link>
-                  </li>
+
                   {/* <li
                     className={
                       pathname.includes("/dsa")
@@ -121,7 +113,7 @@ const Header = ({ admin }: User) => {
                     onChange={handleChange}
                     options={dsa}
                     optionLabel="name"
-                    placeholder={actualDsa?.name || "Select Dsa"}
+                    placeholder={actualDsa?.name || "Initiatives"}
                     className="w-full md:w-14rem"
                   />
 

@@ -1146,3 +1146,7 @@ input {
 .headingResponsibility {
   @apply lg:hidden block text-center;
 }
+
+.btnMx {
+  @apply sm:mx-0 mx-auto;
+}

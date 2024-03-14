@@ -78,3 +78,20 @@ model Order {
   @@index([userId], name: "userId_index")
   @@index([amount], name: "amount_index")
 }
+
+model CampusAmbassador {
+  id String @id @default(uuid()) 
+  fullname String
+  collegeEmail String
+  collegeName String
+  collegeLocation String
+  graduationYear String
+  inCodingClub String?
+  stream String?
+  strenghtStem String?
+
+  createdAt DateTime @default(now())
+  
+}
+
+

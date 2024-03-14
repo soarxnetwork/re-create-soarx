@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Toast } from "primereact/toast";
 import ErrorFormDsa from "./ErrorFormDsa";
 import { motion } from "framer-motion";
+import { createCampusAmbassador } from "@/actions/campus";
 
 const FormCampus = () => {
   const toast = useRef<any>(null);
@@ -27,10 +28,15 @@ const FormCampus = () => {
   });
 
   const onSubmit = (data: Dsa2Schema) => {
-    console.log(data);
     startTransition(() => {
-      showSuccess();
-      reset();
+      createCampusAmbassador(data)
+        .then(() => {
+          showSuccess();
+          reset();
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     });
   };
 
@@ -38,7 +44,7 @@ const FormCampus = () => {
     toast.current.show({
       severity: "success",
       summary: "Success",
-      detail: "Succesfully Registered!",
+      detail: "Succesfully Registered wait for confirmation!",
       life: 3000,
     });
   };
