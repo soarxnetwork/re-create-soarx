@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { truncateWord } from "@/utils/truncateWord";
 
 const dsa = [
   {
@@ -43,7 +44,7 @@ const HeaderDropdown = () => {
               "text-primaryPurple": hovered,
             })}
           >
-            {actualDsa?.name ? actualDsa.name : "Initiatives"}
+            {actualDsa?.name ? truncateWord(actualDsa.name, 12) : "Initiatives"}
           </p>
           <span>
             <IoMdArrowDropdown
