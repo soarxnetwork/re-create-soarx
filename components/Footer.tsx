@@ -53,8 +53,8 @@ const Footer = () => {
             <div className="last-portion flex flex-col gap-3">
               <div className="flex items-center gap-2">
                 <BsTelephone className="text-xl font-medium" />
-                <a href="tel:+91 7988237971" title="phone-number">
-                  +91 7988237971
+                <a href="tel:+91 8708686261" title="phone-number">
+                +91 8708686261
                 </a>
               </div>
               <div className="flex items-center gap-2">
