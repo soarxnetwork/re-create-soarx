@@ -98,9 +98,9 @@ const PressClippings = () => {
   };
 
   return (
-    <section className="section">
+    <section className="section px-32">
       <div className="container">
-        <h1 className="text-center pb-10">Press Clippings</h1>
+        <h1 className="text-center pb-10 text-[80px] text-[#000000] font-bold">Press Clippings</h1>
         <div className="gallery">
           {displayedImages.map((image, index) => (
             <div
