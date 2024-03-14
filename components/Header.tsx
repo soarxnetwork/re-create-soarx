@@ -46,14 +46,14 @@ const Header = ({ admin }: User) => {
   return (
     <header>
       <div className="mt-6 pr-40">
-        <nav id="main-navbar" className="navbar container rounded-lg ">
-          <div className=" md:grid md:grid-cols-3 flex justify-between">
+        <nav id="main-navbar" className="navbar container rounded-lg h-[70px]" style={{paddingLeft:16, paddingRight: 16}}>
+          <div className=" md:grid md:grid-cols-3 flex justify-between h-[70px]">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
-                  src={"/images/logo.png"}
+                  src={"/images/Soarx-transparent-logo.png"}
                   width={210}
-                  height={210}
+                  height={100}
                   className=""
                   alt="Header Logo"
                 />
@@ -63,8 +63,8 @@ const Header = ({ admin }: User) => {
             <div
               className={
                 showNavbar
-                  ? "flex items-center side-nav-flex justify-between gap-52 "
-                  : "flex items-center side-nav-flex justify-between gap-52"
+                  ? "flex items-center side-nav-flex justify-between gap-60 "
+                  : "flex items-center side-nav-flex justify-between gap-60"
               }
             >
               <div>
