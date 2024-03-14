@@ -18,12 +18,12 @@ const Header = ({ admin }: User) => {
 
   const dsa = [
     {
-      name: "DSA Classes",
+      name: "DSA Live Classes",
       code: "/dsa-live-classes",
     },
     {
-      name: "DSA 2",
-      code: "/dsa2",
+      name: "Campus Ambassador Program",
+      code: "/campus-ambassador",
     },
   ];
 
@@ -51,17 +51,12 @@ const Header = ({ admin }: User) => {
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
-                  src={"/images/SoarX Logo.png"}
-                  width={0}
-                  height={0}
-                  className="img-header img-responsive"
-                  sizes="100vw"
+                  src={"/images/logo.png"}
+                  width={210}
+                  height={210}
+                  className=""
                   alt="Header Logo"
                 />
-                <span className="text-2xl font-semibold text-[#DAACFF]">
-                  {" "}
-                  Soar<span className="text-[#9241d4]">X</span>
-                </span>
               </div>
             </Link>
             <div

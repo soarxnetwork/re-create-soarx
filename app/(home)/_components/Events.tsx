@@ -12,6 +12,7 @@ import Image from "next/image";
 import { formatDate } from "@/utils/formatDate";
 import Button from "@/components/Button";
 import { Event } from "@prisma/client";
+import { truncateWord } from "@/utils/truncateWord";
 
 interface EventProps {
   events: Event[];
@@ -70,10 +71,10 @@ const Events = ({ events }: EventProps) => {
                     />
                   </div>
                   <div className="event-content">
-                    <h2 className="text-2xl font-medium">{e.title}</h2>
-                    <p className="pt-2">
-                      {e.description.slice(0, 180) + "..."}
-                    </p>
+                    <h2 className="text-2xl font-medium">
+                      {truncateWord(e.title, 49)}
+                    </h2>
+                    <p className="pt-2">{truncateWord(e.description, 70)}</p>
                     <p className="pt-2 flex items-center gap-2 font-medium">
                       <AiOutlineCalendar />
                       {formatDate(e.createdAt)}

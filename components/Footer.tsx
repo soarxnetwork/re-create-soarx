@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -21,17 +21,16 @@ const Footer = () => {
           <div className="footer-content">
             <div className="header-img flex items-center gap-3 ">
               <Image
-                src={"/images/SoarX Logo.png"}
-                width={100}
-                height={100}
-                className="img-header"
+                src={"/images/logo.png"}
+                width={210}
+                height={210}
+                className=" bg-transparent"
                 alt="Header Logo"
               />
             </div>
             <p>
-              {/* SoarX  */}
-              is a dynamic nationwide community dedicated to empowering students
-              through impactful events, sessions, and hackathons.
+              SoarX is a dynamic nationwide community dedicated to empowering
+              students through impactful events, sessions, and hackathons.
             </p>
           </div>
           <div className="footer-content">
@@ -67,26 +66,26 @@ const Footer = () => {
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">
                   <a href="https://www.youtube.com/@soarxhub">
-                  <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
+                    <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
                   </a>
                 </div>
                 <div>
                   <a href="https://x.com/SoarXNetwork">
-                  <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 " >
-                  <FontAwesomeIcon icon={faXTwitter} /> </div>
+                    <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
+                      <FontAwesomeIcon icon={faXTwitter} />{" "}
+                    </div>
                   </a>
                 </div>
 
                 <div>
                   <a href="https://www.linkedin.com/company/soarxnetwork/">
-                  <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
-                  </a>              
+                    <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
+                  </a>
                 </div>
 
                 <div>
                   <a href="https://www.instagram.com/soarxnetwork">
-                  <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " 
-                  />
+                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " />
                   </a>
                 </div>
               </div>

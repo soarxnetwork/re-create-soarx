@@ -15,6 +15,11 @@ export default authMiddleware({
     "/api/trpc(.*)",
     "/api/uploadthing(.*)",
     "/dsa",
+    "/Privacy_policy",
+    "/Terms",
+    "/Refund",
+    "/campus-ambassador",
+    "/dsa-live-classes",
   ],
   ignoredRoutes: ["/no-auth-in-this-route"],
 });
