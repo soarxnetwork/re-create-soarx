@@ -11,7 +11,7 @@ const HomeLayout = async ({ children }: HomeLayoutProps) => {
   const user = await getCurrentUser();
   return (
     <>
-      <div className="px-20">
+      <div className="container">
       <Header {...user!} />
       <main className="">{children}</main>
       </div>
