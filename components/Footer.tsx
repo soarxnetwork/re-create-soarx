@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+// import './styles/Footer.css';
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -21,7 +22,7 @@ const Footer = () => {
           <div className="footer-content">
             <div className="header-img flex items-center gap-3 ">
               <Image
-                src={"/images/logo.png"}
+                  src={"/images/Soarx-transparent-logo.png"}
                 width={210}
                 height={210}
                 className=" bg-transparent"
@@ -72,7 +73,7 @@ const Footer = () => {
                 <div>
                   <a href="https://x.com/SoarXNetwork">
                     <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
-                      <FontAwesomeIcon icon={faXTwitter} />{" "}
+                      <FontAwesomeIcon icon={faXTwitter} style={{color: 'white'}} />{" "}
                     </div>
                   </a>
                 </div>
