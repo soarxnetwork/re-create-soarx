@@ -44,7 +44,7 @@ const Footer = () => {
                 <Link href={"/refund-policy"}>Refund & Cancellation Policy</Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Terms"}>Terms & Conditions</Link>
+                <Link href={"/terms"}>Terms & Conditions</Link>
               </li>
             </ul>
           </div>

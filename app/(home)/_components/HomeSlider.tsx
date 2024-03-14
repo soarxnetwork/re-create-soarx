@@ -9,14 +9,14 @@ import { BannerImages } from "@/constants/homepage";
 
 const HomeSlider = () => {
   return (
-    <section className="banner-section flex items-center justify-center">
+    <section className="banner-section flex items-center justify-center px-32">
       <div className="container flex banner-container items-center gap-5 justify-between">
         <div className="w-3/6	">
-          <h2 className="text-primary text-xl  ">
+          <h2 className="text-primary text-xl pt-20 ">
             Empowering Minds. Unleashing Creativity
           </h2>
-          <h1>SoarX Network</h1>
-          <p className="pt-5 text-lg ">
+          <h1 className="text-[80px] font-bold text-[#000000]">SoarX Network</h1>
+          <p className="pt-5 text-[30px] ">
             At SoarX, we believe in harnessing the power of technology to
             shape the future. Our nationwide community brings together
             passionate students, industry experts, and leading companies to

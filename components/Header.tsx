@@ -45,8 +45,8 @@ const Header = ({ admin }: User) => {
   }, []);
   return (
     <header>
-      <div className="mt-6  px-24">
-        <nav id="main-navbar" className="navbar container rounded-lg h-[70px]" style={{paddingLeft:16, paddingRight: 16}}>
+      <div className="mt-4   px-24">
+        <nav id="main-navbar" className="navbar container rounded-2xl h-[70px]" style={{paddingLeft:16, paddingRight: 16}}>
           <div className=" md:grid md:grid-cols-3 flex justify-between h-[70px]">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
