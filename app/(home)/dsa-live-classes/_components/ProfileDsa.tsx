@@ -12,7 +12,7 @@ const ProfileDsa = () => {
           className="rounded-full"
         />
       ),
-      title: "Co-founder of SoarX",
+      title: "SDE",
     },
     {
       image: (
@@ -24,7 +24,7 @@ const ProfileDsa = () => {
           className="rounded-full"
         />
       ),
-      title: "Ex-Microsoft of SoarX",
+      title: "Insurance Dekho",
     },
     {
       image: (
@@ -36,21 +36,21 @@ const ProfileDsa = () => {
           className="rounded-full"
         />
       ),
-      title: "Google SPS, India ",
+      title: " ex-Amazon ",
     },
   ];
   return (
     <article className=" py-12">
       <div className="container mx-auto space-y-8 flex-col flex  items-center justify-center">
         <Image
-          src="https://i.pinimg.com/564x/a9/0a/03/a90a033b0ebfed99c1c40fa8f32c5344.jpg"
+          src="/images/Niket-Thakur.png"
           width={224}
           height={224}
           alt="DSA item 3"
           className="rounded-full"
         />
         <h3 className=" text-dsaPrimary text-3xl font-bold">TAUGHT BY</h3>
-        <h4 className=" font-semibold text-2xl">Rikka</h4>
+        <h4 className=" font-semibold text-2xl">Niket Thakur</h4>
         <div className=" grid grid-cols-3 gap-4 justify-between items-center w-full">
           {itemsProfile.map((item) => (
             <div key={item.title} className=" flex items-center flex-col gap-2">

@@ -6,12 +6,12 @@ const HeroDsa = () => {
     <article className=" grid sm:grid-cols-2 grid-cols-1 text-start container gap-16 items-center justify-between py-12">
       <div className=" space-y-8 font-semibold">
         <h3 className="text-5xl ">
-          Get <span className=" text-dsaPrimary font-bold">Placement</span>{" "}
+          Get <span className=" text-primaryPurple font-bold">Placement</span>{" "}
           Ready in 4 Months!
         </h3>
         <p>New &quot;Data Structures & Algorithms&quot; Batch</p>
-        <button className=" bg-dsaPrimary px-8 py-4 text-white rounded-xl text-xl">
-          Join Alpha Plus
+        <button className=" bg-primaryPurple px-8 py-4 text-white rounded-xl text-xl">
+          <a href="https://pages.razorpay.com/dsa-soarx"> Enroll Now</a>
         </button>
       </div>
       <div className=" sm:place-self-end place-self-center">

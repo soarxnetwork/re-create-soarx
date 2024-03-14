@@ -119,7 +119,7 @@ nav {
 
 .header-img {
   width: 115px;
-  
+
   object-fit: cover;
 }
 
@@ -1149,4 +1149,9 @@ input {
 
 .btnMx {
   @apply sm:mx-0 mx-auto;
+}
+
+.container-dropdown-nav {
+  box-shadow: 0 16px 24px -12px rgba(0, 0, 0, 0.09);
+  @apply absolute p-4 w-60 h-auto rounded-xl  flex flex-col bg-white z-50;
 }

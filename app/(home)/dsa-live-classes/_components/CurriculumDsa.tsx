@@ -11,10 +11,16 @@ const CurriculumDsa = () => {
 
   return (
     <article className="container mx-auto space-y-8 py-12">
-      <h3 className=" text-3xl font-bold text-center">ALPHA PLUS CURRICULUM</h3>
+      <h3 className=" text-3xl font-bold text-center">
+        Weekly Curriculum Java
+      </h3>
       {itemDropdown.map((item) => {
         return (
-          <motion.div layout className=" bg-dsaSecondary p-4 " key={item.title}>
+          <motion.div
+            layout
+            className=" bg-dsaSecondary p-4 space-y-1"
+            key={item.title}
+          >
             <div
               className="justify-between flex items-center"
               onClick={() => handleClick(item.title)}

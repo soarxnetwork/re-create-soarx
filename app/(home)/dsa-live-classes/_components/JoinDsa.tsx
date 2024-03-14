@@ -10,8 +10,10 @@ const JoinDsa = () => {
       <p className=" text-white text-3xl">
         JOIN ALPHA <span className=" text-rose-400">PLUS</span> - WINTER BATCH
       </p>
-      <p className=" text-white">Starting from 24th Dec, 2023</p>
-      <button className=" bg-white px-6 py-3 rounded-2xl">Join Now</button>
+      <p className=" text-white">Starting from 1st April, 2021</p>
+      <button className=" bg-white px-6 py-3 rounded-2xl">
+        <a href="https://pages.razorpay.com/dsa-soarx">Join Now</a>
+      </button>
     </article>
   );
 };

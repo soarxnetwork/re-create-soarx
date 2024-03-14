@@ -7,6 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,6 +25,7 @@ const config: Config = {
         textColor: "#545759",
         dsaPrimary: "#6674CC",
         dsaSecondary: "#f8f8fd",
+        primaryPurple: "#9241D4",
         // ! Second DSA
         secondDsaPrimary: "#2F89FC",
         secondDsaBlack: "#2C3454",

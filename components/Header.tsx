@@ -1,5 +1,10 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  ChangeEventHandler,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,45 +13,27 @@ import { usePathname, useRouter } from "next/navigation";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
 import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
-
+import { cn } from "@/lib/utils";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import HeaderDropdown from "./HeaderDropdown";
 const Header = ({ admin }: User) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
-  const [selectedDsa, setSelectedDsa] = useState<null | typeof dsa>(null);
-
-  const dsa = [
-    {
-      name: "DSA Live Classes",
-      code: "/dsa-live-classes",
-    },
-    {
-      name: "Campus Ambassador Program",
-      code: "/campus-ambassador",
-    },
-  ];
-
-  const handleChange = (e: DropdownChangeEvent) => {
-    setSelectedDsa(e.value);
-    router.push(e.value.code);
-  };
-
-  const actualDsa = dsa.find((d) => d.code === pathname);
-
-  useEffect(() => {
-    if (pathname.includes(actualDsa?.code!)) {
-      setSelectedDsa(null);
-    }
-  }, [pathname, actualDsa]);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
   return (
     <header>
-      <div className="mt-6 pr-40">
-        <nav id="main-navbar" className="navbar container rounded-lg h-[70px]" style={{paddingLeft:16, paddingRight: 16}}>
+      <div className="container mt-6">
+        <nav
+          id="main-navbar"
+          className="navbar container rounded-lg h-[70px]"
+          style={{ paddingLeft: 16, paddingRight: 16 }}
+        >
           <div className=" md:grid md:grid-cols-3 flex justify-between h-[70px]">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
@@ -68,7 +55,7 @@ const Header = ({ admin }: User) => {
               }
             >
               <div>
-                <ul className="flex items-center nav-ul font-normal text-lg text-black gap-8">
+                <ul className="flex items-center nav-ul  text-lg text-black gap-8 font-medium">
                   <li
                     className={
                       pathname === "/"
@@ -76,7 +63,9 @@ const Header = ({ admin }: User) => {
                         : "rounded-md"
                     }
                   >
-                    <Link href="/">Home</Link>
+                    <Link className=" hover:text-primaryPurple" href="/">
+                      Home
+                    </Link>
                   </li>
                   <li
                     className={
@@ -85,17 +74,12 @@ const Header = ({ admin }: User) => {
                         : "rounded-md"
                     }
                   >
-                    <Link href="/events">Events</Link>
+                    <Link className=" hover:text-primaryPurple" href="/events">
+                      Events
+                    </Link>
                   </li>
 
-                  <Dropdown
-                    value={selectedDsa}
-                    onChange={handleChange}
-                    options={dsa}
-                    optionLabel="name"
-                    placeholder={actualDsa?.name || "Initiatives"}
-                    className="w-full md:w-14rem"
-                  />
+                  <HeaderDropdown />
 
                   {admin === Admin.Superadmin && (
                     <li
@@ -105,7 +89,9 @@ const Header = ({ admin }: User) => {
                           : "rounded-md"
                       }
                     >
-                      <Link href="/admin">Admin</Link>
+                      <Link className=" hover:text-primaryPurple" href="/admin">
+                        Admin
+                      </Link>
                     </li>
                   )}
                 </ul>
@@ -117,7 +103,7 @@ const Header = ({ admin }: User) => {
                   <SignedOut>
                     <Link
                       href="/sign-in"
-                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF] md:block hidden  "
+                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF] md:block hidden font-semibold  "
                     >
                       Sign in
                     </Link>

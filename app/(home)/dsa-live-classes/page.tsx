@@ -26,7 +26,7 @@ const DsaPage = () => {
       <CurriculumDsa />
       <OverviewDsa />
       <LecturesDsa />
-      <BrandDsa />
+      {/* <BrandDsa /> */}
       <PlacementDsa />
       <ProfileDsa />
       <CertifiedDsa />

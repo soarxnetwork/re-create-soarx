@@ -8,7 +8,7 @@ const PlacementDsa = () => {
       color: "red",
       title: "Top Instructors",
       description:
-        "Learn Live from instructors working in companies like Microsoft, Amazon, Google, Atlassian etc.",
+        "Learn Live from instructors working in companies like Microsoft, Nagarro, Amazon, Paytm and InsuranceDekho .",
     },
     {
       // icon: <FaHtml5 size={42} />,

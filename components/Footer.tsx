@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="footer-content">
             <div className="header-img flex items-center gap-3 ">
               <Image
-                  src={"/images/Soarx-transparent-logo.png"}
+                src={"/images/Soarx-transparent-logo.png"}
                 width={210}
                 height={210}
                 className=" bg-transparent"
@@ -38,13 +38,13 @@ const Footer = () => {
             <h3>Quick Links</h3>
             <ul className="flex flex-col gap-3">
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Privacy_policy"}>Privacy Policy</Link>
+                <Link href={"/privacy_policy"}>Privacy Policy</Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Refund"}>Refund & Cancellation Policy</Link>
+                <Link href={"/refund"}>Refund & Cancellation Policy</Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/Terms"}>Terms & Conditions</Link>
+                <Link href={"/terms"}>Terms & Conditions</Link>
               </li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <BsTelephone className="text-xl font-medium" />
                 <a href="tel:+91 8708686261" title="phone-number">
-                +91 8708686261
+                  +91 8708686261
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -73,7 +73,10 @@ const Footer = () => {
                 <div>
                   <a href="https://x.com/SoarXNetwork">
                     <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
-                      <FontAwesomeIcon icon={faXTwitter} style={{color: 'white'}} />{" "}
+                      <FontAwesomeIcon
+                        icon={faXTwitter}
+                        style={{ color: "white" }}
+                      />{" "}
                     </div>
                   </a>
                 </div>

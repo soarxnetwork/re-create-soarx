@@ -1,58 +1,96 @@
 export const itemDropdown = [
   {
-    title: "Programming with Java",
+    title: "Week 1 ",
     items: [
-      "Flowcharts & Pseudocode",
-      "Variables & Data Types",
-      "Operators",
-      "Conditional Statements",
-      "Loops (Flow Control)",
-      "Patterns",
-      "Functions & Methods",
+      "Loops",
+      "Class",
+      "Functions",
+      "Time Complexity",
+      "Memory Allocation",
+    ],
+  },
+  {
+    title: "Week 2 ",
+    items: [
+      "Array",
       "Strings",
-    ],
-  },
-  {
-    title: "Data Structures & Algorithms",
-    items: [
       "Sorting Algorithms",
-      "Bit Manipulation",
-      "Object Orientation (OOPs)",
-      "Recursion & Backtracking",
-      "Divide & Conquer",
-      "ArrayLists",
-      "Linked Lists",
-      "Stacks & Queues",
-      "Binary Trees",
-      "Binary Search Trees",
+      "Comparison between different sorting algorithms",
     ],
   },
   {
-    title: "Advanced DSA",
+    title: "Week 3 ",
     items: [
-      "HashMaps & HashSets",
-      "Bit Manipulation",
-      "Heaps (Priority Queue)",
-      "Tries",
-      "Graph",
-      "Greedy Algorithms",
-      "Dynamic Programming",
-      "Segment Trees",
-      "Binary Trees",
-      "Binary Search Trees",
+      "Bubble Sort",
+      "Selection Sort",
+      "Insertion Sort",
+      "Merge Sort",
+      "Quick Sort",
+      "Heap Sort",
+    ],
+  },
+  {
+    title: "Week 4",
+    items: [
+      "Linked Lists",
+      "Insertion",
+      "Deletion",
+      "Mid detection",
+      "Circle detection",
+    ],
+  },
+  {
+    title: "Week 5 ",
+    items: ["Stack", "Queue", "Implementations", "Applications", "Problems"],
+  },
+  {
+    title: "Week 6 ",
+    items: ["Priority Queue", "HashSet", "HashMap", "Operations", "Complexity"],
+  },
+  {
+    title: "Week 7 ",
+    items: [
+      "Greedy Algorithm",
+      "Recursion",
+      "Approaches",
+      "Optimization",
+      "Problems",
+    ],
+  },
+  {
+    title: "Week 8 ",
+    items: ["Dynamic Programming", "Approaches", "Optimization", "Problems"],
+  },
+  {
+    title: "Week 9 ",
+    items: [
+      "Binary Tree",
+      "Binary Search Tree",
+      "Traversals",
+      "Operations",
+      "Complexity",
+    ],
+  },
+  {
+    title: "Week 10",
+    items: [
+      "Graphs",
+      "Representations",
+      "Traversals",
+      "Shortest Path Algorithms",
     ],
   },
 ];
 
-export const itemOverview = [
-  "Complete Java Language",
-  "Complete Data Structures & Algorithms",
-  "Live Resume & Interview Preparation",
-  "Top Industry Instructors",
-  "300+ Coding Questions on All Important Topics (asked by Top Companies)",
-  "Doubt Assistance",
-  "Library Feature for Level Up",
-  "New (Live + VOD) Batch",
+export const itemOverview: string[] = [
+  "Live DSA Classes",
+  "3 days/week",
+  "24/7 Doubt Support",
+  "Community Support",
+  "Sessions on Resume/Interview preparation",
+  "Coding questions on all Important Data Structures",
+  "Sessions on LinkedIn/Github Optimisation",
+  "Recording for every lecture",
 ];
 
 export const itemFaq = [

@@ -10,13 +10,13 @@ const LecturesDsa = () => {
       icon: <SiSololearn className=" fill-dsaPrimary" />,
       title: "LECTURES",
       desc: "Lectures that cover all important DSA for internships/placements.",
-      date: "Batch start date 24th Dec, 2023. Alternate Day Schedule",
+      date: "Batch start date is 1st April, 2024. Alternate Day Schedule",
     },
     {
       icon: <FaEdit className=" fill-dsaPrimary" />,
       title: "QUESTIONS PRACTICE",
-      desc: "30 0+ Carefully Curated & Solved Questions Practice",
-      date: "Course Duration - 4 months Course access is for one year.",
+      desc: "300+ Carefully Curated & Solved Questions Practice",
+      date: "Course Duration - 2.5 months .",
     },
     {
       icon: <MdAssistWalker className=" fill-dsaPrimary" />,
@@ -27,7 +27,7 @@ const LecturesDsa = () => {
   ];
   return (
     <article>
-      <div className="container py-12">
+      <div className="container mx-auto py-12">
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ">
           {itemLectures.map((item) => {
             return (

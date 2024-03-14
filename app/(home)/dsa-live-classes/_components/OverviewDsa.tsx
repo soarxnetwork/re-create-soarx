@@ -4,7 +4,7 @@ import React from "react";
 
 const OverviewDsa = () => {
   return (
-    <article className=" bg-dsaSecondary w-full  py-12 ">
+    <article className=" bg-dsaSecondary w-full container  py-12 ">
       <div className="container space-y-6">
         <div className=" ">
           <h3 className=" font-bold text-3xl">BATCH OVERVIEW</h3>
