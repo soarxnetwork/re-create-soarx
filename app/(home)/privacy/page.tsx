@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy",
+};
 
 function PolicyPage() {
   return (
@@ -16,8 +22,8 @@ function PolicyPage() {
         your choices regarding access, use and correction of personal
         information and your rights in relation to your personal information and
         how you can contact us or authorities in the event you have a grievance
-        or complaint. By visiting www.soarx.tech, you agree to be bound by
-        the terms and conditions of this Privacy Policy. Kindly go through this
+        or complaint. By visiting www.soarx.tech, you agree to be bound by the
+        terms and conditions of this Privacy Policy. Kindly go through this
         Privacy Policy carefully. By using the Website, you indicate that you
         understand and abide by this Policy. If you are not in agreement with
         the terms and conditions of this Privacy Policy, kindly do not access
@@ -64,39 +70,40 @@ function PolicyPage() {
         our website or complete the purchase process of one of our courses, we
         may collect the following information that you will voluntarily provide
         to us through one of our contact forms, chat or phone session, such as:
-        <br></br>1. Information pertaining to personal details, like name, email id,
-        photograph, contact address, contact number, IP address or geographic
-        location <br /> 2. Information pertaining to identity, like your mark-sheets,
-        Aadhar /Voter ID/ Passport details; <br /> 3. Information pertaining to
-        billing, like credit/debit card number and billing address; <br /> 4. Username
-        or password; <br /> 5. Ratings or reviews, syllabus/ course preferences,
-        account settings; and <br /> 6. Information provided to us through interaction
-        with customer service, surveys or promotions. We collect data about your
-        interactions with us and also the information regarding the device
-        (Laptop, computer, mobile, etc) used to access our service. <br /> This
-        information contains your activity on our Website, and search queries;
-        your interactions details with customer service, and if you call us ,
-        your contact number and recordings of your calls; device IDs or other
-        unique identifiers, device and software characteristics, connection
-        information, statistics regarding page views, referral URLs, IP address,
-        browser and web server log information, and information collected via
-        the use of cookies. With the aid of back end applications, we strive to
-        provide better services and quality interaction with teachers, depending
-        on your interest. We may also seek this information at other instances,
-        such as when you enter contests or other marketing promotions sponsored
-        by us and/or our partners. If you use a functionality that requires fee
-        payment, options will appear. In case of payments via credit or debit
-        card, we will redirect you to registered payment gateway razorpay or
-        paytm. You may store and save your payment details like card numbers
-        with the gateway. We cannot access this data. All payment transactions
-        are processed through secure payment gateway providers. When you access
-        any of our paid products, we store information about the web pages on
-        our servers. This helps us to track items that have been completed by
-        you, and those that you need to see. The user’s full name and his/her
-        display picture can be publicly displayed on the Website. SoarX can seek
-        more information regarding billing information, address, certificates,
-        etc depending on what profile and what services they are seeking. SoarX
-        can use technologies like cookies, clear gifs, log files, etc to help
+        <br></br>1. Information pertaining to personal details, like name, email
+        id, photograph, contact address, contact number, IP address or
+        geographic location <br /> 2. Information pertaining to identity, like
+        your mark-sheets, Aadhar /Voter ID/ Passport details; <br /> 3.
+        Information pertaining to billing, like credit/debit card number and
+        billing address; <br /> 4. Username or password; <br /> 5. Ratings or
+        reviews, syllabus/ course preferences, account settings; and <br /> 6.
+        Information provided to us through interaction with customer service,
+        surveys or promotions. We collect data about your interactions with us
+        and also the information regarding the device (Laptop, computer, mobile,
+        etc) used to access our service. <br /> This information contains your
+        activity on our Website, and search queries; your interactions details
+        with customer service, and if you call us , your contact number and
+        recordings of your calls; device IDs or other unique identifiers, device
+        and software characteristics, connection information, statistics
+        regarding page views, referral URLs, IP address, browser and web server
+        log information, and information collected via the use of cookies. With
+        the aid of back end applications, we strive to provide better services
+        and quality interaction with teachers, depending on your interest. We
+        may also seek this information at other instances, such as when you
+        enter contests or other marketing promotions sponsored by us and/or our
+        partners. If you use a functionality that requires fee payment, options
+        will appear. In case of payments via credit or debit card, we will
+        redirect you to registered payment gateway razorpay or paytm. You may
+        store and save your payment details like card numbers with the gateway.
+        We cannot access this data. All payment transactions are processed
+        through secure payment gateway providers. When you access any of our
+        paid products, we store information about the web pages on our servers.
+        This helps us to track items that have been completed by you, and those
+        that you need to see. The user’s full name and his/her display picture
+        can be publicly displayed on the Website. SoarX can seek more
+        information regarding billing information, address, certificates, etc
+        depending on what profile and what services they are seeking. SoarX can
+        use technologies like cookies, clear gifs, log files, etc to help
         understand how you interact with our site and services, so as to render
         a better experience.
       </p>
