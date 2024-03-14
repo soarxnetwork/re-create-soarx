@@ -15,9 +15,9 @@ const HomeSlider = () => {
           <h2 className="text-primary text-xl  ">
             Empowering Minds. Unleashing Creativity
           </h2>
-          <h1>AR Club</h1>
+          <h1>SoarX Network</h1>
           <p className="pt-5 text-lg ">
-            At AR Club, we believe in harnessing the power of technology to
+            At SoarX, we believe in harnessing the power of technology to
             shape the future. Our nationwide community brings together
             passionate students, industry experts, and leading companies to
             create an immersive learning environment.
