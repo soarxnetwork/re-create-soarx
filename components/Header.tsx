@@ -47,7 +47,7 @@ const Header = ({ admin }: User) => {
     <header>
       <div className="mt-6 pr-40">
         <nav id="main-navbar" className="navbar container rounded-lg ">
-          <div className=" flex items-center justify-between">
+          <div className=" md:grid md:grid-cols-3 flex justify-between">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
@@ -59,16 +59,11 @@ const Header = ({ admin }: User) => {
                 />
               </div>
             </Link>
-            <div
-              className="mbl-bars"
-              onClick={() => setShowNavbar(!showNavbar)}
-            >
-              <Hamburger distance="md" size={25} />
-            </div>
+
             <div
               className={
                 showNavbar
-                  ? "flex items-center side-nav-flex justify-between gap-52 bg-[#9241d40d]"
+                  ? "flex items-center side-nav-flex justify-between gap-52 "
                   : "flex items-center side-nav-flex justify-between gap-52"
               }
             >
@@ -115,16 +110,14 @@ const Header = ({ admin }: User) => {
                   )}
                 </ul>
               </div>
-              {/* <div className="btn-primary rounded-md white flex items-center gap-2">
-                <AiOutlineMail className="bg-transparent fill-white" />
-                Contact Us
-              </div> */}
+            </div>
+            <div className="flex items-center justify-self-end">
               {isClient && (
                 <>
                   <SignedOut>
                     <Link
                       href="/sign-in"
-                      className="bg-[#9241d4] px-4 py-[4px] rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF]"
+                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF] md:block hidden  "
                     >
                       Sign in
                     </Link>
@@ -132,6 +125,12 @@ const Header = ({ admin }: User) => {
                   <SignedIn>
                     <UserButton afterSignOutUrl="/" />
                   </SignedIn>
+                  <div
+                    className="mbl-bars"
+                    onClick={() => setShowNavbar(!showNavbar)}
+                  >
+                    <Hamburger distance="md" size={25} />
+                  </div>
                 </>
               )}
             </div>
