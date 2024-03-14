@@ -92,24 +92,6 @@ const Header = ({ admin }: User) => {
                   >
                     <Link href="/events">Events</Link>
                   </li>
-                  <li
-                    className={
-                      pathname.includes("/about")
-                        ? "bg-[#9241d40d] rounded-md"
-                        : "rounded-md"
-                    }
-                  >
-                    <Link href="/about">About</Link>
-                  </li>
-                  {/* <li
-                    className={
-                      pathname.includes("/dsa")
-                        ? "bg-[#9241d40d] rounded-md"
-                        : "rounded-md"
-                    }
-                  >
-                    <Link href="/dsa">Dsa</Link>
-                  </li> */}
 
                   <Dropdown
                     value={selectedDsa}
