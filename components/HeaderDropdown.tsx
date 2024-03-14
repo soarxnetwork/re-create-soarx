@@ -35,16 +35,16 @@ const HeaderDropdown = () => {
     <li
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative w-full h-full "
+      className="relative  "
     >
       <div>
-        <div className="relative flex items-center gap-2">
+        <div className="relative flex items-center gap-2 ">
           <p
-            className={cn("select-none", {
+            className={cn("select-none truncate ", {
               "text-primaryPurple": hovered,
             })}
           >
-            {actualDsa?.name ? truncateWord(actualDsa.name, 12) : "Initiatives"}
+            {actualDsa?.name ? actualDsa.name : "Initiatives"}
           </p>
           <span>
             <IoMdArrowDropdown
