@@ -9,14 +9,14 @@ function PolicyPage() {
       <p className="py-10 px-32 text-[1.2rem]">
         This Privacy Policy discloses the privacy practices for SoarX (“We/we”
         or “Us/us”) with regard to Your (“You/you” or “Your/your”) use of the
-        online platform www.apnacollege.in (“Website”). This Privacy Policy and
+        online platform www.soarx.tech (“Website”). This Privacy Policy and
         Terms of Use describes our current practices regarding, including your
         choices in relation to how we collect, compile, store, use, share and
         secure your personal information across our Website. It also describes
         your choices regarding access, use and correction of personal
         information and your rights in relation to your personal information and
         how you can contact us or authorities in the event you have a grievance
-        or complaint. By visiting www.apnacollege.in, you agree to be bound by
+        or complaint. By visiting www.soarx.tech, you agree to be bound by
         the terms and conditions of this Privacy Policy. Kindly go through this
         Privacy Policy carefully. By using the Website, you indicate that you
         understand and abide by this Policy. If you are not in agreement with
@@ -64,16 +64,16 @@ function PolicyPage() {
         our website or complete the purchase process of one of our courses, we
         may collect the following information that you will voluntarily provide
         to us through one of our contact forms, chat or phone session, such as:
-        1. Information pertaining to personal details, like name, email id,
+        <br></br>1. Information pertaining to personal details, like name, email id,
         photograph, contact address, contact number, IP address or geographic
-        location 2. Information pertaining to identity, like your mark-sheets,
-        Aadhar /Voter ID/ Passport details; 3. Information pertaining to
-        billing, like credit/debit card number and billing address; 4. Username
-        or password; 5. Ratings or reviews, syllabus/ course preferences,
-        account settings; and 6. Information provided to us through interaction
+        location <br /> 2. Information pertaining to identity, like your mark-sheets,
+        Aadhar /Voter ID/ Passport details; <br /> 3. Information pertaining to
+        billing, like credit/debit card number and billing address; <br /> 4. Username
+        or password; <br /> 5. Ratings or reviews, syllabus/ course preferences,
+        account settings; and <br /> 6. Information provided to us through interaction
         with customer service, surveys or promotions. We collect data about your
         interactions with us and also the information regarding the device
-        (Laptop, computer, mobile, etc) used to access our service. This
+        (Laptop, computer, mobile, etc) used to access our service. <br /> This
         information contains your activity on our Website, and search queries;
         your interactions details with customer service, and if you call us ,
         your contact number and recordings of your calls; device IDs or other
@@ -170,7 +170,7 @@ function PolicyPage() {
         generally users use the same password on multiple sites, to prevent any
         kind of theft, piracy or unauthorised access. If you think that your
         SoarX account has been compromised, you can contact us by writing an
-        email to support@apnacollege.in.
+        email to soarxnetwork@gmail.com.
       </p>
       <h2 className="font-bold text-[#000000] text-2xl px-32 ">
         7. CHANGES TO THIS POLICY
