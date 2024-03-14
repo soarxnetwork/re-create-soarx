@@ -16,7 +16,7 @@ function TermsPage() {
         1. SoarX provides online courses and conducts
         online classes, live demo, doubt clearing sessions for the students
         seeking to enrol for such courses (the &quot; Services&quot;), which
-        Services are accessible at https://www.apnacollege.in/ and any other
+        Services are accessible at https://www.soarx.tech/ and any other
         websites through which SoarX makes the Services available (collectively,
         the &quot;Site &quot;) and as applications for mobile, tablet and other
         smart devices and application program interfaces (collectively, the
