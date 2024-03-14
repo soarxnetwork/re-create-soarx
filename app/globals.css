@@ -90,12 +90,12 @@ p {
   -o-transition: 0.3s all ease-in-out;
   background: var(--secondary-color);
 }
-.container {
+/* .container {
   max-width: 1200px;
-  /* margin: auto; */
+  margin: auto;
   padding: 0 20px;
   letter-spacing: 1px;
-}
+} */
 
 /* .color-effect {
   background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
