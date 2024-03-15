@@ -90,8 +90,8 @@ p {
   -o-transition: 0.3s all ease-in-out;
   background: var(--secondary-color);
 }
-.container {
-  max-width: 1200px;
+.custom-container {
+  
   padding: 0 20px;
   letter-spacing: 1px;
 }
