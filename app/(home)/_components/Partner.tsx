@@ -10,7 +10,7 @@ import { imgPartnerLists } from "@/constants/homepage";
 
 const Partners = () => {
   return (
-    <section className="section px-32">
+    <section className="section px-24">
       <div className="container">
         <h1 className="text-center mb-10 text-[80px] text-[#000000] font-bold">Our Partners</h1>
 

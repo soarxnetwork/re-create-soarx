@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Testimonial = () => {
   return (
-    <section className="section px-32">
+    <section className="section px-24">
       <div className="container">
         <h1 className="text-center text-[80px] text-[#000000] font-bold">Testimonials</h1>
         <div className="mt-5">

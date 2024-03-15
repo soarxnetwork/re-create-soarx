@@ -20,7 +20,7 @@ interface EventProps {
 
 const Events = ({ events }: EventProps) => {
   return (
-    <section className="section px-32">
+    <section className="section px-24">
       <div className="container mx-auto">
         <h1 className="text-center text-[80px] text-[#000000] font-bold">Recent Events</h1>
         <section className="all-events pt-10">

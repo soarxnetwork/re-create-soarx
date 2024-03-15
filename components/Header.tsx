@@ -31,7 +31,7 @@ const Header = ({ admin }: User) => {
       <div className="custom-container mt-4 ">
         <nav
           id="main-navbar"
-          className="navbar rounded-2xl h-[70px] mx-[60px]"
+          className="navbar rounded-2xl h-[70px] mx-[75px]"
           style={{ paddingLeft: 16, paddingRight: 16 }}
         >
           <div className=" md:grid md:grid-cols-3 justify-between h-[70px]">

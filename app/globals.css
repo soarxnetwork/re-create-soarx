@@ -1154,3 +1154,40 @@ input {
   box-shadow: 0 16px 24px -12px rgba(0, 0, 0, 0.09);
   @apply absolute p-4 w-60 h-auto rounded-xl  flex flex-col bg-white z-50;
 }
+
+.join-us-btn {
+  border-radius: 25px;
+  color: #9241d4;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #530097;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.join-us-btn:hover {
+  color: white;
+}
+
+.join-us-btn::before {
+  
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background: linear-gradient(115deg, #bf97df, #9f32f8, #490084);
+  z-index: -1;
+  transition: all 1s;
+}
+
+.join-us-btn:hover::before {
+  width: 160%;
+}
