@@ -12,14 +12,16 @@ const HomeSlider = () => {
     <section className="banner-section flex items-center justify-center px-24">
       <div className="container flex banner-container items-center gap-5 justify-between">
         <div className="w-3/6	">
-          <h2 className=" text-[#9241d4] text-xl pt-6 font-semibold">
+          <h2 className=" text-[#9241d4] text-xl font-semibold">
             Empowering Minds. Unleashing Creativity
           </h2>
           <h1 className="text-[80px] font-bold text-[#000000]">SoarX Network</h1>
           <p className="pt-5 text-[30px] ">
           SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons
           </p>
-          <Button name="Join Us" />
+          <button className="join-us-btn mt-10">
+              Join Us
+            </button>
         </div>
         <div className="w-3/6">
           <Swiper
