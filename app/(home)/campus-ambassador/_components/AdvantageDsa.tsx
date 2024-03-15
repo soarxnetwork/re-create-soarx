@@ -7,7 +7,7 @@ const AdvantageDsa = () => {
   return (
     <article className="">
       <div className="container space-y-8">
-        <HeadingSecondDsa text="Experience the HackerEarth advantage" />
+        <HeadingSecondDsa text="Experience the SoarX advantage" />
         <div className="flex flex-wrap items-center justify-center gap-4">
           {advantageDsa2.map((item) => (
             <AdvantageCard key={item.title} {...item} />

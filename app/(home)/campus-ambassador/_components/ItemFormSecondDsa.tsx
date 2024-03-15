@@ -12,17 +12,18 @@ const ItemFormSecondDsa = () => {
     {
       icon: <FaForumbee size={61} />,
       number: 2,
-      title: " Take the assessment.",
+      title: " We will contact you for an interview meeting/call.",
     },
     {
       icon: <FaForumbee size={61} />,
       number: 3,
-      title: " You are officially a SoarX if you pass the test!",
+      title:
+        " You are officially a SoarX Campus Ambassador if you pass the interview",
     },
   ];
   return (
     <div className="space-y-8 sticky lg:w-[412px] top-44">
-      <HeadingSecondDsa text="Become a HackerEarth Campus Ambassador in 3 simple steps" />
+      <HeadingSecondDsa text="Become a SoarX Campus Ambassador in 3 simple steps" />
       <div className="space-y-4">
         {items.map((item) => (
           <div

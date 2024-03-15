@@ -93,6 +93,27 @@ export const itemOverview: string[] = [
   "Recording for every lecture",
 ];
 
+export const instructorsDsa = [
+  {
+    title: "Niket Thakur",
+    image: "/images/Niket-Thakur.png",
+    description:
+      "Pulkit is a DSA expert with experience working in companies like Google, CodeNation & HackerRank. Not only that, he is also one of the most celebrated Competitive Programmers in India who is a master on CodeForces and hasa 6-star rating on CodeChef.",
+    subDescription:
+      "Beyond the classroom, he has been inspiring students for over 4 years through his YouTube videos. Moreover, He is a seasoned problem-solver who has solved over 2000 problems across various platforms.",
+    logos: [],
+  },
+  {
+    title: "Deepak Kumar",
+    image: "/images/Deepak-Kumar.png",
+    description:
+      "Pulkit is a DSA expert with experience working in companies like Google, CodeNation & HackerRank. Not only that, he is also one of the most celebrated Competitive Programmers in India who is a master on CodeForces and hasa 6-star rating on CodeChef.",
+    subDescription:
+      "Beyond the classroom, he has been inspiring students for over 4 years through his YouTube videos. Moreover, He is a seasoned problem-solver who has solved over 2000 problems across various platforms.",
+    logos: ["Google", "CodeNation", "HackerRank"],
+  },
+];
+
 export const itemFaq = [
   {
     title: "What are Data Structures and Algorithms(DSA)?",

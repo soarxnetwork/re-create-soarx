@@ -14,6 +14,7 @@ const FormCampus = () => {
   const toast = useRef<any>(null);
 
   const [isPending, startTransition] = useTransition();
+  const [isSuccess, setIsSuccess] = useState(false);
   const {
     register,
     handleSubmit,
@@ -57,7 +58,7 @@ const FormCampus = () => {
     >
       <Toast ref={toast} position="bottom-right" />
       <div>
-        <label htmlFor="fullname">Fullname</label>
+        <label htmlFor="fullname">Full name</label>
         <input
           type="text"
           id="fullname"
@@ -66,14 +67,16 @@ const FormCampus = () => {
         />
         {errors.fullname && <ErrorFormDsa message={errors.fullname.message} />}
       </div>
-      <div>
-        <label htmlFor="College email ID">College email ID</label>
-        <label
-          htmlFor="College email ID"
-          className="text-sm text-secondDsaBlack"
-        >
-          (if unavailable, please tell the alternate email address)
-        </label>
+      <div className="space-y-4">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="College email ID">College email ID</label>
+          <label
+            htmlFor="College email ID"
+            className="text-sm text-secondDsaBlack"
+          >
+            (if unavailable, please tell the alternate email address)
+          </label>
+        </div>
         <input
           type="text"
           id="College email ID"
@@ -141,15 +144,18 @@ const FormCampus = () => {
         </div>
       </div>
       <div>
-        <label htmlFor="Are you a part of any coding club in your college?">
-          Are you a part of any coding club in your college?
-        </label>
-        <label
-          htmlFor="Are you a part of any coding club in your college?"
-          className=" text-sm text-secondDsaBlack"
-        >
-          If yes, please mention which ones.
-        </label>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="Are you a part of any coding club in your college?">
+            Are you a part of any coding club in your college?
+          </label>
+          <label
+            htmlFor="Are you a part of any coding club in your college?"
+            className=" text-sm text-secondDsaBlack"
+          >
+            If yes, please mention which ones.
+          </label>
+        </div>
+
         <input
           type="text"
           id="Are you a part of any coding club in your college?"
@@ -161,12 +167,12 @@ const FormCampus = () => {
         )}
       </div>
       <div>
-        <label htmlFor="What is the strength of STEM students in your college?">
-          What is the strength of STEM students in your college?
+        <label htmlFor="What is the strength of CSE/IT students in your college?">
+          What is the strength of CSE/IT students in your college?
         </label>
         <input
           type="text"
-          id="What is the strength of STEM students in your college?"
+          id="What is the strength of CSE/IT students in your college?"
           className="inputDsa2  "
           {...register("strenghtStem")}
         />
@@ -175,7 +181,13 @@ const FormCampus = () => {
         )}
       </div>
       <div>
-        <ButtonSecondDsa text="Register Now" />
+        <button
+          disabled={isPending}
+          type="submit"
+          className="px-8 font-bold py-3 bg-secondDsaSecondary text-white rounded-xl text-lg"
+        >
+          {isPending ? "Loading..." : "Register Now"}
+        </button>
       </div>
     </motion.form>
   );
