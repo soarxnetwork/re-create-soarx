@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="footer-content">
             <div className=" flex items-center gap-3 ">
               <Image
-                src={"/images/SoarX-transparent-logo-white.png"}
+                src={"/images/SoarX-transparent-logo-white-cropped.png"}
                 width={130}
                 height={0}
                 className=" bg-transparent"
