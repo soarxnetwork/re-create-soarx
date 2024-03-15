@@ -5,13 +5,13 @@ const Discord = () => {
     <section className="section">
       <div className="container">
         <div className="surface-0 text-700 text-center">
-          <div className="text-primary font-bold mb-3">
+          <div className="text-primary text-[40px] font-bold mb-3">
             &nbsp;POWERED BY DISCORD
           </div>
-          <div className="text-900 font-bold  mb-3">
+          <div className="text-900 font-bold text-[80px]  mb-3">
             Join Our Discord Community
           </div>
-          <div className="text-700 text-2xl mb-5">
+          <div className="text-[30px] mb-5">
             Join our discord server and get the latest updates now!
           </div>
           <a href="https://discord.gg/tH6Cm3fRza">

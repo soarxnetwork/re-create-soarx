@@ -6,7 +6,7 @@ const OurAim = () => {
     <section className="section our-aim px-32">
       <div className="container">
         <h1 className="text-center font-bold text-[#000000] text-[80px]">Our Aim</h1>
-        <p className=" w-full pt-5 text-lg   text-center leading-10 text-[32px]">
+        <p className=" w-full pt-5 text-[25px]   text-center leading-10 text-[32px]">
           Our mission is to foster a community that promotes curiosity, nurtures
           innovation, and supports the growth of aspiring technologists. Through
           our carefully curated events, engaging sessions, and exciting
