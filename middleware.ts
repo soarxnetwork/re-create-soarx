@@ -16,7 +16,7 @@ export default authMiddleware({
     "/api/uploadthing(.*)",
     "/dsa",
     "/privacy",
-    "/terms&conditions",
+    "/terms",
     "/refund-policy",
     "/campus-ambassador",
     "/dsa-live-classes",
