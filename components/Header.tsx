@@ -1,21 +1,16 @@
 "use client";
 import React, {
-  ChangeEventHandler,
-  useCallback,
+  
   useEffect,
   useState,
 } from "react";
-import { AiOutlineMail } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 import { Fade as Hamburger } from "hamburger-react";
 import { usePathname, useRouter } from "next/navigation";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
-import { Dropdown, DropdownChangeEvent } from "primereact/dropdown";
-import { cn } from "@/lib/utils";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+
 import HeaderDropdown from "./HeaderDropdown";
 const Header = ({ admin }: User) => {
   const router = useRouter();
@@ -103,9 +98,9 @@ const Header = ({ admin }: User) => {
                   <SignedOut>
                     <Link
                       href="/sign-in"
-                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#694885] duration-300 ease-in-out md:block hidden font-semibold  "
-                    >
-                      Sign in
+                      className="join-us-btn z-10">
+                      Sign In
+              
                     </Link>
                   </SignedOut>
                   <SignedIn>

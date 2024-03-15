@@ -7,9 +7,6 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
   FaInstagram,
   FaLinkedinIn,
-  FaWhatsapp,
-  FaFacebookF,
-  FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
 import { BsTelephone } from "react-icons/bs";
@@ -20,7 +17,7 @@ const Footer = () => {
       <div className="custom-container">
         <div className="footer-grid grid pl-[100px]">
           <div className="footer-content">
-            <div className=" pl-14 flex items-center gap-3 ">
+            <div className=" flex items-center gap-3 ">
               <Image
                 src={"/images/SoarX-transparent-logo-white.png"}
                 width={130}
@@ -29,7 +26,7 @@ const Footer = () => {
                 alt="Header Logo"
               />
             </div>
-            <p className="text-center">
+            <p className="">
               SoarX is a dynamic nationwide community dedicated to empowering
               students through impactful events, sessions, and hackathons.
             </p>
@@ -91,7 +88,7 @@ const Footer = () => {
 
                 <div>
                   <a href="https://www.instagram.com/soarxnetwork">
-                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " />
+                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white  instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " />
                   </a>
                 </div>
               </div>
