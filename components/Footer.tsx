@@ -17,7 +17,7 @@ import { AiOutlineMail } from "react-icons/ai";
 const Footer = () => {
   return (
     <section className="footer over-x">
-      <div className="container">
+      <div className="custom-container">
         <div className="footer-grid grid pl-[100px]">
           <div className="footer-content">
             <div className=" pl-14 flex items-center gap-3 ">
