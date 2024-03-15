@@ -28,10 +28,10 @@ const Header = ({ admin }: User) => {
   }, []);
   return (
     <header>
-      <div className="container mt-6">
+      <div className="container mt-6 ">
         <nav
           id="main-navbar"
-          className="navbar container rounded-lg h-[70px]"
+          className="navbar rounded-lg h-[70px] mx-[60px]"
           style={{ paddingLeft: 16, paddingRight: 16 }}
         >
           <div className=" md:grid md:grid-cols-3 flex justify-between h-[70px]">
