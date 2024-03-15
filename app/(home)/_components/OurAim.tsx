@@ -3,7 +3,7 @@ import React from "react";
 
 const OurAim = () => {
   return (
-    <section className="section our-aim px-32">
+    <section className="section our-aim px-24">
       <div className="container">
         <h1 className="text-center font-bold text-[#000000] text-[80px]">Our Aim</h1>
         <p className=" w-full pt-5 text-[25px]   text-center leading-10 text-[32px]">

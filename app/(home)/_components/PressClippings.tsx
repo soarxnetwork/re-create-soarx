@@ -98,7 +98,7 @@ const PressClippings = () => {
   };
 
   return (
-    <section className="section px-32">
+    <section className="section px-24">
       <div className="container">
         <h1 className="text-center pb-10 text-[80px] text-[#000000] font-bold">Press Clippings</h1>
         <div className="gallery">

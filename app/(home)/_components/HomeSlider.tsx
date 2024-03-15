@@ -9,7 +9,7 @@ import { BannerImages } from "@/constants/homepage";
 
 const HomeSlider = () => {
   return (
-    <section className="banner-section flex items-center justify-center px-32">
+    <section className="banner-section flex items-center justify-center px-24">
       <div className="container flex banner-container items-center gap-5 justify-between">
         <div className="w-3/6	">
           <h2 className=" text-[#9241d4] text-xl pt-6 font-semibold">
