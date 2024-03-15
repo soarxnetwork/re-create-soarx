@@ -28,7 +28,7 @@ const Header = ({ admin }: User) => {
   }, []);
   return (
     <header>
-      <div className="container mt-6 ">
+      <div className="custom-container mt-6 ">
         <nav
           id="main-navbar"
           className="navbar rounded-lg h-[70px] mx-[60px]"
