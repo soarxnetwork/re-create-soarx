@@ -28,10 +28,10 @@ const Header = ({ admin }: User) => {
   }, []);
   return (
     <header>
-      <div className="custom-container mt-6 ">
+      <div className="custom-container mt-4 ">
         <nav
           id="main-navbar"
-          className="navbar rounded-lg h-[70px] mx-[60px]"
+          className="navbar rounded-2xl h-[70px] mx-[60px]"
           style={{ paddingLeft: 16, paddingRight: 16 }}
         >
           <div className=" md:grid md:grid-cols-3 justify-between h-[70px]">
@@ -59,8 +59,8 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname === "/"
-                        ? "bg-[#9241d40d] rounded-md"
-                        : "rounded-md"
+                        ? "bg-[#9241d40d] rounded-2xl"
+                        : "rounded-2xl"
                     }
                   >
                     <Link className=" hover:text-primaryPurple" href="/">
@@ -70,8 +70,8 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname.includes("/events")
-                        ? "bg-[#9241d40d] rounded-md"
-                        : "rounded-md"
+                        ? "bg-[#9241d40d] rounded-2xl"
+                        : "rounded-2xl"
                     }
                   >
                     <Link className=" hover:text-primaryPurple" href="/events">
@@ -85,8 +85,8 @@ const Header = ({ admin }: User) => {
                     <li
                       className={
                         pathname.includes("/admin")
-                          ? "bg-[#9241d40d] rounded-md"
-                          : "rounded-md"
+                          ? "bg-[#9241d40d] rounded-2xl"
+                          : "rounded-2xl"
                       }
                     >
                       <Link className=" hover:text-primaryPurple" href="/admin">
@@ -103,7 +103,7 @@ const Header = ({ admin }: User) => {
                   <SignedOut>
                     <Link
                       href="/sign-in"
-                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#AD47FF] md:block hidden font-semibold  "
+                      className="bg-[#9241d4] px-6 py-2 rounded-xl text-[#FFFFFF] hover:bg-[#694885] duration-300 ease-in-out md:block hidden font-semibold  "
                     >
                       Sign in
                     </Link>

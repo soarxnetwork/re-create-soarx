@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-// import './styles/Footer.css';
+import './styles/Footer.css';
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -20,16 +20,16 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid grid pl-[100px]">
           <div className="footer-content">
-            <div className="header-img flex items-center gap-3 ">
+            <div className=" pl-14 flex items-center gap-3 ">
               <Image
-                src={"/images/Soarx-transparent-logo.png"}
-                width={210}
-                height={210}
+                src={"/images/SoarX-transparent-logo-white.png"}
+                width={130}
+                height={0}
                 className=" bg-transparent"
                 alt="Header Logo"
               />
             </div>
-            <p>
+            <p className="text-center">
               SoarX is a dynamic nationwide community dedicated to empowering
               students through impactful events, sessions, and hackathons.
             </p>

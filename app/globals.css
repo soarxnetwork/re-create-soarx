@@ -39,14 +39,14 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  color: var(--text-color);
+  /* color: var(--text-color); */
 }
 
 :root {
   --primary-color: #0061ff;
   --secondary-color: #3381ff;
   --bg-color: white;
-  --text-color: #545759;
+  /* --text-color: #545759; */
 }
 
 h1 {
@@ -58,7 +58,7 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: #9241d4;
   font-weight: 600;
   padding: 10px 30px;
   width: fit-content;
@@ -88,7 +88,7 @@ p {
   -webkit-transition: 0.3s all ease-in-out;
   -moz-transition: 0.3s all ease-in-out;
   -o-transition: 0.3s all ease-in-out;
-  background: var(--secondary-color);
+  background-color: #694885;
 }
 .custom-container {
   
@@ -118,7 +118,7 @@ nav {
 
 .header-img {
   width: 115px;
-
+  
   object-fit: cover;
 }
 
@@ -147,8 +147,8 @@ header {
 /* BANNER SECTION STARTS */
 
 .banner-section {
-  height: 110vh;
-  min-height: 110vh;
+  height: 105vh;
+  min-height: 105vh;
   display: flex;
   align-items: center;
   justify-content: center;
