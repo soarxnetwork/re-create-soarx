@@ -34,7 +34,7 @@ const Header = ({ admin }: User) => {
           className="navbar rounded-lg h-[70px] mx-[60px]"
           style={{ paddingLeft: 16, paddingRight: 16 }}
         >
-          <div className=" md:grid md:grid-cols-3 flex justify-between h-[70px]">
+          <div className=" md:grid md:grid-cols-3 justify-between h-[70px]">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
@@ -50,8 +50,8 @@ const Header = ({ admin }: User) => {
             <div
               className={
                 showNavbar
-                  ? "flex items-center side-nav-flex justify-between gap-60 "
-                  : "flex items-center side-nav-flex justify-between gap-60"
+                  ? "flex items-center side-nav-flex justify-between gap-60 m-auto"
+                  : "flex items-center side-nav-flex justify-between gap-60 m-auto"
               }
             >
               <div>

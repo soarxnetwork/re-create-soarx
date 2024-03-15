@@ -46,7 +46,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="line-on-hover ease-in duration-300 hover:pl-1 ">
-                <Link href={"/terms"}>Terms & Conditions</Link>
+                <Link href={"/terms&conditions"}>Terms & Conditions</Link>
               </li>
             </ul>
           </div>
