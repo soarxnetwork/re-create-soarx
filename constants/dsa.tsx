@@ -101,7 +101,7 @@ export const instructorsDsa = [
       "Software Development Engineer (SDE) at InsuranceDekho, leverages his expertise in building robust software solutions and tackling complex technical challenges. Prior to joining InsuranceDekho, Niket gained valuable experience at Amazon, enhancing his skills in software development and problem-solving",
     subDescription:
       "During college, he served as a teaching assistant at Coding Ninjas, aiding students in clearing doubts, improving question-solving skills with challenging problems, and emphasizing the importance of overlooked details in the Data Structures and Algorithms course. Niket's diverse experience and strong technical skills make him an invaluable resource for developers seeking success in the tech industry.",
-    logos: ["/images/Insurance-Dekho.png", "/images/Amazon.png"],
+    logos: ["/images/Insurance-Dekho.png", "/images/amazon.png"],
   },
   {
     title: "Deepak Kumar",
