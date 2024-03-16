@@ -110,7 +110,7 @@ export const instructorsDsa = [
       " Software Development Engineer (SDE) currently at Amazon, brings extensive experience in software development, problem-solving, and team collaboration. Prior to Amazon, he made significant contributions at Paytm, refining his skills in building robust software solutions and tackling complex technical challenges.",
     subDescription:
       "During college, Deepak served as a teaching assistant at Coding Blocks and Pep Coding, aiding students in clearing doubts, improving question-solving skills with challenging problems, and stressing the significance of overlooked details. Deepak's diverse background and expertise are invaluable for aspiring developers aiming to thrive in the tech industry..",
-    logos: ["/images/Amazon.png", "/images/Paytm.png"],
+    logos: ["/images/amazon.png", "/images/Paytm.png"],
   },
 ];
 
