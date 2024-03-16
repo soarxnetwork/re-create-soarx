@@ -98,19 +98,19 @@ export const instructorsDsa = [
     title: "Niket Thakur",
     image: "/images/Niket-Thakur.png",
     description:
-      "Pulkit is a DSA expert with experience working in companies like Google, CodeNation & HackerRank. Not only that, he is also one of the most celebrated Competitive Programmers in India who is a master on CodeForces and hasa 6-star rating on CodeChef.",
+      "Software Development Engineer (SDE) at InsuranceDekho, leverages his expertise in building robust software solutions and tackling complex technical challenges. Prior to joining InsuranceDekho, Niket gained valuable experience at Amazon, enhancing his skills in software development and problem-solving",
     subDescription:
-      "Beyond the classroom, he has been inspiring students for over 4 years through his YouTube videos. Moreover, He is a seasoned problem-solver who has solved over 2000 problems across various platforms.",
-    logos: [],
+      "During college, he served as a teaching assistant at Coding Ninjas, aiding students in clearing doubts, improving question-solving skills with challenging problems, and emphasizing the importance of overlooked details in the Data Structures and Algorithms course. Niket's diverse experience and strong technical skills make him an invaluable resource for developers seeking success in the tech industry.",
+    logos: ["/images/Insurance-Dekho.png", "/images/Amazon.png"],
   },
   {
     title: "Deepak Kumar",
     image: "/images/Deepak-Kumar.png",
     description:
-      "Pulkit is a DSA expert with experience working in companies like Google, CodeNation & HackerRank. Not only that, he is also one of the most celebrated Competitive Programmers in India who is a master on CodeForces and hasa 6-star rating on CodeChef.",
+      " Software Development Engineer (SDE) currently at Amazon, brings extensive experience in software development, problem-solving, and team collaboration. Prior to Amazon, he made significant contributions at Paytm, refining his skills in building robust software solutions and tackling complex technical challenges.",
     subDescription:
-      "Beyond the classroom, he has been inspiring students for over 4 years through his YouTube videos. Moreover, He is a seasoned problem-solver who has solved over 2000 problems across various platforms.",
-    logos: ["Google", "CodeNation", "HackerRank"],
+      "During college, Deepak served as a teaching assistant at Coding Blocks and Pep Coding, aiding students in clearing doubts, improving question-solving skills with challenging problems, and stressing the significance of overlooked details. Deepak's diverse background and expertise are invaluable for aspiring developers aiming to thrive in the tech industry..",
+    logos: ["/images/Amazon.png", "/images/Paytm.png"],
   },
 ];
 

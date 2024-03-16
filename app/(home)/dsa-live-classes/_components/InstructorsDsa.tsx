@@ -35,7 +35,7 @@ const InstructorsDsa = () => {
     setInstructorIndex((prev) => prev - 1);
   };
 
-  // TODO
+  // TODO AUTO INTERVAL IF SOARX WANT
 
   return (
     <article className="py-12  relative overflow-x-hidden ">
@@ -71,7 +71,18 @@ const InstructorsDsa = () => {
                 <h3 className="text-2xl font-semibold">{instructor.title}</h3>
                 <p>{instructor.description}</p>
                 <p>{instructor.subDescription}</p>
-                <p>{instructor.logos}</p>
+                <div className="flex items-center justify-evenly gap-2">
+                  {instructor.logos.map((logo) => (
+                    <Image
+                      key={logo}
+                      src={logo}
+                      alt="Instructor"
+                      width={102}
+                      height={102}
+                      className="rounded-xl"
+                    />
+                  ))}
+                </div>
               </div>
             </motion.div>
           );
