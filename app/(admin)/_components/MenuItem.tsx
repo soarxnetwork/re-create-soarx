@@ -23,8 +23,10 @@ export default function MenuItem({
     <Link href={links}>
       <div
         className={clsx(
-          "w-full mt-6 flex items-center px-6 sm:px-0 xl:px-6 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer text-lg",
-          pathname === links ? "sidebar-item-selected" : "sidebar-item"
+          "w-full mt-6 flex items-center px-6 sm:px-0 xl:px-6 justify-start sm:justify-center xl:justify-start sm:mt-6 xl:mt-3 cursor-pointer text-lg sidebar-item-selected text-black",
+          pathname === links
+            ? "sidebar-item-selected text-primaryPurple"
+            : "sidebar-item"
         )}
       >
         {icons}

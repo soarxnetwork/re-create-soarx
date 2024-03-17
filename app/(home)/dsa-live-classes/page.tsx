@@ -12,6 +12,7 @@ import ProfileDsa from "./_components/ProfileDsa";
 import CertifiedDsa from "./_components/CertifiedDsa";
 import FaqDsa from "./_components/FaqDsa";
 import { Metadata } from "next";
+import InstructorsDsa from "./_components/InstructorsDsa";
 
 export const metadata: Metadata = {
   title: "DSA",
@@ -28,7 +29,7 @@ const DsaPage = () => {
       <LecturesDsa />
       {/* <BrandDsa /> */}
       <PlacementDsa />
-      <ProfileDsa />
+      <InstructorsDsa />
       <CertifiedDsa />
       <FaqDsa />
     </section>

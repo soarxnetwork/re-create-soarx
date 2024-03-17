@@ -5,7 +5,7 @@ import Image from "next/image";
 const LeftResponsibilityDsa = () => {
   return (
     <>
-      <HeadingSecondDsa text="Your responsibilities as a HackerEarth Campus Ambassador" />
+      <HeadingSecondDsa text="Your responsibilities as a SoarX Campus Ambassador" />
       <div className=" bg-white p-4 place-self-end rounded-xl flex gap-4">
         <div>
           <Image

@@ -13,36 +13,18 @@ const ActionCampusAmbassador = ({ id }: ActionCampusAmbassadorProps) => {
   const [isPending, startTransition] = useTransition();
   const toast = useRef<any>(null);
 
-  const deleteWithId = (id: string) => {
-    deleteCampusAmbassador(id);
-  };
-  const accept = (id: string) => {
+  const deleteCa = (id: string) => {
     startTransition(() => {
-      deleteWithId(id);
-      toast.current.show({
-        severity: "warn",
-        summary: "Confirmed",
-        detail: "You have successfully deleted",
-        life: 3000,
-      });
-    });
-  };
-  const reject = () => {
-    toast.current.show({
-      severity: "info",
-      summary: "Rejected",
-      detail: "You have cancelled",
-      life: 3000,
-    });
-  };
-  const confirm2 = (id: string) => {
-    confirmDialog({
-      message: "Do you want to delete this record?",
-      header: "Delete Confirmation",
-      icon: "pi pi-info-circle",
-      acceptClassName: "p-button-danger",
-      accept: () => accept(id),
-      reject,
+      deleteCampusAmbassador(id)
+        .then(() => {})
+        .catch((err) => {
+          toast.current.show({
+            severity: "error",
+            summary: "Error",
+            detail: "Something went wrong",
+            life: 3000,
+          });
+        });
     });
   };
 
@@ -50,8 +32,12 @@ const ActionCampusAmbassador = ({ id }: ActionCampusAmbassadorProps) => {
     <>
       <Toast ref={toast} />
       <ConfirmDialog />
-      <button className="btn-primary red mt-4" onClick={() => confirm2(id)}>
-        Delete
+      <button
+        className="btn-primary red mt-4 disabled-btn"
+        onClick={() => deleteCa(id)}
+        disabled={isPending}
+      >
+        {isPending ? "Deleting..." : "Delete"}
       </button>
     </>
   );

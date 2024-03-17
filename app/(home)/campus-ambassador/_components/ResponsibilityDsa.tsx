@@ -13,7 +13,7 @@ const ResponsibilityDsa = () => {
         </div>
         <div className="  flex flex-wrap justify-between gap-4 col-span-2 [&>div:not(:first-child)]:mt-4">
           <div className=" headingResponsibility">
-            <HeadingSecondDsa text="Your responsibilities as a HackerEarth Campus Ambassador" />
+            <HeadingSecondDsa text="Your responsibilities as a SoarX Campus Ambassador" />
           </div>
           <RightResponsibilityDsa />
         </div>
