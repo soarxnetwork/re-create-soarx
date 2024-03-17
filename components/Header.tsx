@@ -98,7 +98,7 @@ const Header = ({ admin }: User) => {
                   <SignedOut>
                     <Link
                       href="/sign-in"
-                      className="join-us-btn z-10">
+                      className=" signInbut">
                       Sign In
               
                     </Link>

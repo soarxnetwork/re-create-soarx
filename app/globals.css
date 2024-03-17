@@ -1193,3 +1193,26 @@ input {
 .join-us-btn:hover::before {
   width: 160%;
 }
+@keyframes ani {
+  0% { background-position: 0%; }
+  100% { background-position: 1000% ; }
+}
+.signInbut{
+  background: linear-gradient(115deg, #bf97df, #9f32f8, #7300d0, #9f32f8 , #bf97df );
+  font-weight: bold;
+  padding: 10px 20px;
+  background-size: 200% 200%;
+  
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: box-shadow 0.3s ease; /* Apply easing to the box shadow */
+
+}
+.signInbut:hover{
+  box-shadow: 0px 0px 10px rgb(144, 0, 255);
+  animation: ani 7s infinite linear; 
+  
+  
+}
