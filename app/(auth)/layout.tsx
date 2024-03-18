@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Logo } from "./_components/Logo";
 
 export const metadata: Metadata = {
-  title: "Auth MugiChan",
-  description: "Auth Page Mugichawn",
+  title: "SoarX",
+  description: "SoarX",
 };
 
 export default function AuthLayout({

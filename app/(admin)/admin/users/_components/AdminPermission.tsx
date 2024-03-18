@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Toast } from "primereact/toast";
+import { toast } from "react-toastify";
 
 interface Props extends User {
   users: User[];
@@ -13,8 +14,6 @@ interface Props extends User {
 export const permissionOptions = ["Admin", "User", "Superadmin"];
 
 const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
-  const toast = useRef<any>(null);
-
   const router = useRouter();
   const [permission, setPermission] = useState<Record<string, string>>({});
 
@@ -29,11 +28,12 @@ const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
           await updateAdminPermission({ id, admin: permission[id] as Admin });
         }
       }
-      showSuccess();
+      toast.success("Permission updated");
       router.push("/admin/events");
       return;
     } catch (err) {
       console.error(err);
+      toast.error("Error updating permission");
       throw err;
     }
   };
@@ -48,19 +48,9 @@ const AdminPermission = ({ users, id: currentUserId, admin }: Props) => {
       </h1>
     );
 
-  const showSuccess = () => {
-    toast.current.show({
-      severity: "success",
-      summary: "Success",
-      detail: "Permission updated",
-      life: 3000,
-    });
-  };
-
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <Toast ref={toast} position="bottom-right" />
         {users
           .filter((user) => user.id !== currentUserId)
           .map(({ username, admin, id }) => {

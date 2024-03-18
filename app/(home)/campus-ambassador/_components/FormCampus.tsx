@@ -9,10 +9,9 @@ import { Toast } from "primereact/toast";
 import ErrorFormDsa from "./ErrorFormDsa";
 import { motion } from "framer-motion";
 import { createCampusAmbassador } from "@/actions/campus";
+import { toast } from "react-toastify";
 
 const FormCampus = () => {
-  const toast = useRef<any>(null);
-
   const [isPending, startTransition] = useTransition();
   const [isSuccess, setIsSuccess] = useState(false);
   const {
@@ -32,21 +31,12 @@ const FormCampus = () => {
     startTransition(() => {
       createCampusAmbassador(data)
         .then(() => {
-          showSuccess();
+          toast.success("Succesfully Registered wait for confirmation");
           reset();
         })
         .catch((err) => {
           console.error(err);
         });
-    });
-  };
-
-  const showSuccess = () => {
-    toast.current.show({
-      severity: "success",
-      summary: "Success",
-      detail: "Succesfully Registered wait for confirmation!",
-      life: 3000,
     });
   };
 
@@ -56,7 +46,6 @@ const FormCampus = () => {
       className=" space-y-8 bg-secondDsaWhite px-8 py-4 rounded-xl"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Toast ref={toast} position="bottom-right" />
       <div>
         <label htmlFor="fullname">Full name</label>
         <input

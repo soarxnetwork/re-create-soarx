@@ -17,6 +17,7 @@ import {
   eventInitialValues,
 } from "@/schema/event";
 import { Event } from "@prisma/client";
+import { toast } from "react-toastify";
 
 interface FormEventProps {
   creatorId?: string;
@@ -25,7 +26,6 @@ interface FormEventProps {
 }
 
 const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
-  const toast = useRef<any>(null);
   const pahname = usePathname();
   const editPath = pahname.includes("edit");
   const optToast = editPath
@@ -50,7 +50,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     startTransition(() =>
       action(data)
         .then(() => {
-          showSuccess();
+          toast.success(optToast);
           router.push("/admin/events");
         })
         .catch((err) => {
@@ -60,22 +60,11 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     );
   };
 
-  const showSuccess = () => {
-    toast.current.show({
-      severity: "success",
-      summary: "Success",
-      detail: optToast,
-      life: 3000,
-    });
-  };
-
   const imageUrl = watch("imageUrl");
   const errors = formState.errors;
 
   return (
     <>
-      <Toast ref={toast} position="bottom-right" />
-
       <h2 className="text-2xl font-medium">Add Event</h2>
 
       <form
