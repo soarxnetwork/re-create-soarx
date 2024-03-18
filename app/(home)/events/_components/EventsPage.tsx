@@ -7,12 +7,23 @@ import Link from "next/link";
 import Events from "./Events";
 import Pagination from "@/app/(admin)/_components/Pagination";
 import { useSearchParams } from "next/navigation";
+import HeadingSecondDsa from "../../campus-ambassador/_components/HeadingSecondDsa";
+import { CiBatteryEmpty } from "react-icons/ci";
 
 interface EventProps {
   events: Event[];
 }
 
 const EventPage = ({ events }: EventProps) => {
+  if (events.length < 0) return <div>Empty Events</div>;
+  if (!events.length)
+    return (
+      <div className="container min-h-screen pt-24  flex justify-center gap-4">
+        <HeadingSecondDsa text="Empty Events" />
+        <CiBatteryEmpty size="40" />
+      </div>
+    );
+
   return (
     <section className="section ">
       <article className="container ">

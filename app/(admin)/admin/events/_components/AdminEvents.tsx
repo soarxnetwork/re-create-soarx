@@ -67,7 +67,7 @@ const AdminEvents = ({ events, label }: EventProps) => {
         {events.length > 0 ? (
           <h2 className="text-2xl font-medium">{label}</h2>
         ) : (
-          <h2 className="text-2xl font-medium">No Events</h2>
+          <h2 className="text-2xl font-medium">Empty Events</h2>
         )}
         <Link href={"/admin/event/add"}>
           <button className="btn-primary" disabled={isPending}>
@@ -76,7 +76,9 @@ const AdminEvents = ({ events, label }: EventProps) => {
         </Link>
       </div>
       <section className="all-events pt-8">
-        {isCLient && <CSVLink data={eventsStringified}>Test Download</CSVLink>}
+        {events.length > 0 && isCLient && (
+          <CSVLink data={eventsStringified}>Test Download</CSVLink>
+        )}
         <div className="grid-4 ">
           {events
             .sort(

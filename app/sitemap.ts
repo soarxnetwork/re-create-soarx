@@ -33,6 +33,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${baseURL}/dsa`,
     },
+    {
+      url: `${baseURL}/privacy`,
+    },
+    {
+      url: `${baseURL}/refund-policy`,
+    },
+    {
+      url: `${baseURL}/terms`,
+    },
+    {
+      url: `${baseURL}/dsa-live-classes`,
+    },
+    {
+      url: `${baseURL}/campus-ambassador`,
+    },
 
     ...eventsEntries,
   ];

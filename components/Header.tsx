@@ -16,7 +16,8 @@ const Header = ({ admin }: User) => {
 
   useEffect(() => {
     setIsClient(true);
-  }, []);
+  }, [admin]);
+
   return (
     <header>
       <div className="custom-container mt-4 ">
@@ -72,18 +73,23 @@ const Header = ({ admin }: User) => {
 
                   <HeaderDropdown />
 
-                  {admin === Admin.Superadmin && (
-                    <li
-                      className={
-                        pathname.includes("/admin")
-                          ? "bg-[#9241d40d] rounded-2xl"
-                          : "rounded-2xl"
-                      }
-                    >
-                      <Link className=" hover:text-primaryPurple" href="/admin">
-                        Admin
-                      </Link>
-                    </li>
+                  {admin === Admin.Admin && (
+                    <>
+                      <li
+                        className={
+                          pathname.includes("/admin")
+                            ? "bg-[#9241d40d] rounded-2xl"
+                            : "rounded-2xl"
+                        }
+                      >
+                        <Link
+                          className=" hover:text-primaryPurple"
+                          href="/admin"
+                        >
+                          Admin
+                        </Link>
+                      </li>
+                    </>
                   )}
                 </ul>
               </div>

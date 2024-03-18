@@ -24,7 +24,9 @@ const CampusAmbassador = ({ campusAmbassadors }: CampusAmbassadorPageProps) => {
           <h1 className="text-3xl font-bold">Empty Campus Ambassadors</h1>
         )}
         <InputSearchCampus />
-        {isCLient && <CSVLink data={campusAmbassadors}>Test Download</CSVLink>}
+        {campusAmbassadors.length > 0 && isCLient && (
+          <CSVLink data={campusAmbassadors}>Test Download</CSVLink>
+        )}
       </div>
       {campusAmbassadors.map((campus) => (
         <CampusAmbasaddors key={campus.id} {...campus} />
