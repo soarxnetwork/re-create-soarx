@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import './styles/Footer.css';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -61,6 +62,12 @@ const Footer = () => {
                 <a href="mailto:soarxnetwork@gmail.com" title="email">
                   soarxnetwork@gmail.com
                 </a>
+              </div>
+              <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faLocationDot} className="h-[23px]" />{" "}
+                
+                    Kurukshetra, Haryana, India 136118
+               
               </div>
 
               <div className="social-icons-footer mt-2 flex items-center gap-2">
