@@ -18,6 +18,8 @@ const Header = ({ admin }: User) => {
     setIsClient(true);
   }, [admin]);
 
+  console.log(admin);
+
   return (
     <header>
       <div className="custom-container mt-4 ">
@@ -73,7 +75,7 @@ const Header = ({ admin }: User) => {
 
                   <HeaderDropdown />
 
-                  {admin === Admin.Admin && (
+                  {admin !== Admin.User && (
                     <>
                       <li
                         className={
