@@ -1,39 +1,33 @@
-import Image from "next/image";
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
-import JoinDsa from "./_components/JoinDsa";
-import HeroDsa from "./_components/HeroDsa";
-import CurriculumDsa from "./_components/CurriculumDsa";
-import OverviewDsa from "./_components/OverviewDsa";
-import LecturesDsa from "./_components/LecturesDsa";
-import BrandDsa from "./_components/BrandDsa";
-import PlacementDsa from "./_components/PlacementDsa";
-import ProfileDsa from "./_components/ProfileDsa";
-import CertifiedDsa from "./_components/CertifiedDsa";
-import FaqDsa from "./_components/FaqDsa";
-import { Metadata } from "next";
-import InstructorsDsa from "./_components/InstructorsDsa";
+import HeroDlc from "./_components/HeroDlc";
+import LeftHeroDlc from "./_components/LeftHeroDlc";
+import { getCurrentUser } from "@/services/user";
+import FaqDlc from "./_components/FaqDlc";
+import Image from "next/image";
+import { courseDetailsHero } from "@/constants/dlc";
+import FloatingHero from "./_components/FloatingHero";
 
-export const metadata: Metadata = {
-  title: "DSA",
-  description: "DSA Course Page",
-};
-
-const DsaPage = () => {
+const DsaLiveClassesPage = () => {
   return (
-    <section className=" pt-40 pb-8 space-y-12  ">
-      <HeroDsa />
-      <JoinDsa />
-      <CurriculumDsa />
-      <OverviewDsa />
-      <LecturesDsa />
-      {/* <BrandDsa /> */}
-      <PlacementDsa />
-      <InstructorsDsa />
-      <CertifiedDsa />
-      <FaqDsa />
-    </section>
+    <>
+      <div className=" bg-primaryPurple w-full pt-12 min-h-[50vh] pb-4 fl-ic justify-center text-white ">
+        <LeftHeroDlc />
+      </div>
+      <section className="lg:grid lg:grid-cols-3 relative py-4">
+        <div className=" col-span-2 relative">
+          <HeroDlc />
+        </div>
+        {/* ! right */}
+        <FloatingHero />
+        {/* <div className=" bg-primaryPurple p-4">
+          <p>test</p>
+        </div> */}
+      </section>
+      <section className="py-4 container">
+        <FaqDlc />
+      </section>
+    </>
   );
 };
 
-export default DsaPage;
+export default DsaLiveClassesPage;

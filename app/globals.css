@@ -53,9 +53,9 @@ h1 {
   @apply font-medium text-6xl pt-2;
 }
 
-p {
+/* p {
   @apply text-textColor;
-}
+} */
 
 .btn-primary {
   background-color: #9241d4;
@@ -399,9 +399,6 @@ header {
 
 .event-content {
   padding: 20px;
-}
-p {
-  text-wrap: balance;
 }
 
 /* EVENTS PAGE END */
@@ -1190,27 +1187,35 @@ input {
   width: 160%;
 }
 @keyframes ani {
-  0% { background-position: 0%; }
-  100% { background-position: 1000% ; }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 1000%;
+  }
 }
-.signInbut{
-  background: linear-gradient(115deg, #bf97df, #9f32f8, #7300d0, #9f32f8 , #bf97df );
+.signInbut {
+  background: linear-gradient(
+    115deg,
+    #bf97df,
+    #9f32f8,
+    #7300d0,
+    #9f32f8,
+    #bf97df
+  );
   font-weight: bold;
   padding: 10px 20px;
   background-size: 200% 200%;
-  
+
   border-radius: 15px;
   cursor: pointer;
   border: none;
   color: white;
   transition: box-shadow 0.3s ease; /* Apply easing to the box shadow */
-
 }
-.signInbut:hover{
+.signInbut:hover {
   box-shadow: 0px 0px 10px rgb(144, 0, 255);
-  animation: ani 7s infinite linear; 
-  
-  
+  animation: ani 7s infinite linear;
 }
 
 /* ! edawg */
@@ -1219,4 +1224,19 @@ input {
 }
 .btn-arrow-dsa {
   @apply rounded-full border-primaryPurple p-4 border border-solid hover:animate-pulse disabled-btn;
+}
+.dsa-hero {
+  background-color: rgb(25, 25, 26, 0.2);
+}
+.pt-avoid-nav {
+  @apply pt-24;
+}
+.container-hero-dlc {
+  @apply lg:mx-0 mx-auto;
+}
+
+@layer utilities {
+  .fl-ic {
+    @apply flex items-center;
+  }
 }

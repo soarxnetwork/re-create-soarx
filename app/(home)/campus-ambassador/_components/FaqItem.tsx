@@ -1,4 +1,8 @@
 "use client";
+import {
+  faqAndCoursesMotionProps,
+  faqAndCoursesVars,
+} from "@/lib/framer-motion/dlc";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -34,12 +38,13 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
       <AnimatePresence>
         {isOpen[id] && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            variants={faqAndCoursesVars}
+            {...faqAndCoursesMotionProps}
+            transition={{
+              transition: { duration: 0.3 },
+            }}
           >
-            <p className="text-sm">{answer}</p>
+            <p className="text-sm text-black/50 font-light">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
