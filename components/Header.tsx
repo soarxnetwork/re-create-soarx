@@ -18,8 +18,6 @@ const Header = ({ admin }: User) => {
     setIsClient(true);
   }, [admin]);
 
-  console.log(admin);
-
   return (
     <header>
       <div className="custom-container mt-4 ">
@@ -75,24 +73,28 @@ const Header = ({ admin }: User) => {
 
                   <HeaderDropdown />
 
-                  {admin !== Admin.User && (
-                    <>
-                      <li
-                        className={
-                          pathname.includes("/admin")
-                            ? "bg-[#9241d40d] rounded-2xl"
-                            : "rounded-2xl"
-                        }
-                      >
-                        <Link
-                          className=" hover:text-primaryPurple"
-                          href="/admin"
-                        >
-                          Admin
-                        </Link>
-                      </li>
-                    </>
-                  )}
+                  {admin ? (
+                    admin !== Admin.User ? (
+                      <>
+                        <SignedIn>
+                          <li
+                            className={
+                              pathname.includes("/admin")
+                                ? "bg-[#9241d40d] rounded-2xl"
+                                : "rounded-2xl"
+                            }
+                          >
+                            <Link
+                              className=" hover:text-primaryPurple"
+                              href="/admin"
+                            >
+                              Admin
+                            </Link>
+                          </li>
+                        </SignedIn>
+                      </>
+                    ) : null
+                  ) : null}
                 </ul>
               </div>
             </div>
@@ -105,7 +107,7 @@ const Header = ({ admin }: User) => {
                     </Link>
                   </SignedOut>
                   <SignedIn>
-                    <UserButton afterSignOutUrl="/" />
+                    <UserButton afterSignOutUrl="/" afterSwitchSessionUrl="/" />
                   </SignedIn>
                   <div
                     className="mbl-bars"

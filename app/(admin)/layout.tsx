@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const LayoutAdmin = async ({ children }: LayoutAdminProps) => {
   const user = await getCurrentUser();
 
-  if (user?.admin === "User") return notFound();
+  if (user?.admin === "User" || !user) return notFound();
 
   return (
     // <AdminRoute>
