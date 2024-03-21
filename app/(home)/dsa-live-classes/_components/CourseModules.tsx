@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="bg-primaryPurple rounded-xl p-4 text-white space-y-8 text-sm  "
+      className="bg-black-dlc rounded-xl p-4 text-white space-y-8 text-sm  "
       ref={ref}
     >
       {coursesModules.map((course) => (
@@ -58,8 +58,8 @@ const CourseModules = () => {
           </motion.button>
           <AnimatePresence>
             <div
-              className={cn("bg-dsaPrimary p-0 rounded-none", {
-                "p-4": isOpen[course.name],
+              className={cn(" p-0 rounded-none", {
+                "p-4 bg-border-dlc": isOpen[course.name],
                 "rounded-xl": isOpen[course.name],
               })}
             >

@@ -143,10 +143,12 @@ export const faqDlc = [
 export const courseDetailsHero = [
   "No Pre-requisite Required",
   "50+ hours On-Demand Video",
-  "8 Real World Design Problems (asked by Top Companies)",
-  "Live Interview Preparation & mentorship sessions",
+  // "8 Real World Design Problems (asked by Top Companies)",
+  "8 Real World Design Problems ",
+  // "Live Interview Preparation & mentorship sessions",
+  "Live Interview Preparation ",
   "LIVE Revision && Doubts Class",
-  "LLD - Design Patterns [With Examples]",
+  "LLD - Design Patterns ",
   "with Doubt Assistance",
 ];
 export const courseDetailsHeroFloat = [

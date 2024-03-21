@@ -30,7 +30,7 @@ const FeedbackDlc = () => {
           learning and growth with CodeHelp.
         </p>
       </div>
-      <div className="bg-primaryPurple p-4 rounded-xl grid  grid-cols-2 gap-6 text-white">
+      <div className="bg-border-dlc p-4 rounded-xl grid  grid-cols-2 gap-6 text-white">
         {feedBacksDlc.map((feedback) => (
           <div className="flex flex-col gap-6" key={feedback.name}>
             <div className="fl-ic gap-4">

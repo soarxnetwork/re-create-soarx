@@ -35,7 +35,7 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className=" bg-primaryPurple text-white p-4 rounded-xl">
+      <div className=" bg-black-dlc text-white p-4 rounded-xl">
         <div className="fl-ic gap-4">
           <div className="space-y-4">
             <h4 className="font-semibold">Our Instructor</h4>
@@ -47,14 +47,14 @@ const InstructorsDlc = () => {
           </div>
           <div className=" fl-ic gap-4">
             <button
-              className=" bg-dsaPrimary rounded-full w-12 h-12 fl-ic justify-center"
+              className=" bg-border-dlc rounded-full w-12 h-12 fl-ic justify-center"
               onClick={prevInstructor}
               disabled={instructorIndex === 0}
             >
               <FaArrowLeft size="20" className="fill-white" />
             </button>
             <button
-              className=" bg-dsaPrimary rounded-full w-12 h-12 fl-ic justify-center"
+              className=" bg-border-dlc rounded-full w-12 h-12 fl-ic justify-center"
               onClick={nextInstructor}
               disabled={instructorIndex === instructorsDsa.length - 1}
             >

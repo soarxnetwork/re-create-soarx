@@ -1,16 +1,13 @@
 import React from "react";
 import HeroDlc from "./_components/HeroDlc";
 import LeftHeroDlc from "./_components/LeftHeroDlc";
-import { getCurrentUser } from "@/services/user";
 import FaqDlc from "./_components/FaqDlc";
-import Image from "next/image";
-import { courseDetailsHero } from "@/constants/dlc";
 import FloatingHero from "./_components/FloatingHero";
 
 const DsaLiveClassesPage = () => {
   return (
     <>
-      <div className=" bg-primaryPurple w-full pt-12 min-h-[50vh] pb-4 fl-ic justify-center text-white ">
+      <div className=" bg-border-dlc  pt-12 min-h-[50vh] pb-4 fl-ic justify-center text-white ">
         <LeftHeroDlc />
       </div>
       <section className="lg:grid lg:grid-cols-3 relative py-4">

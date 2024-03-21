@@ -23,10 +23,10 @@ const Header = ({ admin }: User) => {
       <div className="custom-container mt-4 ">
         <nav
           id="main-navbar"
-          className="navbar rounded-2xl h-[70px] mx-[75px]"
+          className="navbar rounded-2xl  mx-[75px]"
           style={{ paddingLeft: 16, paddingRight: 16 }}
         >
-          <div className=" md:grid md:grid-cols-3 justify-between h-[70px]">
+          <div className=" md:grid md:grid-cols-3 flex justify-between ">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
@@ -47,7 +47,7 @@ const Header = ({ admin }: User) => {
               }
             >
               <div>
-                <ul className="flex items-center nav-ul  text-lg text-black gap-8 font-medium">
+                <ul className="flex items-center nav-ul  text-lg text-black font-medium">
                   <li
                     className={
                       pathname === "/"

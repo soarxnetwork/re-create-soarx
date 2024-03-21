@@ -24,7 +24,7 @@ const InstructorDLc = ({
   // TODO AUTO INTERVAL IF SOARX WANT
 
   return (
-    <article className="py-12  relative overflow-x-hidden ">
+    <article className="py-8  relative overflow-x-hidden ">
       <motion.div
         className=" active:cursor-grabbing flex items-center"
         drag="x"
@@ -48,7 +48,7 @@ const InstructorDLc = ({
             >
               <h3 className="text-2xl font-semibold">{instructor.title}</h3>
               <div className="flex items-center justify-evenly gap-2">
-                {instructor.logos.map((logo) => (
+                {/* {instructor.logos.map((logo) => (
                   <Image
                     key={logo}
                     src={logo}
@@ -57,7 +57,7 @@ const InstructorDLc = ({
                     height={102}
                     className="rounded-xl"
                   />
-                ))}
+                ))} */}
               </div>
               <div className="space-y-4">
                 <p>{instructor.description}</p>
@@ -66,8 +66,8 @@ const InstructorDLc = ({
               <Image
                 src={instructor.image}
                 alt="Instructor"
-                width={508}
-                height={508}
+                width={312}
+                height={312}
                 className="rounded-xl mx-auto"
               />
             </motion.div>

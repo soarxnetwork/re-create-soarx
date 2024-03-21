@@ -1240,3 +1240,24 @@ input {
     @apply flex items-center;
   }
 }
+/* ! dlc */
+@layer components {
+  .bg-black-dlc {
+    --tw-bg-opacity: 1;
+    background-color: rgb(25 25 26 / var(--tw-bg-opacity));
+  }
+  .text-shark {
+    --tw-text-opacity: 1;
+    color: rgb(129 134 143 / var(--tw-text-opacity));
+  }
+  .bg-neutral-9 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(32 35 41 / var(--tw-bg-opacity));
+  }
+  .border-dlc {
+    border-color: hsla(0, 0%, 100%, 0.1);
+  }
+  .bg-border-dlc {
+    @apply bg-neutral-9 border-dlc border;
+  }
+}

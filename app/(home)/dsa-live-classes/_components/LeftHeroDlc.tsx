@@ -1,7 +1,7 @@
 "use client";
 
 import { FaStar } from "react-icons/fa6";
-import { CiVideoOn } from "react-icons/ci";
+import { CiCircleCheck, CiVideoOn } from "react-icons/ci";
 import { TbWorldWww } from "react-icons/tb";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -20,9 +20,9 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className="container lg:grid lg:grid-cols-3 space-y-12 ">
+      <div className=" lg:grid lg:grid-cols-3 space-y-12 ">
         <div className="   break-words space-y-6 col-span-2 container-hero-dlc ">
-          <h2 className="font-semibold text-2xl  ">
+          <h2 className="font-semibold text-2xl lg:pt-0 pt-16    ">
             Welcome to <span className="font-bold">@supra-coder</span> Family
           </h2>
           <div className="space-y-4">
@@ -48,27 +48,32 @@ const LeftHeroDlc = () => {
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className=" space-y-6 w-[360px] z-20  bg-dsaPrimary rounded-xl container-hero-dlc  lg:absolute top-24 right-8  p-4"
+              className=" space-y-6 lg:w-[380px]  z-20  bg-neutral-9 border-dlc border rounded-xl container-hero-dlc  lg:absolute top-20 right-8  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
               <Image
-                src="https://i.pinimg.com/236x/7e/da/77/7eda771d2742bf25ca28d105315f11c2.jpg"
+                src="/images/itasha.jpg"
                 alt="Responsibility"
                 width={320}
                 height={320}
                 className=" rounded-xl mx-auto"
               />
               <div className="fl-ic gap-4">
-                <span className=" text-white text-xl font-semibold">₹2700</span>
-                <span className=" text-white/50 font-light">₹4800</span>
+                <span className=" text-primaryPurple text-xl font-semibold">
+                  ₹2700
+                </span>
+                <span className=" text-shark ">₹4800</span>
               </div>
               <p className="text-xl font-semibold text-white">
                 This Course Includes :
               </p>
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {courseDetailsHero.map((course) => (
-                  <div key={course}>
+                  <div key={course} className="fl-ic gap-2">
+                    <span>
+                      <CiCircleCheck size="28" fill="#9241D4" />
+                    </span>
                     <p className=" text-white">{course}</p>
                   </div>
                 ))}
