@@ -19,7 +19,7 @@ const HomeSlider = () => {
           <p className="pt-5 text-[30px] ">
           SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons
           </p>
-          <button className="join-us-btn mt-10">
+          <button className=" signInbut mt-10">
               Join Us
             </button>
         </div>

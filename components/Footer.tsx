@@ -51,12 +51,11 @@ const Footer = () => {
           <div className="footer-content">
             <h3>Contact Info</h3>
             <div className="last-portion flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <BsTelephone className="text-xl font-medium" />
-                <a href="tel:+91 8708686261" title="phone-number">
-                  +91 8708686261
-                </a>
-              </div>
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faLocationDot} className="h-[23px]" />{" "}
+               Kurukshetra, Haryana, India 136118
+             </div>
+              
               <div className="flex items-center gap-2">
                 <AiOutlineMail className="text-xl font-medium" />{" "}
                 <a href="mailto:soarxnetwork@gmail.com" title="email">
@@ -64,11 +63,12 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faLocationDot} className="h-[23px]" />{" "}
-                
-                    Kurukshetra, Haryana, India 136118
-               
+                <BsTelephone className="text-xl font-medium" />
+                <a href="tel:+91 8708686261" title="phone-number">
+                  +91 8708686261
+                </a>
               </div>
+             
 
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">

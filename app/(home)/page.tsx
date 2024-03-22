@@ -7,7 +7,7 @@ import Partners from "./_components/Partner";
 import PressClippings from "./_components/PressClippings";
 import Testimonial from "./_components/Testimonial";
 import Discord from "./_components/Discord";
-
+import NumbersThatMatter from "./_components/NumbersThatMatter";
 const HomePage = async () => {
   const events = await getAllEvents();
   return (
@@ -18,6 +18,7 @@ const HomePage = async () => {
       <Partners />
       <PressClippings />
       <Testimonial />
+      <NumbersThatMatter/>
       <Discord />
     </section>
   );
