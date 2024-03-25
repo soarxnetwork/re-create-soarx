@@ -6,12 +6,32 @@ import { Autoplay } from "swiper/modules";
 import { TestimonialMessage } from "@/constants/homepage";
 import Image from "next/image";
 
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css/pagination";
 const Testimonial = () => {
+  const testimonials = [
+    {
+      quote:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "CEO",
+    },
+    {
+      quote:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "Michael Scott 1",
+    },
+    {
+      quote:
+        "No, Rose, they are not breathing. And they have no arms or legs … Where are they? You know what? If we come across somebody with no arms or legs, do we bother resuscitating them? I mean, what quality of life do we have there?",
+      author: "Michael Scott 3",
+    },
+
+    // Add more testimonials as needed
+  ];
   return (
     <section className="section px-24">
       <div className="container">
-        <h1 className="text-center text-[80px] text-[#000000] font-bold">Testimonials</h1>
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <Swiper
             spaceBetween={10}
             slidesPerView={3}
@@ -90,7 +110,65 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
+
+        <section className="">
+          <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
+              <div className="max-w-xl text-left">
+                <div className="text-left text-primary cursor-pointer">
+                  {"Testimonials".split("").map((child, idx) => (
+                    <span className={"hoverText"} key={idx}>
+                      {child}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="text-left text-4xl text-textColor pt-2 font-bold leading-normal">
+                  Our Success Stories
+                </h2>{" "}
+                <p className="mt-4 text-light text-sm">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptas veritatis illo placeat harum porro optio fugit a
+                  culpa sunt id!
+                </p>
+              </div>
+
+              <div className="-mx-6 lg:col-span-2  lg:mx-0">
+                <Swiper
+                  pagination={{
+                    type: "progressbar",
+                  }}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  modules={[Pagination, Autoplay]}
+                  spaceBetween={30}
+                  slidesPerView={1}
+                >
+                  {testimonials.map((testimonial, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="bg-[#9241d40d] rounded-lg p-6 shadow-md sm:p-8 lg:p-12">
+                        <div>
+                          <div className="mt-4 leading-relaxed text-gray-700">
+                            <p className="text-lg font-bold ">Mahatma Gandhi</p>
+                            <p className="mt-4 leading-relaxed text-gray-700">
+                              {testimonial.quote}
+                            </p>
+                          </div>
+                        </div>
+                        <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
+                          &mdash; {testimonial.author}
+                        </footer>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   );

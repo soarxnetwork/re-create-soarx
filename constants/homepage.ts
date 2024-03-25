@@ -21,7 +21,7 @@ export const imgPartnerLists = [
   "/images/Give My Certificate.png",
   "/images/Hack2Skill.png",
   "/images/c3u.png",
-  "/images/CN.png",
+  // "/images/CN.png",
   "/images/CB.png",
   "/images/sparkar.png",
   "/images/uipath.png",
@@ -29,11 +29,11 @@ export const imgPartnerLists = [
   "/images/mukand.png",
   "/images/github.png",
   "/images/snapchat.png",
-  "/images/meta.png",
+  // "/images/meta.png",
   "/images/microsoft.png",
   "/images/partner-google.png",
   "/images/partner-polka.png",
-  "/images/digitalocean-partner.png",
+  // "/images/digitalocean-partner.png",
 ];
 
 export const imgPcLists = [

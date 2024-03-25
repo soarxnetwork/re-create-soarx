@@ -12,8 +12,16 @@ const Partners = () => {
   return (
     <section className="section px-24">
       <div className="container">
-        <h1 className="text-center mb-10 text-[80px] text-[#000000] font-bold">Our Partners</h1>
-
+        <div className="text-center text-primary cursor-pointer">
+          {"Partners".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
+        </div>
+        <h2 className="text-center mb-10 text-4xl pt-2 font-bold text-textColor leading-normal">
+          Our Trusted Partners
+        </h2>{" "}
         <Swiper
           className="mySwiper"
           spaceBetween={10}

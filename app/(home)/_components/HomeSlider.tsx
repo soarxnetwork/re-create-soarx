@@ -1,79 +1,92 @@
 "use client";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/bundle";
 import Image from "next/image";
-import Button from "@/components/Button";
-import { Autoplay } from "swiper/modules";
-import { BannerImages } from "@/constants/homepage";
+import groovyWalkAnimation from "/public/images/star.json";
+import Lottie from "lottie-react";
+import { ScrollParallax } from "react-just-parallax";
 
 const HomeSlider = () => {
   return (
-    <section className="banner-section flex items-center justify-center px-24">
-      <div className="container flex banner-container items-center gap-5 justify-between">
-        <div className="w-3/6	">
-          <h2 className=" text-[#9241d4] text-xl font-semibold">
-            Empowering Minds. Unleashing Creativity
-          </h2>
-          <h1 className="text-[80px] font-bold text-[#000000]">SoarX Network</h1>
-          <p className="pt-5 text-[30px] ">
-          SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons
-          </p>
-          <button className=" signInbut mt-10">
-              Join Us
-            </button>
-        </div>
-        <div className="w-3/6">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={3}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            centeredSlides={true}
-            loop={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                centeredSlides: false,
-              },
-              500: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              600: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
+    <section className="banner-section  ">
+      <div className="custom-container flex relative banner-container items-center gap-5 justify-between">
+        <div className="grid gap-16 items-center grid-cols-2 ">
+          <div className=" ">
+            <div className="flex items-center gap-2">
+              <div className="w-7">
+                <Lottie animationData={groovyWalkAnimation} loop={true} />
+              </div>
 
-              700: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
-            }}
-            className="mySwiper banner-swiperjs"
-          >
-            {BannerImages.map((e, index) => (
-              <SwiperSlide key={index}>
+              <div className="text-center text-primary cursor-pointer">
+                {"Empowering Minds. Unleashing Creativity"
+                  .split("")
+                  .map((child, idx) => (
+                    <span className={"hoverText"} key={idx}>
+                      {child}
+                    </span>
+                  ))}
+              </div>
+            </div>
+            <h1 className="text-2xl  leading-relaxed font-bold text-textColor  md:text-5xl pt-3 ">
+              SoarX Network
+            </h1>
+            <p className="pt-5 text-sm text-slate-500">
+              SoarX is more than just a community; it's a nationwide movement
+              dedicated to empowering students from all walks of life. Through a
+              dynamic array of events, transformative sessions, and exhilarating
+              hackathons, we're reshaping the landscape of student empowerment.
+            </p>
+            <button className=" signInbut mt-10">Join Us</button>
+          </div>
+          <div className="relative">
+            <div className="blob-radius">
+              <Image
+                src={"/images/hero-potrait.jpg"}
+                width={0}
+                height={0}
+                alt=""
+                sizes="100vw"
+                className="w-full"
+              />
+            </div>
+            <ScrollParallax isAbsolutelyPositioned zIndex={-1}>
+              <div className="particles-dots absolute  -z-10">
                 <Image
-                  src={e}
-                  width={0}
-                  height={0}
+                  width={200}
+                  height={200}
+                  src={"/images/particle-dots.png"}
+                  className=""
                   sizes="100vw"
-                  className="banner-img"
-                  alt="Banner"
+                  alt=""
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              </div>
+            </ScrollParallax>
+          </div>
         </div>
+
+        <ScrollParallax
+          isAbsolutelyPositioned
+          zIndex={-1}
+          strength={0.5}
+          lerpEase={0.04}
+          enableOnTouchDevice={true}
+        >
+          <div className="particles-circle">
+            <Image width={25} height={25} src={"/images/circle.png"} alt="" />
+          </div>
+        </ScrollParallax>
+        <ScrollParallax
+          isAbsolutelyPositioned
+          zIndex={-1}
+          strength={0.3}
+          lerpEase={0.02}
+          enableOnTouchDevice={true}
+        >
+          <div className="particles-square">
+            <Image width={35} height={35} src={"/images/square.png"} alt="" />
+          </div>
+        </ScrollParallax>
       </div>
     </section>
   );

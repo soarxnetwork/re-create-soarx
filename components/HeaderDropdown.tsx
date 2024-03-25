@@ -7,15 +7,20 @@ import React, { useEffect, useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { truncateWord } from "@/utils/truncateWord";
+import Image from "next/image";
 
 const dsa = [
   {
     name: "DSA Live Classes",
+    desc: "Master DSA: Join Live Classes Now!",
     code: "/dsa-live-classes",
+    image: "/images/online-learning.png",
   },
   {
     name: "Campus Ambassador Program",
+    desc: "Campus Leaders: Join as an Ambassador!",
     code: "/campus-ambassador",
+    image: "/images/announcer.png",
   },
 ];
 
@@ -66,7 +71,7 @@ const HeaderDropdown = () => {
             exit={{ opacity: 0 }}
             transition={{ type: "spring" }}
           >
-            {dsa.map((d) => {
+            {/* {dsa.map((d) => {
               return (
                 <div key={d.name}>
                   <Link
@@ -82,7 +87,43 @@ const HeaderDropdown = () => {
                   </Link>
                 </div>
               );
-            })}
+            })} */}
+
+            <div className="w-screen tracking-normal max-w-sm flex-auto overflow-hidden rounded-lg bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+              {dsa.map((d) => {
+                return (
+                  <Link
+                    key={d.name}
+                    href={d.code}
+                    className={cn(
+                      "  transition-all ease-in-out duration-200 text-sm",
+                      {
+                        "text-primaryPurple": pathname.includes(d.code),
+                      }
+                    )}
+                  >
+                    <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                      <div className="mt-1 flex h-11 w-11 flex-none  items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <Image
+                          src={d.image}
+                          sizes="100vw"
+                          width={23}
+                          height={23}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <div className="font-semibold">
+                          {d.name}
+                          <span className="absolute inset-0" />
+                        </div>
+                        <p className="mt-1 font-normal text-sm ">{d.desc}</p>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

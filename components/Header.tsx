@@ -21,19 +21,16 @@ const Header = ({ admin }: User) => {
   return (
     <header>
       <div className="custom-container mt-4 ">
-        <nav
-          id="main-navbar"
-          className="navbar rounded-2xl  mx-[75px]"
-          style={{ paddingLeft: 16, paddingRight: 16 }}
-        >
+        <nav id="main-navbar" className="navbar rounded-lg">
           <div className=" md:grid md:grid-cols-3 flex justify-between ">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
                 <Image
                   src={"/images/Soarx-transparent-logo.png"}
-                  width={210}
-                  height={100}
-                  className=""
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="img-responsive"
                   alt="Header Logo"
                 />
               </div>
@@ -47,12 +44,12 @@ const Header = ({ admin }: User) => {
               }
             >
               <div>
-                <ul className="flex items-center nav-ul  text-lg text-black font-medium">
+                <ul className="flex items-center nav-ul  text-textColor  font-medium">
                   <li
                     className={
                       pathname === "/"
-                        ? "bg-[#9241d40d] rounded-2xl"
-                        : "rounded-2xl"
+                        ? "bg-[#9241d40d] rounded-lg"
+                        : "rounded-lg"
                     }
                   >
                     <Link className=" hover:text-primaryPurple" href="/">
@@ -62,8 +59,8 @@ const Header = ({ admin }: User) => {
                   <li
                     className={
                       pathname.includes("/events")
-                        ? "bg-[#9241d40d] rounded-2xl"
-                        : "rounded-2xl"
+                        ? "bg-[#9241d40d] rounded-lg"
+                        : "rounded-lg"
                     }
                   >
                     <Link className=" hover:text-primaryPurple" href="/events">
@@ -80,8 +77,8 @@ const Header = ({ admin }: User) => {
                           <li
                             className={
                               pathname.includes("/admin")
-                                ? "bg-[#9241d40d] rounded-2xl"
-                                : "rounded-2xl"
+                                ? "bg-[#9241d40d] rounded-lg"
+                                : "rounded-lg"
                             }
                           >
                             <Link

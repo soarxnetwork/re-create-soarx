@@ -10,7 +10,7 @@ const PressClippings = () => {
   useEffect(() => {
     const intervalTime = 3000;
 
-    setDisplayedImages(imgPcLists.slice(0, 8));
+    setDisplayedImages(imgPcLists.slice(0, 14));
     const interval = setInterval(changeImages, intervalTime);
     return () => {
       clearInterval(interval);
@@ -54,7 +54,6 @@ const PressClippings = () => {
       "/images/pr34.png",
     ];
 
-    const randomIndex = Math.floor(Math.random() * imageLinks.length);
     // setDisplayedImages((prevImages) => {
     //   const newDisplayedImages = [...prevImages];
 
@@ -93,15 +92,20 @@ const PressClippings = () => {
     setSelectedImage(image);
   };
 
-  const closeImagePopup = () => {
-    setSelectedImage(null);
-  };
-
   return (
     <section className="section px-24">
       <div className="container">
-        <h1 className="text-center pb-10 text-[80px] text-[#000000] font-bold">Press Clippings</h1>
-        <div className="gallery">
+        <div className="text-center text-primary cursor-pointer">
+          {"Wings of Inspiration".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
+        </div>
+        <h2 className="text-center mb-10 text-4xl pt-2 font-bold text-textColor leading-normal">
+          SoarX Gallery
+        </h2>{" "}
+        {/* <div className="gallery">
           {displayedImages.map((image, index) => (
             <div
               key={index}
@@ -118,37 +122,30 @@ const PressClippings = () => {
               onClick={() => openImagePopup(image)}
             ></div>
           ))}
+        </div> */}
+        <div className=" ">
+          <ul id="hexGrid">
+            {displayedImages.map((image, index) => (
+              <li className="hex" key={index}>
+                <div className="hexIn">
+                  <a className="hexLink" href="#">
+                    <div
+                      className="img"
+                      style={{
+                        backgroundImage: `url(${image}) `,
+                      }}
+                    />
+
+                    <p id="demo2">
+                      Some sample text about the article this hexagon leads to
+                    </p>
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-
-      {selectedImage && (
-        <div className="image-popup">
-          <div className="image-popup-content" id="style-2">
-            <Image
-              src={selectedImage}
-              alt="Popup Image"
-              width={500}
-              height={500}
-            />
-            <button className="close-button" onClick={closeImagePopup}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

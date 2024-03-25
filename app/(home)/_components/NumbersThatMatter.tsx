@@ -1,30 +1,49 @@
-import React from 'react'
-import { FaUsers } from 'react-icons/fa';
-import { BsBuilding } from 'react-icons/bs';
-import { BsMap } from 'react-icons/bs';
+"use client";
+import React from "react";
+import { FaUsers } from "react-icons/fa";
+import { BsBuilding } from "react-icons/bs";
+import { ScrollParallax } from "react-just-parallax";
+import { BsMap } from "react-icons/bs";
 function NumbersThatMatter() {
+  const data = [
+    {
+      title: "1000+",
+      desc: "Happy Customers",
+    },
+    {
+      title: "100+",
+      desc: "Projects Completed",
+    },
+    {
+      title: "10+",
+      desc: "Years of Experience",
+    },
+    {
+      title: "50+",
+      desc: "Team Members",
+    },
+  ];
   return (
-    <div className=' px-24'>
-        <h1 className='text-[80px] font-bold w-full text-center'>Numbers That Matter</h1>
-        <div className='flex px-10 pt-24'>
-            <div className='text-[45px] font-bold w-full text-center hover:bg-[#9241d40d] rounded-3xl py-16'>
-            <FaUsers  className='text-[50px] mx-auto mb-4'  />
-            <p className='mb-4'>5000+</p>
-            <p className='text-[20px]'> Members</p>
-            </div>
-            <div className='text-[45px] font-bold w-full text-center hover:bg-[#9241d40d] rounded-3xl py-16'>
-            <BsBuilding  className='text-[50px] mx-auto mb-4'   />
-            <p className='mb-4'>90+</p>
-            <p className='text-[20px]'> Colleges</p>
-            </div>
-            <div className='text-[45px] font-bold w-full text-center hover:bg-[#9241d40d] rounded-3xl py-16'>
-            <BsMap className='text-[50px] mx-auto mb-4'  />
-             <p className='mb-4'>80+</p>
-            <p className='text-[20px]'> Cities</p>
-            </div>
+    <ScrollParallax strength={-0.15}>
+      <section>
+        <div className="custom-container ">
+          <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0 box-shadow-custom  number-sgrid">
+            {data?.map((e, index) => (
+              <div
+                className="flex flex-col items-center justify-center  number-section-wrapper p-2"
+                key={index}
+              >
+                <h4 className="mb-4 text-2xl font-medium md:text-4xl">
+                  {e?.title}
+                </h4>
+                <p className="text-sm">{e?.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-    </div>
-  )
+      </section>
+    </ScrollParallax>
+  );
 }
 
-export default NumbersThatMatter
+export default NumbersThatMatter;
