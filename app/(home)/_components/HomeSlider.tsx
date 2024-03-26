@@ -3,7 +3,7 @@ import React from "react";
 import "swiper/css";
 import "swiper/css/bundle";
 import Image from "next/image";
-import groovyWalkAnimation from "/public/images/star.json";
+import groovyWalkAnimation from "../../../public/images/star.json";
 import Lottie from "lottie-react";
 import { ScrollParallax } from "react-just-parallax";
 
@@ -32,10 +32,11 @@ const HomeSlider = () => {
               SoarX Network
             </h1>
             <p className="pt-5 text-sm text-slate-500">
-              SoarX is more than just a community; it's a nationwide movement
-              dedicated to empowering students from all walks of life. Through a
-              dynamic array of events, transformative sessions, and exhilarating
-              hackathons, we're reshaping the landscape of student empowerment.
+              SoarX is more than just a community; it&apos;s a nationwide
+              movement dedicated to empowering students from all walks of life.
+              Through a dynamic array of events, transformative sessions, and
+              exhilarating hackathons, we&apos;re reshaping the landscape of
+              student empowerment.
             </p>
             <button className=" signInbut mt-10">Join Us</button>
           </div>
