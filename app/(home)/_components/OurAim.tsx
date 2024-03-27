@@ -67,11 +67,9 @@ const OurAim = () => {
             {data?.map((e, index) => (
               <div
                 key={index}
-                className={`group cursor-pointer relative ${
-                  index === 3 ? "bg-gray-50" : "bg-white"
-                }  ${
-                  index === 3 ? "hover:bg-white" : ""
-                } transition hover:z-[1]  hover:shadow-2xl hover:text-[#10317E] hover:shadow-gray-600/10`}
+                className={`group cursor-pointer relative ${index === 3 ? "bg-gray-50" : "bg-white"
+                  }  ${index === 3 ? "hover:bg-white" : ""
+                  } transition hover:z-[1]  hover:shadow-2xl hover:text-[#10317E] hover:shadow-gray-600/10`}
               >
                 <div className="relative space-y-8 py-12 p-8">
                   <Image

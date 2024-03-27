@@ -15,7 +15,7 @@ const EventsPage = async ({ searchParams }: SearchParamsType) => {
   const currentPage = Number(searchParams?.page) || 1;
   const events = await getAllEvents();
   return (
-    <section>
+    <section className="container">
       <EventPage events={events!} />
     </section>
   );

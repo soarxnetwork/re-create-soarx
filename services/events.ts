@@ -13,6 +13,40 @@ export const getAllEvents = async () => {
   }
 };
 
+export const getPastEvents = async () => {
+  try {
+    return await db.event.findMany({
+      where: {
+        date: {
+          lt: new Date(),
+        },
+      },
+      include: {
+        creator: true,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getOngoingEvents = async () => {
+  try {
+    return await db.event.findMany({
+      where: {
+        date: {
+          gte: new Date(),
+        },
+      },
+      include: {
+        creator: true,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const getEvent = async (id: string) => {
   try {
     return await db.event.findUnique({
