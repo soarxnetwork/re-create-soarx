@@ -14,12 +14,12 @@ const Partners = () => {
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
           {"Partners".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
+            <span className={"hoverText text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
         </div>
-        <h2 className="text-center mb-10 text-4xl pt-2 font-bold text-textColor leading-normal">
+        <h2 className="text-center mb-10 text-[80px] pt-2 font-bold text-[#000000] leading-normal">
           Our Trusted Partners
         </h2>{" "}
         <Swiper

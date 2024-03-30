@@ -608,18 +608,18 @@ header {
   transition: opacity 0.5s;
 }
 
-.hex .img:before {
+/* .hex .img:before {
   background: linear-gradient(115deg,
       #bf97df,
       #9f32f8,
       #7300d0,
       #9f32f8,
       #bf97df);
-}
+} */
 
-.hex .img:after {
+/* .hex .img:after {
   background: linear-gradient(to top, transparent, var(--secondary-color), transparent);
-}
+} */
 
 /*** HOVER EFFECT  **********************************************************************/
 

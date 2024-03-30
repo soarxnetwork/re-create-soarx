@@ -28,10 +28,10 @@ const HomeSlider = () => {
                   ))}
               </div>
             </div>
-            <h1 className="text-2xl  leading-relaxed font-bold text-textColor  md:text-5xl pt-3 ">
+            <h1 className="text-2xl  leading-relaxed font-bold  text-[#000000]  md:text-[60px] pt-3 ">
               SoarX Network
             </h1>
-            <p className="pt-5 text-sm text-slate-500">
+            <p className="pt-5 text-[20px] text-slate-500">
               SoarX is more than just a community; it&apos;s a nationwide
               movement dedicated to empowering students from all walks of life.
               Through a dynamic array of events, transformative sessions, and
