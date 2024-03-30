@@ -25,12 +25,12 @@ const Events = ({ events }: EventProps) => {
       <div className="container mx-auto">
         <div className="text-center text-primary cursor-pointer">
           {"Events".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
+            <span className={"hoverText text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
         </div>
-        <h2 className="text-center text-4xl pt-2 font-bold text-textColor leading-normal">
+        <h2 className="text-center text-[80px] pt-2 font-bold text-[#000000] leading-normal">
           Our Past Events
         </h2>{" "}
         <section className="all-events  grid grid-cols-4 gap-5 pt-16">

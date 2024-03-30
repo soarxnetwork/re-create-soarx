@@ -30,12 +30,12 @@ const OurAim = () => {
         <div className="container">
           <div id="features">
             <div className="max-w-7xl mx-auto">
-              <div className="md:w-2/3 lg:w-1/2">
+              <div className="md:w-2/3 lg:w-3/4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 32 32"
                   fill="currentColor"
-                  className="w-6 h-6 text-yellow-500"
+                  className="w-12 h-12 text-yellow-500"
                 >
                   <path
                     fillRule="evenodd"
@@ -43,12 +43,12 @@ const OurAim = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <h2 className="my-8 text-2xl  leading-relaxed font-bold text-textColor  md:text-4xl">
+                <h2 className="mb-4 text-[#000000] leading-relaxed font-bold   md:text-[60px] ">
                   Rise Together, Soar Higher
                   {/* <br />
                   <span className="text-primary">SoarX</span> */}
                 </h2>
-                <p className="text-gray-600 ">
+                <p className="text-gray-600 text-[30px] ">
                   At Kailasys, we firmly believe that collaboration is the key
                   to success in today&apos;s fast-paced digital landscape.
                   Through strategic IT partnerships, we leverage the collective

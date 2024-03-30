@@ -34,6 +34,7 @@ export const imgPartnerLists = [
   "/images/partner-google.png",
   "/images/partner-polka.png",
   // "/images/digitalocean-partner.png",
+  "/images/jamia-millia-islamia-logo-hd-png-vector-free-download-121.png",
 ];
 
 export const imgPcLists = [

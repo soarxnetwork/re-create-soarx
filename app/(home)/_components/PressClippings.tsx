@@ -97,12 +97,12 @@ const PressClippings = () => {
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
           {"Wings of Inspiration".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
+            <span className={"hoverText text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
         </div>
-        <h2 className="text-center mb-10 text-4xl pt-2 font-bold text-textColor leading-normal">
+        <h2 className="text-center mb-10 text-[80px] pt-2 font-bold text-[#000000] leading-normal">
           SoarX Gallery
         </h2>{" "}
         {/* <div className="gallery">
@@ -136,9 +136,7 @@ const PressClippings = () => {
                       }}
                     />
 
-                    <p id="demo2">
-                      Some sample text about the article this hexagon leads to
-                    </p>
+                   
                   </a>
                 </div>
               </li>
