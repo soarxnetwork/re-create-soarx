@@ -18,11 +18,11 @@ const Discord = () => {
               Join Our Discord Community
             </h2>{" "}
             <p className="mx-auto max-w-2xl text-[30px] text-[#647084] pt-5">
-              Join the SoarX community now!!
+            Engage with fellow tech enthusiasts, participate in insightful discussions, and stay updated on industry trends and opportunities.
             </p>
             <div className="pt-10 m-auto flex justify-center items-center">
               <Link
-                href="https://discord.gg/tH6Cm3fRza"
+                href="https://discord.gg/WhtdpC3e7p"
                 className=" signInbut mt-200 flex items-center w-fit gap-2"
               >
                 <FaDiscord />

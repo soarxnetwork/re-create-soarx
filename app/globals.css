@@ -1441,7 +1441,7 @@ input {
   .our-team-grid {
     grid-template-columns: 1fr 1fr;
   }
-
+  
   .text-lg,
   .text-xl,
   p {
