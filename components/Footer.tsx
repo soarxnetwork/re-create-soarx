@@ -184,12 +184,12 @@ const Footer = () => {
                 Privacy Policy
           
               </Link>
-              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/refund-policy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Refunds & Cancellation Policy
           
               </Link>
-              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/terms'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Terms & Conditons
           
