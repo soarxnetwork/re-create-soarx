@@ -38,7 +38,7 @@ const HomeSlider = () => {
               exhilarating hackathons, we&apos;re reshaping the landscape of
               student empowerment.
             </p>
-            <button className=" signInbut mt-10">Join Us</button>
+            <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
           </div>
           <div className="relative">
             <div className="blob-radius">

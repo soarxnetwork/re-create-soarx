@@ -139,6 +139,12 @@ const Footer = () => {
                   soarxnetwork@gmail.com
                 </a>
               </div>
+              <div className="mb-4 flex gap-2 max-w-[360px] items-center">
+                <BsTelephone className="text-xl font-medium" />
+                <a href="tel:+91 8708686261" title="phone-number">{" "}
+                  +91 8708686261
+                </a>
+              </div>
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">
                   <a href="https://www.youtube.com/@soarxhub">
@@ -173,25 +179,22 @@ const Footer = () => {
           <div className="mb-6 w-full border-hr mt-16"></div>
           <div className="flex-row pb-6 flex justify-between items-center max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse">
             <div className="font-semibold max-[991px]: max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center">
-              <a
-                href="#"
-                className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6"
-              >
-                Features
-              </a>
-              <a
-                href="#"
-                className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6"
-              >
-                Works
-              </a>
-              <a
+              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+            
+                Privacy Policy
+          
+              </Link>
+              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+            
+                Refunds & Cancellation Policy
+          
+              </Link>
+              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+            
+                Terms & Conditons
+          
+              </Link>
+              {/* <a
                 href="#"
                 className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6"
               >
@@ -202,7 +205,7 @@ const Footer = () => {
                 className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6"
               >
                 Help
-              </a>
+              </a> */}
             </div>
             <div className="max-[991px]:flex-none">
               <p className="  max-[479px]:text-sm">

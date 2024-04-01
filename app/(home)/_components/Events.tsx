@@ -64,7 +64,7 @@ const Events = ({ events }: EventProps) => {
                 </div> */}
 
               <div className="relative hover-event-card flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative hover-event-card-img mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 ">
+                <div className="relative hover-event-card-img mx-4 -mt-6 h-[250px] overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 ">
                   <Image
                     src={e.imageUrl}
                     alt="Banner"
