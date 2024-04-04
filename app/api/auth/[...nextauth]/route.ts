@@ -12,9 +12,9 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 export const authOptions: AuthOptions = {
   // @ts-ignore
   adapter: PrismaAdapter(db),
-  pages: {
-    signIn: "/sign-in",
-  },
+  // pages: {
+  //   signIn: "/sign-in",
+  // },
   session: {
     // ! session in nextauth will be stored in the cookie (http only)
     strategy: "jwt",
