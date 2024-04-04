@@ -1,4 +1,4 @@
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from "@/lib/next-auth";
 import { getServerSession } from 'next-auth'
 import { notFound, redirect } from 'next/navigation'
 import React from 'react'

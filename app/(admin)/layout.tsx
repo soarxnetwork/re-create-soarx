@@ -2,7 +2,7 @@ import { AdminContainer } from "./_components/AdminContainer";
 import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/next-auth";
 
 interface LayoutAdminProps {
   children: React.ReactNode;

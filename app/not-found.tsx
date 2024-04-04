@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { TbError404 } from "react-icons/tb";
 import { VscError } from "react-icons/vsc";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/next-auth";
 
 export default async function NotFound() {
   const session = await getServerSession(authOptions);

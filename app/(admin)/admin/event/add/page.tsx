@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import FormEvent from "./_components/FormEvent";
 import { createEvent } from "@/actions/event";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/next-auth";
 
 export const metadata: Metadata = {
   title: "Add Event",
