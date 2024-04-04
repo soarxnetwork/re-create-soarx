@@ -8,8 +8,10 @@ import PressClippings from "./_components/PressClippings";
 import Testimonial from "./_components/Testimonial";
 import Discord from "./_components/Discord";
 import NumbersThatMatter from "./_components/NumbersThatMatter";
+import { sendMail } from "@/lib/mail";
 const HomePage = async () => {
   const events = await getAllEvents();
+
   return (
     <section>
       <HomeSlider />
@@ -18,7 +20,7 @@ const HomePage = async () => {
       <Partners />
       <PressClippings />
       <Testimonial />
-      <NumbersThatMatter/>
+      <NumbersThatMatter />
       <Discord />
     </section>
   );

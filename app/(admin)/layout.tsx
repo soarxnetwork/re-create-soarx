@@ -1,7 +1,8 @@
-import { getCurrentUser } from "@/services/user";
 import { AdminContainer } from "./_components/AdminContainer";
 import { Metadata } from "next";
+import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 interface LayoutAdminProps {
   children: React.ReactNode;
@@ -13,14 +14,14 @@ export const metadata: Metadata = {
 };
 
 const LayoutAdmin = async ({ children }: LayoutAdminProps) => {
-  const user = await getCurrentUser();
+  const session = await getServerSession(authOptions);
 
-  if (user?.admin === "User" || !user) return notFound();
+  if (session?.user.admin === "User" || !session) return notFound();
 
   return (
     // <AdminRoute>
     <div className="flex">
-      <AdminContainer user={user!}>{children}</AdminContainer>
+      <AdminContainer user={session.user!}>{children}</AdminContainer>
     </div>
   );
 };

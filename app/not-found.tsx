@@ -1,15 +1,16 @@
 import Header from "@/components/Header";
-import { getCurrentUser } from "@/services/user";
+import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { TbError404 } from "react-icons/tb";
 import { VscError } from "react-icons/vsc";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function NotFound() {
-  const user = await getCurrentUser();
+  const session = await getServerSession(authOptions);
 
   return (
     <>
-      <Header {...user!} />
+      <Header {...session?.user!} />
       <div className="min-h-screen flex flex-col items-center justify-center gap-2">
         <div
           className="flex items-center relative fill-primaryPurple text-primaryPurple "

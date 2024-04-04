@@ -18,6 +18,7 @@ import {
 } from "@/schema/event";
 import { Event } from "@prisma/client";
 import { toast } from "react-toastify";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 interface FormEventProps {
   creatorId?: string;
@@ -102,13 +103,23 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
             })}
           >
             {imageUrl !== "" ? (
-              <Image
-                src={imageUrl}
-                alt="event image"
-                width={240}
-                height={240}
-                className="w-full rounded-md object-contain"
-              />
+              <div
+                className="relative"
+              >
+                <Image
+                  src={imageUrl}
+                  alt="event image"
+                  width={240}
+                  height={240}
+                  className="w-full rounded-md object-contain"
+                />
+                <button
+                  onClick={() => setValue("imageUrl", "")}
+                  className=" absolute right-4 top-4 hover:opacity-50 opacity-100 transition-all duration-300 ease-in-out"
+                >
+                  <IoMdCloseCircleOutline color="red" size={24} />
+                </button>
+              </div>
             ) : (
               <ImageUpload setImageUrl={setValue} />
             )}
