@@ -1,10 +1,12 @@
+"use client"
 import { authOptions } from "@/lib/next-auth";
 import { getServerSession } from 'next-auth'
+import { useSession } from "next-auth/react";
 import { notFound, redirect } from 'next/navigation'
 import React from 'react'
 
-const ProfilePage = async () => {
-  const session = await getServerSession(authOptions)
+const ProfilePage = () => {
+  const { data: session } = useSession()
   if (!session?.user) return redirect('/sign-in')
   return (
     <section className="container pt-avoid-nav">
