@@ -10,7 +10,7 @@ import { imgPartnerLists } from "@/constants/homepage";
 
 const Partners = () => {
   return (
-    <section className="section px-24">
+    <section className="section px-32">
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
           {"Partners".split("").map((child, idx) => (

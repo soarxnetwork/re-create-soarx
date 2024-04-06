@@ -110,6 +110,7 @@ h1 {
   -webkit-text-fill-color: transparent;
 } */
 
+
 .img-responsive {
   width: 100%;
   height: 100%;
@@ -164,13 +165,25 @@ header {
 }
 
 .banner-img {
-  /* width: 300px;
-  height: 350px; */
+  min-width: 180px;
+  align-items: center;
+  height: 300px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 10px;
+  transition: height ease-in 0.1s;
+
+}
+.swiper-slide-active .banner-img{
+  margin-top: 0;
+  height: 350px;
+  transition: height ease-in 0.1s;
 }
 
+/* .swiper-slide-prev .banner-img{
+  
+  
+} */
 .blob-radius img {
   border-radius: 39% 61% 61% 39%/29% 48% 52% 71%;
 }
@@ -217,6 +230,11 @@ header {
   padding: 0px;
   overflow: hidden;
   width: fit-content;
+}
+.mySwiper .swiper-wrapper{
+  display: flex;
+  align-items: center;
+  min-height:350px;
 }
 
 .button--itzel::before {
@@ -1328,7 +1346,7 @@ input {
   .banner-section {
     padding-top: 130px;
   }
-
+  
   .banner-swiperjs {
     margin-top: 20px;
   }
@@ -1477,21 +1495,23 @@ input {
     grid-template-columns: 1fr;
   }
 
-  /* 
+  
   .partner-imgwrap {
     width: 100%;
     height: 100px;
-  } */
+  }
 
   .content-main {
     width: 100%;
   }
-
+  
   .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 30px !important;
+    
   }
 }
+
 
 @media (max-width: 450px) {
   h1 {

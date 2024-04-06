@@ -21,7 +21,7 @@ interface EventProps {
 
 const Events = ({ events }: EventProps) => {
   return (
-    <section className="section px-24">
+    <section className="section px-32">
       <div className="container mx-auto">
         <div className="text-center text-primary cursor-pointer">
           {"Events".split("").map((child, idx) => (

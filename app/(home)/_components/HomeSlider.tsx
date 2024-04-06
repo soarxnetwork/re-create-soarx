@@ -1,15 +1,18 @@
 "use client";
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import Image from "next/image";
 import groovyWalkAnimation from "../../../public/images/star.json";
 import Lottie from "lottie-react";
+import { Autoplay } from "swiper/modules";
+import { BannerImages } from "@/constants/homepage";
 import { ScrollParallax } from "react-just-parallax";
 
 const HomeSlider = () => {
   return (
-    <section className="banner-section  ">
+    <section className="banner-section  px-32">
       <div className="custom-container flex relative banner-container items-center gap-5 justify-between">
         <div className="grid gap-16 items-center grid-cols-2 ">
           <div className=" ">
@@ -22,25 +25,73 @@ const HomeSlider = () => {
                 {"Empowering Minds. Unleashing Creativity"
                   .split("")
                   .map((child, idx) => (
-                    <span className={"hoverText"} key={idx}>
+                    <span className={"hoverText text-[20px]"} key={idx}>
                       {child}
                     </span>
                   ))}
               </div>
             </div>
-            <h1 className="text-2xl  leading-relaxed font-bold  text-[#000000]  md:text-[60px] pt-3 ">
+            <h1 className="text-2xl  leading-relaxed font-bold  text-[#000000]  md:text-[73px] pt-3 ">
               SoarX Network
             </h1>
-            <p className="pt-5 text-[20px] text-slate-500">
-              SoarX is more than just a community; it&apos;s a nationwide
-              movement dedicated to empowering students from all walks of life.
-              Through a dynamic array of events, transformative sessions, and
-              exhilarating hackathons, we&apos;re reshaping the landscape of
-              student empowerment.
+            <p className="pt-5 text-[30px] text-slate-500">
+            SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons
             </p>
             <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
           </div>
-          <div className="relative">
+          <div className="w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={3}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            centeredSlides={true}
+            loop={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                centeredSlides: false,
+              },
+              500: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              600: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+
+              700: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+            }}
+            className="mySwiper banner-swiperjs min-h-[350px]"
+          >
+            {BannerImages.map((e, index) => (
+              <SwiperSlide key={index} 
+              >
+                <Image
+                  src={e}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="banner-img"
+                  alt="Banner"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+          {/* <div className="relative">
             <div className="blob-radius">
               <Image
                 src={"/images/hero-potrait.jpg"}
@@ -87,7 +138,8 @@ const HomeSlider = () => {
           <div className="particles-square">
             <Image width={35} height={35} src={"/images/square.png"} alt="" />
           </div>
-        </ScrollParallax>
+        </ScrollParallax> */}
+      </div>
       </div>
     </section>
   );

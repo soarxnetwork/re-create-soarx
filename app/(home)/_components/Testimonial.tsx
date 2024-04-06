@@ -145,7 +145,7 @@ const Testimonial = () => {
   },
 ];
   return (
-    <section className="section px-24">
+    <section className="section px-32">
       <div className="container">
         {/* <div className="mt-5">
           <Swiper
