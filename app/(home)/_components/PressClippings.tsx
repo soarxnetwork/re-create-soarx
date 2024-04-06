@@ -93,7 +93,7 @@ const PressClippings = () => {
   };
 
   return (
-    <section className="section px-24">
+    <section className="section px-32">
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
           {"Wings of Inspiration".split("").map((child, idx) => (

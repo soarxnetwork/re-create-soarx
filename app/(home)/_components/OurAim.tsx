@@ -26,7 +26,7 @@ const OurAim = () => {
   ];
   return (
     <div>
-      <section className="pt-20 ">
+      <section className="pt-20 px-36">
         <div className="container">
           <div id="features">
             <div className="max-w-7xl mx-auto">

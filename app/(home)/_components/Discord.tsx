@@ -3,7 +3,7 @@ import React from "react";
 import { FaDiscord } from "react-icons/fa";
 const Discord = () => {
   return (
-    <section className="section">
+    <section className="section px-32">
       <div className="custom-container">
         <div className="">
           <div className=" text-center ">
