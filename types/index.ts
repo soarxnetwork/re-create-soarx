@@ -1,5 +1,17 @@
 import { Blog, Event, User } from "@prisma/client";
 
+// ! rewrite type
+declare module "next-auth" {
+  interface Session {
+    user: User;
+  }
+}
+declare module "next-auth/jwt" {
+  interface JWT {
+    user: User;
+  }
+}
+
 export interface EventCreator extends Event {
   creator: User;
 }

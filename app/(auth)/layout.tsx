@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import { Logo } from "./_components/Logo";
-
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/next-auth";
+import { redirect } from "next/navigation";
 export const metadata: Metadata = {
   title: "SoarX",
   description: "SoarX",
 };
 
-export default function AuthLayout({
+export default async function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession(authOptions)
+  if (session?.user) return redirect('/')
   return (
-    <div className="h-screen flex flex-col items-center justify-center mt-8 gap-4">
-      <Logo />
+    <div >
       {children}
     </div>
   );

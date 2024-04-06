@@ -5,6 +5,8 @@ import "@uploadthing/react/styles.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import Link from "next/link";
+import ButtonAuth from "@/components/ButtonAuth";
 
 export const metadata: Metadata = {
   title: "SoarX",
@@ -29,7 +31,8 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}</Providers>
       </body>
     </html>
   );

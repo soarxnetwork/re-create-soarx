@@ -1,8 +1,10 @@
-import { ClerkProvider } from "@clerk/nextjs";
+"use client"
+// import { ClerkProvider } from "@clerk/nextjs";
 import { PrimeReactProvider } from "primereact/api";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SessionProvider } from "next-auth/react";
 
 import React from "react";
 
@@ -12,7 +14,8 @@ interface ProvidersProps {
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <ClerkProvider>
+    // <ClerkProvider>
+    <SessionProvider>
       <PrimeReactProvider>
         <ToastContainer
           position="bottom-right"
@@ -29,7 +32,8 @@ const Providers = ({ children }: ProvidersProps) => {
         {children}
         <Analytics />
       </PrimeReactProvider>
-    </ClerkProvider>
+    </SessionProvider>
+    // </ClerkProvider>
   );
 };
 

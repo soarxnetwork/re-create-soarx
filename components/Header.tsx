@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fade as Hamburger } from "hamburger-react";
 import { usePathname, useRouter } from "next/navigation";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+// import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
 
 import HeaderDropdown from "./HeaderDropdown";
+import ButtonAuth from "./ButtonAuth";
 const Header = ({ admin }: User) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -73,22 +74,20 @@ const Header = ({ admin }: User) => {
                   {admin ? (
                     admin !== Admin.User ? (
                       <>
-                        <SignedIn>
-                          <li
-                            className={
-                              pathname.includes("/admin")
-                                ? "bg-[#9241d40d] rounded-lg"
-                                : "rounded-lg"
-                            }
+                        <li
+                          className={
+                            pathname.includes("/admin")
+                              ? "bg-[#9241d40d] rounded-lg"
+                              : "rounded-lg"
+                          }
+                        >
+                          <Link
+                            className=" hover:text-primaryPurple"
+                            href="/admin"
                           >
-                            <Link
-                              className=" hover:text-primaryPurple"
-                              href="/admin"
-                            >
-                              Admin
-                            </Link>
-                          </li>
-                        </SignedIn>
+                            Admin
+                          </Link>
+                        </li>
                       </>
                     ) : null
                   ) : null}
@@ -96,16 +95,10 @@ const Header = ({ admin }: User) => {
               </div>
             </div>
             <div className="flex items-center justify-self-end">
+              <ButtonAuth />
               {isClient && (
                 <>
-                  <SignedOut>
-                    <Link href="/sign-in" className=" signInbut">
-                      Sign In
-                    </Link>
-                  </SignedOut>
-                  <SignedIn>
-                    <UserButton afterSignOutUrl="/" afterSwitchSessionUrl="/" />
-                  </SignedIn>
+
                   <div
                     className="mbl-bars"
                     onClick={() => setShowNavbar(!showNavbar)}
