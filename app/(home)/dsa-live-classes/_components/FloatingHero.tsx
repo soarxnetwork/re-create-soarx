@@ -8,6 +8,7 @@ import {
   floatingHeroMotionProps,
   floatingHeroVars,
 } from "@/lib/framer-motion/dlc";
+import Link from "next/link";
 
 const FloatingHero = () => {
   const { isActiveFloatDlc, setIsActiveFloatDlc } = useGlobalState(
@@ -27,7 +28,7 @@ const FloatingHero = () => {
               <span className="  text-xl font-semibold text-primaryPurple">
                 ₹2700
               </span>
-              <span className="text-shark ">₹4800</span>
+              <del className="text-shark ">₹4800</del>
             </div>
             <p className="text-xl font-semibold ">This Course Includes :</p>
             {courseDetailsHeroFloat.map((course) => (
@@ -35,9 +36,11 @@ const FloatingHero = () => {
                 {course}
               </p>
             ))}
-            <button className=" bg-primaryPurple w-full text-white  py-4 px-2 font-medium rounded-xl">
-              Enrollment Closed
-            </button>
+            <Link href="https://pages.razorpay.com/dsa-soarx">
+              <button className="bg-primaryPurple mt-4 hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl">
+                Enroll Now
+              </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
