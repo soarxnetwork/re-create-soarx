@@ -34,7 +34,7 @@ const Events = ({ events }: EventProps) => {
           Our Past Events
         </h2>{" "}
         <section className="all-events  grid grid-cols-4 gap-5 pt-16">
-          {events.map((e, index) => (
+          {events?.map((e, index) => (
             <div key={index}>
               {/* <div className="events-box aim-box">
                   <div className="events-img">
