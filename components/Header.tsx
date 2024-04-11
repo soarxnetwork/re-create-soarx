@@ -14,14 +14,16 @@ const Header = ({ admin }: User) => {
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  // const [ShowHamBurgerItems, setShowHamBurgerItems] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, [admin]);
 
+  // console.log(showNavbar);
   return (
     <header>
-      <div className="custom-container mt-4 ">
+      <div className="custom-container mt-4">
         <nav id="main-navbar" className="navbar rounded-lg">
           <div className=" md:grid md:grid-cols-3 flex justify-between ">
             <Link href={"/"}>
@@ -37,6 +39,7 @@ const Header = ({ admin }: User) => {
               </div>
             </Link>
 
+            
             <div
               className={
                 showNavbar
@@ -98,7 +101,6 @@ const Header = ({ admin }: User) => {
               <ButtonAuth />
               {isClient && (
                 <>
-
                   <div
                     className="mbl-bars"
                     onClick={() => setShowNavbar(!showNavbar)}
