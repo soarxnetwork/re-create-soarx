@@ -21,14 +21,14 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className=" lg:grid lg:grid-cols-3 space-y-12 ">
+      <div className=" lg:grid lg:grid-cols-3 space-y-12 pl-4">
         <div className="   break-words space-y-6 col-span-2 container-hero-dlc ">
-          <h2 className="font-semibold text-2xl lg:pt-0 pt-16    ">
+          <h2 className="font-semibold text-2xl lg:pt-0 pt-20">
             Welcome to <span className="font-bold text-purple-500">Soarx</span> Family
           </h2>
           <div className="space-y-4">
             <h3 className="text-3xl">Low Level Design BootCamp Batch</h3>
-            <div className="fl-ic gap-4 text-lg">
+            <div className="fl-ic gap-4 text-lg pr-4">
               <div className="fl-ic gap-2 text-green-500 fill-green-500">
                 <CiVideoOn size="20" />
                 <span>50+ Lectures</span>

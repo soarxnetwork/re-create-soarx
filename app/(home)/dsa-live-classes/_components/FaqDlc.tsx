@@ -10,7 +10,7 @@ const FaqDlc = () => {
           <h4 className="font-semibold text-xl">Frequently Asked Questions</h4>
           <p>
             Have a question that is not answered? You can contact us at
-            Support@CodeHelp.in
+            soarxnetwork@gmail.com
           </p>
         </div>
         <div className=" space-y-4">

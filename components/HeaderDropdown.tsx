@@ -40,10 +40,10 @@ const HeaderDropdown = () => {
     <li
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative  "
+      className="relative  hover:cursor-pointer"
     >
       <div>
-        <div className="relative flex items-center gap-2 ">
+        <div className="relative flex items-center gap-2 hover:cursor-pointer">
           <p
             className={cn("select-none truncate ", {
               "text-primaryPurple": hovered,
