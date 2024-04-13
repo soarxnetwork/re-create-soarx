@@ -1755,3 +1755,79 @@ input {
     border-right: 0px solid #e4d3d3;
   }
 }
+.Event-reg-button {
+  width: 200px;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid #8919E4;
+  font-size: 14px;
+  
+  font-weight: 400;
+  letter-spacing: 1px;
+  background-color: #8919E4;
+  color: white;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  font-family: Tahoma, sans-serif;
+  }
+  
+  .Event-reg-button:hover {
+ 
+  box-shadow: 0 0 30px 5px #8919E4;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  color: white;
+  }
+  
+  .Event-reg-button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+  }
+  
+  .Event-reg-button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+  from {
+  opacity: 0;
+  left: 0%;
+  }
+  
+  50% {
+  opacity: 1;
+  }
+  
+  to {
+  opacity: 0;
+  left: 100%;
+  }
+  }
+  
+  .Event-reg-button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+  }
+  
+  
