@@ -22,7 +22,7 @@ const LeftHeroDlc = () => {
   return (
     <>
       <div className=" lg:grid lg:grid-cols-3 space-y-12 pl-4">
-        <div className="   break-words space-y-6 col-span-2 container-hero-dlc ">
+        <div className="   break-words space-y-6 col-span-2 container-hero-dlc">
           <h2 className="font-semibold text-2xl lg:pt-0 pt-20">
             Welcome to <span className="font-bold text-purple-500">Soarx</span> Family
           </h2>
@@ -49,7 +49,7 @@ const LeftHeroDlc = () => {
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className=" space-y-6 lg:w-[380px]  z-20  bg-neutral-9 border-dlc border rounded-xl container-hero-dlc  lg:absolute top-20 right-8  p-6"
+              className=" space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc  lg:absolute top-20 right-8  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
@@ -66,7 +66,7 @@ const LeftHeroDlc = () => {
                 </span>
                 <del className=" text-shark ">₹4800</del>
               </div>
-              <p className="text-xl font-semibold text-white">
+              <p className="text-xl font-semibold text-black">
                 This Course Includes :
               </p>
               <div className="space-y-2">
@@ -75,7 +75,7 @@ const LeftHeroDlc = () => {
                     <span>
                       <CiCircleCheck size="28" fill="#9241D4" />
                     </span>
-                    <p className=" text-white">{course}</p>
+                    <p className=" text-black">{course}</p>
                   </div>
                 ))}
               </div>

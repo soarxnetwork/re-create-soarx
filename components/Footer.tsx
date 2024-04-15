@@ -104,17 +104,17 @@ const Footer = () => {
         </div>
       </div>
     </section> */}
-      <footer className="block footer-bg text-white pt-24">
+      <footer className="block bg-white text-black pt-24">
         <div className="custom-container pb-5">
           {/* Component */}
           <div className="flex-row flex items-center justify-between max-[767px]:flex-col max-[767px]:items-start">
             <div className="w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial max-[767px]:">
               <div className=" flex items-center gap-3 ">
                 <Image
-                  src={"/images/SoarX-transparent-logo-white-cropped.png"}
+                  src={"/images/Soarx-transparent-logo.png"}
                   width={130}
                   height={0}
-                  className=" bg-transparent"
+                  className="text-black"
                   alt="Header Logo"
                 />
               </div>
@@ -148,15 +148,15 @@ const Footer = () => {
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">
                   <a href="https://www.youtube.com/@soarxhub">
-                    <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
+                    <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
                   </a>
                 </div>
                 <div>
                   <a href="https://x.com/SoarXNetwork">
-                    <div className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
+                    <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
                       <FontAwesomeIcon
                         icon={faXTwitter}
-                        style={{ color: "white" }}
+                        style={{ color: "black" }}
                       />{" "}
                     </div>
                   </a>
@@ -164,13 +164,13 @@ const Footer = () => {
 
                 <div>
                   <a href="https://www.linkedin.com/company/soarxnetwork/">
-                    <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
+                    <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
                   </a>
                 </div>
 
                 <div>
                   <a href="https://www.instagram.com/soarxnetwork">
-                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-white rounded-full cursor-pointer  ease-in duration-300 " />
+                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " />
                   </a>
                 </div>
               </div>
@@ -179,17 +179,17 @@ const Footer = () => {
           <div className="mb-6 w-full border-hr mt-16"></div>
           <div className="flex-row pb-6 flex justify-between items-center max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse">
             <div className="font-semibold max-[991px]: max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center">
-              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Privacy Policy
           
               </Link>
-              <Link href= {'/refund-policy'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/refund-policy'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Refunds & Cancellation Policy
           
               </Link>
-              <Link href= {'/terms'} className="inline-block font-normal   transition hover:text-slate-300 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/terms'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Terms & Conditons
           

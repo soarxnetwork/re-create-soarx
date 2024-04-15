@@ -35,7 +35,7 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className=" bg-black-dlc text-white p-4 rounded-xl">
+      <div className=" bg-black-dlc text-black bg-white shadow-lg p-4 rounded-xl">
         <div className="fl-ic gap-4">
           <div className="space-y-4">
             <h4 className="font-semibold">Our Instructor</h4>
