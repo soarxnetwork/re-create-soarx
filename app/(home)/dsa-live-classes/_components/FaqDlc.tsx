@@ -5,15 +5,15 @@ import FaqItem from "../../campus-ambassador/_components/FaqItem";
 const FaqDlc = () => {
   return (
     <>
-      <div className="space-y-6">
-        <div className="space-y-4 text-center">
+      <div className="space-y-10 mt-14 ml-24 mr-24 mb-14">
+        <div className="space-y-6 text-center">
           <h4 className="font-semibold text-xl">Frequently Asked Questions</h4>
           <p>
             Have a question that is not answered? You can contact us at
             soarxnetwork@gmail.com
           </p>
         </div>
-        <div className=" space-y-4">
+        <div className=" space-y-10">
           {faqDlc.map((item) => (
             <FaqItem key={item.id} {...item} />
           ))}

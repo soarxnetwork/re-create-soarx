@@ -1,4 +1,20 @@
 import { BsCameraReels } from "react-icons/bs";
+import { LuAirplay } from "react-icons/lu";
+import { ImPause } from "react-icons/im";
+import { LuArrowUp01 } from "react-icons/lu";
+import { ImEmbed2 } from "react-icons/im";
+import { PiNumberTwoBold } from "react-icons/pi";
+import { ImFileText2 } from "react-icons/im";
+import { ImFeed } from "react-icons/im";
+import { FaJava } from "react-icons/fa";
+import { BsFillDiagram3Fill } from "react-icons/bs";
+import { RiMiniProgramFill } from "react-icons/ri";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { MdDesignServices } from "react-icons/md";
+import { SiMaterialdesignicons } from "react-icons/si";
+import { MdQuiz } from "react-icons/md";
+import { FaQuestionCircle } from "react-icons/fa";
+import { ImTicket } from "react-icons/im";
 
 export const courseDetails1 = [
   {
@@ -6,74 +22,74 @@ export const courseDetails1 = [
     description: "LIVE Doubt Class Every Saturday [9-11pm]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <LuAirplay />,
     description: "Mode of the Course Hybrid mode [LIVE + REC]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <LuArrowUp01 />,
     description: "No. Of Lectures 50+",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <ImPause />,
     description: "Class Recording Provided Yes",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <ImEmbed2 />,
     description: "Doubt & Revision Classes 24+ Sessions",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <PiNumberTwoBold />,
     description: "Course Validity 2 Year",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <ImFileText2 />,
     description: "Programming Language Used: C++/Java",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <ImFeed />,
     description: "LIVE Revision Class Every Tuesday [9-11pm]",
   },
 ];
 export const courseDetails2 = [
   {
-    icon: <BsCameraReels />,
+    icon: <FaJava />,
     description: "Learn C++/Java from Scratch",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <BsFillDiagram3Fill />,
     description:
       "C++/Java OOPS Concept: Inheritance, Polymorphism, Encapsulation & Abstraction",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <BsFillDiagram3Fill />,
     description: "UML Diagrams in Depth",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <RiMiniProgramFill />,
     description: "SOLID Principles [An Interview Perspective]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <BsPersonWorkspace />,
     description: "Introduction to Design Patterns",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <MdDesignServices />,
     description: "Creational Design Patterns [With Examples]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <SiMaterialdesignicons />,
     description: "Structural Design Patterns [With Examples]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <ImTicket />,
     description: "Behavioural Design Patterns [With Examples]",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <MdQuiz />,
     description: "Quizzes, Exercise for Assessment",
   },
   {
-    icon: <BsCameraReels />,
+    icon: <FaQuestionCircle />,
     description: "Solving Real World Design Problems",
   },
 ];

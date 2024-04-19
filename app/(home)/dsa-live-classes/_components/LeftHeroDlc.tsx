@@ -21,35 +21,32 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className=" lg:grid lg:grid-cols-3 space-y-12 pl-4">
+      <div className=" lg:grid lg:grid-cols-3 space-y-12">
         <div className="   break-words space-y-6 col-span-2 container-hero-dlc">
-          <h2 className="font-semibold text-2xl lg:pt-0 pt-20">
-            Welcome to <span className="font-bold text-purple-500">Soarx</span> Family
-          </h2>
+          <div className="flex flex-col gap-y-3">
+            <p className="tex text-lg border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 rounded-sm">
+              LIVE
+            </p>
+            <h2 className="font-semibold text-xl lg:pt-0 pt-20">
+              Welcome to{" "}
+              <span className="font-bold text-purple-500">Soarx</span> Family
+            </h2>
+          </div>
           <div className="space-y-4">
-            <h3 className="text-3xl">Low Level Design BootCamp Batch</h3>
-            <div className="fl-ic gap-4 text-lg pr-4">
-              <div className="fl-ic gap-2 text-green-500 fill-green-500">
-                <CiVideoOn size="20" />
-                <span>50+ Lectures</span>
-              </div>
-              <div className="fl-ic gap-2 text-blue-500 fill-blue-500">
-                <TbWorldWww size="20" />
-                <span>50+ Lectures</span>
-              </div>
-              <div className="fl-ic gap-2 text-orange-500 fill-orange-500">
-                <span>5.0</span>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <FaStar size="20" key={i} />
-                ))}
-              </div>
+            <h3 className="text-3xl font-semibold">
+              Low Level Design BootCamp Batch
+            </h3>
+            <div className="fl-ic gap-4 text-3xl font-semibold pr-4">
+              {/*Have to add something */}
+              (Beginner to Advance)
             </div>
           </div>
         </div>
+
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className=" space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc  lg:absolute top-20 right-8  p-6"
+              className="space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc  lg:absolute top-24 right-40  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
@@ -61,10 +58,10 @@ const LeftHeroDlc = () => {
                 className=" rounded-xl mx-auto"
               />
               <div className="fl-ic gap-4">
-                <span className=" text-primaryPurple text-xl font-semibold">
+                <span className=" text-primaryPurple text-3xl font-semibold">
                   ₹2700
                 </span>
-                <del className=" text-shark ">₹4800</del>
+                <del className=" text-shark text-xl">₹4800</del>
               </div>
               <p className="text-xl font-semibold text-black">
                 This Course Includes :
@@ -79,10 +76,11 @@ const LeftHeroDlc = () => {
                   </div>
                 ))}
               </div>
-             <Link href="https://pages.razorpay.com/dsa-soarx">
-             <button className="bg-primaryPurple mt-4 hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl">
-                Enroll Now
-              </button></Link>
+              <Link href="https://pages.razorpay.com/dsa-soarx">
+                <button className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl">
+                  Enroll Now
+                </button>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

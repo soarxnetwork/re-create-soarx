@@ -7,7 +7,7 @@ import FloatingHero from "./_components/FloatingHero";
 const DsaLiveClassesPage = () => {
   return (
     <>
-      <div className=" bg-border-dlc  pt-12 min-h-[50vh] pb-4 fl-ic justify-center text-black bg-white">
+      <div className="bg-border-dlc pl-32 pt-28 min-h-[50vh] pb-4 fl-ic  text-black bg-gray-200">
         <LeftHeroDlc />
       </div>
       <section className="lg:grid lg:grid-cols-3 relative py-4">

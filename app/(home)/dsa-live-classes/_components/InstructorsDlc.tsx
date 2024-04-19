@@ -35,17 +35,17 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className=" bg-black-dlc text-black bg-white shadow-lg p-4 rounded-xl">
+      <div className=" bg-black-dlc ml-24 text-black border-2 bg-gray-100 p-4 rounded-xl">
         <div className="fl-ic gap-4">
           <div className="space-y-4">
-            <h4 className="font-semibold">Our Instructor</h4>
+            <h4 className="font-semibold text-3xl">Our Instructor</h4>
             <p>
               Discover brilliance in code with our expert instructors.
               Passionate mentors dedicated to fueling your coding journey at
-              CodeHelp.
+              SoarX.
             </p>
           </div>
-          <div className=" fl-ic gap-4">
+          <div className="fl-ic gap-4">
             <button
               className=" bg-border-dlc rounded-full w-12 h-12 fl-ic justify-center"
               onClick={prevInstructor}
