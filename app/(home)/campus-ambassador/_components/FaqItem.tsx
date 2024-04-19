@@ -22,10 +22,10 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
   return (
     <motion.div layout>
       <div
-        className=" flex justify-between cursor-pointer space-y-2 border-b-2 border-dlc border-solid "
+        className="flex justify-between cursor-pointer space-y-2 border-b-2 border-dlc border-solid "
         onClick={() => handleToggle(id)}
       >
-        <h6 className=" font-medium text-lg">{question}</h6>
+        <h6 className="font-medium text-lg">{question}</h6>
         <span>
           <IoMdArrowDropdown
             size={24}
@@ -44,7 +44,7 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
               transition: { duration: 0.3 },
             }}
           >
-            <p className="text-sm text-black/50 font-medium">{answer}</p>
+            <p className="text-black/50 text-base font-medium">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>

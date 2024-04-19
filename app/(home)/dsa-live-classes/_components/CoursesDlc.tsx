@@ -17,25 +17,25 @@ const CoursesDlc = () => {
   return (
     <>
       <div
-        className="bg-black-dlc bg-white rounded-xl grid grid-cols-2 p-4 text-black gap-4 text-sm "
+        className="bg-black-dlc bg-gray-100 border-2 mr-5 ml-24 rounded-xl grid grid-cols-2 p-4 text-black gap-4 text-sm "
         ref={ref}
       >
         <CourseDlc courseDetails={courseDetails1} />
       </div>
-      <div className="space-y-4">
-        <h4 className="font-semibold">This Course Includes</h4>
-        <p>
+      <div className="space-y-4 ml-24 mr-5">
+        <h4 className="font-semibold text-3xl">This Course Includes</h4>
+        <p className="text-base">
           Explore the comprehensive learning experience awaiting you on this
           course detail page. From fundamental concepts to advanced techniques,
           discover what you will learn and how it will propel your skills to new
           heights.
         </p>
       </div>
-      <div className="bg-black-dlc rounded-xl grid grid-cols-2 p-4 text-black bg-white gap-4 text-sm ">
+      <div className="bg-black-dlc rounded-xl grid grid-cols-2 p-4 ml-24 mr-6 border-2  text-black bg-gray-100 gap-4 text-sm ">
         <CourseDlc courseDetails={courseDetails2} />
       </div>
-      <div className="space-y-4">
-        <h4 className="font-semibold">Comprehensive Course Modules</h4>
+      <div className="space-y-4 ml-24">
+        <h4 className="font-semibold text-3xl">Comprehensive Course Modules</h4>
         <p>
           Immerse yourself in a wealth of knowledge with our comprehensive
           course content.

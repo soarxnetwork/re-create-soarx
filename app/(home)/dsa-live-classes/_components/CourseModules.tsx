@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="bg-black-dlc rounded-xl p-4 text-black shadow-xl  bg-white space-y-8 text-sm  "
+      className="bg-black-dlc rounded-xl p-4 text-black border-2 bg-gray-100 space-y-8 text-base  ml-24"
       ref={ref}
     >
       {coursesModules.map((course) => (

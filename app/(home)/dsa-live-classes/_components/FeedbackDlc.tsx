@@ -9,7 +9,10 @@ import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "usehooks-ts";
 
 const FeedbackDlc = () => {
-  const [ref, inView] = useInView();
+  return (
+    <></>
+  )
+  /*const [ref, inView] = useInView();
   const { isActiveFloatDlc, setIsActiveFloatDlc } = useGlobalState(
     (state) => state
   );
@@ -58,7 +61,7 @@ const FeedbackDlc = () => {
         ))}
       </div>
     </>
-  );
+  );*/
 };
 
 export default FeedbackDlc;
