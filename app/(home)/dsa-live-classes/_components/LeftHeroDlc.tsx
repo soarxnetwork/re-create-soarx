@@ -44,7 +44,7 @@ const LeftHeroDlc = () => {
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className="space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc  lg:absolute top-24 right-32  p-6"
+              className="space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
