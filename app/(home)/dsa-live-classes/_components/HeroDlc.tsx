@@ -12,7 +12,7 @@ const HeroDlc = () => {
   return (
     <div>
       <div className="container space-y-12">
-        <div className="space-y-6 pl-24 pr-14">
+        <div className="space-y-6 pl-24 pr-20">
           <h4 className="font-semibold text-3xl pt-6">About Course</h4>
           <p>
             A comprehensive program that covers the{" "}
