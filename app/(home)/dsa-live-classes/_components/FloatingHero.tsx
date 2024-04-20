@@ -20,7 +20,7 @@ const FloatingHero = () => {
       <AnimatePresence>
         {isActiveFloatDlc && (
           <motion.div
-            className="bg-border-dlc lg:block bg-white shadow-xl border border-opacity-20 border-black hidden sticky top-24 p-4 bg-black-dlc z-10 -right-24  w-[360px]   h-[360px] text-black rounded-xl space-y-6"
+            className="bg-border-dlc lg:block bg-white shadow-xl border border-opacity-20 border-black hidden sticky top-32 p-4 bg-black-dlc z-10 -right-24  w-[360px]   h-[360px] text-black rounded-xl space-y-6"
             variants={floatingHeroVars}
             {...floatingHeroMotionProps}
           >
