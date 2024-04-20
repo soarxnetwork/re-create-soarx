@@ -17,7 +17,7 @@ const CoursesDlc = () => {
   return (
     <>
       <div
-        className="bg-black-dlc bg-gray-100 border-2 mr-5 ml-24 rounded-xl grid grid-cols-2 p-4 text-black gap-4 text-sm "
+        className=" mr-5 ml-24 rounded-xl grid grid-cols-2 p-4 text-black gap-4 text-sm "
         ref={ref}
       >
         <CourseDlc courseDetails={courseDetails1} />
@@ -31,7 +31,7 @@ const CoursesDlc = () => {
           heights.
         </p>
       </div>
-      <div className="bg-black-dlc rounded-xl grid grid-cols-2 p-4 ml-24 mr-6 border-2  text-black bg-gray-100 gap-4 text-sm ">
+      <div className="grid grid-cols-2 p-4 ml-24 mr-6 text-black gap-4 text-sm ">
         <CourseDlc courseDetails={courseDetails2} />
       </div>
       <div className="space-y-4 ml-24">

@@ -35,10 +35,10 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className=" bg-black-dlc ml-24 text-black border-2 bg-gray-100 p-4 rounded-xl">
+      <div className="ml-24 text-black  p-4 rounded-xl">
         <div className="fl-ic gap-4">
           <div className="space-y-4">
-            <h4 className="font-semibold text-3xl">Our Instructor</h4>
+            <h4 className="font-semibold text-3xl">Our Instructors</h4>
             <p>
               Discover brilliance in code with our expert instructors.
               Passionate mentors dedicated to fueling your coding journey at
@@ -46,7 +46,7 @@ const InstructorsDlc = () => {
             </p>
           </div>
           <div className="fl-ic gap-4">
-            <button
+            {/* <button
               className=" bg-border-dlc rounded-full w-12 h-12 fl-ic justify-center"
               onClick={prevInstructor}
               disabled={instructorIndex === 0}
@@ -59,7 +59,7 @@ const InstructorsDlc = () => {
               disabled={instructorIndex === instructorsDsa.length - 1}
             >
               <FaArrowRight size="20" className="fill-white" />
-            </button>
+            </button> */}
           </div>
         </div>
         <InstructorDLc

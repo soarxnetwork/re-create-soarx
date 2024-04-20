@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="bg-black-dlc rounded-xl p-4 text-black border-2 bg-gray-100 space-y-8 text-base  ml-24"
+      className="p-4 text-black space-y-8 text-base ml-24 mr-4"
       ref={ref}
     >
       {coursesModules.map((course) => (
@@ -43,7 +43,7 @@ const CourseModules = () => {
         >
           <motion.button
             layout
-            className="font-semibold fl-ic justify-between w-full "
+            className="font-semibold fl-ic justify-between w-full"
             onClick={() => handleToggle(course.name)}
           >
             <span>{course.name}</span>
@@ -58,7 +58,7 @@ const CourseModules = () => {
           </motion.button>
           <AnimatePresence>
             <div
-              className={cn(" p-0 rounded-none", {
+              className={cn(" p-0 pb-4 font-medium rounded-none border-b-2", {
                 "p-4 bg-border-dlc": isOpen[course.name],
                 "rounded-xl bg-white": isOpen[course.name],
               })}

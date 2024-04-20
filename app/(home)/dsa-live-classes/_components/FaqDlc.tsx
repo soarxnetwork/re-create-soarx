@@ -9,8 +9,8 @@ const FaqDlc = () => {
         <div className="space-y-6 text-center">
           <h4 className="font-semibold text-xl">Frequently Asked Questions</h4>
           <p>
-            Have a question that is not answered? You can contact us at
-            soarxnetwork@gmail.com
+            Have a question that is not answered? You can contact us at{" "}
+            <span className="font-medium">soarxnetwork@gmail.com</span>
           </p>
         </div>
         <div className=" space-y-10">
