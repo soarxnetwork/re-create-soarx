@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="p-4 text-black space-y-8 text-base ml-24 mr-4"
+      className="p-4 text-black space-y-8 text-base ml-24 mr-16"
       ref={ref}
     >
       {coursesModules.map((course) => (
