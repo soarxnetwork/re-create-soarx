@@ -12,6 +12,7 @@ import { AuthOptions } from "next-auth";
 export const authOptions: AuthOptions = {
   // @ts-ignore
   adapter: PrismaAdapter(db),
+  allowDangerousEmailAccountLinking: true,
   pages: {
     signIn: "/sign-in",
   },
