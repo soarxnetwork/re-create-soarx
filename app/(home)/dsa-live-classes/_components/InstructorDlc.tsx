@@ -46,9 +46,6 @@ const InstructorDLc = ({
         onDragEnd={onDragEnd}
       > */}
         <Swiper
-          pagination={{
-            type: "progressbar",
-          }}
           centeredSlides={true}
           autoplay={{
             delay: 3500,
