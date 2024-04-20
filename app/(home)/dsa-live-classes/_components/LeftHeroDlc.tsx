@@ -28,10 +28,7 @@ const LeftHeroDlc = () => {
             <p className="tex text-lg border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
               LIVE
             </p>
-            <h2 className="font-semibold text-xl lg:pt-0 pt-20">
-              Welcome to{" "}
-              <span className="font-bold text-purple-500">Soarx</span> Family
-            </h2>
+            
           </div>
           <div className="space-y-4">
             <h3 className="text-3xl font-semibold">
