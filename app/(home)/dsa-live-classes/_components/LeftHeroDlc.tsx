@@ -32,7 +32,7 @@ const LeftHeroDlc = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-3xl font-semibold">
-            Data Structures & Algorithms Cohort 1.0
+              Data Structures & Algorithms Cohort 1.0
             </h3>
             <div className="fl-ic gap-4 text-3xl font-semibold pr-4">
               {/*Have to add something */}
@@ -62,7 +62,7 @@ const LeftHeroDlc = () => {
                 <del className=" text-shark text-xl">₹4800</del>
               </div>
               <p className="text-xl font-semibold text-black">
-              BONUS INCLUDES:
+                BONUS INCLUDES:
               </p>
               <div className="space-y-2">
                 {courseDetailsHero.map((course) => (

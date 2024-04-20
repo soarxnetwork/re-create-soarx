@@ -58,7 +58,7 @@ export const courseDetails2 = [
   {
     icon: <BsFillDiagram3Fill />,
     description:
-      "C++/Java OOPS Concept: Inheritance, Polymorphism, Encapsulation & Abstraction",
+      "C++/Java OOPS Concept",
   },
   {
     icon: <BsFillDiagram3Fill />,
