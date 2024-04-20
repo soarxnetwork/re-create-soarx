@@ -3,6 +3,7 @@
 import { FaStar } from "react-icons/fa6";
 import { CiCircleCheck, CiVideoOn } from "react-icons/ci";
 import { TbWorldWww } from "react-icons/tb";
+import { AiFillThunderbolt } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   floatingHeroMotionProps,
@@ -34,7 +35,7 @@ const LeftHeroDlc = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-3xl font-semibold">
-              Low Level Design BootCamp Batch
+            Data Structures & Algorithms Cohort 1.0
             </h3>
             <div className="fl-ic gap-4 text-3xl font-semibold pr-4">
               {/*Have to add something */}
@@ -64,13 +65,13 @@ const LeftHeroDlc = () => {
                 <del className=" text-shark text-xl">₹4800</del>
               </div>
               <p className="text-xl font-semibold text-black">
-                This Course Includes :
+              BONUS INCLUDES:
               </p>
               <div className="space-y-2">
                 {courseDetailsHero.map((course) => (
                   <div key={course} className="fl-ic gap-2">
                     <span>
-                      <CiCircleCheck size="28" fill="#9241D4" />
+                      <AiFillThunderbolt size="28" fill="#9241D4" />
                     </span>
                     <p className=" text-black">{course}</p>
                   </div>
