@@ -29,7 +29,7 @@ const InstructorDLc = ({
   // TODO AUTO INTERVAL IF SOARX WANT
 
   return (
-    <article className="my-8 py-5 relative overflow-x-hidden">
+    <article className="my-8 py-5 mr-4 relative overflow-x-hidden">
       {/* <motion.div
         className=" active:cursor-grabbing flex items-center"
         drag="x"
