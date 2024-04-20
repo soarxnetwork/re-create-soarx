@@ -24,7 +24,7 @@ const LeftHeroDlc = () => {
       <div className=" lg:grid lg:grid-cols-3 space-y-12">
         <div className="   break-words space-y-6 col-span-2 container-hero-dlc">
           <div className="flex flex-col gap-y-3">
-            <p className="tex text-lg border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 rounded-sm">
+            <p className="tex text-lg border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
               LIVE
             </p>
             <h2 className="font-semibold text-xl lg:pt-0 pt-20">
