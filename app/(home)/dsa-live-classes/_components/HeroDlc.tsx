@@ -6,13 +6,14 @@ import CourseModules from "./CourseModules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import InstructorsDlc from "./InstructorsDlc";
 import FeedbackDlc from "./FeedbackDlc";
+import CertificateOfCompletion from "./CertificateOfCompletion";
 
 const HeroDlc = () => {
   return (
     <div>
       <div className="container space-y-12">
-        <div className="space-y-6">
-          <h4 className="font-semibold">About Course</h4>
+        <div className="space-y-6 pl-24 pr-14">
+          <h4 className="font-semibold text-3xl pt-6">About Course</h4>
           <p>
             A comprehensive program that covers the{" "}
             <span className="font-bold">fundamentals</span> of Low Level Design.
@@ -30,10 +31,11 @@ const HeroDlc = () => {
             </span>
           </p>
         </div>
-        <CoursesDlc />
+        <CoursesDlc/>
         <CourseModules />
         <InstructorsDlc />
-        <FeedbackDlc />
+        <CertificateOfCompletion/>
+        <FeedbackDlc/>
       </div>
     </div>
   );

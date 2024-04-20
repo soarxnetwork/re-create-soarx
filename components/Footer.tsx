@@ -104,14 +104,14 @@ const Footer = () => {
         </div>
       </div>
     </section> */}
-      <footer className="block bg-white text-black pt-24">
+      <footer className="block bg-gray-800 text-white pt-24">
         <div className="custom-container pb-5">
           {/* Component */}
           <div className="flex-row flex items-center justify-between max-[767px]:flex-col max-[767px]:items-start">
             <div className="w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial max-[767px]:">
               <div className=" flex items-center gap-3 ">
                 <Image
-                  src={"/images/Soarx-transparent-logo.png"}
+                  src={"/images/SoarX-transparent-logo-white-cropped.png"}
                   width={130}
                   height={0}
                   className="text-black"
@@ -148,15 +148,15 @@ const Footer = () => {
               <div className="social-icons-footer mt-2 flex items-center gap-2">
                 <div className=" ">
                   <a href="https://www.youtube.com/@soarxhub">
-                    <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
+                    <FaYoutube className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full cursor-pointer hover:bg-[#FF0000] hover:border-[#FF0000] ease-in duration-300 " />
                   </a>
                 </div>
                 <div>
                   <a href="https://x.com/SoarXNetwork">
-                    <div className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
+                    <div className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full h-[35px] w-[35px] cursor-pointer hover:bg-[#1DA1F2] hover:border-[#1DA1F2] ease-in duration-300 ">
                       <FontAwesomeIcon
                         icon={faXTwitter}
-                        style={{ color: "black" }}
+                        style={{ color: "white" }}
                       />{" "}
                     </div>
                   </a>
@@ -164,13 +164,13 @@ const Footer = () => {
 
                 <div>
                   <a href="https://www.linkedin.com/company/soarxnetwork/">
-                    <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-black rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
+                    <FaLinkedinIn className="text-4xl p-2 font-medium hover:fill-white border border-white rounded-full cursor-pointer hover:bg-[#0077b5] hover:border-[#0077b5] ease-in duration-300 " />
                   </a>
                 </div>
 
                 <div>
                   <a href="https://www.instagram.com/soarxnetwork">
-                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-black rounded-full cursor-pointer  ease-in duration-300 " />
+                    <FaInstagram className="text-4xl p-2 font-medium hover:fill-white border instagram-footer-button border-white rounded-full cursor-pointer  ease-in duration-300 " />
                   </a>
                 </div>
               </div>
