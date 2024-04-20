@@ -10,8 +10,7 @@ import { FaWhatsapp } from 'react-icons/fa';
  async function page({ params }: { params: { slug: string } }) {
     
        const event = await getEventBySlug(params.slug);
-       console.log(`this is the event :- ${event} and the slug:-  ${params.slug}`);
-  return (
+         return (
    <>
    <div className='mt-[10%]'>
    <div className="flex justify-center">

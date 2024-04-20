@@ -92,6 +92,8 @@ model Event {
   id String @id @default(uuid()) 
   title String
   date DateTime
+  startTime String?
+  endTime String?
   description String
   imageUrl String
   location String
@@ -148,6 +150,7 @@ model CampusAmbassador {
   inCodingClub String?
   stream String?
   strenghtStem String?
+
 
   createdAt DateTime @default(now())
   

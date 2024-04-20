@@ -95,6 +95,18 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
             <span className="text-sm text-red-500">{errors.slug.message}</span>
           )}
         </div>
+        <div className="flex w-full e-nfg  gap-5">
+          <input placeholder="Event Location" {...register("startTime")} />
+          {errors.startTime && (
+            <span className="text-sm text-red-500">
+              {errors.startTime.message}
+            </span>
+          )}
+          <input placeholder="Event Slug" {...register("endTime")} />
+          {errors.endTime && (
+            <span className="text-sm text-red-500">{errors.endTime.message}</span>
+          )}
+        </div>
 
         <div className="flex w-full e-nfg  gap-5">
           <div

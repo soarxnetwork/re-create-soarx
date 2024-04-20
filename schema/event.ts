@@ -7,6 +7,8 @@ export const eventSchema = z.object({
     message: "Too short",
   }),
   date: z.date(),
+  startTime: z.string(),
+  endTime: z.string(),
   description: z.string().min(2, {
     message: "Too short",
   }),
