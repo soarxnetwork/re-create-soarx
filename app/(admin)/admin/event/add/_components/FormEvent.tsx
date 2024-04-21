@@ -96,13 +96,13 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           )}
         </div>
         <div className="flex w-full e-nfg  gap-5">
-          <input placeholder="Event Location" {...register("startTime")} />
+          <input placeholder="Event Start Time" {...register("startTime")} />
           {errors.startTime && (
             <span className="text-sm text-red-500">
               {errors.startTime.message}
             </span>
           )}
-          <input placeholder="Event Slug" {...register("endTime")} />
+          <input placeholder="Event End Time" {...register("endTime")} />
           {errors.endTime && (
             <span className="text-sm text-red-500">{errors.endTime.message}</span>
           )}
