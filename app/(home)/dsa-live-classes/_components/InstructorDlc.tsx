@@ -97,7 +97,7 @@ const InstructorDLc = ({
                     <p>{instructor.subDescription}</p>
                    <div className="flex items-center gap-x-6">
                    {instructor.logos.map(companies => (
-                    <div className="flex">
+                    <div className="flex" key={instructor.title}>
                       <Image
                         src={companies}
                         alt="Instructor"
