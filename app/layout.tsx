@@ -7,6 +7,7 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import Link from "next/link";
 import ButtonAuth from "@/components/ButtonAuth";
+import { NextProvider } from "@/providers/NextuiProviders";
 
 export const metadata: Metadata = {
   title: "SoarX",
@@ -21,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {" "}
       <body>
         <NextSSRPlugin
           /**
@@ -31,8 +33,9 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <Providers>
-          {children}</Providers>
+        {/* <NextProvider> */}
+          <Providers>{children}</Providers>
+        {/* </NextProvider> */}
       </body>
     </html>
   );

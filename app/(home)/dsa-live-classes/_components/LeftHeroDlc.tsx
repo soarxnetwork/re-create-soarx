@@ -48,11 +48,11 @@ const LeftHeroDlc = () => {
               {...floatingHeroMotionProps}
             >
               <Image
-                src="/images/itasha.jpg"
+                src="/images/hero-section-banner-dsa-live.png"
                 alt="Responsibility"
                 width={320}
-                height={320}
-                className=" rounded-xl mx-auto"
+                height={420}
+                className=" rounded-xl mx-auto w-auto h-[250px]"
               />
               <div className="fl-ic gap-4">
                 <span className=" text-primaryPurple text-3xl font-semibold">
