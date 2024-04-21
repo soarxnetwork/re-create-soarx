@@ -3,8 +3,8 @@ import React from "react";
 
 const CertificateOfCompletion = () => {
   return (
-    <div className="ml-36 h-[400px] p-5 flex items-center justify-center  rounded-xl">
-      <div className="flex items-center justify-center h-full">
+    <div className="ml-32 mt-10 h-[400px] p-5 flex items-center justify-center  rounded-xl">
+      <div className="flex items-center justify-center gap-x-16 h-full">
         <p className="w-1/2  text-4xl font-semibold ">
           Also, Get a Signed Certificate on successful Completion of the Course.
         </p>

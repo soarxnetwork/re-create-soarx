@@ -76,37 +76,37 @@ const InstructorDLc = ({
                   />
                 ))} */}
                 </div>
-                <div className="flex h-full items-center">
+                <div className="flex h-full items-center gap-x-4">
                   <div className="w-1/2 h-full flex">
                     <Image
                       src={instructor.image}
                       alt="Instructor"
                       width={312}
                       height={312}
-                      className="mx-auto w-4/5"
+                      className="mx-auto w-auto"
                     />
                   </div>
                   <div className="space-y-4 w-1/2 h-full flex flex-col justify-center">
-                    <p className="text-[#7043E3] text-base font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
+                    <p className="text-[#7043E3] mt-2 text-base font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
                       About The Instructor
                     </p>
                     <h3 className="text-3xl font-semibold">
                       {instructor.title}
                     </h3>
-                    <p>{instructor.description}.</p>
-                    <p>{instructor.subDescription}</p>
-                   <div className="flex items-center gap-x-6">
-                   {instructor.logos.map(companies => (
-                    <div className="flex" key={instructor.title}>
-                      <Image
-                        src={companies}
-                        alt="Instructor"
-                        width={100}
-                        height={100}
-                      />
+                    <p className="font-medium flex-wrap">{instructor.description}.</p>
+                    <p className="font-medium">{instructor.subDescription}</p>
+                    <div className="flex items-center gap-x-6">
+                      {instructor.logos.map((companies) => (
+                        <div className="flex" key={instructor.title}>
+                          <Image
+                            src={companies}
+                            alt="Instructor"
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                      ))}
                     </div>
-                   ))}
-                   </div>
                   </div>
                 </div>
               </SwiperSlide>
