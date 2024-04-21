@@ -15,7 +15,7 @@ const FaqDlc = () => {
         </div>
         <div className=" space-y-10">
           {faqDlc.map((item) => (
-            <div className="border-2 rounded-sm">
+            <div key={item.id} className="border-2 rounded-sm">
               <FaqItem key={item.id} {...item} />
             </div>
           ))}
