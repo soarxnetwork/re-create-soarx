@@ -3,18 +3,18 @@ import React from "react";
 
 const CertificateOfCompletion = () => {
   return (
-    <div className="ml-24 h-[400px] p-5 flex items-center  rounded-xl">
-      <div className="flex items-center gap-x-10">
-        <p className="w-1/2 text-4xl font-semibold">
+    <div className="ml-36 h-[400px] p-5 flex items-center justify-center  rounded-xl">
+      <div className="flex items-center justify-center h-full">
+        <p className="w-1/2  text-4xl font-semibold ">
           Also, Get a Signed Certificate on successful Completion of the Course.
         </p>
-        <p className="w-1/2">
+        <p className="w-1/2 h-full">
           <Image
             src="/images/sertificate.jpeg"
             alt="Responsibility"
             width={420}
             height={420}
-            className=" rounded-xl mx-auto"
+            className=" rounded-xl h-full shadow-2xl shadow-gray-400"
           />
         </p>
       </div>

@@ -3,6 +3,8 @@ import HeroDlc from "./_components/HeroDlc";
 import LeftHeroDlc from "./_components/LeftHeroDlc";
 import FaqDlc from "./_components/FaqDlc";
 import FloatingHero from "./_components/FloatingHero";
+import InstructorsDlc from "./_components/InstructorsDlc";
+import CertificateOfCompletion from "./_components/CertificateOfCompletion";
 
 const DsaLiveClassesPage = () => {
   return (
@@ -21,6 +23,9 @@ const DsaLiveClassesPage = () => {
         </div> */}
       </section>
       <section className="py-4 container">
+        <InstructorsDlc />
+        <CertificateOfCompletion />
+
         <FaqDlc />
       </section>
     </>

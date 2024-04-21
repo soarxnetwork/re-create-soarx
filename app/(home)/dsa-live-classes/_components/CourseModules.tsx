@@ -53,7 +53,7 @@ const CourseModules = () => {
                 transition: { type: "spring" },
               }}
             >
-              <RiArrowDropDownLine size="32" />
+              <RiArrowDropDownLine size="32"/>
             </motion.span>
           </motion.button>
           <AnimatePresence>

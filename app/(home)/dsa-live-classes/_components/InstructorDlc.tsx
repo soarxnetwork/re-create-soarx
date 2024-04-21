@@ -29,7 +29,7 @@ const InstructorDLc = ({
   // TODO AUTO INTERVAL IF SOARX WANT
 
   return (
-    <article className="my-8 py-5 mr-4 relative overflow-x-hidden">
+    <article className="my-8 mr-4 h-[500px] relative overflow-x-hidden">
       {/* <motion.div
         className=" active:cursor-grabbing flex items-center"
         drag="x"
@@ -45,6 +45,7 @@ const InstructorDLc = ({
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
       > */}
+      <div className="h-full">
         <Swiper
           centeredSlides={true}
           autoplay={{
@@ -54,17 +55,17 @@ const InstructorDLc = ({
           modules={[Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
+          className="h-full"
         >
-        {instructorsDsa.map((instructor) => {
-          return (
-            <SwiperSlide
-              key={instructor.title}
-              className="w-full shrink-0  gap-6"
-            >
-           
-              {/* <h3 className="text-2xl font-semibold">{instructor.title}</h3> */}
-              <div className="flex items-center justify-evenly gap-2">
-                {/* {instructor.logos.map((logo) => (
+          {instructorsDsa.map((instructor) => {
+            return (
+              <SwiperSlide
+                key={instructor.title}
+                className="w-full h-full shrink-0"
+              >
+                {/* <h3 className="text-2xl font-semibold">{instructor.title}</h3> */}
+                <div className="flex items-center justify-evenly gap-2">
+                  {/* {instructor.logos.map((logo) => (
                   <Image
                     key={logo}
                     src={logo}
@@ -74,28 +75,45 @@ const InstructorDLc = ({
                     className="rounded-xl"
                   />
                 ))} */}
-              </div>
-              <div className="flex items-center gap-x-7">
-                <Image
-                  src={instructor.image}
-                  alt="Instructor"
-                  width={312}
-                  height={312}
-                  className="rounded-xl mx-auto"
-                />
-                <div className="space-y-4">
-                  <p className="text-[#7043E3] text-sm font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
-                    About The Instructor
-                  </p>
-                  <h3 className="text-3xl font-semibold">{instructor.title}</h3>
-                  <p>{instructor.description}.</p>
-                  {/* <p>{instructor.subDescription}</p> */}
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
+                <div className="flex h-full items-center">
+                  <div className="w-1/2 h-full flex">
+                    <Image
+                      src={instructor.image}
+                      alt="Instructor"
+                      width={312}
+                      height={312}
+                      className="mx-auto w-4/5"
+                    />
+                  </div>
+                  <div className="space-y-4 w-1/2 h-full flex flex-col justify-center">
+                    <p className="text-[#7043E3] text-base font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
+                      About The Instructor
+                    </p>
+                    <h3 className="text-3xl font-semibold">
+                      {instructor.title}
+                    </h3>
+                    <p>{instructor.description}.</p>
+                    <p>{instructor.subDescription}</p>
+                   <div className="flex items-center gap-x-6">
+                   {instructor.logos.map(companies => (
+                    <div className="flex" key={instructor.title}>
+                      <Image
+                        src={companies}
+                        alt="Instructor"
+                        width={100}
+                        height={100}
+                      />
+                    </div>
+                   ))}
+                   </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
+      </div>
       {/* </motion.div> */}
     </article>
   );
