@@ -1,5 +1,10 @@
 "use client";
+// import Swiper from 'swiper';
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import { instructorsDsa } from "@/constants/dsa";
+import { Pagination, Navigation } from "swiper/modules";
 import { useMotionValue, motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -24,8 +29,8 @@ const InstructorDLc = ({
   // TODO AUTO INTERVAL IF SOARX WANT
 
   return (
-    <article className="my-8 py-5 relative overflow-x-hidden bg-gray-100">
-      <motion.div
+    <article className="my-8 py-5 mr-4 relative overflow-x-hidden">
+      {/* <motion.div
         className=" active:cursor-grabbing flex items-center"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -36,16 +41,27 @@ const InstructorDLc = ({
         animate={{
           translateX: `-${instructorIndex * 100}%`,
         }}
-        transition={{ type: "spring"}}
+        transition={{ type: "spring" }}
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
-      >
+      > */}
+        <Swiper
+          centeredSlides={true}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+        >
         {instructorsDsa.map((instructor) => {
           return (
-            <motion.div
+            <SwiperSlide
               key={instructor.title}
               className="w-full shrink-0  gap-6"
             >
+           
               {/* <h3 className="text-2xl font-semibold">{instructor.title}</h3> */}
               <div className="flex items-center justify-evenly gap-2">
                 {/* {instructor.logos.map((logo) => (
@@ -60,24 +76,27 @@ const InstructorDLc = ({
                 ))} */}
               </div>
               <div className="flex items-center gap-x-7">
-              <Image
-                src={instructor.image}
-                alt="Instructor"
-                width={312}
-                height={312}
-                className="rounded-xl mx-auto"
-              />
-              <div className="space-y-4">
-                <p className="text-[#7043E3] text-sm font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">About The Instructor</p>
-              <h3 className="text-3xl font-semibold">{instructor.title}</h3>
-                <p>{instructor.description}.</p>
-                {/* <p>{instructor.subDescription}</p> */}
+                <Image
+                  src={instructor.image}
+                  alt="Instructor"
+                  width={312}
+                  height={312}
+                  className="rounded-xl mx-auto"
+                />
+                <div className="space-y-4">
+                  <p className="text-[#7043E3] text-sm font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
+                    About The Instructor
+                  </p>
+                  <h3 className="text-3xl font-semibold">{instructor.title}</h3>
+                  <p>{instructor.description}.</p>
+                  {/* <p>{instructor.subDescription}</p> */}
+                </div>
               </div>
-              </div>
-            </motion.div>
+            </SwiperSlide>
           );
         })}
-      </motion.div>
+        </Swiper>
+      {/* </motion.div> */}
     </article>
   );
 };
