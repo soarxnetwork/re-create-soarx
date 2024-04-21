@@ -35,15 +35,15 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className="ml-20 text-black  p-4 rounded-xl">
+      <div className="ml-12 mr-20 text-black  p-4 rounded-xl">
         <div className="fl-ic gap-4">
           <div className="space-y-4">
-            <h4 className="font-semibold text-3xl">Our Instructors</h4>
-            <p>
+            {/* <h4 className="font-semibold text-3xl">Our Instructors</h4> */}
+            {/* <p>
               Discover brilliance in code with our expert instructors.
               Passionate mentors dedicated to fueling your coding journey at
               SoarX.
-            </p>
+            </p> */}
           </div>
           <div className="fl-ic gap-4">
             {/* <button
