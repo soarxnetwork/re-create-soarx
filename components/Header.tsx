@@ -6,9 +6,11 @@ import { Fade as Hamburger } from "hamburger-react";
 import { usePathname, useRouter } from "next/navigation";
 // import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
+import {Switch} from "@nextui-org/react";
 
 import HeaderDropdown from "./HeaderDropdown";
 import ButtonAuth from "./ButtonAuth";
+import ThemeSwitcher from "./DarkThemes";
 const Header = ({ admin }: User) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -39,7 +41,6 @@ const Header = ({ admin }: User) => {
               </div>
             </Link>
 
-            
             <div
               className={
                 showNavbar
@@ -97,7 +98,8 @@ const Header = ({ admin }: User) => {
                 </ul>
               </div>
             </div>
-            <div className="flex items-center justify-self-end">
+            <div className="flex items-center gap-x-5 justify-self-end">
+            <ThemeSwitcher/>
               <ButtonAuth />
               {isClient && (
                 <>

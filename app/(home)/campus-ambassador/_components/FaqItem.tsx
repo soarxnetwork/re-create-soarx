@@ -21,33 +21,38 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
 
   return (
     <motion.div layout>
-      <div
-        className="flex justify-between cursor-pointer space-y-4 border-2 p-4 rounded-sm border-solid"
-        onClick={() => handleToggle(id)}
-      >
-        <h6 className="font-medium text-lg">{question}</h6>
-        <span>
-          <IoMdArrowDropdown
-            size={24}
-            className={cn(" rotate-0 transition-all duration-200", {
-              "rotate-180": isOpen[id],
-            })}
-          />
-        </span>
+      <div>
+        <div
+          className="flex justify-between items-center cursor-pointer p-6"
+          onClick={() => handleToggle(id)}
+        >
+          <h6 className="text-xl font-medium">{question}</h6>
+          <span className="h-full">
+            <IoMdArrowDropdown
+              size={24}
+              className={cn(
+                "rotate-0 text-[#9241d4] transition-all duration-200",
+                {
+                  "rotate-180": isOpen[id],
+                }
+              )}
+            />
+          </span>
+        </div>
+        <AnimatePresence>
+          {isOpen[id] && (
+            <motion.div
+              variants={faqAndCoursesVars}
+              {...faqAndCoursesMotionProps}
+              transition={{
+                transition: { duration: 0.3 },
+              }}
+            >
+              <p className="text-black/50 text-base font-semibold pl-6 pb-2">{answer}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-      <AnimatePresence>
-        {isOpen[id] && (
-          <motion.div
-            variants={faqAndCoursesVars}
-            {...faqAndCoursesMotionProps}
-            transition={{
-              transition: { duration: 0.3 },
-            }}
-          >
-            <p className="text-black/50 text-base font-medium">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };

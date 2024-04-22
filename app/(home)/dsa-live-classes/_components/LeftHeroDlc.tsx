@@ -22,8 +22,8 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className=" lg:grid lg:grid-cols-3 space-y-12">
-        <div className="   break-words space-y-6 col-span-2 container-hero-dlc">
+      <div className="lg:grid lg:grid-cols-3 space-y-12">
+        <div className="break-words space-y-6 col-span-2 container-hero-dlc">
           <div className="flex flex-col gap-y-3">
             <p className="tex text-lg border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
               LIVE
@@ -31,11 +31,10 @@ const LeftHeroDlc = () => {
             
           </div>
           <div className="space-y-4">
-            <h3 className="text-3xl font-semibold">
+             <h3 className="text-3xl font-semibold">
               Data Structures & Algorithms Cohort 1.0
-            </h3>
-            <div className="fl-ic gap-4 text-3xl font-semibold pr-4">
-              {/*Have to add something */}
+            </h3> 
+            <div className="fl-ic text-black gap-4 text-3xl font-semibold pr-4">
               (Beginner to Advance)
             </div>
           </div>
@@ -44,16 +43,16 @@ const LeftHeroDlc = () => {
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className="space-y-6 lg:w-[380px] bg-white shadow-xl  z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
+              className="space-y-6 lg:w-[380px] bg-white shadow-xl z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
               <Image
-                src="/images/itasha.jpg"
+                src="/images/hero-section-banner-dsa-live.png"
                 alt="Responsibility"
                 width={320}
-                height={320}
-                className=" rounded-xl mx-auto"
+                height={420}
+                className=" rounded-xl mx-auto w-auto h-[250px]"
               />
               <div className="fl-ic gap-4">
                 <span className=" text-primaryPurple text-3xl font-semibold">

@@ -5,7 +5,7 @@ import CoursesDlc from "./CoursesDlc";
 import CourseModules from "./CourseModules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import InstructorsDlc from "./InstructorsDlc";
-import FeedbackDlc from "./FeedbackDlc";
+// import FeedbackDlc from "./FeedbackDlc";
 import CertificateOfCompletion from "./CertificateOfCompletion";
 
 const HeroDlc = () => {
@@ -33,9 +33,7 @@ const HeroDlc = () => {
         </div>
         <CoursesDlc/>
         <CourseModules />
-        <InstructorsDlc />
-        <CertificateOfCompletion/>
-        <FeedbackDlc/>
+        {/* <FeedbackDlc/> */}
       </div>
     </div>
   );

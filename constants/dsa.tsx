@@ -100,17 +100,17 @@ export const instructorsDsa = [
     description:
       "Software Development Engineer (SDE) at InsuranceDekho, leverages his expertise in building robust software solutions and tackling complex technical challenges. Prior to joining InsuranceDekho, Niket gained valuable experience at Amazon, enhancing his skills in software development and problem-solving",
     subDescription:
-      "During college, he served as a teaching assistant at Coding Ninjas, aiding students in clearing doubts, improving question-solving skills with challenging problems, and emphasizing the importance of overlooked details in the Data Structures and Algorithms course. Niket's diverse experience and strong technical skills make him an invaluable resource for developers seeking success in the tech industry.",
-    logos: ["/images/Insurance-Dekho.png", "/images/amazon.png"],
+      "During college, he served as a teaching assistant at Coding Ninjas, aiding students in clearing doubts, improving question-solving skills with challenging problems, and emphasizing the importance of overlooked details in the Data Structures and Algorithms course.",
+    logos: ["/images/insurance-dekho-new.png", "/images/amazon.png", "/images/Coding-Ninjas.png"],
   },
   {
     title: "Deepak Kumar",
     image: "/images/Deepak-Kumar.png",
     description:
-      " Software Development Engineer (SDE) currently at Amazon, brings extensive experience in software development, problem-solving, and team collaboration. Prior to Amazon, he made significant contributions at Paytm, refining his skills in building robust software solutions and tackling complex technical challenges.",
+      " Software Development Engineer (SDE) currently at Amazon, brings extensive experience in software development, problem-solving, and team collaboration. Prior to Amazon, he made significant contributions at Paytm, refining his skills in building robust software solutions and tackling complex technical challenges",
     subDescription:
-      "During college, Deepak served as a teaching assistant at Coding Blocks and Pep Coding, aiding students in clearing doubts, improving question-solving skills with challenging problems, and stressing the significance of overlooked details. Deepak's diverse background and expertise are invaluable for aspiring developers aiming to thrive in the tech industry..",
-    logos: ["/images/amazon.png", "/images/Paytm.png"],
+      "During college, Deepak served as a teaching assistant at Coding Blocks and Pep Coding, aiding students in clearing doubts, improving question-solving skills with challenging problems, and stressing the significance of overlooked details.",
+    logos: ["/images/Paytm.png", "/images/Coding-Blocks.png", "/images/amazon.png"],
   },
 ];
 
