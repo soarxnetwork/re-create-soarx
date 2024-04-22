@@ -96,7 +96,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           )}
         </div>
         <div className="flex w-full e-nfg  gap-5">
-        Start Time of Event
+        Start Time
 
         <input
         type="time"
@@ -109,7 +109,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
               {errors.startTime.message}
             </span>
           )}
-          End Time of Event
+          End Time
             <input
         type="time"
         id="timeInput"
