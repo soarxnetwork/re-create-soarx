@@ -2,21 +2,20 @@
 import React, { useRef, useState, useTransition } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Calendar } from "primereact/calendar";
+import { InputMask } from "primereact/inputmask";
+
 import { InputTextarea } from "primereact/inputtextarea";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import ImageUpload from "@/app/(admin)/_components/ImageUpload";
-import { createEvent } from "@/actions/event";
 import { usePathname, useRouter } from "next/navigation";
-import { Toast } from "primereact/toast";
 import {
   EventSchema,
   eventFormResolver,
   eventInitialValues,
 } from "@/schema/event";
-import { Event } from "@prisma/client";
 import { toast } from "react-toastify";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
@@ -31,7 +30,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
   const editPath = pahname.includes("edit");
   const optToast = editPath
     ? "Succesfully updated Event"
-    : "Succesfully add Event";
+    : "Succesfully added Event";
   const optInitialValues = editPath ? event : eventInitialValues;
 
   const router = useRouter();
@@ -96,13 +95,13 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           )}
         </div>
         <div className="flex w-full e-nfg  gap-5">
-          <input placeholder="Event Start Time" {...register("startTime")} />
+          <InputMask placeholder="Event Start Time (HH:mm)" mask="99:99" {...register("startTime")} />
           {errors.startTime && (
             <span className="text-sm text-red-500">
               {errors.startTime.message}
             </span>
           )}
-          <input placeholder="Event End Time" {...register("endTime")} />
+          <InputMask placeholder="Event End Time (HH:mm)" mask="99:99" {...register("endTime")} />
           {errors.endTime && (
             <span className="text-sm text-red-500">{errors.endTime.message}</span>
           )}
