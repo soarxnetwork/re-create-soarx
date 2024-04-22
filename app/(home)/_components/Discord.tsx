@@ -27,7 +27,9 @@ const Discord = () => {
               >
                 <FaDiscord />
                 Join Discord
+                
               </Link>
+            
             </div>
           </div>
         </div>
