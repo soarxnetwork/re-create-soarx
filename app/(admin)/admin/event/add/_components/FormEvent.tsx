@@ -62,6 +62,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
 
   const imageUrl = watch("imageUrl");
   const errors = formState.errors;
+  
 
   return (
     <>
@@ -95,13 +96,24 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           )}
         </div>
         <div className="flex w-full e-nfg  gap-5">
-          <InputMask placeholder="Event Start Time (HH:mm AM/PM)" mask="99:99 a" autoComplete="off" {...register("startTime")} />
-          {errors.startTime && (
+        <input
+        type="time"
+        id="timeInput"
+        placeholder="Start Time of Event"
+        {...register("startTime")} 
+
+      />          {errors.startTime && (
             <span className="text-sm text-red-500">
               {errors.startTime.message}
             </span>
           )}
-          <InputMask placeholder="Event End Time (HH:mm AM/PM)" mask="99:99 a" autoComplete="off" {...register("endTime")} />
+            <input
+        type="time"
+        id="timeInput"
+        placeholder="End Time of Event"
+        {...register("endTime")} 
+
+      />
           {errors.endTime && (
             <span className="text-sm text-red-500">{errors.endTime.message}</span>
           )}
