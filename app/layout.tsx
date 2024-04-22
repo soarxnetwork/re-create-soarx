@@ -33,9 +33,9 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        {/* <NextProvider> */}
+        <NextProvider>
           <Providers>{children}</Providers>
-        {/* </NextProvider> */}
+        </NextProvider>
       </body>
     </html>
   );

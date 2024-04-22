@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="p-4 text-black space-y-8 text-base ml-20 mr-16"
+      className="p-4 space-y-8 text-base ml-20 mr-16"
       ref={ref}
     >
       {coursesModules.map((course) => (
@@ -60,7 +60,7 @@ const CourseModules = () => {
             <div
               className={cn(" p-0 pb-4 font-medium rounded-none border-b-2", {
                 "p-4 bg-border-dlc": isOpen[course.name],
-                "rounded-xl bg-white": isOpen[course.name],
+                "rounded-xl bg-white dark:bg-gray-900": isOpen[course.name],
               })}
             >
               {isOpen[course.name] &&

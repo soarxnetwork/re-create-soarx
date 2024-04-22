@@ -19,7 +19,7 @@ const Partners = () => {
             </span>
           ))}
         </div>
-        <h2 className="text-center mb-10 text-[80px] pt-2 font-bold text-[#000000] leading-normal">
+        <h2 className="text-center mb-10 text-[80px] pt-2 font-bold leading-normal">
           Our Trusted Partners
         </h2>{" "}
         <Swiper

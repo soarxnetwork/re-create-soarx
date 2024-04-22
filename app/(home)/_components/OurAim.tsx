@@ -43,12 +43,12 @@ const OurAim = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <h2 className="mb-4 text-[#000000] leading-relaxed font-bold   md:text-[60px] ">
+                <h2 className="mb-4  leading-relaxed font-bold  md:text-[60px] ">
                   Rise Together, Soar Higher
                   {/* <br />
                   <span className="text-primary">SoarX</span> */}
                 </h2>
-                <p className="text-gray-600 text-[30px] ">
+                <p className="text-gray-500 text-[30px] ">
                   At SoarX, we firmly believe that collaboration is the key
                   to success in today&apos;s fast-paced digital landscape.
                   Through strategic IT partnerships, we leverage the collective
@@ -63,11 +63,11 @@ const OurAim = () => {
       </section>
       <section>
         <div className="custom-container">
-          <div className="mt-16 grid divide-x divide-y divide-gray-100  overflow-hidden rounded-3xl border border-gray-100 text-gray-600 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
+          <div className="mt-16 grid divide-x divide-y divide-gray-100  overflow-hidden rounded-3xl border border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
             {data?.map((e, index) => (
               <div
                 key={index}
-                className={`group cursor-pointer relative transition hover:z-[1]  hover:shadow-2xl hover:text-[#10317E] hover:shadow-gray-600/10`}
+                className={`group cursor-pointer relative transition hover:z-[1]  hover:shadow-2xl hover:text-[#10317E] hover:shadow-gray-600/40`}
               >
                 <div className="relative space-y-8 py-12 p-8">
                   <Image
@@ -79,10 +79,10 @@ const OurAim = () => {
                     height={512}
                   />
                   <div className="space-y-2">
-                    <h5 className="text-lg font-semibold text-gray-700   transition group-hover:text-[#10317E]">
+                    <h5 className="text-lg font-semibold   transition group-hover:text-[#10317E]">
                       {e?.title}
                     </h5>
-                    <p className="text-gray-600 text-sm">{e?.desc}</p>
+                    <p className="text-sm">{e?.desc}</p>
                   </div>
                 </div>
               </div>

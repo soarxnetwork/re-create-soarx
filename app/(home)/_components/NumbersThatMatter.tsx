@@ -27,7 +27,7 @@ function NumbersThatMatter() {
     <ScrollParallax strength={-0.15}>
       <section className="px-32">
         <div className="custom-container ">
-          <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0 box-shadow-custom  number-sgrid">
+          <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0 shadow-md  number-sgrid">
             {data?.map((e, index) => (
               <div
                 className="flex flex-col items-center justify-center  number-section-wrapper p-2"

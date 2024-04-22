@@ -9,9 +9,9 @@ interface CourseDlcProps {
 
 const CourseDlc = ({ courseDetails }: CourseDlcProps) => {
   return courseDetails.map((course) => (
-    <div key={course.description} className="border-2 hover:bg-gray-50 hover:scale-105 hover:cursor-pointer transition-all duration-300 p-4 border-opacity-30 rounded-md">
+    <div key={course.description} className="border-2  hover:scale-105 hover:cursor-pointer transition-all duration-300 p-4 border-opacity-30 rounded-md">
       <div className="fl-ic gap-2">
-      <div className="min-w-12 min-h-12 rounded-full bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
+      <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
         {course.icon}
       </div>
       <div>

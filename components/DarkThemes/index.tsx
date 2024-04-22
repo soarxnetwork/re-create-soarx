@@ -9,11 +9,12 @@ import { useEffect, useState } from "react";
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
+  
   if (!mounted) return null;
   const handleThemes = () => {
     if (theme === "dark") {
@@ -22,6 +23,7 @@ export default function ThemeSwitcher() {
       setTheme("dark");
     }
   };
+  console.log(theme)
   return (
     <Switch
       onClick={handleThemes}

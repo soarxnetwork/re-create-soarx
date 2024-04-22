@@ -14,7 +14,7 @@ const Discord = () => {
                 </span>
               ))}
             </div>
-            <h2 className="text-center text-[80px] text-[#000000] pt-2 font-bold leading-normal">
+            <h2 className="text-center text-[80px] pt-2 font-bold leading-normal">
               Join Our Discord Community
             </h2>{" "}
             <p className="mx-auto max-w-2xl text-[30px] text-[#647084] pt-5">

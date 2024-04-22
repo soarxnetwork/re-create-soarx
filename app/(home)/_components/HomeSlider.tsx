@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
@@ -31,7 +31,7 @@ const HomeSlider = () => {
                   ))}
               </div>
             </div>
-            <h1 className="text-2xl  leading-relaxed font-bold  text-[#000000]  md:text-[73px] pt-3 ">
+            <h1 className="text-2xl  leading-relaxed font-bold    md:text-[73px] pt-3 ">
               SoarX Network
             </h1>
             <p className="pt-5 text-[30px] text-slate-500">

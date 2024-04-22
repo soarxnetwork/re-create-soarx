@@ -21,7 +21,6 @@ const Header = ({ admin }: User) => {
   useEffect(() => {
     setIsClient(true);
   }, [admin]);
-
   // console.log(showNavbar);
   return (
     <header>

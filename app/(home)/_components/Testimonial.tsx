@@ -239,7 +239,7 @@ const Testimonial = () => {
                     </span>
                   ))}
                 </div>
-                <h2 className="text-left text-[35px] text-black pt-2 font-bold leading-normal">
+                <h2 className="text-left text-[35px] pt-2 font-bold leading-normal">
                   Our Success Stories
                 </h2>{" "}
                 <p className="mt-4 text-light text-xl">
@@ -263,9 +263,9 @@ const Testimonial = () => {
                 >
                   {testimonials.map((testimonial, index) => (
                     <SwiperSlide key={index}>
-                      <div className="bg-[#9241d40d] rounded-lg p-6 shadow-md sm:p-8 lg:p-12">
+                      <div className="bg-[#8d4ac449] rounded-lg p-6 shadow-md sm:p-8 lg:p-12">
                         <div>
-                          <div className="mt-2 leading-relaxed text-gray-700">
+                          <div className="mt-2 leading-relaxed">
                           <div className="w-12 h-12 ">
                         <Image
                           className="w-full object-cover rounded-full border-2 border-indigo-400"
@@ -276,12 +276,12 @@ const Testimonial = () => {
                         />
                       </div>
                             <p className="text-lg font-bold mt-4">{testimonial.name}</p>
-                            <p className="mt-4 leading-relaxed text-gray-700">
+                            <p className="mt-4 leading-relaxed">
                               {testimonial.message}
                             </p>
                           </div>
                         </div>
-                        <footer className="mt-4 text-sm font-medium text-gray-700 sm:mt-6">
+                        <footer className="mt-4 text-sm font-medium sm:mt-6">
                           &mdash; {testimonial.company}
                         </footer>
                       </div>

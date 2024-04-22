@@ -26,7 +26,7 @@ const Events = ({ events }: EventProps) => {
             </span>
           ))}
         </div>
-        <h2 className="text-center text-[80px] pt-2 font-bold text-[#000000] leading-normal">
+        <h2 className="text-center text-[80px] pt-2 font-bold leading-normal">
           Our Past Events
         </h2>{" "}
         <section className="all-events  grid grid-cols-4 gap-5 pt-16">
