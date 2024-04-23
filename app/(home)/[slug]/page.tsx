@@ -6,28 +6,60 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram , faXTwitter  } from '@fortawesome/free-brands-svg-icons';
 import { SiGooglemeet } from 'react-icons/si';
 import { FaWhatsapp } from 'react-icons/fa';
+import { FaBuilding } from 'react-icons/fa';
 
  async function page({ params }: { params: { slug: string } }) {
-    
+
        const event = await getEventBySlug(params.slug);
        const DESC = event?.description;
-       interface MonthMap {
+       interface StringtoString {
         [key: string]: string;
     }
-       const Month: MonthMap =  {
-        "1/": "JAN",
-        "2/": "FEB",
-        "3/": "MAR",
-        "4/": "APR",
-        "5/": "MAY",
-        "6/": "JUN",
-        "7/": "JUL",
-        "8/": "AUG",
-        "9/": "SEP",
-        "10": "OCT",
-        "11": "NOV",
-        "12": "DEC",
+       const Month: StringtoString =  {
+        "0": "JAN",
+        "1": "FEB",
+        "2": "MAR",
+        "3": "APR",
+        "4": "MAY",
+        "5": "JUN",
+        "6": "JUL",
+        "7": "AUG",
+        "8": "SEP",
+        "9": "OCT",
+        "10": "NOV",
+        "11": "DEC",
     }
+    const FullMonth : StringtoString = {
+        "0": "January",
+        "1": "February",
+        "2": "March",
+        "3": "April",
+        "4": "May",
+        "5": "June",
+        "6": "July",
+        "7": "August",
+        "8": "September",
+        "9": "October",
+        "10": "November",
+        "11": "December",
+    };
+    function convertTo12HourFormat(timeString: string) {
+        // Split the time string into hours and minutes
+        const [hours, minutes] = timeString.split(':');
+    
+        // Convert hours from string to number
+        let hour = parseInt(hours, 10);
+    
+        // Determine AM/PM based on hour value
+        const period = hour >= 12 ? 'PM' : 'AM';
+    
+        // Convert hour to 12-hour format
+        hour = hour % 12 || 12; // Convert 0 to 12 for 12-hour format
+    
+        // Format the time in 12-hour format with leading zero for minutes
+        return `${hour}:${minutes.padStart(2, '0')} ${period}`;
+    }
+    
 
          return (
    <>
@@ -60,13 +92,16 @@ import { FaWhatsapp } from 'react-icons/fa';
            <div className="flex mt-[25px]">
                <div className="h-[45px] w-[40px] border-[1px] border-[#b0aeae] rounded-lg text-center">
                    <div className='bg-[#b0aeae] h-[20px] rounded-t-md text-[12px] font-semibold'>
-                       { event ? Month[event.date.toLocaleDateString().slice(3,5)] : (<>NA</>)}
+                       { event ? Month[event.date.getMonth()] : (<>NA</>)}
                    </div>
-                   {event?.date.toLocaleDateString().slice(0,2)}
+                   {event?.date.getDate()}
                </div>
                <div className="ml-[15px]">
-                   <div className="">{event?.date.toLocaleDateString()}</div>
-                   <div className="">{event?.startTime} to {event?.endTime} </div>
+                   <div className="">{event?.date ? new Date(event.date).toLocaleDateString('en-IN', { weekday: 'long' }) : ''}, {event ? FullMonth[event.date.getMonth()]:(<> NA</>)} {" "} {event?.date.getDate()}</div>
+                   <div className="">
+                   {event?.startTime ? convertTo12HourFormat(event.startTime) : ''} to {' '}
+                     {event?.endTime ? convertTo12HourFormat(event.endTime) : ''} GMT+5:30
+                     </div>
                </div>
            </div>
            <div className="mt-4 flex">
