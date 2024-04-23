@@ -9,7 +9,7 @@ import CertificateOfCompletion from "./_components/CertificateOfCompletion";
 const DsaLiveClassesPage = () => {
   return (
     <>
-      <div className="pl-32 pt-28 min-h-[50vh]  fl-ic bg-gradient-to-b from-purple-400 to-white  dark:bg-gradient-to-b  dark:from-purple-400 dark:to-black">
+      <div className="pl-32 pt-28 min-h-[50vh]  fl-ic bg-gradient-to-b from-purple-500 to-white  dark:bg-gradient-to-b  dark:from-[#9241d4] dark:to-black">
         <LeftHeroDlc />
       </div>
       <section className="lg:grid lg:grid-cols-3 relative py-4">

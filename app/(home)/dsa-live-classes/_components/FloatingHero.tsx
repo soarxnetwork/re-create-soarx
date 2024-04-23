@@ -20,7 +20,7 @@ const FloatingHero = () => {
       <AnimatePresence>
         {isActiveFloatDlc && (
           <motion.div
-            className="bg-border-dlc lg:block bg-white shadow-xl border border-opacity-20 border-black hidden sticky top-32 p-4 bg-black-dlc z-10 -right-24  w-[360px]  h-[360px] text-black rounded-xl space-y-6"
+            className="bg-border-dlc lg:block dark:bg-gray-800 bg-white shadow-xl border border-opacity-20 border-black hidden sticky top-32 p-4 bg-black-dlc z-10 -right-24  w-[360px]  h-[360px] text-black rounded-xl space-y-6"
             variants={floatingHeroVars}
             {...floatingHeroMotionProps}
           >
@@ -30,9 +30,9 @@ const FloatingHero = () => {
               </span>
               <del className="text-shark text-2xl">₹4800</del>
             </div>
-            <p className="text-xl font-semibold ">This Course Includes :</p>
+            <p className="text-xl font-semibold dark:text-white">This Course Includes :</p>
             {courseDetailsHeroFloat.map((course) => (
-              <p key={course} className=" ">
+              <p key={course} className="dark:text-white">
                 {course}
               </p>
             ))}

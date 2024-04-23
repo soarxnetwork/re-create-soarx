@@ -23,9 +23,9 @@ const Header = ({ admin }: User) => {
   }, [admin]);
   // console.log(showNavbar);
   return (
-    <header>
-      <div className="custom-container mt-4">
-        <nav id="main-navbar" className="navbar rounded-lg">
+    <header className="mt-4">
+      <div className="custom-container">
+        <nav id="main-navbar" className="navbar rounded-lg dark:border-0 dark:bg-gray-800">
           <div className=" md:grid md:grid-cols-3 flex justify-between ">
             <Link href={"/"}>
               <div className="header-img flex items-center  ">
@@ -34,7 +34,7 @@ const Header = ({ admin }: User) => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="img-responsive"
+                  className="img-responsive dark:filter dark:invert dark:hue-rotate-180"
                   alt="Header Logo"
                 />
               </div>
@@ -48,7 +48,7 @@ const Header = ({ admin }: User) => {
               }
             >
               <div>
-                <ul className="flex items-center nav-ul  text-textColor  font-medium">
+                <ul className="flex items-center nav-ul  text-textColor dark:text-white  font-medium">
                   <li
                     className={
                       pathname === "/"
@@ -56,7 +56,7 @@ const Header = ({ admin }: User) => {
                         : "rounded-lg"
                     }
                   >
-                    <Link className=" hover:text-primaryPurple" href="/">
+                    <Link className=" hover:text-primaryPurple hover:transition-all ease-in-out duration-300" href="/">
                       Home
                     </Link>
                   </li>

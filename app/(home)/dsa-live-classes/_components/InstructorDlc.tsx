@@ -87,7 +87,7 @@ const InstructorDLc = ({
                     />
                   </div>
                   <div className="space-y-4 w-1/2 h-full flex flex-col justify-center">
-                    <p className="text-[#7043E3] mt-2 text-base font-semibold border-2 w-fit p-2 border-gray-500 border-opacity-20">
+                    <p className="text-[#7043E3] mt-2 text-base font-semibold border-2 w-fit p-2 border-gray-500 dark:border-2 dark:border-gray-200 border-opacity-20 dark:border-opacity-30">
                       About The Instructor
                     </p>
                     <h3 className="text-3xl font-semibold">
@@ -103,6 +103,7 @@ const InstructorDLc = ({
                             alt="Instructor"
                             width={100}
                             height={100}
+                            className="dark:filter dark:invert dark:hue-rotate-180"
                           />
                         </div>
                       ))}

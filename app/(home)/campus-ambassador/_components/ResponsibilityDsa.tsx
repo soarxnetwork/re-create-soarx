@@ -6,7 +6,7 @@ import RightResponsibilityDsa from "./RightResponsibilityDsa";
 
 const ResponsibilityDsa = () => {
   return (
-    <article className="bg-secondDsaBg p-4 rounded-xl">
+    <article className="p-4 rounded-xl">
       <div className="container lg:grid lg:grid-cols-3 gap-8">
         <div className=" lg:flex hidden flex-col gap-12 relative pb-48">
           <LeftResponsibilityDsa />

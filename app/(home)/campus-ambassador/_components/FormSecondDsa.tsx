@@ -11,14 +11,14 @@ import ItemFormSecondDsa from "./ItemFormSecondDsa";
 const FormSecondDsa = () => {
   // ! TODO
   return (
-    <article className=" bg-secondDsaBg p-4 rounded-xl " id="form">
+    <article className="p-4 rounded-xl " id="form">
       <div className="container lg:grid lg:grid-cols-2 gap-8  ">
         {/* ! */}
         <div className="relative">
           <ItemFormSecondDsa />
         </div>
         {/* !  */}
-        <div className=" bg-secondDsaBg p-4 rounded-xl">
+        <div className="p-4 rounded-xl dark:bg-gray-800">
           <FormCampus />
         </div>
       </div>
