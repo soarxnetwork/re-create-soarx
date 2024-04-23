@@ -67,7 +67,7 @@ const OurAim = () => {
             {data?.map((e, index) => (
               <div
                 key={index}
-                className={`group cursor-pointer relative transition hover:z-[1]  hover:shadow-2xl hover:text-[#10317E] hover:shadow-gray-600/40`}
+                className={`group cursor-pointer relative transition hover:z-[1]  hover:shadow-2xl hover:text-[#9241d4] hover:shadow-gray-600/40`}
               >
                 <div className="relative space-y-8 py-12 p-8">
                   <Image
@@ -79,7 +79,7 @@ const OurAim = () => {
                     height={512}
                   />
                   <div className="space-y-2">
-                    <h5 className="text-lg font-semibold   transition group-hover:text-[#10317E]">
+                    <h5 className="text-lg font-semibold   transition group-hover:text-[#9241d4]">
                       {e?.title}
                     </h5>
                     <p className="text-sm">{e?.desc}</p>

@@ -51,6 +51,7 @@ const HeaderDropdown = () => {
           >
             {actualDsa?.name ? actualDsa.name : "Initiatives"}
           </p>
+          
           <span>
             <IoMdArrowDropdown
               className={cn("rotate-0 transition-all duration-300", {
@@ -89,7 +90,7 @@ const HeaderDropdown = () => {
               );
             })} */}
 
-            <div className="w-screen tracking-normal max-w-sm flex-auto overflow-hidden rounded-lg bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
+            <div className="w-screen tracking-normal max-w-sm flex-auto overflow-hidden rounded-lg dark:bg-gray-800 bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
               {dsa.map((d) => {
                 return (
                   <Link
@@ -102,8 +103,8 @@ const HeaderDropdown = () => {
                       }
                     )}
                   >
-                    <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                      <div className="mt-1 flex h-11 w-11 flex-none  items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 ease-in-out transition-all duration-300">
+                      <div className="mt-1 flex h-11 w-11 flex-none  items-center justify-center rounded-lg bg-gray-50">
                         <Image
                           src={d.image}
                           sizes="100vw"
@@ -113,11 +114,11 @@ const HeaderDropdown = () => {
                         />
                       </div>
                       <div>
-                        <div className="font-semibold">
+                        <div className="font-semibold dark:text-white">
                           {d.name}
                           <span className="absolute inset-0" />
                         </div>
-                        <p className="mt-1 font-normal text-sm ">{d.desc}</p>
+                        <p className="mt-1 font-normal text-sm dark:text-white hover:text-purple-600">{d.desc}</p>
                       </div>
                     </div>
                   </Link>

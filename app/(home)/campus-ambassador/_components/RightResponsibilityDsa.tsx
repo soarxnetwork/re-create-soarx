@@ -7,9 +7,9 @@ const RightResponsibilityDsa = () => {
   return responsibilityDsa2.map((item) => (
     <div
       key={item}
-      className=" w-[240px] flex items-center justify-center bg-white p-4 mx-auto"
+      className=" w-[240px] flex items-center justify-center bg-black text-white dark:bg-white dark:text-black rounded-xl p-4 mx-auto"
     >
-      <h4 className="  font-semibold">{item}</h4>
+      <h4 className="font-semibold">{item}</h4>
     </div>
   ));
 };

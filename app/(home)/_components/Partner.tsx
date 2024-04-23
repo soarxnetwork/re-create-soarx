@@ -60,7 +60,7 @@ const Partners = () => {
         >
           {imgPartnerLists.map((e, index) => (
             <SwiperSlide key={index}>
-              <div className="partner-imgwrap">
+              <div className="partner-imgwrap select-none">
                 <Image
                   src={e}
                   width={0}

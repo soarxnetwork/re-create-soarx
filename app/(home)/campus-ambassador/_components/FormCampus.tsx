@@ -43,7 +43,7 @@ const FormCampus = () => {
   return (
     <motion.form
       layout
-      className=" space-y-8 bg-secondDsaWhite px-8 py-4 rounded-xl"
+      className=" space-y-8 px-8 py-4 rounded-xl"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
@@ -51,7 +51,7 @@ const FormCampus = () => {
         <input
           type="text"
           id="fullname"
-          className="inputDsa2  "
+          className="inputDsa2"
           {...register("fullname")}
         />
         {errors.fullname && <ErrorFormDsa message={errors.fullname.message} />}
@@ -61,7 +61,7 @@ const FormCampus = () => {
           <label htmlFor="College email ID">College email ID</label>
           <label
             htmlFor="College email ID"
-            className="text-sm text-secondDsaBlack"
+            className="text-sm"
           >
             (if unavailable, please tell the alternate email address)
           </label>
@@ -173,7 +173,7 @@ const FormCampus = () => {
         <button
           disabled={isPending}
           type="submit"
-          className="px-8 font-bold py-3 bg-secondDsaSecondary text-white rounded-xl text-lg"
+          className="px-8 font-bold py-3 signInbut rounded-xl text-lg"
         >
           {isPending ? "Loading..." : "Register Now"}
         </button>

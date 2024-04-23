@@ -104,15 +104,15 @@ const Footer = () => {
         </div>
       </div>
     </section> */}
-      <footer className="block bg-gray-800 text-white pt-24">
-        <div className="custom-container pb-5">
+      <footer className="block bg-gray-800 dark:border-t-2 dark:border-gray-800 dark:bg-gradient-to-b dark:from-black dark:to-[#9241d4] pl-20 pr-20 text-white  pt-10">
+        <div className="custom-container pl-10 pb-5">
           {/* Component */}
           <div className="flex-row flex items-center justify-between max-[767px]:flex-col max-[767px]:items-start">
             <div className="w-full max-w-[560px] max-[991px]:mr-4 max-[991px]:flex-initial max-[767px]:">
-              <div className=" flex items-center gap-3 ">
+              <div className=" flex items-center gap-3">
                 <Image
                   src={"/images/SoarX-transparent-logo-white-cropped.png"}
-                  width={130}
+                  width={180}
                   height={0}
                   className="text-black"
                   alt="Header Logo"

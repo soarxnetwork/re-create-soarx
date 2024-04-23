@@ -16,7 +16,7 @@ const AdvantageCard = ({ color, title, icon }: AdvantageCardProps) => {
       style={{ backgroundColor: color }}
     >
       <span className=" text-3xl">{icon}</span>
-      <p className="text-xl font-semibold">{title}</p>
+      <p className="text-xl font-semibold dark:text-black">{title}</p>
     </div>
   );
 };

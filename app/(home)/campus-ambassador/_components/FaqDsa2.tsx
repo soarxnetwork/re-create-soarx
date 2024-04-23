@@ -12,7 +12,7 @@ const FaqDsa2 = () => {
         <div className=" text-center">
           <HeadingSecondDsa text="Frequently Asked Questions" />
         </div>
-        <div className=" bg-secondDsaWhite">
+        <div className="">
           <h4 className=" text-xl font-medium">For prospective SoarX</h4>
           <SeparatorFaq />
           <motion.div className=" space-y-4">

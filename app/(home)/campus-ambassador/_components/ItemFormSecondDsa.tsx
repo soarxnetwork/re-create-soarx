@@ -28,11 +28,11 @@ const ItemFormSecondDsa = () => {
         {items.map((item) => (
           <div
             key={item.number}
-            className=" bg-secondDsaWhite p-4 rounded-xl flex justify-between  "
+            className="p-4 rounded-xl flex justify-between  "
           >
             <div className="flex gap-4 ">
               <div>{item.icon}</div>
-              <p className=" text-xl font-semibold  ">{item.title}</p>
+              <p className=" text-xl font-semibold">{item.title}</p>
             </div>
             <p className=" text-6xl font-bold ">{item.number}</p>
           </div>

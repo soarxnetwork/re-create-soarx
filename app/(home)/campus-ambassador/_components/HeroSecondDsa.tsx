@@ -16,14 +16,14 @@ const HeroSecondDsa = () => {
         {/* ! */}
         <div className=" space-y-4">
           <span
-            className={`${montserrat.className} font-bold text-secondDsaPrimary text-xl`}
+            className={`${montserrat.className} font-bold text-[#9241d4] text-xl`}
           >
             SoarX
           </span>
           <HeadingSecondDsa text="Represent your university as a SoarX Campus Ambassador" />
-          <p className=" text-secondDsaBlack lg:text-lg text-base ">
+          <p className=" lg:text-lg text-base ">
             Becoming a SoarX Campus Ambassador helps pave the way towards
-            professional success. That’s because it enables you to network with
+            professional success. Thats because it enables you to network with
             leading coders from across the world and enhance your leadership
             abilities. So, sign up today and be a key part of one of the world’s
             largest developer communities!

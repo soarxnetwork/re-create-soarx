@@ -43,7 +43,7 @@ const LeftHeroDlc = () => {
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className="space-y-6 lg:w-[380px] bg-white shadow-xl z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
+              className="space-y-6 lg:w-[380px] bg-white dark:bg-gray-800 shadow-xl z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
@@ -60,7 +60,7 @@ const LeftHeroDlc = () => {
                 </span>
                 <del className=" text-shark text-xl">₹4800</del>
               </div>
-              <p className="text-xl font-semibold text-black">
+              <p className="text-xl font-semibold dark:text-white text-black">
                 BONUS INCLUDES:
               </p>
               <div className="space-y-2">
@@ -69,7 +69,7 @@ const LeftHeroDlc = () => {
                     <span>
                       <AiFillThunderbolt size="28" fill="#9241D4" />
                     </span>
-                    <p className=" text-black">{course}</p>
+                    <p className=" text-black dark:text-white">{course}</p>
                   </div>
                 ))}
               </div>
