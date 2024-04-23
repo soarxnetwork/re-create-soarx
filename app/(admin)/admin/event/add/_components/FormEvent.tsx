@@ -45,6 +45,11 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
       },
       mode: "onChange",
     });
+    interface LocationData {
+      location: 'Online' | 'Offline';
+      meetingLink?: string;
+      venueAddress?: string;
+    }
 
   const onSubmit = (data: EventSchema) => {
     startTransition(() =>
@@ -58,6 +63,14 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           return err.message;
         })
     );
+  };
+  const [Location , setLocation] = useState<LocationData>({
+    location: 'Online',
+
+  })
+  const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = e.target;
+    setLocation({...Location, location: value as LocationData['location']})
   };
 
   const imageUrl = watch("imageUrl");
@@ -84,12 +97,39 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
           />
         </div>
         <div className="flex w-full e-nfg  gap-5">
-          <input placeholder="Event Location" {...register("location")} />
-          {errors.location && (
-            <span className="text-sm text-red-500">
-              {errors.location.message}
-            </span>
-          )}
+          <label htmlFor="location">Event Location:</label>
+      <select
+        id="location"
+        value={Location.location}
+        onChange={handleLocationChange}
+      >
+        <option value="Online">Online</option>
+        <option value="Offline">Offline</option>
+      </select>
+
+      {/* Conditional rendering based on formData.location */}
+      {Location.location === 'Online' ? (
+        <div>
+          <label htmlFor="meetingLink">Meeting Link:</label>
+          <input
+            type="text"
+            id="meetingLink"
+            placeholder="Enter meeting link"
+            {...register('meeturl')}
+          />
+        </div>
+      ) : (
+        <div>
+          <label htmlFor="venueAddress">Venue Address:</label>
+          <input
+            type="text"
+            id="venueAddress"
+            placeholder="Enter venue address"
+            {...register('venue')}
+          />
+        </div>
+      )}
+          
           <input placeholder="Event Slug" {...register("slug")} />
           {errors.slug && (
             <span className="text-sm text-red-500">{errors.slug.message}</span>
@@ -101,7 +141,6 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
         <input
         type="time"
         id="timeInput"
-        placeholder="Start Time of Event"
         {...register("startTime")} 
 
       />          {errors.startTime && (
