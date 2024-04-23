@@ -101,10 +101,8 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
       <select
         id="location"
         value={Location.location}
-        onChange={(e) => {
-          handleLocationChange(e); // Call your custom onChange handler
-          register('location').onChange(e); // Register the 'location' field with react-hook-form
-        }}
+       {...register("location")}
+       onChange={handleLocationChange}
       >
         <option value="Online">Online</option>
         <option value="Offline">Offline</option>
