@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 function RefundPage() {
   return (
     <div className="mt-[15%]">
-      <h1 className="w-full text-center font-bold text-[#000000]">
+      <h1 className="w-full text-center font-bold">
         REFUND & CANCELLATION POLICY
       </h1>
       <p className="py-10 px-32 text-[1.2rem] text-center">

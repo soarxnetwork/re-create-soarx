@@ -84,6 +84,7 @@ const InstructorDLc = ({
                       width={312}
                       height={312}
                       className="mx-auto w-auto"
+                      quality={100}
                     />
                   </div>
                   <div className="space-y-4 w-1/2 h-full flex flex-col justify-center">
