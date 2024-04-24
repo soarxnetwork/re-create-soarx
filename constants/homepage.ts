@@ -32,7 +32,7 @@ export const imgPartnerLists = [
   // "/images/meta.png",
   "/images/microsoft-without-bg.png",
   "/images/google.png",
-  "/images/polkadot.png",
+  "/images/polkadot.jpg",
   // "/images/digitalocean-partner.png",
   "/images/jamia-millia-islamia-logo-hd-png-vector-free-download-121.png",
 ];
