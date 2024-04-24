@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 function PolicyPage() {
   return (
     <div className="mt-[15%] w-full">
-      <h1 className="w-full text-center font-bold text-[#000000]">
+      <h1 className="w-full text-center font-bold">
         PRIVACY POLICY
       </h1>
       <p className="py-10 px-32 text-[1.2rem]">
@@ -34,7 +34,7 @@ function PolicyPage() {
         Policy from time to time. By Personal Data, we mean any information that
         can either itself identify you as an individual.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         1. COLLECTION OF INFORMATION
       </h2>
       <p className="py-10 px-32 text-[1.2rem]">
@@ -107,7 +107,7 @@ function PolicyPage() {
         understand how you interact with our site and services, so as to render
         a better experience.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         2. USAGE AND RETENTION OF INFORMATION
       </h2>
       <p className="py-10 px-32 text-[1.2rem]">
@@ -129,7 +129,7 @@ function PolicyPage() {
         on the Website, offers, and promotions, surveys, and to assist you with
         operational requests like password reset requests.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">3. COMMUNITY</h2>
+      <h2 className="font-bold  text-2xl px-32 ">3. COMMUNITY</h2>
       <p className="py-10 px-32 text-[1.2rem]">
         SoarX is a community, wherein we offer a number of features that allow
         members to connect and communicate in public or semi-public spaces, such
@@ -139,7 +139,7 @@ function PolicyPage() {
         there can be read, collected, or used by others, or could be used to
         send you unsolicited messages.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         4. SHARING AND DISCLOSING PERSONAL INFORMATION
       </h2>
       <p className="py-10 px-32 text-[1.2rem]">
@@ -153,7 +153,7 @@ function PolicyPage() {
         We do not authorize them to use or disclose your personal information
         except in relation to providing their services.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         5. NOTE TO OUR USERS IN EUROPE:
       </h2>
       <p className="py-10 px-32 text-[1.2rem]">
@@ -163,7 +163,7 @@ function PolicyPage() {
         personal information in India.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">6. SECURITY</h2>
+      <h2 className="font-bold text-2xl px-32 ">6. SECURITY</h2>
       <p className="py-10 px-32 text-[1.2rem]">
         We shall make an effort to take all precautions to shield the personal
         information both online and offline. We will try to protect your
@@ -179,7 +179,7 @@ function PolicyPage() {
         SoarX account has been compromised, you can contact us by writing an
         email to soarxnetwork@gmail.com.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         7. CHANGES TO THIS POLICY
       </h2>
       <p className="py-10 px-32 text-[1.2rem]">

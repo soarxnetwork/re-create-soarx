@@ -179,17 +179,17 @@ const Footer = () => {
           <div className="mb-6 w-full border-hr mt-16"></div>
           <div className="flex-row pb-6 flex justify-between items-center max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse">
             <div className="font-semibold max-[991px]: max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center">
-              <Link href= {'/privacy'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/privacy'} className="inline-block font-normal dark:hover:text-black   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Privacy Policy
           
               </Link>
-              <Link href= {'/refund-policy'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/refund-policy'} className="inline-block font-normal   transition hover:text-slate-500 dark:hover:text-black  hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Refunds & Cancellation Policy
           
               </Link>
-              <Link href= {'/terms'} className="inline-block font-normal   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
+              <Link href= {'/terms'} className="inline-block font-normal   transition hover:text-slate-500 dark:hover:text-black  hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             
                 Terms & Conditons
           

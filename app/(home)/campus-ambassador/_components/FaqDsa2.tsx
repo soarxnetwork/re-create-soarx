@@ -13,9 +13,9 @@ const FaqDsa2 = () => {
           <HeadingSecondDsa text="Frequently Asked Questions" />
         </div>
         <div className="">
-          <h4 className=" text-xl font-medium">For prospective SoarX</h4>
+          {/* <h4 className=" text-xl font-medium">For prospective SoarX</h4> */}
           <SeparatorFaq />
-          <motion.div className=" space-y-4">
+          <motion.div className="mb-9 space-y-4">
             {itemsFaqDsa2.map((item) => (
               <FaqItem key={item.id} {...item} />
             ))}

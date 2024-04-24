@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 function TermsPage() {
   return (
     <div className="mt-[15%]">
-      <h1 className="w-full text-center font-bold text-[#000000]">
+      <h1 className="w-full text-center font-bold ">
         TERMS AND CONDITIONS
       </h1>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 pt-20">
+      <h2 className="font-bold  text-2xl px-32 pt-20">
         1. INTRODUCTION
       </h2>
 
@@ -42,7 +42,7 @@ function TermsPage() {
         binding between you and SoarX.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         2. DEFINITION
       </h2>
 
@@ -83,7 +83,7 @@ function TermsPage() {
         social media channels, including any Content licensed from a third
         party, but excluding Student Content.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         3. GDPR COMPLIANCE STATEMENT
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -117,7 +117,7 @@ function TermsPage() {
         can open an account and help you enrol in courses that are appropriate
         for you.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">4. COMMUNITY</h2>
+      <h2 className="font-bold  text-2xl px-32 ">4. COMMUNITY</h2>
       <p className="px-32 py-10 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
@@ -137,7 +137,7 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         5. NO ENDORSEMENT
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -276,7 +276,7 @@ function TermsPage() {
         use of the Website, or to review or edit any Member Content, but has the
         right to do so for the purpose of operating and improving the Website.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         7. CHILD SAFETY POLICY
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -321,7 +321,7 @@ function TermsPage() {
         instances. SoarX expects all its stakeholders falling within the scope
         of this policy to adhere to the following child safety code of conduct :
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold text-2xl px-32 ">
         {" "}
         8. EXPECTED BEHAVIOUR AND ACTIONS{" "}
       </h2>
@@ -391,7 +391,7 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         {" "}
         10. CHILD SAFETY POLICY
       </h2>
@@ -402,7 +402,7 @@ function TermsPage() {
         With Your Police Station And Report Number; Provided That Your Report
         Will Not Obligate Us To Take Any Action Beyond That Required By Law.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 "> 11. PRIVACY</h2>
+      <h2 className="font-bold  text-2xl px-32 "> 11. PRIVACY</h2>
       <p className="px-32 py-10 text-[1.2rem]">
         In Order To Provide You Services We Gather Your Personal Information. We
         Describe This Collection And Use Of Personal Information In Our Privacy
@@ -414,7 +414,7 @@ function TermsPage() {
         Policy . You Must Be 18 Years Or Older To Use This Service. You Yourself
         Are Responsible For Preventing Unauthorized Access To Your Account.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         {" "}
         12. INTELLECTUAL PROPERTY OWNERSHIP AND RIGHTS NOTICES
       </h2>
@@ -436,7 +436,7 @@ function TermsPage() {
         Policies That Apply To Your Use Of The Website, Including SoarX&apos;s
         Trademark & Branding Guidelines.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         {" "}
         13. ADDITIONAL TERMS
       </h2>
@@ -448,7 +448,7 @@ function TermsPage() {
         Use, Those Additional Terms Become Part Of These Terms.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         {" "}
         14. SOARX CONTENT AND MEMBER CONTENT LICENSE
       </h2>
@@ -461,7 +461,7 @@ function TermsPage() {
         No Right To Sublicense The License Rights Granted In This Section.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         {" "}
         15. HYPERLINKS
       </h2>
@@ -477,7 +477,7 @@ function TermsPage() {
         Any Such Websites.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         16. COPYRIGHT POLICY
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -488,7 +488,7 @@ function TermsPage() {
         Holders.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         17. TERM AND TERMINATION, SUSPENSION AND OTHER MEASURES
       </h2>
 
@@ -515,7 +515,7 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">18. SURVIVAL</h2>
+      <h2 className="font-bold text-2xl px-32 ">18. SURVIVAL</h2>
 
       <p className="px-32 py-10 text-[1.2rem]">
         SoarX Respects Copyright Law And Expects Its Users To Do The Same. It Is
@@ -525,7 +525,7 @@ function TermsPage() {
         Holders.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         19. DISCLAIMERS
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -575,7 +575,7 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         20. LIMITATION OF LIABILITY
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -587,7 +587,7 @@ function TermsPage() {
         Damages.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         21. INDEMNIFICATION
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -600,7 +600,7 @@ function TermsPage() {
         (C) Your Interaction With Any Member.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         22. ENTIRE AGREEMENT
       </h2>
 
@@ -612,7 +612,7 @@ function TermsPage() {
         The Website.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">23. NOTICES</h2>
+      <h2 className="font-bold text-2xl px-32 ">23. NOTICES</h2>
 
       <p className="px-32 py-10 text-[1.2rem]">
         Any Notices Or Other Communications Permitted Or Required Hereunder,
@@ -621,7 +621,7 @@ function TermsPage() {
         Website. For Notices Made By E-Mail, The Date Of Receipt Will Be Deemed
         The Date On Which Such Notice Is Transmitted.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         24. GOVERNING LAW AND JURISDICTION
       </h2>
 
@@ -662,7 +662,7 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         25. NO WAIVER
       </h2>
       <p className="px-32 py-10 text-[1.2rem]">
@@ -679,7 +679,7 @@ function TermsPage() {
         Will Remain In Full Force And Effect.
       </p>
 
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-2xl px-32 ">
         26. MISCELLANEOUS
       </h2>
 
@@ -727,7 +727,7 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <p className="px-32 py-10 text-[1.2rem] text-[#000000] font-bold">
+      <p className="px-32 py-10 text-[1.2rem]  font-bold">
         {" "}
         YOU HAVE READ THESE TERMS OF USE AND AGREE TO ALL OF THE PROVISIONS
         CONTAINED ABOVE.

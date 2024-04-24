@@ -50,9 +50,14 @@ const LeftHeroDlc = () => {
               <Image
                 src="/images/hero-section-banner-dsa-live.png"
                 alt="Responsibility"
-                width={320}
-                height={420}
-                className=" rounded-xl mx-auto w-auto h-[250px]"
+                width={500}
+                height={500}
+                quality={100}
+                className=" rounded-xl mx-auto"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }}
               />
               <div className="fl-ic gap-4">
                 <span className=" text-primaryPurple text-3xl font-semibold">
