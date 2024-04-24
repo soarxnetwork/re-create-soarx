@@ -7,6 +7,7 @@ import { faInstagram , faXTwitter  } from '@fortawesome/free-brands-svg-icons';
 import { SiGooglemeet } from 'react-icons/si';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa6';
 
  async function page({ params }: { params: { slug: string } }) {
 
@@ -60,6 +61,20 @@ import { FaBuilding } from 'react-icons/fa';
         return `${hour}:${minutes.padStart(2, '0')} ${period}`;
     }
     
+    function detectLinkType(link: string): string {
+        if (link.match(/^https:\/\/meet\.google\.com\/[a-zA-Z0-9_-]+$/)) {
+            return "Google Meet";
+        } else if (
+            link.match(
+                /^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)$/
+            ) ||
+            link.match(/^https?:\/\/youtu\.be\/([a-zA-Z0-9_-]+)$/)
+        ) {
+            return "YouTube";
+        } else {
+            return "Unknown";
+        }
+    }
 
          return (
    <>
@@ -104,9 +119,10 @@ import { FaBuilding } from 'react-icons/fa';
                      </div>
                </div>
            </div>
-           <div className="mt-4 flex">
-               <div className="flex items-center"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'><SiGooglemeet/></div> Google Meet</div>
-               <div className="flex items-center ml-10"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'><FaWhatsapp/></div> WhatsApp</div>
+           <div className="mt-4 flex"> 
+           {/* <SiGooglemeet/> */}
+               <a href={`${event?.meeturl}`} className="flex items-center cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'>{event?.location  == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl) == "Google Meet"?(<> <SiGooglemeet/> </>):(<><FaYoutube/></>)}</>):(<FaBuilding/>)}</div> {event?.location == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl)}</>):(<>{event?.venue}</>)}</a>
+               <a href={''} className="flex items-center ml-10 cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'><FaWhatsapp/></div> WhatsApp</a>
 
                
            </div>
