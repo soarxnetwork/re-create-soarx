@@ -66,8 +66,9 @@ const Partners = () => {
                   width={0}
                   height={0}
                   alt="Banner"
-                  className="img-responsive"
+                  className="img-responsive scale-110"
                   sizes="100vw"
+                  quality={100}
                 />
               </div>
             </SwiperSlide>

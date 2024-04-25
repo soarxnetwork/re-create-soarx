@@ -17,24 +17,25 @@ export const BannerImages = [
 ];
 
 export const imgPartnerLists = [
-  "/images/Reskilll.png",
+  "/images/Reskill2.png",
   "/images/Give My Certificate.png",
   "/images/Hack2Skill-removebg-preview.png",
   "/images/c3-removebg-preview.png",
-  // "/images/CN.png",
+  "/images/cnbg.png",
   "/images/CB-removebg-preview.png",
   "/images/sparkar-removebg-preview.png",
-  "/images/uipath.png",
-  "/images/azdevlogonew.png",
-  "/images/mukand-removebg-preview.png",
+  "/images/uipath-removebg-preview.png",
+  "/images/azdev-removebg-preview.png",
+  // "/images/mukand-removebg-preview.png",
   "/images/github-without-bg.png",
   "/images/snapchat.png",
-  // "/images/meta.png",
+  "/images/meta.png",
   "/images/microsoft-without-bg.png",
   "/images/google.png",
-  "/images/polkadot.jpg",
-  // "/images/digitalocean-partner.png",
-  "/images/jamia-millia-islamia-logo-hd-png-vector-free-download-121.png",
+  // "/images/polkadot.jpg",
+  "/images/PolkadotCircular.png",
+  "/images/DigitalOcean.png",
+  // "/images/jamia-millia-islamia-logo-hd-png-vector-free-download-121.png",
 ];
 
 export const imgPcLists = [
