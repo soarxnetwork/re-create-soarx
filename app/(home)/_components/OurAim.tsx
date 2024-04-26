@@ -49,7 +49,7 @@ const OurAim = () => {
                   <span className="text-primary">SoarX</span> */}
                 </h2>
                 <p className="text-gray-500 text-[30px] ">
-                Traditional education often falls short in preparing students for the demands of the corporate world. That's where SoarX steps in. We bridge the gap between academia and real-world application, offering upskilling initiatives to ensure students are well-prepared for challenges ahead.
+                Traditional education often falls short in preparing students for the demands of the corporate world. Thats where SoarX steps in. We bridge the gap between academia and real-world application, offering upskilling initiatives to ensure students are well-prepared for challenges ahead.
                 </p>
               </div>
             </div>
