@@ -1,7 +1,7 @@
 "use client";
 const PrevLectures = () => {
     return (
-      <div className="max-w-screen-xl p-8 mb-32 ml-20 mt-10  flex flex-col justify-center">
+      <div className="max-w-screen-xl p-8 mb-32 ml-16 mt-10  flex flex-col justify-center">
         <h2 className="text-5xl font-semibold mb-20 pr-5 flex justify-center">Have a look at our previous live lectures</h2>
         <div className="prev-lectures w-full">
           <div className="lecture-wrapper w-full flex justify-center gap-x-4">
