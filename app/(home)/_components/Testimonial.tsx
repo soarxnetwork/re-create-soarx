@@ -243,7 +243,7 @@ const Testimonial = () => {
                   Our Success Stories
                 </h2>{" "}
                 <p className="mt-4 text-light text-xl">
-                      Discover inspiring success stories of individuals achieving career goals and landing dream jobs through our SoarX Network             
+                Lets Hear from Those Who have Soared with SoarX!             
                 </p>
               </div>
 

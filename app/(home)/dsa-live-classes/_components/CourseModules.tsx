@@ -74,7 +74,7 @@ const CourseModules = () => {
                     }}
                   >
                     <p>{topic.name}</p>
-                    <p className="font-light text-white/50">{topic.duration}</p>
+                    {/* <p className="font-light text-white/50">{topic.duration}</p> */}
                   </motion.div>
                 ))}
             </div>

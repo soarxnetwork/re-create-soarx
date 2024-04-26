@@ -48,7 +48,7 @@ const LeftHeroDlc = () => {
               {...floatingHeroMotionProps}
             >
               <Image
-                src="/images/hero-section-banner-dsa-live.png"
+                src="/images/card-dsa-live.png"
                 alt="Responsibility"
                 width={500}
                 height={500}

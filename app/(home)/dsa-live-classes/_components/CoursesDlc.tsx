@@ -25,20 +25,16 @@ const CoursesDlc = () => {
       <div className="space-y-4 ml-24 mr-5">
         <h4 className="font-semibold text-3xl">This Course Includes</h4>
         <p className="text-base">
-          Explore the comprehensive learning experience awaiting you on this
-          course detail page. From fundamental concepts to advanced techniques,
-          discover what you will learn and how it will propel your skills to new
-          heights.
+        This course includes comprehensive lectures and hands-on exercises to enhance your understanding of Data Structures and Algorithms, preparing you to tackle technical interviews with confidence.
         </p>
       </div>
       <div className="grid grid-cols-2 ml-24 mr-24  gap-4 text-sm ">
         <CourseDlc courseDetails={courseDetails2} />
       </div>
       <div className="space-y-4 ml-24">
-        <h4 className="font-semibold text-3xl">Comprehensive Course Modules</h4>
+        <h4 className="font-semibold text-3xl">Weekly Outline</h4>
         <p>
-          Immerse yourself in a wealth of knowledge with our comprehensive
-          course content.
+        Embark on a structured learning journey with weekly sessions covering essential concepts and practical problem-solving techniques.
         </p>
       </div>
     </>
