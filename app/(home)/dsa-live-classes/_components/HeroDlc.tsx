@@ -15,19 +15,14 @@ const HeroDlc = () => {
         <div className="space-y-6 pl-24 pr-20">
           <h4 className="font-semibold text-3xl pt-6">About Course</h4>
           <p>
-            A comprehensive program that covers the{" "}
-            <span className="font-bold">fundamentals</span> of Low Level Design.
-            Ace the Low Level Design interview by solving problems asked in the
-            System Design round of programming interviews.
+          Our 2.5 Months DSA Live Classes{" "}
+            <span className="font-bold">Initiatives</span> designed to provide a comprehensive learning experience in Data Structures and Algorithms (DSA) using Java.
           </p>
           <p>
-            It includes <span className="font-bold">lectures</span> and{" "}
-            <span className="font-bold">exercises</span> to help students design
-            and implement efficient solutions. This course is suitable for
-            beginners and experienced programmers and aims to prepare students
-            for
+            It led by <span className="font-bold">industry experts</span> this{" "}
+            <span className="font-bold">program</span> aims to equip participants with the fundamental concepts, problem-solving skills, and algorithmic thinking needed to excel in coding interviews, competitive programming, and{" "}
             <span className="font-bold">
-              technical interviews and placement exams
+            real-world software development.
             </span>
           </p>
         </div>

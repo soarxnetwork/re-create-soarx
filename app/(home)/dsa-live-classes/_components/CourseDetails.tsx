@@ -15,74 +15,75 @@ import { SiMaterialdesignicons } from "react-icons/si";
 import { MdQuiz } from "react-icons/md";
 import { FaQuestionCircle } from "react-icons/fa";
 import { ImTicket } from "react-icons/im";
+import { GrResume } from "react-icons/gr";
+import { FaGithub } from "react-icons/fa";
 
 export const courseDetails1 = [
   {
     icon: <BsCameraReels />,
-    description: "LIVE Doubt Class Every Saturday [9-11pm]",
+    description: "Start Date - 12 December 2024",
   },
   {
     icon: <LuAirplay />,
-    description: "Mode of the Course Hybrid mode [LIVE + REC]",
+    description: "Duration ~ 2.5 months",
   },
   {
     icon: <LuArrowUp01 />,
-    description: "No. Of Lectures 50+",
+    description: "Concept Classes - 3 days/week",
   },
   {
     icon: <ImPause />,
-    description: "Class Recording Provided Yes",
+    description: "Doubt Classes - Weekend",
   },
   {
     icon: <ImEmbed2 />,
-    description: "Doubt & Revision Classes 24+ Sessions",
+    description: "Class Duration - 1.5 - 2 hours",
   },
   {
     icon: <PiNumberTwoBold />,
-    description: "Course Validity 2 Year",
+    description: "Recordings available? - Yes, lifetime availability",
   },
   {
     icon: <ImFileText2 />,
-    description: "Programming Language Used: C++/Java",
+    description: "Programming Languages - Java",
   },
   {
     icon: <ImFeed />,
-    description: "LIVE Revision Class Every Tuesday [9-11pm]",
+    description: "Language of Communication - Hinglish(Hindi + English)",
   },
 ];
 export const courseDetails2 = [
   {
-    icon: <FaJava />,
-    description: "Learn C++/Java from Scratch",
+    icon: <GrResume />,
+    description: "Resume Review and Preparation",
+  },
+  {
+    icon: <FaGithub />,
+    description: "Github & Linkedin Optimisation",
   },
   {
     icon: <BsFillDiagram3Fill />,
-    description:
-      "C++/Java OOPS Concept",
-  },
-  {
-    icon: <BsFillDiagram3Fill />,
-    description: "UML Diagrams in Depth",
+    description: "Interview Preparation",
   },
   {
     icon: <RiMiniProgramFill />,
-    description: "SOLID Principles [An Interview Perspective]",
+    description: "Lifetime community support",
   },
   {
     icon: <BsPersonWorkspace />,
-    description: "Introduction to Design Patterns",
+    description: "Weekly Problem Solving Session",
   },
   {
     icon: <MdDesignServices />,
-    description: "Creational Design Patterns [With Examples]",
+    description: "Referral Opportunity",
   },
   {
     icon: <SiMaterialdesignicons />,
-    description: "Structural Design Patterns [With Examples]",
+    description: "Doubt Support",
   },
   {
     icon: <ImTicket />,
-    description: "Behavioural Design Patterns [With Examples]",
+    description: "Certificate of Completion",
   },
   {
     icon: <MdQuiz />,
@@ -95,53 +96,62 @@ export const courseDetails2 = [
 ];
 export const coursesModules = [
   {
-    name: "C++ Crash Course",
-    topics: [{ name: "Basics of C++ Programming", duration: "3 hr" }],
-  },
-  {
-    name: "Java Crash Course",
-    topics: [{ name: "Basics of Java Programming", duration: "3 hours" }],
-  },
-  {
-    name: "OOPS Concepts",
+    name: "Week 1",
     topics: [
-      { name: "Encapsulation", duration: "30 mins" },
-      { name: "Polymorphism", duration: "30 mins" },
-      { name: "Inheritance", duration: "30 mins" },
-      { name: "Abstraction", duration: "30 mins" },
+      {
+        name: "Basic concepts of Java(Loops, Class, Functions) and Overview of DSA(Time Complexity and Memory Allocation)",
+        duration: "3 hr",
+      },
     ],
   },
   {
-    name: "Object Oriented Design",
+    name: "Week 2",
+    topics: [{ name: "Array and Strings with problems.", duration: "3 hours" }],
+  },
+  {
+    name: "Week 3",
     topics: [
-      { name: "Introduction to OOD", duration: "10 mins" },
-      { name: "Introduction to UML", duration: "10 mins" },
-      { name: "Types of UML", duration: "10 mins" },
-      { name: "UseCase Diagram", duration: "1 hour" },
-      { name: "Class Diagram", duration: "1 hour" },
-      { name: "Sequence Diagram", duration: "1 hour" },
-      { name: "Activity Diagram", duration: "1 hour" },
+      {
+        name: " Sorting Algorithms and Comparison between different sorting algorithms",
+        duration: "30 mins",
+      },
     ],
   },
   {
-    name: "Object Oriented Design Principles",
+    name: "Week 4",
     topics: [
-      { name: "Introduction to SOLID Principles", duration: "10 min" },
-      { name: "SRP, OCP, LSP, ISP & DIP", duration: "2.5 hours" },
+      {
+        name: "Linked Lists(Insertion, deletion, mid and circle detection)",
+        duration: "10 mins",
+      },
     ],
   },
   {
-    name: "Design Patterns",
+    name: "Week 5",
     topics: [
-      { name: "Basics of Deisgn Patterns", duration: "10 min" },
-      { name: "Classification of Design Patterns", duration: "10 mins" },
-      { name: "Creational Design patterns", duration: "6 hours" },
-      { name: "Structural Design patterns", duration: "6 hours" },
-      { name: "Behavioural Design patterns", duration: "6 hours" },
+      { name: "Stack and Queues with problems.", duration: "10 min" },
     ],
   },
   {
-    name: "Real World Design Problems",
-    topics: [{ name: "Solving Multiple LLD Problems", duration: "6 hours" }],
+    name: "Week 6",
+    topics: [
+      { name: "Priority Queue, HashSet and Hashmap", duration: "10 min" },
+    ],
+  },
+  {
+    name: "Week 7",
+    topics: [{ name: "Greedy Algorithm and Recursion", duration: "6 hours" }],
+  },
+  {
+    name: "Week 8",
+    topics: [{ name: "Dynamic Programming", duration: "6 hours" }],
+  },
+  {
+    name: "Week 9",
+    topics: [{ name: "Binary Tree and Binary Search Tree", duration: "6 hours" }],
+  },
+  {
+    name: "Week 10",
+    topics: [{ name: "Graphs", duration: "6 hours" }],
   },
 ];

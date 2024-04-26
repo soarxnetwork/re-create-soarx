@@ -5,6 +5,7 @@ import FaqDlc from "./_components/FaqDlc";
 import FloatingHero from "./_components/FloatingHero";
 import InstructorsDlc from "./_components/InstructorsDlc";
 import CertificateOfCompletion from "./_components/CertificateOfCompletion";
+import PrevLectures from "./_components/Prev_Lectures";
 
 const DsaLiveClassesPage = () => {
   return (
@@ -24,6 +25,7 @@ const DsaLiveClassesPage = () => {
       </section>
       <section className="py-4 container">
         <InstructorsDlc />
+        <PrevLectures/>
         <CertificateOfCompletion />
         <FaqDlc />
       </section>

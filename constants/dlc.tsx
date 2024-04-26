@@ -51,56 +51,56 @@ export const feedBacksDlc = [
 export const faqDlc = [
   {
     question:
-      "I don't have any Prior experience of any Programming Language Can I take this Course?",
+      "I don't have any prior experience in any programming language. Can I take this course?",
     answer:
-      "Yes, this course will cover all important concepts from basic till advanced. So, there is no need to know anything about coding beforehand.",
+      "Yes, this course will cover all important concepts from basic to advanced. So, there is no need to know anything about coding beforehand.",
     id: "1",
   },
   {
-    question: "Is this a LIVE or a Recorded Course ?",
+    question: "Is this course live or recorded ?",
     answer:
-      "This is a hybrid course, where we will provide both Recorded sessions and LIVE sessions to teach students.",
+      "This course is live, offering both recorded sessions of live classes and live sessions to teach students.",
     id: "2",
   },
   {
-    question: "If i miss any LIVE session, how can i attend it again ?",
+    question: "If I miss any live session, how can I attend it again?",
     answer:
-      "You will be provided with session RECORDINGS, you can access then whenever you want.",
+      "You will be provided with session recordings, which you can access whenever you want.",
     id: "3",
   },
   {
     question:
       "I am a Working Professional or College Student, can i watch this course along with studies ?",
     answer:
-      "Yes, you can. This course will be beneficial for you, if your are targeting those high paying software jobs.",
+      "Yes, you can. This course will be beneficial for you if you are targeting those dream software jobs.",
     id: "4",
   },
   {
     question: "Do, I need to learn anything before this course starts ?",
     answer:
-      "No, there is no pre-requisite. We will cover everything right from scratch in this course.",
+      "No, there are no prerequisites. We will cover everything right from scratch in this course.",
     id: "5",
   },
   {
-    question: "Can I get a refund incase I change my mind ?",
-    answer: "As per current policy, we have 'STRICT NO REFUND' Policy.",
+    question: "Can I get a refund if I change my mind ?",
+    answer: "Currently, we have a strict no-refund policy in place.",
     id: "6",
   },
   {
-    question: "I live outside of India, so how can I purchase the course?",
+    question: "I live outside of India. How can I purchase the course ?",
     answer:
-      "Yes, you can purchase the course. We already have support for International Payments",
+      "Yes, you can purchase the course. We already support international payments.",
     id: "7",
   },
   {
     question: "Is the course in Hindi or English?",
     answer:
-      "The course is taught in Hinglish (a mix of Hindi & English). [Majorly Hindi]",
+      "The course is taught in Hinglish, which is a mix of Hindi and English. (Primarily in Hindi).",
     id: "8",
   },
   {
     question: "How long is the course access?",
-    answer: "The course is accessible for the duration of 2 years.",
+    answer: "The course is accessible for a lifetime.",
     id: "9",
   },
   {
@@ -111,45 +111,40 @@ export const faqDlc = [
   {
     question: "Is there a course schedule?",
     answer:
-      "Yes, each lesson will be unlocked on alternative days so that you have ample time to learn core concepts & practice questions.",
+      "Yes, each live class will be held on alternate days, totaling three days per week, with additional doubt clarification and bonus sessions on weekends.",
     id: "11",
   },
   {
     question: "Will there be question practice in the course?",
     answer:
-      "Yes, the course includes multiple Quizzes, exercises, and multiple Real World Design Problem Solving lectures.",
+      "Yes, the course includes multiple problem-solving lectures.",
     id: "12",
   },
-  {
-    question: "Why should I learn Low Level Design?",
-    answer:
-      "Learning Low-Level Design (LLD) is crucial for several reasons, especially in the context of excelling in software engineering and standing out in the industry: [Detail on why to learn LLD]",
-    id: "13",
-  },
+  
   {
     question: "Is there a group/community I can join after enrolling?",
     answer:
-      "Yes, we will send you an invite right after the you purchase the course.",
+      "Yes, we will send you an invite right after you purchase the course.",
     id: "14",
   },
   {
     question:
-      "I paid but still did not receive any welcome email/unable to access my course. What to do?",
-    answer: "Please raise us a ticket to our support team. Here",
+      "I paid but still did not receive any welcome email or unable to access my course. What should I do ?",
+    answer: "Please email us at soarxnetwork@gmail.com, and we will assist you promptly.",
     id: "15",
   },
 ];
 
 export const courseDetailsHero = [
   "No Pre-requisite Required",
-  "50+ hours On-Demand Video",
-  "DSA 1.0 Recordings",
-  "Monthly Contests",
-  "Bounties worth Rs. 5,000+"
+  "Live Interaction with MNC Experts",
+  "Linkedin & Github Optimisation",
+  "Interview Preparation",
+  "Doubt Support"
 
 ];
 export const courseDetailsHeroFloat = [
   "No Pre-requisite Required",
-  "50+ hours On-Demand Video",
-  "8 Real World Design Problems (asked by Top Companies)",
+  "Live Interaction with MNC Experts",
+  "Doubt Support",
 ];

@@ -49,12 +49,7 @@ const OurAim = () => {
                   <span className="text-primary">SoarX</span> */}
                 </h2>
                 <p className="text-gray-500 text-[30px] ">
-                  At SoarX, we firmly believe that collaboration is the key
-                  to success in today&apos;s fast-paced digital landscape.
-                  Through strategic IT partnerships, we leverage the collective
-                  expertise and resources of industry leaders to deliver
-                  innovative solutions that drive tangible results for our
-                  clients.
+                Traditional education often falls short in preparing students for the demands of the corporate world. That's where SoarX steps in. We bridge the gap between academia and real-world application, offering upskilling initiatives to ensure students are well-prepared for challenges ahead.
                 </p>
               </div>
             </div>

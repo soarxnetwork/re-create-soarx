@@ -22,7 +22,7 @@ const HomeSlider = () => {
               </div>
 
               <div className="text-center text-primary cursor-pointer">
-                {"Empowering Minds. Unleashing Creativity"
+                {"Engage, Innovate, Elevate"
                   .split("")
                   .map((child, idx) => (
                     <span className={"hoverText text-[20px]"} key={idx}>
@@ -35,7 +35,7 @@ const HomeSlider = () => {
               SoarX Network
             </h1>
             <p className="pt-5 text-[30px] text-slate-500">
-            SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons
+            A nationwide community committed to igniting the potential of students through engaging events, sessions, and hackathons. 
             </p>
             <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
           </div>
