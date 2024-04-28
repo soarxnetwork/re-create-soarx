@@ -61,9 +61,9 @@ const LeftHeroDlc = () => {
               />
               <div className="fl-ic gap-4">
                 <span className=" text-primaryPurple text-3xl font-semibold">
-                  ₹2700
+                  ₹999
                 </span>
-                <del className=" text-shark text-xl">₹4800</del>
+                <del className=" text-shark text-xl">₹2499</del>
               </div>
               <p className="text-xl font-semibold dark:text-white text-black">
                 BONUS INCLUDES:
