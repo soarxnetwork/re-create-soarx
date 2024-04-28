@@ -21,7 +21,7 @@ import { FaGithub } from "react-icons/fa";
 export const courseDetails1 = [
   {
     icon: <BsCameraReels />,
-    description: "Start Date - 12 December 2024",
+    description: "Start Date - 1 June 2024",
   },
   {
     icon: <LuAirplay />,
