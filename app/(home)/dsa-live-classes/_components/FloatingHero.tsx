@@ -34,8 +34,8 @@ const FloatingHero = () => {
             <p className="text-xl font-semibold dark:text-white">
               This Course Includes :
             </p>
-            {courseDetailsHeroFloat.map((course) => (
-              <p key={course} className="dark:text-white flex gap-x-3">
+            {courseDetailsHeroFloat.map((course, index) => (
+              <p key={index} className="dark:text-white flex gap-x-3">
                 <AiFillThunderbolt size="24" fill="#9241D4" />
                 {course}
               </p>
