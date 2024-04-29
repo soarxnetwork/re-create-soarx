@@ -144,7 +144,7 @@ export const courseDetailsHero = [
 
 ];
 export const courseDetailsHeroFloat = [
-  "No Pre-requisite Required",
-  "Live Interaction with MNC Experts",
+  "DSA Concept Classes",
   "Doubt Support",
+  "Lecture Recordings",
 ];
