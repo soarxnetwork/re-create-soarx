@@ -15,6 +15,9 @@ import {
 } from "@/lib/mail";
 import { signJwt, verifyJwt } from "@/lib/jwt";
 import { resetPasswordType } from "@/app/(auth)/reset-password/_components/ResetPasswordForm";
+import { z } from "zod";
+import { userSchema } from "@/app/(home)/profile/_components/FormProfile";
+import { signOut } from "next-auth/react";
 interface updateAdminPayload {
   id: string;
   admin: Admin;
@@ -142,4 +145,40 @@ export const resetPassword = async (data: resetPasswordType, id: string) => {
       password: await bcrypt.hash(data.password, 10),
     },
   });
+};
+
+export const updateUser = async (
+  id: string,
+  user: z.infer<typeof userSchema>
+) => {
+  const { confirmPassword, imageUrl, password, ...rest } = user;
+  try {
+    const userExist = await db.user.findUnique({
+      where: {
+        email: user.email!,
+      },
+    });
+    if (!userExist) return { error: "Email already exists" };
+    if (userExist.password !== null) {
+      const passwordMatch = await bcrypt.compare(
+        user.password!,
+        userExist?.password!
+      );
+      if (!passwordMatch) return { error: "Password does not match" };
+    }
+
+    await db.user.update({
+      where: {
+        id,
+      },
+      data: {
+        ...rest,
+        image: imageUrl,
+      },
+    });
+    return { message: "User updated please login again" };
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
 };

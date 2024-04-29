@@ -110,7 +110,6 @@ h1 {
   -webkit-text-fill-color: transparent;
 } */
 
-
 .img-responsive {
   width: 100%;
   height: 100%;
@@ -172,9 +171,8 @@ header {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 10px;
   transition: height ease-in 0.1s;
-
 }
-.swiper-slide-active .banner-img{
+.swiper-slide-active .banner-img {
   margin-top: 0;
   height: 350px;
   transition: height ease-in 0.1s;
@@ -231,10 +229,10 @@ header {
   overflow: hidden;
   width: fit-content;
 }
-.mySwiper .swiper-wrapper{
+.mySwiper .swiper-wrapper {
   display: flex;
   align-items: center;
-  min-height:350px;
+  min-height: 350px;
 }
 
 .button--itzel::before {
@@ -1346,7 +1344,7 @@ input {
   .banner-section {
     padding-top: 130px;
   }
-  
+
   .banner-swiperjs {
     margin-top: 20px;
   }
@@ -1495,7 +1493,6 @@ input {
     grid-template-columns: 1fr;
   }
 
-  
   .partner-imgwrap {
     width: 100%;
     height: 100px;
@@ -1504,14 +1501,12 @@ input {
   .content-main {
     width: 100%;
   }
-  
+
   .swiper-button-next:after,
   .swiper-button-prev:after {
     font-size: 30px !important;
-    
   }
 }
-
 
 @media (max-width: 450px) {
   h1 {
@@ -1704,7 +1699,7 @@ input {
 }
 
 .pt-avoid-nav {
-  @apply pt-28;
+  @apply pt-28 pb-4;
 }
 
 .container-hero-dlc {
@@ -1760,37 +1755,36 @@ input {
   position: relative;
   padding: 10px 20px;
   border-radius: 7px;
-  border: 1px solid #8919E4;
+  border: 1px solid #8919e4;
   font-size: 14px;
-  
+
   font-weight: 400;
   letter-spacing: 1px;
-  background-color: #8919E4;
+  background-color: #8919e4;
   color: white;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   font-family: Tahoma, sans-serif;
-  }
-  
-  .Event-reg-button:hover {
- 
-  box-shadow: 0 0 30px 5px #8919E4;
+}
+
+.Event-reg-button:hover {
+  box-shadow: 0 0 30px 5px #8919e4;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   color: white;
-  }
-  
-  .Event-reg-button:hover::before {
+}
+
+.Event-reg-button:hover::before {
   -webkit-animation: sh02 0.5s 0s linear;
   -moz-animation: sh02 0.5s 0s linear;
   animation: sh02 0.5s 0s linear;
-  }
-  
-  .Event-reg-button::before {
-  content: '';
+}
+
+.Event-reg-button::before {
+  content: "";
   display: block;
   width: 0px;
   height: 86%;
@@ -1805,29 +1799,27 @@ input {
   -ms-transform: skewX(-20deg);
   -o-transform: skewX(-20deg);
   transform: skewX(-20deg);
-  }
-  
-  @keyframes sh02 {
+}
+
+@keyframes sh02 {
   from {
-  opacity: 0;
-  left: 0%;
+    opacity: 0;
+    left: 0%;
   }
-  
+
   50% {
-  opacity: 1;
+    opacity: 1;
   }
-  
+
   to {
-  opacity: 0;
-  left: 100%;
+    opacity: 0;
+    left: 100%;
   }
-  }
-  
-  .Event-reg-button:active {
+}
+
+.Event-reg-button:active {
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: box-shadow 0.2s ease-in;
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
-  }
-  
-  
+}

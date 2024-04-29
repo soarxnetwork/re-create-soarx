@@ -6,7 +6,7 @@ import { Fade as Hamburger } from "hamburger-react";
 import { usePathname, useRouter } from "next/navigation";
 // import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
-import {Switch} from "@nextui-org/react";
+import { Switch } from "@nextui-org/react";
 
 import HeaderDropdown from "./HeaderDropdown";
 import ButtonAuth from "./ButtonAuth";
@@ -98,7 +98,7 @@ const Header = ({ admin }: User) => {
               </div>
             </div>
             <div className="flex items-center gap-x-5 justify-self-end">
-            <ThemeSwitcher/>
+              <ThemeSwitcher />
               <ButtonAuth />
               {isClient && (
                 <>

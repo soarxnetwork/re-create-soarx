@@ -29,6 +29,14 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  name String?
+  collegeName String?
+  yearOfPassing String?
+  city String?
+  degree String?
+  stream String?
+  dob String?
+  skill String?
 
   orders Order[]
   blogs Blog[] @relation("BlogCreator")

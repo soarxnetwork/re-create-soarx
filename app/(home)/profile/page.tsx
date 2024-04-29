@@ -4,15 +4,31 @@ import { getServerSession } from 'next-auth'
 import { useSession } from "next-auth/react";
 import { notFound, redirect } from 'next/navigation'
 import React from 'react'
+import FormProfile from "./_components/FormProfile";
 
 const ProfilePage = () => {
   const { data: session } = useSession()
   if (!session?.user) return redirect('/sign-in')
+
   return (
-    <section className="container pt-avoid-nav">
-      <div>{session?.user.email}</div>
-      <div>{session?.user.username}</div>
-      <div>{session?.user.id}</div>
+    <section className="custom-container pt-avoid-nav space-y-8">
+
+      <FormProfile
+        id={session?.user.id!}
+        email={session?.user.email!}
+        username={session?.user.username!}
+        image={session?.user.image!}
+        phone={session?.user.phone}
+        city={session?.user.city}
+        collegeName={session?.user.collegeName}
+        degree={session?.user.degree}
+        dob={session?.user.dob}
+        name={session?.user.name}
+        skill={session?.user.skill}
+        stream={session?.user.stream}
+        yearOfPassing={session?.user.yearOfPassing}
+
+      />
     </section>
   )
 }
