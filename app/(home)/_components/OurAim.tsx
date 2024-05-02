@@ -1,29 +1,31 @@
 import Image from "next/image";
 import React from "react";
 
+const data = [
+  {
+    title: "Student Empowerment",
+    desc: "Through a variety of initiatives, events, and programs, we strive to empower students to take control of their futures, and unlock their potential",
+    image: "/images/empowerment.png",
+  },
+  {
+    title: "Skill Development",
+    desc: " At SoarX, we are dedicated to facilitating skill development among students through workshops, training sessions, and hands-on experiences.",
+    image: "/images/competence.png",
+  },
+  {
+    title: "Promote Innovation",
+    desc: "One of our key aims at SoarX is to promote innovation   among students through hackathons, innovation challenges, and entrepreneurial initiatives.",
+    image: "/images/logical-thinking.png",
+  },
+  {
+    title: "Drive Social Impact",
+    desc: " Social impact is at the heart of our mission at SoarX. We aim to empower students to drive positive change in their communities and beyond.",
+    image: "/images/save-the-world.png",
+  },
+];
+
 const OurAim = () => {
-  const data = [
-    {
-      title: "Student Empowerment",
-      desc: "Through a variety of initiatives, events, and programs, we strive to empower students to take control of their futures, and unlock their potential",
-      image: "/images/empowerment.png",
-    },
-    {
-      title: "Skill Development",
-      desc: " At SoarX, we are dedicated to facilitating skill development among students through workshops, training sessions, and hands-on experiences.",
-      image: "/images/competence.png",
-    },
-    {
-      title: "Promote Innovation",
-      desc: "One of our key aims at SoarX is to promote innovation   among students through hackathons, innovation challenges, and entrepreneurial initiatives.",
-      image: "/images/logical-thinking.png",
-    },
-    {
-      title: "Drive Social Impact",
-      desc: " Social impact is at the heart of our mission at SoarX. We aim to empower students to drive positive change in their communities and beyond.",
-      image: "/images/save-the-world.png",
-    },
-  ];
+  
   return (
     <div>
       <section className="pt-20 px-36">

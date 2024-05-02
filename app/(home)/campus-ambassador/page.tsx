@@ -5,19 +5,27 @@ import AdvantageDsa from "./_components/AdvantageDsa";
 import ResponsibilityDsa from "./_components/ResponsibilityDsa";
 import BannerDsa from "./_components/BannerDsa";
 import FaqDsa2 from "./_components/FaqDsa2";
+import AmbassadarPerks from "./_components/AmbassadarPerks";
+import StepsToAmmbassdar from "./_components/StepsToAmmbassdar";
+import RolesAndResponsibility from "./_components/RolesAndResponsibility";
+import ReviewOfAmbessadar from "./_components/ReviewOfAmbessadar";
 
 const SecondDsaPage = () => {
   return (
-    <section className=" pt-40 pb-8 space-y-12  ">
+    <section className=" pt-40 ml-28 pb-8 space-y-12 mr-24">
       <HeroSecondDsa />
-      <hr className="w-full h-[2px] bg-secondDsaBlack" />
-      <FormSecondDsa />
-      <hr className="w-full h-[2px] bg-secondDsaBlack" />
-      <AdvantageDsa />
-      <hr className="w-full h-[2px] bg-secondDsaBlack" />
-      <ResponsibilityDsa />
+      {/* <hr className="w-full h-[2px]" /> */}
+      <AmbassadarPerks/>
+      {/* <FormSecondDsa /> */}
+      {/* <hr className="w-full h-[2px]" /> */}
+      <StepsToAmmbassdar/>
+      {/* <AdvantageDsa /> */}
+      {/* <hr className="w-full h-[2px]" /> */}
+      <RolesAndResponsibility/>
+      {/* <ResponsibilityDsa /> */}
       {/* ! */}
-      <BannerDsa />
+      {/* <BannerDsa /> */}
+      <ReviewOfAmbessadar/>
       <FaqDsa2 />
     </section>
   );
