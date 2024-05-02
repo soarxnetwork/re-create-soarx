@@ -9,7 +9,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-const HeroSecondDsa = () => {
+const   HeroSecondDsa = () => {
   return (
     <article>
       <div className="container md:grid md:grid-cols-2 space-y-4 md:space-y-0 gap-4">
@@ -28,18 +28,22 @@ const HeroSecondDsa = () => {
             abilities. So, sign up today and be a key part of one of the world’s
             largest developer communities!
           </p>
-          <a href="#form" className="block py-2">
+          <a href="#form" className="block py-2" >
             <ButtonSecondDsa text="Apply Now" />
           </a>
         </div>
         {/* ! */}
+
+        
+
         <div>
           <Image
-            src="https://i.pinimg.com/736x/37/d1/0e/37d10e0868abfa4f8b8421137cf3da70.jpg"
+            src="/images/hero_section_campus_ambasadar-removebg-preview.png"
             alt="DSA"
             width={682}
             height={381}
-            className="rounded-xl  object-contain w-[682px] h-[381px] "
+            quality={100}
+            className="object-contain w-[682px] ml-16 h-[381px] dark:brightness-200"
           />
         </div>
       </div>

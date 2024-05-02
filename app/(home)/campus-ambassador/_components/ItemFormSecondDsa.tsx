@@ -12,13 +12,13 @@ const ItemFormSecondDsa = () => {
     {
       icon: <FaForumbee size={61} />,
       number: 2,
-      title: " We will contact you for an interview meeting/call.",
+      title: "Take the assessment.",
     },
     {
       icon: <FaForumbee size={61} />,
       number: 3,
       title:
-        " You are officially a SoarX Campus Ambassador if you pass the interview",
+        " You are officially a SXECA if you pass the test!",
     },
   ];
   return (
@@ -28,13 +28,13 @@ const ItemFormSecondDsa = () => {
         {items.map((item) => (
           <div
             key={item.number}
-            className="p-4 rounded-xl flex justify-between  "
+            className="p-4 rounded-xl flex gap-x-6 justify-between  "
           >
-            <div className="flex gap-4 ">
-              <div>{item.icon}</div>
-              <p className=" text-xl font-semibold">{item.title}</p>
+            <div className="flex bg-red-600 gap-x-6">
+              <div className="bg-green-700">{item.icon}</div>
+              <p className="text-xl font-semibold bg-blue-800">{item.title}</p>
             </div>
-            <p className=" text-6xl font-bold ">{item.number}</p>
+            <p className=" text-6xl font-bold bg-yellow-800">{item.number}</p>
           </div>
         ))}
       </div>
