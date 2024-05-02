@@ -110,7 +110,7 @@ const HeaderDropdown = () => {
                           sizes="100vw"
                           width={23}
                           height={23}
-                          alt=""
+                          alt="img"
                         />
                       </div>
                       <div>
