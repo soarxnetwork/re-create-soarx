@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
+
 import { getEventBySlug } from '@/services/events';
 import Image from 'next/image';
 import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
@@ -8,10 +10,48 @@ import { SiGooglemeet } from 'react-icons/si';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
+import { useSession } from "next-auth/react";
 
- async function page({ params }: { params: { slug: string } }) {
+ function page({ params }: { params: { slug: string } }) {
+    const [event, setEvent] = useState<any>(null);
+    const { data: session } = useSession();
+  
+    useEffect(() => {
+      const fetchEventData = async () => {
+        try {
+          const eventData = await getEventBySlug(params.slug);
+          setEvent(eventData);
+        } catch (error) {
+          console.error('Error fetching event data:', error);
+        }
+      };
+      fetchEventData();
+    }, [params.slug]);
 
-       const event = await getEventBySlug(params.slug);
+       function RegisterUser(){
+        if (!session) {
+            alert("Please login to register for and event!");
+        } else if (
+            !session.user.id ||
+            !session.user.email ||
+            !session.user.username ||
+            !session.user.image ||
+            !session.user.phone ||
+            !session.user.city ||
+            !session.user.collegeName ||
+            !session.user.degree ||
+            !session.user.dob ||
+            !session.user.name ||
+            !session.user.skill ||
+            !session.user.stream ||
+            !session.user.yearofPassing
+        ) {
+            alert("Please Complete your profile to register for the event!");
+        } else {
+            alert("Successfully registered for the event!!");
+        }
+       
+       }
        const DESC = event?.description;
        interface StringtoString {
         [key: string]: string;
@@ -75,6 +115,7 @@ import { FaYoutube } from 'react-icons/fa6';
             return "Unknown";
         }
     }
+  
 
          return (
    <>
@@ -82,7 +123,7 @@ import { FaYoutube } from 'react-icons/fa6';
    <div className="flex justify-center">
        <div className="">
                <Image
-                     src={String(event?.imageUrl)} // Insert the image source
+                     src={event?.imageUrl} // Insert the image source
                      alt="poster"
                      className="rounded-[20px]"
                      width={320}
@@ -120,16 +161,16 @@ import { FaYoutube } from 'react-icons/fa6';
                </div>
            </div>
            <div className="mt-4 flex"> 
-           {/* <SiGooglemeet/> */}
-               <a href={`${event?.meeturl}`} className="flex items-center cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'>{event?.location  == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl) == "Google Meet"?(<> <SiGooglemeet/> </>):(<><FaYoutube/></>)}</>):(<FaBuilding/>)}</div> {event?.location == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl)}</>):(<>{event?.venue}</>)}</a>
-               <a href={''} className="flex items-center ml-10 cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'><FaWhatsapp/></div> WhatsApp</a>
+           
+               <a href={`${event?.meeturl}`} target='_blank' className="flex items-center cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'>{event?.location  == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl) == "Google Meet"?(<> <SiGooglemeet/> </>):(<><FaYoutube/></>)}</>):(<FaBuilding/>)}</div> {event?.location == 'Online' && event.meeturl ? (<>{detectLinkType(event.meeturl)}</>):(<>{event?.venue}</>)}</a>
+               <a className="flex items-center ml-10 cursor-pointer"><div className='border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4'><FaWhatsapp/></div> WhatsApp</a>
 
                
            </div>
            <div className=" mt-[5%] rounded-lg shadow-lg h-[160px]">
                <div className="rounded-t-md h-[40px] bg-[#F4F2FB] font-semibold text-[#8919E4] text-[18px] flex items-center pl-4">Registration</div>
                <div className="mt-[3%] text-center text-[1.1rem]">Welcome! To join the event, please register below.</div>
-               <div className="flex justify-center mt-[2%]"><button className="Event-reg-button">Register</button></div>
+               <div className="flex justify-center mt-[2%]"><button onClick={RegisterUser} className="Event-reg-button">Register</button></div>
            </div>
            <div className="border-l-[3px] border-[#C2A1F4] border-dashed mt-[3%]">
            <div className="ml-[3%] font-semibold text-[#8919E4]  text-[20px]">About Event</div>
