@@ -12,7 +12,7 @@ import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import { useSession } from "next-auth/react";
 
- function page({ params }: { params: { slug: string } }) {
+ function Page({ params }: { params: { slug: string } }) {
     const [event, setEvent] = useState<any>(null);
     const { data: session } = useSession();
   
@@ -44,7 +44,7 @@ import { useSession } from "next-auth/react";
             !session.user.name ||
             !session.user.skill ||
             !session.user.stream ||
-            !session.user.yearofPassing
+            !session.user.yearOfPassing
         ) {
             alert("Please Complete your profile to register for the event!");
         } else {
@@ -207,4 +207,4 @@ import { useSession } from "next-auth/react";
   )
 }
 
-export default page
+export default Page
