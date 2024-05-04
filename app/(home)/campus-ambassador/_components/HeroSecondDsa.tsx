@@ -195,7 +195,7 @@ const HeroSecondDsa = () => {
                 <div className="w-full">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
-                      Campus Ambassador
+                      Campus Leader
                     </h3>
                     <button
                       onClick={toggleModal}
@@ -363,7 +363,7 @@ const HeroSecondDsa = () => {
                 <div className="w-full">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
-                      Campus Leader
+                      Campus Ambassadar
                     </h3>
                     <button
                       onClick={toggleModalLeader}
