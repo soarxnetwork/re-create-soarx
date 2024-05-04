@@ -70,7 +70,7 @@ const HeroSecondDsa = () => {
             <div className="relative left-32">
               <div className="flex gap-x-10">
                 <div className="w-2/5">
-                  <div className="relative bg-white rounded-lg shadow-xl   dark:bg-gray-700">
+                  <div className="relative bg-white rounded-lg shadow-md shadow-gray-600   dark:bg-gray-900">
                     <div className="flex flex-col items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
                       <div>
                         <div className="w-full flex pb-6">
@@ -118,7 +118,7 @@ const HeroSecondDsa = () => {
                 </div>
 
                 <div className="w-2/5">
-                  <div className="relative bg-white rounded-lg shadow-xl   dark:bg-gray-700">
+                  <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900">
                     <div className="flex flex-col items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
                       <div>
                         <div className="w-full flex pb-6">
@@ -194,7 +194,7 @@ const HeroSecondDsa = () => {
               <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
                 <div className="w-full">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
                       Campus Ambassador
                     </h3>
                     <button
@@ -203,7 +203,7 @@ const HeroSecondDsa = () => {
                       className=""
                       data-modal-toggle="crud-modal"
                     >
-                      <TiDeleteOutline className="text-4xl dark:text-white text-black" />
+                      <TiDeleteOutline className="text-4xl text-purple-400" />
                     </button>
                   </div>
                   <form className="p-4 md:p-5">
@@ -362,7 +362,7 @@ const HeroSecondDsa = () => {
               <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
                 <div className="w-full">
                   <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
                       Campus Leader
                     </h3>
                     <button
@@ -371,7 +371,7 @@ const HeroSecondDsa = () => {
                       className=""
                       data-modal-toggle="crud-modal"
                     >
-                      <TiDeleteOutline className="text-4xl dark:text-white text-black" />
+                      <TiDeleteOutline className="text-4xl text-purple-400" />
                     </button>
                   </div>
                   <form className="p-4 md:p-5">
