@@ -1,12 +1,11 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-
 import { getEventBySlug } from '@/services/events';
 import Image from 'next/image';
 import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram , faXTwitter  } from '@fortawesome/free-brands-svg-icons';
+import { FaXTwitter } from 'react-icons/fa6';
 import { SiGooglemeet } from 'react-icons/si';
+import { FaInstagram } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
@@ -46,6 +45,7 @@ import { useSession } from "next-auth/react";
             !session.user.stream ||
             !session.user.yearOfPassing
         ) {
+            console.log(session.user)
             alert("Please Complete your profile to register for the event!");
         } else {
             alert("Successfully registered for the event!!");
@@ -138,8 +138,8 @@ import { useSession } from "next-auth/react";
                      width={0}
                      height={0}
                    />
-                   <FontAwesomeIcon icon={faInstagram} className='h-[20px] my-auto ml-[50%]' style={{color: "#828282",}} />
-                   <FontAwesomeIcon icon={faXTwitter} className='h-[20px] my-auto ml-[20px]' style={{color: "#6b6b6b",}} />
+                    <FaInstagram  className='h-[20px] my-auto ml-[50%]' style={{color: "#828282",}}/>
+                    <FaXTwitter className='h-[20px] my-auto ml-[20px]' style={{color: "#828282",}} />
            </div>
            
        </div>

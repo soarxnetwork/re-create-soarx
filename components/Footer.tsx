@@ -132,11 +132,11 @@ const Footer = () => {
               <div className="mb-4 flex gap-2 max-w-[360px] items-center">
                 <AiOutlineMail className="text-xl font-medium" />{" "}
                 <a
-                  href="mailto:soarxnetwork@gmail.com"
+                  href="mailto:team@soarx.tech"
                   title="email"
                   className="  max-[479px]:text-sm"
                 >
-                  soarxnetwork@gmail.com
+                  team@soarx.tech
                 </a>
               </div>
               <div className="mb-4 flex gap-2 max-w-[360px] items-center">
