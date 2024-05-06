@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import HeadingSecondDsa from "./HeadingSecondDsa";
 import ButtonSecondDsa from "./ButtonSecondDsa";
 import { TiDeleteOutline } from "react-icons/ti";
+import { useSession } from "next-auth/react";
+import { toast } from "react-toastify";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -15,22 +17,36 @@ const HeroSecondDsa = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
+  const { data: session } = useSession()
+
+  const isUserAllowToRegister = () => {
+    if (!session || !session.user) {
+      toast.error("You need to login first to register as Campus Leader")
+    }
+    !session?.user.city || !session.user.collegeName || !session.user.degree || !session.user.dob || !session.user.skill ? toast.error("Please complete your profile first") : toast.success("Allowed, no functionality yet")
+    return;
+  }
 
   const toggleSelection = (): any => {
+    isUserAllowToRegister()
     setIsPopoverOpen(!isPopoverOpen);
   };
 
   const toggleModal = () => {
+    isUserAllowToRegister()
     setIsOpen(!isOpen);
     setIsPopoverOpen(false);
     document.body.classList.toggle("modal-open");
   };
 
   const toggleModalLeader = () => {
+    isUserAllowToRegister()
     setOpenLeader(!isOpenLeader);
     setIsPopoverOpen(false);
     document.body.classList.toggle("modal-open");
   };
+
+
 
   return (
     <article>
@@ -102,16 +118,16 @@ const HeroSecondDsa = () => {
                             </svg>
                           </button>
                         </div>
-                        <hr/>
+                        <hr />
                         <ul className="w list-disc pt-6 p-4 flex flex-col gap-y-4">
-                     <li>hey Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam et quam suscipit dicta id eos quasi. Odit ab ex amet!
-                      </li>
-                      <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ut praesentium, dolores consequatur officia excepturi voluptatibus, delectus porro tempora debitis quis tenetur dolore dolorem quos quas officiis distinctio quisquam reiciendis!
-                      </li>
-                      <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et accusamus itaque deleniti perferendis, doloribus tempore exercitationem voluptas, quisquam dolor alias aliquam velit similique ex cumque nihil blanditiis ipsam dolores officia!
-                      </li>
-                      <button onClick={toggleModal} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg">Apply As Campus Leader</button>
-                     </ul>
+                          <li>hey Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam et quam suscipit dicta id eos quasi. Odit ab ex amet!
+                          </li>
+                          <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ut praesentium, dolores consequatur officia excepturi voluptatibus, delectus porro tempora debitis quis tenetur dolore dolorem quos quas officiis distinctio quisquam reiciendis!
+                          </li>
+                          <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et accusamus itaque deleniti perferendis, doloribus tempore exercitationem voluptas, quisquam dolor alias aliquam velit similique ex cumque nihil blanditiis ipsam dolores officia!
+                          </li>
+                          <button onClick={toggleModal} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg">Apply As Campus Leader</button>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -150,7 +166,7 @@ const HeroSecondDsa = () => {
                             </svg>
                           </button>
                         </div>
-                          <hr />
+                        <hr />
                         <ul className="w list-disc pt-6 p-4 flex flex-col gap-y-4">
                           <li>
                             hey Lorem ipsum dolor, sit amet consectetur
@@ -352,7 +368,7 @@ const HeroSecondDsa = () => {
           </div>
         )}
 
-{isOpenLeader && (
+        {isOpenLeader && (
           <div
             id="crud-modal"
             aria-hidden="true"
