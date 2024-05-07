@@ -3,9 +3,9 @@ import React from "react";
 import { PiHandshakeLight } from "react-icons/pi";
 const AmbassadarPerks = () => {
   return (
-    <div className="flex w-full gap-y-8 flex-col items-center mt-10 mb-10 ml-9 pr-24">
+    <div className="flex w-full myfonts gap-y-8 flex-col items-center mt-10 mb-10 ml-9 pr-24">
       <div className="flex flex-col gap-y-6 items-center">
-        <div className="text-3xl">Whats in it for you</div>
+        <div className="text-4xl font-semibold">Whats in it for you</div>
         <div className="text-[#8919E4] font-medium">
           Join our campus ambassador program and enjoy these amazing perks and
           incentives!

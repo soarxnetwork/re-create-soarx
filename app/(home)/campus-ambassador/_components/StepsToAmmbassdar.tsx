@@ -5,7 +5,7 @@ import { GoCodeReview } from "react-icons/go";
 const StepsToAmmbassdar = () => {
   return (
     <div className="w-full flex flex-col items-center gap-y-14 pt-6 pb-10 pl-7 pr-12">
-      <div className="text-3xl font-semibold">
+      <div className="text-4xl font-semibold">
         Become a <span className="text-purple-600">SoarX</span> Campus
         Ambassador in 3 simple steps
       </div>

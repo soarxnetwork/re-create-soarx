@@ -15,6 +15,7 @@ import { useGlobalState } from "@/lib/zustand";
 import { useMediaQuery } from "usehooks-ts";
 import Link from "next/link";
 
+
 const LeftHeroDlc = () => {
   const { isActiveFloatDlc, setIsActiveFloatDlc } = useGlobalState(
     (state) => state
@@ -22,7 +23,7 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className="lg:grid lg:grid-cols-3 space-y-12">
+      <div className="lg:grid lg:grid-cols-3 myfonts space-y-12">
         <div className="break-words space-y-6 col-span-2 container-hero-dlc">
           <div className="flex flex-col gap-y-3">
             <p className="tex text-lg dark:text-white border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
