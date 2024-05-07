@@ -32,6 +32,13 @@ body {
   font-style: normal;
 }
 
+
+.myfonts {
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

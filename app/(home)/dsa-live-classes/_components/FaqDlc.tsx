@@ -5,7 +5,7 @@ import FaqItem from "../../campus-ambassador/_components/FaqItem";
 const FaqDlc = () => {
   return (
     <>
-      <div className="space-y-10 mt-14 ml-24 mr-24 mb-14">
+      <div className="space-y-10 myfonts mt-14 ml-24 mr-24 mb-14">
         <div className="space-y-6 text-center">
           <h4 className="font-semibold text-4xl">Frequently Asked Questions</h4>
           <p>

@@ -27,7 +27,7 @@ export const data = [
 const RolesAndResponsibility = () => {
   return (
     <div className="w-full flex flex-col items-center pr-7">
-      <div className="text-3xl font-medium">Roles and Responsibilities</div>
+      <div className="text-3xl font-semibold">Roles and Responsibilities</div>
       <div>
         <section>
           <div className="custom-container">

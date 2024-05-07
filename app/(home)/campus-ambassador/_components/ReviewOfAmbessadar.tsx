@@ -3,7 +3,7 @@ const ReviewOfAmbessadar = () => {
   return (
     <div className="w-full pt-10 ml-6 pr-16">
       <div className="flex flex-col items-center gap-y-7">
-        <p className="text-3xl font-medium">What our campus ambassador say</p>
+        <p className="text-3xl font-semibold">What our campus ambassador say</p>
         <p className="text-[#8919E4] font-medium">
           Promote our organization and establish a strong campus presence by
           undertaking the following responsibilities:
