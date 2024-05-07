@@ -12,8 +12,6 @@ import { sendMail } from "@/lib/mail";
 import { getServerSession } from "next-auth";
 const HomePage = async () => {
   const events = await getAllEvents();
-  const data = await getServerSession()
-  console.log(data)
 
   return (
     <section>
