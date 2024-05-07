@@ -7,6 +7,7 @@ import ButtonSecondDsa from "./ButtonSecondDsa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
+import { redirect, useRouter } from "next/navigation";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -18,29 +19,33 @@ const HeroSecondDsa = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
   const { data: session } = useSession()
+  const router = useRouter()
 
   const isUserAllowToRegister = () => {
     if (!session || !session.user) {
-      toast.error("You need to login first to register as Campus Leader")
+      toast.error("You need to login first to register");
+      return router.push("/sign-in");
     }
-    !session?.user.city || !session.user.collegeName || !session.user.degree || !session.user.dob || !session.user.skill ? toast.error("Please complete your profile first") : toast.success("Allowed, no functionality yet")
-    return;
+    if (!session?.user.city || !session.user.collegeName || !session.user.degree || !session.user.dob || !session.user.skill) {
+      toast.error("Please complete your profile first to register");
+      return router.push("/profile")
+    }
+    return true;
   }
 
   const toggleSelection = (): any => {
-    isUserAllowToRegister()
     setIsPopoverOpen(!isPopoverOpen);
   };
 
   const toggleModal = () => {
-    isUserAllowToRegister()
+    if (!isUserAllowToRegister()) return;
     setIsOpen(!isOpen);
     setIsPopoverOpen(false);
     document.body.classList.toggle("modal-open");
   };
 
   const toggleModalLeader = () => {
-    isUserAllowToRegister()
+    if (!isUserAllowToRegister()) return;
     setOpenLeader(!isOpenLeader);
     setIsPopoverOpen(false);
     document.body.classList.toggle("modal-open");

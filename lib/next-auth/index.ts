@@ -24,6 +24,13 @@ export const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      idToken: true,
+      authorization: {
+        params: {
+          scope: "openid profile email",
+        },
+      },
+
       async profile(profile) {
         return {
           id: profile.sub,

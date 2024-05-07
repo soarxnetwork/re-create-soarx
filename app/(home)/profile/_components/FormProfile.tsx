@@ -13,7 +13,7 @@ import ImageUpload from "@/app/(admin)/_components/ImageUpload"
 import { cn } from "@/lib/utils"
 import { updateUser } from "@/actions/user"
 import { toast } from "react-toastify"
-import { signOut } from "next-auth/react"
+import { getProviders, signOut } from "next-auth/react"
 
 export const userSchema = z.object({
   username: z.string().min(3, {
