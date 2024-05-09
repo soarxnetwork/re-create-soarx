@@ -8,7 +8,10 @@ import { z } from "zod";
 import validator from "validator";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
+import Image from "next/image";
 import { User } from "@prisma/client";
+import GoogleLogo from '../../../../public/images/google-logo.png';
+
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -80,19 +83,21 @@ const SigninForm = ({
 
   return (
     <form className="max-w-xl  min-h-screen" onSubmit={handleSubmit(onSubmit)}>
-      <div>
+      
+      <div className="">
         <div>
-          <input placeholder="email" type="text" {...register("email")} />
+          <input placeholder="Your email" type="text" {...register("email")} className="border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4 mb-[25px]" />
           {errors.email && (
             <p className="text-red-500">{errors.email.message}</p>
           )}
           <div className="flex items-center relative">
             <input
               placeholder='password'
+              className="border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4 mb-[25px]"
               type={
                 isVisiblePassword
                   ? 'text'
-                  : 'password'
+                  : 'Password'
               }
               {...register('password')}
             />
@@ -112,8 +117,8 @@ const SigninForm = ({
             </button>
 
           </div>
-          <div className="flex flex-col gap-8items-start">
-            <button type="submit" disabled={isPending}>
+          <div className="flex flex-col ">
+            <button type="submit" disabled={isPending} className="signInbut ">
               {
                 isPending
                   ? 'Loading...'
@@ -121,18 +126,36 @@ const SigninForm = ({
               }
             </button>
             {error && <p className="text-red-500">{error}</p>}
+            <div className="relative ">
+                <div className="border-b-2 min-w-[215px] mt-[12px] absolute">
+
+                </div>
+                <div className="absolute ml-[220px]">
+                  or
+                </div>
+                <div className="border-b-2 absolute min-w-[210px] mt-[12px] ml-[240px]">
+
+                </div>
+            </div>
             <button type="button" disabled={isPending}
+              className="signInbut flex items-center justify-center space-x-4 mt-[25px]"
               onClick={() => signIn("google")}
             >
-              Sign in with Google
+              <Image  
+              src={GoogleLogo}
+              height={20}
+              width={20}
+              alt="google-image"
+              />
+              <div>Sign in with Google</div>
             </button>
           </div>
         </div>
-        <p>
+        <p className="pt-2">
           Dont have an account?
           <Link href="/sign-up">Sign up</Link>
         </p>
-        <Link href="/forgot-password">Forgot Password</Link>
+        <Link href="/forgot-password">Forgot Password?</Link>
       </div>
     </form>
   );

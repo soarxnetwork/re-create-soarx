@@ -22,7 +22,7 @@ const ButtonAuth = () => {
         <>
           <div className="space-x-2">
 
-            <Link href="/sign-in" className='signInbut'>Sign in</Link>
+            <Link href="/sign-in" className='signInbut'>Sign In</Link>
             {/* <Link href="/api/auth/signin">Login</Link> */}
             {/* <button onClick={() => signIn()}>Login Nextauth</button> */}
           </div>
