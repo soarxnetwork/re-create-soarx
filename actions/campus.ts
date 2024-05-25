@@ -10,6 +10,7 @@ export const createCampusAmbassador = async (data: Dsa2Schema) => {
     await db.campusAmbassador.create({
       data: {
         ...data,
+        user: {}, // Add the 'user' property here
       },
     });
     revalidatePath("/admin/campus-ambassador");
