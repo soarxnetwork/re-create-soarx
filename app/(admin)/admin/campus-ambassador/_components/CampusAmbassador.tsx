@@ -1,10 +1,9 @@
 "use client";
-import { getAllCampusAmbassador } from "@/services/campus";
+import type { CampusAmbassador } from "@prisma/client";
 import React, { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
 import InputSearchCampus from "./InputSearchCampus";
 import CampusAmbasaddors from "./CampusAmbasaddors";
-import { CampusAmbassador } from "@prisma/client";
 interface CampusAmbassadorPageProps {
   campusAmbassadors: CampusAmbassador[];
 }

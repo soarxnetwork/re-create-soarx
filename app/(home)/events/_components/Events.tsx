@@ -17,7 +17,7 @@ const Events = ({
 }: Event) => {
   return (
     <Link
-      href={`/event/${decodeURI(slug!)}`}
+      href={`${decodeURI(slug!)}`}
       className="events-box aim-box"
       key={id}
     >

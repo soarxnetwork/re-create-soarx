@@ -10,9 +10,9 @@ const CampusAmbasaddors = ({
   createdAt,
   graduationYear,
   id,
-  inCodingClub,
-  stream,
-  strenghtStem,
+  // inCodingClub,
+  // stream,
+  // strenghtStem,
 }: CampusAmbassador) => {
   return (
     <div className="grid grid-cols-2">
@@ -24,9 +24,9 @@ const CampusAmbasaddors = ({
         <p>{graduationYear}</p>
       </div>
       <div>
-        <p>{inCodingClub}</p>
+        {/* <p>{inCodingClub}</p>
         <p>{stream}</p>
-        <p>{strenghtStem}</p>
+        <p>{strenghtStem}</p> */}
         <p>{formatDate(createdAt)}</p>
         <ActionCampusAmbassador id={id} />
       </div>

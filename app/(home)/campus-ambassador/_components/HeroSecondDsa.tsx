@@ -26,7 +26,21 @@ const HeroSecondDsa = () => {
       toast.error("You need to login first to register");
       return router.push("/sign-in");
     }
-    if (!session?.user.city || !session.user.collegeName || !session.user.degree || !session.user.dob || !session.user.skill) {
+    if (
+      !session.user.id ||
+      !session.user.email ||
+      !session.user.username ||
+      !session.user.image ||
+      !session.user.phone ||
+      !session.user.city ||
+      !session.user.collegeName ||
+      !session.user.degree ||
+      !session.user.dob ||
+      !session.user.name ||
+      !session.user.skill ||
+      !session.user.stream ||
+      !session.user.yearOfPassing
+    ) {
       toast.error("Please complete your profile first to register");
       return router.push("/profile")
     }
@@ -55,6 +69,32 @@ const HeroSecondDsa = () => {
 
   return (
     <article>
+      {isPopoverOpen &&(
+        <div className="relative z-[120] bottom-32 right-16">
+        <button
+        onClick={toggleSelection}
+        type="button"
+        className="text-gray-400 text-sm w-8 h-8 "
+        data-modal-toggle="crud-modal"
+      >
+        <svg
+          className="w-6 h-6 "
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+      </button>
+      </div>
+      )}
       <div className="container myfonts md:grid md:grid-cols-2 space-y-4 md:space-y-0 gap-4">
         {/* ! */}
         <div className=" space-y-4">
@@ -83,12 +123,14 @@ const HeroSecondDsa = () => {
         {/* ! */}
 
         {isPopoverOpen && (
+          <>
+          
           <div
             id="crud-modal"
             aria-hidden="true"
             className="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden flex justify-center items-center bg-gray-800 bg-opacity-75"
           >
-            <div className="relative left-32">
+            <div className="relative left-32 top-8">
               <div className="flex gap-x-10">
                 <div className="w-2/5">
                   <div className="relative bg-white rounded-lg shadow-md shadow-gray-600   dark:bg-gray-900">
@@ -100,38 +142,25 @@ const HeroSecondDsa = () => {
                           >
                             Campus Leader
                           </button>
-                          <button
-                            onClick={toggleSelection}
-                            type="button"
-                            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-toggle="crud-modal"
-                          >
-                            <svg
-                              className="w-3 h-3"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 14 14"
-                            >
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                              />
-                            </svg>
-                          </button>
+                          
                         </div>
                         <hr />
-                        <ul className="w list-disc pt-6 p-4 flex flex-col gap-y-4">
-                          <li>hey Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam et quam suscipit dicta id eos quasi. Odit ab ex amet!
+                        <h5 className="font-bold mt-2">Duration: 1 Year</h5>
+                        <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
+                        <ul className="w list-disc p-4 flex flex-col gap-y-2">
+                          <li>Establish and lead a SoarX chapter in your college.
                           </li>
-                          <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ut praesentium, dolores consequatur officia excepturi voluptatibus, delectus porro tempora debitis quis tenetur dolore dolorem quos quas officiis distinctio quisquam reiciendis!
+                          <li>Form a core team by conducting interviews and selecting members.
                           </li>
-                          <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et accusamus itaque deleniti perferendis, doloribus tempore exercitationem voluptas, quisquam dolor alias aliquam velit similique ex cumque nihil blanditiis ipsam dolores officia!
+                          <li>Organize and manage events, workshops, and hackathons on campus.
                           </li>
-                          <button onClick={toggleModal} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg">Apply As Campus Leader</button>
+                          <li>
+                          Foster a tech community by engaging with students and organizing networking opportunities.
+                          </li>
+                          <li>
+                          Represent SoarX Network and build partnerships with industry professionals and organizations.
+                          </li>
+                          <button onClick={toggleModal} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">Apply As Campus Leader</button>
                         </ul>
                       </div>
                     </div>
@@ -148,51 +177,28 @@ const HeroSecondDsa = () => {
                           >
                             Campus Ambassadar
                           </button>
-                          <button
-                            onClick={toggleSelection}
-                            type="button"
-                            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                            data-modal-toggle="crud-modal"
-                          >
-                            <svg
-                              className="w-3 h-3"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 14 14"
-                            >
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                              />
-                            </svg>
-                          </button>
+                       
                         </div>
                         <hr />
-                        <ul className="w list-disc pt-6 p-4 flex flex-col gap-y-4">
+                        <h5 className="font-bold mt-2">Duration: 6 Months</h5>
+                        <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
+                        <ul className="w list-disc p-4 flex flex-col gap-y-2">
                           <li>
-                            hey Lorem ipsum dolor, sit amet consectetur
-                            adipisicing elit. Ullam et quam suscipit dicta id
-                            eos quasi. Odit ab ex amet!
+                          Promote SoarX events, workshops, and initiatives on campus.
                           </li>
                           <li>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Temporibus ut praesentium, dolores consequatur
-                            officia excepturi voluptatibus, delectus porro
-                            tempora debitis quis tenetur dolore dolorem quos
-                            quas officiis distinctio quisquam reiciendis!
+                          Engage with students and encourage participation in SoarX activities.
                           </li>
                           <li>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Et accusamus itaque deleniti perferendis,
-                            doloribus tempore exercitationem voluptas, quisquam
-                            dolor alias aliquam velit similique ex cumque nihil
-                            blanditiis ipsam dolores officia!
+                          Assist in organizing and coordinating events, both online and offline.
                           </li>
-                          <button onClick={toggleModalLeader} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg">
+                          <li>
+                            Represent SoarX Network in a positive light and embody its values and mission.
+                          </li>
+                          <li>
+                          Provide feedback and suggestions for improving SoarX programs and initiatives.
+                          </li>
+                          <button onClick={toggleModalLeader} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">
                             Apply As Campus Ambassadar
                           </button>
                         </ul>
@@ -203,6 +209,7 @@ const HeroSecondDsa = () => {
               </div>
             </div>
           </div>
+          </>
         )}
 
         {isOpen && (

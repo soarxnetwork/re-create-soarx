@@ -49,7 +49,7 @@ const HeaderDropdown = () => {
               "text-primaryPurple": hovered,
             })}
           >
-            {actualDsa?.name ? actualDsa.name : "Initiatives"}
+            Initiatives
           </p>
           
           <span>
