@@ -10,7 +10,7 @@ import StepsToAmmbassdar from "./_components/StepsToAmmbassdar";
 import RolesAndResponsibility from "./_components/RolesAndResponsibility";
 import ReviewOfAmbessadar from "./_components/ReviewOfAmbessadar";
 import '../../globals.css'
-
+import CampusApplyCard from "./_components/CampusApplyCard";
 const SecondDsaPage = () => {
   return (
     <section className=" pt-40 ml-28 myfonts pb-8 space-y-12 mr-24 ">
@@ -27,6 +27,7 @@ const SecondDsaPage = () => {
       {/* ! */}
       {/* <BannerDsa /> */}
       <ReviewOfAmbessadar/>
+      <CampusApplyCard />
       <FaqDsa2 />
     </section>
   );
