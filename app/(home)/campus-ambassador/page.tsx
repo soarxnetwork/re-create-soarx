@@ -15,6 +15,7 @@ const SecondDsaPage = () => {
   return (
     <section className=" pt-40 ml-28 myfonts pb-8 space-y-12 mr-24 ">
       <HeroSecondDsa />
+      <CampusApplyCard />
       {/* <hr className="w-full h-[2px]" /> */}
       <AmbassadarPerks/>
       {/* <FormSecondDsa /> */}
@@ -27,7 +28,7 @@ const SecondDsaPage = () => {
       {/* ! */}
       {/* <BannerDsa /> */}
       <ReviewOfAmbessadar/>
-      <CampusApplyCard />
+      
       <FaqDsa2 />
     </section>
   );
