@@ -1,7 +1,6 @@
 import React from "react";
 import AmbassadorPerkCard from "./AmbassadorPerkCard";
 
-import { PiHandshakeLight } from "react-icons/pi";
 const AmbassadarPerks = () => {
   return (
     <div className="flex w-full myfonts gap-y-8 flex-col items-center mt-10 mb-10 ml-9 pr-24">

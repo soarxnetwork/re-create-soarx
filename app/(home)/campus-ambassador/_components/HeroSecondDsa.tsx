@@ -33,12 +33,7 @@ const HeroSecondDsa = () => {
       
       <div className="container myfonts md:grid md:grid-cols-2 space-y-4 md:space-y-0 gap-4">
         {/* ! */}
-        <div className=" space-y-4">
-          <span
-            className={`${montserrat.className} font-bold dark:brightness-125 text-[#9241d4] text-5xl`}
-          >
-            SoarX
-          </span>
+        <div className=" space-y-4 py-16">
           <HeadingSecondDsa text="Represent SoarX at your Campus" />
           <p className=" lg:text-2xl text-gray-500 text-[30px] tracking-wider font-normal lg:leading-10 ">
           Organize online and offline events with industry professionals and take your students to visit Microsoft Office for upskilling events.
