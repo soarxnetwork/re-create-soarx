@@ -68,82 +68,62 @@ function CampusApplyCard() {
             className="flex justify-center items-center w-full mt-12"
           >
             <div className="">
-              <div className="flex items-center  justify-evenly	">
-                <div className="w-2/5">
-                  <div className="relative bg-white rounded-lg shadow-md shadow-gray-600   dark:bg-gray-900">
-                    <div className="flex flex-col items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
-                      <div>
-                        <div className="w-full flex pb-6">
-                          <button 
-                            className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text"
-                          >
-                            Campus Leader
-                          </button>
-                          
-                        </div>
-                        <hr />
-                        <h5 className="font-bold mt-2">Duration: 1 Year</h5>
-                        <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
-                        <ul className="w list-disc p-4 flex flex-col gap-y-2">
-                          <li>Establish and effectively lead a SoarX chapter at your college.
-                          </li>
-                          <li>Form a core team by conducting interviews and selecting members.
-                          </li>
-                          <li>Organize and manage events, workshops, and hackathons on campus.
-                          </li>
-                          <li>
-                          Foster a tech community by engaging with students and organizing networking opportunities.
-                          </li>
-                          <li>
-                          Represent SoarX Network and build partnerships with industry professionals and organizations.
-                          </li>
-                          <button onClick={toggleModalLeader} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">Apply As Campus Leader</button>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="flex items-stretch justify-evenly">
+  <div className="w-2/5 flex flex-col">
+    <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900 flex-1">
+      <div className="flex flex-col justify-between p-4 md:p-5 rounded-t dark:border-gray-600 h-full">
+        <div>
+          <div className="w-full flex pb-6">
+            <button className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
+              Chapter Leader Program
+            </button>
+          </div>
+          <hr />
+          <h5 className="font-bold mt-2">Duration: 1 Year</h5>
+          <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
+          <ul className="w list-disc p-4 flex flex-col gap-y-2">
+            <li>Establish and effectively lead a SoarX chapter at your college.</li>
+            <li>Form a core team by conducting interviews and selecting members.</li>
+            <li>Organize and manage events, workshops, and hackathons on campus.</li>
+            <li>Foster a tech community by engaging with students and organizing networking opportunities.</li>
+            <li>Represent SoarX Network and build partnerships with industry professionals and organizations.</li>
+          </ul>
+        </div>
+        <button onClick={toggleModalLeader} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">
+          Apply As Campus Leader
+        </button>
+      </div>
+    </div>
+  </div>
 
-                <div className="w-2/5">
-                  <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900">
-                    <div className="flex flex-col items-center justify-between p-4 md:p-5 rounded-t dark:border-gray-600">
-                      <div>
-                        <div className="w-full flex pb-6">
-                          <button
-                            className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text"
-                          >
-                            Campus Ambassadar
-                          </button>
-                       
-                        </div>
-                        <hr />
-                        <h5 className="font-bold mt-2">Duration: 6 Months</h5>
-                        <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
-                        <ul className="w list-disc p-4 flex flex-col gap-y-2">
-                          <li>
-                          Promote SoarX events, workshops, and initiatives on campus.
-                          </li>
-                          <li>
-                          Engage with students and encourage participation in SoarX activities.
-                          </li>
-                          <li>
-                          Assist in organizing and coordinating events, both online and offline.
-                          </li>
-                          <li>
-                            Represent SoarX Network in a positive light and embody its values and mission.
-                          </li>
-                          <li>
-                          Provide feedback and suggestions for improving SoarX programs and initiatives.
-                          </li>
-                          <button onClick={toggleModalAmbassador}  className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">
-                            Apply As Campus Ambassadar
-                          </button>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+  <div className="w-2/5 flex flex-col">
+    <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900 flex-1">
+      <div className="flex flex-col justify-between p-4 md:p-5 rounded-t dark:border-gray-600 h-full">
+        <div>
+          <div className="w-full flex pb-6">
+            <button className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
+              Community Ambassador Program
+            </button>
+          </div>
+          <hr />
+          <h5 className="font-bold mt-2">Duration: 6 Months</h5>
+          <h6 className="font-bold mt-2">Roles & Responsibilities:</h6>
+          <ul className="w list-disc p-4 flex flex-col gap-y-2">
+            <li>Promote SoarX events, workshops, and initiatives on campus.</li>
+            <li>Engage with students and encourage participation in SoarX activities.</li>
+            <li>Assist in organizing and coordinating events, both online and offline.</li>
+            <li>Represent SoarX Network in a positive light and embody its values and mission.</li>
+            <li>Provide feedback and suggestions for improving SoarX programs and initiatives.</li>
+          </ul>
+        </div>
+        <button onClick={toggleModalAmbassador} className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4">
+          Apply As Campus Ambassador
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
           </div>
           {isOpen && (
