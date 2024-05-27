@@ -11,6 +11,19 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
+function ScrollingToPage() {
+  const element = document.getElementById('campus-apply-card');
+              if (element) {
+                const elementHeight = element.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrollOffset = windowHeight / 2 - elementHeight / 2;
+                window.scrollTo({
+                  top: element.offsetTop - scrollOffset,
+                  behavior: 'smooth',
+                });
+              }
+            }
+
 const HeroSecondDsa = () => {
   
 
@@ -26,31 +39,16 @@ const HeroSecondDsa = () => {
           >
             SoarX
           </span>
-          <HeadingSecondDsa text="Represent your university as a SoarX Campus Ambassador" />
-          <p className=" lg:text-2xl text-gray-500 text-[30px] tracking-wider font-normal text-lg">
-            Becoming a SoarX Campus Ambassador helps pave the way towards
-            professional success. Thats because it enables you to network with
-            leading coders from across the world and enhance your leadership
-            abilities. So, sign up today and be a key part of one of the worlds
-            largest developer communities.
+          <HeadingSecondDsa text="Represent SoarX at your Campus" />
+          <p className=" lg:text-2xl text-gray-500 text-[30px] tracking-wider font-normal lg:leading-10 ">
+          Organize online and offline events with industry professionals and take your students to visit Microsoft Office for upskilling events.
           </p>
           <a
-            onClick={() => {
-              const element = document.getElementById('campus-apply-card');
-              if (element) {
-                const elementHeight = element.offsetHeight;
-                const windowHeight = window.innerHeight;
-                const scrollOffset = windowHeight / 2 - elementHeight / 2;
-                window.scrollTo({
-                  top: element.offsetTop - scrollOffset,
-                  behavior: 'smooth',
-                });
-              }
-            }}
+            onClick={ScrollingToPage}
             className="block py-2"
             
             data-modal-toggle="crud-modal"
-          >
+          > 
             <ButtonSecondDsa text="Apply Now" />
           </a>
         </div>

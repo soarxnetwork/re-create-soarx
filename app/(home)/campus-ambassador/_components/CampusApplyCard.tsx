@@ -51,10 +51,21 @@ function CampusApplyCard() {
     }
   return (
     <div className='pb-10 pt-6' id='campus-apply-card'>
+      <div className="flex flex-col gap-y-6 items-center">
+        <div className="text-4xl font-semibold">Apply Now</div>
+        <div className="text-[#8919E4] font-medium cursor-pointer">
+        {"Empower yourself with our Campus Lead and Campus Ambassador programs.".split("").map((child, idx) => (
+            <span className={"hoverText font-medium"} key={idx}>
+              {child}
+            </span>
+          ))}
+        
+        </div>
+      </div>
         <div
             id="crud-modal"
             aria-hidden="true"
-            className="flex justify-center items-center w-full"
+            className="flex justify-center items-center w-full mt-12"
           >
             <div className="">
               <div className="flex items-center  justify-evenly	">
