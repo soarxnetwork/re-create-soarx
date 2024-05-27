@@ -1,4 +1,7 @@
 import { CgProfile } from "react-icons/cg";
+import AmbassadorReviewCard from "./AmbassadorReviewCard";
+import image from '../../../../public/images/Ali_nasir_pic.jpeg'
+
 const ReviewOfAmbessadar = () => {
   return (
     <div className="w-full pt-10 ml-6 pr-16">
@@ -14,71 +17,15 @@ const ReviewOfAmbessadar = () => {
       </div>
 
       <div className="w-full pt-14 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="flex bg-gray-100 hover:shadow-lg hover:scale-105 ease-in-out transition-all duration-300 hover:cursor-pointer dark:bg-gray-700 shadow-md rounded-lg p-8 mb-4">
-          <div className="w-1/6 flex justify-center dark:text-white pt-4 text-5xl">
-            <CgProfile />
-          </div>
-          <div className="w-5/6 ml-4">
-            <h2 className="text-xl font-semibold">John Smith</h2>
-            <p className="mt-2">
-              Being a campus ambassador for this program has been an incredible
-              experience. Not only did I gain valuable leadership skills, but I
-              also had the opportunity to connect with like-minded individuals
-              who share the same passion for making a difference. The support
-              and guidance provided by the program team have been exceptional,
-              and I am grateful for the opportunities it has opened up for me.
-            </p>
-          </div>
-        </div>
+          
+          <AmbassadorReviewCard name="Ali Nasir" imageURL={require('../../../../public/images/Ali_nasir_pic.jpeg').default} position="Chapter Lead, JMI" review="SoarX has been instrumental in our success. They provided passes for our students to visit Microsoft, arranged a speaker for an offline Master class on Data Structures and Algorithms (DSA), and significantly contributed to upskilling our team. Additionally, we have conducted several online events that have greatly benefited our community." />
 
-        <div className="flex bg-gray-100 hover:shadow-lg hover:cursor-pointer dark:bg-gray-700 shadow-md rounded-lg p-8 mb-4 hover:scale-105 ease-in-out transition-all duration-300">
-          <div className="w-1/6 flex justify-center dark:text-white pt-4 text-5xl">
-            <CgProfile />
-          </div>
-          <div className="w-5/6 ml-4">
-            <h2 className="text-xl font-semibold">Jane Doe</h2>
-            <p className="mt-2">
-              As a campus ambassador, I ve had the privilege of representing our
-              program in various events and initiatives. Its been an enriching
-              experience that has not only allowed me to develop my
-              communication skills but also fostered connections with incredible
-              individuals who share my passion for community engagement and
-              leadership.
-            </p>
-          </div>
-        </div>
+          <AmbassadorReviewCard name="Riya Sonal Nazareth" imageURL={require('../../../../public/images/Riya_sonal_pic.jpeg').default} position="Chapter Lead, YIT" review="SoarX has been instrumental in helping me establish and grow our college chapter. From the very start, their guidance and resources empowered me to lay a strong foundation for our activities. One of the most enriching experiences was getting to attend the AI Developers Day at Microsoft Office Bengaluru organized by SoarX. " />
 
-        <div className="flex bg-gray-100 hover:shadow-lg hover:cursor-pointer dark:bg-gray-700 shadow-md rounded-lg p-8 mb-4 hover:scale-105 ease-in-out transition-all duration-300">
-          <div className="w-1/6 flex justify-center dark:text-white pt-4 text-5xl">
-            <CgProfile />
-          </div>
-          <div className="w-5/6 ml-4">
-            <h2 className="text-xl font-semibold">Alex Johnson</h2>
-            <p className="mt-2">
-              Serving as a campus ambassador has been an incredible journey. It
-              has allowed me to develop leadership skills, connect with amazing
-              peers, and contribute to meaningful initiatives. I am grateful for
-              the support and opportunities this program has provided, and I
-              look forward to continuing to make a positive impact on campus.
-            </p>
-          </div>
-        </div>
+          <AmbassadorReviewCard name="Devesh Kumar" imageURL={require('../../../../public/images/Devash_pic.jpeg').default} position="Community Ambassador, JUET" review="Being a campus Ambassador for SoarX was a game-changer. It boosted my leadership skills and connected me with inspiring peers. I loved promoting a platform that truly helps students and seeing its positive impact firsthand. The support from the SoarX team made it a standout experience." />
 
-        <div className="flex bg-gray-100 hover:shadow-lg hover:cursor-pointer dark:bg-gray-700 shadow-md rounded-lg p-8 mb-4 hover:scale-105 ease-in-out transition-all duration-300">
-          <div className="w-1/6 flex justify-center dark:text-white pt-4 text-5xl">
-            <CgProfile />
-          </div>
-          <div className="w-5/6 ml-4">
-            <h2 className="text-xl font-semibold">Alex Johnson</h2>
-            <p className="mt-2">
-              Serving as a campus ambassador has been an incredible journey. It
-              has allowed me to develop leadership skills, connect with amazing
-              peers, and contribute to meaningful initiatives. I am grateful for
-              the support and opportunities this program has provided, and I
-              look forward to continuing to make a positive impact on campus.
-            </p>
-          </div>
-        </div>
+          <AmbassadorReviewCard name="Asiya Arif" imageURL={require('../../../../public/images/Asiya_pic.jpeg').default} position="Chapter Lead, IIMT" review="SoarX has provided us with remarkable opportunities, such as visiting Microsoft and participating in skill-boosting challenges. These experiences have significantly enhanced my leadership abilities and teamwork skills. Overall, being a lead in SoarX has made me stronger and more confident in my abilities." />
+          
       </div>
     </div>
   );
