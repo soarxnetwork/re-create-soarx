@@ -107,76 +107,53 @@ export const responsibilityDsa2 = [
 export const itemsFaqDsa2 = [
   {
     id: "1",
-    question: "What is SoarX and what does it do?",
+    question: "What is SoarX Network and What does it do?",
     answer:
-      "SoarX is an organization that is committed to matching developers to the right opportunities across the globe. The mission of SoarX is to measure and organize the world’s technical skill data and to change the landscape of technical hiring across the globe. SoarX provides learning resources, practice questions, and interview preparation material so that the right candidate meets with the right opportunity. It also provides companies with technical recruitment tools and helps them to find the most suitable candidate for their requirements.",
+      "SoarX Network is a nationwide tech community of college students dedicated to igniting the potential of students through engaging events, sessions, and hackathons.",
   },
   {
     id: "2",
-    question: "What is the SoarX Campus Ambassador Program?",
+    question: "How can I become a part of SoarX?",
     answer:
-      "SoarX Campus Ambassadors (HECAs) is a community of students from campuses across the globe who act as liaisons in connecting their peers to numerous opportunities available through SoarX. It is an interactive program where an individual learns management, leadership, and marketing skills from the industry’s best and gets a chance to work along with our team.",
+      "You can become a part of SoarX by applying for our Campus Lead or Community Ambassador programs.",
   },
   {
     id: "3",
-    question: "Why should I join the SoarX Campus Ambassador program?",
+    question: "What are the benefits of joining SoarX?",
     answer:
-      "You should join the SoarX Campus Ambassador program because you get to work along with the coolest team in the tech industry. You will get the much-needed exposure that will enhance your communication, management, and technical skills by managing events, and using your communications skills to effectively spread awareness about the platform within your campus.\n\nAs a HECA, you will be loaded with perks like a Certificate of Appreciation/Letter of recommendation, mentorship from the leaders at SoarX, networking opportunities, recognition of active Campus ambassadors on the company’s website, corporate mock interviews.",
+      "Joining SoarX offers opportunities for networking with industry professionals, skill development, recognition, rewards, and more..",
   },
   {
     id: "4",
-    question: "Who is eligible to participate?",
+    question: "What is the Community Ambassador Program?",
     answer:
-      "If you are a coder by heart, would love to meet all our coding wizards across the globe, have good connections within the student fraternity, and want to enhance your leadership skills, you’ve come to the right place!\n\nStudents who have technical acumen and come from relevant academic backgrounds are welcome to participate.",
+      "The Community Ambassador Program is designed for students who want to represent SoarX at their college or university. Ambassadors organize events, engage with the community, and promote SoarX initiatives on campus.",
   },
   {
     id: "5",
-    question: "How do I apply?",
+    question: "What is the Chapter Leader Program?",
     answer:
-      "Just 2 simple steps!\n1. Fill the details in the form\n2. If you meet our eligibility criteria, there will be an assessment test to get to know you better.\n\nVoila! As soon as you pass our assessment test, give yourself a pat on your back for officially becoming a SoarX Campus Ambassador!",
+      "The Chapter Leader Program is for students who want to establish and lead a SoarX chapter at their college or university. Leaders coordinate events, manage a team, and drive the growth of the SoarX community on campus.",
   },
   {
     id: "6",
     question:
-      "How many hours do I need to spend per week to be a successful HECA?",
+      "What is the duration of the programs?",
     answer:
-      "We expect you to spend 2-3 hours per week to be a successful HECA and to be able to derive maximum benefit from this program.",
+      "The duration varies for different programs. The Chapter Lead program is typically for one year, while the Community Ambassador program is for six months.",
   },
   {
     id: "7",
-    question: "What will be my responsibilities as a HECA?",
+    question: "Who is eligible to participate?",
     answer:
-      "1. Be the face of HackerEarth and create awareness about HackerEarth in your campus.\n2. Be a part of the HECA community for networking, sharing resources, training, and feedback.\n3. Lead a HackerEarth community within your campus (e.g., HackerEarth chapter or HackerEarth club) and use that channel as a digital tool for HackerEarth awareness and promotion.\n4. Help establish communication between HackerEarth & your college's coding communities, clubs, and faculties/TPOs.\n5. Onboard as many peers as possible for hackathons, coding events, leaderboard and practice sessions. You can even conduct a full-fledged programming challenge on the HackerEarth platform.\n6. Plug in HackerEarth as an associate in any technical fest that your college conducts or/and conduct your own pre-placement challenge on your campus through HackerEarth.",
+      "Students enrolled in college or university are eligible to apply for our programs.",
   },
   {
     id: "8",
     question:
-      "Do I get a certificate at the end of my tenure with HackerEarth?",
+      "How can I contact SoarX for further inquiries?",
     answer:
-      "Yes, after successfully completing your tenure with us, you will get a certificate from HackerEarth. If you perform well, we will also give you a letter of recommendation.",
+      "You can contact us via email at team@soarx.tech or drop a WhatsApp message at +91 87086 86261.",
   },
-  {
-    id: "9",
-    question: "What is the duration of the HECA program?",
-    answer: "The duration of the HECA program is 6 months.",
-  },
-  {
-    id: "10",
-    question: "Are there any cash incentives? Will I get paid?",
-    answer:
-      "No, we do not have any cash incentives, however, you will be loaded with perks like a Certificate of Appreciation/Letter of recommendation, mentorship from the leaders at HackerEarth, networking opportunities, recognition of active Campus ambassadors on the company’s website, corporate mock interviews.",
-  },
-  {
-    id: "11",
-    question:
-      "As some universities and colleges are proceeding with their academic courses in an online mode, how will the activities provided to the HECA be carried out?",
-    answer:
-      "All the HECAs will be given a responsibility sheet where they will map and update their progress against each responsibility. All these responsibilities can be carried out online as well.",
-  },
-  {
-    id: "12",
-    question: "Who can I contact if I have more questions?",
-    answer:
-      "Be it questions or new ideas, we would love to work together. You can write to us at: heca@hackerearth.com",
-  },
+  
 ];

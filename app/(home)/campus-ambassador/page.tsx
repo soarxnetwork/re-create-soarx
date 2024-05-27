@@ -23,7 +23,7 @@ const SecondDsaPage = () => {
       <StepsToAmmbassdar/>
       {/* <AdvantageDsa /> */}
       {/* <hr className="w-full h-[2px]" /> */}
-      <RolesAndResponsibility/>
+      
       {/* <ResponsibilityDsa /> */}
       {/* ! */}
       {/* <BannerDsa /> */}
