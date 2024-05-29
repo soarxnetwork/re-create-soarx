@@ -183,12 +183,23 @@ header {
   margin-top: 0;
   height: 350px;
   transition: height ease-in 0.1s;
+  z-index: 50;
+}
+.swiper-slide-active{
+
+  margin-top: 0;
+  height: 350px;
+  transition: height ease-in 0.1s;
+  z-index: 50;
 }
 
-/* .swiper-slide-prev .banner-img{
+.swiper-slide-prev {
+  z-index: 0;
   
-  
-} */
+}
+.swiper-button-next{
+  z-index: 0;
+}
 .blob-radius img {
   border-radius: 39% 61% 61% 39%/29% 48% 52% 71%;
 }
