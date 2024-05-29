@@ -23,7 +23,7 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
     <motion.div layout>
       <div>
         <div
-          className="flex justify-between items-center cursor-pointer p-6"
+          className="flex justify-between items-center cursor-pointer md:p-6 xl:pl-0 pt-3 pb-3"
           onClick={() => handleToggle(id)}
         >
           <h6 className="text-xl font-medium">{question}</h6>
@@ -48,7 +48,7 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
                 transition: { duration: 0.3 },
               }}
             >
-              <p className="dark:text-white/70 text-black/50 text-base font-semibold pl-6 pb-6">{answer}</p>
+              <p className="dark:text-white/70 text-black/50 text-base font-semibold md:pl-6 pl-1 pb-6 pr-1">{answer}</p>
             </motion.div>
           )}
         </AnimatePresence>

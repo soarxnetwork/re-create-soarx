@@ -8,8 +8,8 @@ import { itemsFaqDsa2 } from "@/constants/dsa2";
 const FaqDsa2 = () => {
   return (
     <article>
-      <div className="container space-y-6">
-        <div className=" text-center">
+      <div className="container space-y-6 md:pt-10 xl:pt-16 2xl:pr-36">
+        <div className="text-center">
           <HeadingSecondDsa text="Frequently Asked Questions" />
         </div>
         <div className="">

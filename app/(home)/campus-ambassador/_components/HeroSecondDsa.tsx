@@ -25,17 +25,13 @@ function ScrollingToPage() {
             }
 
 const HeroSecondDsa = () => {
-  
-
   return (
     <article>
-      
-      
-      <div className="container myfonts md:grid md:grid-cols-2 space-y-4 md:space-y-0 gap-4">
+      <div className="container myfonts 2xl:pr-10 flex flex-col-reverse md:flex-row md:grid md:grid-cols-2 space-y-4 gap-4">
         {/* ! */}
         <div className=" space-y-4 py-16">
           <HeadingSecondDsa text="Represent SoarX at your Campus" />
-          <p className=" lg:text-2xl text-gray-500 text-[30px] tracking-wider font-normal lg:leading-10 ">
+          <p className="text-2xl lg:text-2xl text-gray-500 lg:text-[30px] tracking-wider font-normal lg:leading-10">
           Organize online and offline events with industry professionals and take your students to visit Microsoft Office for upskilling events.
           </p>
           <a
@@ -58,7 +54,7 @@ const HeroSecondDsa = () => {
             width={682}
             height={381}
             quality={100}
-            className="object-contain w-[682px] ml-16 h-[381px] dark:brightness-200"
+            className="object-contain w-[682px] md:ml-5 xl:ml-0 lg:ml-16 pt-10 h-[381px] dark:brightness-200"
           />
         </div>
       </div>
