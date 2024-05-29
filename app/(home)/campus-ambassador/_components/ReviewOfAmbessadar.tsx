@@ -4,10 +4,10 @@ import image from '../../../../public/images/Ali_nasir_pic.jpeg'
 
 const ReviewOfAmbessadar = () => {
   return (
-    <div className="w-full pt-10 ml-6 pr-16">
+    <div className="w-full pt-10 pl-6 md:pl-10 xl:pl-0 pr-6 md:pr-10 2xl:pl-10 2xl:pr-36">
       <div className="flex flex-col items-center gap-y-7">
-        <p className="text-3xl font-semibold">What our campus ambassador say</p>
-        <p className="text-[#8919E4] font-medium cursor-pointer">
+        <p className="text-3xl lg:text-4xl font-semibold">What our campus ambassador say</p>
+        <p className="text-[#8919E4] font-medium lg:text-xl xl:text-2xl cursor-pointer">
           {"Promote our organization and establish a strong campus presence by undertaking the following responsibilities:".split("").map((child, idx) => (
             <span className={"hoverText font-medium"} key={idx}>
               {child}
@@ -16,7 +16,7 @@ const ReviewOfAmbessadar = () => {
         </p>
       </div>
 
-      <div className="w-full pt-14 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="w-full pt-14 pb-8 md:pb-0 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
           
           <AmbassadorReviewCard name="Ali Nasir" imageURL={require('../../../../public/images/Ali_nasir_pic.jpeg').default} position="Chapter Lead, JMI" review="SoarX has been instrumental in our success. They provided passes for our students to visit Microsoft, arranged a speaker for an offline Master class on Data Structures and Algorithms (DSA), and significantly contributed to upskilling our team. Additionally, we have conducted several online events that have greatly benefited our community." />
 

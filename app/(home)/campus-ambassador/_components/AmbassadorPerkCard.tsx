@@ -9,9 +9,9 @@ function AmbassadorPerkCard({title , description} : {title: string, description:
             <p className="text-3xl">
               <PiHandshakeLight />
             </p>
-            <p className="text-2xl font-medium">{title}</p>
+            <p className="lg:text-2xl text-lg font-medium">{title}</p>
           </div>
-          <p className="j text-xs font-light">
+          <p className="text-xs pl-2 md:pl-0 font-light">
             {description}
           </p>
         </div>
