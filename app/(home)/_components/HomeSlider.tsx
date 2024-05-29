@@ -39,9 +39,9 @@ const HomeSlider = () => {
             </p>
             <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
           </div>
-          <div className="w-full">
+          <div className="w-full min-w-[578px]">
           <Swiper
-            spaceBetween={10}
+            spaceBetween={15}
             slidesPerView={3}
             autoplay={{
               delay: 2500,
@@ -91,54 +91,7 @@ const HomeSlider = () => {
             ))}
           </Swiper>
         </div>
-          {/* <div className="relative">
-            <div className="blob-radius">
-              <Image
-                src={"/images/hero-potrait.jpg"}
-                width={0}
-                height={0}
-                alt=""
-                sizes="100vw"
-                className="w-full"
-              />
-            </div>
-            <ScrollParallax isAbsolutelyPositioned zIndex={-1}>
-              <div className="particles-dots absolute  -z-10">
-                <Image
-                  width={200}
-                  height={200}
-                  src={"/images/particle-dots.png"}
-                  className=""
-                  sizes="100vw"
-                  alt=""
-                />
-              </div>
-            </ScrollParallax>
-          </div>
-        </div>
-
-        <ScrollParallax
-          isAbsolutelyPositioned
-          zIndex={-1}
-          strength={0.5}
-          lerpEase={0.04}
-          enableOnTouchDevice={true}
-        >
-          <div className="particles-circle">
-            <Image width={25} height={25} src={"/images/circle.png"} alt="" />
-          </div>
-        </ScrollParallax>
-        <ScrollParallax
-          isAbsolutelyPositioned
-          zIndex={-1}
-          strength={0.3}
-          lerpEase={0.02}
-          enableOnTouchDevice={true}
-        >
-          <div className="particles-square">
-            <Image width={35} height={35} src={"/images/square.png"} alt="" />
-          </div>
-        </ScrollParallax> */}
+          
       </div>
       </div>
     </section>
