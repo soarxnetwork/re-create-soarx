@@ -52,6 +52,10 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     }
 
   const onSubmit = (data: EventSchema) => {
+    if (!data.imageUrl) {
+      toast.error("Image URL is required");
+      return;
+    } 
     startTransition(() =>
       action(data)
         .then(() => {
