@@ -18,7 +18,7 @@ const Events = ({
   return (
     <Link
       href={`${decodeURI(slug!)}`}
-      className="events-box aim-box"
+      className="events-box aim-box dark:shadow-sm dark:shadow-purple-500"
       key={id}
     >
       <div>
