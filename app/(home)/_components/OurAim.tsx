@@ -18,7 +18,7 @@ const data = [
     image: "/images/logical-thinking.png",
   },
   {
-    title: "Drive Social Impact",
+    title: "Drive Social Impact", 
     desc: " Social impact is at the heart of our mission at SoarX. We aim to empower students to drive positive change in their communities and beyond.",
     image: "/images/save-the-world.png",
   },
@@ -27,8 +27,8 @@ const data = [
 const OurAim = () => {
   
   return (
-    <div>
-      <section className="pt-20 px-36">
+    <div className="">
+      <section className=" px-36">
         <div className="container">
           <div id="features">
             <div className="max-w-7xl mx-auto">

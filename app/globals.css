@@ -163,8 +163,10 @@ header {
 /* BANNER SECTION STARTS */
 
 .banner-section {
-  height: 105vh;
-  min-height: 105vh;
+
+  height: 100vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh  ;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -16,6 +16,7 @@ const HomePage = async () => {
   return (
     <section>
       <HomeSlider />
+      <div className="w-full min-h-[200px]"></div>
       <OurAim />
       <Events events={events!} />
       <Partners />
