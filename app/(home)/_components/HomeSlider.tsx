@@ -13,10 +13,10 @@ import { ScrollParallax } from "react-just-parallax";
 const HomeSlider = () => {
   return (
     <section className="banner-section  px-32">
-      <div className="custom-container flex relative banner-container items-center gap-5 justify-between">
-        <div className="grid gap-16 items-center grid-cols-2 ">
+      <div className="custom-container  banner-container items-center gap-5 justify-between">
+        <div className="grid gap-16 items-center xl:grid-cols-2  grid-cols-1 grid-rows-2">
           <div className=" ">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 pt-16">
               <div className="w-7">
                 <Lottie animationData={groovyWalkAnimation} loop={true} />
               </div>
@@ -39,7 +39,7 @@ const HomeSlider = () => {
             </p>
             <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
           </div>
-          <div className="w-full min-w-[578px]">
+          <div className="w-full min-w-[578px] relative ">
           <Swiper
             spaceBetween={15}
             slidesPerView={3}
@@ -84,7 +84,7 @@ const HomeSlider = () => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="banner-img"
+                  className="banner-img w-full h-auto"
                   alt="Banner"
                 />
               </SwiperSlide>
