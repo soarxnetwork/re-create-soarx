@@ -27,8 +27,8 @@ const data = [
 const OurAim = () => {
   
   return (
-    <div className="">
-      <section className=" px-36">
+    <div className="my-[10%]">
+      <section className=" px-[12%]">
         <div className="container">
           <div id="features">
             <div className="max-w-7xl mx-auto">
@@ -45,12 +45,12 @@ const OurAim = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                <h2 className="mb-4  leading-relaxed font-bold  md:text-[60px] ">
+                <h2 className="mb-4  leading-relaxed font-bold text-[30px] sm:text-[40px]  lg:text-[60px] ">
                   Rise Together, Soar Higher
                   {/* <br />
                   <span className="text-primary">SoarX</span> */}
                 </h2>
-                <p className="text-gray-500 text-[30px] ">
+                <p className="text-gray-500 text-[12px] sm:text-[20px] lg:text-[30px] ">
                 Traditional education often falls short in preparing students for the demands of the corporate world. Thats where SoarX steps in. We bridge the gap between academia and real-world application, offering upskilling initiatives to ensure students are well-prepared for challenges ahead.
                 </p>
               </div>
