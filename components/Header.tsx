@@ -23,7 +23,7 @@ const Header = ({ admin }: User) => {
   }, [admin]);
 
   return (
-    <header className="mt-4">
+    <header className="mt-6">
       <div className="container mx-auto px-4">
         <nav className="navba lg:ml-16 lg:mr-20 rounded-lg dark:border-0 dark:bg-gray-800  flex justify-between items-center">
           <Link href="/">
