@@ -25,7 +25,7 @@ function NumbersThatMatter() {
   ];
   return (
     <ScrollParallax strength={-0.15}>
-      <section className="px-32">
+      <section className="px-[11%] my-[10%]">
         <div className="custom-container ">
           <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0 shadow-md  number-sgrid">
             {data?.map((e, index) => (

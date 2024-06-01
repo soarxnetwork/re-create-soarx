@@ -93,16 +93,16 @@ const PressClippings = () => {
   };
 
   return (
-    <section className="section px-32">
+    <section className=" px-[11%] my-[10%]">
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
           {"Wings of Inspiration".split("").map((child, idx) => (
-            <span className={"hoverText text-[40px]"} key={idx}>
+            <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
         </div>
-        <h2 className="text-center mb-10 text-[80px] pt-2 font-bold leading-normal">
+        <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
           SoarX Gallery
         </h2>{" "}
         {/* <div className="gallery">
