@@ -17,16 +17,16 @@ interface EventProps {
 
 const Events = ({ events }: EventProps) => {
   return (
-    <section className="section px-32">
+    <section className="section px-[11.5%] my-[10%]">
       <div className="container mx-auto">
         <div className="text-center text-primary cursor-pointer">
           {"Events".split("").map((child, idx) => (
-            <span className={"hoverText text-[40px]"} key={idx}>
+            <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
         </div>
-        <h2 className="text-center text-[80px] pt-2 font-bold leading-normal">
+        <h2 className="text-center text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
           Our Past Events
         </h2>{" "}
         <section className="all-events  grid grid-cols-4 gap-5 pt-16">

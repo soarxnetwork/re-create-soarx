@@ -145,7 +145,7 @@ const Testimonial = () => {
   },
 ];
   return (
-    <section className="section px-32">
+    <section className=" px-[11%] my-[10%]">
       <div className="container">
         {/* <div className="mt-5">
           <Swiper
@@ -234,12 +234,12 @@ const Testimonial = () => {
               <div className="max-w-xl text-left">
                 <div className="text-left text-primary cursor-pointer">
                   {"Testimonials".split("").map((child, idx) => (
-                    <span className={"hoverText text-2xl"} key={idx}>
+                    <span className={"hoverText text-[10px] sm:text-[20px] lg:text-[30px]"} key={idx}>
                       {child}
                     </span>
                   ))}
                 </div>
-                <h2 className="text-left text-[35px] pt-2 font-bold leading-normal">
+                <h2 className="text-left text-[25px] sm:text-[30px] md:text-[50px] lg:text-[60px] pt-2 font-bold leading-normal">
                   Our Success Stories
                 </h2>{" "}
                 <p className="mt-4 text-light text-xl">
