@@ -105,12 +105,13 @@ const FormProfile = (
   const imageUrl = watch("imageUrl")
 
   return (
-    <form className='  min-h-screen'
+    
+    <form className='pt-7 md:pl-6 md:pr-6 min-h-screen'
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className='grid grid-cols-2 gap-6'>
+      <div className='md:grid grid-cols-2 gap-6 dark:text-gray-400'>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Username</label>
+          <label className='block text-sm font-medium dark:text-gray-400'>Username</label>
           <input
             type='text'
             {...register('username')}
@@ -121,7 +122,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Email</label>
+          <label className='block text-sm font-medium'>Email</label>
           <input
             type='email'
             {...register('email')}
@@ -132,7 +133,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Phone</label>
+          <label className='block text-sm font-medium '>Phone</label>
           <input
             type='tel'
             {...register('phone')}
@@ -143,7 +144,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Password</label>
+          <label className='block text-sm font-medium '>Password</label>
           <input
             type='password'
             {...register('password')}
@@ -154,7 +155,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Confirm Password</label>
+          <label className='block text-sm font-medium'>Confirm Password</label>
           <input
             type='password'
             {...register('confirmPassword')}
@@ -166,7 +167,7 @@ const FormProfile = (
         </div>
 
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Name</label>
+          <label className='block text-sm font-medium'>Name</label>
           <input
             type='text'
             {...register('name')}
@@ -177,7 +178,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>College Name</label>
+          <label className='block text-sm font-medium '>College Name</label>
           <input
             type='text'
             {...register('collegeName')}
@@ -188,7 +189,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Stream</label>
+          <label className='block text-sm font-medium'>Stream</label>
           <input
             type='text'
             {...register('stream')}
@@ -199,7 +200,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Year Of Passing</label>
+          <label className='block text-sm font-medium '>Year Of Passing</label>
           <input
             type='text'
             {...register('yearOfPassing')}
@@ -210,7 +211,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>City</label>
+          <label className='block text-sm font-medium '>City</label>
           <input
             type='text'
             {...register('city')}
@@ -221,7 +222,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Degree</label>
+          <label className='block text-sm font-medium '>Degree</label>
           <input
             type='text'
             {...register('degree')}
@@ -232,7 +233,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Date Of Birth</label>
+          <label className='block text-sm font-medium'>Date Of Birth</label>
           <input
             type='date'
             {...register('dob')}
@@ -243,7 +244,7 @@ const FormProfile = (
           }
         </div>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>Skill</label>
+          <label className='block text-sm font-medium '>Skill</label>
           <input
             type='text'
             {...register('skill')}
@@ -253,7 +254,7 @@ const FormProfile = (
             errors.skill && <p className='text-red-500'>{errors.skill.message}</p>
           }
         </div>
-        <div className="flex w-full e-nfg  gap-5 col-span-2 justify-center">
+        <div className="flex w-full e-nfg pt-10 gap-5 col-span-2 justify-center">
           <div
             className={cn(" ", {
               "": !imageUrl,
@@ -291,17 +292,18 @@ const FormProfile = (
           <button
             type='submit'
             className='
-                        mt-4
+                        mt-6
                         bg-indigo-600
                         border border-transparent
                         rounded-md
-                        py-2
-                        px-4
+                        py-3
+                        px-8
                         inline-flex
                         justify-center
                         text-sm
                         font-medium
                         text-white
+                        
                         hover:bg-indigo-700
                         focus:outline-none
                         focus:ring-2

@@ -8,11 +8,12 @@ const ButtonAuth = () => {
     <>
       {session?.user ? (
         <>
-          <div className="space-x-2">
-            <Link href="/profile">
+          <div className="flex md:flex-row flex-col  md:items-center md:gap-x-4">
+            <Link href="/profile" className='pl-2'>
               Profile
             </Link>
             <button
+            className='mt-5 md:mt-0 ml-2 mb-3 hover:bg-red-700 duration-300 text-black ease-in-out md:mb-0 p-2 rounded-lg font-medium bg-red-500'
               onClick={() => signOut()}
             >Logout</button>
           </div>
@@ -20,9 +21,9 @@ const ButtonAuth = () => {
 
       ) :
         <>
-          <div className="space-x-2">
+          <div className="space-x-2 mb-3 md:mb-0">
 
-            <Link href="/sign-in" className='signInbut'>Sign In</Link>
+            <Link href="/sign-in" className='signInbut bg-purple-900'>Sign In</Link>
             {/* <Link href="/api/auth/signin">Login</Link> */}
             {/* <button onClick={() => signIn()}>Login Nextauth</button> */}
           </div>

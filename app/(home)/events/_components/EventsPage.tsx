@@ -8,7 +8,7 @@ import TemporaryEmptyEvents from "@/components/TemporaryEmptyEvents";
 const EventPage = async (events: any) => {
 
   const pastEvents = await getPastEvents()
-  const ongoingEvents = await getOngoingEvents()
+  const ongoingEvents = await getOngoingEvents();
 
   return (
     <section className="section ">
