@@ -12,7 +12,7 @@ import { ScrollParallax } from "react-just-parallax";
 
 const HomeSlider = () => {
   return (
-    <section className=" my-[10%]   px-[11%]">
+    <section className="my-7 sm:my-20 px-[11%]">
       <div className=" items-center gap-5 justify-between">
         <div className="xl:flex gap-16 items-center grid xl:grid-cols-2  grid-cols-1 grid-rows-2">
           <div className=" ">
