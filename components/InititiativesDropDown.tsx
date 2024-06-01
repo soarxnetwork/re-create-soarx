@@ -36,15 +36,15 @@ const InitiativesDropdown = () => {
               href="/dsa-live-classes"
               className="block px-4 py-2 md:hover:text-primaryPurple hover:text-white rounded-t-lg"
             >
-              <p className="flex gap-x-3 text-2xl">
+              <p className="flex gap-x-3">
                 <Image
                   src="/images/online-learning.png"
                   alt="DSA_Course"
                   width={23}
                   height={23}
-                  className="text-white"
+                  className="text-white w-[23px] py-0.5"
                 />
-                DSA Live Classes
+                <span className="text-2xl">DSA Live Classes</span>
               </p>
             </Link>
           </li>
@@ -59,8 +59,9 @@ const InitiativesDropdown = () => {
                   alt="DSA_Course"
                   width={23}
                   height={23}
+                  className="h py-0.5 "
                 />
-                Campus Ambassadar Program
+                <span className="text-2xl">Campus Ambassadar Program</span>
               </p>
             </Link>
           </li>
