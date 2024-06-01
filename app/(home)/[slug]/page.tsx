@@ -13,10 +13,12 @@ import { useSession } from "next-auth/react";
 import { Event } from "@prisma/client";
 import { registEventById } from "@/actions/registration";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 function Page({ params }: { params: { slug: string } }) {
   const [event, setEvent] = useState<any>(null);
   const { data: session } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchEventData = async () => {
@@ -32,7 +34,8 @@ function Page({ params }: { params: { slug: string } }) {
 
   async function RegisterUser() {
     if (!session) {
-      alert("Please login to register for and event!");
+      router.push('/sign-in');
+      // alert("Please login to register for and event!");
     } else if (
       !session.user.id ||
       !session.user.email ||
@@ -49,7 +52,8 @@ function Page({ params }: { params: { slug: string } }) {
       !session.user.yearOfPassing
     ) {
       console.log(session.user);
-      alert("Please Complete your profile to register for the event!");
+      router.push('/profile');
+      // alert("Please Complete your profile to register for the event!");
     } else {
       const res = await registEventById(event.id, session.user.id);
       res?.error ? toast.error(res.message) : toast.success(res?.message);
@@ -118,6 +122,8 @@ function Page({ params }: { params: { slug: string } }) {
       return "Unknown";
     }
   }
+
+    
 
   return (
     <>

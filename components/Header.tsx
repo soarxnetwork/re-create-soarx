@@ -6,113 +6,149 @@ import { Fade as Hamburger } from "hamburger-react";
 import { usePathname, useRouter } from "next/navigation";
 // import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Admin, User } from "@prisma/client";
-import { Switch } from "@nextui-org/react";
-
+import HeaderLogo from "@/public/images/Soarx-transparent-logo.png";
 import HeaderDropdown from "./HeaderDropdown";
 import ButtonAuth from "./ButtonAuth";
 import ThemeSwitcher from "./DarkThemes";
+import InitiativesDropdown from "./InititiativesDropDown";
+
 const Header = ({ admin }: User) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
-  // const [ShowHamBurgerItems, setShowHamBurgerItems] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, [admin]);
-  // console.log(showNavbar);
+
   return (
     <header className="mt-4">
-      <div className="custom-container">
-        <nav id="main-navbar" className="navbar rounded-lg dark:border-0 dark:bg-gray-800">
-          <div className=" md:grid md:grid-cols-3 flex justify-between ">
-            <Link href={"/"}>
-              <div className="header-img flex items-center  ">
-                <Image
-                  src={"/images/Soarx-transparent-logo.png"}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="img-responsive dark:filter dark:invert dark:hue-rotate-180"
-                  alt="Header Logo"
-                />
-              </div>
-            </Link>
-
-            <div
-              className={
-                showNavbar
-                  ? "flex items-center side-nav-flex justify-between gap-60 m-auto"
-                  : "flex items-center side-nav-flex justify-between gap-60 m-auto"
-              }
-            >
-              <div>
-                <ul className="flex items-center nav-ul  text-textColor dark:text-white  font-medium">
-                  <li
-                    className={
-                      pathname === "/"
-                        ? "bg-[#9241d40d] rounded-lg"
-                        : "rounded-lg"
-                    }
-                  >
-                    <Link className=" hover:text-primaryPurple hover:transition-all ease-in-out duration-300" href="/">
-                      Home
-                    </Link>
-                  </li>
-                  <li
-                    className={
-                      pathname.includes("/events")
-                        ? "bg-[#9241d40d] rounded-lg"
-                        : "rounded-lg"
-                    }
-                  >
-                    <Link className=" hover:text-primaryPurple" href="/events">
-                      Events
-                    </Link>
-                  </li>
-
-                  <HeaderDropdown />
-
-                  {admin ? (
-                    admin !== Admin.User ? (
-                      <>
-                        <li
-                          className={
-                            pathname.includes("/admin")
-                              ? "bg-[#9241d40d] rounded-lg"
-                              : "rounded-lg"
-                          }
-                        >
-                          <Link
-                            className=" hover:text-primaryPurple"
-                            href="/admin"
-                          >
-                            Admin
-                          </Link>
-                        </li>
-                      </>
-                    ) : null
-                  ) : null}
-                </ul>
-              </div>
+      <div className="container mx-auto px-4">
+        <nav className="navba rounded-lg dark:border-0 dark:bg-gray-800  flex justify-between items-center">
+          <Link href="/">
+            <div className="flex items-center">
+              <Image
+                src={HeaderLogo}
+                width={0}
+                height={0}
+                className="w-[130px] dark:filter dark:invert dark:hue-rotate-180"
+                alt="Header Logo"
+              />
             </div>
-            <div className="flex items-center gap-x-5 justify-self-end">
-              <ThemeSwitcher />
-              <ButtonAuth />
-              {isClient && (
-                <>
-                  <div
-                    className="mbl-bars"
-                    onClick={() => setShowNavbar(!showNavbar)}
-                  >
-                    <Hamburger distance="md" size={25} />
-                  </div>
-                </>
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-4">
+            <ul className="flex items-center text-textColor dark:text-white font-medium space-x-4">
+              <li
+                className={
+                  pathname === "/" ? "bg-[#9241d40d] rounded-lg" : "rounded-lg"
+                }
+              >
+                <Link
+                  className="hover:text-primaryPurple hover:transition-all ease-in-out duration-300 p-2"
+                  href="/"
+                >
+                  Home
+                </Link>
+              </li>
+              <li
+                className={
+                  pathname.includes("/events")
+                    ? "bg-[#9241d40d] rounded-lg"
+                    : "rounded-lg"
+                }
+              >
+                <Link className="hover:text-primaryPurple p-2" href="/events">
+                  Events
+                </Link>
+              </li>
+
+              <HeaderDropdown />
+
+              {admin && admin !== Admin.User && (
+                <li
+                  className={
+                    pathname.includes("/admin")
+                      ? "bg-[#9241d40d] rounded-lg"
+                      : "rounded-lg"
+                  }
+                >
+                  <Link className="hover:text-primaryPurple p-2" href="/admin">
+                    Admin
+                  </Link>
+                </li>
               )}
+            </ul>
+          </div>
+
+          <div className="flex items-center gap-x-5">
+            <span className="hidden md:inline">
+              <ButtonAuth />
+            </span>
+            <ThemeSwitcher />
+            <div className="md:hidden">
+              <Hamburger
+                toggled={showNavbar}
+                toggle={setShowNavbar}
+                distance="md"
+                size={25}
+              />
             </div>
           </div>
         </nav>
+
+        {showNavbar && (
+          <div className="md:hidden ease-in-out delay-200  bg-[#9335e0] dark:bg-gray-800 rounded-lg p-4 mt-2">
+            <ul className="flex flex-col space-y-4 text-2xl text-white  font-medium">
+              <li
+                className={
+                  pathname === "/" ? "bg-[#9241d40d] rounded-lg" : "rounded-lg"
+                }
+              >
+                <Link
+                  className="md:hover:text-primaryPurple hover:text-white hover:transition-all ease-in-out duration-300 p-2"
+                  href="/"
+                >
+                  Home
+                </Link>
+              </li>
+              <li
+                className={
+                  pathname.includes("/events")
+                    ? "bg-[#9241d40d] rounded-lg"
+                    : "rounded-lg"
+                }
+              >
+                <Link
+                  className="md:hover:text-primaryPurple hover:text-white p-2"
+                  href="/events"
+                >
+                  Events
+                </Link>
+              </li>
+
+              <InitiativesDropdown />
+
+              {admin && admin !== Admin.User && (
+                <li
+                  className={
+                    pathname.includes("/admin")
+                      ? "bg-[#9241d40d] rounded-lg"
+                      : "rounded-lg"
+                  }
+                >
+                  <Link className="md:hover:text-primaryPurple hover:text-white p-2" href="/admin">
+                    Admin
+                  </Link>
+                </li>
+              )}
+              <li>
+                <ButtonAuth />
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </header>
   );
