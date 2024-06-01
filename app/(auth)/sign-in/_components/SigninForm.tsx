@@ -129,7 +129,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
         </div>
 
         <p className="text-center">
-          Don't have an account? <Link href="/sign-up">Sign up</Link>
+          Dont have an account? <Link href="/sign-up">Sign up</Link>
         </p>
         <p className="text-center mt-2">
           <Link href="/forgot-password">Forgot Password?</Link>
