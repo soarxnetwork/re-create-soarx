@@ -17,7 +17,7 @@ interface EventProps {
 
 const Events = ({ events }: EventProps) => {
   return (
-    <section className="section px-[11.5%] my-[10%]">
+    <section className="section  my-[10%] lg:pl-28 lg:pr-20">
       <div className="container mx-auto">
         <div className="text-center text-primary cursor-pointer">
           {"Events".split("").map((child, idx) => (
@@ -29,20 +29,20 @@ const Events = ({ events }: EventProps) => {
         <h2 className="text-center text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
           Our Past Events
         </h2>{" "}
-        <section className="all-events  grid grid-cols-4 gap-5 pt-16">
+        <section className="all-events lg:grid grid-cols-4 gap-5 pt-16">
           {events?.map((e, index) => (
             
             <Link key={index} href={`${e.slug}`}>
              
 
-              <div className="relative hover-event-card flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative hover-event-card-img mx-2 -mt-6 h-[250px] overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 ">
+              <div className="events-box aim-box dark:shadow-sm dark:shadow-purple-500 ">
+                <div className="relative mt-10 hover-event-card-img h-fit overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border  w-full text-white">
                   <Image
                     src={e.imageUrl}
                     alt="Banner"
-                    className="img-responsive"
+                    className="w-full"
                     width={300}
-                    height={200}
+                    height={300}
                   />
                 </div>
                 <div className="pt-6 pl-6 pr-6">

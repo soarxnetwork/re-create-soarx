@@ -25,14 +25,14 @@ const Header = ({ admin }: User) => {
   return (
     <header className="mt-4">
       <div className="container mx-auto px-4">
-        <nav className="navba rounded-lg dark:border-0 dark:bg-gray-800  flex justify-between items-center">
+        <nav className="navba lg:ml-16 lg:mr-20 rounded-lg dark:border-0 dark:bg-gray-800  flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center">
               <Image
                 src={HeaderLogo}
                 width={0}
                 height={0}
-                className="w-[130px] dark:filter dark:invert dark:hue-rotate-180"
+                className="w-24 dark:filter dark:invert dark:hue-rotate-180"
                 alt="Header Logo"
               />
             </div>

@@ -13,7 +13,7 @@ const ButtonAuth = () => {
               Profile
             </Link>
             <button
-            className='mt-5 md:mt-0 ml-2 mb-3 hover:bg-red-700 duration-300 text-black ease-in-out md:mb-0 p-2 rounded-lg font-medium bg-red-500'
+            className='mt-5 md:mt-0 ml-2 mb-3 signInbut duration-300 text-black ease-in-out md:mb-0 p-2 rounded-lg font-medium'
               onClick={() => signOut()}
             >Logout</button>
           </div>
