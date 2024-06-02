@@ -35,7 +35,8 @@ const InstructorsDlc = () => {
 
   return (
     <>
-      <div className="ml-6 mr-20  p-4 rounded-xl myfonts">
+      <div className="lg:ml-6 lg:mr-20 sm:mb-20  sm:mt-10 md:p-4 rounded-xl myfonts">
+
         <div className="fl-ic gap-4">
           <div className="space-y-4">
             {/* <h4 className="font-semibold text-3xl">Our Instructors</h4> */}
@@ -62,6 +63,7 @@ const InstructorsDlc = () => {
             </button> */}
           </div>
         </div>
+        <div className="flex justify-center text-4xl sm:text-5xl md:text-6xl font-bold mt-2 mb-20">Our Instructors</div>
         <InstructorDLc
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}

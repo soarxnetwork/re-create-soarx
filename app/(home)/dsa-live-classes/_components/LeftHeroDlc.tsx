@@ -23,7 +23,7 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className="lg:grid lg:grid-cols-3 myfonts space-y-12">
+      <div className="lg:grid lg:grid-cols-3 myfonts space-y-12 pl-7 md:pl-28 md:pr-28 sm:pl-16 sm:pr-16 pr-7">
         <div className="break-words space-y-6 col-span-2 container-hero-dlc">
           <div className="flex flex-col gap-y-3">
             <p className="tex text-lg dark:text-white border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
@@ -32,19 +32,19 @@ const LeftHeroDlc = () => {
             
           </div>
           <div className="space-y-4">
-             <h3 className="text-3xl font-semibold">
+             <h3 className="text-3xl leading-snug sm:leading-normal sm:text-3xl font-bold">
               Data Structures & Algorithms Cohort 1.0
-            </h3> 
-            <div className="fl-ic  gap-4 text-3xl font-semibold pr-4">
+            <div className="fl-ic pt-3 sm:pt-0 sm:gap-4 text-3xl font-bold">
               (Beginner to Advance)
             </div>
+            </h3> 
           </div>
         </div>
 
         <AnimatePresence>
           {!isActiveFloatDlc && (
             <motion.div
-              className="space-y-6 lg:w-[380px] bg-white dark:bg-gray-800 shadow-xl z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
+              className="space-y-6 2xl:mr-14  lg:w-[380px] bg-white dark:bg-gray-800 shadow-xl z-20  bg-neutral-9 border-dlc border border-opacity-20 border-black rounded-xl container-hero-dlc lg:absolute top-24 right-32  p-6"
               variants={floatingHeroVars}
               {...floatingHeroMotionProps}
             >
@@ -66,7 +66,7 @@ const LeftHeroDlc = () => {
                 </span>
                 <del className=" text-shark text-xl">₹2499</del>
               </div>
-              <p className="text-xl font-semibold dark:text-white text-black">
+              <p className="text-2xl font-semibold dark:text-white text-black">
                 BONUS INCLUDES:
               </p>
               <div className="space-y-2">

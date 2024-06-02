@@ -84,10 +84,10 @@ const Header = ({ admin }: User) => {
           </div>
 
           <div className="flex items-center gap-x-5">
+            <ThemeSwitcher />
             <span className="hidden md:inline">
               <ButtonAuth />
             </span>
-            <ThemeSwitcher />
             <div className="md:hidden">
               <Hamburger
                 toggled={showNavbar}

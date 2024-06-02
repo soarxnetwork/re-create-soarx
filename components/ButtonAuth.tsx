@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { IoArrowDown } from "react-icons/io5";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 const ButtonAuth = () => {
   const { data: session } = useSession();
@@ -15,7 +16,7 @@ const ButtonAuth = () => {
           <div className="flex items-center gap-x-2 text-2xl hover:cursor-pointer">
             <span onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-x-1 text-md font-medium">
               {" "}
-              <IoArrowDown
+              <TiArrowSortedDown
                 className={`w-5 h-5 transition-transform duration-200 ${
                   isOpen ? "animate-moveDown" : ""
                 }`}

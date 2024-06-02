@@ -25,7 +25,7 @@ function NumbersThatMatter() {
   ];
   return (
     <ScrollParallax strength={-0.15}>
-          <div className="flex justify-center font-bold">
+          <div className="flex justify-center mt-16 mb-16 font-bold">
           <h2 className="text-center text-[23px] sm:text-3xl md:text-4xl lg:text-5xl font-semibold sm:font-bold leading-normal">
           {/* Our Past Events */}
           {"Some Numbers That Matters".split("").map((child, idx) => (

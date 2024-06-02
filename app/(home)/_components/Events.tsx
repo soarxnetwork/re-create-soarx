@@ -28,7 +28,7 @@ const Events = ({ events }: EventProps) => {
         </div> */}
         <h2 className="text-center text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
           {/* Our Past Events */}
-          {"Our Past Events".split("").map((child, idx) => (
+          {"Events".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
             </span>

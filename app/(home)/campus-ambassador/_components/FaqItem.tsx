@@ -23,7 +23,7 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
     <motion.div layout>
       <div>
         <div
-          className="flex justify-between items-center cursor-pointer md:p-6 xl:pl-0 pt-3 pb-3"
+          className="flex justify-between items-center cursor-pointer sm:p-6 p-4 xl:pl-0 pt-3 pb-3 2xl:p-5"
           onClick={() => handleToggle(id)}
         >
           <h6 className="text-xl font-medium">{question}</h6>
