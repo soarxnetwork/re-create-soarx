@@ -10,10 +10,14 @@ import ButtonAuth from "@/components/ButtonAuth";
 import { NextProvider } from "@/providers/NextuiProviders";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/next-auth";
+import { Roboto } from "next/font/google";
+
+const inter = Roboto({ weight: '400', subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "SoarX",
-  description: "SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons.",
+  description:
+    "SoarX is a nationwide community dedicated to empowering students through impactful events, sessions, and hackathons.",
   metadataBase: new URL("https://www.soarx.tech/"),
 };
 
@@ -25,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       {" "}
-      <body>
+      <body className="myfonts">
         <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
@@ -35,9 +39,7 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <NextProvider
-
-        >
+        <NextProvider>
           <Providers>{children}</Providers>
         </NextProvider>
       </body>

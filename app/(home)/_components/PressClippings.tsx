@@ -95,7 +95,7 @@ const PressClippings = () => {
   return (
     <section className=" px-[11%] my-[10%]">
       <div className="container">
-        <div className="text-center text-primary cursor-pointer">
+        <div className="text-center text-[#7300d0] dark:text-[#9f32f8] cursor-pointer">
           {"Wings of Inspiration".split("").map((child, idx) => (
             <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
               {child}
@@ -103,7 +103,11 @@ const PressClippings = () => {
           ))}
         </div>
         <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
-          SoarX Gallery
+        {"Soarx Gallery".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
         </h2>{" "}
         {/* <div className="gallery">
           {displayedImages.map((image, index) => (

@@ -19,15 +19,20 @@ const Events = ({ events }: EventProps) => {
   return (
     <section className="section  my-[10%] lg:pl-28 lg:pr-20">
       <div className="container mx-auto">
-        <div className="text-center text-primary cursor-pointer">
+        {/* <div className="text-center text-primary cursor-pointer">
           {"Events".split("").map((child, idx) => (
             <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
               {child}
             </span>
           ))}
-        </div>
+        </div> */}
         <h2 className="text-center text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
-          Our Past Events
+          {/* Our Past Events */}
+          {"Our Past Events".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
         </h2>{" "}
         <section className="all-events lg:grid grid-cols-4 gap-5 pt-16">
           {events?.map((e, index) => (
@@ -87,8 +92,9 @@ const Events = ({ events }: EventProps) => {
             </Link>
           ))}
         </section>
-        <div className="flex items-center justify-center">
-          <button className=" signInbut mt-10">View all</button>
+        <div className="flex items-center lg:mt-5 justify-center">
+         <Link href="/events">
+         <button className="signInbut mt-10">View all</button></Link>
         </div>
       </div>
     </section>

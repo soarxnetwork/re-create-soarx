@@ -11,12 +11,12 @@ const EventPage = async (events: any) => {
   const ongoingEvents = await getOngoingEvents();
 
   return (
-    <section className="section ">
+    <section className="section lg:ml-7">
       <article className="container ">
         {ongoingEvents && ongoingEvents.length > 0 ?
           <>
             <div className="pt-24">
-              <h1 className="text-5xl">Ongoing Events</h1>
+              <h1 className="text-5xl flex justify-center font-bold">Ongoing Events</h1>
             </div>
             <div className="all-events pt-8">
               <div className="grid-4">
@@ -31,7 +31,7 @@ const EventPage = async (events: any) => {
           pastEvents && pastEvents.length > 0 ?
             <>
               <div className="pt-24">
-                <h1 className="text-5xl">Past Events</h1>
+                <h1 className="text-5xl flex justify-center font-bold">Past Events</h1>
               </div>
               <div className="all-events pt-8">
                 <div className="grid-4">

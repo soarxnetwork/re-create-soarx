@@ -25,7 +25,17 @@ function NumbersThatMatter() {
   ];
   return (
     <ScrollParallax strength={-0.15}>
-      <section className="px-[11%] my-[10%]">
+          <div className="flex justify-center font-bold">
+          <h2 className="text-center text-[23px] sm:text-3xl md:text-4xl lg:text-5xl font-semibold sm:font-bold leading-normal">
+          {/* Our Past Events */}
+          {"Some Numbers That Matters".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
+        </h2>
+          </div>
+      <section className="px-[11%] my-[5%]">
         <div className="custom-container ">
           <div className="grid h-full w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0 shadow-md  number-sgrid">
             {data?.map((e, index) => (

@@ -17,6 +17,7 @@ const Header = ({ admin }: User) => {
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [hideProfile, setHideProfile] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -128,7 +129,9 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
 
-              <InitiativesDropdown />
+             <p onClick={() => setHideProfile(!hideProfile)}>
+             <InitiativesDropdown />
+             </p>
 
               {admin && admin !== Admin.User && (
                 <li
@@ -143,7 +146,7 @@ const Header = ({ admin }: User) => {
                   </Link>
                 </li>
               )}
-              <li>
+              <li className={hideProfile === true ? "d -z-50" : "inline"}>
                 <ButtonAuth />
               </li>
             </ul>

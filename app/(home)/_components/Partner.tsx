@@ -13,14 +13,18 @@ const Partners = () => {
     <section className=" px-[11%]">
       <div className="container">
         <div className="text-center text-primary cursor-pointer">
-          {"Partners".split("").map((child, idx) => (
+          {/* {"Partners".split("").map((child, idx) => (
             <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
               {child}
             </span>
-          ))}
+          ))} */}
         </div>
         <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
-          Our Trusted Partners
+          {"Our Trusted Partners".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
         </h2>{" "}
         <Swiper
           className="mySwiper"
