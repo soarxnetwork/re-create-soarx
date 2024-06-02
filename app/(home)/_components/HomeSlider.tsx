@@ -9,13 +9,14 @@ import Lottie from "lottie-react";
 import { Autoplay } from "swiper/modules";
 import { BannerImages } from "@/constants/homepage";
 import { ScrollParallax } from "react-just-parallax";
+import Link from "next/link";
 
 const HomeSlider = () => {
   return (
-    <section className="my-7 sm:my-28 px-[11%]">
+    <section className="sm:my-28 px-[11%]">
       <div className=" items-center gap-5 justify-between">
         <div className="xl:flex gap-16 items-center grid xl:grid-cols-2  grid-cols-1 grid-rows-2">
-          <div className=" ">
+          <div className="sm:mt-10 mt-20">
             <div className="flex items-center gap-2 pt-16">
               <div className="w-7">
                 <Lottie animationData={groovyWalkAnimation} loop={true} />
@@ -37,7 +38,7 @@ const HomeSlider = () => {
             <p className="pt-5 sm:text-[20px] text-[12px] 2xl:text-[30px] text-slate-500">
             A nationwide community committed to igniting the potential of students through engaging events, sessions, and hackathons. 
             </p>
-            <button className=" signInbut mt-10" ><a href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf">Join Us</a></button>
+            <button className=" signInbut mt-10" ><Link href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf" className="text-xl">Join Us</Link></button>
           </div>
           <div className="w-full flex items-center jusitfy-center  relative "> 
           <Swiper

@@ -3,12 +3,12 @@ import React from "react";
 
 const CertificateOfCompletion = () => {
   return (
-    <div className="max-w-[800px] myfonts mb-28 ml-8 mr-8 md:max-w-[1200px] lg:max-w-[1600px]">
-      <div className="flex items-center justify-around rounded-xl">
-        <p className="md:w-2/5 text-4xl font-semibold ">
+    <div className="max-w-[800px] myfonts mb-28 mx-8 md:max-w-[1200px] lg:max-w-[1600px]">
+      <div className="flex flex-col lg:flex-row items-center justify-around gap-8 md:gap-0 rounded-xl">
+        <p className="text-[20px] sm:text-3xl md:mb-10 lg:mb-0 lg:text-4xl font-semibold lg:w-2/5 text-center lg:text-left">
           Also, Get a Signed Certificate on successful Completion of the Course.
         </p>
-        <div className="h-full md:w-2/5">
+        <div className="h-full w-full lg:w-2/5">
           <Image
             src="/images/DSACompletionCertificate.png"
             alt="Certificate of Completion"
