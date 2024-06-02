@@ -45,7 +45,7 @@ const HeaderDropdown = () => {
       <div>
         <div className="relative flex items-center gap-2 hover:cursor-pointer">
           <p
-            className={cn("select-none truncate ", {
+            className={cn("select-none truncate", {
               "text-primaryPurple": hovered,
             })}
           >

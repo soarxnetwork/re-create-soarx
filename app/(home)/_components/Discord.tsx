@@ -7,27 +7,30 @@ const Discord = () => {
       <div className="custom-container">
         <div className="">
           <div className=" text-center ">
-            <div className="text-center text-primary cursor-pointer">
+            {/* <div className="text-center text-primary cursor-pointer">
               {"Powered by Discord".split("").map((child, idx) => (
                 <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
                   {child}
                 </span>
               ))}
-            </div>
+            </div> */}
             <h2 className="text-center lg:text-[80px] pt-2 font-bold leading-normal">
-              Join Our Discord Community
+              {"Join Our Discord Community".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
             </h2>{" "}
             <p className="mx-auto max-w-2xl sm:text-[20px] text-[12px] 2xl:text-[30px] text-[#647084] pt-5">
             Engage with fellow tech enthusiasts, participate in insightful discussions, and stay updated on industry trends and opportunities.
             </p>
             <div className="pt-10 m-auto flex justify-center items-center">
               <Link
-                href="https://discord.gg/WhtdpC3e7p"
+                href="https://discord.com/invite/B9kD9cbJSe"
                 className=" signInbut mt-200 flex items-center w-fit gap-2"
               >
                 <FaDiscord />
-                Join Discord
-                
+                Join Discord                
               </Link>
             
             </div>

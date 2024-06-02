@@ -4,7 +4,6 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import '@/app/globals.css';
 import { authOptions } from "@/lib/next-auth";
-
 interface HomeLayoutProps {
   children: React.ReactNode;
 }

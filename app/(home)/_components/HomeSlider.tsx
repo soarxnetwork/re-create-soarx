@@ -12,7 +12,7 @@ import { ScrollParallax } from "react-just-parallax";
 
 const HomeSlider = () => {
   return (
-    <section className="my-7 sm:my-20 px-[11%]">
+    <section className="my-7 sm:my-28 px-[11%]">
       <div className=" items-center gap-5 justify-between">
         <div className="xl:flex gap-16 items-center grid xl:grid-cols-2  grid-cols-1 grid-rows-2">
           <div className=" ">
@@ -21,7 +21,7 @@ const HomeSlider = () => {
                 <Lottie animationData={groovyWalkAnimation} loop={true} />
               </div>
 
-              <div className="text-center text-primary cursor-pointer">
+              <div className="text-center text-[#7300d0] dark:text-[#9f32f8] cursor-pointer">
                 {"Engage, Innovate, Elevate"
                   .split("")
                   .map((child, idx) => (
