@@ -13,7 +13,7 @@ const InitiativesDropdown = () => {
   };
 
   return (
-    <div className="relative w-full text-white">
+    <div className="relative w-full z-50 text-white">
       <button
         onClick={toggleDropdown}
         onMouseEnter={() => setHovered(true)}
@@ -55,7 +55,7 @@ const InitiativesDropdown = () => {
             >
               <p className="flex gap-x-3 text-2xl">
                 <Image
-                  src="/images/announcer.png"
+                  src="/images/online-learning.png"
                   alt="DSA_Course"
                   width={23}
                   height={23}
@@ -65,6 +65,26 @@ const InitiativesDropdown = () => {
               </p>
             </Link>
           </li>
+
+          <li>
+            <Link
+              href="/python-bootcamp"
+              className="block px-4 py-2 md:hover:text-primaryPurple hover:text-white"
+            >
+              <p className="flex gap-x-3 text-2xl">
+                <Image
+                  src="/images/online-learning.png"
+                  alt="Python Bootcamp"
+                  width={23}
+                  height={23}
+                  className="h py-0.5 "
+                />
+                <span className="text-2xl">Python Bootcamp 2.0</span>
+              </p>
+            </Link>
+          </li>
+
+
         </ul>
       )}
     </div>

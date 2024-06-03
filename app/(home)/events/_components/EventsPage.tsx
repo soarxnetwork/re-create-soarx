@@ -12,7 +12,7 @@ const EventPage = async (events: any) => {
 
   return (
     <section className="section lg:ml-7">
-      <article className="container ">
+      <article className="container">
         {ongoingEvents && ongoingEvents.length > 0 ?
           <>
             <div className="pt-24">

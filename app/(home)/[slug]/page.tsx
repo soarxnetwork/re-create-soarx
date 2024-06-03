@@ -19,7 +19,6 @@ function Page({ params }: { params: { slug: string } }) {
   const [event, setEvent] = useState<any>(null);
   const { data: session } = useSession();
   const router = useRouter();
-
   useEffect(() => {
     const fetchEventData = async () => {
       try {
@@ -31,7 +30,7 @@ function Page({ params }: { params: { slug: string } }) {
     };
     fetchEventData();
   }, [params.slug]);
-
+  
   async function RegisterUser() {
     if (!session) {
       router.push('/sign-in');
@@ -255,7 +254,7 @@ function Page({ params }: { params: { slug: string } }) {
                <p className=""><b>Ready to take your coding skills to the next level?</b> <br/><br/>
                Master Data Structures & Algorithms with our structured learning program to equip you for coding challenges.
                </p><br/><br/> */}
-                {DESC}
+              {DESC}
                 <p className="">
                   <b>Register for the FREE Demo Class now!</b> <br /> <br />
                   For more queries and event updates, join the SoarX Network on
