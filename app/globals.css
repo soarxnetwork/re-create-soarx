@@ -1150,7 +1150,7 @@ input {
 
 .hoverText:hover {
   font-weight: 900;
-  color: rgb(202, 205, 217);
+  color: #9f32f8;
 }
 
 /* .hover-event-card .hover-event-card-img {
@@ -1177,7 +1177,7 @@ input {
 /* To the right */
 .hoverText:hover + .hoverText {
   font-weight: 500;
-  color: rgb(199, 210, 254);
+  color: #c8a2e8;
 }
 
 .hoverText:hover + .hoverText + .hoverText {
@@ -1187,7 +1187,7 @@ input {
 /* To the left */
 .hoverText:has(+ .hoverText:hover) {
   font-weight: 500;
-  color: rgb(199, 210, 254);
+  color: #c8a2e8;
 }
 
 .hoverText:has(+ .hoverText + .hoverText:hover) {

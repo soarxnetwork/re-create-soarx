@@ -22,6 +22,12 @@ const dsa = [
     code: "/campus-ambassador",
     image: "/images/announcer.png",
   },
+  {
+    name: "Python Bootcamp 2.0",
+    desc: "Master Python: Join Live Classes!",
+    code: "/python-bootcamp",
+    image: "/images/online-learning.png",
+  }
 ];
 
 const HeaderDropdown = () => {

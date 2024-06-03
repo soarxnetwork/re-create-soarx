@@ -92,9 +92,9 @@ const Events = ({ events }: EventProps) => {
             </Link>
           ))}
         </section>
-        <div className="flex items-center lg:mt-5 justify-center">
+        <div className="flex items-center lg:mt-8 justify-center">
          <Link href="/events">
-         <button className="signInbut mt-10">View all</button></Link>
+         <button className="signInbut mt-10"><p className="text-xl">View all</p></button></Link>
         </div>
       </div>
     </section>

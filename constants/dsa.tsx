@@ -93,6 +93,30 @@ export const itemOverview: string[] = [
   "Recording for every lecture",
 ];
 
+
+export const instructorsForPython = [
+  {
+    title: "Mohit Manuja",
+    image: "/images/Mohit_Manuja.png",
+    description:
+      "Mohit Manuja is a Software Engineer at Google with a passion for building things and tackling challenging engineering problems. With 3 years of prior experience at Flipkart, Mohit brings a wealth of industry knowledge and hands-on expertise. Known for his proficiency in Python and Data Structures and Algorithms, he excels at breaking down complex concepts into easily digestible lessons.",
+    subDescription:
+      "Mohit has a proven track record of inspiring and mentoring aspiring programmers. His previous session, From Tier-3 to Google, received rave reviews, underscoring his ability to elevate students' coding skills and prepare them for successful careers in tech. Join him in this Python Bootcamp to gain invaluable insights, practical coding experience, and guidance from one of the best in the industry.",
+    logos: ["/images/google.png", "/images/flipkart-logo-39906.png", "/images/HashedIn.png"],
+  },
+  {
+    title: "Rajat Kumar",
+    image: "/images/Rajat_Kumar.png",
+    description:
+      "Rajat Kumar is a Software Engineer at Intuit with extensive experience in software development. Before joining Intuit, Rajat worked at MakeMyTrip for 2 years, where he honed his skills in problem-solving and coding efficiency. Rajat is adept at translating complex programming concepts into relatable, real-world applications, making him a valuable asset to this Python Bootcamp.",
+    subDescription:
+      "Rajat's teaching approach is highly interactive and hands-on, ensuring that students not only understand the theoretical aspects of programming but also gain practical experience. His sessions are designed to help students master Python and Data Structures, and he is committed to supporting their journey toward becoming proficient coders ready for the tech industry.",
+    logos: ["/images/Intuit.png", "/images/MakeMyTrip.png", "/images/HashedIn.png"],
+  },
+];
+
+
+
 export const instructorsDsa = [
   {
     title: "Niket Thakur",

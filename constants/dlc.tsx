@@ -48,6 +48,88 @@ export const feedBacksDlc = [
     star: 5,
   },
 ];
+
+export const faqPython = [
+    {
+      question: "Is this course live or recorded ?",
+      answer:
+        "This course is live, offering both recorded sessions of live classes and live sessions to teach students.",
+      id: "2",
+    },
+    {
+      question: "If I miss any live session, how can I attend it again?",
+      answer:
+        "You will be provided with session recordings, which you can access whenever you want.",
+      id: "3",
+    },
+    {
+      question:
+        "I am a college student. Can I watch this course while studying?",
+      answer:
+        "Yes, you can. This course will be beneficial for you if you are targeting those dream software jobs.",
+      id: "4",
+    },
+    {
+      question: "Do, I need to learn anything before this course starts ?",
+      answer:
+        "No, there are no prerequisites. We will cover everything right from scratch in this course.",
+      id: "5",
+    },
+    {
+      question: "Can I get a refund if I change my mind ?",
+      answer: "Currently, we have a strict no-refund policy in place.",
+      id: "6",
+    },
+    {
+      question: "I live outside of India. How can I purchase the course ?",
+      answer:
+        "Yes, you can purchase the course. We already support international payments.",
+      id: "7",
+    },
+    {
+      question: "Is the course in Hindi or English?",
+      answer:
+        "The course is taught in Hinglish, which is a mix of Hindi and English. (Primarily in Hindi).",
+      id: "8",
+    },
+    {
+      question: "How long is the course access?",
+      answer: "The course is accessible for a lifetime.",
+      id: "9",
+    },
+    {
+      question: "Will there be a Certificate of completion?",
+      answer: "Yes, you will get a certificate after finishing this course.",
+      id: "10",
+    },
+    {
+      question: "Is there a course schedule?",
+      answer:
+        "Yes, each live class will be held daily for 1 hour for the first 3 days and 2 hours for the last 2 days.",
+      id: "11",
+    },
+    {
+      question: "Will there be question practice in the course?",
+      answer:
+        "Yes, the course includes multiple problem-solving lectures.",
+      id: "12",
+    },
+    
+    {
+      question: "Is there a group/community I can join after enrolling?",
+      answer:
+        "Yes, we will send you an invite right after you purchase the course.",
+      id: "14",
+    },
+    {
+      question:
+        "I paid but still did not receive any welcome email or unable to access my course. What should I do ?",
+      answer: "Please email us at soarxnetwork@gmail.com, and we will assist you promptly.",
+      id: "15",
+    },
+];
+
+
 export const faqDlc = [
   {
     question:
@@ -143,8 +225,18 @@ export const courseDetailsHero = [
   "Doubt Support"
 
 ];
+
+export const pythonCourseHero = [
+  "No Pre-requisite Required",
+  "Live Interaction with MNC Experts",
+  "Doubt Support"
+]
+
+
 export const courseDetailsHeroFloat = [
   "DSA Concept Classes",
   "Doubt Support",
   "Lecture Recordings",
 ];
+
+
