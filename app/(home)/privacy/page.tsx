@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 
 function PolicyPage() {
   return (
-    <div className="mt-[15%] w-full">
-      <h1 className="w-full text-center font-bold">
+    <div className="mt-40 w-full mb-20">
+      <h1 className="w-full text-center font-bold mb-10">
         PRIVACY POLICY
       </h1>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="pl-7 pr-7 sm:py-10 sm:px-32 text-[1.2rem]">
         This Privacy Policy discloses the privacy practices for SoarX (“We/we”
         or “Us/us”) with regard to Your (“You/you” or “Your/your”) use of the
         online platform www.soarx.tech (“Website”). This Privacy Policy and
@@ -34,10 +34,10 @@ function PolicyPage() {
         Policy from time to time. By Personal Data, we mean any information that
         can either itself identify you as an individual.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:text-3xl pb-5 pt-10 pl-10 sm:px-32 ">
         1. COLLECTION OF INFORMATION
       </h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="pl-7 pr-7 sm:py-10 sm:px-32 text-[1.2rem]">
         As a visitor, you can browse through our Website to find out more about
         SoarX. You are not required to provide us with any Personal Data if you
         are merely a visitor. When you visit the Site, we collect and store
@@ -107,10 +107,10 @@ function PolicyPage() {
         understand how you interact with our site and services, so as to render
         a better experience.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32 ">
         2. USAGE AND RETENTION OF INFORMATION
       </h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="pl-7 pr-7 md:px-32 text-[1.2rem]">
         We use the personal information we collect, including your Personal Data
         where it is necessary to render the services requested by you, where it
         is necessary to comply with legal obligations or rights or for normal
@@ -129,8 +129,8 @@ function PolicyPage() {
         on the Website, offers, and promotions, surveys, and to assist you with
         operational requests like password reset requests.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">3. COMMUNITY</h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32 ">3. COMMUNITY</h2>
+      <p className="pl-7 pr-7 md:py-10 md:px-32 text-[1.2rem]">
         SoarX is a community, wherein we offer a number of features that allow
         members to connect and communicate in public or semi-public spaces, such
         as Forums and Teams. Please use your judgment before posting in these
@@ -139,10 +139,10 @@ function PolicyPage() {
         there can be read, collected, or used by others, or could be used to
         send you unsolicited messages.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32 ">
         4. SHARING AND DISCLOSING PERSONAL INFORMATION
       </h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="md:py-10 md:px-32 pl-7 pr-7 text-[1.2rem]">
         We use other Service Providers to perform services on our behalf or to
         assist us with the provision of services to you. We engage these Service
         Providers to provide promotional, infrastructure and IT services, to
@@ -153,18 +153,18 @@ function PolicyPage() {
         We do not authorize them to use or disclose your personal information
         except in relation to providing their services.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32 ">
         5. NOTE TO OUR USERS IN EUROPE:
       </h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="pl-7 pr-7 md:py-10 md:px-32 text-[1.2rem]">
         We transfer your personal information from the European Economic Area
         and Switzerland to India. By submitting your data and/or using our
         services, you consent to the transfer, storing, and processing of your
         personal information in India.
       </p>
 
-      <h2 className="font-bold text-2xl px-32 ">6. SECURITY</h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32">6. SECURITY</h2>
+      <p className="md:py-10 pl-7 pr-7 md:px-32 text-[1.2rem]">
         We shall make an effort to take all precautions to shield the personal
         information both online and offline. We will try to protect your
         information using security measures to reduce the risks of loss and
@@ -179,10 +179,10 @@ function PolicyPage() {
         SoarX account has been compromised, you can contact us by writing an
         email to soarxnetwork@gmail.com.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:text-3xl pl-7 pr-4 pt-10 md:px-32 ">
         7. CHANGES TO THIS POLICY
       </h2>
-      <p className="py-10 px-32 text-[1.2rem]">
+      <p className="pl-7 pr-7 md:py-10 md:px-32 text-[1.2rem]">
         SoarX reserves the right to change this Privacy Policy as we may deem
         necessary from time to time or as may be required by law. Any changes
         will be immediately posted on the Web Site and you are deemed to have
