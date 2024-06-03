@@ -10,7 +10,7 @@ const CertificateOfCompletion = () => {
         </p>
         <div className="h-full w-full lg:w-2/5">
           <Image
-            src="/images/DSACompletionCertificate.png"
+            src="/images/dsa_live_classes.png"
             alt="Certificate of Completion"
             width={600}
             height={400}

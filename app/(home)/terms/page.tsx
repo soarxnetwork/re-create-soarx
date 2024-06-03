@@ -8,16 +8,16 @@ export const metadata: Metadata = {
 
 function TermsPage() {
   return (
-    <div className="mt-[15%]">
-      <h1 className="w-full text-center font-bold ">
+    <div className="mt-40 mb-20">
+      <h1 className="w-full text-center font-bold text-[40px] md:text-3xl lg:text-5xl">
         TERMS AND CONDITIONS
       </h1>
 
-      <h2 className="font-bold  text-2xl px-32 pt-20">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         1. INTRODUCTION
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         1. SoarX provides online courses and conducts online classes, live demo,
         doubt clearing sessions for the students seeking to enrol for such
         courses (the &quot; Services&quot;), which Services are accessible at
@@ -42,11 +42,11 @@ function TermsPage() {
         binding between you and SoarX.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         2. DEFINITION
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         In Addition To Other Words And Expressions That May Be Defined Elsewhere
         In These Terms, Unless The Context Otherwise Requires, The Following
         Capitalized Terms Wherever Used In The Agreement Shall Have The Meanings
@@ -83,10 +83,10 @@ function TermsPage() {
         social media channels, including any Content licensed from a third
         party, but excluding Student Content.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         3. GDPR COMPLIANCE STATEMENT
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         SoarX Respects And Complies With The EU General Data Protection
         Regulations (GDPR). Some Of The Key Ways We Comply With These
         Regulations Are: <br /> <br /> 1. Consent : We explain what you’re
@@ -117,8 +117,8 @@ function TermsPage() {
         can open an account and help you enrol in courses that are appropriate
         for you.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">4. COMMUNITY</h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">4. COMMUNITY</h2>
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
             {" "}
@@ -137,21 +137,21 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         5. NO ENDORSEMENT
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         By Using The Website, You Accept That Any Legal Liability That You Seek
         To Obtain For Actions Of Other Members Or Other Third Parties Will Be
         Limited To A Claim Against The Particular Members Or Other Third Parties
         Who Caused You Harm. You Agree Not To Attempt To Impose Liability On Or
         Seek Any Legal Remedy From SoarX With Respect To Such Actions.
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         6. USER CONDUCT
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         1. You understand and agree that you are solely responsible for
         compliance with any and all laws, rules, regulations, and Tax
         obligations that may apply to your use of the Website. In connection
@@ -276,10 +276,10 @@ function TermsPage() {
         use of the Website, or to review or edit any Member Content, but has the
         right to do so for the purpose of operating and improving the Website.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         7. CHILD SAFETY POLICY
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         1. This policy is applicable to all persons and organizations associated
         with SoarX, referred to as SoarX’s Stakeholders, including:
         <ul className="list-disc ml-10">
@@ -321,11 +321,11 @@ function TermsPage() {
         instances. SoarX expects all its stakeholders falling within the scope
         of this policy to adhere to the following child safety code of conduct :
       </p>
-      <h2 className="font-bold text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         8. EXPECTED BEHAVIOUR AND ACTIONS{" "}
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>Listen To The Child</li>
           <li>
@@ -355,11 +355,11 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <h2 className="font-bold text-[#000000] text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         9. PROHIBITED BEHAVIOURS AND ACTIONS
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
             Do Not Develop Any Emotional, Online/Offline Physical Abuse Or
@@ -391,19 +391,19 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         10. CHILD SAFETY POLICY
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         If Anyone Is Acting Improperly And (I) Engages In Offensive or Sexually
         Improper Behaviour, Or (Ii) Engages In Misconduct, You Should Instantly
         Report It To Concerned Authorities And Then To SoarX By Contacting Us
         With Your Police Station And Report Number; Provided That Your Report
         Will Not Obligate Us To Take Any Action Beyond That Required By Law.
       </p>
-      <h2 className="font-bold  text-2xl px-32 "> 11. PRIVACY</h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10"> 11. PRIVACY</h2>
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         In Order To Provide You Services We Gather Your Personal Information. We
         Describe This Collection And Use Of Personal Information In Our Privacy
         Policy. Kindly Review This Policy. You Must Agree To The Processing Of
@@ -414,11 +414,11 @@ function TermsPage() {
         Policy . You Must Be 18 Years Or Older To Use This Service. You Yourself
         Are Responsible For Preventing Unauthorized Access To Your Account.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         12. INTELLECTUAL PROPERTY OWNERSHIP AND RIGHTS NOTICES
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         The Website Is Protected By Intellectual Property Rights Like Copyright,
         Trademark, And Other Laws Of India. You Acknowledge And Agree That The
         Website, Including All Associated Intellectual Property Rights, Are The
@@ -436,11 +436,11 @@ function TermsPage() {
         Policies That Apply To Your Use Of The Website, Including SoarX&apos;s
         Trademark & Branding Guidelines.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         13. ADDITIONAL TERMS
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         Our Site, Application And Services Have Different Products, Features And
         Offerings, So Sometimes Additional Terms Or Product Requirements May
         Apply To Your Use Of Those Products, Features Or Offerings. If
@@ -448,11 +448,11 @@ function TermsPage() {
         Use, Those Additional Terms Become Part Of These Terms.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         14. SOARX CONTENT AND MEMBER CONTENT LICENSE
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         Subject To Your Compliance With These Terms, SoarX Grants You A Limited,
         Non-Exclusive, Non-Transferable License, To (A) Access And View Any
         SoarX Content Solely For Your Personal And Non-Commercial Purposes And
@@ -461,11 +461,11 @@ function TermsPage() {
         No Right To Sublicense The License Rights Granted In This Section.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         {" "}
         15. HYPERLINKS
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         The Site, Application And Services May Contain Links To Third-Party
         Websites Or Resources. You Acknowledge And Agree That SoarX Is Not
         Responsible Or Liable For: (I) The Availability Or Accuracy Of Such
@@ -477,10 +477,10 @@ function TermsPage() {
         Any Such Websites.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         16. COPYRIGHT POLICY
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         SoarX Respects Copyright Law And Expects Its Users To Do The Same. It Is
         SoarX&apos;s Policy To Terminate In Appropriate Circumstances The SoarX
         Accounts Of Members Or Other Account Holders Who Repeatedly Infringe Or
@@ -488,11 +488,11 @@ function TermsPage() {
         Holders.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         17. TERM AND TERMINATION, SUSPENSION AND OTHER MEASURES
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         This Agreement shall be effective for till the time Members access or
         use the Website or by downloading or posting any content from or on the
         Website, through the Services Until such time when you or SoarX
@@ -515,9 +515,9 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold text-2xl px-32 ">18. SURVIVAL</h2>
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">18. SURVIVAL</h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         SoarX Respects Copyright Law And Expects Its Users To Do The Same. It Is
         SoarX&apos;s Policy To Terminate In Appropriate Circumstances The SoarX
         Accounts Of Members Or Other Account Holders Who Repeatedly Infringe Or
@@ -525,10 +525,10 @@ function TermsPage() {
         Holders.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         19. DISCLAIMERS
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
             If you choose to use the Website, you do so at your sole risk. You
@@ -575,10 +575,10 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         20. LIMITATION OF LIABILITY
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         You Acknowledge And Agree That, To The Maximum Extent Permitted By Law,
         The Entire Risk Arising Out Of Your Access To And Use Of The Website and
         Any Contact You Have With Other Users Of SoarX Whether In Person Or
@@ -587,10 +587,10 @@ function TermsPage() {
         Damages.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         21. INDEMNIFICATION
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         You Agree To Indemnify SoarX And Its Affiliates And Subsidiaries, And
         Their Officers, Directors, Employees And Agents, Harmless From And
         Against Any Claims, Liabilities, Damages, Losses, And Expenses,
@@ -604,7 +604,7 @@ function TermsPage() {
         22. ENTIRE AGREEMENT
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         Except As They May Be Supplemented By Additional SoarX Policies, These
         Terms Constitute The Entire Agreement Between SoarX And You Regarding
         The Website And These Terms Supersede And Replace Any And All Prior Oral
@@ -612,20 +612,20 @@ function TermsPage() {
         The Website.
       </p>
 
-      <h2 className="font-bold text-2xl px-32 ">23. NOTICES</h2>
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">23. NOTICES</h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         Any Notices Or Other Communications Permitted Or Required Hereunder,
         Including Those Regarding Modifications To These Terms, Will Be In
         Writing And Given By SoarX (I) Via Email Or (Ii) By Posting To The
         Website. For Notices Made By E-Mail, The Date Of Receipt Will Be Deemed
         The Date On Which Such Notice Is Transmitted.
       </p>
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         24. GOVERNING LAW AND JURISDICTION
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
             These Terms and your use of the Services will be interpreted in
@@ -662,10 +662,10 @@ function TermsPage() {
         </ul>
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         25. NO WAIVER
       </h2>
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         The Failure Of SoarX To Enforce Any Right Or Provision Of These Terms
         Will Not Constitute A Waiver Of Future Enforcement Of That Right Or
         Provision. The Waiver Of Any Such Right Or Provision Will Be Effective
@@ -679,11 +679,11 @@ function TermsPage() {
         Will Remain In Full Force And Effect.
       </p>
 
-      <h2 className="font-bold  text-2xl px-32 ">
+      <h2 className="font-bold  text-[25px] md:px-32 pl-7 pr-7 pt-10">
         26. MISCELLANEOUS
       </h2>
 
-      <p className="px-32 py-10 text-[1.2rem]">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]">
         <ul className="list-disc ml-10">
           <li>
             SoarX shall have no liability of any nature, whether in contract, or
@@ -727,7 +727,7 @@ function TermsPage() {
           </li>
         </ul>
       </p>
-      <p className="px-32 py-10 text-[1.2rem]  font-bold">
+      <p className="md:px-32 md:py-10 pl-7 pr-7 text-[1.2rem]  font-bold">
         {" "}
         YOU HAVE READ THESE TERMS OF USE AND AGREE TO ALL OF THE PROVISIONS
         CONTAINED ABOVE.

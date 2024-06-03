@@ -59,7 +59,7 @@ const InitiativesDropdown = () => {
                   alt="DSA_Course"
                   width={23}
                   height={23}
-                  className="h py-0.5 "
+                  className=""
                 />
                 <span className="text-2xl">Campus Ambassadar Program</span>
               </p>
