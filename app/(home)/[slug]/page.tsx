@@ -14,6 +14,7 @@ import { Event } from "@prisma/client";
 import { registEventById } from "@/actions/registration";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function Page({ params }: { params: { slug: string } }) {
   const [event, setEvent] = useState<any>(null);
@@ -127,7 +128,7 @@ function Page({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className="mt-36">
-          <div className="flex xl:pl-28 flex-col items-center">
+          <div className="flex xl:pl-40 flex-col items-center xl:pr-16">
            <div className="flex flex-col xl:flex-row xl:p-7 gap-x-10 justify-center">
            <div className="flex flex-col justify-center items-center">
               <Image
@@ -152,7 +153,7 @@ function Page({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             </div>
-            <div className="pl-8 sm:pr-4">
+            <div className="pl-8 sm:pr-4 xl:pr-10">
               <h1 className="text-3xl font-medium sm:text-[2.4rem] xl:leading-normal">
                 {event?.title}
               </h1>
@@ -213,12 +214,12 @@ function Page({ params }: { params: { slug: string } }) {
                     <>{event?.venue}</>
                   )}
                 </a>
-                <a className="flex items-center ml-10 cursor-pointer">
+                <Link href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX" className="flex items-center ml-10 cursor-pointer">
                   <div className="border-[1px] border-[#b0aeae] p-[12px] rounded-lg mr-4">
                     <FaWhatsapp />
                   </div>{" "}
                   WhatsApp
-                </a>
+                </Link>
               </div>
               <div className="sm:mt-[5%] pt-4 sm:pt-0 min-h-fit pb-10">
                 {/* <div className="rounded-t-md h-[40px] bg-[#F4F2FB] font-semibold text-[#8919E4] text-[18px] lg:flex lg:items-center pl-4 hidden">
