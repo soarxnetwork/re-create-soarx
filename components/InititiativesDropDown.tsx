@@ -31,7 +31,7 @@ const InitiativesDropdown = () => {
       </button>
       {isOpen && (
         <ul className="absolute bg-[#570a95] dark:bg-gray-900 rounded-lg shadow-lg mt-2">
-          <li>
+          {/* <li>
             <Link
               href="/dsa-live-classes"
               className="block px-4 py-2 md:hover:text-primaryPurple hover:text-white rounded-t-lg"
@@ -64,7 +64,7 @@ const InitiativesDropdown = () => {
                 <span className="text-2xl">Campus Ambassadar Program</span>
               </p>
             </Link>
-          </li>
+          </li> */}
 
           <li>
             <Link

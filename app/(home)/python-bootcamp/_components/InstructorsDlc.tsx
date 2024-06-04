@@ -63,7 +63,7 @@ const InstructorsDlc = () => {
             </button> */}
           </div>
         </div>
-        <div className="flex justify-center text-4xl sm:text-5xl md:text-6xl font-bold mt-2 mb-20">Our Instructors</div>
+        <div className="flex justify-center text-4xl sm:text-5xl md:text-6xl font-bold mt-2 lg:mb-20 sm:mb-5">Our Instructors</div>
         <InstructorDLc
           onDragStart={onDragStart}
           onDragEnd={onDragEnd}

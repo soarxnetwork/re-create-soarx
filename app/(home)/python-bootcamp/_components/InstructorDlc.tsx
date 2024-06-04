@@ -76,8 +76,8 @@ const InstructorDLc = ({
                   />
                 ))} */}
                 </div>
-                <div className="flex flex-col lg:flex-row h-full items-center gap-x-4">
-                  <div className="lg:w-1/2 w-full lg:h-full h-1/2 flex">
+                <div className="flex  flex-col lg:flex-row h-full items-center  gap-x-8">
+                  <div className="lg:w-1/2  pt-8 pb-12 pl-4 pr-4 w-full md:pl-[5%] md:pr-[5%] lg:pl-0 lg:pr-0 lg:h-full h-1/2 flex">
                     <Image
                       src={instructor.image}
                       alt="Instructor"
@@ -87,7 +87,7 @@ const InstructorDLc = ({
                       quality={100}
                     />
                   </div>
-                  <div className="space-y-4 mt-6 sm:mt-12 lg:w-1/2 w-full pl-5 pr-5 sm:pl-0 sm:pr-0 h-1/2 sm:h-full flex flex-col justify-center">
+                  <div className="space-y-4 lg:mt-12 lg:w-1/2 w-full pl-5 pr-5 sm:pl-0 sm:pr-0 h-1/2 sm:h-full flex flex-col justify-center">
                     <p className="text-[#7043E3] sm:mt-2 mt-4 text-base font-semibold border-2 w-fit p-2 border-gray-500 dark:border-2 dark:border-gray-200 border-opacity-20 dark:border-opacity-30">
                       About The Instructor
                     </p>

@@ -10,7 +10,7 @@ import { truncateWord } from "@/utils/truncateWord";
 import Image from "next/image";
 
 const dsa = [
-  {
+  /*{
     name: "DSA Live Classes",
     desc: "Master DSA: Join Live Classes Now!",
     code: "/dsa-live-classes",
@@ -21,7 +21,7 @@ const dsa = [
     desc: "Campus Leaders: Join as an Ambassador!",
     code: "/campus-ambassador",
     image: "/images/announcer.png",
-  },
+  },*/
   {
     name: "Python Bootcamp 2.0",
     desc: "Master Python: Join Live Classes!",
