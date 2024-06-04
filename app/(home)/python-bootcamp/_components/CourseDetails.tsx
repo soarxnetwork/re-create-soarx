@@ -39,7 +39,7 @@ export const pythonCourseDetails = [
   },
   {
     icon: <ImFileText2 />,
-    description: "Class Schedule - 1 hour/day Day (1 - 3), 2 hours/day Day (4 - 5)",
+    description: "Class Schedule - 1 hour/day (1 - 3), 2 hours/day (4 - 5)",
   },
   {
     icon: <ImFeed />,
