@@ -30,7 +30,7 @@ export const pythonCourseDetails = [
   },
   {
     icon: <LuArrowUp01 />,
-    description: "Class Schedule - 1 hour/day for the first 3 days, 2 hours/day for the last 2 days",
+    description: "Programming Languages - Python",
   },
 
   {
@@ -39,7 +39,7 @@ export const pythonCourseDetails = [
   },
   {
     icon: <ImFileText2 />,
-    description: "Programming Languages - Python",
+    description: "Class Schedule - 1 hour/day Day (1 - 3), 2 hours/day Day (4 - 5)",
   },
   {
     icon: <ImFeed />,

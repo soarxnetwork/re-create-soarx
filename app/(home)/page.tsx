@@ -10,6 +10,7 @@ import Discord from "./_components/Discord";
 import NumbersThatMatter from "./_components/NumbersThatMatter";
 import { sendMail } from "@/lib/mail";
 import { getServerSession } from "next-auth";
+import  HomePythonBootCamp  from "@/components/Bootcamps/HomePythonBootCamp";
 const HomePage = async () => {
   const events = await getAllEvents();
 
@@ -17,7 +18,8 @@ const HomePage = async () => {
     <section>
       <HomeSlider />
       <OurAim />
-      <Events events={events!} />
+      {/* <Events events={events!} /> */}
+      <HomePythonBootCamp/>
       <Partners />
       <PressClippings />
       <Testimonial />

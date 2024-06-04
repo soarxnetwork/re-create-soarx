@@ -10,6 +10,7 @@ const ButtonAuth = () => {
   const [isOpen, setIsOpen] = useState(false);
   // console.log(session);
   return (
+    <>
     <div className="relative w-full">
       {session?.user ? (
         <div>
@@ -77,6 +78,7 @@ const ButtonAuth = () => {
         </>
       )}
     </div>
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ import HeaderDropdown from "./HeaderDropdown";
 import ButtonAuth from "./ButtonAuth";
 import ThemeSwitcher from "./DarkThemes";
 import InitiativesDropdown from "./InititiativesDropDown";
+import Pythonbootcamp from "./Bootcamps/pythonbootcamp";
 
 const Header = ({ admin }: User) => {
   const router = useRouter();
@@ -53,17 +54,19 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              <li
-                className={
-                  pathname.includes("/events")
-                    ? "bg-[#9241d40d] rounded-lg"
-                    : "rounded-lg"
-                }
-              >
-                <Link className="hover:text-primaryPurple p-2" href="/events">
-                  Events
-                </Link>
-              </li>
+              {admin && admin != Admin.User && (
+                <li
+                  className={
+                    pathname.includes("/events")
+                      ? "bg-[#9241d40d] rounded-lg"
+                      : "rounded-lg"
+                  }
+                >
+                  <Link className="hover:text-primaryPurple p-2" href="/events">
+                    Events
+                  </Link>
+                </li>
+              )}
 
               <HeaderDropdown />
 
@@ -86,7 +89,8 @@ const Header = ({ admin }: User) => {
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
             <span className="hidden md:inline">
-              <ButtonAuth />
+              {/* <ButtonAuth /> */}
+              <Pythonbootcamp/>
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -114,26 +118,28 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              <li
-                className={
-                  pathname.includes("/events")
-                    ? "bg-[#9241d40d] rounded-lg"
-                    : "rounded-lg"
-                }
-              >
-                <Link
-                  className="md:hover:text-primaryPurple hover:text-white p-2"
-                  href="/events"
+              {admin && admin != Admin.User && (
+                <li
+                  className={
+                    pathname.includes("/events")
+                      ? "bg-[#9241d40d] rounded-lg"
+                      : "rounded-lg"
+                  }
                 >
-                  Events
-                </Link>
-              </li>
+                  <Link
+                    className="md:hover:text-primaryPurple hover:text-white p-2"
+                    href="/events"
+                  >
+                    Events
+                  </Link>
+                </li>
+              )}
 
-             <p>
-             <span>
-             <InitiativesDropdown/>
-             </span>
-             </p>
+              <p>
+                <span>
+                  <InitiativesDropdown />
+                </span>
+              </p>
 
               {admin && admin !== Admin.User && (
                 <li
@@ -143,13 +149,17 @@ const Header = ({ admin }: User) => {
                       : "rounded-lg"
                   }
                 >
-                  <Link className="md:hover:text-primaryPurple hover:text-white p-2" href="/admin">
+                  <Link
+                    className="md:hover:text-primaryPurple hover:text-white p-2"
+                    href="/admin"
+                  >
                     Admin
                   </Link>
                 </li>
               )}
               <li>
-                <ButtonAuth />
+                {/* <ButtonAuth /> */}
+                <Pythonbootcamp/>
               </li>
             </ul>
           </div>

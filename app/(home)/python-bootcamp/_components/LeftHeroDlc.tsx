@@ -26,13 +26,13 @@ const LeftHeroDlc = () => {
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-3xl lg:text-5xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold  2xl:mr-28">
-            🚀 
-            {"Welcome to the Python BootCamp Cohort 2.0!".split("").map((child, idx) => (
+            <h3 className="text-[25px] lg:text-5xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold  2xl:mr-28">
+            
+            {"5-Day Python Bootcamp".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
             </span>
-          ))}🐍
+          ))}
             </h3>
           </div>
         </div>
@@ -75,7 +75,7 @@ const LeftHeroDlc = () => {
                   </div>
                 ))}
               </div>
-              <Link href="https://pages.razorpay.com/dsa-soarx">
+              <Link href="https://pages.razorpay.com/python-pinnacle">
                 <button className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl">
                   Enroll Now
                 </button>
