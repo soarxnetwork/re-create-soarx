@@ -34,6 +34,14 @@ const LeftHeroDlc = () => {
             </span>
           ))}
             </h3>
+            <h3 className="text-[18px] lg:text-4xl text-wrap leading-normal sm:text-[25px] font-semibold 2xl:mr-28">
+            
+            {"(From Basics to Advanced)".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
+            </h3>
           </div>
         </div>
 

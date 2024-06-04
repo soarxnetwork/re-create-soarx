@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const HomeSlider = () => {
   return (
-    <section className="sm:my-28 px-[11%]">
+    <section className="sm:my-12 px-[11%]">
       <div className=" items-center gap-5 justify-between">
         <div className="xl:flex gap-16 items-center grid xl:grid-cols-2  grid-cols-1 grid-rows-2">
           <div className="sm:mt-10 mt-20">

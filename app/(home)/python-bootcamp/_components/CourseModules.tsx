@@ -73,7 +73,7 @@ const CourseModules = () => {
                       transition: { duration: 0.3 },
                     }}
                   >
-                    <p>{topic.name}</p>
+                    <p className="h leading-loose">{topic.name}</p>
                     {/* <p className="font-light text-white/50">{topic.duration}</p> */}
                   </motion.div>
                 ))}

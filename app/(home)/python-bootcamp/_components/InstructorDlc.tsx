@@ -87,7 +87,7 @@ const InstructorDLc = ({
                       quality={100}
                     />
                   </div>
-                  <div className="space-y-4 lg:mt-12 lg:w-1/2 w-full pl-5 pr-5 sm:pl-0 sm:pr-0 h-1/2 sm:h-full flex flex-col justify-center">
+                  <div className="space-y-4 lg:w-1/2 w-full pl-5 pr-5 sm:pl-0 sm:pr-0 h-1/2 sm:h-full flex flex-col justify-center">
                     <p className="text-[#7043E3] sm:mt-2 mt-4 text-base font-semibold border-2 w-fit p-2 border-gray-500 dark:border-2 dark:border-gray-200 border-opacity-20 dark:border-opacity-30">
                       About The Instructor
                     </p>

@@ -48,7 +48,7 @@ const FaqItem = ({ question, answer, id }: FaqItemProps) => {
                 transition: { duration: 0.3 },
               }}
             >
-              <p className="dark:text-white/70 text-black/50 text-sm sm:text-base font-semibold md:pl-6 pl-1 pb-6 pr-1">{answer}</p>
+              <p className="dark:text-white/70 text-black/50 text-sm sm:text-base font-semibold pl-4 pb-4 pr-6 gap-x-4 md:pl-8 md:pb-8">{answer}</p>
             </motion.div>
           )}
         </AnimatePresence>

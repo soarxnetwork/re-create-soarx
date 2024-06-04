@@ -79,7 +79,7 @@ const InitiativesDropdown = () => {
                   height={23}
                   className="h py-0.5 "
                 />
-                <span className="text-2xl">Python Bootcamp 2.0</span>
+                <span className="text-2xl">5-Day Python Bootcamp</span>
               </p>
             </Link>
           </li>
