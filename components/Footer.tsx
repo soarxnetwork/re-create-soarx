@@ -177,7 +177,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="pb-6 w-full border-hr md:mt-16"></div>
-          <div className="flex-row pb-6 pt-7 flex justify-between items-center max-[991px]:items-center max-[767px]:flex-col max-[767px]:items-start max-[479px]:flex-col-reverse">
+          <div className="flex-row pb-6 pt-7 flex justify-between items-center max-[991px]:items-center max-[767px]:flex-col text-center max-[767px]:items-start max-[479px]:flex-col-reverse">
             <div className="font-semibold  ease-in-out transition-all duration-300 max-[991px]: max-[479px]:mb-4 max-[991px]:py-1 text-center sm:text-center">
               <Link href= {'/privacy'} className="inline-block font-normal dark:hover:text-black   transition hover:text-slate-500 hover:ease-in-out duration-200 sm:pr-6 lg:pr-12 py-1.5 sm:py-2 pr-6">
             

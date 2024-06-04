@@ -3,7 +3,7 @@ import React from "react";
 import { FaDiscord } from "react-icons/fa";
 const Discord = () => {
   return (
-    <section className=" px-[11%] my-[10%]">
+    <section className=" px-[11%] my-[10%] xl:my-14">
       <div className="custom-container">
         <div className="">
           <div className=" text-center ">
