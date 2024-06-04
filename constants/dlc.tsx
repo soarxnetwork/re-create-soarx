@@ -193,7 +193,7 @@ export const faqDlc = [
   {
     question: "Is there a course schedule?",
     answer:
-      "Yes, each live class will be held on alternate days, totaling three days per week, with additional doubt clarification and bonus sessions on weekends.",
+      "Yes! Our Python Bootcamp offers a well-defined schedule, ensuring you gain maximum knowledge over 5 days. Each day focuses on a core concept.",
     id: "11",
   },
   {
@@ -212,7 +212,7 @@ export const faqDlc = [
   {
     question:
       "I paid but still did not receive any welcome email or unable to access my course. What should I do ?",
-    answer: "Please email us at soarxnetwork@gmail.com, and we will assist you promptly.",
+    answer: "Please email us at team@soarx.tech, and we will assist you promptly.",
     id: "15",
   },
 ];

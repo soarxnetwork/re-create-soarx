@@ -22,28 +22,61 @@ import { FaGithub } from "react-icons/fa";
 export const pythonCourseDetails = [
   {
     icon: <BsCameraReels />,
-    description: "Start Date - 19 June 2024",
+   Description : {
+    question:  "Start Date",
+    answer: "19 June 2024"
+   }
   },
   {
     icon: <LuAirplay />,
-    description: "Duration ~ 5 Days",
+    Description : {
+      question:  "Duration",
+      answer: "5 Days"
+     }
   },
   {
+    icon: <ImEmbed2 />,
+    Description : {
+      question:  "Class Timings (Weekdays)",
+      answer: "9 to 10 PM IST"
+     }
+  },
+  {
+    icon: <ImEmbed2 />,
+    Description : {
+      question:  "Class Timings (Weekend)",
+      answer: "3 to 5 PM IST"
+     }
+  },
+
+  {
     icon: <LuArrowUp01 />,
-    description: "Programming Languages - Python",
+    Description : {
+      question:  "Programming Languages",
+      answer: "Python"
+     }
   },
 
   {
     icon: <PiNumberTwoBold />,
-    description: "Recordings available? - Yes, lifetime availability",
+    Description : {
+      question:  "Recordings available ?",
+      answer: "Yes, lifetime availability"
+     }
   },
   {
     icon: <ImFileText2 />,
-    description: "Class Schedule - 1 hour/day (1 - 3), 2 hours/day (4 - 5)",
+    Description : {
+      question:  "Class Schedule",
+      answer: "1 hour/day (1 - 3), 2 hours/day (4 - 5)"
+     }
   },
   {
     icon: <ImFeed />,
-    description: "Language of Communication - Hinglish(Hindi + English)",
+    Description : {
+      question:  "Language of Communication",
+      answer: "Hinglish(Hindi + English)"
+     }
   },
 ]
 

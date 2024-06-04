@@ -23,7 +23,7 @@ const dsa = [
     image: "/images/announcer.png",
   },*/
   {
-    name: "Python Bootcamp 2.0",
+    name: "5-Day Python Bootcamp",
     desc: "Master Python: Join Live Classes!",
     code: "/python-bootcamp",
     image: "/images/online-learning.png",
