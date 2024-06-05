@@ -53,10 +53,10 @@ const LeftHeroDlc = () => {
               {...floatingHeroMotionProps}
             >
               <Image
-                src="/images/5_Day_Python_Bootcamp.png"
+                src="/images/python_bootcamp.png"
                 alt="Python BootCamp"
-                width={500}
-                height={500}
+                width={600}
+                height={600}
                 quality={100}
                 className=" rounded-xl mx-auto"
                 style={{
