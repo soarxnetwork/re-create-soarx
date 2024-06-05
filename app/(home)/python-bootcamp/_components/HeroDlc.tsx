@@ -6,7 +6,7 @@ const HeroDlc = () => {
   return (
     <div>
       <div className="container space-y-12 2xl:ml-10">
-        <div className="space-y-6 sm:pl-10 sm:pr-5 2xl:pr-40 lg:pl-24 lg:pr-20">
+        <div className="space-y-6 sm:pl-10  lg:mr-20 2xl:mr-0 sm:pr-5 2xl:pr-40 lg:pl-24 lg:pr-20">
           <h4 className="font-semibold text-3xl pt-6">About Course</h4>
           <p>
           Our 5-Day Python Bootcamp is designed to provide an{" "}

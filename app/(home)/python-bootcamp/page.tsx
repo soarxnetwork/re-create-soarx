@@ -12,7 +12,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "5-Day Python Bootcamp by SoarX",
   description: "Our 5-Day Python Bootcamp is designed to provide an immersive learning experience in Python programming. Led by industry experts Mohit Manuja, Software Engineer at Google, and Rajat Kumar, Software Engineer at Intuit, this bootcamp will help you learn Python from scratch and build a strong foundation in programming.",
-  icons: '/images/icon.png',
+  // icons: '/images/icon.png',
   keywords: ["Python", "Course", "DSA", "Bootcamp", "Maang", "programming"],
   openGraph: {
     images: "/images/python_bootcamp.png"
