@@ -20,12 +20,13 @@ export function ThreeDCardDemo() {
           translateZ="60"
           className="text-neutral-500 text-sm max-w-sm mt-2 pt-3 pb-3 dark:text-neutral-300"
         >
-          industry experts Mohit Manuja, Software Engineer at Google, and Rajat
-          Kumar, Software Engineer at Intuit
+          This program aims to equip participants with essential Python skills,
+          problem-solving techniques and a strong foundation in algorithms and
+          data structures.
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
-            src="/images/5_Day_Python_Bootcamp.png"
+            src="/images/python_bootcamp.png"
             height="500"
             width="500"
             className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -43,7 +44,7 @@ export function ThreeDCardDemo() {
             Try now →
           </CardItem> */}
           <CardItem translateZ={20} as="button" className="signInbut">
-            <Link href="/python-bootcamp">Join Now</Link>
+            <Link href="/python-bootcamp">Enroll now</Link>
           </CardItem>
         </div>
       </CardBody>
