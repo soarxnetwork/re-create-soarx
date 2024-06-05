@@ -104,8 +104,8 @@ const Header = ({ admin }: User) => {
         </nav>
 
         {showNavbar && (
-          <div className="md:hidden ease-in-out delay-200  bg-[#9335e0] dark:bg-gray-800 rounded-lg p-4 mt-2">
-            <ul className="flex flex-col space-y-4 text-2xl text-white  font-medium">
+          <div className="md:hidden ease-in-out delay-200 shadow-2xl bg-white dark:bg-gray-800 rounded-lg p-4 mt-2">
+            <ul className="flex flex-col space-y-4 text-2xl text-black dark:text-white  font-medium">
               <li
                 className={
                   pathname === "/" ? "bg-[#9241d40d] rounded-lg" : "rounded-lg"

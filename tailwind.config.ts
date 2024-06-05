@@ -23,6 +23,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        custom: "rgb(144, 0, 255)",
         primary: "#0061FF",
         textColor: "#545759",
         dsaPrimary: "#6674CC",

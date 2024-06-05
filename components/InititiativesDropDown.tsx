@@ -13,7 +13,7 @@ const InitiativesDropdown = () => {
   };
 
   return (
-    <div className="relative w-full z-50 text-white">
+    <div className="relative w-full z-50 dark:text-white">
       <button
         onClick={toggleDropdown}
         onMouseEnter={() => setHovered(true)}
@@ -29,8 +29,9 @@ const InitiativesDropdown = () => {
           />
         </p>
       </button>
+      {/* bg-[#570a95] */}
       {isOpen && (
-        <ul className="absolute bg-[#570a95] dark:bg-gray-900 rounded-lg shadow-lg mt-2">
+        <ul className="absolute bg-custom rounded-lg shadow-lg mt-2">
           {/* <li>
             <Link
               href="/dsa-live-classes"
