@@ -18,15 +18,15 @@ const LeftHeroDlc = () => {
 
   return (
     <>
-      <div className="lg:grid lg:grid-cols-3 myfonts space-y-12 pl-7 md:pl-28 md:pr-28 sm:pl-16 sm:pr-16 pr-7">
-        <div className="break-words space-y-6 col-span-2 container-hero-dlc">
+      <div className="lg:grid lg:grid-cols-3 myfonts space-y-12 pl-7 md:pl-20 md:pr-28 sm:pl-16 sm:pr-16 pr-7">
+        <div className="break-words  2xl:ml-7 lg:mr-40 space-y-6 col-span-2">
           <div className="flex flex-col gap-y-3">
-            <p className="tex text-lg dark:text-white border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
+            <p className="text-lg dark:text-white border-black border-2 w-fit pl-2 pr-2 border-opacity-20 text-red-800 font-medium rounded-sm">
               LIVE
             </p>
           </div>
           <div className="space-y-4">
-            <h3 className="text-[25px] lg:text-5xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold  2xl:mr-28">
+            <h3 className="text-[25px] lg:text-4xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold 2xl:text-5xl">
             
             {"5-Day Python Bootcamp".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
@@ -34,7 +34,7 @@ const LeftHeroDlc = () => {
             </span>
           ))}
             </h3>
-            <h3 className="text-[18px] lg:text-4xl text-wrap leading-normal sm:text-[25px] font-semibold 2xl:mr-28">
+            <h3 className="text-[18px] lg:text-3xl text-wrap leading-normal sm:text-[25px] font-semibold 2xl:mr-28 2xl:text-4xl">
             
             {"(From Basics to Advanced)".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
