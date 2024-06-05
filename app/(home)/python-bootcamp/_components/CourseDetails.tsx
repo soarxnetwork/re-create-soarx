@@ -68,7 +68,7 @@ export const pythonCourseDetails = [
     icon: <ImFileText2 />,
     Description : {
       question:  "Class Schedule",
-      answer: "1 hour/day (1 - 3), 2 hours/day (4 - 5)"
+      answer: "1 hrs (Day 1-3), 2 hrs (Day 4-5)"
      }
   },
   {
