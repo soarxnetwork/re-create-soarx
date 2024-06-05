@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="p-4 space-y-8 text-base sm:ml-3 sm:mr-3 lg:ml-20 md:ml-7 md:mr-7 lg:mr-16 2xl:mr-40"
+      className="sm:p-4 space-y-8 text-base sm:ml-3 sm:mr-3 lg:ml-20 md:ml-7 md:mr-7 lg:mr-16 2xl:mr-40"
       ref={ref}
     >
       {PythonDailyClassRoutines.map((course) => (
