@@ -70,7 +70,7 @@ const InitiativesDropdown = () => {
           <li>
             <Link
               href="/python-bootcamp"
-              className="block px-4 py-2 md:hover:text-primaryPurple hover:text-white"
+              className="block px-4 py-2 md:hover:text-primaryPurple"
             >
               <p className="flex gap-x-3 text-2xl">
                 <Image
