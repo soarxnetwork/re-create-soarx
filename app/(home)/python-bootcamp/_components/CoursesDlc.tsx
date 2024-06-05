@@ -27,7 +27,7 @@ const CoursesDlc = () => {
           Basic Course Details
         </div>
         <div
-          className="2xl:mr-40 md:ml-7 md:mr-7 lg:mr-32 sm:ml-5 sm:mr-4 lg:ml-24 rounded-xl grid sm:grid-cols-2   gap-4 text-sm "
+          className="2xl:mr-40 grid sm:grid-cols-2 grid-cols-1 sm:ml-5 sm:mr-4 lg:ml-24 lg:mr-24 gap-4 text-sm"
           ref={ref}
         >
           <CourseDlc courseDetails={pythonCourseDetails} />
