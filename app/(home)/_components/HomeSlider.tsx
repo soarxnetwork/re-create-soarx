@@ -40,7 +40,7 @@ const HomeSlider = () => {
             </p>
             <button className=" signInbut mt-10" ><Link href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf" className="text-xl">Join Us</Link></button>
           </div>
-          <div className="w-full flex items-center jusitfy-center mt-7 relative "> 
+          <div className="w-full flex items-center jusitfy-center mt-[8.5%] relative "> 
           <Swiper
             spaceBetween={15}
             slidesPerView={3}
