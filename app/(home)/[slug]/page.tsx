@@ -35,7 +35,7 @@ function Page({ params }: { params: { slug: string } }) {
   async function RegisterUser() {
     if (!session) {
       router.push('/sign-in');
-      // alert("Please login to register for and event!");
+      
     } else if (
       !session.user.id ||
       !session.user.email ||
@@ -53,7 +53,7 @@ function Page({ params }: { params: { slug: string } }) {
     ) {
       console.log(session.user);
       router.push('/profile');
-      // alert("Please Complete your profile to register for the event!");
+     
     } else {
       const res = await registEventById(event.id, session.user.id);
       res?.error ? toast.error(res.message) : toast.success(res?.message);
