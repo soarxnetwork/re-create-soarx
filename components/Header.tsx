@@ -54,7 +54,7 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              {admin && admin != Admin.User && (
+              
                 <li
                   className={
                     pathname.includes("/events")
@@ -66,8 +66,7 @@ const Header = ({ admin }: User) => {
                     Events
                   </Link>
                 </li>
-              )}
-
+              
               <HeaderDropdown />
 
               {admin && admin !== Admin.User && (
@@ -89,8 +88,7 @@ const Header = ({ admin }: User) => {
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
             <span className="hidden md:inline">
-              {/* <ButtonAuth /> */}
-              <Pythonbootcamp/>
+           <ButtonAuth/>
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -118,7 +116,7 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              {admin && admin != Admin.User && (
+              
                 <li
                   className={
                     pathname.includes("/events")
@@ -133,7 +131,7 @@ const Header = ({ admin }: User) => {
                     Events
                   </Link>
                 </li>
-              )}
+              
 
               <p>
                 <span>
@@ -157,10 +155,12 @@ const Header = ({ admin }: User) => {
                   </Link>
                 </li>
               )}
-              <li>
-                {/* <ButtonAuth /> */}
-                <Pythonbootcamp/>
-              </li>
+             
+                <li>
+                  <ButtonAuth /> 
+                </li>
+              
+              
             </ul>
           </div>
         )}
