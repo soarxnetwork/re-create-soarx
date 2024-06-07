@@ -81,78 +81,95 @@ function Gallery() {
   }, [images, displayImages]);
 
   return (
+
+    <section>
+        <div className="text-center text-[#7300d0] dark:text-[#9f32f8] cursor-pointer">
+          {"Wings of Inspiration".split("").map((child, idx) => (
+            <span className={"hoverText text-[10px] sm:text-[30px] lg:text-[40px]"} key={idx}>
+              {child}
+            </span>
+          ))}
+        </div>
+        <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
+        {"Soarx Gallery".split("").map((child, idx) => (
+            <span className={"hoverText"} key={idx}>
+              {child}
+            </span>
+          ))}
+        </h2>{" "}
     <div className='mx-[10%] flex items-center justify-center'>
       <div className="inline-block">
         {displayImages.slice(0, 3).map((image, index) => (
-          <div key={index} className='flip-animation mx-2'>
+          <div key={index} className='flip-animation mx-2 my-4 '>
             <Image
-            layout='responsive'
+            
               width={200}
               height={300}
               alt='abc'
               src={image}
-              className='min-h-[280px] max-w-[180px] rounded-2xl my-4 mx-2 flippable-image'
+              className=' rounded-2xl  flippable-image'
             />
           </div>
         ))}
       </div>
       <div className="inline-block">
         {displayImages.slice(3, 5).map((image, index) => (
-          <div key={index} className='flip-animation mx-2 hidden sm:block '>
+          <div key={index} className='flip-animation mx-2 hidden sm:block my-4 '>
             <Image
-            layout='responsive'
+            
               width={200}
               height={300}
               alt='abc'
               src={image}
-              className='min-h-[280px] max-w-[180px] rounded-2xl my-4 mx-2 flippable-image'
+              className=' rounded-2xl   flippable-image'
             />
           </div>
         ))}
       </div>
       <div className="inline-block">
         {displayImages.slice(5, 8).map((image, index) => (
-          <div key={index} className='flip-animation mx-2 hidden sm:block '>
+          <div key={index} className='flip-animation mx-2 hidden sm:block my-4'>
             <Image
-            layout='responsive'
+            
               width={200}
               height={300}
               alt='abc'
               src={image}
-              className='min-h-[280px] max-w-[180px] rounded-2xl my-4 mx-2 flippable-image'
+              className=' rounded-2xl   flippable-image'
             />
           </div>
         ))}
       </div>
       <div className="inline-block">
         {displayImages.slice(8, 10).map((image, index) => (
-          <div key={index} className='flip-animation mx-2'>
+          <div key={index} className='flip-animation mx-2 my-4'>
             <Image
-            layout='responsive'
+            
               width={200}
               height={300}
               alt='abc'
               src={image}
-              className='min-h-[280px] max-w-[180px] rounded-2xl my-4 mx-2 flippable-image'
+              className=' rounded-2xl   flippable-image'
             />
           </div>
         ))}
       </div>
       <div className="inline-block">
         {displayImages.slice(10, 13).map((image, index) => (
-          <div key={index} className='flip-animation mx-2'>
+          <div key={index} className='flip-animation mx-2 my-4'>
             <Image
-            layout='responsive'
+            
               width={200}
               height={300}
               alt='abc'
               src={image}
-              className='min-h-[280px] max-w-[180px] rounded-2xl my-4 mx-2 flippable-image'
+              className=' rounded-2xl   flippable-image'
             />
           </div>
         ))}
       </div>
     </div>
+    </section>
   );
 }
 

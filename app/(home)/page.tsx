@@ -4,7 +4,6 @@ import OurAim from "./_components/OurAim";
 import { getAllEvents } from "@/services/events";
 import Events from "./_components/Events";
 import Partners from "./_components/Partner";
-import PressClippings from "./_components/PressClippings";
 import Testimonial from "./_components/Testimonial";
 import Discord from "./_components/Discord";
 import NumbersThatMatter from "./_components/NumbersThatMatter";
@@ -19,10 +18,10 @@ const HomePage = async () => {
     <section>
       <HomeSlider />
       <OurAim />
-      {/* <Events events={events!} /> */}
+      <Events events={events!} />
       <HomePythonBootCamp/>
       <Partners />
-      <PressClippings />
+      
       <Gallery/>
       <Testimonial />
       <NumbersThatMatter />

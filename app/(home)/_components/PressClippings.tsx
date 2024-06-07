@@ -109,24 +109,7 @@ const PressClippings = () => {
             </span>
           ))}
         </h2>{" "}
-        {/* <div className="gallery">
-          {displayedImages.map((image, index) => (
-            <div
-              key={index}
-              style={{
-                backgroundImage: `url(${image}) `,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                height: "300px",
-              }}
-              className={`image-container aim-box ${
-                index === 1 || index === 3 ? "top-margin" : ""
-              } ${index === 4 || index === 6 ? "bottom-margin" : ""}`}
-              onClick={() => openImagePopup(image)}
-            ></div>
-          ))}
-        </div> */}
+        
         <div className=" ">
           <ul id="hexGrid">
             {displayedImages.map((image, index) => (
