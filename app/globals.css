@@ -1886,3 +1886,16 @@ input {
 .animate-moveDown {
   animation: moveDown 200ms forwards;
 }
+
+
+.flip-animation {
+  perspective: 1000px;
+}
+
+.flippable-image  {
+  transition: transform 0.5s ease;
+}
+
+.flippable-image.flipped {
+  transform: rotateY(180deg);
+}

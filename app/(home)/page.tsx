@@ -11,6 +11,7 @@ import NumbersThatMatter from "./_components/NumbersThatMatter";
 import { sendMail } from "@/lib/mail";
 import { getServerSession } from "next-auth";
 import  HomePythonBootCamp  from "@/components/Bootcamps/HomePythonBootCamp";
+import Gallery from "./_components/Gallery";
 const HomePage = async () => {
   const events = await getAllEvents();
 
@@ -22,6 +23,7 @@ const HomePage = async () => {
       <HomePythonBootCamp/>
       <Partners />
       <PressClippings />
+      <Gallery/>
       <Testimonial />
       <NumbersThatMatter />
       <Discord />
