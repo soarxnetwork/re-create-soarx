@@ -21,7 +21,6 @@ const HomePage = async () => {
       <Events events={events!} />
       <HomePythonBootCamp/>
       <Partners />
-      
       <Gallery/>
       <Testimonial />
       <NumbersThatMatter />

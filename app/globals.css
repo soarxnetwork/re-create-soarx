@@ -1702,7 +1702,7 @@ input {
 }
 
 .signInbut:hover {
-  box-shadow: 0px 0px 5px #7300d0;
+  /* box-shadow: 0px 0px 5px #7300d0; */
   /* animation: ani 7s infinite linear; */
   background-color: #7300d0;
 }
