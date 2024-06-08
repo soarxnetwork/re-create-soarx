@@ -44,7 +44,7 @@ function Gallery() {
   const [displayImages, setDisplayImages] = useState(initialDisplayImages);
 
   useEffect(() => {
-    const flipImages = (changedIndices) => {
+    const flipImages = (changedIndices: number[]) => {
       const imageElements = document.querySelectorAll('.flippable-image');
       imageElements.forEach((imageElement, index) => {
         if (changedIndices.includes(index)) {
