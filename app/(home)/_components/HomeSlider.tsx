@@ -45,7 +45,7 @@ const HomeSlider = () => {
             spaceBetween={15}
             slidesPerView={3}
             autoplay={{
-              delay: 2500,
+              delay: 2000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
