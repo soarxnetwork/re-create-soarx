@@ -4,39 +4,41 @@ import Image from 'next/image';
 
 function Gallery() {
   const images = [
-    "/images/pr1.png",
-    "/images/pr2.png",
-    "/images/pr4.png",
-    "/images/pr5.png",
-    "/images/pr6.png",
-    "/images/pr7.png",
-    "/images/pr8.png",
-    "/images/pr9.png",
-    "/images/pr10.png",
-    "/images/pr11.png",
-    "/images/pr12.png",
-    "/images/pr13.png",
-    "/images/pr14.png",
-    "/images/pr15.png",
-    "/images/pr16.png",
-    "/images/pr17.png",
-    "/images/pr18.png",
-    "/images/pr19.png",
-    "/images/pr20.png",
-    "/images/pr21.png",
-    "/images/pr22.png",
-    "/images/pr23.png",
-    "/images/pr24.png",
-    "/images/pr25.png",
-    "/images/pr26.png",
-    "/images/pr27.png",
-    "/images/pr28.png",
-    "/images/pr29.png",
-    "/images/pr30.png",
-    "/images/pr31.png",
-    "/images/pr32.png",
-    "/images/pr33.png",
-    "/images/pr34.png",
+    "/images/g1.png",
+    "/images/g2.png",
+    "/images/g3.png",
+    "/images/g4.png",
+    "/images/g5.png",
+    "/images/g6.png",
+    "/images/g7.png",
+    "/images/g8.png",
+    "/images/g9.png",
+    "/images/g10.png",
+    "/images/g11.png",
+    "/images/g12.png",
+    "/images/g13.png",
+    "/images/g14.png",
+    "/images/g15.png",
+    "/images/g16.png",
+    "/images/g17.png",
+    "/images/g18.png",
+    "/images/g19.png",
+    "/images/g20.png",
+    "/images/g21.png",
+    "/images/g22.png",
+    "/images/g23.png",
+    "/images/g24.png",
+    "/images/g25.png",
+    "/images/g26.png",
+    "/images/g27.png",
+    "/images/g28.png",
+    "/images/g29.png",
+    "/images/g30.png",
+    "/images/g31.png",
+    "/images/g32.png",
+    "/images/g33.png",
+    "/images/g34.png",
+
   ];
 
   const initialDisplayImages = images.slice(0, 13);
@@ -91,7 +93,7 @@ function Gallery() {
           ))}
         </div>
         <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
-        {"Soarx Gallery".split("").map((child, idx) => (
+        {"Gallery".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
             </span>
