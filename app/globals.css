@@ -456,7 +456,7 @@ header {
 }
 
 .partner-imgwrap {
-  aspect-ratio: 4/2;
+  aspect-ratio: 1.5;
   object-fit: cover;
   display: flex;
   align-items: center;
