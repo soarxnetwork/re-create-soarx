@@ -19,7 +19,7 @@ const Partners = () => {
             </span>
           ))} */}
         </div>
-        <h2 className="text-center mb-10 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
+        <h2 className="text-center text-[30px] sm:text-[40px] md:text-[60px] lg:text-[80px] pt-2 font-bold leading-normal">
           {"Our Trusted Partners".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
@@ -27,7 +27,7 @@ const Partners = () => {
           ))}
         </h2>{" "}
         <Swiper
-          className="mySwiper"
+          className="mySwiper mb-4"
           spaceBetween={10}
           slidesPerView={5}
           autoplay={{
@@ -63,8 +63,8 @@ const Partners = () => {
           }}
         >
           {imgPartnerLists.map((e, index) => (
-            <SwiperSlide key={index}>
-              <div className="partner-imgwrap select-none">
+            <SwiperSlide key={index} className="">
+              <div className="partner-imgwrap select-none ">
                 <Image
                   src={e}
                   width={0}
