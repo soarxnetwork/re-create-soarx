@@ -16,12 +16,12 @@ const Discord = () => {
             </div> */}
             <h2 className="text-center lg:text-[80px] pt-2 font-bold leading-normal">
               {"Join Our Discord Community".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
+            <span className={"hoverText max-sm:text-[25px] "} key={idx}>
               {child}
             </span>
           ))}
             </h2>{" "}
-            <p className="mx-auto max-w-2xl sm:text-[20px] text-[12px] 2xl:text-[30px] text-[#647084] pt-5">
+            <p className="mx-auto max-w-2xl text-[20px] lg:text-[30px] text-[#647084] pt-5">
             Engage with fellow tech enthusiasts, participate in insightful discussions, and stay updated on industry trends and opportunities.
             </p>
             <div className="pt-10 m-auto flex justify-center items-center">
