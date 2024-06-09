@@ -54,8 +54,8 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              {admin && admin != Admin.User && (
-                <li
+              
+                {/* <li
                   className={
                     pathname.includes("/events")
                       ? "bg-[#9241d40d] rounded-lg"
@@ -65,9 +65,8 @@ const Header = ({ admin }: User) => {
                   <Link className="hover:text-primaryPurple p-2" href="/events">
                     Events
                   </Link>
-                </li>
-              )}
-
+                </li> */}
+              
               <HeaderDropdown />
 
               {admin && admin !== Admin.User && (
@@ -89,8 +88,7 @@ const Header = ({ admin }: User) => {
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
             <span className="hidden md:inline">
-              {/* <ButtonAuth /> */}
-              <Pythonbootcamp/>
+           <Pythonbootcamp/>
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -118,8 +116,8 @@ const Header = ({ admin }: User) => {
                   Home
                 </Link>
               </li>
-              {admin && admin != Admin.User && (
-                <li
+              
+                {/* <li
                   className={
                     pathname.includes("/events")
                       ? "bg-[#9241d40d] rounded-lg"
@@ -132,8 +130,8 @@ const Header = ({ admin }: User) => {
                   >
                     Events
                   </Link>
-                </li>
-              )}
+                </li> */}
+              
 
               <p>
                 <span>
@@ -157,10 +155,12 @@ const Header = ({ admin }: User) => {
                   </Link>
                 </li>
               )}
-              <li>
-                {/* <ButtonAuth /> */}
+             
+                <li>
                 <Pythonbootcamp/>
-              </li>
+                </li>
+              
+              
             </ul>
           </div>
         )}

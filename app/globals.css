@@ -456,7 +456,7 @@ header {
 }
 
 .partner-imgwrap {
-  aspect-ratio: 4/2;
+  aspect-ratio: 1.5;
   object-fit: cover;
   display: flex;
   align-items: center;
@@ -1702,7 +1702,7 @@ input {
 }
 
 .signInbut:hover {
-  box-shadow: 0px 0px 5px #7300d0;
+  /* box-shadow: 0px 0px 5px #7300d0; */
   /* animation: ani 7s infinite linear; */
   background-color: #7300d0;
 }
@@ -1885,4 +1885,17 @@ input {
 
 .animate-moveDown {
   animation: moveDown 200ms forwards;
+}
+
+
+.flip-animation {
+  perspective: 1000px;
+}
+
+.flippable-image  {
+  transition: transform 0.5s ease;
+}
+
+.flippable-image.flipped {
+  transform: rotateY(180deg);
 }

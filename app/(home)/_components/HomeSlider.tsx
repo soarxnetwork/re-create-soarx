@@ -26,26 +26,26 @@ const HomeSlider = () => {
                 {"Engage, Innovate, Elevate"
                   .split("")
                   .map((child, idx) => (
-                    <span className={"hoverText sm:text-[20px] text-[10px]"} key={idx}>
+                    <span className={"hoverText sm:text-[25px] text-[18px] "} key={idx}>
                       {child}
                     </span>
                   ))}
               </div>
             </div>
-            <h1 className="sm:text-[50px] text-[30px]  leading-relaxed font-bold 2xl:text-[70px]  md:text-[60px] pt-3 ">
+            <h1 className="sm:text-[50px] text-[35px]  leading-relaxed font-bold 2xl:text-[70px]  md:text-[60px] pt-3 ">
               SoarX Network
             </h1>
-            <p className="pt-5 sm:text-[20px] text-[12px] 2xl:text-[35px] text-slate-500">
+            <p className="pt-5  text-[20px] lg:text-[35px] text-slate-500">
             A nationwide community committed to igniting the potential of students through engaging events, sessions, and hackathons. 
             </p>
             <button className=" signInbut mt-10" ><Link href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf" className="text-xl">Join Us</Link></button>
           </div>
-          <div className="w-full flex items-center jusitfy-center mt-7 relative "> 
+          <div className="w-full flex items-center jusitfy-center mt-[12%] relative "> 
           <Swiper
             spaceBetween={15}
             slidesPerView={3}
             autoplay={{
-              delay: 2500,
+              delay: 2000,
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
