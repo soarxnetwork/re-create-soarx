@@ -35,7 +35,7 @@ const HomeSlider = () => {
             <h1 className="sm:text-[50px] text-[35px]  leading-relaxed font-bold 2xl:text-[70px]  md:text-[60px] pt-3 ">
               SoarX Network
             </h1>
-            <p className="pt-5  text-[20px] lg:text-[35px] text-slate-500">
+            <p className="pt-5  text-[20px] lg:text-[25px] min-[1400px]:text-[35px] text-slate-500">
             A nationwide community committed to igniting the potential of students through engaging events, sessions, and hackathons. 
             </p>
             <button className=" signInbut mt-10" ><Link href="https://chat.whatsapp.com/CcJFFC99PJv4iJnNvog2Jf" className="text-xl">Join Us</Link></button>
