@@ -55,7 +55,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
               
-                {/* <li
+                <li
                   className={
                     pathname.includes("/events")
                       ? "bg-[#9241d40d] rounded-lg"
@@ -65,7 +65,7 @@ const Header = ({ admin }: User) => {
                   <Link className="hover:text-primaryPurple p-2" href="/events">
                     Events
                   </Link>
-                </li> */}
+                </li>
               
               <HeaderDropdown />
 
@@ -88,7 +88,8 @@ const Header = ({ admin }: User) => {
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
             <span className="hidden md:inline">
-           <Pythonbootcamp/>
+           {/* <Pythonbootcamp/> */}
+           <ButtonAuth />
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -117,7 +118,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
               
-                {/* <li
+                <li
                   className={
                     pathname.includes("/events")
                       ? "bg-[#9241d40d] rounded-lg"
@@ -130,7 +131,7 @@ const Header = ({ admin }: User) => {
                   >
                     Events
                   </Link>
-                </li> */}
+                </li>
               
 
               <p>

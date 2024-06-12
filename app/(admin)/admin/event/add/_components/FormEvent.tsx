@@ -24,6 +24,11 @@ interface FormEventProps {
   event?: EventSchema;
   action: (data: EventSchema) => Promise<void>;
 }
+interface LocationData {
+  location: 'Online' | 'Offline';
+  meetingLink?: string;
+  venueAddress?: string;
+}
 
 const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
   const pahname = usePathname();
@@ -45,13 +50,16 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
       },
       mode: "onChange",
     });
-    interface LocationData {
-      location: 'Online' | 'Offline';
-      meetingLink?: string;
-      venueAddress?: string;
-    }
+  
 
   const onSubmit = (data: EventSchema) => {
+    if (Location.location === 'Online' && !data.meeturl) {
+      toast.error("Meeting Link is required");
+      return;
+    } else if (Location.location === 'Offline' && !data.venue) {
+      toast.error("Venue Address is required");
+      return;
+    }
     if (!data.imageUrl) {
       toast.error("Image URL is required");
       return;
@@ -70,7 +78,8 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
   };
   const [Location , setLocation] = useState<LocationData>({
     location: 'Online',
-
+    meetingLink: '',
+    venueAddress: '',
   })
   const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = e.target;
