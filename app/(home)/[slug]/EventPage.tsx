@@ -12,11 +12,25 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import { Event } from '@prisma/client';
+import ProfileCircles from './ProfileCircles';
+import { getUsersRegisteredForEvent } from '@/actions/registration';
+
+interface User {
+  id: string;
+  username: string | null;
+  password: string | null;
+  phone: string | null;
+  email: string | null;
+  image: string | null;
+  name: string | null;
+  
+}
 
 
-function EventPage ({ event }: {event :any}) {
+
+function EventPage ({ event, users }: {event :any , users: User[]}) {
   const { data: session } = useSession();
-
+  
   async function RegisterUser() {
     if (!session) {
       alert("Please login to register for and event!");
@@ -101,6 +115,8 @@ function EventPage ({ event }: {event :any}) {
   function EventEnded(){
     toast.error("Event has been ended!!")
   }
+
+ 
   return (
     <>
        <div className=' sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] '>
@@ -113,8 +129,8 @@ function EventPage ({ event }: {event :any}) {
                             width={500}
                             height={500}
                         />
-                        <div className="pt-6 font-semibold">Hosted by</div>
-                        <div className="company border-b-[1px] border-[#a8a8a8] flex">
+                        <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">Hosted by</div>
+                        <div className="company flex">
                             <Image
                                 src={SoarXlogo}
                                 alt="logo"
@@ -125,7 +141,8 @@ function EventPage ({ event }: {event :any}) {
                             <FaInstagram className='h-[20px] my-auto ml-[50%]' style={{ color: "#828282", }} />
                             <FaXTwitter className='h-[20px] my-auto ml-[20px]' style={{ color: "#828282", }} />
                         </div>
-
+                        {users.length > 0 ? (<><div className="pt-6 font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">{String(users.length)} {new Date() > event?.date ? (<>Attended</>):(<>Going</>)}</div>
+                        <div className='pt-4'> <ProfileCircles users={users}/>  </div> </>): (<></>)}
                     </div>
                     <div className="pb-[100px] ml-[4%]   sm:max-md:ml-8">
                         <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] max-md:leading-tight leading-8 ">{event?.title}</h1>
