@@ -18,7 +18,7 @@ const HomePage = async () => {
     <section>
       <HomeSlider />
       <OurAim />
-      {/* <Events events={events!} /> */}
+      <Events events={events!} />
       <HomePythonBootCamp/>
       <Partners />
       <Gallery/>

@@ -51,12 +51,11 @@ const FloatingHero = () => {
             ))}
             <ToastContainer
               position="bottom-right"
-              autoClose={2000}
+              autoClose={1000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick
               rtl={false}
-              pauseOnFocusLoss
               draggable
               limit={1}
               theme="light"
@@ -67,7 +66,7 @@ const FloatingHero = () => {
                 onClick={handleNotify}
                 className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
               >
-                <del>Enroll Now</del>
+                Enrollment Now
               </button>
             </div>
           </motion.div>
