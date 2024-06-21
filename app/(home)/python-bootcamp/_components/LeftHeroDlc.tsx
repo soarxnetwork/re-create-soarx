@@ -1,6 +1,7 @@
 "use client";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
+import { ToastContainer, toast , Flip  } from "react-toastify";
 import {
   floatingHeroMotionProps,
   floatingHeroVars,
@@ -16,8 +17,29 @@ const LeftHeroDlc = () => {
     (state) => state
   );
 
+  const handleNotify = () => {
+    toast.info("Enrollment Closed!", {
+      toastId: "an id"
+    });
+  };
+
+  toast.clearWaitingQueue({ containerId: "an Id" });
+
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        limit={1}
+        theme="light"
+        transition={Flip}
+      />
       <div className="lg:grid lg:grid-cols-3 myfonts space-y-12 pl-7 md:pl-20 md:pr-28 sm:pl-16 sm:pr-16 pr-7">
         <div className="break-words  2xl:ml-7 lg:mr-40 space-y-6 col-span-2">
           <div className="flex flex-col gap-y-3">
@@ -27,20 +49,18 @@ const LeftHeroDlc = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-[25px] lg:text-4xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold 2xl:text-5xl">
-            
-            {"5-Day Python Bootcamp".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
-              {child}
-            </span>
-          ))}
+              {"5-Day Python Bootcamp".split("").map((child, idx) => (
+                <span className={"hoverText"} key={idx}>
+                  {child}
+                </span>
+              ))}
             </h3>
             <h3 className="text-[18px] lg:text-3xl text-wrap leading-normal sm:text-[25px] font-semibold 2xl:mr-28 2xl:text-4xl">
-            
-            {"(From Basics to Advanced)".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
-              {child}
-            </span>
-          ))}
+              {"(From Basics to Advanced)".split("").map((child, idx) => (
+                <span className={"hoverText"} key={idx}>
+                  {child}
+                </span>
+              ))}
             </h3>
           </div>
         </div>
@@ -83,11 +103,12 @@ const LeftHeroDlc = () => {
                   </div>
                 ))}
               </div>
-              <Link href="https://pages.razorpay.com/python-pinnacle">
-                <button className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl">
-                  Enroll Now
-                </button>
-              </Link>
+              <button
+                onClick={handleNotify}
+                className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl"
+              >
+                <del>Enroll Now</del>
+              </button>
             </motion.div>
           )}
         </AnimatePresence>
