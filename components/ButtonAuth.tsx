@@ -55,7 +55,7 @@ const ButtonAuth = () => {
                   className="block px-4 py-2 lg:text-md md:text-white dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
                   role="menuitem"
                 >
-                  Profiles
+                  Profile
                 </Link>
                 <button
                   onClick={() => signOut()}

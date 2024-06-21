@@ -26,3 +26,29 @@ export const registEventById = async (eventId: string, userId: string) => {
     console.error(err);
   }
 };
+
+export const getUsersRegisteredForEvent = async (eventId: string) => {
+  try {
+    const registrations = await db.registration.findMany({
+      where: {
+        eventId: eventId,
+      },
+      include: {
+        user: true,
+      },
+    });
+
+    const users = registrations.map(registration => registration.user);
+
+    return {
+      message: `Successfully retrieved users registered for event with ID ${eventId}`,
+      data: users,
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      message: `Failed to retrieve users registered for event with ID ${eventId}`,
+      error: true,
+    };
+  }
+};

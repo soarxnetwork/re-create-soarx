@@ -26,7 +26,7 @@ const HomeSlider = () => {
                 {"Engage, Innovate, Elevate"
                   .split("")
                   .map((child, idx) => (
-                    <span className={"hoverText sm:text-[25px] text-[18px] "} key={idx}>
+                    <span className={"hoverText sm:text-[23px] text-[18px] "} key={idx}>
                       {child}
                     </span>
                   ))}

@@ -89,6 +89,7 @@ const Header = ({ admin }: User) => {
             <ThemeSwitcher />
             <span className="hidden md:inline">
            <Pythonbootcamp/>
+           {/* <ButtonAuth /> */}
             </span>
             <div className="md:hidden">
               <Hamburger
