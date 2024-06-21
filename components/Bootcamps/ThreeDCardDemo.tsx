@@ -44,7 +44,7 @@ export function ThreeDCardDemo() {
             Try now →
           </CardItem> */}
           <CardItem translateZ={20} as="button" className="signInbut">
-            <Link href="/python-bootcamp">Enroll now</Link>
+            <Link href="/python-bootcamp">Enrollment Closed</Link>
           </CardItem>
         </div>
       </CardBody>
