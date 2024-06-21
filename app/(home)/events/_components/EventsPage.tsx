@@ -26,7 +26,8 @@ const EventPage = async (events: any) => {
               </div>
             </div>
           </>
-          : <TemporaryEmptyEvents text="Empty Ongoing Events" />}
+          // : <TemporaryEmptyEvents text="Empty Ongoing Events" />}
+          :(<></>)}
         {
           pastEvents && pastEvents.length > 0 ?
             <>
