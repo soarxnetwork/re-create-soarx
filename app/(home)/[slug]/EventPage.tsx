@@ -102,16 +102,9 @@ function EventPage ({ event, users }: {event :any , users: User[]}) {
   function detectLinkType(link: string): string {
     if (link.match(/^https:\/\/meet\.google\.com\/[a-zA-Z0-9_-]+$/)) {
       return "Google Meet";
-    } else if (
-      link.match(
-        /^https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)$/
-      ) ||
-      link.match(/^https?:\/\/youtu\.be\/([a-zA-Z0-9_-]+)$/)
-    ) {
-      return "YouTube";
     } else {
-      return "Unknown";
-    }
+      return "YouTube";
+    } 
   }
   function EventEnded(){
     toast.error("Event has been ended!!")
