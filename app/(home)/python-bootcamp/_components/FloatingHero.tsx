@@ -66,7 +66,7 @@ const FloatingHero = () => {
                 onClick={handleNotify}
                 className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
               >
-                Enrollment Now
+                Enrollment Closed
               </button>
             </div>
           </motion.div>
