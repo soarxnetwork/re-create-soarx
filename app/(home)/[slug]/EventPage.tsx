@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Image from 'next/image';
 import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
 import { FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedinIn } from 'react-icons/fa';
 import { SiGooglemeet } from 'react-icons/si';
 import { FaInstagram } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -130,7 +131,7 @@ function EventPage ({ event, users }: {event :any , users: User[]}) {
                             height={500}
                         />
                         <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">Hosted by</div>
-                        <div className="company flex">
+                        <div className="company flex justify-between">
                             <Image
                                 src={SoarXlogo}
                                 alt="logo"
@@ -138,8 +139,15 @@ function EventPage ({ event, users }: {event :any , users: User[]}) {
                                 width={0}
                                 height={0}
                             />
-                            <FaInstagram className='h-[20px] my-auto ml-[50%]' style={{ color: "#828282", }} />
-                            <FaXTwitter className='h-[20px] my-auto ml-[20px]' style={{ color: "#828282", }} />
+                            <div className='flex items-center min-[500px]:max-md:space-x-4 space-x-8'>
+                            <a href="https://www.instagram.com/soarxnetwork" className=' my-auto '>
+                            <FaInstagram className='h-[20px]' style={{ color: "#828282", }} />
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/soarxnetwork/" className='my-auto  '>
+                            <FaLinkedinIn className='h-[20px]' style={{ color: "#828282", }} />
+                            </a>
+                            </div>
                         </div>
                         {users.length > 0 ? (<><div className="pt-6 font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">{String(users.length)} {new Date() > event?.date ? (<>Attended</>):(<>Going</>)}</div>
                         <div className='pt-4'> <ProfileCircles users={users}/>  </div> </>): (<></>)}
