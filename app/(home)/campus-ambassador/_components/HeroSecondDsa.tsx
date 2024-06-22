@@ -26,7 +26,7 @@ function ScrollingToPage() {
 
 const HeroSecondDsa = () => {
   return (
-    <article>
+    <article className="lg:ml-20">
       <div className="container myfonts 2xl:pr-10 flex flex-col-reverse md:flex-row md:grid md:grid-cols-2 space-y-4 gap-4">
         {/* ! */}
         <div className=" space-y-4 py-16">
