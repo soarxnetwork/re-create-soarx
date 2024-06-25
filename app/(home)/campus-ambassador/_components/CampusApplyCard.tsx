@@ -6,14 +6,19 @@ import { useRouter } from "next/navigation";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CampusLeaderSchema, CampusAmbassadorSchema } from "@/typesforCampusAmbaassadorPage";
+import {
+  CampusLeaderSchema,
+  CampusAmbassadorSchema,
+} from "@/typesforCampusAmbaassadorPage";
 import { z } from "zod";
+import { campusLeaderFormRequest } from "@/actions/campus";
 
 function CampusApplyCard() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
   const router = useRouter();
+  console.log(session);
 
   const {
     register,
@@ -37,7 +42,7 @@ function CampusApplyCard() {
   });
 
   type CampusLeaderType = z.infer<typeof CampusLeaderSchema>;
- type CampusAmbassadorType = z.infer<typeof CampusAmbassadorSchema>;
+  type CampusAmbassadorType = z.infer<typeof CampusAmbassadorSchema>;
 
   const {
     register: register2,
@@ -94,14 +99,22 @@ function CampusApplyCard() {
   };
 
   const OnSubmitCampusLeaderForm = (data: CampusLeaderType) => {
-    console.log(data);
+    console.log("In Campus Leader form", data);
+    const userId =  session?.user?.id;
+    campusLeaderFormRequest({data, userId}).then((data) => {
+      if (data?.error) {
+        return toast.error(data.error);
+      }
+      toast.success("Reset password link sent to your email");
+      reset();
+    });
     setIsOpen(!isOpen);
   };
 
   const OnSubmitCampusAmbassardorForm = (data: CampusAmbassadorType) => {
     console.log(data);
     setOpenLeader(!isOpenLeader);
-  }
+  };
 
   return (
     <div className="pb-10 lg:pt-6 2xl:pl-9 2xl:pr-28" id="campus-apply-card">
@@ -587,7 +600,8 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2 font-medium text-gray-900 dark:text-white"
                       >
-                        Why do you want to be a Community Ambassador for SoarX? (Short essay)
+                        Why do you want to be a Community Ambassador for SoarX?
+                        (Short essay)
                       </label>
                       <input
                         type="text"
@@ -608,7 +622,9 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2  font-medium text-gray-900 dark:text-white"
                       >
-                        Describe any relevant experience you have in event organization, marketing, or community engagement. (Short essay)
+                        Describe any relevant experience you have in event
+                        organization, marketing, or community engagement. (Short
+                        essay)
                       </label>
                       <input
                         type="text"
@@ -629,7 +645,7 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
                       >
-                       List any technical skills or areas of expertise.
+                        List any technical skills or areas of expertise.
                       </label>
                       <input
                         type="text"
@@ -650,7 +666,9 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
                       >
-                       Have you previously been part of any student organizations or clubs? If yes, please describe your role and contributions.
+                        Have you previously been part of any student
+                        organizations or clubs? If yes, please describe your
+                        role and contributions.
                       </label>
                       <input
                         type="text"
@@ -671,7 +689,8 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
                       >
-                        How many hours per week can you dedicate to the Community Ambassador role?
+                        How many hours per week can you dedicate to the
+                        Community Ambassador role?
                       </label>
                       <input
                         type="text"
@@ -713,7 +732,8 @@ function CampusApplyCard() {
                         htmlFor="name"
                         className="block mb-2 font-medium text-gray-900 dark:text-white"
                       >
-                        How did you hear about the SoarX Community Ambassador Program?
+                        How did you hear about the SoarX Community Ambassador
+                        Program?
                       </label>
                       <input
                         type="text"

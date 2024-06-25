@@ -24,3 +24,5 @@ export const CampusAmbassadorSchema = z.object({
     HearAboutSoarx: z.string().min(2, { message: "Required Field" }),
     AdditionalInfo: z.string().optional()
 })
+
+export type CampusLeaderType = z.infer<typeof CampusLeaderSchema>;
