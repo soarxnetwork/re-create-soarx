@@ -64,8 +64,8 @@ function ProfileExperience() {
         { experiences.length > 0 ? (
             <div>
                 {experiences.map((experience) => (
-                    <div className='flex justify-between '>
-                    <div key={experience.id} className='py-4 px-4 border-b-2 border-[#D9D9D9]'>
+                    <div key={experience.id}  className='flex justify-between '>
+                    <div className='py-4 px-4 border-b-2 border-[#D9D9D9]'>
                         <h4 className='text-[20px] font-semibold'>{experience.Jobtitle}</h4>
                         <p className='text-[14px] font-semibold'>{experience.company}</p>
                         <p className='text-[14px] font-semibold'>{experience.location}</p>

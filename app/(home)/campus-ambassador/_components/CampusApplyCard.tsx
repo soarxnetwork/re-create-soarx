@@ -78,14 +78,7 @@ function CampusApplyCard() {
       !session.user.username ||
       !session.user.image ||
       !session.user.phone ||
-      !session.user.city ||
-      !session.user.collegeName ||
-      !session.user.degree ||
-      !session.user.dob ||
-      !session.user.name ||
-      !session.user.skill ||
-      !session.user.stream ||
-      !session.user.yearOfPassing
+      !session.user.city 
     ) {
       toast.error("Please complete your profile first to register");
       return router.push("/profile");
