@@ -4,12 +4,63 @@ import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { TiDeleteOutline } from "react-icons/ti";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  CampusLeaderSchema,
+  CampusAmbassadorSchema,
+} from "@/typesforCampusAmbaassadorPage";
+import { z } from "zod";
+import { campusLeaderFormRequest } from "@/actions/campus";
 
 function CampusApplyCard() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
   const router = useRouter();
+  console.log(session);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(CampusLeaderSchema),
+    defaultValues: {
+      WhyCapterLeader: "",
+      LeaderShipExperience: "",
+      StudentOrganizations: "",
+      StrategyForSoarx: "",
+      CoreTeamSoarx: "",
+      QualitiesForTeam: "",
+      WeekHoursForChapterLeader: "",
+      OneYearCommitment: "",
+      HearAboutSoarx: "",
+      AdditionalInfo: "",
+    },
+  });
+
+  type CampusLeaderType = z.infer<typeof CampusLeaderSchema>;
+  type CampusAmbassadorType = z.infer<typeof CampusAmbassadorSchema>;
+
+  const {
+    register: register2,
+    handleSubmit: handleSubmit2,
+    formState: { errors: errors2 },
+  } = useForm({
+    resolver: zodResolver(CampusAmbassadorSchema),
+    defaultValues: {
+      WhyCampusAmbassador: "",
+      EventOrganization: "",
+      TechnicalSkills: "",
+      StudentOrganizations: "",
+      WeekHoursForAmbassador: "",
+      SixMonthCommitment: "",
+      HearAboutSoarx: "",
+      AdditionalInfo: "",
+    },
+  });
 
   const toggleModalAmbassador = () => {
     if (!isUserAllowToRegister()) return;
@@ -46,6 +97,25 @@ function CampusApplyCard() {
     if (!isUserAllowToRegister()) return;
     setIsOpen(!isOpen);
   };
+
+  const OnSubmitCampusLeaderForm = (data: CampusLeaderType) => {
+    console.log("In Campus Leader form", data);
+    const userId =  session?.user?.id;
+    campusLeaderFormRequest({data, userId}).then((data) => {
+      if (data?.error) {
+        return toast.error(data.error);
+      }
+      toast.success("Reset password link sent to your email");
+      reset();
+    });
+    setIsOpen(!isOpen);
+  };
+
+  const OnSubmitCampusAmbassardorForm = (data: CampusAmbassadorType) => {
+    console.log(data);
+    setOpenLeader(!isOpenLeader);
+  };
+
   return (
     <div className="pb-10 lg:pt-6 2xl:pl-9 2xl:pr-28" id="campus-apply-card">
       <div className="flex flex-col gap-y-6 items-center">
@@ -167,9 +237,9 @@ function CampusApplyCard() {
         <div
           id="crud-modal"
           aria-hidden="true"
-          className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-24 bg-gray-800 bg-opacity-75 h-screen w-screen"
+          className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-2 bg-gray-800 bg-opacity-75 h-screen w-screen"
         >
-          <div className="relative p-4 h-1/2 w-1/2">
+          <div className="relative p-4 h-full w-full lg:w-3/4">
             <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
               <div className="w-full">
                 <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -185,84 +255,251 @@ function CampusApplyCard() {
                     <TiDeleteOutline className="text-4xl text-purple-400" />
                   </button>
                 </div>
-                <form className="p-4 md:p-5">
-                  <div className="grid gap-4 mb-4 grid-cols-2">
+                <form
+                  className="p-4 md:p-5"
+                  onSubmit={handleSubmit(OnSubmitCampusLeaderForm)}
+                >
+                  <div className="grid lg:gap-4 text-sm lg:text-md gap-x-4 gap-y-8  mb-4 grid-cols-2">
                     <div className="col-span-2">
                       <label
                         htmlFor="name"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
                       >
-                        Name
+                        Why do you want to be a Chapter Leader for SoarX? (Short
+                        essay)
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        id="name"
+                        id="WhyCapterLeader"
+                        {...register("WhyCapterLeader")}
                         className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Type your name"
                       />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="email"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        College Email ID
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type your college email ID"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="college"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Name of the College
-                      </label>
-                      <input
-                        type="text"
-                        name="college"
-                        id="college"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type name of your college"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="location"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Location of the College
-                      </label>
-                      <input
-                        type="text"
-                        name="location"
-                        id="location"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type location of your college"
-                      />
+                      {errors.WhyCapterLeader && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors.WhyCapterLeader.message}
+                        </p>
+                      )}
                     </div>
 
-                    <div className="col-span-2 flex  gap-x-28">
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2  font-medium text-gray-900 dark:text-white"
+                      >
+                        Describe any leadership experience you have, including
+                        managing teams or organizing large events. (Short essay)
+                      </label>
+                      <input
+                        type="text"
+                        id="LeaderShipExperience"
+                        {...register("LeaderShipExperience")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="LeaderShip Experience"
+                      />
+                      {errors.LeaderShipExperience && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors.LeaderShipExperience.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        Have you ever founded or led any student organizations
+                        or clubs? If yes, please describe your role and
+                        achievements.
+                      </label>
+                      <input
+                        type="text"
+                        id="StudentOrganizations"
+                        {...register("StudentOrganizations")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Student Organizations"
+                      />
+                      {errors.StudentOrganizations && (
+                        <p className="text-red-500 text-sm">
+                          {errors.StudentOrganizations.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        How would you go about recruiting and building a core
+                        team for the SoarX chapter?
+                      </label>
+                      <input
+                        type="text"
+                        id="StrategyForSoarx"
+                        {...register("StrategyForSoarx")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Strategy For Soarx"
+                      />
+                      {errors.StrategyForSoarx && (
+                        <p className="text-red-500 text-sm">
+                          {errors.StrategyForSoarx.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        How would you go about recruiting and building a core
+                        team for the SoarX chapter?
+                      </label>
+                      <input
+                        type="text"
+                        id="CoreTeamSoarx"
+                        {...register("CoreTeamSoarx")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Recruiting & Team Building"
+                      />
+                      {errors.CoreTeamSoarx && (
+                        <p className="text-red-500 text-sm">
+                          {errors.CoreTeamSoarx.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        What qualities would you look for in your team members?
+                      </label>
+                      <input
+                        type="text"
+                        id="QualitiesForTeam"
+                        {...register("QualitiesForTeam")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Qualities For Team Members"
+                      />
+                      {errors.QualitiesForTeam && (
+                        <p className="text-red-500 text-sm">
+                          {errors.QualitiesForTeam.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        How many hours per week can you commit to the SoarX
+                        chapter leader role?
+                      </label>
+                      <input
+                        type="text"
+                        id="WeekHoursForChapterLeader"
+                        {...register("WeekHoursForChapterLeader")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Weekly Hours"
+                      />
+                      {errors.WeekHoursForChapterLeader && (
+                        <p className="text-red-500 text-sm">
+                          {errors.WeekHoursForChapterLeader.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        Are you available for a one-year commitment?
+                      </label>
+                      <input
+                        type="text"
+                        id="OneYearCommitment"
+                        {...register("OneYearCommitment")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="One Year Commitment"
+                      />
+                      {errors.OneYearCommitment && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors.OneYearCommitment.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        How did you hear about SoarX?
+                      </label>
+                      <input
+                        type="text"
+                        id="HearAboutSoarx"
+                        {...register("HearAboutSoarx")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Hear About Soarx"
+                      />
+                      {errors.HearAboutSoarx && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors.HearAboutSoarx.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        Any additional information you would like to share?
+                      </label>
+                      <input
+                        type="text"
+                        id="AdditionalInfo"
+                        {...register("AdditionalInfo")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Additional Info"
+                      />
+                      {errors.AdditionalInfo && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors.AdditionalInfo.message}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* <div className="col-span-2 flex  gap-x-28">
                       <div className="w-2/5">
-                        <label
-                          htmlFor="stream"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Stream
-                        </label>
-                        <input
-                          type="text"
-                          name="stream"
-                          id="stream"
-                          className="bg-gray-50 dark:border-0 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 outline-none block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                          placeholder="Type your stream"
-                        />
+                        <div className="col-span-2">
+                          <label
+                            htmlFor="name"
+                            className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                          >
+                            Why do you want to be a Chapter Leader for SoarX?
+                            (Short essay)
+                          </label>
+                          <input
+                            type="text"
+                            id="WhyCapterLeader"
+                            {...register("WhyCapterLeader")}
+                            className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            placeholder="Type your name"
+                          />
+                          {errors.WhyCapterLeader && (
+                            <p className="text-red-500 text-sm">
+                              {errors.WhyCapterLeader.message}
+                            </p>
+                          )}
+                        </div>
                       </div>
                       <div className="w-2/5 sm:w-auto">
                         <label
@@ -315,7 +552,7 @@ function CampusApplyCard() {
                         className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Enter CSE/IT student count"
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   <button
@@ -335,9 +572,9 @@ function CampusApplyCard() {
         <div
           id="crud-modal"
           aria-hidden="true"
-          className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-24 bg-gray-800 bg-opacity-75 h-screen w-screen"
+          className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-2 bg-gray-800 bg-opacity-75 h-screen w-screen"
         >
-          <div className="relative p-4 h-1/2 w-1/2">
+          <div className="relative p-4 h-full w-full lg:w-3/4">
             <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
               <div className="w-full">
                 <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -353,136 +590,184 @@ function CampusApplyCard() {
                     <TiDeleteOutline className="text-4xl text-purple-400" />
                   </button>
                 </div>
-                <form className="p-4 md:p-5">
-                  <div className="grid gap-4 mb-4 grid-cols-2">
+                <form
+                  className="p-4 md:p-5"
+                  onSubmit={handleSubmit2(OnSubmitCampusAmbassardorForm)}
+                >
+                  <div className="grid lg:gap-4 text-sm lg:text-md gap-x-4 gap-y-8  mb-4 grid-cols-2">
                     <div className="col-span-2">
                       <label
                         htmlFor="name"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
                       >
-                        Name
+                        Why do you want to be a Community Ambassador for SoarX?
+                        (Short essay)
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        id="name"
+                        id="WhyCampusAmbassador"
+                        {...register2("WhyCampusAmbassador")}
                         className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type your name"
+                        placeholder="Why Campus Ambassador"
                       />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="email"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        College Email ID
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type your college email ID"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="college"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Name of the College
-                      </label>
-                      <input
-                        type="text"
-                        name="college"
-                        id="college"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type name of your college"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="location"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Location of the College
-                      </label>
-                      <input
-                        type="text"
-                        name="location"
-                        id="location"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type location of your college"
-                      />
-                    </div>
-
-                    <div className="col-span-2 flex  gap-x-28">
-                      <div className="w-2/5">
-                        <label
-                          htmlFor="stream"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Stream
-                        </label>
-                        <input
-                          type="text"
-                          name="stream"
-                          id="stream"
-                          className="bg-gray-50 dark:border-0 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 outline-none block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                          placeholder="Type your stream"
-                        />
-                      </div>
-                      <div className="w-2/5 sm:w-auto">
-                        <label
-                          htmlFor="graduationYear"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Graduation Year
-                        </label>
-                        <select
-                          id="graduationYear"
-                          name="graduationYear"
-                          className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        >
-                          <option value="">Select graduation year</option>
-                          {[...Array(9)].map((_, index) => (
-                            <option key={index} value={2020 + index}>
-                              {2020 + index}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                      {errors2.WhyCampusAmbassador && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors2.WhyCampusAmbassador.message}
+                        </p>
+                      )}
                     </div>
 
                     <div className="col-span-2">
                       <label
-                        htmlFor="codingClub"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        htmlFor="name"
+                        className="block mb-2  font-medium text-gray-900 dark:text-white"
                       >
-                        Are you a part of any coding club in your college?
+                        Describe any relevant experience you have in event
+                        organization, marketing, or community engagement. (Short
+                        essay)
                       </label>
                       <input
                         type="text"
-                        name="codingClub"
-                        id="codingClub"
+                        id="EventOrganization"
+                        {...register2("EventOrganization")}
                         className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type your coding club"
+                        placeholder="Event Organization"
                       />
+                      {errors2.EventOrganization && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors2.EventOrganization.message}
+                        </p>
+                      )}
                     </div>
+
                     <div className="col-span-2">
                       <label
-                        htmlFor="cseStrength"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
                       >
-                        Strength of CSE/IT students in your college
+                        List any technical skills or areas of expertise.
                       </label>
                       <input
-                        type="number"
-                        name="cseStrength"
-                        id="cseStrength"
+                        type="text"
+                        id="TechnicalSkills"
+                        {...register2("TechnicalSkills")}
                         className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Enter CSE/IT student count"
+                        placeholder="Technical Skills"
                       />
+                      {errors2.TechnicalSkills && (
+                        <p className="text-red-500 text-sm">
+                          {errors2.TechnicalSkills.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        Have you previously been part of any student
+                        organizations or clubs? If yes, please describe your
+                        role and contributions.
+                      </label>
+                      <input
+                        type="text"
+                        id="StudentOrganizations"
+                        {...register2("StudentOrganizations")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Student Organizations"
+                      />
+                      {errors2.StudentOrganizations && (
+                        <p className="text-red-500 text-sm">
+                          {errors2.StudentOrganizations.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                      >
+                        How many hours per week can you dedicate to the
+                        Community Ambassador role?
+                      </label>
+                      <input
+                        type="text"
+                        id="WeekHoursForAmbassador"
+                        {...register2("WeekHoursForAmbassador")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Recruiting & Team Building"
+                      />
+                      {errors2.WeekHoursForAmbassador && (
+                        <p className="text-red-500 text-sm">
+                          {errors2.WeekHoursForAmbassador.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        Are you available for a six-month commitment?
+                      </label>
+                      <input
+                        type="text"
+                        id="Six Month Commitment"
+                        {...register2("SixMonthCommitment")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Six Month Commitment"
+                      />
+                      {errors2.SixMonthCommitment && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors2.SixMonthCommitment.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        How did you hear about the SoarX Community Ambassador
+                        Program?
+                      </label>
+                      <input
+                        type="text"
+                        id="HearAboutSoarx"
+                        {...register2("HearAboutSoarx")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Hear About Soarx"
+                      />
+                      {errors2.HearAboutSoarx && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors2.HearAboutSoarx.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="col-span-2">
+                      <label
+                        htmlFor="name"
+                        className="block mb-2 font-medium text-gray-900 dark:text-white"
+                      >
+                        Any additional information you would like to share?
+                      </label>
+                      <input
+                        type="text"
+                        id="AdditionalInfo"
+                        {...register("AdditionalInfo")}
+                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        placeholder="Additional Info"
+                      />
+                      {errors2.AdditionalInfo && (
+                        <p className="text-red-500 lg:text-sm text-xs">
+                          {errors2.AdditionalInfo.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 

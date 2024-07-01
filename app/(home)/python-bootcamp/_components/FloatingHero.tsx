@@ -10,11 +10,20 @@ import {
 } from "@/lib/framer-motion/dlc";
 import Link from "next/link";
 import { AiFillThunderbolt } from "react-icons/ai";
+import { ToastContainer, toast, Flip } from "react-toastify";
 
 const FloatingHero = () => {
   const { isActiveFloatDlc, setIsActiveFloatDlc } = useGlobalState(
     (state) => state
   );
+
+  const handleNotify = () => {
+    toast.info("Enrollment Closed!", {
+      toastId: "an id",
+    });
+  };
+
+  toast.clearWaitingQueue({ containerId: "an Id" });
 
   return (
     <>
@@ -40,12 +49,25 @@ const FloatingHero = () => {
                 {course}
               </p>
             ))}
+            <ToastContainer
+              position="bottom-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              draggable
+              limit={1}
+              theme="light"
+              transition={Flip}
+            />
             <div>
-              <Link href="https://pages.razorpay.com/dsa-soarx">
-                <button className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl">
-                  Enroll Now
-                </button>
-              </Link>
+              <button
+                onClick={handleNotify}
+                className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
+              >
+                Enrollment Closed
+              </button>
             </div>
           </motion.div>
         )}

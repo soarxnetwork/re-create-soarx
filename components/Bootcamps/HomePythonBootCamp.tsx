@@ -54,66 +54,63 @@ const HomePythonBootCamp = () => {
                 real-world software development.
               </span>
             </p>
-
             <div className="hidden 2xl:grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-8">
-  <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
-    <div className="fl-ic gap-2">
-      <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
-        <BsCameraReels />
-      </div>
-      <div className="space-y-2">
-        <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-          Start Date
-        </p>
-        <p className="text-base font-medium">19 June 2024</p>
-      </div>
-    </div>
-  </div>
+              <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
+                <div className="fl-ic gap-2">
+                  <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
+                    <BsCameraReels />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
+                      Start Date
+                    </p>
+                    <p className="text-base font-medium">19 June 2024</p>
+                  </div>
+                </div>
+              </div>
 
-  <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
-    <div className="fl-ic gap-2">
-      <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
-      <LuAirplay />
-      </div>
-      <div className="space-y-2">
-        <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-          Duration
-        </p>
-        <p className="text-base font-medium">5 Days</p>
-      </div>
-    </div>
-  </div>
+              <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
+                <div className="fl-ic gap-2">
+                  <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
+                    <LuAirplay />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
+                      Duration
+                    </p>
+                    <p className="text-base font-medium">5 Days</p>
+                  </div>
+                </div>
+              </div>
 
-  <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
-    <div className="fl-ic gap-2">
-      <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
-      <ImEmbed2 />
-      </div>
-      <div className="space-y-2">
-        <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-        Class Timings (Weekdays)
-        </p>
-        <p className="text-base font-medium">9 to 10 PM IST </p>
-      </div>
-    </div>
-  </div>
+              <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
+                <div className="fl-ic gap-2">
+                  <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
+                    <ImEmbed2 />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
+                      Class Timings (Weekdays)
+                    </p>
+                    <p className="text-base font-medium">9 to 10 PM IST </p>
+                  </div>
+                </div>
+              </div>
 
-  <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
-    <div className="fl-ic gap-2">
-      <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
-      <ImEmbed2 />
-      </div>
-      <div className="space-y-2">
-        <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-        Class Timings (Weekend)
-        </p>
-        <p className="text-base font-medium">3 to 5 PM IST</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+              <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
+                <div className="fl-ic gap-2">
+                  <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
+                    <ImEmbed2 />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
+                      Class Timings (Weekend)
+                    </p>
+                    <p className="text-base font-medium">3 to 5 PM IST</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </span>
       </div>

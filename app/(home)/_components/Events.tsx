@@ -28,8 +28,8 @@ const Events = ({ events }: EventProps) => {
             </span>
           ))}
         </h2>{" "}
-        <section className="all-events lg:grid grid-cols-4 gap-5 pt-16">
-          {events?.slice(0,4).map((e, index) => (
+        <section className="all-events lg:grid grid-cols-3 gap-5 pt-16">
+          {events?.slice(0,3).map((e, index) => (
             
             <Link key={index} href={`${e.slug}`} >
              
