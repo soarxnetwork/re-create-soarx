@@ -32,7 +32,9 @@ const ProfilePage = () => {
       /> */}
 
       
-      <ProfileSection />
+      <ProfileSection 
+      
+      />
     </section>
   )
 }

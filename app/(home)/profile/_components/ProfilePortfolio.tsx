@@ -1,28 +1,60 @@
-import React from 'react'
-
+"use client"
+import React , {useState , useEffect} from 'react'
+import PortfolioForm from './_sub_components/PortfolioForm';
+import { useSession } from 'next-auth/react';
+import { fetchUserPortfolio } from '@/actions/portfolio';
 function ProfilePortfolio() {
+
+    const [showmodal, setShowModal] = useState(false);
+    const [WebsiteUrl, setWebsiteUrl] = useState<string | null>('');
+    const [GithubUrl, setGithubUrl] = useState<string | null>('');
+    const [LinkedInUrl, setLinkedInUrl] = useState<string | null>('');
+    const {data: session} = useSession();
+    const handleShowModal = () => {
+        setShowModal(!showmodal);
+    }
+    useEffect(()=>{
+        if(session){
+        fetchUserPortfolio(session?.user.id).then((response) => {
+            if(!response) return;
+            setWebsiteUrl(response.WebsiteUrl);
+            setGithubUrl(response.GithubUrl);
+            setLinkedInUrl(response.LinkedInUrl);
+        }).catch((err) => {
+            throw err;
+        });
+    }else{
+        return;
+    }
+    
+    } , [session]);
+
+
   return (
     <section className='shadow-lg pb-4'>
     <div className='border-b-3 border-[#D9D9D9] flex py-4 px-4 justify-between  '>
         <h3 className='text-[30px]  font-semibold'>Portfolio
         </h3>
-        <button className=''>
-            <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_13_88)">
-                <path d="M16.9892 10.5233L18.1008 11.5967L7.15333 22.1667H6.04167V21.0933L16.9892 10.5233ZM21.3392 3.5C21.0371 3.5 20.7229 3.61667 20.4933 3.83833L18.2821 5.97333L22.8133 10.3483L25.0246 8.21333C25.4958 7.75833 25.4958 7.02333 25.0246 6.56833L22.1971 3.83833C21.9554 3.605 21.6533 3.5 21.3392 3.5ZM16.9892 7.22167L3.625 20.125V24.5H8.15625L21.5204 11.5967L16.9892 7.22167Z" fill="#2F2F2F"/>
-                </g>
-                <defs>
-                <clipPath id="clip0_13_88">
-                <rect width="29" height="28" fill="white"/>
-                </clipPath>
-                </defs>
-            </svg>
+        <button className='' onClick={handleShowModal}>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.39788 18C7.39788 17.1218 8.11095 16.4099 8.99056 16.4099H16.4074V9.00504C16.4074 8.12685 17.1204 7.41495 18 7.41495C18.8796 7.41495 19.5927 8.12685 19.5927 9.00504V16.4099H27.0096C27.8892 16.4099 28.6023 17.1218 28.6023 18C28.6023 18.8782 27.8892 19.5901 27.0096 19.5901H19.5927V26.9949C19.5927 27.8731 18.8796 28.585 18 28.585C17.1204 28.585 16.4074 27.8731 16.4074 26.9949V19.5901H8.99056C8.11095 19.5901 7.39788 18.8782 7.39788 18Z" fill="#8D00FF"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0548 0.548709C14.6114 -0.182903 21.3886 -0.182903 27.9452 0.548709C31.8236 0.98148 34.9557 4.03159 35.4119 7.92618C36.196 14.6193 36.196 21.3807 35.4119 28.0738C34.9557 31.9684 31.8236 35.0185 27.9452 35.4513C21.3886 36.1829 14.6114 36.1829 8.0548 35.4513C4.17636 35.0185 1.04431 31.9684 0.588065 28.0738C-0.196022 21.3807 -0.196021 14.6193 0.588065 7.92618C1.04431 4.03158 4.17636 0.98148 8.0548 0.548709ZM27.5914 3.70922C21.2699 3.00385 14.7301 3.00385 8.40861 3.70922C5.97833 3.9804 4.03303 5.8954 3.75185 8.29561C2.99652 14.7432 2.99652 21.2568 3.75185 27.7044C4.03303 30.1046 5.97833 32.0196 8.40861 32.2908C14.7301 32.9962 21.2699 32.9962 27.5914 32.2908C30.0217 32.0196 31.967 30.1046 32.2482 27.7044C33.0035 21.2568 33.0035 14.7432 32.2482 8.29561C31.967 5.8954 30.0217 3.9804 27.5914 3.70922Z" fill="#8D00FF"/>
+        </svg>
+
         </button>
     </div>
 
 
     <div>
-        <div className='flex items-center justify-center '>
+        { WebsiteUrl || LinkedInUrl || GithubUrl  ? (<>
+
+        <div>
+            <p>Website URL: {WebsiteUrl}</p>
+            <p>Github URL: {GithubUrl}</p>
+            <p>LinkedIn URL: {LinkedInUrl}</p>
+        </div>
+            
+        </>):(<div className='flex items-center justify-center '>
            <div className=' space-y-6 py-12'>
            <svg width="112" height="78" viewBox="0 0 112 78" fill="none" xmlns="http://www.w3.org/2000/svg" className='mx-auto'>
 <path d="M105.131 42.7439C105.131 42.7439 103.04 19.4999 86.1653 10.4519C69.2907 1.40392 60.48 4.21192 49.728 9.35992C38.976 14.5079 34.9335 23.793 25.6853 28.2359C16.4371 32.6788 2.98666 35.7239 2.38933 46.3319C1.79199 56.9399 5.37599 64.1159 10.4533 66.9239C15.5307 69.7319 20.4587 69.7319 20.4587 69.7319H98.4107C98.4107 69.7319 108.117 64.5839 105.131 42.7439Z" fill="#BA68C8"/>
@@ -228,9 +260,15 @@ function ProfilePortfolio() {
                 <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Portfolio</button>
             </div>
             </div> 
-        </div>
+        </div>)}
 
     </div>
+    {showmodal && <PortfolioForm 
+    userId={session?.user.id!}
+    WebsiteUrl={WebsiteUrl}
+    LinkedInUrl={LinkedInUrl}
+    GithubUrl={GithubUrl}
+    handleShowForm={handleShowModal} />}
 </section>
   )
 }
