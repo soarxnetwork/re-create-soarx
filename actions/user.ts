@@ -16,7 +16,7 @@ import {
 import { signJwt, verifyJwt } from "@/lib/jwt";
 import { resetPasswordType } from "@/app/(auth)/reset-password/_components/ResetPasswordForm";
 import { z } from "zod";
-import { userSchema } from "@/app/(home)/profile/_components/FormProfile";
+import { userSchema } from "@/schema/user";
 import { signOut } from "next-auth/react";
 interface updateAdminPayload {
   id: string;
@@ -151,7 +151,7 @@ export const updateUser = async (
   id: string,
   user: z.infer<typeof userSchema>
 ) => {
-  const { confirmPassword, imageUrl, password, ...rest } = user;
+  const { confirmPassword, image, password, ...rest } = user;
   try {
     const userExist = await db.user.findUnique({
       where: {
@@ -173,7 +173,7 @@ export const updateUser = async (
       },
       data: {
         ...rest,
-        image: imageUrl,
+        image: image || undefined,
       },
     });
     return { message: "User updated please login again" };

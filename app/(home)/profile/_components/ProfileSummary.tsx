@@ -1,9 +1,12 @@
-
+"use client"
 import React, {useEffect, useState} from 'react';
 import SummaryForm from './_sub_components/SummaryForm';
+import { useSession } from "next-auth/react";
+
 
 function ProfileSummary() {
     const [showForm, setShowForm] = useState(false);
+    const {data: session} = useSession();
 
     function handleShowForm(){
         setShowForm(!showForm);
@@ -22,9 +25,14 @@ function ProfileSummary() {
             </button>
         </div>
 
-
         <div>
-            <div className='flex items-center justify-center '>
+       { session?.user.summary ?( 
+            <div className='min-h-[200px] p-4 text-center'>
+                {session?.user.summary}
+            </div>
+            
+            ):(
+                <div className='flex items-center justify-center '>
                <div className=' space-y-6 py-12'>
                 <svg width="40" height="38" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg" className='mx-auto'>
                 <path d="M23 14.0938C23 13.2826 22.3284 12.625 21.5 12.625H9.5C8.67157 12.625 8 13.2826 8 14.0938C8 14.9049 8.67157 15.5625 9.5 15.5625H21.5C22.3284 15.5625 23 14.9049 23 14.0938Z" fill="#8D00FF"/>
@@ -37,10 +45,15 @@ function ProfileSummary() {
                     <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Summary</button>
                 </div>
                 </div> 
+            </div> 
+            )}
             </div>
-
-        </div>
-        {showForm && <SummaryForm handleShowForm={handleShowForm}/>}
+        
+        {showForm && <SummaryForm
+        email={session?.user.email!}
+        id={session?.user.id!}
+        summary={session?.user.summary}
+        handleShowForm={handleShowForm}/>}
     </section>
   )
 }

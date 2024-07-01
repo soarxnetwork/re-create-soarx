@@ -38,17 +38,8 @@ function EventPage ({ event, users }: {event :any , users: User[]}) {
     } else if (
       !session.user.id ||
       !session.user.email ||
-      !session.user.username ||
-      !session.user.image ||
-      !session.user.phone ||
-      !session.user.city ||
-      !session.user.collegeName ||
-      !session.user.degree ||
-      !session.user.dob ||
-      !session.user.name ||
-      !session.user.skill ||
-      !session.user.stream ||
-      !session.user.yearOfPassing
+      !session.user.username 
+
     ) {
       console.log(session.user)
       toast.error("Please complete your profile to register for the event!");

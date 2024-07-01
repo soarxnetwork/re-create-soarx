@@ -1,6 +1,17 @@
-import React from 'react'
+"use client"
+import React , {useState} from 'react'
 import Image from 'next/image'
+import ProfileForm from './_sub_components/ProfileForm';
+import { useSession } from "next-auth/react";
+
+
+
 function ProfilePictureSection() {
+    const [showForm, setShowForm] = useState(false);
+    const handleShowForm = () => {
+        setShowForm(!showForm);
+    }
+    const { data: session } = useSession();
   return (
     <section className='shadow-lg pb-16 pt-4'>
         <div className='h-[160px] py-2 bg-[#D9D9D9]'>
@@ -23,14 +34,15 @@ function ProfilePictureSection() {
                 </div>
                 <div className=' pb-4 mt-8  '>
                     <div className='font-semibold text-[20px]'>
-                        Akshat Jain
+                        {session?.user.username ? session?.user.username : 'No Username'}
                     </div>
                     <div>
-                        Student
+                        {session?.user.profession ? session?.user.profession : 'No Profession'}
                     </div>
                 </div>
             </div>
             <div className='py-6 -mr-8  '>
+                <button className='' onClick={handleShowForm}>
                 <svg width="43" height="40" viewBox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_0_14)">
                 <path d="M25.1908 15.0333L26.8392 16.5667L10.6067 31.6667H8.95833V30.1333L25.1908 15.0333ZM31.6408 5C31.1929 5 30.7271 5.16667 30.3867 5.48333L27.1079 8.53333L33.8267 14.7833L37.1054 11.7333C37.8042 11.0833 37.8042 10.0333 37.1054 9.38333L32.9129 5.48333C32.5546 5.15 32.1067 5 31.6408 5ZM25.1908 10.3167L5.375 28.75V35H12.0938L31.9096 16.5667L25.1908 10.3167Z" fill="#2F2F2F"/>
@@ -41,6 +53,7 @@ function ProfilePictureSection() {
                 </clipPath>
                 </defs>
                 </svg>
+                </button>
             </div>
         </div>
         <div className='flex w-full justify-between px-16'>
@@ -61,7 +74,7 @@ function ProfilePictureSection() {
                 Verified
                 </span>
                 <div>
-                    akshatjain481@gmail.com
+                    {session?.user.email!}    
                 </div>
             </div>
             <div className=' '>
@@ -74,7 +87,7 @@ function ProfilePictureSection() {
                 </div>
 
                 <div>
-                7014567890
+                {session?.user.phone ? session?.user.phone : 'No Phone Number'}
                 </div>
 
             </div>
@@ -84,7 +97,20 @@ function ProfilePictureSection() {
             <button className='bg-transparent text-[#7C0AD8] border-[#7C0AD8] border-1 rounded-xl px-10 py-2 font-semibold '> Download as Resume</button>
             <button className='signInbut min-w-[180px] font-semibold'>Share Profile</button>
         </div>
-        
+        {showForm && 
+                <ProfileForm 
+               
+                handleShowForm={handleShowForm}
+                profession={session?.user.profession}
+                email={session?.user.email!}
+                id={session?.user.id!}
+                gender={session?.user?.gender }
+                username={session?.user.username!}
+                phone={session?.user.phone}
+                city={session?.user.city}
+                country={session?.user.country}
+                pincode={session?.user.pincode}
+                 />}
     </section>
   )
 }

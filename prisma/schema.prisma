@@ -15,23 +15,30 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  name          String?
-  collegeName   String?
-  yearOfPassing String?
+  profession    String?
+  bgImage      String?
+  summary       String?
+  gender        String?
+  country       String?
+  pincode       String?
   city          String?
-  degree        String?
-  stream        String?
-  dob           String?
-  skill         String?
-
+ 
   orders        Order[]
   blogs         Blog[] @relation("BlogCreator")
   events        Event[] @relation("EventCreator")
   registration  Registration[]
   accounts      Account[]
   sessions      Session[]
-  campusAmbassador CampusAmbassador?
+  educations    Education[]
+  experiences   Experience[]
+  skills        Skills[]
+  portfolios    Portfolio[]
+  projects      Projects[]
+  certifications Certifications[]
 
+
+  campusAmbassador CampusAmbassador?
+  
   admin         Admin     @default(User)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
@@ -42,6 +49,69 @@ enum Admin {
   Admin
   User
 }
+
+model Education{
+  id            String    @id @default(cuid())
+  userId        String    
+  user          User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college_schoolName   String
+  degree                String?
+  fieldOfstudy        String?
+  StartDate           DateTime
+  EndDate             DateTime
+  grade               Float?
+}
+
+model Experience{
+  id          String    @id @default(cuid())
+  userId        String    
+  user          User   @relation(fields: [userId], references: [id])
+  Jobtitle               String
+  company             String
+  location            String
+  StartDate           DateTime
+  EndDate             DateTime?
+  currentlyWorking    Boolean
+  EmploymentType      String
+}
+
+model Skills{
+  userId        String  @id @default(cuid())  
+  user          User   @relation(fields: [userId], references: [id])
+  technicalSkills     String[]
+  softSkills          String[]
+  AreasOfInterest     String[]
+}
+
+model Portfolio{
+  userId        String   @id @default(cuid()) 
+  user          User   @relation(fields: [userId], references: [id])
+  WebsiteUrl         String?
+  LinkedInUrl        String?
+  GithubUrl          String?
+}
+
+model Projects{
+  id         String    @id @default(cuid())
+  userId        String   
+  user          User   @relation(fields: [userId], references: [id])
+  ProjectName        String
+  ProjectLink       String
+  SummaryOfProject  String
+  SkillsUsed         String[]
+}
+
+model Certifications{
+  id         String    @id @default(cuid())
+  userId        String   
+  user          User   @relation(fields: [userId], references: [id])
+  CertificateName    String
+  IssuedBy           String
+  IssueDate          DateTime
+  CredentialId       String
+  CredentialUrl      String 
+}
+
 
 model Account {
   id                 String  @id @default(cuid())
