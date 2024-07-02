@@ -257,7 +257,7 @@ function ProfilePortfolio() {
 
             <p className='max-w-[570px] text-center'>Share your Portfolio links and Social media links tolet potential companies know your capabilities.</p>
             <div className='flex justify-center items-center'>
-                <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Portfolio</button>
+                <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowModal}>Add Portfolio</button>
             </div>
             </div> 
         </div>)}

@@ -562,7 +562,7 @@ function ProfileEducation() {
 
             <p className='max-w-[570px] text-center'>Share your Educational Qualifications like your university and about your schooling.</p>
             <div className='flex justify-center items-center'>
-                <button className='signInbut min-w-[180px] font-semibold '>Add Education Qualifications</button>
+                <button className='signInbut min-w-[180px] font-semibold ' onClick={handleShowForm}>Add Education Qualifications</button>
             </div>
             </div>  
         </div>)}

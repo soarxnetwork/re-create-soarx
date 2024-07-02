@@ -42,7 +42,7 @@ function ProfileSummary() {
                 </svg>
                 <p className='max-w-[570px] text-center'>Tell us about your years of experience, industry, or skills. People also talk about their achievements or previous job experiences.</p>
                 <div className='flex justify-center items-center'>
-                    <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Summary</button>
+                    <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowForm}>Add Summary</button>
                 </div>
                 </div> 
             </div> 

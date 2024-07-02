@@ -577,7 +577,7 @@ function ProfileSkills() {
 
             <p className='max-w-[570px] text-center'>Share the coding languages you knowand other skills you have.</p>
             <div className='flex justify-center items-center'>
-                <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Skills and interest</button>
+                <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowForm}>Add Skills and interest</button>
             </div>
             </div> 
         </div>)}

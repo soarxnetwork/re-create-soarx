@@ -182,3 +182,18 @@ export const updateUser = async (
     throw err;
   }
 };
+
+export const fetchUser = async (id: string) => {
+  try {
+    const user = await db.user.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    return user;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+}
