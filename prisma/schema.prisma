@@ -15,26 +15,34 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  name          String?
-  collegeName   String?
-  yearOfPassing String?
+  profession    String?
+  bgImage      String?
+  summary       String?
+  gender        String?
+  country       String?
+  pincode       String?
   city          String?
-  degree        String?
-  stream        String?
-  dob           String?
-  skill         String?
+ 
+  orders           Order[]
+  blogs            Blog[]            @relation("BlogCreator")
+  events           Event[]           @relation("EventCreator")
+  registration     Registration[]
+  accounts         Account[]
+  sessions         Session[]
+  educations    Education[]
+  experiences   Experience[]
+  skills        Skills?
+  portfolios    Portfolio?
+  projects      Projects[]
+  certifications Certifications[]
 
-  orders        Order[]
-  blogs         Blog[] @relation("BlogCreator")
-  events        Event[] @relation("EventCreator")
-  registration  Registration[]
-  accounts      Account[]
-  sessions      Session[]
+
   campusAmbassador CampusAmbassador?
 
-  admin         Admin     @default(User)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  admin         Admin          @default(User)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  campusLeaders CampusLeader?
 }
 
 enum Admin {
@@ -43,19 +51,82 @@ enum Admin {
   User
 }
 
+model Education{
+  id            String    @id @default(cuid())
+  userId        String    
+  user          User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college_schoolName   String
+  degree                String?
+  fieldOfstudy        String?
+  StartDate           DateTime
+  EndDate             DateTime
+  grade               Float?
+}
+
+model Experience{
+  id          String    @id @default(cuid())
+  userId        String    
+  user          User   @relation(fields: [userId], references: [id])
+  Jobtitle               String
+  company             String
+  location            String
+  StartDate           DateTime
+  EndDate             DateTime?
+  currentlyWorking    Boolean
+  EmploymentType      String
+}
+
+model Skills{
+  userId        String  @id @default(cuid())  
+  user          User   @relation(fields: [userId], references: [id])
+  technicalSkills     String[]
+  softSkills          String[]
+  AreasOfInterest     String[]
+}
+
+model Portfolio{
+  userId        String   @id @default(cuid()) 
+  user          User   @relation(fields: [userId], references: [id])
+  WebsiteUrl         String?
+  LinkedInUrl        String?
+  GithubUrl          String?
+}
+
+model Projects{
+  id         String    @id @default(cuid())
+  userId        String   
+  user          User   @relation(fields: [userId], references: [id])
+  ProjectName        String
+  ProjectLink       String
+  SummaryOfProject  String
+  SkillsUsed         String[]
+}
+
+model Certifications{
+  id         String    @id @default(cuid())
+  userId        String   
+  user          User   @relation(fields: [userId], references: [id])
+  CertificateName    String
+  IssuedBy           String
+  IssueDate          DateTime
+  CredentialId       String
+  CredentialUrl      String 
+}
+
+
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  
-  access_token       String?  
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -79,76 +150,96 @@ model VerificationToken {
 }
 
 model Event {
-  id String @id @default(uuid()) 
-  title String
-  date DateTime
-  startTime String?
-  endTime String?
-  meeturl String?
-  venue String?
+  id          String   @id @default(uuid())
+  title       String
+  date        DateTime
+  startTime   String?
+  endTime     String?
+  meeturl     String?
+  venue       String?
   description String
-  imageUrl String
-  location String
-  slug String? @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  price Float?
-  
-  creatorId String 
-  creator User @relation(name: "EventCreator", fields: [creatorId], references: [id])
+  imageUrl    String
+  location    String
+  slug        String?  @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  price       Float?
 
-  Order Order[]
+  creatorId String
+  creator   User   @relation(name: "EventCreator", fields: [creatorId], references: [id])
+
+  Order        Order[]
+  registration Registration[]
+
   @@index([id], name: "id_index")
   @@index([creatorId], name: "creatorId_index")
   @@index([title], name: "search_index")
-  registration Registration[]
 }
 
 model Registration {
-  id           String   @id @default(uuid())
-  user         User     @relation(fields: [userId], references: [id])
-  userId       String
-  event        Event    @relation(fields: [eventId], references: [id] , onDelete: Cascade)
-  eventId      String
+  id               String   @id @default(uuid())
+  user             User     @relation(fields: [userId], references: [id])
+  userId           String
+  event            Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId          String
   registrationDate DateTime @default(now())
 }
 
 model Blog {
-  id String @id @default(uuid()) 
-  title String
-  content String
-  imageUrl String
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  imageUrl  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  creatorId String 
-  creator User @relation(name: "BlogCreator", fields: [creatorId], references: [id])
+  creatorId String
+  creator   User   @relation(name: "BlogCreator", fields: [creatorId], references: [id])
 }
 
 model Order {
-  id String @id @default(uuid()) 
-  amount Float
+  id        String   @id @default(uuid())
+  amount    Float
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  userId String
-  eventId String
-  event Event @relation(fields: [eventId], references: [id])
-  user User @relation(fields: [userId], references: [id])
+  userId    String
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+
   @@index([id], name: "id_index")
   @@index([userId], name: "userId_index")
   @@index([amount], name: "amount_index")
 }
 
 model CampusAmbassador {
-  id               String   @id @default(uuid())
-  fullname         String
-  collegeEmail     String
-  collegeName      String
-  collegeLocation  String
-  graduationYear   String
+  id              String @id @default(uuid())
+  fullname        String
+  collegeEmail    String
+  collegeName     String
+  collegeLocation String
+  graduationYear  String
 
-  userId           String   @unique
-  user             User     @relation(fields: [userId], references: [id])
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
 
-  createdAt        DateTime @default(now())
+  createdAt DateTime @default(now())
+}
+
+model CampusLeader {
+  id                        String @id @default(uuid())
+  WhyCapterLeader           String
+  LeaderShipExperience      String
+  StudentOrganizations      String
+  StrategyForSoarx          String
+  CoreTeamSoarx             String
+  QualitiesForTeam          String
+  WeekHoursForChapterLeader String
+  OneYearCommitment         String
+  HearAboutSoarx            String
+  AdditionalInfo            String
+  userId                    String @unique
+  user                      User   @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
 }

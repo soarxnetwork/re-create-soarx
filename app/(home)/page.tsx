@@ -14,6 +14,7 @@ import Gallery from "./_components/Gallery";
 import ProfileSection from "./profile/_components/ProfileSection";
 import SummaryForm from "./profile/_components/_sub_components/SummaryForm";
 import EducationForm from "./profile/_components/_sub_components/EducationForm";
+
 const HomePage = async () => {
   const events = await getAllEvents();
 

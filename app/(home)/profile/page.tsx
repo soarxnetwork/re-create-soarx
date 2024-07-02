@@ -1,10 +1,8 @@
 "use client"
-import { authOptions } from "@/lib/next-auth";
-import { getServerSession } from 'next-auth'
+
 import { useSession } from "next-auth/react";
 import { notFound, redirect } from 'next/navigation'
 import React from 'react'
-import FormProfile from "./_components/FormProfile";
 import ProfileSection from "./_components/ProfileSection";
 
 const ProfilePage = () => {
@@ -32,7 +30,9 @@ const ProfilePage = () => {
       /> */}
 
       
-      <ProfileSection />
+      <ProfileSection 
+      
+      />
     </section>
   )
 }

@@ -1,10 +1,48 @@
-import React, {useState} from 'react'
+"use client"
+import React, {useState , useEffect} from 'react'
 import EducationForm from './_sub_components/EducationForm';
-
+import { useSession } from 'next-auth/react';
+import { deleteUserEducation, fetchUserEducations } from '@/actions/education';
+import {toast } from 'react-toastify';
+interface Education {
+    id: string;
+    userId: string;
+    college_schoolName: string;
+    degree: string | null;
+    fieldOfstudy: string | null;
+    StartDate: Date;
+    EndDate: Date;
+    grade: number | null;
+  }
 function ProfileEducation() {
+
+    const {data : session} = useSession();
     const [showForm, setShowForm] = useState(false);
+    const [showformEdit, setShowFormEdit] = useState<any>('');
+    const handleShowFormEdit = (id: any) => {
+        setShowFormEdit((prevId : any) => (prevId === id ? null : id));
+      };
     function handleShowForm() {
         setShowForm(!showForm);
+    }
+    function handleDelete(id: string){
+        deleteUserEducation(id);
+        toast.success("Education details deleted successfully!");
+    }
+    const [educations, setEducations] = useState<Education[]>([]);
+    useEffect(() => {
+        if (session) {
+            fetchUserEducations(session.user.id)
+            .then((response) => {
+                if (!response) return toast.error("Something went wrong, please try again");
+                setEducations(response);
+            })
+        }
+    }, [session]);
+
+    function Month(month_number : number ){
+        const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return month[month_number];
     }
 
   return (
@@ -16,13 +54,68 @@ function ProfileEducation() {
             <path d="M7.39788 18C7.39788 17.1218 8.11095 16.4099 8.99056 16.4099H16.4074V9.00504C16.4074 8.12685 17.1204 7.41495 18 7.41495C18.8796 7.41495 19.5927 8.12685 19.5927 9.00504V16.4099H27.0096C27.8892 16.4099 28.6023 17.1218 28.6023 18C28.6023 18.8782 27.8892 19.5901 27.0096 19.5901H19.5927V26.9949C19.5927 27.8731 18.8796 28.585 18 28.585C17.1204 28.585 16.4074 27.8731 16.4074 26.9949V19.5901H8.99056C8.11095 19.5901 7.39788 18.8782 7.39788 18Z" fill="#8D00FF"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0548 0.548709C14.6114 -0.182903 21.3886 -0.182903 27.9452 0.548709C31.8236 0.98148 34.9557 4.03159 35.4119 7.92618C36.196 14.6193 36.196 21.3807 35.4119 28.0738C34.9557 31.9684 31.8236 35.0185 27.9452 35.4513C21.3886 36.1829 14.6114 36.1829 8.0548 35.4513C4.17636 35.0185 1.04431 31.9684 0.588065 28.0738C-0.196022 21.3807 -0.196021 14.6193 0.588065 7.92618C1.04431 4.03158 4.17636 0.98148 8.0548 0.548709ZM27.5914 3.70922C21.2699 3.00385 14.7301 3.00385 8.40861 3.70922C5.97833 3.9804 4.03303 5.8954 3.75185 8.29561C2.99652 14.7432 2.99652 21.2568 3.75185 27.7044C4.03303 30.1046 5.97833 32.0196 8.40861 32.2908C14.7301 32.9962 21.2699 32.9962 27.5914 32.2908C30.0217 32.0196 31.967 30.1046 32.2482 27.7044C33.0035 21.2568 33.0035 14.7432 32.2482 8.29561C31.967 5.8954 30.0217 3.9804 27.5914 3.70922Z" fill="#8D00FF"/>
             </svg>
-
         </button>
     </div>
 
 
     <div>
-        <div className='flex items-center justify-center '>
+        
+        {educations.length > 0 ? (
+            <>
+            {educations.map((education) => (
+        <div key={education.id} className='flex justify-between items-center'>
+          <div className='py-4 px-4 border-b-2 border-[#D9D9D9]'>
+            <h3 className='text-[20px] font-semibold'>{education.college_schoolName}</h3>
+            <p className='text-[16px] text-[#636363]'>{education.degree}</p>
+            <p className='text-[16px] text-[#636363]'>{education.fieldOfstudy}</p>
+            <p className='text-[16px] text-[#636363]'>
+              {Month(education.StartDate.getMonth())}, {education.StartDate.getFullYear()} - 
+              {Month(education.EndDate.getMonth())}, {education.EndDate.getFullYear()}
+            </p>
+            <p className='text-[16px] text-[#636363]'>Grade: {education.grade}</p>
+          </div>
+          <div className='flex space-x-6'>
+          <div onClick={() => handleShowFormEdit(education.id)}>
+            <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clipPath="url(#clip0_155_103)">
+                <path d="M16.9892 10.5233L18.1008 11.5967L7.15333 22.1667H6.04167V21.0933L16.9892 10.5233ZM21.3392 3.5C21.0371 3.5 20.7229 3.61667 20.4933 3.83833L18.2821 5.97333L22.8133 10.3483L25.0246 8.21333C25.4958 7.75833 25.4958 7.02333 25.0246 6.56833L22.1971 3.83833C21.9554 3.605 21.6533 3.5 21.3392 3.5ZM16.9892 7.22167L3.625 20.125V24.5H8.15625L21.5204 11.5967L16.9892 7.22167Z" fill="#2F2F2F"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_155_103">
+                  <rect width="29" height="28" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            {showformEdit === education.id && (
+              <div onClick={(e) => e.stopPropagation()}>
+                <EducationForm 
+                  handleShowForm={() => handleShowFormEdit(null)}
+                  educationId={education.id}
+                  id={session?.user.id}
+                  college_schoolName={education.college_schoolName}
+                  StartDate={education.StartDate}
+                  EndDate={education.EndDate}
+                  grade={education.grade}
+                  degree={education.degree}
+                  fieldOfstudy={education.fieldOfstudy}
+                />
+              </div>
+            )}
+          </div>
+          <div onClick={()=>{handleDelete(education.id)}}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2.25C9.58579 2.25 9.25 2.58579 9.25 3V3.75H5C4.58579 3.75 4.25 4.08579 4.25 4.5C4.25 4.91421 4.58579 5.25 5 5.25H19C19.4142 5.25 19.75 4.91421 19.75 4.5C19.75 4.08579 19.4142 3.75 19 3.75H14.75V3C14.75 2.58579 14.4142 2.25 14 2.25H10Z" fill="black"/>
+        <path d="M10 10.65C10.4142 10.65 10.75 10.9858 10.75 11.4L10.75 18.4C10.75 18.8142 10.4142 19.15 10 19.15C9.58579 19.15 9.25 18.8142 9.25 18.4L9.25 11.4C9.25 10.9858 9.58579 10.65 10 10.65Z" fill="black"/>
+        <path d="M14.75 11.4C14.75 10.9858 14.4142 10.65 14 10.65C13.5858 10.65 13.25 10.9858 13.25 11.4V18.4C13.25 18.8142 13.5858 19.15 14 19.15C14.4142 19.15 14.75 18.8142 14.75 18.4V11.4Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99142 7.91718C6.03363 7.53735 6.35468 7.25 6.73684 7.25H17.2632C17.6453 7.25 17.9664 7.53735 18.0086 7.91718L18.2087 9.71852C18.5715 12.9838 18.5715 16.2793 18.2087 19.5446L18.189 19.722C18.045 21.0181 17.0404 22.0517 15.7489 22.2325C13.2618 22.5807 10.7382 22.5807 8.25108 22.2325C6.95954 22.0517 5.955 21.0181 5.81098 19.722L5.79128 19.5446C5.42846 16.2793 5.42846 12.9838 5.79128 9.71852L5.99142 7.91718ZM7.40812 8.75L7.2821 9.88417C6.93152 13.0394 6.93152 16.2238 7.2821 19.379L7.3018 19.5563C7.37011 20.171 7.84652 20.6612 8.45905 20.747C10.8082 21.0758 13.1918 21.0758 15.5409 20.747C16.1535 20.6612 16.6299 20.171 16.6982 19.5563L16.7179 19.379C17.0685 16.2238 17.0685 13.0394 16.7179 9.88417L16.5919 8.75H7.40812Z" fill="black"/>
+        </svg>
+
+          </div>
+          </div>
+        </div>
+      ))}
+            </>
+        ): (<div className='flex items-center justify-center '>
            <div className=' space-y-6 py-12'>
                 <svg width="90" height="83" viewBox="0 0 90 83" fill="none" xmlns="http://www.w3.org/2000/svg" className='mx-auto'>
                         <path d="M14.3235 41.4751C-2.61856 50.6051 -2.61678 65.3791 14.3235 74.5091C31.2637 83.6391 58.7327 83.6391 75.6747 74.5091C92.6168 65.3791 92.615 50.6051 75.6747 41.4751C58.7345 32.3451 31.2655 32.3518 14.3235 41.4751Z" fill="#FAFAFA"/>
@@ -469,13 +562,17 @@ function ProfileEducation() {
 
             <p className='max-w-[570px] text-center'>Share your Educational Qualifications like your university and about your schooling.</p>
             <div className='flex justify-center items-center'>
-                <button className='signInbut min-w-[180px] font-semibold '>Add Education Qualifications</button>
+                <button className='signInbut min-w-[180px] font-semibold ' onClick={handleShowForm}>Add Education Qualifications</button>
             </div>
-            </div> 
-        </div>
+            </div>  
+        </div>)}
 
     </div>
-    {showForm ? <EducationForm handleShowForm={handleShowForm}/> :(<></>)}
+    {showForm ? 
+    <EducationForm
+        id={session?.user.id!}
+        handleShowForm={handleShowForm}/> 
+        :(<></>)}
 </section>
   )
 }
