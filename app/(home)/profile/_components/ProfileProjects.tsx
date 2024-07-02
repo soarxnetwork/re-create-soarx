@@ -550,7 +550,7 @@ function ProfileProjects() {
 
                 <p className='max-w-[570px] text-center'>Showcase the amazing projects you did thatdemonstarate your prowess in coding languages.</p>
                 <div className='flex justify-center items-center'>
-                    <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Projects</button>
+                    <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowForm}>Add Projects</button>
                 </div>
                 </div> 
             </div>)}

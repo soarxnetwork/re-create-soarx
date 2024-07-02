@@ -57,6 +57,7 @@ const EducationForm: React.FC<Props> =  ({
               .then((response) => {
                 if (!response) return toast.error("Something went wrong, please try again");
                 toast.success("Education details updated successfully!");
+                handleShowForm();
               })
               .catch((err) => {
                 throw err;
@@ -73,6 +74,7 @@ const EducationForm: React.FC<Props> =  ({
             .then((response) => {
               if (!response) return toast.error("Something went wrong, please try again");
               toast.success("Education details added successfully!");
+              handleShowForm();
             })
             .catch((err) => {
               throw err;

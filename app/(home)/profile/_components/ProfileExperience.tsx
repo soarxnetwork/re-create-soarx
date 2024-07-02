@@ -120,7 +120,7 @@ function ProfileExperience() {
 
             <p className='max-w-[570px] text-center'>Share your Professional Experience and yourcontribution to the companies you worked.</p>
             <div className='flex justify-center items-center'>
-                <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Experience</button>
+                <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowForm}>Add Experience</button>
             </div>
             </div> 
         </div>)}

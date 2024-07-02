@@ -31,8 +31,8 @@ model User {
   sessions         Session[]
   educations    Education[]
   experiences   Experience[]
-  skills        Skills[]
-  portfolios    Portfolio[]
+  skills        Skills?
+  portfolios    Portfolio?
   projects      Projects[]
   certifications Certifications[]
 

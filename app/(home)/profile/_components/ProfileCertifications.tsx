@@ -1,10 +1,53 @@
 "use client"
-import React, {useState} from 'react'
+import React, {useState , useEffect} from 'react'
 import CertificationsForm from './_sub_components/CertificationsForm';
+import { useSession } from 'next-auth/react';
+import { fetchUserCertificates , deleteUserCertificate } from '@/actions/certificate';
+import {toast } from 'react-toastify';
+interface Certificate{
+    id: string;
+    userId : string;
+    CertificateName: string;
+    IssuedBy: string;
+    IssueDate: Date;
+    CredentialId: string;
+    CredentialUrl: string;
+
+}
 
 function ProfileCertifications() {
+    const [showEditForm , setShowEditForm] = useState<any>("");
+    const [certificates, setCertificates] = useState<Certificate[]>([]);
     const [showForm, setShowForm] = useState(false);
     const handleShowForm = () => setShowForm(!showForm);
+    const {data : session} = useSession();
+    useEffect(() => {
+        fetchUserCertificates(session?.user.id!)
+        .then((data) => {
+            setCertificates(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+
+
+    } , [session]  )
+    const handleShowFormEdit = (id: any) => {
+        setShowEditForm((prevId : any) => (prevId === id ? null : id));
+      };
+
+    const handledeleteCertificate = (id: string) => {
+        deleteUserCertificate(id)
+        .then(() => {
+            setCertificates(certificates.filter((certificate) => certificate.id !== id))
+            toast.success('Certificate deleted successfully');
+        })
+        .catch((error) => {
+            toast.error('Something went wrong, please try again');
+        })
+    }
+
+    
 
   return (
     <section className='shadow-lg pb-4'>
@@ -21,7 +64,59 @@ function ProfileCertifications() {
 
 
         <div>
-            <div className='flex items-center justify-center '>
+            { certificates.length > 0 ? (
+                <div>
+                    {certificates.map((certificate) => (
+                        <div key={certificate.id} className='flex justify-between items-center px-4 py-4 border-b-3 border-[#D9D9D9]'>
+                            <div>
+                                <h4 className='text-[20px] font-semibold'>{certificate.CertificateName}</h4>
+                                <p className='text-[14px]'>{certificate.IssuedBy}</p>
+                            </div>
+                            <div>
+                                <button onClick={() => handledeleteCertificate(certificate.id)}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 2.25C9.58579 2.25 9.25 2.58579 9.25 3V3.75H5C4.58579 3.75 4.25 4.08579 4.25 4.5C4.25 4.91421 4.58579 5.25 5 5.25H19C19.4142 5.25 19.75 4.91421 19.75 4.5C19.75 4.08579 19.4142 3.75 19 3.75H14.75V3C14.75 2.58579 14.4142 2.25 14 2.25H10Z" fill="black"/>
+                                    <path d="M10 10.65C10.4142 10.65 10.75 10.9858 10.75 11.4L10.75 18.4C10.75 18.8142 10.4142 19.15 10 19.15C9.58579 19.15 9.25 18.8142 9.25 18.4L9.25 11.4C9.25 10.9858 9.58579 10.65 10 10.65Z" fill="black"/>
+                                    <path d="M14.75 11.4C14.75 10.9858 14.4142 10.65 14 10.65C13.5858 10.65 13.25 10.9858 13.25 11.4V18.4C13.25 18.8142 13.5858 19.15 14 19.15C14.4142 19.15 14.75 18.8142 14.75 18.4V11.4Z" fill="black"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.99142 7.91718C6.03363 7.53735 6.35468 7.25 6.73684 7.25H17.2632C17.6453 7.25 17.9664 7.53735 18.0086 7.91718L18.2087 9.71852C18.5715 12.9838 18.5715 16.2793 18.2087 19.5446L18.189 19.722C18.045 21.0181 17.0404 22.0517 15.7489 22.2325C13.2618 22.5807 10.7382 22.5807 8.25108 22.2325C6.95954 22.0517 5.955 21.0181 5.81098 19.722L5.79128 19.5446C5.42846 16.2793 5.42846 12.9838 5.79128 9.71852L5.99142 7.91718ZM7.40812 8.75L7.2821 9.88417C6.93152 13.0394 6.93152 16.2238 7.2821 19.379L7.3018 19.5563C7.37011 20.171 7.84652 20.6612 8.45905 20.747C10.8082 21.0758 13.1918 21.0758 15.5409 20.747C16.1535 20.6612 16.6299 20.171 16.6982 19.5563L16.7179 19.379C17.0685 16.2238 17.0685 13.0394 16.7179 9.88417L16.5919 8.75H7.40812Z" fill="black"/>
+                                    </svg>
+
+                                </button>
+                            </div>
+                            <div>
+                                <button onClick={()=> handleShowFormEdit(certificate.id)}>
+                                <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_13_622)">
+                                    <path d="M16.9892 10.5233L18.1008 11.5967L7.15333 22.1667H6.04167V21.0933L16.9892 10.5233ZM21.3392 3.5C21.0371 3.5 20.7229 3.61667 20.4933 3.83833L18.2821 5.97333L22.8133 10.3483L25.0246 8.21333C25.4958 7.75833 25.4958 7.02333 25.0246 6.56833L22.1971 3.83833C21.9554 3.605 21.6533 3.5 21.3392 3.5ZM16.9892 7.22167L3.625 20.125V24.5H8.15625L21.5204 11.5967L16.9892 7.22167Z" fill="#2F2F2F"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_13_622">
+                                    <rect width="29" height="28" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+
+                                </button>
+                            </div>
+
+                            {showEditForm === certificate.id && (
+                                <div onClick={(e) => e.stopPropagation()}>
+                                <CertificationsForm 
+                                userId={session?.user.id!}
+                                certificateId={certificate.id}
+                                CertificateName={certificate.CertificateName}
+                                IssuedBy={certificate.IssuedBy}
+                                IssueDate={certificate.IssueDate}
+                                CredentialId={certificate.CredentialId}
+                                CredentialUrl={certificate.CredentialUrl}
+                                handleShowForm={() =>{handleShowFormEdit(null)}} />
+                                </div>
+                            )}
+
+                        </div>
+                    ))}
+                </div>
+            ) : (<div className='flex items-center justify-center '>
                <div className=' space-y-6 py-12'>
                <svg width="70" height="67" viewBox="0 0 70 67" fill="none" xmlns="http://www.w3.org/2000/svg" className='mx-auto'>
 <path d="M62.9163 53.989L65.1825 53.9463L66.2982 53.9295C66.6695 53.9295 67.0392 53.9295 67.4089 53.9219L67.3359 53.989L67.326 52.2428L67.4089 52.319L65.1626 52.3114C64.4149 52.3114 63.6706 52.2946 62.9163 52.2855L62.9627 52.2443C62.9627 52.531 62.9478 52.8177 62.9395 53.109L62.9163 53.989ZM62.9163 53.989L62.8931 53.1258C62.8931 52.8345 62.8748 52.5386 62.8715 52.2428V52.2016H62.9163C63.6656 52.194 64.4083 52.1772 65.1626 52.1757L67.4089 52.1665H67.4934V52.2428L67.4835 53.989V54.0577H67.4089C67.0309 54.0577 66.6513 54.0577 66.2733 54.0485L65.1443 54.0317L62.9163 53.989Z" fill="#EBEBEB"/>
@@ -176,13 +271,15 @@ function ProfileCertifications() {
                 <p className='max-w-[570px] text-center'>Showcase the amazing certifications to highlight,
                 everything at one place.</p>
                 <div className='flex justify-center items-center'>
-                    <button className='signInbut min-w-[180px] font-semibold mx-auto'>Add Certificates</button>
+                    <button className='signInbut min-w-[180px] font-semibold mx-auto' onClick={handleShowForm}>Add Certificates</button>
                 </div>
                 </div> 
-            </div>
+            </div>)}
 
         </div>
-        {showForm && <CertificationsForm handleShowForm={handleShowForm}/>}
+        {showForm && <CertificationsForm
+        userId={session?.user.id!}
+        handleShowForm={handleShowForm}/>}
     </section>
   )
 }
