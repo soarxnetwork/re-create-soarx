@@ -10,6 +10,8 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { User } from "@prisma/client";
 import Link from "next/link";
 import { FaCampground, FaEarlybirds, FaUser, FaVenus } from "react-icons/fa";
+import { MdOutlineWorkOutline } from "react-icons/md";
+
 
 interface SideBarProps {
   onSidebarHide: () => void;
@@ -49,6 +51,12 @@ const sidebarItems = [
     icons: <FaCampground />,
     links: "/admin/campus-ambassador",
   },
+  {
+    id: "6",
+    title: "Jobs",
+    icons: <MdOutlineWorkOutline />,
+    links: "/admin/jobsAdmin",
+  }
   // {
   //   id: "2",
   //   title: "Ongoing Events",
