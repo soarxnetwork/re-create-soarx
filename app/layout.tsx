@@ -11,6 +11,7 @@ import { NextProvider } from "@/providers/NextuiProviders";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/next-auth";
 import { Roboto } from "next/font/google";
+import GoogleAdSense from "@/components/AdSense/GoogleAdSense";
 
 const inter = Roboto({ weight: '400', subsets: ["latin"] })
 
@@ -29,6 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       {" "}
+      <head>
+        <GoogleAdSense pId="5161344263980975"/>
+      </head>
       <body className="myfonts">
         <NextSSRPlugin
           /**
