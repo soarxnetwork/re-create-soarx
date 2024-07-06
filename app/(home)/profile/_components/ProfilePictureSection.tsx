@@ -49,18 +49,18 @@ function ProfilePictureSection() {
         setShowForm(!showForm);
     }
   return (
-    <section className='shadow-lg pb-16 pt-4'>
+    <section className='shadow-lg pb-16 mt-[10%]'>
         <div className='h-[160px] my-2 bg-[#D9D9D9] '>
                 
                 <div className='relative '>
                 {bgImage ? (
-                 <div className='absolute inset-0 h-[160px] bg-white'>
+                 <div className='absolute inset-0 h-[160px] bg-white  ' onClick={handleBgImageUploadFrom} >
                 <Image
                 alt='bgImage'
                 height={160}
                 width={375}
                 src={bgImage}
-                className='w-full h-full object-cover absolute inset-0'
+                className='w-full h-full object-cover absolute inset-0 '
                 />
                 </div>) : null}
                 <button className=' absolute right-4 py-2 ' onClick={handleBgImageUploadFrom}>
