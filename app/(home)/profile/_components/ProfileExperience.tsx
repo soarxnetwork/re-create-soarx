@@ -46,6 +46,15 @@ function ProfileExperience() {
     const handleShowForm = () => {
         setShowForm(!showForm);
     };
+
+    function Month(month_number : number | undefined ){
+      const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      if(month_number !== undefined){
+      return month[month_number];
+      }
+      else return '';
+  }
+
   return (
     <section className='shadow-lg pb-4'>
     <div className='border-b-3 border-[#D9D9D9] flex py-4 px-4 justify-between  '>
@@ -62,19 +71,25 @@ function ProfileExperience() {
 
     <div>
         { experiences.length > 0 ? (
-            <div>
+            <div className=''>
                 {experiences.map((experience) => (
-                    <div key={experience.id}  className='flex justify-between '>
-                    <div className='py-4 px-4 border-b-2 border-[#D9D9D9]'>
-                        <h4 className='text-[20px] font-semibold'>{experience.Jobtitle}</h4>
-                        <p className='text-[14px] font-semibold'>{experience.company}</p>
-                        <p className='text-[14px] font-semibold'>{experience.location}</p>
-                        <p className='text-[14px] font-semibold'>{experience.EmploymentType}</p>
-                        <p className='text-[14px] font-semibold'>{experience.StartDate.getMonth()} , {experience.StartDate.getFullYear()} - {experience.EndDate?.getMonth()} , {experience.EndDate?.getFullYear()} {experience.currentlyWorking ? (<>Currently Working</>): (<></>)}</p>
-                        
+                    <div key={experience.id}  className='flex justify-between py-6 '>
+                    <div className='py-4 px-4 '>
+                        <h4 className='text-[20px] font-semibold flex space-x-4 '> 
+                          <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42533 5.27593V3.36846C7.42533 1.95594 8.43594 0.755975 9.80203 0.546442L11.7474 0.248059C13.9037 -0.082686 16.0963 -0.0826864 18.2526 0.248059L20.198 0.546441C21.5641 0.755975 22.5747 1.95594 22.5747 3.36846V5.27593L25.308 5.50153C27.4008 5.67427 29.108 7.28556 29.4436 9.40491C30.1855 14.0889 30.1855 18.8645 29.4436 23.5485C29.108 25.6679 27.4008 27.2792 25.308 27.4519L22.3229 27.6983C17.4489 28.1006 12.5511 28.1006 7.67708 27.6983L4.69199 27.4519C2.59917 27.2792 0.892014 25.6679 0.556366 23.5485C-0.185455 18.8645 -0.185455 14.0889 0.556366 9.40491C0.892014 7.28556 2.59917 5.67427 4.69199 5.50153L7.42533 5.27593ZM12.1022 2.66693C14.0233 2.37227 15.9767 2.37227 17.8978 2.66693L19.8432 2.96531C20.0383 2.99525 20.1827 3.16667 20.1827 3.36846V5.10443C16.7304 4.90309 13.2696 4.90309 9.81733 5.10443V3.36846C9.81733 3.16667 9.96171 2.99525 10.1569 2.96531L12.1022 2.66693ZM7.86954 7.69315C12.6155 7.30143 17.3845 7.30143 22.1305 7.69315L25.1156 7.93954C26.1109 8.02169 26.9228 8.78799 27.0824 9.79592C27.1818 10.4236 27.2671 11.053 27.3383 11.6837C19.5601 15.6001 10.4399 15.6001 2.66169 11.6837C2.7329 11.053 2.8182 10.4236 2.91761 9.79592C3.07724 8.78799 3.88913 8.02169 4.88445 7.93954L7.86954 7.69315ZM2.44818 14.2862C10.4206 17.9938 19.5794 17.9938 27.5518 14.2862C27.7038 17.2477 27.5474 20.2216 27.0824 23.1575C26.9228 24.1654 26.1109 24.9317 25.1156 25.0139L22.1305 25.2603C17.3845 25.652 12.6155 25.652 7.86954 25.2603L4.88445 25.0139C3.88913 24.9317 3.07724 24.1654 2.91761 23.1575C2.45265 20.2216 2.29617 17.2477 2.44818 14.2862Z" fill="#A12DFF"/>
+                        </svg>
+                        <div>
+                          <h5>{experience.Jobtitle}</h5>
+                          <p className='text-[16px] text-[#636363] font-semibold'>{experience.company}</p>
+                        <p className='text-[16px] text-[#636363] font-semibold'>{experience.location}</p>
+                        <p className='text-[16px] font-semibold text-[#636363]'>{experience.EmploymentType}</p>
+                        <p className='text-[16px] text-[#636363] font-semibold'>{Month(experience.StartDate.getMonth())} , {experience.StartDate.getFullYear()} - {Month(experience.EndDate?.getMonth())} {!experience.currentlyWorking && (<>,</>)} {experience.EndDate?.getFullYear()} {experience.currentlyWorking ? (<>Currently Present</>): (<></>)}</p>
                         </div>
-                        
-                        <div className='flex space-x-6'>
+                          </h4>
+
+                        </div>
+                        <div className='flex space-x-6 m-6'>
           <div onClick={() => handleShowFormEdit(experience.id)}>
             <svg width="29" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_155_103)">
@@ -104,9 +119,7 @@ function ProfileExperience() {
 
           </div>
           </div>
-                       
-
-                    </div>
+           </div>
                 ))}
             </div>
         ):

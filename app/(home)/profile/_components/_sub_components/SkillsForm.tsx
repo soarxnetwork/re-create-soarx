@@ -72,6 +72,7 @@ const SkillsForm = ({
               AreasOfInterest: InterestTag,
             };
             updateUserSkills(userId, formattedData)
+            handleShowForm();
             toast.success('Skills and Area of Interest updated successfully');
           });
 
