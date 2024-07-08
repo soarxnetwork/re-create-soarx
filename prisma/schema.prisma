@@ -240,6 +240,27 @@ model CampusLeader {
   AdditionalInfo            String
   userId                    String @unique
   user                      User   @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
 
+
+
+model Job {
+  id                    String   @id @default(cuid())
+  title                 String
+  description           String
+  location              String
+  aboutCompany          String
+  companyName           String
+  applyLink             String
+  salary                String
+  experience            String
+  lastDateToApply       String?
+  slug                  String
+  skills                String
+  qualificationRequired String
+  imageUrl              String
+  updatedAt             DateTime @updatedAt
+  creatorId             String
   createdAt DateTime @default(now())
 }
