@@ -75,7 +75,7 @@ function ProfilePictureSection() {
 
         {uploadBgForm && (
                     <div className='z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto' onClick={handleBgImageUploadFrom}>
-                    <div onClick={(e) => e.stopPropagation()}>
+                    <div onClick={(e) => e.stopPropagation()} className='bg-white'>
                         <UploadDropzone endpoint='imageUploader' onClientUploadComplete={(res) => uploadBgImage(res)} />
                     </div>
                 </div>
@@ -90,7 +90,7 @@ function ProfilePictureSection() {
                 </div>
                 {uploadForm && (
                     <div className='z-[200px] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto' onClick={handleProfileImageUploadFrom}>
-                        <div onClick={(e) => e.stopPropagation()}>
+                        <div onClick={(e) => e.stopPropagation()} className='bg-white'>
                             <UploadDropzone endpoint='imageUploader' onClientUploadComplete={(res) => uploadImage(res)} />
                         </div>
                     </div>
