@@ -36,11 +36,6 @@ const JobCard = ({
         <p className="pt-2 flex items-center gap-2 font-medium">
         {truncateWord(skills, 30)}
         </p>
-        <div className="flex items-center gap-3">
-          <button className="btn-primary red mt-4" onClick={() => confirm2(id)}>
-            Delete
-          </button>
-        </div>
       </div>
     </div>
   );
