@@ -7,22 +7,19 @@ export const JobFormSchema = z.object({
     title: z.string().min(2, {
         message: "Too short",
     }),
-    description: z.string().min(2, {
-        message: "Too short",
-    }),
+    description: z.string().optional(),
 
     location: z.string().min(2, {
         message: "Too short",
     }),
-    aboutCompany: z.string().min(2, {
-        message: "Too short",
-    }),
+    aboutCompany: z.string().optional(),
     companyName: z.string().min(2, {
         message: "Too short",
     }),
     applyLink: z.string().min(2, {
         message: "Too short",
     }),
+    jobRole: z.string().optional(),
     salary: z.string().min(2, {
         message: "Too short",
     }),
@@ -39,7 +36,7 @@ export const JobFormSchema = z.object({
     qualificationRequired: z.string().min(2, {
         message: "Too short",
     }),
-    imageUrl: z.string(),
+    imageUrl: z.string().optional(),
     updatedAt: z.date().optional(),
     creatorId: z.string(),
 });
@@ -55,6 +52,7 @@ export const JobFormInitialValues = {
     companyName: "",
     applyLink: "",
     salary: "",
+    jobRole: "",
     experience: "",
     lastDateToApply: "",
     skills: "",

@@ -16,32 +16,31 @@ model User {
   emailVerified DateTime?
   image         String?
   profession    String?
-  bgImage      String?
+  bgImage       String?
   summary       String?
   gender        String?
   country       String?
   pincode       String?
   city          String?
- 
-  orders           Order[]
-  blogs            Blog[]            @relation("BlogCreator")
-  events           Event[]           @relation("EventCreator")
-  registration     Registration[]
-  accounts         Account[]
-  sessions         Session[]
-  educations    Education[]
-  experiences   Experience[]
-  skills        Skills?
-  portfolios    Portfolio?
-  projects      Projects[]
-  certifications Certifications[]
 
+  orders         Order[]
+  blogs          Blog[]           @relation("BlogCreator")
+  events         Event[]          @relation("EventCreator")
+  registration   Registration[]
+  accounts       Account[]
+  sessions       Session[]
+  educations     Education[]
+  experiences    Experience[]
+  skills         Skills?
+  portfolios     Portfolio?
+  projects       Projects[]
+  certifications Certifications[]
 
   campusAmbassador CampusAmbassador?
 
-  admin         Admin          @default(User)
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
+  admin         Admin         @default(User)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
   campusLeaders CampusLeader?
 }
 
@@ -51,68 +50,67 @@ enum Admin {
   User
 }
 
-model Education{
-  id            String    @id @default(cuid())
-  userId        String    
-  user          User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  college_schoolName   String
-  degree                String?
-  fieldOfstudy        String?
-  StartDate           DateTime
-  EndDate             DateTime
-  grade               Float?
+model Education {
+  id                 String   @id @default(cuid())
+  userId             String
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college_schoolName String
+  degree             String?
+  fieldOfstudy       String?
+  StartDate          DateTime
+  EndDate            DateTime
+  grade              Float?
 }
 
-model Experience{
-  id          String    @id @default(cuid())
-  userId        String    
-  user          User   @relation(fields: [userId], references: [id])
-  Jobtitle               String
-  company             String
-  location            String
-  StartDate           DateTime
-  EndDate             DateTime?
-  currentlyWorking    Boolean
-  EmploymentType      String
+model Experience {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id])
+  Jobtitle         String
+  company          String
+  location         String
+  StartDate        DateTime
+  EndDate          DateTime?
+  currentlyWorking Boolean
+  EmploymentType   String
 }
 
-model Skills{
-  userId        String  @id @default(cuid())  
-  user          User   @relation(fields: [userId], references: [id])
-  technicalSkills     String[]
-  softSkills          String[]
-  AreasOfInterest     String[]
+model Skills {
+  userId          String   @id @default(cuid())
+  user            User     @relation(fields: [userId], references: [id])
+  technicalSkills String[]
+  softSkills      String[]
+  AreasOfInterest String[]
 }
 
-model Portfolio{
-  userId        String   @id @default(cuid()) 
-  user          User   @relation(fields: [userId], references: [id])
-  WebsiteUrl         String?
-  LinkedInUrl        String?
-  GithubUrl          String?
+model Portfolio {
+  userId      String  @id @default(cuid())
+  user        User    @relation(fields: [userId], references: [id])
+  WebsiteUrl  String?
+  LinkedInUrl String?
+  GithubUrl   String?
 }
 
-model Projects{
-  id         String    @id @default(cuid())
-  userId        String   
-  user          User   @relation(fields: [userId], references: [id])
-  ProjectName        String
-  ProjectLink       String
-  SummaryOfProject  String
-  SkillsUsed         String[]
+model Projects {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id])
+  ProjectName      String
+  ProjectLink      String
+  SummaryOfProject String
+  SkillsUsed       String[]
 }
 
-model Certifications{
-  id         String    @id @default(cuid())
-  userId        String   
-  user          User   @relation(fields: [userId], references: [id])
-  CertificateName    String
-  IssuedBy           String
-  IssueDate          DateTime
-  CredentialId       String
-  CredentialUrl      String 
+model Certifications {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  CertificateName String
+  IssuedBy        String
+  IssueDate       DateTime
+  CredentialId    String
+  CredentialUrl   String
 }
-
 
 model Account {
   id                String  @id @default(cuid())
@@ -227,7 +225,7 @@ model CampusAmbassador {
 }
 
 model CampusLeader {
-  id                        String @id @default(uuid())
+  id                        String   @id @default(uuid())
   WhyCapterLeader           String
   LeaderShipExperience      String
   StudentOrganizations      String
@@ -238,19 +236,17 @@ model CampusLeader {
   OneYearCommitment         String
   HearAboutSoarx            String
   AdditionalInfo            String
-  userId                    String @unique
-  user                      User   @relation(fields: [userId], references: [id])
-  createdAt DateTime @default(now())
+  userId                    String   @unique
+  user                      User     @relation(fields: [userId], references: [id])
+  createdAt                 DateTime @default(now())
 }
-
-
 
 model Job {
   id                    String   @id @default(cuid())
   title                 String
-  description           String
+  description           String?
   location              String
-  aboutCompany          String
+  aboutCompany          String?
   companyName           String
   applyLink             String
   salary                String
@@ -258,9 +254,10 @@ model Job {
   lastDateToApply       String?
   slug                  String
   skills                String
+  jobRole               String?      // Full Time, Part Time, Internship
   qualificationRequired String
-  imageUrl              String
+  imageUrl              String?
   updatedAt             DateTime @updatedAt
   creatorId             String
-  createdAt DateTime @default(now())
+  createdAt             DateTime @default(now())
 }

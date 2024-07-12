@@ -200,6 +200,15 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
           )}
         </div>
 
+        <div>
+          <input
+            className="p-2"
+            placeholder="InterShip, Full Time Role"
+            {...register("jobRole")}
+          />
+        </div>
+
+
 
         <div className="flex w-full e-nfg  gap-5">
           <div
@@ -207,10 +216,10 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
               "grid-cols-1": !imageUrl,
             })}
           >
-            {imageUrl !== "" ? (
+            {imageUrl ? (
               <div className="relative">
                 <Image
-                  src={imageUrl}
+                  src={imageUrl as string}
                   alt="event image"
                   width={240}
                   height={240}
