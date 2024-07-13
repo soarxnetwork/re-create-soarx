@@ -252,6 +252,7 @@ model Job {
   salary                String
   experience            String
   lastDateToApply       String?
+  section               String?
   slug                  String
   skills                String
   jobRole               String?      // Full Time, Part Time, Internship
