@@ -74,7 +74,11 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex w-full gap-5 e-nfg">
-          <input className="p-2" placeholder="Job Title" {...register("title")} />
+          <input
+            className="p-2"
+            placeholder="Job Title"
+            {...register("title")}
+          />
           {errors.title && (
             <span className="text-sm text-red-500">{errors.title.message}</span>
           )}
@@ -175,11 +179,15 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
         </div>
 
         <div>
-          <input
-            className="p-2"
-            placeholder="Skills"
-            {...register("skills")}
-          />
+          <select className="p-2" {...register("section")}>
+            <option value="Trending">Trending</option>
+            <option value="New">New</option>
+            <option value="More chances">More chances</option>
+          </select>
+        </div>
+
+        <div>
+          <input className="p-2" placeholder="Skills" {...register("skills")} />
           {errors.skills && (
             <span className="text-sm text-red-500">
               {errors.skills.message}
@@ -207,8 +215,6 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
             {...register("jobRole")}
           />
         </div>
-
-
 
         <div className="flex w-full e-nfg  gap-5">
           <div
@@ -243,7 +249,7 @@ const JobAddAdminForm = ({ creatorId, jobForm, action }: FormEventProps) => {
           </div>
         </div>
         <InputTextarea
-        className="dark:bg-black dark:text-white p-1 border-gray-400 border-1"
+          className="dark:bg-black dark:text-white p-1 border-gray-400 border-1"
           rows={5}
           cols={30}
           placeholder="Event Description"

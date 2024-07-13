@@ -33,6 +33,7 @@ export const JobFormSchema = z.object({
     skills: z.string().min(2, {
         message: "Too short",
     }),
+    section: z.string().optional(),
     qualificationRequired: z.string().min(2, {
         message: "Too short",
     }),
@@ -52,6 +53,7 @@ export const JobFormInitialValues = {
     companyName: "",
     applyLink: "",
     salary: "",
+    section: "",
     jobRole: "",
     experience: "",
     lastDateToApply: "",

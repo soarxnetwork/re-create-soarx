@@ -1,7 +1,6 @@
 "use client";
 import React, { ReactElement } from "react";
 import { JobSchema } from "@/schema/JobSchema";
-import Image from "next/image";
 import { truncateWord } from "@/utils/truncateWord";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TextGenerateEffectTitles } from "@/components/ui/text-generate-for-titles";
@@ -26,7 +25,7 @@ const JobCardTwo = ({
   const mywords = truncateWord(title, 49);
   const mydescription = truncateWord(description as string, 100);
   return (
-    <Link href={`/jobs`}>
+    <Link href={`jobs/${id}`}>
       <div className="h-[300px] w-8/12 hover:cursor-pointer flex hover:scale-105 ease-in-out duration-300 rounded-xl dark:bg-gradient-to-br from-gray-700 to-gray-900 bg-gray-200 shadow-black  m-4">
         <div className="w-1/2 h-full hover:scale-95 ease-in-out duration-300">
           <img
