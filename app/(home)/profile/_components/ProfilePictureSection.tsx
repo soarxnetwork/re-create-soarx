@@ -49,18 +49,18 @@ function ProfilePictureSection() {
         setShowForm(!showForm);
     }
   return (
-    <section className='shadow-lg pb-16 pt-4'>
+    <section className='shadow-lg pb-16  mt-[15%] xl:mt-[10%]'>
         <div className='h-[160px] my-2 bg-[#D9D9D9] '>
                 
                 <div className='relative '>
                 {bgImage ? (
-                 <div className='absolute inset-0 h-[160px] bg-white'>
+                 <div className='absolute inset-0 h-[160px] bg-white  ' onClick={handleBgImageUploadFrom} >
                 <Image
                 alt='bgImage'
                 height={160}
                 width={375}
                 src={bgImage}
-                className='w-full h-full object-cover absolute inset-0'
+                className='w-full h-full object-cover absolute inset-0 '
                 />
                 </div>) : null}
                 <button className=' absolute right-4 py-2 ' onClick={handleBgImageUploadFrom}>
@@ -75,7 +75,7 @@ function ProfilePictureSection() {
 
         {uploadBgForm && (
                     <div className='z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto' onClick={handleBgImageUploadFrom}>
-                    <div onClick={(e) => e.stopPropagation()}>
+                    <div onClick={(e) => e.stopPropagation()} className='bg-white rounded-lg'>
                         <UploadDropzone endpoint='imageUploader' onClientUploadComplete={(res) => uploadBgImage(res)} />
                     </div>
                 </div>
@@ -90,7 +90,7 @@ function ProfilePictureSection() {
                 </div>
                 {uploadForm && (
                     <div className='z-[200px] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto' onClick={handleProfileImageUploadFrom}>
-                        <div onClick={(e) => e.stopPropagation()}>
+                        <div onClick={(e) => e.stopPropagation()} className='bg-white rounded-lg'>
                             <UploadDropzone endpoint='imageUploader' onClientUploadComplete={(res) => uploadImage(res)} />
                         </div>
                     </div>
@@ -122,7 +122,7 @@ function ProfilePictureSection() {
             </div>
 
         </div>
-        <div className='flex w-full justify-between px-16 py-4'>
+        <div className=' lg:flex w-full max-lg:space-y-4 justify-between px-16 py-4'>
             <div className='text-[14px]  '>
                  Email ID (Private to you) 
                 <span className=' ml-2 text-[#8D00FF]'>

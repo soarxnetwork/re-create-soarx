@@ -60,9 +60,8 @@ function ProfileSkills() {
 
 
     <div>
-        { technicalSkills.length > 0 || softSkills.length > 0 || AreasOfInterest.length > 0 ? 
-        (<>
-        <div className='mx-5 border-b-3 border-[#D9D9D9] '>
+        { technicalSkills.length> 0 && (<>
+            <div className='mx-5 border-b-3 border-[#D9D9D9] '>
             <h3 className='text-[20px] font-semibold my-4'>Hard Skills/ Technical Skills</h3>
             <div className='flex flex-wrap gap-2 mb-8 '>
                 {technicalSkills.map((tag, index) => (
@@ -75,6 +74,11 @@ function ProfileSkills() {
                 ))}
             </div>
         </div>
+        </>)}
+
+        {
+            softSkills.length > 0 && (<>
+            
 
         <div className='mx-5 border-b-3 border-[#D9D9D9] '>
             <h3 className='text-[20px] font-semibold my-4'>Soft Skills</h3>
@@ -89,21 +93,33 @@ function ProfileSkills() {
                 ))}
             </div>
         </div>
+            </>)
+        }
 
-        <div className='mx-5  '>
-            <h3 className='text-[20px] font-semibold my-4'>Areas of Interest</h3>
-            <div className='flex flex-wrap gap-2 mb-8 '>
-                {AreasOfInterest.map((tag, index) => (
-                <div
-                    key={index}
-                    className='flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-full'
-                >
-                    <span>{tag}</span>
+         {
+            AreasOfInterest.length > 0 && (
+            <> 
+
+                <div className='mx-5  '>
+                    <h3 className='text-[20px] font-semibold my-4'>Areas of Interest</h3>
+                    <div className='flex flex-wrap gap-2 mb-8 '>
+                        {AreasOfInterest.map((tag, index) => (
+                        <div
+                            key={index}
+                            className='flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-full'
+                        >
+                            <span>{tag}</span>
+                        </div>
+                        ))}
+                    </div>
                 </div>
-                ))}
-            </div>
-        </div>
+        </>)
+         }   
 
+
+        { technicalSkills.length > 0 || softSkills.length > 0 || AreasOfInterest.length > 0 ? 
+        (<>
+        
         </>
     ) :(<div className='flex items-center justify-center '>
            <div className=' space-y-6 py-12'>
