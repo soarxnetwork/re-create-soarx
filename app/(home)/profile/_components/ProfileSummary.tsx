@@ -2,15 +2,25 @@
 import React, {useEffect, useState} from 'react';
 import SummaryForm from './_sub_components/SummaryForm';
 import { useSession } from "next-auth/react";
-
+import { fetchUser } from '@/actions/user';
 
 function ProfileSummary() {
     const [showForm, setShowForm] = useState(false);
     const {data: session} = useSession();
-
+    const [User, SetUser] = useState<any>(null)
     function handleShowForm(){
         setShowForm(!showForm);
     }
+    useEffect(() =>{
+        async function gettingTheUser(){
+        const User = await fetchUser(session?.user.id!)
+        SetUser(User);
+        }
+        gettingTheUser();
+        
+
+
+    } , [User])
     
   return (
     <section className='shadow-lg pb-4'>
@@ -26,9 +36,9 @@ function ProfileSummary() {
         </div>
 
         <div>
-       { session?.user.summary ?( 
+       { User?.summary ?( 
             <div className='min-h-[200px] p-4 text-center'>
-                {session?.user.summary}
+                {User.summary}
             </div>
             
             ):(

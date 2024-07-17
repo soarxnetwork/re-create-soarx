@@ -63,7 +63,7 @@ const SkillsForm = ({
       });
 
       const onSubmit = (data: any) => {
-        try{
+        
           startTransition(() => {
             const formattedData = {
               ...data,
@@ -72,30 +72,29 @@ const SkillsForm = ({
               AreasOfInterest: InterestTag,
             };
             updateUserSkills(userId, formattedData)
-            handleShowForm();
+            .then(() =>{
+              handleShowForm();
             toast.success('Skills and Area of Interest updated successfully');
+            })
+            .catch((error)=>{
+              startTransition(() => {
+                createUserSkills(formattedData)
+                .then(() => {
+                  toast.success('Skills and Area of Interest added successfully');
+                  handleShowForm();
+                })
+                .catch((error) => {
+                  toast.error('Something went wrong');
+                  console.log(error);
+                });
+              });
+            })
+            
           });
 
-        }
-      catch(error){
-        startTransition(() => {
-          const formattedData = {
-            ...data,
-            technicalSkills: TechnicalSkillsTag,
-            softSkills: SoftSkillsTag,
-            AreasOfInterest: InterestTag,
-          };
-          createUserSkills(formattedData)
-          .then(() => {
-            toast.success('Skills and Area of Interest added successfully');
-            handleShowForm();
-          })
-          .catch((error) => {
-            toast.error('Something went wrong');
-            console.log(error);
-          });
-        });
-      }
+       
+        
+      
     };
 
 
