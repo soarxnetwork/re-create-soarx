@@ -1,6 +1,8 @@
 import EventPage from './EventPage';
 import { getEventBySlug } from '@/services/events';
 import { getUsersRegisteredForEvent } from '@/actions/registration';
+
+
 async function fetchData(slug: string) {
   const eventData = await getEventBySlug(slug);
   return eventData;

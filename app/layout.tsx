@@ -5,11 +5,7 @@ import "@uploadthing/react/styles.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
-import Link from "next/link";
-import ButtonAuth from "@/components/ButtonAuth";
 import { NextProvider } from "@/providers/NextuiProviders";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/next-auth";
 import { Roboto } from "next/font/google";
 
 const inter = Roboto({ weight: '400', subsets: ["latin"] })
@@ -29,6 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       {" "}
+      <head>
+        {/* Google Tag Manager */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXRVL4HNDK"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-KXRVL4HNDK');
+            `,
+          }}
+        />
+      </head>
       <body className="myfonts">
         <NextSSRPlugin
           /**
