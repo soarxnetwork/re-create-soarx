@@ -7,6 +7,7 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { NextProvider } from "@/providers/NextuiProviders";
 import { Roboto } from "next/font/google";
+import GoogleAdSense from "@/components/AdSense/GoogleAdSense";
 
 const inter = Roboto({ weight: '400', subsets: ["latin"] })
 
@@ -39,6 +40,8 @@ export default function RootLayout({
             `,
           }}
         />
+        <GoogleAdSense pId="5161344263980975"/>
+
       </head>
       <body className="myfonts">
         <NextSSRPlugin
