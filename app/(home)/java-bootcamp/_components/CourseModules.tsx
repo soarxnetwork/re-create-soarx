@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { coursesModules, PythonDailyClassRoutines } from "./CourseDetails";
+import { coursesModules, JavaDailyClassRoutines } from "./CourseDetails";
 import {
   faqAndCoursesMotionProps,
   faqAndCoursesVars,
@@ -33,7 +33,7 @@ const CourseModules = () => {
       className="sm:p-4 space-y-8 text-base sm:ml-3 sm:mr-3 lg:ml-20 md:ml-7 md:mr-7 lg:mr-16 2xl:mr-40"
       ref={ref}
     >
-      {PythonDailyClassRoutines.map((course) => (
+      {JavaDailyClassRoutines.map((course) => (
         <motion.div
           layout
           key={course.name}

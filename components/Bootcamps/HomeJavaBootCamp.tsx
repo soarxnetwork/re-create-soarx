@@ -5,12 +5,12 @@ import { BsCameraReels } from "react-icons/bs";
 import { LuAirplay } from "react-icons/lu";
 import { ImEmbed2 } from "react-icons/im";
 
-const HomePythonBootCamp = () => {
+const HomeJavaBootCamp = () => {
   return (
     <div className="pl-8 pr-8 md:pl-28 md:pr-32">
       <h2 className="flex  justify-center gap-x-5 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[70px] pt-2 font-bold leading-normal">
         <span>
-          {"Python".split("").map((child, idx) => (
+          {"Java".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
             </span>
@@ -32,29 +32,22 @@ const HomePythonBootCamp = () => {
           <div className="space-y-6 sm:pl-10 sm:pr-5 2xl:pr-10 xl:relative xl:top-10 lg:pl-10 lg:pr-20">
             <h4 className="font-semibold text-3xl pt-6">About Course</h4>
             <p>
-              Our 5-Day Python Bootcamp is designed to provide an{" "}
-              <span className="font-bold"> immersive learning</span> experience
-              in Python programming. Led by industry experts
+              Our 2-week DSA Live Classes Initiative is designed to provide{" "}
+              <span className="font-bold"> a comprehensive learning</span>{" "}
+              experience using Java in Data Structures and Algorithms (DSA).
             </p>
-            <span className="font-bold">Mohit Manuja,</span> Software Engineer
-            at <span className="font-bold">Google</span>, and{" "}
-            <span className="font-bold">Rajat Kumar</span>, Software Engineer at{" "}
-            <span className="font-bold">Intuit</span>
+            <span className="font-bold">
+              Led by industry experts, this program
+            </span>{" "}
             <p>
-              This program aims to equip participants with{" "}
+              aims to equip participants with the fundamental concepts,
               <span className="font-bold">
-                {" "}
-                essential Python skills, problem-solving techniques
+                problem-solving skills, and algorithmic thinking
               </span>{" "}
-              and a strong foundation in algorithms and data structures. This
-              bootcamp is perfect for beginners and those looking to enhance
-              their coding abilities for technical interviews, competitive
-              programming, and{" "}
-              <span className="font-bold">
-                real-world software development.
-              </span>
+              needed to excel in coding interviews, competitive programming, and
+              <span className="font-bold">real-world</span> software development.
             </p>
-            <div className="hidden 2xl:grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-8">
+            <div className="hidden xl:grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-8">
               <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
                 <div className="fl-ic gap-2">
                   <div className="min-w-12 min-h-12 rounded-full dark:bg-black bg-white border border-black border-opacity-20 bg-border-dlc fl-ic justify-center text-lg">
@@ -118,4 +111,4 @@ const HomePythonBootCamp = () => {
   );
 };
 
-export default HomePythonBootCamp;
+export default HomeJavaBootCamp;

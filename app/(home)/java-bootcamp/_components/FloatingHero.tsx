@@ -17,11 +17,11 @@ const FloatingHero = () => {
     (state) => state
   );
 
-  const handleNotify = () => {
+  /*const handleNotify = () => {
     toast.info("Enrollment Closed!", {
       toastId: "an id",
     });
-  };
+  };*/
 
   toast.clearWaitingQueue({ containerId: "an Id" });
 
@@ -36,7 +36,7 @@ const FloatingHero = () => {
           >
             <div className="fl-ic gap-4">
               <span className="text-3xl font-semibold text-primaryPurple">
-                ₹99
+                ₹149
               </span>
               <del className="text-shark text-2xl">₹399</del>
             </div>
@@ -63,10 +63,10 @@ const FloatingHero = () => {
             />
             <div>
               <button
-                onClick={handleNotify}
+                // onClick={handleNotify}
                 className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
               >
-                Enrollment Closed
+                <Link href="https://pages.razorpay.com/java-bootcamp">Enroll now</Link>
               </button>
             </div>
           </motion.div>

@@ -7,7 +7,7 @@ interface CourseDlcProps {
   }[];
 }
 
-const PythonDlc = ({ courseDetails }: CourseDlcProps) => {
+const JavaDlc = ({ courseDetails }: CourseDlcProps) => {
   return courseDetails.map((course, index) => (
     <div
       key={index}
@@ -25,4 +25,4 @@ const PythonDlc = ({ courseDetails }: CourseDlcProps) => {
   ));
 };
 
-export default PythonDlc;
+export default JavaDlc;

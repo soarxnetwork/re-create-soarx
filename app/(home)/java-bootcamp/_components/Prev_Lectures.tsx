@@ -11,7 +11,7 @@ const PrevLectures = () => {
         <div className="aspect-video">
           <iframe
             title="Lecture 1"
-            src="https://www.youtube.com/embed/ZL44rBcicRg"
+            src="https://www.youtube.com/embed/gMlDznw7zKU"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full transition-transform duration-300 transform hover:scale-105"

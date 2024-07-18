@@ -18,67 +18,66 @@ import { ImTicket } from "react-icons/im";
 import { GrResume } from "react-icons/gr";
 import { FaGithub } from "react-icons/fa";
 
-
-export const pythonCourseDetails = [
+export const javaCourseDetails = [
   {
     icon: <BsCameraReels />,
-   Description : {
-    question:  "Start Date",
-    answer: "19 June 2024"
-   }
+    Description: {
+      question: "Start Date",
+      answer: "7 August 2024",
+    },
   },
   {
     icon: <LuAirplay />,
-    Description : {
-      question:  "Duration",
-      answer: "5 Days"
-     }
+    Description: {
+      question: "Duration",
+      answer: "2 Weeks",
+    },
   },
   {
     icon: <ImEmbed2 />,
-    Description : {
-      question:  "Class Timings (Weekdays)",
-      answer: "9 to 10 PM IST"
-     }
+    Description: {
+      question: "Class Days",
+      answer: "Wed, Sat, and Sunday",
+    },
   },
   {
     icon: <ImEmbed2 />,
-    Description : {
-      question:  "Class Timings (Weekend)",
-      answer: "3 to 5 PM IST"
-     }
+    Description: {
+      question: "Number of sessions",
+      answer: "6",
+    },
   },
 
   {
     icon: <LuArrowUp01 />,
-    Description : {
-      question:  "Programming Languages",
-      answer: "Python"
-     }
+    Description: {
+      question: "Class Duration",
+      answer: "1.5 hours",
+    },
   },
 
   {
     icon: <PiNumberTwoBold />,
-    Description : {
-      question:  "Recordings available ?",
-      answer: "Yes, lifetime availability"
-     }
+    Description: {
+      question: "Recordings available ?",
+      answer: "Yes, lifetime availability",
+    },
   },
   {
     icon: <ImFileText2 />,
-    Description : {
-      question:  "Class Schedule",
-      answer: "1 hrs (Day 1-3), 2 hrs (Day 4-5)"
-     }
+    Description: {
+      question: "Programming Languages",
+      answer: "Java",
+    },
   },
   {
     icon: <ImFeed />,
-    Description : {
-      question:  "Language of Communication",
-      answer: "Hinglish(Hindi + English)"
-     }
+    Description: {
+      question: "Language of Communication",
+      answer: "Hinglish(Hindi + English)",
+    },
   },
-]
+];
 
 export const courseDetails1 = [
   {
@@ -115,22 +114,22 @@ export const courseDetails1 = [
   },
 ];
 
-export const pythonCourseDetails2 = [
+export const javaCourseDetails2 = [
   {
     icon: <GrResume />,
-    description: "Comprehensive Lectures",
+    description: "Interview Preparation",
   },
   {
     icon: <FaGithub />,
-    description: "Hands-On Exercises",
+    description: "Lifetime community support",
   },
   {
     icon: <BsFillDiagram3Fill />,
-    description: "Live Problem Solving Sessions",
+    description: "Weekly Problem Solving Session",
   },
   {
     icon: <RiMiniProgramFill />,
-    description: "Lifetime Community Support",
+    description: "Referral Opportunity",
   },
 
   {
@@ -141,8 +140,7 @@ export const pythonCourseDetails2 = [
     icon: <ImTicket />,
     description: "Certificate of Completion",
   },
-]
-
+];
 
 export const courseDetails2 = [
   {
@@ -220,9 +218,7 @@ export const coursesModules = [
   },
   {
     name: "Week 5",
-    topics: [
-      { name: "Stack and Queues with problems.", duration: "10 min" },
-    ],
+    topics: [{ name: "Stack and Queues with problems.", duration: "10 min" }],
   },
   {
     name: "Week 6",
@@ -240,7 +236,9 @@ export const coursesModules = [
   },
   {
     name: "Week 9",
-    topics: [{ name: "Binary Tree and Binary Search Tree", duration: "6 hours" }],
+    topics: [
+      { name: "Binary Tree and Binary Search Tree", duration: "6 hours" },
+    ],
   },
   {
     name: "Week 10",
@@ -248,37 +246,55 @@ export const coursesModules = [
   },
 ];
 
-
-
-export const PythonDailyClassRoutines = [
+export const JavaDailyClassRoutines = [
   {
-    name: "Day 1: Python Basics",
+    name: "Day 1",
     topics: [
       {
-        name: "Introduction, Variables & Data Types, Basic Operators & Input, Conditions   , Chained Conditionals & Nested Statements, For Loops, While Loops, List and Tuples, Iteration by Item, String Methods, Slice Operator, Functions  , Using Try and Except  , Global & Local Variables",
-        duration: "1 hr",
+        name: " Class, Function, Loop",
+        duration: "1.5 hrs",
       },
     ],
   },
   {
-    name: "Day 2: OOPs Concepts",
-    topics: [{ name: "Introduction to Objects, Creating Classes, Inheritance, Overloading Methods, Static Methods, Class Methods, Private & Public Classes", duration: "1 hours" }],
+    name: "Day 2",
+    topics: [
+      { name: "Pattern problems, Diamond pattern", duration: "1.5 hrs" },
+    ],
   },
   {
-    name: "Day 3: Machine Coding Hands-On",
+    name: "Day 3",
     topics: [
       {
-        name: "Problem Statement: Digital Wallet, OOPS, File Operations (Read/Write/Update), Lambda Functions, Exception Handling, Modular Programming.",
-        duration: "2 hours",
+        name: "POverview of data structures, Array indexing, Memory assignment and cleanup, Time complexity for arrays, Debugging.",
+        duration: "1.5 hrs",
       },
     ],
   },
   {
-    name: "Day 4 & Day 5: DSA & QA",
+    name: "Day 4",
     topics: [
       {
-        name: " Live Problem Solving on Array, String, Binary Search, Sliding Window",
-        duration: "2 hours",
+        name: " Array questions (e.g., Kadane's algorithm)",
+        duration: "1.5 hrs",
+      },
+    ],
+  },
+  {
+    name: "Day 5",
+    topics: [
+      {
+        name: "String handling, StringBuilder, SubString, SubSequence, String manipulation questions",
+        duration: "1.5 hrs",
+      },
+    ],
+  },
+  {
+    name: "Day 6",
+    topics: [
+      {
+        name: "Interactive Q&A/doubts and placement guidance session",
+        duration: "1.5 hrs",
       },
     ],
   },

@@ -229,6 +229,7 @@ export const courseDetailsHero = [
 export const pythonCourseHero = [
   "No Pre-requisite Required",
   "Live Interaction with MNC Experts",
+  "Interview Preparation",
   "Doubt Support"
 ]
 
