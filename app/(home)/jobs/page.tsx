@@ -3,8 +3,11 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { getAllJobs } from "@/services/jobs";
 import { Toast } from "primereact/toast";
 import JobCardTwo from "./_components/JobCard2";
-import {Spinner} from "@nextui-org/spinner";
+import { Spinner } from "@nextui-org/spinner";
 import { useSession } from "next-auth/react";
+import SearchArea from "./_components/SearchArea";
+import RecentJobs from "./_components/RecentJobs";
+import JobCategory from "./_components/Catergory";
 
 const Jobs = () => {
   const { data: session } = useSession();
@@ -26,29 +29,28 @@ const Jobs = () => {
           detail: "Something went wrong",
           life: 2000,
         });
-      }
-      finally{
+      } finally {
         setIsLoading(false);
       }
     };
     res();
   }, []);
 
-  if(isLoading){
+  if (isLoading) {
     // console.log(isLoading)
     return (
       <div className="h-[700px] w-full overflow-hidden flex items-center justify-center">
-        <Spinner  color="secondary" labelColor="secondary"/>
+        <Spinner color="secondary" labelColor="secondary" />
       </div>
-    )
+    );
   }
 
   return (
     <>
       <Toast ref={toast} />
-      <div className="ml-28 mr-28 mt-28 overlfow-x-hidden">
+      <div className="ml-28 mr-28 mt-28 overflow-x-hidden flex">
         {/* <JobSlider /> */}
-        <div className=" grid grid-cols-1">
+        <div className=" grid grid-cols-1 max-w-fit w-8/12">
           {jobs &&
             jobs
               .sort(
@@ -57,6 +59,11 @@ const Jobs = () => {
                   new Date(a.createdAt).getTime()
               )
               .map((e: any) => <JobCardTwo key={e.id} {...e} />)}
+        </div>
+        <div className="w-4/12 ml-2 space-y-4 sticky h-full">
+          <SearchArea />
+          <RecentJobs />
+          <JobCategory/>
         </div>
       </div>
     </>

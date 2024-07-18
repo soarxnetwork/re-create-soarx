@@ -10,6 +10,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import SearchArea from "./SearchArea";
 
 const JobCardTwo = ({
   id,
@@ -23,10 +24,11 @@ const JobCardTwo = ({
 }: JobSchema) => {
   const router = useRouter();
   const mywords = truncateWord(title, 49);
-  const mydescription = truncateWord(description as string, 100);
+  const mydescription = truncateWord(description as string, 160);
   return (
-    <Link href={`jobs/${id}`}>
-      <div className="h-[300px] w-8/12 hover:cursor-pointer flex hover:scale-105 ease-in-out duration-300 rounded-xl dark:bg-gradient-to-br from-gray-700 to-gray-900 bg-gray-200 shadow-black  m-4">
+    <div className="w-full">
+      <Link href={`jobs/${id}`}>
+      <div className="h-[300px] hover:cursor-pointer flex hover:scale-105 ease-in-out duration-300 rounded-xl dark:bg-gradient-to-br from-gray-700 to-gray-900 bg-gray-200 shadow-black  m-4">
         <div className="w-1/2 h-full hover:scale-95 ease-in-out duration-300">
           <img
             src={imageUrl}
@@ -38,10 +40,10 @@ const JobCardTwo = ({
         </div>
 
         <div className="event-content w-1/2 h-full">
-          <h4 className="text-xs font-medium bg-purple-500 inline p-1 rounded-xl">
+          <h4 className="text-xs font-medium text-[#34EF95] bg-[#D7FCEA] inline p-1 rounded-xl">
             {jobRole}
           </h4>
-          <h2 className="text-2xl font-medium">
+          <h2 className="text-2xl font-medium pt-2">
             <TextGenerateEffectTitles words={mywords} />
           </h2>
 
@@ -76,6 +78,7 @@ const JobCardTwo = ({
         </div>
       </div>
     </Link>
+    </div>
   );
 };
 
