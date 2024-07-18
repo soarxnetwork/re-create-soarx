@@ -84,8 +84,24 @@ const InitiativesDropdown = () => {
               </p>
             </Link>
           </li>
-
-
+            <hr />
+          <li>
+            <Link
+              href="/python-bootcamp"
+              className="block px-4 py-2 md:hover:text-primaryPurple"
+            >
+              <p className="flex gap-x-3 text-2xl">
+                <Image
+                  src="/images/online-learning.png"
+                  alt="Python Bootcamp"
+                  width={23}
+                  height={23}
+                  className="h py-0.5 "
+                />
+                <span className="text-2xl">5 Days Python Bootcamp</span>
+              </p>
+            </Link>
+          </li>
         </ul>
       )}
     </div>

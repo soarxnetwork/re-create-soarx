@@ -10,7 +10,7 @@ const CertificateOfCompletion = () => {
         </p>
         <div className="h-full w-full lg:w-2/5">
           <Image
-            src="/images/Java_Bootcamp_Certificate.png"
+            src="/images/Python_Bootcamp_Certificate2.png"
             alt="Certificate of Completion"
             width={600}
             height={400}

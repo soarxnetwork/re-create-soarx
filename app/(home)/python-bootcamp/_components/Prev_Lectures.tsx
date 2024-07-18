@@ -8,27 +8,27 @@ const PrevLectures = () => {
   <div className="prev-lectures w-full">
     <div className="lecture-wrapper w-full flex flex-col md:flex-row justify-center gap-4 ">
       <div className="lecture overflow-hidden rounded-lg shadow-lg w-full md:w-2/5">
-        <div className="aspect-video ">
+        <div className="aspect-video">
           <iframe
             title="Lecture 1"
-            src="https://www.youtube.com/embed/gMlDznw7zKU"
+            src="https://www.youtube.com/embed/ZL44rBcicRg"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full transition-transform duration-300 transform hover:scale-105"
           ></iframe>
         </div>
       </div>
-      <div className="lecture overflow-hidden rounded-lg shadow-lg w-full md:w-2/5">
-        <div className="aspect-video ">
+      {/* <div className="lecture overflow-hidden rounded-lg shadow-lg w-full md:w-2/5">
+        <div className="aspect-video">
           <iframe
             title="Lecture 2"
-            src="https://www.youtube.com/embed/aYYydxM8UFU"
+            src="https://www.youtube.com/embed/aYYydxM8UFU?si=8IYfdrcnMxCwK2dj"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full transition-transform duration-300 transform hover:scale-105"
           ></iframe>
         </div>
-      </div>
+      </div> */}
     </div>
   </div>
 </div>
