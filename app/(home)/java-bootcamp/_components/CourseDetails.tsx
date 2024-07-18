@@ -79,52 +79,6 @@ export const javaCourseDetails = [
   },
 ];
 
-export const pythonCourseDetails = [
-  {
-    icon: <BsCameraReels />,
-    Description: {
-      question: "Start Date",
-      answer: "19 June 2024",
-    },
-  },
-  {
-    icon: <LuAirplay />,
-    Description: {
-      question: "Duration",
-      answer: "5 Days",
-    },
-  },
-  {
-    icon: <ImEmbed2 />,
-    Description: {
-      question: "Class Schedule",
-      answer: "1 hour/day first 3 days, 2 hours/day last 2 days",
-    },
-  },
-
-  {
-    icon: <PiNumberTwoBold />,
-    Description: {
-      question: "Recordings available ?",
-      answer: "Yes, lifetime availability",
-    },
-  },
-  {
-    icon: <ImFileText2 />,
-    Description: {
-      question: "Programming Languages",
-      answer: "Python",
-    },
-  },
-  {
-    icon: <ImFeed />,
-    Description: {
-      question: "Language of Communication",
-      answer: "Hinglish(Hindi + English)",
-    },
-  },
-];
-
 export const courseDetails1 = [
   {
     icon: <BsCameraReels />,
@@ -161,34 +115,6 @@ export const courseDetails1 = [
 ];
 
 export const javaCourseDetails2 = [
-  {
-    icon: <GrResume />,
-    description: "Interview Preparation",
-  },
-  {
-    icon: <FaGithub />,
-    description: "Lifetime community support",
-  },
-  {
-    icon: <BsFillDiagram3Fill />,
-    description: "Weekly Problem Solving Session",
-  },
-  {
-    icon: <RiMiniProgramFill />,
-    description: "Referral Opportunity",
-  },
-
-  {
-    icon: <SiMaterialdesignicons />,
-    description: "Doubt Support",
-  },
-  {
-    icon: <ImTicket />,
-    description: "Certificate of Completion",
-  },
-];
-
-export const pythonCourseDetails2 = [
   {
     icon: <GrResume />,
     description: "Interview Preparation",
@@ -340,7 +266,7 @@ export const JavaDailyClassRoutines = [
     name: "Day 3",
     topics: [
       {
-        name: "POverview of data structures, Array indexing, Memory assignment and cleanup, Time complexity for arrays, Debugging.",
+        name: "Overview of data structures, Array indexing, Memory assignment and cleanup, Time complexity for arrays, Debugging.",
         duration: "1.5 hrs",
       },
     ],
@@ -369,45 +295,6 @@ export const JavaDailyClassRoutines = [
       {
         name: "Interactive Q&A/doubts and placement guidance session",
         duration: "1.5 hrs",
-      },
-    ],
-  },
-];
-
-export const pythonDailyClassRoutines = [
-  {
-    name: "Day 1: Python Basics",
-    topics: [
-      {
-        name: " Introduction, Variables & Data Types, Basic Operators & Input, Conditions (if-elif-else), Chained Conditionals & Nested Statements, For Loops, While Loops, List and Tuples, Iteration by Item, String Methods, Slice Operator, Functions (like count(), find()), Using Try and Except (Error Handling), Global & Local Variables",
-        duration: "1 hrs",
-      },
-    ],
-  },
-  {
-    name: "Day 2: Object-Oriented Programming (OOP)",
-    topics: [
-      {
-        name: " Introduction to Objects, Creating Classes, Inheritance, Overloading Methods, Static Methods, Class Methods, Private & Public Classes",
-        duration: "1 hrs",
-      },
-    ],
-  },
-  {
-    name: "Day 3: Machine Coding Hands-On",
-    topics: [
-      {
-        name: "OOPS, File Operations (Read/Write/Update), Lambda Functions, Exception Handling, Modular Programming",
-        duration: "1 hrs",
-      },
-    ],
-  },
-  {
-    name: "Day 4 & Day 5: DSA & QA",
-    topics: [
-      {
-        name: "Live Problem Solving on Array, String, Binary Search, Sliding Window",
-        duration: "2 hrs",
       },
     ],
   },
