@@ -15,6 +15,10 @@ const Jobs = () => {
   const [jobs, setJobs] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(false);
   const toast = useRef<any>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  
+  
+
   useEffect(() => {
     const res = async () => {
       setIsLoading(true);
@@ -44,24 +48,26 @@ const Jobs = () => {
       </div>
     );
   }
-
+  const filteredJobs = jobs.filter((job : any) => 
+    job?.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    job?.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    job?.jobRole.toLowerCase().includes(searchQuery.toLocaleLowerCase()) 
+    // Add more fields to search through as needed
+  );
+  const handleSearch = (query : any) => {
+    setSearchQuery(query);
+  };
   return (
     <>
       <Toast ref={toast} />
       <div className="ml-28 mr-28 mt-28 overflow-x-hidden flex">
         {/* <JobSlider /> */}
         <div className=" grid grid-cols-1 max-w-fit w-8/12">
-          {jobs &&
-            jobs
-              .sort(
-                (a: any, b: any) =>
-                  new Date(b.createdAt).getTime() -
-                  new Date(a.createdAt).getTime()
-              )
-              .map((e: any) => <JobCardTwo key={e.id} {...e} />)}
+        {filteredJobs.map((e: any) => <JobCardTwo key={e.id} {...e} />)}
+
         </div>
         <div className="w-4/12 ml-2 space-y-4 sticky h-full">
-          <SearchArea />
+          <SearchArea onSearch={handleSearch}  />
           <RecentJobs />
           <JobCategory/>
         </div>
