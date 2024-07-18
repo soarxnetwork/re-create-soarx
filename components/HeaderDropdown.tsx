@@ -15,13 +15,13 @@ const dsa = [
     desc: "Master DSA: Join Live Classes Now!",
     code: "/dsa-live-classes",
     image: "/images/online-learning.png",
-  },
+  },*/
   {
     name: "Campus Ambassador Program",
     desc: "Campus Leaders: Join as an Ambassador!",
     code: "/campus-ambassador",
     image: "/images/announcer.png",
-  },*/
+  },
   {
     name: "2-Week Java Bootcamp",
     desc: "Master Java: Join Live Classes!",
