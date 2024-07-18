@@ -43,9 +43,11 @@ export function ThreeDCardDemo() {
           >
             Try now →
           </CardItem> */}
-          <CardItem translateZ={20} as="button" className="signInbut">
-            <Link href="/java-bootcamp">Enroll now</Link>
-          </CardItem>
+          <Link href="/java-bootcamp">
+            <CardItem translateZ={20} as="button" className="signInbut">
+              Enroll now
+            </CardItem>
+          </Link>
         </div>
       </CardBody>
     </CardContainer>

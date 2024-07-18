@@ -61,14 +61,16 @@ const FloatingHero = () => {
               theme="light"
               transition={Flip}
             />
-            <div>
-              <button
-                // onClick={handleNotify}
-                className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
-              >
-                <Link href="https://pages.razorpay.com/java-bootcamp">Enroll now</Link>
-              </button>
-            </div>
+            <Link href="https://pages.razorpay.com/java-bootcamp">
+              <div>
+                <button
+                  // onClick={handleNotify}
+                  className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
+                >
+                  Enroll now
+                </button>
+              </div>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

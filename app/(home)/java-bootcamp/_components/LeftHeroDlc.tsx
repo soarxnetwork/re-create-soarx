@@ -102,12 +102,14 @@ const LeftHeroDlc = () => {
                   </div>
                 ))}
               </div>
+              <Link href="https://pages.razorpay.com/java-bootcamp">
               <button
                 // onClick={handleNotify}
                 className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl"
               >
-                <Link href="https://pages.razorpay.com/java-bootcamp">Enroll now</Link>
+              Enroll now
               </button>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>

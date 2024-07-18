@@ -57,7 +57,7 @@ const HomeJavaBootCamp = () => {
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
                       Start Date
                     </p>
-                    <p className="text-base font-medium">19 June 2024</p>
+                    <p className="text-base font-medium">7 August 2024</p>
                   </div>
                 </div>
               </div>
@@ -71,7 +71,7 @@ const HomeJavaBootCamp = () => {
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
                       Duration
                     </p>
-                    <p className="text-base font-medium">5 Days</p>
+                    <p className="text-base font-medium">2 Week</p>
                   </div>
                 </div>
               </div>
@@ -83,9 +83,9 @@ const HomeJavaBootCamp = () => {
                   </div>
                   <div className="space-y-2">
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-                      Class Timings (Weekdays)
+                      Class Duration
                     </p>
-                    <p className="text-base font-medium">9 to 10 PM IST </p>
+                    <p className="text-base font-medium">1.5 hrs</p>
                   </div>
                 </div>
               </div>
@@ -97,9 +97,9 @@ const HomeJavaBootCamp = () => {
                   </div>
                   <div className="space-y-2">
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-                      Class Timings (Weekend)
+                      No. of sessions
                     </p>
-                    <p className="text-base font-medium">3 to 5 PM IST</p>
+                    <p className="text-base font-medium">6</p>
                   </div>
                 </div>
               </div>
