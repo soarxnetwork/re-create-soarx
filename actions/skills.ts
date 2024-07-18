@@ -42,7 +42,7 @@ export async function updateUserSkills(userId: string, data: skillsSchemaProps) 
       });
       return updatedSkills;
     } catch (error) {
-      throw new Error(`Failed to update user skills: ${error}`);
+      return new Error(`Failed to update user skills: ${error}`);
     }
   }
   

@@ -163,7 +163,7 @@ const Header = ({ admin }: User) => {
 
               <p>
                 <span>
-                  <InitiativesDropdown />
+                  {/* <InitiativesDropdown /> */}
                 </span>
               </p>
 
@@ -185,8 +185,8 @@ const Header = ({ admin }: User) => {
               )}
 
               <li>
-                <Pythonbootcamp />
-                {/* <ButtonAuth /> */}
+                {/* <Pythonbootcamp /> */}
+                <ButtonAuth />
 
               </li>
             </ul>

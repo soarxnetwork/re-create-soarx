@@ -40,8 +40,8 @@ const SummaryForm: React.FC<Props> =  ({
             updateUser(id, data)
               .then((data) => {
                 if (data.error) return toast.error(data.error)
-                // signOut()
-                toast.success(data.message)
+                toast.success("Profile successfully updated , changes might take a few minutes to reflect back")
+                handleShowForm()              
               }).catch((err) => {
                 throw err
               })
@@ -64,8 +64,8 @@ const SummaryForm: React.FC<Props> =  ({
             <div className='mb-4 px-6 pt-2'>
                 <p className=''>Tell us about your years of experience, industry, or skills. People also talk about their achievements or previous job experiences.</p>
                 <textarea className='w-full h-[150px] border-[1px] border-[#837E7E] mt-4 rounded-sm p-4' placeholder='Write here...'  {...register('summary')}></textarea>
-                {errors.summary && <p className='text-red-500'>{errors.summary.message }</p>}
-                <p className='text-right'>0/2000</p>
+                {errors.summary && <p className='text-red-500'>{errors.summary.message}</p>}
+                {/* <p className='text-right'>0/2000</p> */}
             </div>
             <div className='text-right px-10 py-4 bg-[#E3DDDD]'>
             <button className='signInbut min-w-[90px] font-semibold mx-auto' type="submit" disabled={isPending}>Save</button>
