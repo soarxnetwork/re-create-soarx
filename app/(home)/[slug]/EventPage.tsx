@@ -5,16 +5,13 @@ import { registEventById } from '@/actions/registration';
 import { toast } from 'react-toastify';
 import Image from 'next/image';
 import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
-import { FaXTwitter } from 'react-icons/fa6';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { SiGooglemeet } from 'react-icons/si';
 import { FaInstagram } from 'react-icons/fa';
-import { FaWhatsapp } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
-import { Event } from '@prisma/client';
 import ProfileCircles from './ProfileCircles';
-import { getUsersRegisteredForEvent } from '@/actions/registration';
+
 
 interface User {
   id: string;
@@ -132,7 +129,7 @@ function EventPage ({ event, users }: {event :any , users: User[]}) {
                             </a>
                             </div>
                         </div>
-                        {users.length > 0 ? (<><div className="pt-6 font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">{String(users.length)} {new Date() > event?.date ? (<>Attended</>):(<>Going</>)}</div>
+                        {users.length > 3 ? (<><div className="pt-6 font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">{String(users.length)} {new Date() > event?.date ? (<>Attended</>):(<>Going</>)}</div>
                         <div className='pt-4'> <ProfileCircles users={users}/>  </div> </>): (<></>)}
                     </div>
                     <div className="pb-[100px] ml-[4%]   sm:max-md:ml-8">

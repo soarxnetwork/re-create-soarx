@@ -84,7 +84,7 @@ function ProfileCertifications() {
                                     <p className='font-semibold text-[#625A5A] '>{certificate.IssuedBy}</p>
                                     <p>Issued on {Month(certificate.IssueDate.getMonth())}, {certificate.IssueDate.getFullYear()} </p>
                                     <p className='font-semibold'>Credential ID <span className='text-[#8D00FF] font-medium ml-4 '>{certificate.CredentialId}</span></p>
-                                    <p className='font-semibold'>Credential URL <span className='text-[#8D00FF] font-medium ml-4'>{certificate.CredentialUrl}</span></p>
+                                    <p className='font-semibold'>Credential URL <span className='text-[#8D00FF] font-medium ml-4'><a href={certificate.CredentialUrl}>Click Here</a></span></p>
 
                                 </div>
 
