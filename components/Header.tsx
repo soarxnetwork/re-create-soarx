@@ -104,10 +104,10 @@ const Header = ({ admin }: User) => {
              <Pythonbootcamp />
               <ButtonAuth />
               </span>
-            <span className="hidden md:inline">
+            {/* <span className="hidden md:inline">
               <Pythonbootcamp />
-              {/* <ButtonAuth /> */}
-            </span>
+              <ButtonAuth />
+            </span> */}
             <div className="md:hidden">
               <Hamburger
                 toggled={showNavbar}
@@ -189,8 +189,8 @@ const Header = ({ admin }: User) => {
               )}
 
               <li>
-                <Pythonbootcamp />
-                {/* <ButtonAuth /> */}
+                {/* <Pythonbootcamp /> */}
+                <ButtonAuth />
               </li>
             </ul>
           </div>
