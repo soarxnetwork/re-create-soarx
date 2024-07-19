@@ -130,7 +130,7 @@ function ProfilePictureSection() {
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
           </h2>
-          <h3 className="text-lg md:text-3xl font-medium">
+          <h3 className="text-lg md:text-xl pl-2 md:pl-0 font-normal">
             {session?.user.profession}
           </h3>
         </section>
