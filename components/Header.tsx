@@ -103,7 +103,7 @@ const Header = ({ admin }: User) => {
             <span className="hidden md:flex justify-center gap-x-4 items-center">
              <Pythonbootcamp />
               <ButtonAuth />
-
+              </span>
             <span className="hidden md:inline">
               <Pythonbootcamp />
               {/* <ButtonAuth /> */}
