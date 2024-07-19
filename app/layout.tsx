@@ -41,7 +41,6 @@ export default function RootLayout({
           }}
         />
         <GoogleAdSense pId="5161344263980975"/>
-
       </head>
       <body className="myfonts">
         <NextSSRPlugin
