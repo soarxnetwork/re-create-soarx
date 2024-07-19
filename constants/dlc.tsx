@@ -177,7 +177,7 @@ export const faqDlc = [
   {
     question: "Is the course in Hindi or English?",
     answer:
-      "The course is taught in Hinglish, which is a mix of Hindi and English. (Primarily in Hindi).",
+      "The course is taught in Hinglish, which is a mix of Hindi and English.",
     id: "8",
   },
   {
@@ -193,7 +193,7 @@ export const faqDlc = [
   {
     question: "Is there a course schedule?",
     answer:
-      "Yes! Our Python Bootcamp offers a well-defined schedule, ensuring you gain maximum knowledge over 5 days. Each day focuses on a core concept.",
+      "Yes! Our Java Bootcamp offers a well-defined schedule, ensuring you gain maximum knowledge over 6 days. Each day focuses on a core concept.",
     id: "11",
   },
   {
@@ -229,6 +229,7 @@ export const courseDetailsHero = [
 export const pythonCourseHero = [
   "No Pre-requisite Required",
   "Live Interaction with MNC Experts",
+  "Interview Preparation",
   "Doubt Support"
 ]
 

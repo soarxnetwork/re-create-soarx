@@ -13,20 +13,20 @@ export function ThreeDCardDemo() {
           translateZ="50"
           className="text-2xl font-semibold text-neutral-600 dark:text-white"
         >
-          5-Day Python Bootcamp
+          2-Weeks Java Bootcamp
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
           className="text-neutral-500 text-sm max-w-sm mt-2 pt-3 pb-3 dark:text-neutral-300"
         >
-          This program aims to equip participants with essential Python skills,
+          This program aims to equip participants with essential Java skills,
           problem-solving techniques and a strong foundation in algorithms and
           data structures.
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
-            src="/images/python_bootcamp.png"
+            src="/images/Java_Bootcamp.png"
             height="500"
             width="500"
             className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -43,9 +43,11 @@ export function ThreeDCardDemo() {
           >
             Try now →
           </CardItem> */}
-          <CardItem translateZ={20} as="button" className="signInbut">
-            <Link href="/python-bootcamp">Enrollment Closed</Link>
-          </CardItem>
+          <Link href="/java-bootcamp">
+            <CardItem translateZ={20} as="button" className="signInbut">
+              Enroll now
+            </CardItem>
+          </Link>
         </div>
       </CardBody>
     </CardContainer>

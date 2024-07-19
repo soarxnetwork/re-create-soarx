@@ -103,6 +103,10 @@ const Header = ({ admin }: User) => {
             <span className="hidden md:flex justify-center gap-x-4 items-center">
              <Pythonbootcamp />
               <ButtonAuth />
+
+            <span className="hidden md:inline">
+              <Pythonbootcamp />
+              {/* <ButtonAuth /> */}
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -163,7 +167,7 @@ const Header = ({ admin }: User) => {
 
               <p>
                 <span>
-                  {/* <InitiativesDropdown /> */}
+                  <InitiativesDropdown />
                 </span>
               </p>
 
@@ -185,9 +189,8 @@ const Header = ({ admin }: User) => {
               )}
 
               <li>
-                {/* <Pythonbootcamp /> */}
-                <ButtonAuth />
-
+                <Pythonbootcamp />
+                {/* <ButtonAuth /> */}
               </li>
             </ul>
           </div>

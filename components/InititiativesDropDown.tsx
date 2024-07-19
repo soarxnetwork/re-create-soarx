@@ -69,6 +69,24 @@ const InitiativesDropdown = () => {
 
           <li>
             <Link
+              href="/java-bootcamp"
+              className="block px-4 py-2 md:hover:text-primaryPurple"
+            >
+              <p className="flex gap-x-3 text-2xl">
+                <Image
+                  src="/images/online-learning.png"
+                  alt="Java Bootcamp"
+                  width={23}
+                  height={23}
+                  className="h py-0.5 "
+                />
+                <span className="text-2xl">2-Week Java Bootcamp</span>
+              </p>
+            </Link>
+          </li>
+            <hr />
+          <li>
+            <Link
               href="/python-bootcamp"
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
@@ -80,12 +98,10 @@ const InitiativesDropdown = () => {
                   height={23}
                   className="h py-0.5 "
                 />
-                <span className="text-2xl">5-Day Python Bootcamp</span>
+                <span className="text-2xl">5 Days Python Bootcamp</span>
               </p>
             </Link>
           </li>
-
-
         </ul>
       )}
     </div>

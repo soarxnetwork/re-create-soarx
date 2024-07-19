@@ -3,19 +3,19 @@ import HeroDlc from "./_components/HeroDlc";
 import LeftHeroDlc from "./_components/LeftHeroDlc";
 import FaqDlc from "./_components/FaqDlc";
 import FloatingHero from "./_components/FloatingHero";
-import InstructorsDlc from "./_components/InstructorsDlc";
+import InstructorsDlc from "../dsa-live-classes/_components/InstructorsDlc";
 import CertificateOfCompletion from "./_components/CertificateOfCompletion";
 import PrevLectures from "./_components/Prev_Lectures";
 import '../../globals.css';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "5 Days Bootcamp by SoarX",
-  description: "Our Python Bootcamp is designed to provide an immersive learning experience in Java programming. This bootcamp will help you learn Java from scratch and build a strong foundation in programming.",
+  title: "2 Week Java Bootcamp by SoarX",
+  description: "Our 2 Week Java Bootcamp is designed to provide an immersive learning experience in Java programming. This bootcamp will help you learn Java from scratch and build a strong foundation in programming.",
   // icons: '/images/icon.png',
-  keywords: ["Python", "Course", "DSA", "Bootcamp", "Maang", "programming"],
+  keywords: ["Java", "Course", "DSA", "Bootcamp", "Maang", "programming"],
   openGraph: {
-    images: "/images/5_Day_Python_Bootcamp.png"
+    images: "/images/Java_Bootcamp.png"
   }
 }
 

@@ -17,11 +17,11 @@ const LeftHeroDlc = () => {
     (state) => state
   );
 
-  const handleNotify = () => {
+  /*const handleNotify = () => {
     toast.info("Enrollment Closed!", {
       toastId: "an id"
     });
-  };
+  };*/
 
   toast.clearWaitingQueue({ containerId: "an Id" });
 
@@ -48,7 +48,7 @@ const LeftHeroDlc = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-[25px] lg:text-4xl leading-normal lg:leading-relaxed sm:leading-normal sm:text-3xl font-semibold 2xl:text-5xl">
-              {"5-Days Python Bootcamp".split("").map((child, idx) => (
+              {"2-Week Java Bootcamp".split("").map((child, idx) => (
                 <span className={"hoverText"} key={idx}>
                   {child}
                 </span>
@@ -72,8 +72,8 @@ const LeftHeroDlc = () => {
               {...floatingHeroMotionProps}
             >
               <Image
-                src="/images/5_Day_Python_Bootcamp.png"
-                alt="Python BootCamp"
+                src="/images/Java_Bootcamp.png"
+                alt="Java BootCamp"
                 width={600}
                 height={600}
                 quality={100}
@@ -85,7 +85,7 @@ const LeftHeroDlc = () => {
               />
               <div className="fl-ic gap-4">
                 <span className=" text-primaryPurple text-3xl font-semibold">
-                  ₹99
+                  ₹149
                 </span>
                 <del className=" text-shark text-xl">₹399</del>
               </div>
@@ -102,12 +102,14 @@ const LeftHeroDlc = () => {
                   </div>
                 ))}
               </div>
+              <Link href="https://pages.razorpay.com/java-bootcamp">
               <button
-                onClick={handleNotify}
+                // onClick={handleNotify}
                 className="mt-4 signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white  py-4 px-2 font-medium rounded-xl"
               >
-              Enrollment Closed
+              Enroll now
               </button>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
