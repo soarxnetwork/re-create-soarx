@@ -1900,3 +1900,19 @@ input {
 .flippable-image.flipped {
   transform: rotateY(180deg);
 }
+
+
+
+.scroll-container {
+  /* Set height and overflow properties as needed */
+  height: 300px; /* or any height suitable for your layout */
+  overflow-y: auto; /* or overflow-x: auto; for horizontal scrolling */
+  
+  /* Hide scrollbar for WebKit-based browsers */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}

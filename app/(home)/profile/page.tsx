@@ -10,7 +10,7 @@ const ProfilePage = () => {
   if (!session?.user) return redirect('/sign-in')
 
   return (
-    <section className=" mx-[12%] my-[6%] ">
+    <section className="overflow-hidden">
 
       {/* <FormProfile
         id={session?.user.id!}
@@ -30,9 +30,7 @@ const ProfilePage = () => {
       /> */}
 
       
-      <ProfileSection 
-      
-      />
+      <ProfileSection />
     </section>
   )
 }

@@ -151,89 +151,129 @@ const SkillsForm = ({
 
 
   return (
-    <div className='z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto'>
-        <div className=" max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white z-[200] overflow-y-auto">
-            <form onSubmit={handleSubmit(onSubmit)} >
-            <div className="flex justify-between items-center py-4 px-6 border-b-2 border-[#D9D9D9]">
-            <h1 className="text-[30px] font-semibold">Skill and Area of interest</h1>
-            <button className="" onClick={handleShowForm}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 19L19 1M1 1L19 19" stroke="#636363" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-            </button>
-            </div>
+    <div className="z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto">
+  <div className="max-h-[80vh] max-w-[640px] w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-y-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col h-full">
+      <div className="flex justify-between items-center py-4 px-6 border-b-2 border-gray-300 dark:border-gray-700">
+        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Skill and Area of Interest</h1>
+        <button type="button" onClick={handleShowForm} className="p-2">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 19L19 1M1 1L19 19" stroke="#636363" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
 
-            <div className='mx-5 border-b-3 border-[#D9D9D9] '>
-                <h3 className='text-[20px] font-semibold my-4'>Hard Skills/ Technical Skills</h3>
-                <div className='flex space-x-6 mb-6'  >
-                <input type="text" className='border-2 border-gray-400 py-3 px-4' value={TechnicalSkill} placeholder='Ex:HTML, CSS , JavaScript, Nextjs' onChange={handleInputTechnicalChange} />
-                <button className='font-semibold border-2 border-[#A12DFF]  shadow-lg  rounded-2xl px-10 hover:bg-gray-100' onClick={handleAddTechnicalTag} >Add</button>
-                </div>
-                <div className='flex flex-wrap gap-2 mb-8 '>
-                    {TechnicalSkillsTag.map((tag, index) => (
-                    <div
-                        key={index}
-                        className='flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-full'
-                    >
-                        <span>{tag}</span>
-                        <button onClick={() => handleRemoveTechnicalTag(index)}>
-                        <span className='ml-2 text-white font-bold cursor-pointer'>&times;</span>
-                        </button>
-                    </div>
-                    ))}
-                </div>
-            </div>
-           
-
-            <div className='mx-5 border-b-3 border-[#D9D9D9] '>
-                <h3 className='text-[20px] font-semibold my-4'>Soft Skills</h3>
-                <div className='flex space-x-6 mb-6'  >
-                <input type="text" className='border-2 border-gray-400 py-3 px-4' placeholder='Ex:Creative, Problem Solver, Leadership Qualities...' value={SoftSkill} onChange={handleInputSoftChange} />
-                <button className='font-semibold border-2 border-[#A12DFF]  shadow-lg  rounded-2xl px-10 hover:bg-gray-100' onClick={handleAddSoftTag}>Add</button>
-                </div>
-                <div className='flex flex-wrap gap-2 mb-8 '>
-                    {SoftSkillsTag.map((tag, index) => (
-                    <div
-                        key={index}
-                        className='flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-full'
-                    >
-                        <span>{tag}</span>
-                        <button onClick={() => handleRemoveSoftTag(index)}>
-                        <span className='ml-2 text-white font-bold cursor-pointer'>&times;</span>
-                        </button>
-                    </div>
-                    ))}
-                </div>
-            </div>
-
-             
-            <div className='mx-5  '>
-                <h3 className='text-[20px] font-semibold my-4'>Areas of Interest</h3>
-                <div className='flex space-x-6 mb-6'  >
-                <input type="text" className='border-2 border-gray-400 py-3 px-4' placeholder='Ex:Programming, Digital Marketing...' value={Interest} onChange={handleInputInterestChange} />
-                <button className='font-semibold border-2 border-[#A12DFF]  shadow-lg  rounded-2xl px-10 hover:bg-gray-100' onClick={handleAddInterestTag}>Add</button>
-                </div>
-                <div className='flex flex-wrap gap-2 mb-8 '>
-                    {InterestTag.map((tag, index) => (
-                    <div
-                        key={index}
-                        className='flex items-center space-x-2 bg-purple-600 text-white px-4 py-2 rounded-full'
-                    >
-                        <span>{tag}</span>
-                        <button onClick={() => handleRemoveInterestTag(index)}>
-                        <span className='ml-2 text-white font-bold cursor-pointer'>&times;</span>
-                        </button>
-                    </div>
-                    ))}
-                </div>
-            </div>
-            <div className="text-right px-6 py-4 bg-[#E3DDDD]">
-          <button className="signInbut min-w-[90px] font-semibold mx-auto" type='submit' disabled={isPending}>Save</button>
-        
+      <div className="mx-5 border-b-2 border-gray-300 dark:border-gray-700 pb-6">
+        <h3 className="text-xl font-semibold my-4 text-gray-900 dark:text-white">Hard Skills/Technical Skills</h3>
+        <div className="flex sm:flex-row items-center gap-4 mb-6">
+          <input
+            type="text"
+            className="border-2 border-gray-400 dark:border-gray-600 py-3 px-4 rounded-lg w-full"
+            value={TechnicalSkill}
+            placeholder="Ex: HTML, CSS, JavaScript, Next.js"
+            onChange={handleInputTechnicalChange}
+          />
+          <button
+            type="button"
+            className="font-semibold border-2 border-[#A12DFF] dark:border-[#A12DFF] shadow-lg rounded-2xl px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+            onClick={handleAddTechnicalTag}
+          >
+            Add
+          </button>
         </div>
-        </form>
+        <div className="flex flex-wrap gap-2 mb-8">
+          {TechnicalSkillsTag.map((tag, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-2 bg-purple-600 dark:bg-purple-700 text-white px-4 py-2 rounded-full"
+            >
+              <span>{tag}</span>
+              <button type="button" onClick={() => handleRemoveTechnicalTag(index)}>
+                <span className="ml-2 text-white font-bold cursor-pointer">&times;</span>
+              </button>
+            </div>
+          ))}
         </div>
-    </div>
+      </div>
+
+      <div className="mx-5 border-b-2 border-gray-300 dark:border-gray-700 pb-6">
+        <h3 className="text-xl font-semibold my-4 text-gray-900 dark:text-white">Soft Skills</h3>
+        <div className="flex sm:flex-row items-center gap-4 mb-6">
+          <input
+            type="text"
+            className="border-2 border-gray-400 dark:border-gray-600 py-3 px-4 rounded-lg w-full"
+            placeholder="Ex: Creative, Problem Solver, Leadership Qualities..."
+            value={SoftSkill}
+            onChange={handleInputSoftChange}
+          />
+          <button
+            type="button"
+            className="font-semibold border-2 border-[#A12DFF] dark:border-[#A12DFF] shadow-lg rounded-2xl px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+            onClick={handleAddSoftTag}
+          >
+            Add
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2 mb-8">
+          {SoftSkillsTag.map((tag, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-2 bg-purple-600 dark:bg-purple-700 text-white px-4 py-2 rounded-full"
+            >
+              <span>{tag}</span>
+              <button type="button" onClick={() => handleRemoveSoftTag(index)}>
+                <span className="ml-2 text-white font-bold cursor-pointer">&times;</span>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-5 pb-6">
+        <h3 className="text-xl font-semibold my-4 text-gray-900 dark:text-white">Areas of Interest</h3>
+        <div className="flex  sm:flex-row items-center gap-4 mb-6">
+          <input
+            type="text"
+            className="border-2 border-gray-400 dark:border-gray-600 py-3 px-4 rounded-lg w-full"
+            placeholder="Ex: Programming, Digital Marketing..."
+            value={Interest}
+            onChange={handleInputInterestChange}
+          />
+          <button
+            type="button"
+            className="font-semibold border-2 border-[#A12DFF] dark:border-[#A12DFF] shadow-lg rounded-2xl px-6 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+            onClick={handleAddInterestTag}
+          >
+            Add
+          </button>
+        </div>
+        <div className="flex flex-wrap gap-2 mb-8">
+          {InterestTag.map((tag, index) => (
+            <div
+              key={index}
+              className="flex items-center space-x-2 bg-purple-600 dark:bg-purple-700 text-white px-4 py-2 rounded-full"
+            >
+              <span>{tag}</span>
+              <button type="button" onClick={() => handleRemoveInterestTag(index)}>
+                <span className="ml-2 text-white font-bold cursor-pointer">&times;</span>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="text-right px-6 py-4 bg-gray-200 dark:bg-gray-700">
+        <button
+          className="signInbut text-white font-semibold py-2 px-4 rounded disabled:bg-gray-400"
+          type="submit"
+          disabled={isPending}
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
   )
 }
 

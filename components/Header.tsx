@@ -100,6 +100,10 @@ const Header = ({ admin }: User) => {
 
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
+            <span className="hidden md:flex justify-center gap-x-4 items-center">
+             <Pythonbootcamp />
+              <ButtonAuth />
+
             <span className="hidden md:inline">
               <Pythonbootcamp />
               {/* <ButtonAuth /> */}

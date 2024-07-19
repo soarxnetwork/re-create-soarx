@@ -4,6 +4,7 @@ import CertificationsForm from './_sub_components/CertificationsForm';
 import { useSession } from 'next-auth/react';
 import { fetchUserCertificates , deleteUserCertificate } from '@/actions/certificate';
 import {toast } from 'react-toastify';
+import { FaPenToSquare } from 'react-icons/fa6';
 interface Certificate{
     id: string;
     userId : string;
@@ -55,18 +56,14 @@ function ProfileCertifications() {
     
 
   return (
-    <section className='shadow-lg pb-4'>
-        <div className='border-b-3 border-[#D9D9D9] flex py-4 px-4 justify-between  '>
-            <h3 className='text-[30px]  font-semibold'>Certifications</h3>
-            <button className='' onClick={handleShowForm}>
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.39788 18C7.39788 17.1218 8.11095 16.4099 8.99056 16.4099H16.4074V9.00504C16.4074 8.12685 17.1204 7.41495 18 7.41495C18.8796 7.41495 19.5927 8.12685 19.5927 9.00504V16.4099H27.0096C27.8892 16.4099 28.6023 17.1218 28.6023 18C28.6023 18.8782 27.8892 19.5901 27.0096 19.5901H19.5927V26.9949C19.5927 27.8731 18.8796 28.585 18 28.585C17.1204 28.585 16.4074 27.8731 16.4074 26.9949V19.5901H8.99056C8.11095 19.5901 7.39788 18.8782 7.39788 18Z" fill="#8D00FF"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.0548 0.548709C14.6114 -0.182903 21.3886 -0.182903 27.9452 0.548709C31.8236 0.98148 34.9557 4.03159 35.4119 7.92618C36.196 14.6193 36.196 21.3807 35.4119 28.0738C34.9557 31.9684 31.8236 35.0185 27.9452 35.4513C21.3886 36.1829 14.6114 36.1829 8.0548 35.4513C4.17636 35.0185 1.04431 31.9684 0.588065 28.0738C-0.196022 21.3807 -0.196021 14.6193 0.588065 7.92618C1.04431 4.03158 4.17636 0.98148 8.0548 0.548709ZM27.5914 3.70922C21.2699 3.00385 14.7301 3.00385 8.40861 3.70922C5.97833 3.9804 4.03303 5.8954 3.75185 8.29561C2.99652 14.7432 2.99652 21.2568 3.75185 27.7044C4.03303 30.1046 5.97833 32.0196 8.40861 32.2908C14.7301 32.9962 21.2699 32.9962 27.5914 32.2908C30.0217 32.0196 31.967 30.1046 32.2482 27.7044C33.0035 21.2568 33.0035 14.7432 32.2482 8.29561C31.967 5.8954 30.0217 3.9804 27.5914 3.70922Z" fill="#8D00FF"/>
-            </svg>
-
-            </button>
-        </div>
-
+    <section className='shadow-lg pb-4 px-4 lg:pl-4 lg:pr-4 mx-4'>
+       <div className="border-b-2 border-gray-600 flex py-4 pr-5 justify-between items-center">
+      <h3 className="text-[25px] md:text-[30px] font-semibold">Certifications</h3>
+      <button className="text-purple-500 text-xl" onClick={handleShowForm}>
+      <FaPenToSquare/>
+      </button>
+    </div>
+  
 
         <div>
             { certificates.length > 0 ? (
