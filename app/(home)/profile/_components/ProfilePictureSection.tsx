@@ -143,7 +143,7 @@ function ProfilePictureSection() {
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
           </h2>
-          <h2 className="text-lg font-medium text-gray-600">
+          <h2 className="text-lg font-medium text-gray-600 ml-3 md:ml-0">
             {session?.user.profession}{" "}
           </h2>
         </section>
@@ -193,8 +193,7 @@ function ProfilePictureSection() {
           phone={session?.user.phone}
           city={session?.user.city}
           country={session?.user.country}
-          pincode={session?.user.pincode}
-          // college={session?.user?.college}
+          college={session?.user.college}
         />
       )}
     </section>

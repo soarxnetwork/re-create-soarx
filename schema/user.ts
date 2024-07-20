@@ -15,17 +15,21 @@ export const userSchema = z.object({
   username: z.string().min(3, {
     message: "Username must be at least 3 characters long"
   }).optional(),
-  profession: z.string().optional(),
-  phone: z.string().refine(validator.isMobilePhone, "Invalid phone number").optional(),
+  profession: z.string(),
+  phone: z.string().refine(validator.isMobilePhone, "Invalid phone number"),
     image: z.string().optional(),
   bgImage: z.string().optional(),
   summary: z.string().min(20, {
     message: "Summary must be at least 20 characters long"
   }).optional(),
-  gender: z.string().optional(),
-  country: z.string().optional(),
-  city: z.string().optional(),
-  pincode: z.string().optional(),
+  gender: z.string(),
+  country: z.string(),
+  city: z.string().min(2, {
+    message: "City is required"
+  }),
+  college: z.string().min(1, {
+    message: "College name is neccessary"
+  }),
 }).refine(data => data.password === data.confirmPassword, {
   path: ["confirmPassword"],
   message: "Passwords do not match"
