@@ -5,7 +5,9 @@ import { useSession } from "next-auth/react";
 import { deleteUserEducation, fetchUserEducations } from "@/actions/education";
 import { toast } from "react-toastify";
 import { FaPenToSquare } from "react-icons/fa6";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { MdDeleteForever } from "react-icons/md";
+import { FaPencil } from "react-icons/fa6";
+
 interface Education {
   id: string;
   userId: string;
@@ -62,19 +64,24 @@ function ProfileEducation() {
   return (
     <section className="shadow-lg pb-4 px-4 lg:pl-4 lg:pr-4 mx-4">
       <div className="border-b-2 border-gray-600 flex py-4 pr-5 justify-between items-center">
-      <h3 className="text-[22px] md:text-[30px] font-semibold">Education Qualifications</h3>
-      <button className="text-purple-500 text-xl" onClick={handleShowForm}>
-      <FaPenToSquare/>
-      </button>
-    </div>
-  
+        <h3 className="text-[22px] md:text-[30px] font-semibold">
+          Education Qualifications
+        </h3>
+        <button className="text-purple-500 text-xl" onClick={handleShowForm}>
+          <FaPenToSquare />
+        </button>
+      </div>
+
       <div>
         {educations.length > 0 ? (
           <>
             {educations.map((education) => (
-              <div key={education.id} className="flex justify-between py-6 ">
-                <div className="py-4 px-4 ">
-                  <h3 className="text-[20px] font-semibold flex space-x-4">
+              <div
+                key={education.id}
+                className="flex flex-col md:flex-row justify-between py-6"
+              >
+                <div className="py-4 px-4 w-full md:w-auto">
+                  <h3 className="text-[20px] font-semibold flex items-center space-x-4">
                     <svg
                       width="32"
                       height="29"
@@ -83,8 +90,8 @@ function ProfileEducation() {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M15.4822 3.98993C15.8068 3.9062 16.1492 3.90612 16.4739 3.98961C17.1639 4.16707 17.8603 4.33168 18.559 4.49683C21.8401 5.27235 25.1724 6.05997 28.1371 8.24828L29.5023 9.25601C30.0561 9.66477 30.3332 10.2698 30.3334 10.875V19.3333C30.3334 19.8338 29.8857 20.2396 29.3334 20.2396C28.7811 20.2396 28.3334 19.8338 28.3334 19.3333V13.3601L28.1162 13.5208C27.0889 14.2805 26.0171 14.8704 24.9185 15.3493C24.971 15.4594 25.0001 15.5808 25.0001 15.7083V20.8968C25.0001 22.2662 24.0731 23.4954 22.6653 23.9928L17.3319 25.8771C16.4754 26.1797 15.5247 26.1797 14.6682 25.8771L9.33489 23.9928C7.92704 23.4953 7.00008 22.2662 7.00008 20.8968V15.7083C7.00008 15.5775 7.03065 15.4532 7.08566 15.3409C5.97852 14.8593 4.89838 14.2659 3.86307 13.5017L2.49782 12.4939C1.39027 11.6764 1.38969 10.0738 2.49628 9.25542L3.88398 8.22918C6.82724 6.05256 10.136 5.26965 13.3928 4.49903C14.093 4.33334 14.7909 4.16821 15.4822 3.98993ZM28.3334 10.8757C28.3334 10.7668 28.2848 10.695 28.2393 10.6613L26.8741 9.65361C24.0001 7.85415 21.4392 7.0605 18.1866 6.28592C17.4714 6.1156 16.736 5.94046 15.9787 5.74631C15.2181 5.94186 14.4799 6.11784 13.7624 6.28893C10.5358 7.0582 7.72439 7.72849 5.14846 9.63345L3.76075 10.6597C3.71517 10.6934 3.6667 10.7654 3.66675 10.8743C3.6668 10.9831 3.71532 11.055 3.76086 11.0886L5.12611 12.0963C7.72388 14.0138 10.561 14.6895 13.8136 15.464C14.5288 15.6344 15.2642 15.8095 16.0215 16.0036C16.782 15.8081 17.5201 15.6321 18.2376 15.4611C21.4642 14.6918 24.2758 14.0215 26.8517 12.1165L28.2394 11.0903C28.285 11.0566 28.3334 10.9844 28.3334 10.8757ZM18.6074 17.2509C20.0738 16.9039 21.5507 16.5545 23.0001 16.0764V20.8968C23.0001 21.5193 22.5787 22.078 21.9388 22.3041L16.6055 24.1884C16.2161 24.326 15.784 24.326 15.3947 24.1884L10.0614 22.3041C9.42143 22.078 9.00008 21.5193 9.00008 20.8968V16.0662C10.4651 16.5497 11.9583 16.9027 13.4411 17.2531C14.1398 17.4183 14.8363 17.5829 15.5263 17.7604C15.8509 17.8438 16.1934 17.8438 16.518 17.76C17.2093 17.5818 17.9072 17.4166 18.6074 17.2509Z"
                         fill="#8D00FF"
                       />
@@ -96,7 +103,7 @@ function ProfileEducation() {
                       </p>
                       <p className="text-[16px] text-[#636363]">
                         {Month(education.StartDate.getMonth())},{" "}
-                        {education.StartDate.getFullYear()} -
+                        {education.StartDate.getFullYear()} -{" "}
                         {Month(education.EndDate.getMonth())},{" "}
                         {education.EndDate.getFullYear()}
                       </p>
@@ -106,76 +113,25 @@ function ProfileEducation() {
                     </div>
                   </h3>
                 </div>
-                <div className="flex space-x-6 mx-6 py-6">
-                  <div onClick={() => handleShowFormEdit(education.id)}>
-                    <svg
-                      width="29"
-                      height="28"
-                      viewBox="0 0 29 28"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g clipPath="url(#clip0_155_103)">
-                        <path
-                          d="M16.9892 10.5233L18.1008 11.5967L7.15333 22.1667H6.04167V21.0933L16.9892 10.5233ZM21.3392 3.5C21.0371 3.5 20.7229 3.61667 20.4933 3.83833L18.2821 5.97333L22.8133 10.3483L25.0246 8.21333C25.4958 7.75833 25.4958 7.02333 25.0246 6.56833L22.1971 3.83833C21.9554 3.605 21.6533 3.5 21.3392 3.5ZM16.9892 7.22167L3.625 20.125V24.5H8.15625L21.5204 11.5967L16.9892 7.22167Z"
-                          fill="#2F2F2F"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_155_103">
-                          <rect width="29" height="28" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
+                <div className="flex justify-end space-x-6 mx-6 py-6 px-6 w-full md:w-auto">
+                  <div className="" onClick={() => handleShowFormEdit(education.id)}>
+                   <FaPencil className="text-[20px] lg:text-[25px]"/>
                     {showformEdit === education.id && (
                       <div onClick={(e) => e.stopPropagation()}>
                         <EducationForm
                           handleShowForm={() => handleShowFormEdit(null)}
                           educationId={education.id}
                           id={session?.user.id}
-                          college_schoolName={education.college_schoolName}
-                          StartDate={education.StartDate}
-                          EndDate={education.EndDate}
-                          grade={education.grade}
-                          degree={education.degree}
-                          fieldOfstudy={education.fieldOfstudy}
                         />
                       </div>
                     )}
                   </div>
-                  <div
-                    onClick={() => {
-                      handleDelete(education.id);
-                    }}
+                  <button
+                    onClick={() => handleDelete(education.id)}
+                    className="text-black flex text-[20px] lg:text-[25px] dark:text-white"
                   >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="dark:text-white text-black"
-                    >
-                      <path
-                        d="M10 2.25C9.58579 2.25 9.25 2.58579 9.25 3V3.75H5C4.58579 3.75 4.25 4.08579 4.25 4.5C4.25 4.91421 4.58579 5.25 5 5.25H19C19.4142 5.25 19.75 4.91421 19.75 4.5C19.75 4.08579 19.4142 3.75 19 3.75H14.75V3C14.75 2.58579 14.4142 2.25 14 2.25H10Z"
-                        fill="black"
-                      />
-                      <path
-                        d="M10 10.65C10.4142 10.65 10.75 10.9858 10.75 11.4L10.75 18.4C10.75 18.8142 10.4142 19.15 10 19.15C9.58579 19.15 9.25 18.8142 9.25 18.4L9.25 11.4C9.25 10.9858 9.58579 10.65 10 10.65Z"
-                        fill="black"
-                      />
-                      <path
-                        d="M14.75 11.4C14.75 10.9858 14.4142 10.65 14 10.65C13.5858 10.65 13.25 10.9858 13.25 11.4V18.4C13.25 18.8142 13.5858 19.15 14 19.15C14.4142 19.15 14.75 18.8142 14.75 18.4V11.4Z"
-                        fill="black"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M5.99142 7.91718C6.03363 7.53735 6.35468 7.25 6.73684 7.25H17.2632C17.6453 7.25 17.9664 7.53735 18.0086 7.91718L18.2087 9.71852C18.5715 12.9838 18.5715 16.2793 18.2087 19.5446L18.189 19.722C18.045 21.0181 17.0404 22.0517 15.7489 22.2325C13.2618 22.5807 10.7382 22.5807 8.25108 22.2325C6.95954 22.0517 5.955 21.0181 5.81098 19.722L5.79128 19.5446C5.42846 16.2793 5.42846 12.9838 5.79128 9.71852L5.99142 7.91718ZM7.40812 8.75L7.2821 9.88417C6.93152 13.0394 6.93152 16.2238 7.2821 19.379L7.3018 19.5563C7.37011 20.171 7.84652 20.6612 8.45905 20.747C10.8082 21.0758 13.1918 21.0758 15.5409 20.747C16.1535 20.6612 16.6299 20.171 16.6982 19.5563L16.7179 19.379C17.0685 16.2238 17.0685 13.0394 16.7179 9.88417L16.5919 8.75H7.40812Z"
-                        fill="black"
-                      />
-                    </svg>
-                  </div>
+                  <MdDeleteForever/>
+                  </button>
                 </div>
               </div>
             ))}
