@@ -8,6 +8,8 @@ import { userSchemaProps } from "@/schema/user";
 import { updateUser, fetchUser } from "@/actions/user";
 import { FaPenToSquare } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
+import CoverImage from "../../../../public/images/CoverImage.png";
+import { ImCross } from "react-icons/im";
 
 function ProfilePictureSection() {
   const { data: session } = useSession();
@@ -20,7 +22,6 @@ function ProfilePictureSection() {
 
   const uploadImage = (e: any) => {
     const image = e[0].url;
-    console.log(image);
     updateUser(session?.user.id!, {
       image,
       email: session?.user.email,
@@ -58,15 +59,15 @@ function ProfilePictureSection() {
     setShowForm(!showForm);
   };
 
-  console.log(bgImage);
-  console.log(image);
+  // console.log(bgImage);
+  // console.log(image);
   return (
     <section className="pb-16">
       <div className="relative">
         {/* Background Image */}
         <div className="h-[200px] md:h-[260px] overflow-hidden bg-gray-600 relative">
           <Image
-            src={bgImage || "/placeholder.jpg"}
+            src={bgImage || CoverImage}
             alt="Background Image"
             layout="fill"
             objectFit="cover"
@@ -78,12 +79,18 @@ function ProfilePictureSection() {
           >
             <FaPenToSquare />
           </button>
-          {uploadForm && (
+          {uploadBgForm && (
             <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto z-50">
               <div
                 onClick={(e) => e.stopPropagation()}
                 className="bg-white rounded-lg p-4"
               >
+                <div
+                      className="flex text-red-500 justify-end hover:cursor-pointer"
+                      onClick={handleBgImageUploadFrom}
+                    >
+                      <ImCross />
+                    </div>
                 <UploadDropzone
                   endpoint="imageUploader"
                   onClientUploadComplete={(res) => uploadBgImage(res)}
@@ -100,12 +107,18 @@ function ProfilePictureSection() {
               className="absolute md:right-7 right-2 p-2 bottom-1 rounded-full shadow-md z-10"
               onClick={handleProfileImageUploadFrom}
             >
-              {uploadBgForm && (
+              {uploadForm && (
                 <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto z-50">
                   <div
                     onClick={(e) => e.stopPropagation()}
                     className="bg-white rounded-lg p-4"
                   >
+                    <div
+                      className="flex text-red-500 justify-end"
+                      onClick={handleProfileImageUploadFrom}
+                    >
+                      <ImCross />
+                    </div>
                     <UploadDropzone
                       endpoint="imageUploader"
                       onClientUploadComplete={(res) => uploadImage(res)}
@@ -117,8 +130,8 @@ function ProfilePictureSection() {
             </button>
             <img
               src={image || "/placeholder.jpg"}
-              alt="Profile Picture"
-              className="w-[120px] h-[120px] md:w-[200px] md:h-[200px] rounded-full border-gray-300 border-3 object-cover"
+              alt=""
+              className="w-[120px] h-[120px] bg-gray-800 md:w-[200px] md:h-[200px] rounded-full border-gray-300 border-3 object-cover"
             />
           </div>
         </div>
@@ -130,7 +143,9 @@ function ProfilePictureSection() {
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
           </h2>
-          <h2 className="text-lg font-medium text-gray-600">{session?.user.profession} </h2>
+          <h2 className="text-lg font-medium text-gray-600">
+            {session?.user.profession}{" "}
+          </h2>
         </section>
         <button
           className="text-purple-500 text-lg md:text-xl md:mt-4"
@@ -179,6 +194,7 @@ function ProfilePictureSection() {
           city={session?.user.city}
           country={session?.user.country}
           pincode={session?.user.pincode}
+          // college={session?.user?.college}
         />
       )}
     </section>

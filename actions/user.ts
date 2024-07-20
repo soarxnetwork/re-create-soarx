@@ -176,7 +176,7 @@ export const updateUser = async (
         image: image || undefined,
       },
     });
-    console.log(res);
+    // console.log(res);
     return { message: "User updated please login again" };
   } catch (err) {
     console.error(err);
@@ -192,7 +192,7 @@ export const fetchUser = async (id: string) => {
         id,
       },
     });
-    console.log(user)
+    // console.log(user)
     return user;
   } catch (err) {
     console.error(err);
