@@ -130,9 +130,7 @@ function ProfilePictureSection() {
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
           </h2>
-          <h3 className="text-lg md:text-xl pl-2 md:pl-0 font-normal">
-            {session?.user.profession}
-          </h3>
+          <h2 className="text-lg font-medium text-gray-600">{session?.user.profession} </h2>
         </section>
         <button
           className="text-purple-500 text-lg md:text-xl md:mt-4"
@@ -166,7 +164,7 @@ function ProfilePictureSection() {
           <h3 className="pt-2">{session?.user.phone}</h3>
         </section>
       </div>
-      <hr className="md:hidden border-1 border-gray-400 dark:border-gray-600"/>
+      <hr className="md:hidden border-1 border-gray-400 dark:border-gray-600" />
 
       {/* Profile Form */}
       {showForm && (

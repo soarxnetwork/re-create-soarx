@@ -43,25 +43,9 @@ function ProfileSkills() {
           softSkills.length > 0 ||
           AreasOfInterest.length > 0 ? (
             <>
-              <svg
-                width="45"
-                height="41"
-                viewBox="0 0 45 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_155_1170)">
-                  <path
-                    d="M26.3625 15.4092L28.0875 16.9808L11.1 32.4583H9.375V30.8867L26.3625 15.4092ZM33.1125 5.125C32.6437 5.125 32.1562 5.29583 31.8 5.62042L28.3687 8.74667L35.4 15.1529L38.8312 12.0267C39.5625 11.3604 39.5625 10.2842 38.8312 9.61792L34.4438 5.62042C34.0688 5.27875 33.6 5.125 33.1125 5.125ZM26.3625 10.5746L5.625 29.4688V35.875H12.6562L33.3937 16.9808L26.3625 10.5746Z"
-                    fill="#2F2F2F"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_155_1170">
-                    <rect width="45" height="41" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+             <button className="text-purple-500 text-xl">
+          <FaPenToSquare />
+        </button>
             </>
           ) : (
             <button
