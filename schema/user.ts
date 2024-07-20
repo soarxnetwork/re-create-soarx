@@ -43,7 +43,6 @@ export const userInitialValues = {
   image: "",
   bgImage: "",
   summary: "",
-
 }
 export const eventFormResolver = zodResolver(userSchema);
 export type userSchemaProps = z.infer<typeof userSchema>;

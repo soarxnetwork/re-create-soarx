@@ -348,7 +348,7 @@ const ProfileForm: React.FC<Props> = ({
               {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
             </label>
           </div>
-          <div className="flex  justify-between space-x-4 items-center">
+          <div className="flex  justify-between space-x-4">
             <label htmlFor="gender" className="w-1/2">
               Gender
               <Select
@@ -357,7 +357,6 @@ const ProfileForm: React.FC<Props> = ({
                 onChange={handleChangegender}
                 options={userGender}
                 placeholder="Choose your gender"
-                className=''
               />
               {errors.gender && <p className="text-red-500">{errors.gender.message}</p>}
             </label>
