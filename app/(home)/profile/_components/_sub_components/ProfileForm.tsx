@@ -16,7 +16,7 @@ interface Props {
     gender?: string | null;
     country?: string | null;
     city?: string | null;
-    pincode?: string | null;
+    college?: string | null;
     profession?: string | null;
 }
 
@@ -29,7 +29,7 @@ const ProfileForm: React.FC<Props> = ({
   phone = '',
   city = '',
   country = '',
-  pincode = '',
+  college = '',
   profession = ''
 }) => {
   const [isPending, startTransition] = useTransition()
@@ -49,7 +49,7 @@ const ProfileForm: React.FC<Props> = ({
         city: city || '',
         gender: gender || '',
         country: country || '',
-        pincode: pincode || '',
+        college: college || '',
         profession: profession || ''
         
       }
@@ -59,6 +59,10 @@ const ProfileForm: React.FC<Props> = ({
       data.gender = selectedGender.label ? selectedGender.label  : data.gender;
       data.country = selectedCountry.label ? selectedCountry.label : data.country ;
       data.profession = selectedProfession.label ? selectedProfession.label : data.profession;
+      if(data.gender == "" || data.country == "" || data.profession == ""){
+        toast.error("All fields are required");
+        return;
+      }
       console.log(data);
       startTransition(() => {
         updateUser(id, data)
@@ -399,14 +403,14 @@ const ProfileForm: React.FC<Props> = ({
               {errors.city && <p className="text-red-500">{errors.city.message}</p>}
             </label>
             <label>
-              Pincode
+              College
               <input
-                {...register("pincode")}
-                type="number"
+                {...register("college")}
+                type="string"
                 className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full dark:bg-gray-800 dark:text-white"
                 placeholder="Enter here...."
               />
-              {errors.pincode && <p className="text-red-500">{errors.pincode.message}</p>}
+              {errors.college && <p className="text-red-500">{errors.college.message}</p>}
             </label>
           </div>
         </div>

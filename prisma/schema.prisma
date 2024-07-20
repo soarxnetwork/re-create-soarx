@@ -20,7 +20,7 @@ model User {
   summary       String?
   gender        String?
   country       String?
-  pincode       String?
+  college       String?
   city          String?
 
   orders         Order[]
