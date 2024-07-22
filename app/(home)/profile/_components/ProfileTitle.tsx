@@ -28,7 +28,7 @@ function ProfileTitle() {
           (completedFields / totalFields) * 100
         );
         console.log(completionPercentage);
-        setCompletedProfile(completionPercentage);
+        setCompletedProfile(completionPercentage + 12);
       } catch (error) {
         console.error("Error fetching user data:", error);
         setCompletedProfile(0);
