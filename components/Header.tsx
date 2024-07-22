@@ -185,8 +185,8 @@ const Header = ({ admin }: User) => {
               )}
 
               <li>
-                <Pythonbootcamp />
-                {/* <ButtonAuth /> */}
+                {/* <Pythonbootcamp /> */}
+                <ButtonAuth />
               </li>
             </ul>
           </div>

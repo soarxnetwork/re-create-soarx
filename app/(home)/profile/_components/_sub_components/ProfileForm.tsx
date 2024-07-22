@@ -16,7 +16,7 @@ interface Props {
     gender?: string | null;
     country?: string | null;
     city?: string | null;
-    pincode?: string | null;
+    college?: string | null;
     profession?: string | null;
 }
 
@@ -29,7 +29,7 @@ const ProfileForm: React.FC<Props> = ({
   phone = '',
   city = '',
   country = '',
-  pincode = '',
+  college = '',
   profession = ''
 }) => {
   const [isPending, startTransition] = useTransition()
@@ -49,7 +49,7 @@ const ProfileForm: React.FC<Props> = ({
         city: city || '',
         gender: gender || '',
         country: country || '',
-        pincode: pincode || '',
+        college: college || '',
         profession: profession || ''
         
       }
@@ -59,6 +59,10 @@ const ProfileForm: React.FC<Props> = ({
       data.gender = selectedGender.label ? selectedGender.label  : data.gender;
       data.country = selectedCountry.label ? selectedCountry.label : data.country ;
       data.profession = selectedProfession.label ? selectedProfession.label : data.profession;
+      if(data.gender == "" || data.country == "" || data.profession == ""){
+        toast.error("All fields are required");
+        return;
+      }
       console.log(data);
       startTransition(() => {
         updateUser(id, data)
@@ -313,128 +317,116 @@ const ProfileForm: React.FC<Props> = ({
       
   return (
     <div className="z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto">
-    <div className=" max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white z-[200] overflow-y-auto">
-    <form onSubmit={handleSubmit(onSubmit)} >
-      <div className="flex justify-between items-center py-4 px-6 border-b-2 border-[#D9D9D9]">
-        <h1 className="text-[30px] font-semibold">Personal Details</h1>
-        <button className="" type="button" onClick={handleShowForm}>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 19L19 1M1 1L19 19" stroke="#636363" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-        </button>
-      </div>
-      <div className="p-6 space-y-6">
-        <div>
-          <label className="">
-            Full Name <span className="text-red-400">*</span>
-            <input
-              type="text"
-              {...register("username")}
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
-              placeholder="Ex: Mayank Arora"
-            />
-            {
-            errors.username && <p className='text-red-500'>{errors.username.message}</p>
-          }
-          </label>
+    <div className="max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white dark:bg-black z-[200] overflow-y-auto">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="flex justify-between items-center py-4 px-6 border-b-2 border-[#D9D9D9]">
+          <h1 className="text-[30px] font-semibold">Personal Details</h1>
+          <button type="button" onClick={handleShowForm}>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 19L19 1M1 1L19 19" stroke="#636363" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+          </button>
         </div>
-        <div>
-          <label  className="">
-            Phone Number<span className="text-red-400">*</span>
-            <input
-              type="tel"
-              {...register("phone")}
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
-              placeholder="Enter here...."
-            />
-            {
-            errors.phone && <p className='text-red-500'>{errors.phone.message}</p>
-          }
-          </label>
-        </div>
-        
-        <div className="flex justify-between space-x-4 items-center">
-          <label htmlFor="start-date" className="w-1/2">
-            Gender
-            
-            <Select
+        <div className="p-6 space-y-6">
+          <div>
+            <label>
+              Full Name <span className="text-red-400">*</span>
+              <input
+                type="text"
+                {...register("username")}
+                className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full dark:bg-gray-800 dark:text-white"
+                placeholder="Ex: Mayank Arora"
+              />
+              {errors.username && <p className="text-red-500">{errors.username.message}</p>}
+            </label>
+          </div>
+          <div>
+            <label>
+              Phone Number <span className="text-red-400">*</span>
+              <input
+                type="tel"
+                {...register("phone")}
+                className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full dark:bg-gray-800 dark:text-white"
+                placeholder="Enter here...."
+              />
+              {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+            </label>
+          </div>
+          <div className="flex  justify-between space-x-4">
+            <label htmlFor="gender" className="w-1/2">
+              Gender
+              <Select
                 {...register("gender")}
                 value={selectedGender}
                 onChange={handleChangegender}
                 options={userGender}
                 placeholder="Choose your gender"
-                className=""// Apply the custom styles from the CSS module
-                
-            />
-            {
-            errors.gender && <p className='text-red-500'>{errors.gender.message}</p>
-          }
-          </label>
-          <label htmlFor="end-date" className="w-1/2">
-            Country
-            <Select
+              />
+              {errors.gender && <p className="text-red-500">{errors.gender.message}</p>}
+            </label>
+            <label htmlFor="country" className="w-1/2">
+              Country
+              <Select
                 {...register("country")}
                 value={selectedCountry}
                 onChange={handleChange}
                 options={countries}
                 placeholder="Select a country"
-                className="  "// Apply the custom styles from the CSS module
-                
-            />
-            {
-            errors.country && <p className='text-red-500'>{errors.country.message}</p>
-          }
-          </label>
-        </div>
-        <div>
-        <label htmlFor="start-date" className="w-full">
-            Profession
-            <Select
+                className="dark:bg-gray-800 dark:text-white"
+              />
+              {errors.country && <p className="text-red-500">{errors.country.message}</p>}
+            </label>
+          </div>
+          <div>
+            <label htmlFor="profession">
+              Profession
+              <Select
                 {...register("profession")}
                 value={selectedProfession}
                 onChange={handleChangeProfession}
                 options={Professions}
                 placeholder="Choose your Profession"
-                className=""// Apply the custom styles from the CSS module
-                
-            />
-            {
-            errors.gender && <p className='text-red-500'>{errors.gender.message}</p>
-          }
-          </label>
+                className="dark:bg-gray-800 dark:text-white"
+              />
+              {errors.profession && <p className="text-red-500">{errors.profession.message}</p>}
+            </label>
+          </div>
+          <div className="grid grid-cols-2 items-center justify-evenly gap-4">
+            <label>
+              City
+              <input
+                {...register("city")}
+                type="text"
+                className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full dark:bg-gray-800 dark:text-white"
+                placeholder="Ex: Rohtak"
+              />
+              {errors.city && <p className="text-red-500">{errors.city.message}</p>}
+            </label>
+            <label>
+              College
+              <input
+                {...register("college")}
+                type="string"
+                className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full dark:bg-gray-800 dark:text-white"
+                placeholder="Enter here...."
+              />
+              {errors.college && <p className="text-red-500">{errors.college.message}</p>}
+            </label>
+          </div>
         </div>
-        <div className='grid grid-cols-2 items-center justify-evenly gap-4'> 
-          <label className="">
-            City
-            <input
-              {...register("city")}
-              type="text"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 "
-              placeholder="Ex: Rohtak"
-            />
-            {
-            errors.city && <p className='text-red-500'>{errors.city.message}</p>
-          }
-          </label>
-        <label  className="">
-            Pincode
-            <input
-            {...register("pincode")}
-              type="number"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 "
-              placeholder="Enter here...."
-            />
-            {
-            errors.pincode && <p className='text-red-500'>{errors.pincode.message}</p>
-          }
-          </label>
+        <div className="text-right px-6 py-4 bg-[#E3DDDD] dark:bg-gray-900">
+          <button
+            className="signInbut min-w-[90px] font-semibold mx-auto"
+            disabled={isPending}
+            type="submit"
+            onClick={() => {
+              console.log('Submit button clicked');
+              console.log('Form errors:', errors);
+            }}
+          >
+            Save
+          </button>
         </div>
-      </div>
-      <div className="text-right px-6 py-4 bg-[#E3DDDD]">
-        <button className="signInbut min-w-[90px] font-semibold mx-auto" disabled={isPending} type="submit" onClick={() => {console.log('Submit button clicked')
-          console.log('Form errors:', errors);
-        }}>Save</button>
-      </div>
       </form>
     </div>
   </div>

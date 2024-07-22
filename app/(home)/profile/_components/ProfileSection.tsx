@@ -7,10 +7,11 @@ import ProfileExperience from './ProfileExperience'
 import ProfileSkills from './ProfileSkills'
 import ProfilePortfolio from './ProfilePortfolio'
 import ProfileProjects from './ProfileProjects'
-import ProfileCertifications from './ProfileCertifications'
+import ProfileCertifications from './ProfileCertifications';
+
 function ProfileSection() {
   return (
-    <div>
+    <div className=''>
         <ProfilePictureSection />
         <ProfileTitle />
         <div className='space-y-10'>

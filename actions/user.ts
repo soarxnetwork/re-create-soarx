@@ -167,7 +167,7 @@ export const updateUser = async (
       if (!passwordMatch) return { error: "Password does not match" };
     }
 
-    await db.user.update({
+    const res = await db.user.update({
       where: {
         id,
       },
@@ -176,6 +176,7 @@ export const updateUser = async (
         image: image || undefined,
       },
     });
+    // console.log(res);
     return { message: "User updated please login again" };
   } catch (err) {
     console.error(err);
@@ -185,12 +186,13 @@ export const updateUser = async (
 
 export const fetchUser = async (id: string) => {
   try {
+    revalidatePath("/profile");
     const user = await db.user.findUnique({
       where: {
         id,
       },
     });
-
+    // console.log(user)
     return user;
   } catch (err) {
     console.error(err);

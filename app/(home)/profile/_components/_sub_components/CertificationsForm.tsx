@@ -89,80 +89,81 @@ function CertificationsForm({
 
   return (
     <div className="z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto">
-    <div className=" max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white z-[200] overflow-y-auto">
-      <form onSubmit={handleSubmit(onSubmit)} >
-      <div className="flex justify-between items-center py-4 px-6 border-b-2 border-[#D9D9D9]">
-        <h1 className="text-[30px] font-semibold">Add Certifications</h1>
-        <button className="" onClick={handleShowForm}>
+  <div className="max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow-lg bg-white dark:bg-gray-800 z-[200] overflow-y-auto rounded-lg">
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex justify-between items-center py-4 px-6 border-b-2 border-gray-200 dark:border-gray-700">
+        <h1 className="text-[30px] font-semibold text-gray-900 dark:text-white">Add Certifications</h1>
+        <button className="text-gray-900 dark:text-white" onClick={handleShowForm}>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 19L19 1M1 1L19 19" stroke="#636363" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M1 19L19 1M1 1L19 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
       </div>
       <div className="p-6 space-y-6">
         <div>
-          <label className="">
+          <label className="block text-gray-900 dark:text-gray-200">
             Name of Certificate <span className="text-red-400">*</span>
             <input
               {...register('CertificateName')}
               type="text"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
+              className="border border-gray-300 dark:border-gray-600 p-4 rounded-lg mt-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               placeholder="Enter here..."
             />
           </label>
         </div>
         <div>
-          <label  className="">
-          Name/Issuing organization <span className="text-red-400">*</span>
+          <label className="block text-gray-900 dark:text-gray-200">
+            Name/Issuing organization <span className="text-red-400">*</span>
             <input
               {...register('IssuedBy')}
               type="text"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
+              className="border border-gray-300 dark:border-gray-600 p-4 rounded-lg mt-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               placeholder="Enter here..."
             />
           </label>
         </div>
-
-        <div className="flex justify-between space-x-4 items-center">
-          <label className="">
+        <div className="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4 items-center">
+          <label className="block text-gray-900 dark:text-gray-200 w-full">
             Issue Date<span className="text-red-400">*</span>
             <input
-              {...register('IssueDate' , {setValueAs: dateStringToDate})}
+              {...register('IssueDate', { setValueAs: dateStringToDate })}
               type="month"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
+              className="border border-gray-300 dark:border-gray-600 p-4 rounded-lg mt-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
             />
           </label>
-          
         </div>
         <div>
-          <label className="">
-          Credential ID <span className="text-red-400">*</span>
+          <label className="block text-gray-900 dark:text-gray-200">
+            Credential ID <span className="text-red-400">*</span>
             <input
               {...register('CredentialId')}
               type="text"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
+              className="border border-gray-300 dark:border-gray-600 p-4 rounded-lg mt-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               placeholder="Enter here..."
             />
           </label>
         </div>
         <div>
-          <label className="">
-          Credential URL <span className="text-red-400">*</span>
+          <label className="block text-gray-900 dark:text-gray-200">
+            Credential URL <span className="text-red-400">*</span>
             <input
               {...register('CredentialUrl')}
               type="text"
-              className="border border-[#837E7E] p-4 rounded-lg mt-2 w-full"
+              className="border border-gray-300 dark:border-gray-600 p-4 rounded-lg mt-2 w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               placeholder="Enter here..."
             />
           </label>
         </div>
       </div>
-      <div className="text-right px-6 py-4 bg-[#E3DDDD]">
-        <button className="signInbut min-w-[90px] font-semibold mx-auto" type='submit'>Save</button>
+      <div className="text-right px-6 py-4 bg-gray-100 dark:bg-gray-900">
+        <button className="text-white font-semibold py-2 px-4 rounded  disabled:bg-gray-400 signInbut" type='submit'>
+          Save
+        </button>
       </div>
-      </form>
-    </div>
+    </form>
   </div>
+</div>
+
   )
 }
 
