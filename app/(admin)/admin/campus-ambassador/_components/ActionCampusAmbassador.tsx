@@ -19,7 +19,7 @@ const ActionCampusAmbassador = ({ id }: ActionCampusAmbassadorProps) => {
         .then(() => {
           toast.success("Succesfully deleted Campus Ambassador");
         })
-        .catch((err) => {
+        .catch((err : any) => {
           toast.error("Error deleting Campus Ambassador");
         });
     });
