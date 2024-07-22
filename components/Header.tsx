@@ -68,7 +68,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
 
-              {/* <li
+              <li
                 className={
                   pathname.includes("/jobs")
                     ? "bg-[#9241d40d] rounded-lg text-purple-500"
@@ -78,9 +78,9 @@ const Header = ({ admin }: User) => {
                 <Link className="hover:text-primaryPurple p-2" href="/jobs">
                   Jobs
                 </Link>
-              </li> */}
+              </li>
 
-              {/* <HeaderDropdown /> */}
+              <HeaderDropdown />
 
               {admin && admin !== Admin.User && (
                 <li
@@ -100,14 +100,10 @@ const Header = ({ admin }: User) => {
 
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
-            <span className="hidden md:flex justify-center gap-x-4 items-center">
-             <Pythonbootcamp />
+            <span className="hidden md:inline">
+              {/* <Python2bootcamp /> */}
               <ButtonAuth />
-              </span>
-            {/* <span className="hidden md:inline">
-              <Pythonbootcamp />
-              <ButtonAuth />
-            </span> */}
+            </span>
             <div className="md:hidden">
               <Hamburger
                 toggled={showNavbar}

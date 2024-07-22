@@ -1,25 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  CampusLeaderSchema,
-  CampusAmbassadorSchema,
-} from "@/typesforCampusAmbaassadorPage";
-import { z } from "zod";
-import { campusLeaderFormRequest } from "@/actions/campus";
-
+import { CampusAmbassadorSchema , CampusLeaderSchema , CampusLeaderSchemaProps , CampusAmbassadorSchemaProps } from "@/schema/campus";
+import { createCampusLeader , createCampusAmbassador } from "@/actions/campus";
+import { useTransition } from "react";
 function CampusApplyCard() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
   const router = useRouter();
-  console.log(session);
-
+  const [isPending , startTransition] = useTransition();
   const {
     register,
     handleSubmit,
@@ -28,6 +23,7 @@ function CampusApplyCard() {
   } = useForm({
     resolver: zodResolver(CampusLeaderSchema),
     defaultValues: {
+      userId : session?.user.id!,
       WhyCapterLeader: "",
       LeaderShipExperience: "",
       StudentOrganizations: "",
@@ -41,8 +37,7 @@ function CampusApplyCard() {
     },
   });
 
-  type CampusLeaderType = z.infer<typeof CampusLeaderSchema>;
-  type CampusAmbassadorType = z.infer<typeof CampusAmbassadorSchema>;
+  
 
   const {
     register: register2,
@@ -51,6 +46,7 @@ function CampusApplyCard() {
   } = useForm({
     resolver: zodResolver(CampusAmbassadorSchema),
     defaultValues: {
+      userId : session?.user.id!,
       WhyCampusAmbassador: "",
       EventOrganization: "",
       TechnicalSkills: "",
@@ -73,12 +69,8 @@ function CampusApplyCard() {
       return router.push("/sign-in");
     }
     if (
-      !session.user.id ||
       !session.user.email ||
-      !session.user.username ||
-      !session.user.image ||
-      !session.user.phone ||
-      !session.user.city 
+      !session.user.username 
     ) {
       toast.error("Please complete your profile first to register");
       return router.push("/profile");
@@ -91,23 +83,52 @@ function CampusApplyCard() {
     setIsOpen(!isOpen);
   };
 
-  const OnSubmitCampusLeaderForm = (data: CampusLeaderType) => {
+  const OnSubmitCampusLeaderForm = (data: CampusLeaderSchemaProps) => {
     console.log("In Campus Leader form", data);
-    const userId =  session?.user?.id;
-    campusLeaderFormRequest({data, userId}).then((data) => {
-      if (data?.error) {
-        return toast.error(data.error);
+    startTransition(() => {
+      createCampusLeader(data)
+      .then(() => {
+          toast.success("Campus Leader Application Submitted Successfully");
+          setIsOpen(!isOpen);
       }
-      toast.success("Reset password link sent to your email");
-      reset();
-    });
-    setIsOpen(!isOpen);
+      )
+      .catch((error) => {
+        toast.error("Failed to submit application");
+        toast.error("One user can only submit an application once!!");
+      });
+    }
+    )
+    
   };
 
-  const OnSubmitCampusAmbassardorForm = (data: CampusAmbassadorType) => {
+  const OnSubmitCampusAmbassardorForm = (data: CampusAmbassadorSchemaProps) => {
     console.log(data);
-    setOpenLeader(!isOpenLeader);
+    startTransition(() => {
+      createCampusAmbassador(data)
+      .then(() => {
+        toast.success("Campus Ambassador Application Submitted Successfully");
+        setOpenLeader(!isOpenLeader);
+      }
+      )
+      .catch((error) => {
+        toast.error("Failed to submit application");
+        toast.error("One user can only submit an application once!!");
+        console.log(error); 
+
+      });
+    }
+    )
+
   };
+
+  useEffect(() =>{
+    if(errors){
+      console.log(errors)
+    }
+    if(errors2){
+      console.log(errors2)
+    }
+  } , [errors , errors2])
 
   return (
     <div className="pb-10 lg:pt-6 2xl:pl-9 2xl:pr-28" id="campus-apply-card">
