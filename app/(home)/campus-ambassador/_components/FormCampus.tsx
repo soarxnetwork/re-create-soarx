@@ -28,16 +28,16 @@ const FormCampus = () => {
   });
 
   const onSubmit = (data: Dsa2Schema) => {
-    startTransition(() => {
-      createCampusAmbassador(data)
-        .then(() => {
-          toast.success("Succesfully Registered wait for confirmation");
-          reset();
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    });
+    // startTransition(() => {
+    //   createCampusAmbassador(data)
+    //     .then(() => {
+    //       toast.success("Succesfully Registered wait for confirmation");
+    //       reset();
+    //     })
+    //     .catch((err) => {
+    //       console.error(err);
+    //     });
+    // });
   };
 
   return (

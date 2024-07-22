@@ -30,3 +30,16 @@ export const createCampusLeader = async (data: CampusLeaderSchemaProps) => {
     throw new Error(`Failed to create campus leader: ${error}`);
   }
 }
+
+export const deleteCampusAmbassador = async (id: string) => {
+  try {
+    const campusAmbassador = await prisma.campusAmbassador.delete({
+      where: {
+        id,
+      }
+    });
+    return campusAmbassador;
+  } catch (error) {
+    throw new Error(`Failed to delete campus ambassador: ${error}`);
+  }
+}
