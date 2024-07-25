@@ -31,11 +31,11 @@ export const createCampusLeader = async (data: CampusLeaderSchemaProps) => {
   }
 }
 
-export const deleteCampusAmbassador = async (id: string) => {
+export const deleteCampusAmbassador = async (userId: string) => {
   try {
     const campusAmbassador = await prisma.campusAmbassador.delete({
       where: {
-        id,
+        userId,
       }
     });
     return campusAmbassador;
@@ -43,3 +43,43 @@ export const deleteCampusAmbassador = async (id: string) => {
     throw new Error(`Failed to delete campus ambassador: ${error}`);
   }
 }
+
+export const deleteCampusLeader = async (userId: string) => {
+  try {
+    const campusLeader = await prisma.campusLeader.delete({
+      where: {
+        userId,
+      }
+    });
+    return campusLeader;
+  } catch (error) {
+    throw new Error(`Failed to delete campus leader: ${error}`);
+  }
+}
+
+export const getCampusAmbassador = async (userId: string) => {
+  try {
+    const campusAmbassador = await prisma.campusAmbassador.findUnique({
+      where: {
+        userId,
+      }
+    });
+    return campusAmbassador;
+  } catch (error) {
+    throw new Error(`Failed to get campus ambassador: ${error}`);
+  }
+}
+
+
+export const getCampusLeader = async (userId: string) => {
+  try {
+    const campusLeader = await prisma.campusLeader.findUnique({
+      where: {
+        userId,
+      }
+    });
+    return campusLeader;
+  } catch (error) {
+    throw new Error(`Failed to get campus leader: ${error}`);
+  }
+} 

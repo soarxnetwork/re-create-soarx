@@ -25,7 +25,7 @@ export const getCampusWithSearch = async (search: string) => {
     return await db.campusAmbassador.findMany({
       where: {
         OR: [
-          
+
           {
             user: {
               OR: [
@@ -35,6 +35,12 @@ export const getCampusWithSearch = async (search: string) => {
                     mode: "insensitive",
                   },
                 },
+                {
+                  phone: {
+                    contains: search,
+                    mode: "insensitive",
+                },
+              },
                 {
                   email: {
                     contains: search,
