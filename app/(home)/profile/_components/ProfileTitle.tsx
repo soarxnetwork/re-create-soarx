@@ -37,7 +37,7 @@ function ProfileTitle() {
     fetchData();
   }, [session?.user?.id]);
   return (
-    <div className="flex flex-col md:flex-row items-center md:justify-between ml-4 md:ml-10 gap-y-6 md:gap-y-0 mr-4 md:mr-16 mb-16 p-4 md:p-6 rounded-lg">
+    <div className="flex flex-col md:flex-row items-center md:justify-between ml-4 md:ml-32 gap-y-6 md:gap-y-0 mr-4 md:mr-32 mb-16 p-4 md:p-6 rounded-lg">
       <div className="flex w-full">
         <h1 className="font-semibold text-3xl md:text-3xl">
           YOUR PROFILE
