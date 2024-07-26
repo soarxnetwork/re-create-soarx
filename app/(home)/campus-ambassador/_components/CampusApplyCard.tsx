@@ -1,20 +1,22 @@
 "use client";
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { TiDeleteOutline } from "react-icons/ti";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CampusAmbassadorSchema , CampusLeaderSchema , CampusLeaderSchemaProps , CampusAmbassadorSchemaProps } from "@/schema/campus";
-import { createCampusLeader , createCampusAmbassador } from "@/actions/campus";
+import { CampusAmbassadorSchema, CampusLeaderSchema, CampusLeaderSchemaProps, CampusAmbassadorSchemaProps } from "@/schema/campus";
+import { createCampusLeader, createCampusAmbassador, getCampusAmbassador, getCampusLeader  , deleteCampusAmbassador , deleteCampusLeader} from "@/actions/campus";
 import { useTransition } from "react";
+import { get } from "http";
+import { set } from "zod";
 function CampusApplyCard() {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenLeader, setOpenLeader] = useState(false);
   const router = useRouter();
-  const [isPending , startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
   const {
     register,
     handleSubmit,
@@ -23,7 +25,7 @@ function CampusApplyCard() {
   } = useForm({
     resolver: zodResolver(CampusLeaderSchema),
     defaultValues: {
-      userId : session?.user.id!,
+      userId: session?.user.id!,
       WhyCapterLeader: "",
       LeaderShipExperience: "",
       StudentOrganizations: "",
@@ -37,7 +39,7 @@ function CampusApplyCard() {
     },
   });
 
-  
+
 
   const {
     register: register2,
@@ -46,7 +48,7 @@ function CampusApplyCard() {
   } = useForm({
     resolver: zodResolver(CampusAmbassadorSchema),
     defaultValues: {
-      userId : session?.user.id!,
+      userId: session?.user.id!,
       WhyCampusAmbassador: "",
       EventOrganization: "",
       TechnicalSkills: "",
@@ -57,7 +59,7 @@ function CampusApplyCard() {
       AdditionalInfo: "",
     },
   });
-
+  const [isUserFormSubmitted, setIsUserFormSubmitted] = useState(false);
   const toggleModalAmbassador = () => {
     if (!isUserAllowToRegister()) return;
     setOpenLeader(!isOpenLeader);
@@ -70,7 +72,7 @@ function CampusApplyCard() {
     }
     if (
       !session.user.email ||
-      !session.user.username 
+      !session.user.username
     ) {
       toast.error("Please complete your profile first to register");
       return router.push("/profile");
@@ -87,48 +89,110 @@ function CampusApplyCard() {
     console.log("In Campus Leader form", data);
     startTransition(() => {
       createCampusLeader(data)
-      .then(() => {
+        .then(() => {
           toast.success("Campus Leader Application Submitted Successfully");
           setIsOpen(!isOpen);
-      }
-      )
-      .catch((error) => {
-        toast.error("Failed to submit application");
-        toast.error("One user can only submit an application once!!");
-      });
+          setIsUserFormSubmitted(true);
+        }
+        )
+        .catch((error) => {
+          toast.error("Failed to submit application");
+          toast.error("One user can only submit an application once!!");
+        });
     }
     )
-    
+
   };
 
   const OnSubmitCampusAmbassardorForm = (data: CampusAmbassadorSchemaProps) => {
     console.log(data);
     startTransition(() => {
       createCampusAmbassador(data)
-      .then(() => {
-        toast.success("Campus Ambassador Application Submitted Successfully");
-        setOpenLeader(!isOpenLeader);
-      }
-      )
-      .catch((error) => {
-        toast.error("Failed to submit application");
-        toast.error("One user can only submit an application once!!");
-        console.log(error); 
+        .then(() => {
+          toast.success("Campus Ambassador Application Submitted Successfully");
+          setOpenLeader(!isOpenLeader);
+          setIsUserFormSubmitted(true);
+        }
+        )
+        .catch((error) => {
+          toast.error("Failed to submit application");
+          toast.error("One user can only submit an application once!!");
+          console.log(error);
 
-      });
+        });
     }
     )
 
   };
 
-  useEffect(() =>{
-    if(errors){
+  useEffect(() => {
+
+    if (errors) {
       console.log(errors)
     }
-    if(errors2){
+    if (errors2) {
       console.log(errors2)
     }
-  } , [errors , errors2])
+    CheckingUserForm(session?.user.id!);
+
+  }, [errors, errors2])
+
+  function CheckingUserForm(userId: string) {
+    try {
+      getCampusAmbassador(userId)
+        .then((data) => {
+          console.log("Data: ", data);
+          if (data) {
+            setIsUserFormSubmitted(true);
+          }
+        })
+        .catch((error) => {
+          console.log("Error: ", error);
+        });
+
+      getCampusLeader(userId)
+        .then((data) => {
+          console.log("Data: ", data);
+          if (data) {
+            setIsUserFormSubmitted(true);
+          }
+        })
+        .catch((error) => {
+          console.log("Error: ", error);
+        });
+    }
+    catch (error) {
+      console.log("Error: ", error);
+    }
+  }
+
+  function WithdrawForm() {
+    console.log("Withdraw Form");
+    try {
+      deleteCampusAmbassador(session?.user.id!)
+        .then(() => {
+          toast.success("Campus Ambassador Application Withdrawn Successfully");
+          setIsUserFormSubmitted(false);
+        })
+        .catch((error) => {
+          deleteCampusLeader(session?.user.id!)
+          .then(() => {
+            toast.success("Campus Leader Application Withdrawn Successfully");
+            setIsUserFormSubmitted(false);
+          })
+          .catch((error) => {
+            console.log(error);
+            toast.error("Failed to withdraw application");
+          });        
+        });
+
+      
+    }
+    catch (error) {
+      console.log("Error: ", error)
+
+  }
+}
 
   return (
     <div className="pb-10 lg:pt-6 2xl:pl-9 2xl:pr-28" id="campus-apply-card">
@@ -150,7 +214,7 @@ function CampusApplyCard() {
         className="flex justify-center items-center w-full mt-12"
       >
         <div className="">
-          <div className="flex flex-col lg:flex-row gap-y-9 xl:gap-y-0 items-stretch md:justify-evenly md:pl-5 xl:pl-0 xl:pr-0 md:pr-5 lg:pr-0">
+          <div className="flex mx-10 lg:flex-row gap-y-9 xl:gap-y-0 items-stretch md:justify-evenly md:pl-5 xl:pl-0 xl:pr-0 md:pr-5 lg:pr-0">
             <div className="pl-5 pr-3 sm:pr-5 xl:pr-10 lg:w-1/2 flex flex-col">
               <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900 flex-1">
                 <div className="flex flex-col justify-between p-4 md:p-5 rounded-t dark:border-gray-600 h-full">
@@ -189,7 +253,10 @@ function CampusApplyCard() {
                     </ul>
                   </div>
                   <button
-                    onClick={toggleModalLeader}
+                    onClick={() => { 
+                      toggleModalLeader();
+                      CheckingUserForm(session?.user.id!);
+                    }}
                     className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4"
                   >
                     Apply As Campus Leader
@@ -236,7 +303,10 @@ function CampusApplyCard() {
                     </ul>
                   </div>
                   <button
-                    onClick={toggleModalAmbassador}
+                    onClick={() =>{
+                      toggleModalAmbassador();
+                      CheckingUserForm(session?.user.id!);
+                    }}
                     className="px-8 font-bold py-3 signInbut text-white rounded-xl text-lg mt-4"
                   >
                     Apply As Campus Ambassador
@@ -247,14 +317,14 @@ function CampusApplyCard() {
           </div>
         </div>
       </div>
-      {isOpen && (
+      {isOpen && (!isUserFormSubmitted ? (
         <div
           id="crud-modal"
           aria-hidden="true"
           className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-2 bg-gray-800 bg-opacity-75 h-screen w-screen"
         >
           <div className="relative p-4 h-full w-full lg:w-3/4">
-            <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
+          <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 flex justify-center items-center">
               <div className="w-full">
                 <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                   <h3 className="bg-gradient-to-r text-2xl from-purple-600 via-purple-500 to-purple-400 font-semibold text-transparent bg-clip-text">
@@ -491,82 +561,7 @@ function CampusApplyCard() {
                       )}
                     </div>
 
-                    {/* <div className="col-span-2 flex  gap-x-28">
-                      <div className="w-2/5">
-                        <div className="col-span-2">
-                          <label
-                            htmlFor="name"
-                            className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
-                          >
-                            Why do you want to be a Chapter Leader for SoarX?
-                            (Short essay)
-                          </label>
-                          <input
-                            type="text"
-                            id="WhyCapterLeader"
-                            {...register("WhyCapterLeader")}
-                            className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type your name"
-                          />
-                          {errors.WhyCapterLeader && (
-                            <p className="text-red-500 text-sm">
-                              {errors.WhyCapterLeader.message}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                      <div className="w-2/5 sm:w-auto">
-                        <label
-                          htmlFor="graduationYear"
-                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                        >
-                          Graduation Year
-                        </label>
-                        <select
-                          id="graduationYear"
-                          name="graduationYear"
-                          className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        >
-                          <option value="">Select graduation year</option>
-                          {[...Array(9)].map((_, index) => (
-                            <option key={index} value={2020 + index}>
-                              {2020 + index}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
 
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="codingClub"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Are you a part of any coding club in your college?
-                      </label>
-                      <input
-                        type="text"
-                        name="codingClub"
-                        id="codingClub"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Type your coding club"
-                      />
-                    </div>
-                    <div className="col-span-2">
-                      <label
-                        htmlFor="cseStrength"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Strength of CSE/IT students in your college
-                      </label>
-                      <input
-                        type="number"
-                        name="cseStrength"
-                        id="cseStrength"
-                        className="bg-gray-50 dark:border-0 outline-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-900 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Enter CSE/IT student count"
-                      />
-                    </div> */}
                   </div>
 
                   <button
@@ -580,9 +575,24 @@ function CampusApplyCard() {
             </div>
           </div>
         </div>
-      )}
+      ) : (<>
+      <div className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-2 bg-gray-800 bg-opacity-75 h-screen w-screen"
+      onClick={toggleModalLeader}
+      >
+      <div className="relative p-4 h-full w-full lg:w-3/4"
+      
+        >
+      <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 text-[#8919E4] text-center p-10"
+      onClick={(e) => e.stopPropagation()}
+      >
+        <p className="text-[20px] ">You can only submit one form! If you want to withdraw your form click the button below</p>
+        <button className=" signInbut mt-6" onClick={WithdrawForm}>Withdraw form</button>
+        </div>
+        </div>
+        </div>
+      </>))}
 
-      {isOpenLeader && (
+      {isOpenLeader && (!isUserFormSubmitted ? (
         <div
           id="crud-modal"
           aria-hidden="true"
@@ -796,7 +806,23 @@ function CampusApplyCard() {
             </div>
           </div>
         </div>
-      )}
+      ) : (
+        <>
+          <div className="fixed inset-0 z-50 overflow-y-scroll overflow-x-hidden flex justify-center pt-2 bg-gray-800 bg-opacity-75 h-screen w-screen"
+      onClick={toggleModalAmbassador}
+      >
+      <div className="relative p-4 h-full w-full lg:w-3/4"
+      
+        >
+      <div className="relative bg-white rounded-lg shadow outline-none dark:bg-gray-700 text-[#8919E4] text-center p-10"
+      onClick={(e) => e.stopPropagation()}
+      >
+        <p className="text-[20px] ">You can only submit one form! If you want to withdraw your form click the button below</p>
+        <button className=" signInbut mt-6" onClick={WithdrawForm}>Withdraw form</button>
+        </div>
+        </div>
+        </div>
+        </>))}
     </div>
   );
 }
