@@ -75,7 +75,7 @@ function ProfilePictureSection() {
           />
           <button
             onClick={handleBgImageUploadFrom}
-            className="absolute bottom-2 md:bottom-4 right-3 md:right-9 p-2 text-black text-xl"
+            className="absolute bottom-2 md:bottom-4 right-10 md:right-9 p-2 text-black text-xl"
           >
             <FaPenToSquare />
           </button>
@@ -101,7 +101,7 @@ function ProfilePictureSection() {
         </div>
 
         {/* Profile Image */}
-        <div className="absolute left-5 md:left-10">
+        <div className="absolute left-5 md:left-36">
           <div className="relative -top-14 md:-top-32 ">
             <button
               className="absolute md:right-7 right-2 p-2 bottom-1 rounded-full shadow-md z-10"
@@ -138,7 +138,7 @@ function ProfilePictureSection() {
       </div>
 
       {/* User Info */}
-      <div className="flex md:flex-row justify-between items-center mt-20 px-4 md:px-10">
+      <div className="flex md:flex-row justify-between items-center mt-20 ml-2 md:ml-28 px-4 md:px-10">
         <section>
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
@@ -148,7 +148,7 @@ function ProfilePictureSection() {
           </h2>
         </section>
         <button
-          className="text-purple-500 text-lg md:text-xl md:mt-4"
+          className="text-purple-500 text-lg md:text-xl mr-10 md:mr-36 md:mt-4"
           onClick={handleShowForm}
         >
           <FaPenToSquare />
@@ -157,7 +157,7 @@ function ProfilePictureSection() {
       <hr className="my-6 border-gray-500" />
 
       {/* User Details */}
-      <div className="flex flex-col md:flex-row justify-between px-4 md:px-10">
+      <div className="flex flex-col md:flex-row justify-between ml-4 md:ml-28 md:mr-28 px-4 md:px-10">
         <section className="mb-6">
           <p className="flex items-center gap-x-3">
             <h2 className="text-lg font-medium text-gray-600">
@@ -179,7 +179,7 @@ function ProfilePictureSection() {
           <h3 className="pt-2">{session?.user.phone}</h3>
         </section>
       </div>
-      <hr className="md:hidden border-1 border-gray-400 dark:border-gray-600" />
+      {/* <hr className="md:hidden border-1 border-gray-400 dark:border-gray-600" /> */}
 
       {/* Profile Form */}
       {showForm && (
