@@ -13,15 +13,15 @@ function ProfileSection() {
   return (
     <div className=''>
         <ProfilePictureSection />
-        <ProfileTitle />
+        {/* <ProfileTitle /> */}
         <div className='space-y-10'>
-        <ProfileSummary />
+        {/* <ProfileSummary />
         <ProfileEducation />
         <ProfileExperience />
         <ProfileSkills />
         <ProfilePortfolio />
         <ProfileProjects />
-        <ProfileCertifications />
+        <ProfileCertifications /> */}
         </div>
     </div>
   )

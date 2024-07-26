@@ -328,7 +328,7 @@ const ProfileForm: React.FC<Props> = ({
 
   return (
     <div className="z-[200] fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto">
-      <div className="max-h-[80vh] fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white dark:bg-black z-[200] overflow-y-auto">
+      <div className="max-h-[90vh] fixed top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 max-w-[640px] w-full shadow bg-white dark:bg-black z-[200] overflow-y-auto">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex justify-between items-center py-4 px-6 border-b-2 border-[#D9D9D9]">
             <h1 className="text-[30px] font-semibold">Personal Details</h1>
