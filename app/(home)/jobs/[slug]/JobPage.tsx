@@ -55,18 +55,18 @@ function JobPage({ jobData }: { jobData: any }) {
 
   return (
     <div className="container mx-auto p-4 mt-28">
-      <div className="flex flex-col lg:flex-row lg:ml-14 xl:ml-28">
+      <div className="lg:flex lg:gap-x-6 lg:ml-14 xl:ml-28">
         <div className="lg:w-3/5 shadow-2xl dark:bg-[rgba(24,24,27,1)] rounded-xl dark:shadow-gray-800 mt-2 mb-4 p-4">
           <div className="lg:min-w-[400px] md:min-w-[200px] min-w-[150px] max-w-full mx-auto mb-8">
             <Image
               src={jobData?.imageUrl}
               alt="poster"
-              className="w-full rounded-[30px] shadow-3xl ease-in-out duration-300 hover:cursor-pointer"
+              className="w-full rounded-[20px] shadow-3xl ease-in-out duration-300 hover:cursor-pointer"
               width={500}
               height={500}
             />
             <div className="pt-6 font-semibold pb-2 flex justify-between">
-              <h4 className="text-xs font-medium text-[#34EF95] bg-[#D7FCEA] inline p-2 rounded-xl">
+              <h4 className="text-xs font-medium sm:block text-[#34EF95] bg-[#D7FCEA] hidden p-2 rounded-xl">
                 {jobData.jobRole}
               </h4>
               <div className="space-x-2">
@@ -146,11 +146,11 @@ function JobPage({ jobData }: { jobData: any }) {
         </div>
 
         <div className="pt-6 space-y-5 lg:pl-6">
-          <h3 className="text-2xl font-semibold">Related Jobs</h3>
-          <div className="custom-sm:grid custom-sm:grid-cols-1 custom-md:grid-cols-2 gap-x-5 custom-sm:grid-rows-3 custom-md:grid-rows-2 lg:block">
+          <h3 className="text-2xl font-semibold hidden">Related Jobs</h3>
+          <div className="hidden lg:block">
           {jobs.map((myjob: any, index: any) => (
             <Link href={`/jobs/${myjob.id}`} key={index}>
-              <Card className="hover:cursor-pointer hover:scale-105 shadow-2xl dark:shadow-gray-800 mb-6">
+              <Card className="hover:cursor-pointer mb-8 pb-2 pt-2 hover:scale-105 shadow-2xl dark:shadow-gray-800">
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                   <p className="text-tiny uppercase font-bold">
                     {myjob.jobRole}
