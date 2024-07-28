@@ -85,7 +85,7 @@ const Jobs = () => {
   return (
     <>
   <Toast ref={toast} />
-  <div className="xl:ml-44 hide-vertical-scrollbar xl:mr-24 mt-28 overflow-x-hidden flex flex-col   xl:flex-row xl:gap-x-20 lg:h-[calc(200vh)] ml-5 mr-5 mb-14 lg:mb-0"> 
+  <div className="xl:ml-44 hide-vertical-scrollbar xl:mr-24 mt-28 overflow-x-hidden xl:flex xl:gap-x-20 lg:h-[calc(200vh)] ml-5 mr-5 mb-14 lg:mb-0"> 
     <div className="max-w-fit w-full  xl:w-7/12 sm:ml-20 md:ml-36 lg:ml-0 lg:grid grid-cols-2 gap-x-5 xl:grid-cols-1">
       {filteredJobs.map((e: any) => <JobCardTwo key={e.id} {...e} />)}
     </div>
