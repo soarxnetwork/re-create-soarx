@@ -7,7 +7,7 @@ import ProfileSection from "./_components/ProfileSection";
 
 const ProfilePage = () => {
   const { data: session } = useSession()
-  if (!session?.user) return redirect('/sign-in')
+  // if (!session?.user) return redirect('/sign-in')
 
   return (
     <section className="overflow-hidden">

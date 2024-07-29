@@ -10,6 +10,7 @@ import { FaPenToSquare } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import CoverImage from "../../../../public/images/CoverImage.png";
 import { ImCross } from "react-icons/im";
+import PersonalDetails from "./PersonalDetails";
 
 function ProfilePictureSection() {
   const { data: session } = useSession();
@@ -55,9 +56,9 @@ function ProfilePictureSection() {
     setUploadForm(!uploadForm);
   };
 
-  const handleShowForm = () => {
-    setShowForm(!showForm);
-  };
+  // const handleShowForm = () => {
+  //   setShowForm(!showForm);
+  // };
 
   // console.log(bgImage);
   // console.log(image);
@@ -65,20 +66,20 @@ function ProfilePictureSection() {
     <section className="pb-16">
       <div className="relative">
         {/* Background Image */}
-        <div className="h-[200px] md:h-[260px] overflow-hidden bg-gray-600 relative">
-          <Image
+        <div className="h-[200px] md:h-[260px] overflow-hidden relative">
+          {/* <Image
             src={bgImage || CoverImage}
             alt="Background Image"
             layout="fill"
             objectFit="cover"
             className="w-full h-full"
-          />
-          <button
+          /> */}
+          {/* <button
             onClick={handleBgImageUploadFrom}
             className="absolute bottom-2 md:bottom-4 right-10 md:right-9 p-2 text-black text-xl"
           >
             <FaPenToSquare />
-          </button>
+          </button> */}
           {uploadBgForm && (
             <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 overflow-auto z-50">
               <div
@@ -86,11 +87,11 @@ function ProfilePictureSection() {
                 className="bg-white rounded-lg p-4"
               >
                 <div
-                      className="flex text-red-500 justify-end hover:cursor-pointer"
-                      onClick={handleBgImageUploadFrom}
-                    >
-                      <ImCross />
-                    </div>
+                  className="flex text-red-500 justify-end hover:cursor-pointer"
+                  onClick={handleBgImageUploadFrom}
+                >
+                  <ImCross />
+                </div>
                 <UploadDropzone
                   endpoint="imageUploader"
                   onClientUploadComplete={(res) => uploadBgImage(res)}
@@ -143,22 +144,24 @@ function ProfilePictureSection() {
           <h2 className="text-2xl md:text-3xl pl-2 md:pl-0 font-medium">
             {session?.user.username}
           </h2>
-          <h2 className="text-lg font-medium text-gray-600 ml-3 md:ml-0">
+          <h2 className="text-lg font-medium text-gray-600 ml-2 md:ml-0">
             {session?.user.profession}{" "}
           </h2>
         </section>
-        <button
+
+        {/* <button
           className="text-purple-500 text-lg md:text-xl mr-10 md:mr-36 md:mt-4"
           onClick={handleShowForm}
         >
           <FaPenToSquare />
-        </button>
+        </button> */}
+
       </div>
-      <hr className="my-6 border-gray-500" />
+      <hr className="mt-6 border-gray-500" />
 
       {/* User Details */}
-      <div className="flex flex-col md:flex-row justify-between ml-4 md:ml-28 md:mr-28 px-4 md:px-10">
-        <section className="mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2  ml-4 md:ml-28 md:mr-28 px-4 md:px-10">
+        {/* <section className="mb-6">
           <p className="flex items-center gap-x-3">
             <h2 className="text-lg font-medium text-gray-600">
               Email ID <span className="text-gray-400">(Private to you)</span>
@@ -166,9 +169,9 @@ function ProfilePictureSection() {
             <h3>{session?.user.emailVerified ? "Verified" : null}</h3>
           </p>
           <h3 className="pt-2">{session?.user.email}</h3>
-        </section>
+        </section> */}
 
-        <section className="mb-6">
+        {/* <section className="mb-6">
           <p className="flex items-center gap-x-3">
             <h2 className="text-lg font-medium text-gray-600">
               Mobile Number{" "}
@@ -177,12 +180,26 @@ function ProfilePictureSection() {
             <h3>{session?.user.emailVerified ? "Verified" : null}</h3>
           </p>
           <h3 className="pt-2">{session?.user.phone}</h3>
-        </section>
+        </section> */}
+
+       
       </div>
       {/* <hr className="md:hidden border-1 border-gray-400 dark:border-gray-600" /> */}
+      <PersonalDetails
+          // handleShowForm={handleShowForm}
+          profession={session?.user.profession}
+          email={session?.user.email!}
+          id={session?.user.id!}
+          gender={session?.user?.gender}
+          username={session?.user.username!}
+          phone={session?.user.phone}
+          city={session?.user.city}
+          country={session?.user.country}
+          college={session?.user.college}
+        />
 
       {/* Profile Form */}
-      {showForm && (
+      {/* {showForm && (
         <ProfileForm
           handleShowForm={handleShowForm}
           profession={session?.user.profession}
@@ -195,7 +212,7 @@ function ProfilePictureSection() {
           country={session?.user.country}
           college={session?.user.college}
         />
-      )}
+      )} */}
     </section>
   );
 }

@@ -54,7 +54,7 @@ function JobPage({ jobData }: { jobData: any }) {
   }
 
   return (
-    <div className="container mx-auto p-4 mt-28">
+    <div className="container mx-auto p-4 mt-28 pb-14">
       <div className="lg:flex lg:gap-x-6 lg:ml-14 xl:ml-28">
         <div className="lg:w-3/5 shadow-2xl dark:bg-[rgba(24,24,27,1)] rounded-xl dark:shadow-gray-800 mt-2 mb-4 p-4">
           <div className="lg:min-w-[400px] md:min-w-[200px] min-w-[150px] max-w-full mx-auto mb-8">
