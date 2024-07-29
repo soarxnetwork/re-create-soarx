@@ -1903,16 +1903,16 @@ input {
 
 
 
-.scroll-container {
-  /* Set height and overflow properties as needed */
-  height: 300px; /* or any height suitable for your layout */
-  overflow-y: auto; /* or overflow-x: auto; for horizontal scrolling */
-  
-  /* Hide scrollbar for WebKit-based browsers */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+/* Hide vertical scrollbar but keep scrolling functionality */
+.hide-vertical-scrollbar {
+  overflow-y: scroll; /* Ensure scrolling is possible */
 }
 
-.scroll-container::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+.hide-vertical-scrollbar::-webkit-scrollbar {
+  width: 0; /* Hide vertical scrollbar for Webkit browsers */
+}
+
+.hide-vertical-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
 }

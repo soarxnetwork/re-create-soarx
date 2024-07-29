@@ -22,6 +22,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        'custom-sm': '350px',
+        'custom-md': '500px',
+        'custom-lg': '1200px',
+      },
       colors: {
         custom: "rgb(144, 0, 255)",
         primary: "#0061FF",

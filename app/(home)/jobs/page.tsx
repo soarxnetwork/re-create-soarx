@@ -84,20 +84,19 @@ const Jobs = () => {
   }
   return (
     <>
-      <Toast ref={toast} />
-      <div className="ml-28 mr-28 mt-28 overflow-x-hidden flex">
-        {/* <JobSlider /> */}
-        <div className=" grid grid-cols-1 max-w-fit w-8/12">
-        {filteredJobs.map((e: any) => <JobCardTwo key={e.id} {...e} />)}
+  <Toast ref={toast} />
+  <div className="xl:ml-44 hide-vertical-scrollbar xl:mr-24 mt-28 overflow-x-hidden xl:flex xl:gap-x-20 lg:h-[calc(200vh)] ml-5 mr-5 mb-14 lg:mb-0"> 
+    <div className="max-w-fit w-full  xl:w-7/12 sm:ml-20 md:ml-36 lg:ml-0 lg:grid grid-cols-2 gap-x-5 xl:grid-cols-1">
+      {filteredJobs.map((e: any) => <JobCardTwo key={e.id} {...e} />)}
+    </div>
+    <div className="w-full xl:w-5/12 xl:ml-2 space-y-4  sticky top-0 right-0 h-full"> 
+      <SearchArea onSearch={handleSearch} onSearchFilter={handleFilters} />
+      <RecentJobs />
+      <JobCategory />
+    </div>
+  </div>
+</>
 
-        </div>
-        <div className="w-4/12 ml-2 space-y-4 sticky h-full">
-          <SearchArea onSearch={handleSearch} onSearchFilter = {handleFilters} />
-          <RecentJobs />
-          <JobCategory/>
-        </div>
-      </div>
-    </>
   );
 };
 
