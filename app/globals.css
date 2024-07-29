@@ -1900,3 +1900,19 @@ input {
 .flippable-image.flipped {
   transform: rotateY(180deg);
 }
+
+
+
+/* Hide vertical scrollbar but keep scrolling functionality */
+.hide-vertical-scrollbar {
+  overflow-y: scroll; /* Ensure scrolling is possible */
+}
+
+.hide-vertical-scrollbar::-webkit-scrollbar {
+  width: 0; /* Hide vertical scrollbar for Webkit browsers */
+}
+
+.hide-vertical-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}

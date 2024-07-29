@@ -1,199 +1,182 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
-import { toast } from "react-toastify";
 import Image from "next/image";
-import SoarXlogo from "@/public/images/SoarX Logo.png";
-import { FaLinkedinIn } from "react-icons/fa";
-import { SiGooglemeet } from "react-icons/si";
-import { FaInstagram } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
-import { FaYoutube } from "react-icons/fa6";
-import { SlCalender } from "react-icons/sl";
-import { MdOutlineAssuredWorkload } from "react-icons/md";
-import { MdAttachMoney } from "react-icons/md";
-import { FaPersonChalkboard } from "react-icons/fa6";
-import { GiSkills } from "react-icons/gi";
-import { FaCriticalRole } from "react-icons/fa";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 
-function JobPage({ event }: { event: any }) {
+import Link from "next/link";
+import { getAllJobs } from "@/services/jobs";
+import { Spinner } from "@nextui-org/react";
+
+function JobPage({ jobData }: { jobData: any }) {
   const { data: session } = useSession();
-  // console.log(event);
+  const [jobs, setJobs] = useState<any>([]);
+  const toast = useRef<any>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const DESC = event?.description;
-  interface StringtoString {
-    [key: string]: string;
+  const DESC = jobData?.description;
+  const title = jobData?.title || "";
+
+  useEffect(() => {
+    const res = async () => {
+      setIsLoading(true);
+      try {
+        const allJobs = await getAllJobs();
+        let len = allJobs?.length;
+        let startIndex = Math.floor(Math.random() * len! || 6);
+        let endIndex = Math.floor(Math.random() * len! || 6);
+
+        if (startIndex > endIndex) {
+          [endIndex, startIndex] = [startIndex, endIndex];
+        }
+        setJobs(allJobs?.slice(startIndex, startIndex + 3));
+      } catch (error) {
+        toast.current.show({
+          severity: "info",
+          summary: "Rejected",
+          detail: "Something went wrong",
+          life: 2000,
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    res();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="h-[700px] w-full flex items-center justify-center">
+        <Spinner color="secondary" labelColor="secondary" />
+      </div>
+    );
   }
 
-  const title = event?.title || "";
-
   return (
-    <>
-      <div className=" sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] ">
-        <div className="flex justify-center max-[500px]:block ">
-          <div className=" lg:min-w-[400px] md:min-w-[200px] min-w-[150px] max-[700px]:max-w-[400px] mx-auto max-[500px]:mb-8 ">
+    <div className="container mx-auto p-4 mt-28">
+      <div className="lg:flex lg:gap-x-6 lg:ml-14 xl:ml-28">
+        <div className="lg:w-3/5 shadow-2xl dark:bg-[rgba(24,24,27,1)] rounded-xl dark:shadow-gray-800 mt-2 mb-4 p-4">
+          <div className="lg:min-w-[400px] md:min-w-[200px] min-w-[150px] max-w-full mx-auto mb-8">
             <Image
-              src={event?.imageUrl} // Insert the image source
+              src={jobData?.imageUrl}
               alt="poster"
-              className="rounded-[20px] hover:scale-105 ease-in-out duration-300 hover:cursor-pointer"
+              className="w-full rounded-[20px] shadow-3xl ease-in-out duration-300 hover:cursor-pointer"
               width={500}
               height={500}
             />
-            <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">
-              Promoted by
-            </div>
-            <div className="company flex justify-between">
-              <Image
-                src={SoarXlogo}
-                alt="logo"
-                className="w-[80px]"
-                width={0}
-                height={0}
-              />
-              <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                <a
-                  href="https://www.instagram.com/soarxnetwork"
-                  className=" my-auto "
+            <div className="pt-6 font-semibold pb-2 flex justify-between">
+              <h4 className="text-xs font-medium sm:block text-[#34EF95] bg-[#D7FCEA] hidden p-2 rounded-xl">
+                {jobData.jobRole}
+              </h4>
+              <div className="space-x-2">
+                <Link
+                  href={`/${jobData.applyLink}`}
+                  className="signInbut bg-purple-900"
                 >
-                  <FaInstagram
-                    className="h-[20px]"
-                    style={{ color: "#828282" }}
-                  />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/company/soarxnetwork/"
-                  className="my-auto  "
-                >
-                  <FaLinkedinIn
-                    className="h-[20px]"
-                    style={{ color: "#828282" }}
-                  />
-                </a>
+                  Apply Now
+                </Link>
               </div>
             </div>
-
-           <div className="rounded-xl  border-2  dark:border-gray-400 border-black">
-           <table className="text-lg w-full">
-              <tr className="border-b dark:border-gray-400 border-black">
-                <td className="border-r dark:border-gray-400 border-black p-2">
-                  <div className="flex gap-x-3 items-center">
-                    <MdOutlineAssuredWorkload />
-                    Company
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div>{event.companyName}</div>
-                </td>
-              </tr>
-
-              <tr className="border-b dark:border-gray-400 border-black">
-              <td className="border-r dark:border-gray-400 border-black p-2">
-                  <div className="flex gap-x-3 items-center">
-                    <MdAttachMoney />
-                    Salary
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div>{event.salary}</div>
-                </td>
-              </tr>
-
-              <tr className="border-b dark:border-gray-400 border-black">
-              <td className="border-r dark:border-gray-400 border-black p-2">
-                  <div className="flex gap-x-3 items-center">
-                    <FaPersonChalkboard />
-                    Experience
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div>{event.experience}</div>
-                </td>
-              </tr>
-
-              <tr className="border-b dark:border-gray-400 border-black">
-              <td className="border-r dark:border-gray-400 border-black p-2">
-                  <div className="flex gap-x-3 items-center">
-                    <GiSkills />
-                    Skills
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div>{event.skills}</div>
-                </td>
-              </tr>
-
-              <tr className="border-b dark:border-gray-400 border-black">
-              <td className="border-r dark:border-gray-400 border-black p-2">
-                  <div className="flex gap-x-3 items-center">
-                    <FaCriticalRole />
-                    Job Role
-                  </div>
-                </td>
-                <td className="p-2">
-                  <div>{event.jobRole}</div>
-                </td>
-              </tr>
-            </table>
-           </div>
           </div>
-          <div className="pb-[100px] ml-[4%]   sm:max-md:ml-8">
-            <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] max-md:leading-tight leading-8 dark:text-purple-600 text-purple-700">
-            {title.split("").map((child: any, idx: any) => (
-            <span className={"hoverText font-semibold"} key={idx}>
-              {child}
-            </span>
-          ))}
+
+          <div className="pb-16">
+            <h1 className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] leading-tight space-y-5">
+              {title.split("").map((child: any, idx: any) => (
+                <span className="hoverText font-semibold" key={idx}>
+                  {child}
+                </span>
+              ))}
             </h1>
 
-            <div className="flex mt-[25px]">
-              <div className="h-[45px] flex justify-center items-center w-[40px] border-[1px] border-[#b0aeae] rounded-lg">
-                <div className="">
-                  <SlCalender />
-                </div>
-              </div>
-              <div className="ml-[15px]">
-                <div className="text-red-400 font-medium">
-                  Last Date to Apply
-                </div>
-                <div className="">{event.lastDateToApply}</div>
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Job Description</h3>
+                <p className="text-sm">{DESC}</p>
               </div>
             </div>
-            <div className="mt-4 flex gap-x-4 items-center">
+
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Company Details</h3>
+                <p className="text-sm">{jobData.aboutCompany}</p>
+              </div>
+            </div>
+
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Job Role</h3>
+                <p className="text-sm">{jobData.jobRole}</p>
+              </div>
+            </div>
+
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Experience Required</h3>
+                <p className="text-sm">{jobData.experience}</p>
+              </div>
+            </div>
+
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">
+                  Applicant Qualifications
+                </h3>
+                <p className="text-sm">{jobData.qualificationRequired}</p>
+              </div>
+            </div>
+
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Skills</h3>
+                <p className="text-sm">{jobData.skills}</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-x-4 pt-[25px]">
               <div className="h-[45px] flex text-2xl justify-center items-center w-[40px] border-[1px] border-[#b0aeae] rounded-lg">
                 <IoLocationSharp />
               </div>
-              <div>{event.location}</div>
-            </div>
-            <div className=" mt-[5%] rounded-lg shadow-lg pb-4">
-              <button className="Event-reg-button">Apply Now</button>
-            </div>
-            <div className="border-l-[3px] border-[#C2A1F4] border-dashed mt-[3%]">
-              <div className="ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
-                About Job
+              <div className="space-y-4">
+                <h3 className="text-lg font-medium">Location</h3>
+                <p className="text-sm">{jobData.location}</p>
               </div>
-              <article className="mt-[2%] ml-[3%] text-[17.5px] sm:max-md:text-[12px] max-md:text-[8px]">
-                {DESC}
-                <p className="">
-                  <br />
-                  <span className="font-semibold">
-                    For more queries and event updates, join the SoarX Network
-                    on WhatsApp:
-                  </span>{" "}
-                  <a
-                    href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX"
-                    className="text-green-500 text-[8px] lg:text-[16px] md:text-[14px] sm:text-[10px]"
-                    target="blank"
-                  >
-                    https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX
-                  </a>{" "}
-                </p>
-              </article>
             </div>
           </div>
         </div>
+
+        <div className="pt-6 space-y-5 lg:pl-6">
+          <h3 className="text-2xl font-semibold hidden">Related Jobs</h3>
+          <div className="hidden lg:block">
+          {jobs.map((myjob: any, index: any) => (
+            <Link href={`/jobs/${myjob.id}`} key={index}>
+              <Card className="hover:cursor-pointer mb-8 pb-2 pt-2 hover:scale-105 shadow-2xl dark:shadow-gray-800">
+                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                  <p className="text-tiny uppercase font-bold">
+                    {myjob.jobRole}
+                  </p>
+                  <small className="text-default-500">Related Jobs</small>
+                  <h4 className="font-bold text-large">{myjob.title}</h4>
+                </CardHeader>
+                <CardBody className="overflow-visible py-2 ">
+                  <Image
+                    alt="Card background"
+                    className="object-cover rounded-xl"
+                    src={myjob.imageUrl}
+                    width={270}
+                    height={200}
+                  />
+
+        
+                </CardBody>
+              </Card>
+            </Link>
+          ))}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
+
 export default JobPage;

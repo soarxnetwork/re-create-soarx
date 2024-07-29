@@ -20,7 +20,7 @@ model User {
   summary       String?
   gender        String?
   country       String?
-  pincode       String?
+  college       String?
   city          String?
 
   orders         Order[]
@@ -212,12 +212,14 @@ model Order {
 
 model CampusAmbassador {
   id              String @id @default(uuid())
-  fullname        String
-  collegeEmail    String
-  collegeName     String
-  collegeLocation String
-  graduationYear  String
-
+  WhyCampusAmbassador        String
+  TechnicalSkills    String
+  StudentOrganizations     String
+  WeekHoursForAmbassador String
+  SixMonthCommitment  String
+  HearAboutSoarx       String
+  AdditionalInfo       String?
+  EventOrganization   String
   userId String @unique
   user   User   @relation(fields: [userId], references: [id])
 
@@ -235,7 +237,7 @@ model CampusLeader {
   WeekHoursForChapterLeader String
   OneYearCommitment         String
   HearAboutSoarx            String
-  AdditionalInfo            String
+  AdditionalInfo            String?
   userId                    String   @unique
   user                      User     @relation(fields: [userId], references: [id])
   createdAt                 DateTime @default(now())

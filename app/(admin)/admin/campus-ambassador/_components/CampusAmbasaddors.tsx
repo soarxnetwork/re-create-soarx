@@ -3,25 +3,28 @@ import { CampusAmbassador } from "@prisma/client";
 import ActionCampusAmbassador from "./ActionCampusAmbassador";
 
 const CampusAmbasaddors = ({
-  fullname,
-  collegeEmail,
-  collegeLocation,
-  collegeName,
-  createdAt,
-  graduationYear,
   id,
-  // inCodingClub,
-  // stream,
-  // strenghtStem,
+  userId,
+  WhyCampusAmbassador,
+  TechnicalSkills,
+  StudentOrganizations,
+  WeekHoursForAmbassador,
+  SixMonthCommitment,
+  HearAboutSoarx,
+  AdditionalInfo,
+  EventOrganization,
+  createdAt,
+  
 }: CampusAmbassador) => {
+  
   return (
     <div className="grid grid-cols-2">
       <div>
-        <p>{fullname}</p>
+        {/* <p>{fullname}</p>
         <p>{collegeEmail}</p>
         <p>{collegeLocation}</p>
         <p>{collegeName}</p>
-        <p>{graduationYear}</p>
+        <p>{graduationYear}</p> */}
       </div>
       <div>
         {/* <p>{inCodingClub}</p>

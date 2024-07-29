@@ -8,5 +8,5 @@ async function fetchData(id: string) {
 export default async function Page({ params }: { params: { slug: string } }) {
   const jobData = await fetchData(params.slug);
 
-  return <JobPage event={jobData} />;
+  return <JobPage jobData={jobData} />;
 }

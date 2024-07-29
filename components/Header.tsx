@@ -163,7 +163,7 @@ const Header = ({ admin }: User) => {
 
               <p>
                 <span>
-                  <InitiativesDropdown />
+                  {/* <InitiativesDropdown /> */}
                 </span>
               </p>
 
