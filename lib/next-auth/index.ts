@@ -115,8 +115,12 @@ export const authOptions: AuthOptions = {
 
       return true;
     },
-    jwt: async ({ token, user }) => {
+    jwt: async ({ token, user, trigger, session }) => {
       if (user) token.user = user as unknown as User;
+      if (trigger === "update" && session?.user) {
+        // Only spread session.user if it exists and trigger is "update"
+        return { ...token, user: { ...token.user, ...session.user } };
+      }
       return token;
     },
     session: async ({ token, session }) => {

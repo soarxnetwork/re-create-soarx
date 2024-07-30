@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,12 +36,13 @@ const PersonalDetails: React.FC<Props> = ({
   college = "",
   profession = "",
 }) => {
-  const {data: session} = useSession();
+  const {data: session, update} = useSession(); 
   const [isPending, startTransition] = useTransition();
   const [selectedCountry, setSelectedCountry] = useState<any>([]);
   const [isReadOnly, setIsReadOnly] = useState(true);
   const [selectedGender, setSelectedGender] = useState<any>([]);
   const [selectedProfession, setSelectedProfession] = useState<any>([]);
+  const [isEventPath, setIsEventPath] = useState<any>("");
   const router = useRouter();
 
   const {
@@ -62,8 +63,21 @@ const PersonalDetails: React.FC<Props> = ({
       profession: profession || "",
     },
   });
+  // console.log(session);
 
-  const onSubmit = (data: userSchemaProps) => {
+  useEffect(()=>{
+    const getPath = sessionStorage.getItem("prevPath");
+    const getPath2 = sessionStorage.getItem("currentPath");
+    if(getPath){
+      setIsEventPath(getPath);
+      sessionStorage.removeItem("prevPath");
+      sessionStorage.removeItem("currentPath");
+    }
+    
+  }, [])
+
+
+  const onSubmit = async (data: userSchemaProps) => {
     setIsReadOnly(true);
     data.gender = selectedGender.label || gender || "";
     data.country = selectedCountry.label || country || "";
@@ -79,16 +93,36 @@ const PersonalDetails: React.FC<Props> = ({
           if (data.error) return toast.error(data.error);
           // signOut()
           toast.success(data.message);
+          const res = data.res;
         })
         .catch((err) => {
           throw err;
         });
     });
 
-    toast.success("Profile Updated Successfully");
+    await update({
+      ...session,
+        user: {
+          ...session?.user,
+          username: data.username,
+          phone: data.phone,
+          city: data.city,
+          college: data.college,
+          country: data.country,
+          gender: data.gender,
+          profession: data.profession,
+      }
+    })
+    // console.log(session) 
+    if(isEventPath){
+      router.push(isEventPath); 
+    }
+    // console.log(session);
+    // toast.success("Profile Updated Successfully");
     // handleShowForm();
     // Handle form submission (e.g., send data to your backend)
   };
+  // console.log(isEventPath);
 
   const Professions = [
     { value: "Student", label: "Student" },
@@ -329,6 +363,8 @@ const PersonalDetails: React.FC<Props> = ({
     // console.log(selectedOption.target.value);
     setSelectedProfession(Professions[selectedOption.target.value]);
   };
+
+  // console.log(session)
 
   return (
     <div className="w-full  px-4 md:px-36">
