@@ -177,7 +177,7 @@ export const updateUser = async (
       },
     });
     // console.log(res);
-    return { message: "User updated please login again", res };
+    return { message: "Profile Updated Successfully", res };
   } catch (err) {
     console.error(err);
     throw err;
