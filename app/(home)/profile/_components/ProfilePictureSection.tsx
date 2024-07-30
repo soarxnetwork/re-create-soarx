@@ -127,12 +127,13 @@ function ProfilePictureSection() {
                   </div>
                 </div>
               )}
-              <FaPenToSquare className="text-gray-500" />
+              {/* <FaPenToSquare className="text-gray-500" /> */}
             </button>
             <img
+            onClick={handleProfileImageUploadFrom}
               src={image || "/placeholder.jpg"}
               alt=""
-              className="w-[120px] h-[120px] bg-gray-800 md:w-[200px] md:h-[200px] rounded-full border-gray-300 border-3 object-cover"
+              className="w-[120px] hover:cursor-pointer h-[120px] bg-gray-800 md:w-[200px] md:h-[200px] rounded-full border-gray-300 border-3 object-cover"
             />
           </div>
         </div>
