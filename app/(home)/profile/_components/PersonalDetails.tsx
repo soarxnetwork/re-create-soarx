@@ -520,7 +520,7 @@ const PersonalDetails: React.FC<Props> = ({
             </button>
 
             <button
-              className="min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 signInbut"
+              className={`min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 signInbut ${isReadOnly == true ? "hidden" : "block"}`}
               disabled={isPending}
               type="submit"
               onClick={() => {

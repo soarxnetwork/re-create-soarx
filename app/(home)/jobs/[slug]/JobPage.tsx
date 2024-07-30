@@ -146,7 +146,7 @@ function JobPage({ jobData }: { jobData: any }) {
         </div>
 
         <div className="pt-6 space-y-5 lg:pl-6">
-          <h3 className="text-2xl font-semibold hidden">Related Jobs</h3>
+          <h3 className="text-2xl font-semibold hidden lg:block">Related Jobs</h3>
           <div className="hidden lg:block">
           {jobs.map((myjob: any, index: any) => (
             <Link href={`/jobs/${myjob.id}`} key={index}>
