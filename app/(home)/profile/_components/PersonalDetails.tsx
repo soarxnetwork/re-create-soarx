@@ -8,6 +8,8 @@ import { updateUser } from "@/actions/user";
 import { useTransition } from "react";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 import {Input} from "@nextui-org/input";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface Props {
   //   handleShowForm: () => void;
@@ -34,12 +36,13 @@ const PersonalDetails: React.FC<Props> = ({
   college = "",
   profession = "",
 }) => {
+  const {data: session} = useSession();
   const [isPending, startTransition] = useTransition();
-
   const [selectedCountry, setSelectedCountry] = useState<any>([]);
   const [isReadOnly, setIsReadOnly] = useState(true);
   const [selectedGender, setSelectedGender] = useState<any>([]);
   const [selectedProfession, setSelectedProfession] = useState<any>([]);
+  const router = useRouter();
 
   const {
     register,
@@ -61,9 +64,10 @@ const PersonalDetails: React.FC<Props> = ({
   });
 
   const onSubmit = (data: userSchemaProps) => {
-    data.gender = selectedGender.label || "";
-    data.country = selectedCountry.label || "";
-    data.profession = selectedProfession.label || "";
+    setIsReadOnly(true);
+    data.gender = selectedGender.label || gender || "";
+    data.country = selectedCountry.label || country || "";
+    data.profession = selectedProfession.label || profession || "";
     if (data.gender == "" || data.country == "" || data.profession == "") {
       toast.error("All fields are required");
       return;
@@ -383,7 +387,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="mb-6">
               <label className="block">
                 <span className="text-lg font-medium dark:text-white text-black">
-                  College
+                  College/Organization <span className="text-red-400">*</span>
                 </span>
                 <Input
                   isDisabled={isReadOnly}
@@ -406,7 +410,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="mb-6">
               <label className="block">
                 <span className="text-lg font-medium dark:text-white text-black">
-                  City
+                  City <span className="text-red-400">*</span>
                 </span>
                 <Input
                   isDisabled={isReadOnly}
@@ -429,7 +433,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="mb-6">
               <label className="block">
                 <span className="text-lg font-medium dark:text-white text-black">
-                  Gender
+                  Gender <span className="text-red-400">*</span>
                 </span>
                 <Select
                   //   readOnly={isReadOnly}
@@ -452,7 +456,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="mb-6">
               <label className="block">
                 <span className="text-lg font-medium dark:text-white text-black">
-                  Country
+                  Country <span className="text-red-400">*</span>
                 </span>
                 <Select
                   isDisabled={isReadOnly}
@@ -474,7 +478,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="mb-6">
               <label className="block">
                 <span className="text-lg font-medium dark:text-white text-black">
-                  Profession
+                  Profession <span className="text-red-400">*</span>
                 </span>
                 <Select
                   isDisabled={isReadOnly}
@@ -501,7 +505,7 @@ const PersonalDetails: React.FC<Props> = ({
             <section className="md:mt-6 md:ml-3 mb-8 md:mb-0">
               <p className="block">
                 <h2 className="text-lg font-medium text-gray-600 mt-2">
-                  Email ID{" "}
+                  Email ID{" "} <span className="text-red-400">*</span>
                   <span className="text-gray-400">(Private to you)</span>
                 </h2>
                 {/* <h3>{session?.user.emailVerified ? "Verified" : null}</h3> */}
@@ -510,13 +514,13 @@ const PersonalDetails: React.FC<Props> = ({
             </section>
           </div>
 
-          <div className="mt-6 flex justify-between">
+          <div className="mt-6">
             <button
-              className="min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 bg-purple-700 hover:bg-purple-900"
+              className={`min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 bg-purple-700 hover:bg-purple-900 ${isReadOnly == false ? "hidden" : "block"}`}
               type="button"
               onClick={() => setIsReadOnly(!isReadOnly)}
             >
-              {isReadOnly ? "Edit" : "Edit mode on"}
+              Edit
             </button>
 
             <button
