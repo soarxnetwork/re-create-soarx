@@ -14,7 +14,6 @@ import PersonalDetails from "./PersonalDetails";
 
 function ProfilePictureSection() {
   const { data: session } = useSession();
-
   const [showForm, setShowForm] = useState(false);
   const [image, setImage] = useState<string | null | undefined>(null);
   const [bgImage, setBgImage] = useState<string | null | undefined>(null);
