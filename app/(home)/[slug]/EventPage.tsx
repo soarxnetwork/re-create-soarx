@@ -12,8 +12,7 @@ import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import ProfileCircles from './ProfileCircles';
 import GoogleAdSense from '@/components/googleAds';
-import { useRouter } from "next/router";
-
+import { usePathname } from "next/navigation";
 interface User {
   id: string;
   username: string | null;
@@ -25,7 +24,7 @@ interface User {
 
 function  EventPage({ event, users }: { event: any; users: User[] }) {
   const { data: session } = useSession();
-  const router = useRouter();
+  const router = usePathname();
 
   useEffect(() => storePathValues, [router]);
 
