@@ -193,7 +193,7 @@ export const faqDlc = [
   {
     question: "Is there a course schedule?",
     answer:
-      "Yes! Our Java Bootcamp offers a well-defined schedule, ensuring you gain maximum knowledge over 6 days. Each day focuses on a core concept.",
+      "Yes, the Java Bootcamp has a detailed schedule. The course will span 2 weeks with 6 classes to be held on Wednesdays, Saturdays, and Sundays. Each class will last 90 minutes.",
     id: "11",
   },
   {

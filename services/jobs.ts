@@ -14,7 +14,7 @@ export const getJobBySlug = async (slug: string) => {
   try {
     return await db.job.findFirst({
       where: {
-        id: slug,
+        slug: slug,
       },
     });
   } catch (err) {
