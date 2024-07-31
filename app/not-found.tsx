@@ -21,7 +21,7 @@ export default async function NotFound() {
         </div>
         <div className=" break-words flex items-center justify-center flex-col gap-8">
           <p className=" max-w-80 text-center text-xl">
-            The page you are looking for does&apos;nt exist or has been moved
+            The page you are looking for doesn&apos;t exist or has been moved
           </p>
           <Link
             href="/"
