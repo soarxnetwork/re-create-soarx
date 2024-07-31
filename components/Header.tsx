@@ -68,7 +68,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
 
-              <li
+              {/* <li
                 className={
                   pathname.includes("/jobs")
                     ? "bg-[#9241d40d] rounded-lg text-purple-500"
@@ -78,7 +78,7 @@ const Header = ({ admin }: User) => {
                 <Link className="hover:text-primaryPurple p-2" href="/jobs">
                   Jobs
                 </Link>
-              </li>
+              </li> */}
 
               {/* <HeaderDropdown /> */}
 
@@ -101,8 +101,8 @@ const Header = ({ admin }: User) => {
           <div className="flex items-center gap-x-5">
             <ThemeSwitcher />
             <span className="hidden md:flex">
-              {/* <Pythonbootcamp /> */}
-              <ButtonAuth />
+              <Pythonbootcamp />
+              {/* <ButtonAuth /> */}
             </span>
             <div className="md:hidden">
               <Hamburger
@@ -146,7 +146,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
 
-              <li
+              {/* <li
                 className={
                   pathname.includes("/jobs")
                     ? "bg-[#9241d40d] rounded-lg text-purple-500"
@@ -159,7 +159,7 @@ const Header = ({ admin }: User) => {
                 >
                   Jobs
                 </Link>
-              </li>
+              </li> */}
 
               <p>
                 <span>

@@ -1,17 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { registEventById } from "@/actions/registration";
-import { toast } from "react-toastify";
-import Image from "next/image";
-import SoarXlogo from "../../../public/images/Soarx-transparent-logo.png";
-import { FaLinkedinIn } from "react-icons/fa";
-import { SiGooglemeet } from "react-icons/si";
-import { FaInstagram } from "react-icons/fa";
-import { FaBuilding } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa6";
-import ProfileCircles from "./ProfileCircles";
-import { useRouter } from "next/navigation";
+import { registEventById } from '@/actions/registration';
+import { toast } from 'react-toastify';
+import Image from 'next/image';
+import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
+import { FaLinkedinIn } from 'react-icons/fa';
+import { SiGooglemeet } from 'react-icons/si';
+import { FaInstagram } from 'react-icons/fa';
+import { FaBuilding } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa6';
+import ProfileCircles from './ProfileCircles';
+import GoogleAdSense from '@/components/googleAds';
+import { useRouter } from "next/router";
 
 interface User {
   id: string;
@@ -116,37 +117,30 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
 
   return (
     <>
-      <div className=" sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] ">
-        <div className="flex justify-center max-[500px]:block ">
-          <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
-            <Image
-              src={event?.imageUrl} // Insert the image source
-              alt="poster"
-              className="rounded-[20px]"
-              width={500}
-              height={500}
-            />
-            <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">
-              Hosted by
-            </div>
-            <div className="company flex justify-between">
-              <Image
-                src={SoarXlogo}
-                alt="logo"
-                className="w-[100px]"
-                width={0}
-                height={0}
-              />
-              <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                <a
-                  href="https://www.instagram.com/soarxnetwork"
-                  className=" my-auto "
-                >
-                  <FaInstagram
-                    className="h-[20px]"
-                    style={{ color: "#828282" }}
-                  />
-                </a>
+        <GoogleAdSense />
+       <div className=' sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] '>
+                <div className="flex justify-center max-[500px]:block ">
+                    <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
+                        <Image
+                            src={event?.imageUrl} // Insert the image source
+                            alt="poster"
+                            className="rounded-[20px]"
+                            width={500}
+                            height={500}
+                        />
+                        <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">Hosted by</div>
+                        <div className="company flex justify-between">
+                            <Image
+                                src={SoarXlogo}
+                                alt="logo"
+                                className="w-[100px]"
+                                width={0}
+                                height={0}
+                            />
+                            <div className='flex items-center min-[500px]:max-md:space-x-4 space-x-8'>
+                            <a href="https://www.instagram.com/soarxnetwork" className=' my-auto '>
+                            <FaInstagram className='h-[20px]' style={{ color: "#828282", }} />
+                            </a>
 
                 <a
                   href="https://www.linkedin.com/company/soarxnetwork/"

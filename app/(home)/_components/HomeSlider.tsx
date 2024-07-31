@@ -60,20 +60,12 @@ const HomeSlider = () => {
                 slidesPerView: 1,
                 spaceBetween: 30,
               },
-              600: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
+              
 
               640: {
                 slidesPerView: 3,
                 spaceBetween: 10,
                
-              },
-
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 10,
               },
             }}
             className="mySwiper banner-swiperjs min-h-[350px] max-w-[200px] sm:max-w-[578px] xl:min-w-[578px] "
