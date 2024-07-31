@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { IoLocationSharp } from "react-icons/io5";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-
+import GoogleAdSense from "@/components/googleAds";
 import Link from "next/link";
 import { getAllJobs } from "@/services/jobs";
 import { Spinner } from "@nextui-org/react";
@@ -54,6 +54,8 @@ function JobPage({ jobData }: { jobData: any }) {
   }
 
   return (
+    <>
+    <GoogleAdSense />
     <div className="container mx-auto p-4 mt-28">
       <div className="lg:flex lg:gap-x-6 lg:ml-14 xl:ml-28">
         <div className="lg:w-3/5 shadow-2xl dark:bg-[rgba(24,24,27,1)] rounded-xl dark:shadow-gray-800 mt-2 mb-4 p-4">
@@ -176,6 +178,7 @@ function JobPage({ jobData }: { jobData: any }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
