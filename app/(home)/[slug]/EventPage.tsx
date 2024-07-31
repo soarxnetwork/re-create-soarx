@@ -48,10 +48,10 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
       !session.user.email ||
       !session.user.username ||
       !session.user.college ||
-      !session.user.gender ||
+      !session.user.gender ||                                     
       !session.user.phone ||
       !session.user.profession ||
-      !session.user.city ||
+      !session.user.city || 
       !session.user.country
     ) {
       toast.error("Please complete your profile to register for the event!");

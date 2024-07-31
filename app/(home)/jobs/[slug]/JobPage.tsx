@@ -8,6 +8,11 @@ import GoogleAdSense from "@/components/googleAds";
 import Link from "next/link";
 import { getAllJobs } from "@/services/jobs";
 import { Spinner } from "@nextui-org/react";
+import { FaBriefcase } from "react-icons/fa";
+import { MdOutlineHomeWork } from "react-icons/md";
+import { PiExamFill } from "react-icons/pi";
+import { FaLocationDot, FaMoneyBills } from "react-icons/fa6";
+import { GiSkills } from "react-icons/gi";
 
 function JobPage({ jobData }: { jobData: any }) {
   const { data: session } = useSession();
@@ -16,7 +21,11 @@ function JobPage({ jobData }: { jobData: any }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const DESC = jobData?.description;
+  const description = DESC.split("..");
+  // console.log(description);
   const title = jobData?.title || "";
+  const companyDetails = jobData?.aboutCompany.split("..");
+  const skills = jobData?.skills.split(",");
 
   useEffect(() => {
     const res = async () => {
@@ -90,90 +99,197 @@ function JobPage({ jobData }: { jobData: any }) {
                 </span>
               ))}
             </h1>
-
             <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-medium">Details</h3>
+              </div>
+            </div>
+            <div className="pt-[25px]">
+              <div className="space-y-4">
+                <h3 className=" font-light text-medium flex-wrap">
+                  {jobData.companyName} is hiring for {jobData.jobRole}
+                </h3>
+              </div>
+            </div>
+
+            <div className="pt-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Job Description</h3>
+                <ul className="text-sm ml-4  pr-4 text-wrap rounded-lg list-outside list-disc">
+                  {description.map(
+                    (item: any, index: number) =>
+                      item.length > 0 && (
+                        <li key={index} className=" p-2 duration-200 text-wrap">
+                          {item}.
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
+            </div>
+
+            {/* <div className="pt-[25px]">
               <div className="space-y-4">
                 <h3 className="text-lg font-medium">Job Description</h3>
                 <p className="text-sm">{DESC}</p>
               </div>
+            </div> */}
+
+            <div className="pt-6">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Company Details</h3>
+                <ul className="text-sm ml-4 pr-4 text-wrap rounded-lg list-outside list-disc">
+                  {companyDetails.map(
+                    (item: any, index: number) =>
+                      item.length > 0 && (
+                        <li key={index} className=" p-2 duration-200 text-wrap">
+                          {item}.
+                        </li>
+                      )
+                  )}
+                </ul>
+              </div>
             </div>
 
-            <div className="pt-[25px]">
+            {/* <div className="pt-[25px]">
               <div className="space-y-4">
                 <h3 className="text-lg font-medium">Company Details</h3>
                 <p className="text-sm">{jobData.aboutCompany}</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="pt-[25px]">
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">Job Role</h3>
-                <p className="text-sm">{jobData.jobRole}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-7 mt-8">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+                {/* Left Side: Job Role Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-black dark:text-white">
+                    Job Role
+                  </h3>
+                  <p className="text-sm text-black text-wrap dark:text-white mt-1">
+                    {jobData.jobRole}
+                  </p>
+                </div>
+                {/* Right Side: Job Icon */}
+                <div className="flex-shrink-0">
+                  <FaBriefcase className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                </div>
               </div>
-            </div>
 
-            <div className="pt-[25px]">
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">Experience Required</h3>
-                <p className="text-sm">{jobData.experience}</p>
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+                {/* Left Side: Job Role Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    Experience
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                    {jobData.experience}
+                  </p>
+                </div>
+                {/* Right Side: Job Icon */}
+                <div className="flex-shrink-0">
+                  <MdOutlineHomeWork className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                </div>
               </div>
-            </div>
 
-            <div className="pt-[25px]">
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">
-                  Applicant Qualifications
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+                {/* Left Side: Job Role Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    Qualifications
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                    {jobData.qualificationRequired}
+                  </p>
+                </div>
+                {/* Right Side: Job Icon */}
+                <div className="flex-shrink-0">
+                  <PiExamFill className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+                {/* Left Side: Job Role Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    Location
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                    {jobData.location}
+                  </p>
+                </div>
+                {/* Right Side: Job Icon */}
+                <div className="flex-shrink-0">
+                  <FaLocationDot className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+                {/* Left Side: Job Role Info */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    Skills
+                  </h3>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                    {skills.map((skill: any, index: number) => (
+                      <span key={index} className="text-wrap">
+                        {skill}
+                        {"  "}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+                {/* Right Side: Job Icon */}
+                <div className="flex-shrink-0">
+                  <GiSkills className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                </div>
+              </div>
+
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer ease-in-out hover:ease-in-out">
+              {/* Left Side: Job Role Info */}
+              <div className="flex-grow">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  Stipend
                 </h3>
-                <p className="text-sm">{jobData.qualificationRequired}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                  {jobData.salary || "Not Disclosed"}
+                </p>
+              </div>
+              {/* Right Side: Job Icon */}
+              <div className="flex-shrink-0">
+                <FaMoneyBills className="text-blue-500 dark:text-blue-300 h-8 w-8" />
               </div>
             </div>
-
-            <div className="pt-[25px]">
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">Skills</h3>
-                <p className="text-sm">{jobData.skills}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-x-4 pt-[25px]">
-              <div className="h-[45px] flex text-2xl justify-center items-center w-[40px] border-[1px] border-[#b0aeae] rounded-lg">
-                <IoLocationSharp />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium">Location</h3>
-                <p className="text-sm">{jobData.location}</p>
-              </div>
             </div>
           </div>
         </div>
 
         <div className="pt-6 space-y-5 lg:pl-6">
-          <h3 className="text-2xl font-semibold hidden lg:block">Related Jobs</h3>
+          <h3 className="text-2xl font-semibold hidden lg:block">
+            Related Jobs
+          </h3>
           <div className="hidden lg:block">
-          {jobs.map((myjob: any, index: any) => (
-            <Link href={`/jobs/${myjob.id}`} key={index}>
-              <Card className="hover:cursor-pointer mb-8 pb-2 pt-2 hover:scale-105 shadow-2xl dark:shadow-gray-800">
-                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                  <p className="text-tiny uppercase font-bold">
-                    {myjob.jobRole}
-                  </p>
-                  <small className="text-default-500">Related Jobs</small>
-                  <h4 className="font-bold text-large">{myjob.title}</h4>
-                </CardHeader>
-                <CardBody className="overflow-visible py-2 ">
-                  <Image
-                    alt="Card background"
-                    className="object-cover rounded-xl"
-                    src={myjob.imageUrl}
-                    width={270}
-                    height={200}
-                  />
-
-        
-                </CardBody>
-              </Card>
-            </Link>
-          ))}
+            {jobs.map((myjob: any, index: any) => (
+              <Link href={`/jobs/${myjob.id}`} key={index}>
+                <Card className="hover:cursor-pointer mb-8 pb-2 pt-2 hover:scale-105 shadow-2xl dark:shadow-gray-800">
+                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <p className="text-tiny uppercase font-bold">
+                      {myjob.jobRole}
+                    </p>
+                    <small className="text-default-500">Related Jobs</small>
+                    <h4 className="font-bold text-large">{myjob.title}</h4>
+                  </CardHeader>
+                  <CardBody className="overflow-visible py-2 ">
+                    <Image
+                      alt="Card background"
+                      className="object-cover rounded-xl"
+                      src={myjob.imageUrl}
+                      width={270}
+                      height={200}
+                    />
+                  </CardBody>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
