@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import GoogleAdSense from './AdSense/GoogleAdSense';
 
-const GoogleAdSense = () => (
+const GoogleAdHeader = () => (
   <Head>
     <script
       async
@@ -23,7 +24,9 @@ const GoogleAdSense = () => (
         `,
       }}
     />
+      <GoogleAdSense pId="5161344263980975"/>
+
   </Head>
 );
 
-export default GoogleAdSense;
+export default GoogleAdHeader;
