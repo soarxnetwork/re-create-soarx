@@ -11,9 +11,8 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaBuilding } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa6';
 import ProfileCircles from './ProfileCircles';
-import GoogleAdSense from '@/components/googleAds';
 import { useRouter } from "next/navigation";
-
+import GoogleAdHeader from "@/components/googleAds";
 interface User {
   id: string;
   username: string | null;
@@ -48,10 +47,10 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
       !session.user.email ||
       !session.user.username ||
       !session.user.college ||
-      !session.user.gender ||
+      !session.user.gender ||                                     
       !session.user.phone ||
       !session.user.profession ||
-      !session.user.city ||
+      !session.user.city || 
       !session.user.country
     ) {
       toast.error("Please complete your profile to register for the event!");
@@ -117,7 +116,9 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
 
   return (
     <>
-        <GoogleAdSense />
+        <GoogleAdHeader />
+        
+        
        <div className=' sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] '>
                 <div className="flex justify-center max-[500px]:block ">
                     <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
