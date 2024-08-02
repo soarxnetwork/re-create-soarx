@@ -16,7 +16,11 @@ import EducationForm from "./profile/_components/_sub_components/EducationForm";
 import HomeJavaBootCamp from "@/components/Bootcamps/HomeJavaBootCamp";
 
 const HomePage = async () => {
-  const events = await getAllEvents();
+  const Allevents = await getAllEvents();
+  let events = null;
+  if(Allevents){
+   events = Allevents.sort((a, b) => b.date.getTime() - a.date.getTime());
+  }
 
   return (
     <section className="">
