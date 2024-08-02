@@ -7,8 +7,16 @@ import TemporaryEmptyEvents from "@/components/TemporaryEmptyEvents";
 
 const EventPage = async (events: any) => {
 
-  const pastEvents = await getPastEvents()
-  const ongoingEvents = await getOngoingEvents();
+  const pastevents = await getPastEvents()
+  const ongoingevents = await getOngoingEvents();
+  let pastEvents = null;
+  let ongoingEvents = null;
+  if(pastevents){
+    pastEvents = pastevents.sort((a, b) => b.date.getTime() - a.date.getTime());
+  }
+  if(ongoingevents){
+      ongoingEvents = ongoingevents.sort((a, b) => b.date.getTime() - a.date.getTime());
+  }
 
   return (
     <section className="section lg:ml-7">
