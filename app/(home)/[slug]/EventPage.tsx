@@ -1,18 +1,20 @@
 "use client";
 import React, { useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { registEventById } from '@/actions/registration';
-import { toast } from 'react-toastify';
-import Image from 'next/image';
-import SoarXlogo from '../../../public/images/Soarx-transparent-logo.png'
-import { FaLinkedinIn } from 'react-icons/fa';
-import { SiGooglemeet } from 'react-icons/si';
-import { FaInstagram } from 'react-icons/fa';
-import { FaBuilding } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa6';
-import ProfileCircles from './ProfileCircles';
+import { registEventById } from "@/actions/registration";
+import { toast } from "react-toastify";
+import Image from "next/image";
+import SoarXlogo from "../../../public/images/Soarx-transparent-logo.png";
+import { FaLinkedinIn } from "react-icons/fa";
+import { SiGooglemeet } from "react-icons/si";
+import { FaInstagram } from "react-icons/fa";
+import { FaBuilding } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
+import ProfileCircles from "./ProfileCircles";
 import { useRouter } from "next/navigation";
 import GoogleAdHeader from "@/components/googleAds";
+import Link from "next/link";
+import { MdArrowOutward } from "react-icons/md";
 interface User {
   id: string;
   username: string | null;
@@ -22,7 +24,7 @@ interface User {
   image: string | null;
 }
 
-function  EventPage({ event, users }: { event: any; users: User[] }) {
+function EventPage({ event, users }: { event: any; users: User[] }) {
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -32,7 +34,7 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
     const storage = globalThis?.sessionStorage;
     if (!storage) return;
     // Set the previous path as the value of the current path.
-      const prevPath = storage.getItem("currentPath");
+    const prevPath = storage.getItem("currentPath");
     storage.setItem("prevPath", prevPath as any);
     // Set the current path value by looking at the browser's location object.
     storage.setItem("currentPath", globalThis.location.pathname);
@@ -43,19 +45,18 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
     if (!session) {
       toast.success("Please login to register for any event!");
     } else if (
-      !session.user.id || 
+      !session.user.id ||
       !session.user.email ||
       !session.user.username ||
       !session.user.college ||
-      !session.user.gender ||                                     
+      !session.user.gender ||
       !session.user.phone ||
       !session.user.profession ||
-      !session.user.city || 
+      !session.user.city ||
       !session.user.country
     ) {
       toast.error("Please complete your profile to register for the event!");
       router.push("/profile");
-
     } else {
       const res = await registEventById(event.id, session.user.id);
       res?.error ? toast.error(res.message) : toast.success(res?.message);
@@ -116,32 +117,39 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
 
   return (
     <>
-        <GoogleAdHeader />
-        
-        
-       <div className=' sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] '>
-                <div className="flex justify-center max-[500px]:block ">
-                    <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
-                        <Image
-                            src={event?.imageUrl} // Insert the image source
-                            alt="poster"
-                            className="rounded-[20px]"
-                            width={500}
-                            height={500}
-                        />
-                        <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">Hosted by</div>
-                        <div className="company flex justify-between">
-                            <Image
-                                src={SoarXlogo}
-                                alt="logo"
-                                className="w-[100px]"
-                                width={0}
-                                height={0}
-                            />
-                            <div className='flex items-center min-[500px]:max-md:space-x-4 space-x-8'>
-                            <a href="https://www.instagram.com/soarxnetwork" className=' my-auto '>
-                            <FaInstagram className='h-[20px]' style={{ color: "#828282", }} />
-                            </a>
+      <GoogleAdHeader />
+
+      <div className=" sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] ">
+        <div className="flex justify-center max-[500px]:block ">
+          <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
+            <Image
+              src={event?.imageUrl} // Insert the image source
+              alt="poster"
+              className="rounded-[20px]"
+              width={500}
+              height={500}
+            />
+            <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">
+              Hosted by
+            </div>
+            <div className="company flex justify-between">
+              <Image
+                src={SoarXlogo}
+                alt="logo"
+                className="w-[100px]"
+                width={0}
+                height={0}
+              />
+              <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
+                <a
+                  href="https://www.instagram.com/soarxnetwork"
+                  className=" my-auto "
+                >
+                  <FaInstagram
+                    className="h-[20px]"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
 
                 <a
                   href="https://www.linkedin.com/company/soarxnetwork/"
@@ -170,7 +178,7 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
             )}
           </div>
           <div className="pb-[100px] ml-[4%]   sm:max-md:ml-8">
-            <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] max-md:leading-tight leading-8 ">
+            <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] leading-snug ">
               {event?.title}
             </h1>
             <div className="flex mt-[25px]">
@@ -232,13 +240,13 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
               </a>
             </div>
             <div className=" mt-[5%] rounded-lg shadow-lg pb-4">
-              <div className="rounded-t-md py-2 bg-[#F4F2FB] font-semibold text-[#8919E4] text-[18px] flex items-center pl-4">
+              <div className="rounded-t-md py-2 bg-[#F4F2FB] dark:bg-gray-900 font-semibold text-[#8919E4] dark:text-purple-500 text-[18px] flex items-center pl-4 mt-5">
                 Registration
               </div>
               <div className="mt-[3%] text-center text-[1.1rem] px-2">
                 Welcome! To join the event, please register below.
               </div>
-              <div className="flex justify-center mt-[2%] ">
+              <div className="flex justify-center mt-[5%] mb-[5%]">
                 {" "}
                 {new Date() > event?.date ? (
                   <button onClick={EventEnded} className="Event-reg-button">
@@ -255,19 +263,22 @@ function  EventPage({ event, users }: { event: any; users: User[] }) {
               <div className="ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
                 About Event
               </div>
-              <article className="mt-[2%] ml-[3%] text-[17.5px] sm:max-md:text-[12px] max-md:text-[8px]">
+              <article className="mt-2 ml-3 text-wrap">
+                <p className="text-large">
                 {DESC}
-                <p className="">
+                </p>
+                <p className="text-large">
                   <b>Register for the FREE Demo Class now!</b> <br /> <br />
                   For more queries and event updates, join the SoarX Network on
-                  WhatsApp:{" "}
-                  <a
+                  {" "}
+                  <Link
                     href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX"
-                    className="text-green-500 text-[8px] lg:text-[16px] md:text-[14px] sm:text-[10px]"
-                    target="blank"
+                    className="text-green-500 text-large"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX
-                  </a>{" "}
+                    <span className="flex items-center gap-x-1">Whatsapp  <MdArrowOutward /></span>
+                  </Link>
                 </p>
               </article>
             </div>
