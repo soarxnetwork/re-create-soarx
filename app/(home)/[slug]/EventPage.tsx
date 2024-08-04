@@ -130,52 +130,70 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               width={500}
               height={500}
             />
-            <div className="pt-8 pl-4 pr-4 flex justify-between font-medium pb-2">
-            <div className="flex items-center gap-x-1">
-            <p className={`${event.hostImage ? "flex" : "hidden"}`}>
-            {
-              event.hostImage && <img
-              src={event.hostImage}
-              alt="logo"
-              className="w-[40px] rounded-md"
-              width={0}
-              height={0}
-              />
-            }
-            </p>
-            <p className={`${!event.hostImage ? "flex" : "hidden"}`}>
-            {
-             <Image
-              src={SoarXlogo}
-              alt="logo"
-              className="w-[40px] rounded-md"
-              width={0}
-              height={0}
-              />
-            }
-            </p>
-                Hosted by {event?.hostName || "SoarX"}
-            </div>
-            <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                <Link
-                  href={event.hostInstgramId || "https://www.instagram.com/soarxnetwork"}
-                  className=" my-auto"
-                >
-                  <FaInstagram className="h-[20px] text-purple-400 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                </Link>
+            <div className="pt-8 pl-4 pr-4 font-medium pb-2">
+              <p className="pl-4 pb-3 hidden xl:block">Hosted By</p>
+              <hr className="border-1 dark:border-gray-700 border-gray-300 hidden xl:block" />
+              <div className="xl:flex justify-between pt-5 hidden">
+                <div className="flex items-center gap-x-3 ">
+                  <p
+                    className={`border-1  ${
+                      event.hostImage ? "flex" : "hidden"
+                    }`}
+                  >
+                    {event.hostImage && (
+                      <img
+                        src={event.hostImage}
+                        alt="logo"
+                        className="w-[40px] rounded-md"
+                        width={0}
+                        height={0}
+                      />
+                    )}
+                  </p>
+                  <p
+                    className={`border-1 rounded-3xl bg-gray-100 ${
+                      !event.hostImage ? "flex" : "hidden"
+                    }`}
+                  >
+                    {
+                      <Image
+                        src={SoarXlogo}
+                        alt="logo"
+                        className="w-[40px] rounded-md"
+                        width={0}
+                        height={0}
+                      />
+                    }
+                  </p>
+                  {event?.hostName || "SoarX"}
+                </div>
+                <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
+                  <Link
+                    href={
+                      event.hostInstgramId ||
+                      "https://www.instagram.com/soarxnetwork"
+                    }
+                    className=" my-auto"
+                  >
+                    <FaInstagram className="h-[20px] text-purple-400 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
+                  </Link>
 
-                <Link
-                  href={event.hostLinkedinId || "https://www.linkedin.com/company/soarxnetwork/"}
-                  className="my-auto  "
-                >
-                  <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                </Link>
+                  <Link
+                    href={
+                      event.hostLinkedinId ||
+                      "https://www.linkedin.com/company/soarxnetwork/"
+                    }
+                    className="my-auto  "
+                  >
+                    <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
+                  </Link>
+                </div>
               </div>
             </div>
 
             {users.length > 3 ? (
               <>
-                <div className="pt-6 font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
+                <div className="pt-6 hidden xl:block font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
                   {String(users.length)}{" "}
                   {new Date() > event?.date ? <>Attended</> : <>Going</>}
                 </div>
@@ -270,19 +288,24 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 )}
               </div>
             </div>
-            <div className="lg:border-l-[3px] border-[#C2A1F4] border-dashed mt-[3%]">
+            <div className="lg:border-l-[3px] border-[#C2A1F4] border-dashed mt-10">
               <div className="lg:ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
-                About Event 
-                <hr className="dark:border-gray-600 border-gray-300 " />
+                About Event
+                <hr className="dark:border-gray-600 border-gray-300 mt-3" />
               </div>
-              <article className="mt-2 ml-3 mr-3 text-wrap">
+              <article className="mt-5 ml-3 mr-3 text-wrap">
                 <ul className="text-large">
                   {DESC.map(
                     (description: string, index: number) =>
                       description.length > 0 && (
                         <>
-                        <li key={index} className="dark:text-white text-black">{description}.</li>
-                        <br />
+                          <li
+                            key={index}
+                            className="dark:text-white text-black"
+                          >
+                            {description}.
+                          </li>
+                          <br />
                         </>
                       )
                   )}
@@ -297,13 +320,87 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                     rel="noopener noreferrer"
                   >
                     <span className="flex items-center font-semibold gap-x-1">
-                    <ImWhatsapp />
+                      <ImWhatsapp />
                       Whatsapp <MdArrowOutward />
                     </span>
                   </Link>
                 </p>
               </article>
             </div>
+            <div className="pt-8 pl-4 pr-4 font-medium pb-2">
+              <p className="pl-4 pb-3 text-[14px] block xl:hidden">Hosted By</p>
+              <hr className="border-1 dark:border-gray-700 border-gray-300 block xl:hidden" />
+              <div className="xl:hidden justify-between pt-4 flex">
+                <div className="flex items-center gap-x-3 ">
+                  <p
+                    className={`border-1  ${
+                      event.hostImage ? "flex" : "hidden"
+                    }`}
+                  >
+                    {event.hostImage && (
+                      <img
+                        src={event.hostImage}
+                        alt="logo"
+                        className="w-[40px] rounded-md"
+                        width={0}
+                        height={0}
+                      />
+                    )}
+                  </p>
+                  <p
+                    className={`border-1 rounded-3xl bg-gray-100 ${
+                      !event.hostImage ? "flex" : "hidden"
+                    }`}
+                  >
+                    {
+                      <Image
+                        src={SoarXlogo}
+                        alt="logo"
+                        className="w-[40px] rounded-md"
+                        width={0}
+                        height={0}
+                      />
+                    }
+                  </p>
+                  {event?.hostName || "SoarX"}
+                </div>
+                <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
+                  <Link
+                    href={
+                      event.hostInstgramId ||
+                      "https://www.instagram.com/soarxnetwork"
+                    }
+                    className=" my-auto"
+                  >
+                    <FaInstagram className="h-[20px] text-purple-400 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
+                  </Link>
+
+                  <Link
+                    href={
+                      event.hostLinkedinId ||
+                      "https://www.linkedin.com/company/soarxnetwork/"
+                    }
+                    className="my-auto  "
+                  >
+                    <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            {users.length > 3 ? (
+              <>
+                <div className="pt-6 block xl:hidden font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
+                  {String(users.length)}{" "}
+                  {new Date() > event?.date ? <>Attended</> : <>Going</>}
+                </div>
+                <div className="pt-4">
+                  {" "}
+                  <ProfileCircles users={users} />{" "}
+                </div>{" "}
+              </>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>
