@@ -22,6 +22,10 @@ export const eventSchema = z.object({
     message: "Too short",
   }),
   imageUrl: z.string(),
+  hostImage: z.string().optional(),
+  hostName: z.string().optional(),
+  hostLinkedinId: z.string().optional(),
+  hostInstgramId: z.string().optional(),
   updatedAt: z.date().optional(),
   creatorId: z.string(),
 });
@@ -34,6 +38,10 @@ export const eventInitialValues = {
   imageUrl: "",
   creatorId: "",
   slug: "",
+  hostImage: "",
+  hostName: "",
+  hostLinkedinId: "",
+  hostInstgramId: "",
 };
 export const eventFormResolver = zodResolver(eventSchema);
 export type EventSchema = z.infer<typeof eventSchema>;

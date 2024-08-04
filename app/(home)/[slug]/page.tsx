@@ -35,7 +35,11 @@ if (response.error) {
 
 const users: User[] = response.data || [];
 
-  return <EventPage event={eventData} users={users} />;
+  return (
+    <div className='ml-4 pr-4 xl:ml-36 xl:pr-36'>
+      <EventPage event={eventData} users={users} />
+    </div>
+  )
   }
   else{
     return NotFound();
