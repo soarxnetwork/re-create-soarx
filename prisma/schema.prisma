@@ -159,6 +159,10 @@ model Event {
   imageUrl    String
   location    String
   slug        String?  @unique
+  hostImage   String?
+  hostName    String?
+  hostLinkedinId String?
+  hostInstgramId  String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   price       Float?
