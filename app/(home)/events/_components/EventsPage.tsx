@@ -42,7 +42,7 @@ const EventPage = async (events: any) => {
               <div className="pt-24">
                 <h1 className="text-5xl flex justify-center font-bold">Past Events</h1>
               </div>
-              <div className="all-events pt-8">
+              <div className=" pt-8">
                 <div className="grid-4">
                   {pastEvents?.map((e) => (
                     <Events key={e.id} {...e} />
