@@ -288,13 +288,13 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 )}
               </div>
             </div>
-            <div className="lg:border-l-[3px] border-[#C2A1F4] border-dashed mt-10">
+            <div className="xl:border-l-[3px] border-[#C2A1F4] border-dashed mt-10">
               <div className="lg:ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
                 About Event
                 <hr className="dark:border-gray-600 border-gray-300 mt-3" />
               </div>
               <article className="mt-5 ml-3 mr-3 text-wrap">
-                <ul className="text-large">
+                <ul className="text-base sm:text-large">
                   {DESC.map(
                     (description: string, index: number) =>
                       description.length > 0 && (
@@ -310,7 +310,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                       )
                   )}
                 </ul>
-                <p className="text-large">
+                <p className="text-base sm:text-large">
                   <b>Register for the FREE Demo Class now!</b> <br /> <br />
                   For more queries and event updates, join the SoarX Network on{" "}
                   <Link
@@ -328,7 +328,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               </article>
             </div>
             <div className="pt-8 pl-4 pr-4 font-medium pb-2">
-              <p className="pl-4 pb-3 text-[14px] block xl:hidden">Hosted By</p>
+              <p className="pb-3 text-[14px] block xl:hidden">Hosted By</p>
               <hr className="border-1 dark:border-gray-700 border-gray-300 block xl:hidden" />
               <div className="xl:hidden justify-between pt-4 flex">
                 <div className="flex items-center gap-x-3 ">
