@@ -33,8 +33,6 @@ const HomePage = async () => {
       <Testimonial />
       <NumbersThatMatter />
       <Discord />
-      
-
     </section>
   );
 };

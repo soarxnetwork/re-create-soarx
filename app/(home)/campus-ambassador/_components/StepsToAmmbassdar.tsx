@@ -9,7 +9,7 @@ const StepsToAmmbassdar = () => {
         Become a <span className="text-purple-600">SoarXer</span> in 3 simple
         steps
       </div>
-      <div className="flex   gap-x-7 lg:gap-x-4 gap-y-12 lg:gap-y-0 w-full justify-between">
+      <div className="flex flex-col lg:flex-row  gap-x-7 lg:gap-x-4 gap-y-12 lg:gap-y-0 w-full justify-between">
         <div className="flex justify-around lg:justify-normal gap-x-4 lg:w-1/3 hover:scale-105 ease-in-out   duration-300    hover:cursor-pointer shadow-lg dark:shadow-xl dark:shadow-gray-800 border-t-1 dark:border-t-0 rounded-md p-4 items-center">
           <p className="text-4xl text-purple-600">
             <SlCalender />
