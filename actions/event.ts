@@ -1,7 +1,11 @@
 "use server";
-import { db } from "@/lib/db";
 import { EventSchema } from "@/schema/event";
 import { revalidatePath } from "next/cache";
+import { PrismaClient } from "@prisma/client";
+
+const db = new PrismaClient();
+
+
 
 export const createEvent = async (data: EventSchema) => {
   try {
