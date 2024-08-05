@@ -13,7 +13,7 @@ import "../../globals.css";
 import CampusApplyCard from "./_components/CampusApplyCard";
 const SecondDsaPage = () => {
   return (
-    <section className="pt-20 overflow-x-hidden sm:pl-8 sm:pr-8 xl:pl-28 xl:pr-20 myfonts 2xl:pb-8 2xl:space-y-12">
+    <section className="pt-20 overflow-x-hidden sm:pl-8 sm:pr-8 xl:pl-32 xl:pr-16 myfonts 2xl:pb-8 2xl:space-y-12">
       <HeroSecondDsa />
       <CampusApplyCard />
       {/* <hr className="w-full h-[2px]" /> */}
