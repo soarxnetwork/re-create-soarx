@@ -9,7 +9,7 @@ import AmbassadarPerks from "./_components/AmbassadarPerks";
 import StepsToAmmbassdar from "./_components/StepsToAmmbassdar";
 import RolesAndResponsibility from "./_components/RolesAndResponsibility";
 import ReviewOfAmbessadar from "./_components/ReviewOfAmbessadar";
-import '../../globals.css'
+import "../../globals.css";
 import CampusApplyCard from "./_components/CampusApplyCard";
 const SecondDsaPage = () => {
   return (
@@ -17,18 +17,18 @@ const SecondDsaPage = () => {
       <HeroSecondDsa />
       <CampusApplyCard />
       {/* <hr className="w-full h-[2px]" /> */}
-      <AmbassadarPerks/>
+      <AmbassadarPerks />
       {/* <FormSecondDsa /> */}
       {/* <hr className="w-full h-[2px]" /> */}
-      <StepsToAmmbassdar/>
+      <StepsToAmmbassdar />
       {/* <AdvantageDsa /> */}
       {/* <hr className="w-full h-[2px]" /> */}
-      
+
       {/* <ResponsibilityDsa /> */}
       {/* ! */}
       {/* <BannerDsa /> */}
-      <ReviewOfAmbessadar/>
-      
+      <ReviewOfAmbessadar />
+
       <FaqDsa2 />
     </section>
   );
