@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { registEventById } from "@/actions/registration";
 import { toast } from "react-toastify";
@@ -11,11 +11,13 @@ import { FaInstagram } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import ProfileCircles from "./ProfileCircles";
+import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/navigation";
 import GoogleAdHeader from "@/components/googleAds";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import { ImWhatsapp } from "react-icons/im";
+import { GrSubtractCircle } from "react-icons/gr";
 interface User {
   id: string;
   username: string | null;
@@ -28,6 +30,8 @@ interface User {
 function EventPage({ event, users }: { event: any; users: User[] }) {
   const { data: session } = useSession();
   const router = useRouter();
+  const [isUserAlreadyRegistered, setIsUserAlreadyRegistered] =
+    useState<boolean>(false);
 
   useEffect(() => storePathValues, [router]);
 
@@ -40,6 +44,21 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
     // Set the current path value by looking at the browser's location object.
     storage.setItem("currentPath", globalThis.location.pathname);
   }
+
+  // console.log(event);
+  // console.log(users);
+  useEffect(() => {
+    const IsAlreadyRegistered = async () => {
+      if (!users[0]) {
+        // toast.success("Please login to register for any event!");
+      } else {
+        const res = await registEventById(event.id, users[0].id);
+        // console.log(res);
+        setIsUserAlreadyRegistered(res?.alreadyRegistered || false);
+      }
+    };
+    IsAlreadyRegistered();
+  }, []);
 
   // console.log(session)
   async function RegisterUser() {
@@ -60,7 +79,10 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
       router.push("/profile");
     } else {
       const res = await registEventById(event.id, session.user.id);
-      res?.error ? toast.error(res.message) : toast.success(res?.message);
+      res?.error ? (toast.error(res.message)) : (
+        setIsUserAlreadyRegistered(true),
+        toast.success(res?.message)
+      );
     }
   }
 
@@ -127,24 +149,20 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               src={event?.imageUrl} // Insert the image source
               alt="poster"
               className="rounded-[20px] shadow-2xl dark:shadow-gray-700 shadow-gray-600"
-              width={500}
-              height={500}
+              width={370}
+              height={380}
             />
             <div className="pt-8 pl-4 pr-4 font-medium pb-2">
               <p className="pl-4 pb-3 hidden xl:block">Hosted By</p>
               <hr className="border-1 dark:border-gray-700 border-gray-300 hidden xl:block" />
               <div className="xl:flex justify-between pt-5 hidden">
                 <div className="flex items-center gap-x-3 ">
-                  <p
-                    className={`border-1  ${
-                      event.hostImage ? "flex" : "hidden"
-                    }`}
-                  >
+                  <p className={`  ${event.hostImage ? "flex" : "hidden"}`}>
                     {event.hostImage && (
                       <img
                         src={event.hostImage}
                         alt="logo"
-                        className="w-[40px] rounded-md"
+                        className="w-[40px] rounded-full"
                         width={0}
                         height={0}
                       />
@@ -268,27 +286,60 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 )}
               </a>
             </div>
-            <div className=" mt-[5%] rounded-lg shadow-md pb-4">
+            <div className=" mt-[5%] rounded-lg shadow-md pb-4 xl:mr-28">
               <div className="rounded-t-md py-2 bg-[#F4F2FB] dark:bg-gray-900 font-semibold text-[#8919E4] dark:text-purple-500 text-[18px] flex items-center pl-4 mt-5">
-                Registration
-              </div>
-              <div className="mt-[3%] text-center text-[1.1rem] px-2">
-                Welcome! To join the event, please register below.
-              </div>
-              <div className="flex justify-center mt-[5%] mb-[5%]">
-                {" "}
                 {new Date() > event?.date ? (
-                  <button onClick={EventEnded} className="Event-reg-button">
-                    Event Ended
+                  <div className="flex gap-x-2 items-center">
+                    <GrSubtractCircle />
+                    Registration Closed
+                  </div>
+                ) : (
+                  <div>Registration</div>
+                )}
+              </div>
+
+              <div className="flex justify-center mt-[5%] mb-[5%]">
+                {new Date() > event?.date && !isUserAlreadyRegistered ? (
+                  <button
+                    disabled
+                    onClick={EventEnded}
+                    className="text-left pl-4 text-wrap pr-2 font-medium dark:font-normal"
+                  >
+                    This event is not currently taking registrations. You may
+                    contact the host or join the Whatsapp Group.
                   </button>
                 ) : (
-                  <button onClick={RegisterUser} className="Event-reg-button">
-                    Register
-                  </button>
+                  <div className="flex flex-col gap-y-5 w-full items-center">
+                    {new Date() > event?.date && isUserAlreadyRegistered ? (
+                      <div>
+                        <div>Thank You for Joining</div>
+                        <div>We hope you enjoyed the event!</div>
+                      </div>
+                    ) : new Date() < event?.date && !isUserAlreadyRegistered ? (
+                      <>
+                        <div className="text-center text-wrap text-[1.1rem] px-2">
+                          Welcome! To join the event, please register below.
+                        </div>
+                        <div className="w-full flex justify-center">
+                          <button
+                            onClick={RegisterUser}
+                            className="w-full Event-reg-button"
+                          >
+                            Register
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="pr-4 text-left text-wrap w-full pl-4">
+                        <div className="text-2xl pb-2 font-semibold text-left text-wrap">You&apos;re In</div>
+                        <div className="text-base text-left text-wrap font-medium">A confirmation email has been sent to {users[0]?.email || "your Email"}.</div>
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
-            <div className="xl:border-l-[3px] border-[#C2A1F4] border-dashed mt-10">
+            <div className="xl:border-l-[3px] border-[#C2A1F4] border-dashed mt-10 xl:mr-28">
               <div className="lg:ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
                 About Event
                 <hr className="dark:border-gray-600 border-gray-300 mt-3" />
@@ -296,11 +347,11 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               <article className="mt-5 ml-3 mr-3 text-wrap">
                 <ul className="text-base sm:text-large">
                   {DESC.map(
-                    (description: string, index: number) =>
+                    (description: string, index: any) =>
                       description.length > 0 && (
                         <>
                           <li
-                            key={index}
+                            key={uuidv4()}
                             className="dark:text-white text-black"
                           >
                             {description}.
