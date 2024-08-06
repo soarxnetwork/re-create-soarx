@@ -1,0 +1,9 @@
+.dynamicContent ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+  }
+  
+  .dynamicContent ol {
+    list-style-type: decimal;
+    margin-left: 1.5em;
+  }
