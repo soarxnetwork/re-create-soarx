@@ -2,9 +2,7 @@
 import React, { useRef, useState, useTransition } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Calendar } from "primereact/calendar";
-import { InputMask } from "primereact/inputmask";
 
-import { InputTextarea } from "primereact/inputtextarea";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import Image from "next/image";
@@ -19,6 +17,7 @@ import {
 import { toast } from "react-toastify";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import HostImageUpload from "@/app/(admin)/_components/hostImageUrl";
+import EditorTextarea from "@/components/CustomEditor";
 
 interface FormEventProps {
   creatorId?: string;
@@ -53,6 +52,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     });
 
   const onSubmit = (data: EventSchema) => {
+    console.log("The data is: ", data);
     if (Location.location === "Online" && !data.meeturl) {
       toast.error("Meeting Link is required");
       return;
@@ -90,9 +90,9 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
   const imageUrl = watch("imageUrl");
   const hostImage = watch("hostImage");
   const errors = formState.errors;
-// console.log("HostImage is: ", hostImage);
-// console.log(imageUrl);
-// console.log("Set value is: ", setValue)
+  // console.log("HostImage is: ", hostImage);
+  // console.log(imageUrl);
+  // console.log("Set value is: ", setValue)
   return (
     <>
       <h2 className="text-2xl font-medium">Add Event</h2>
@@ -201,11 +201,26 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
               </span>
             )} */}
           </div>
-            <div className="space-y-3">
-            <input type="text" placeholder="Host name" className="p-2"  {...register("hostName")}/>
-            <input type="text" placeholder="host Linkedin" className="p-2" {...register("hostLinkedinId")} />
-            <input type="text" placeholder="host Instagram" className="p-2" {...register("hostInstgramId")}/>
-            </div>
+          <div className="space-y-3">
+            <input
+              type="text"
+              placeholder="Host name"
+              className="p-2"
+              {...register("hostName")}
+            />
+            <input
+              type="text"
+              placeholder="host Linkedin"
+              className="p-2"
+              {...register("hostLinkedinId")}
+            />
+            <input
+              type="text"
+              placeholder="host Instagram"
+              className="p-2"
+              {...register("hostInstgramId")}
+            />
+          </div>
         </div>
 
         <div className="flex w-full e-nfg  gap-5">
@@ -248,12 +263,9 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
             className="w-full md:w-14rem"
           /> */}
         </div>
-        <InputTextarea
-          rows={5}
-          cols={30}
-          placeholder="Event Description"
-          {...register("description")}
-        />
+    
+        <EditorTextarea setValue={setValue} />
+
         {errors.description && (
           <span className="text-sm text-red-500">
             {errors.description.message}

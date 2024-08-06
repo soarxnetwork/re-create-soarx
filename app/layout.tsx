@@ -28,7 +28,7 @@ export default function RootLayout({
       {" "}
       <head>
         {/* Google Tag Manager */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXRVL4HNDK"></script>
+        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXRVL4HNDK"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5161344263980975"
      crossOrigin="anonymous"></script>
         <script
@@ -42,7 +42,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <GoogleAdSense pId="5161344263980975"/>
+        <GoogleAdSense pId="5161344263980975"/> */}
 
       </head>
       <body className="myfonts">
