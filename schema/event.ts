@@ -12,7 +12,9 @@ export const eventSchema = z.object({
   description: z.string().min(2, {
     message: "Too short",
   }),
-
+  home_description: z.string().min(2, {
+    message: "Too short",
+  }),
   location: z.string().min(2, {
     message: "Too short",
   }),

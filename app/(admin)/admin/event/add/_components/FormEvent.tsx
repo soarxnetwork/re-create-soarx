@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import HostImageUpload from "@/app/(admin)/_components/hostImageUrl";
 import EditorTextarea from "@/components/CustomEditor";
+import { InputTextarea } from "primereact/inputtextarea";
 
 interface FormEventProps {
   creatorId?: string;
@@ -263,7 +264,12 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
             className="w-full md:w-14rem"
           /> */}
         </div>
-    
+        <InputTextarea
+          rows={5}
+          cols={30}
+          placeholder="Event Description"
+          {...register("home_description")}
+        />
         <EditorTextarea setValue={setValue} />
 
         {errors.description && (

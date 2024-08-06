@@ -18,6 +18,7 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
+import styles from "./Event.module.css";
 interface User {
   id: string;
   username: string | null;
@@ -79,14 +80,12 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
       router.push("/profile");
     } else {
       const res = await registEventById(event.id, session.user.id);
-      res?.error ? (toast.error(res.message)) : (
-        setIsUserAlreadyRegistered(true),
-        toast.success(res?.message)
-      );
+      res?.error
+        ? toast.error(res.message)
+        : (setIsUserAlreadyRegistered(true), toast.success(res?.message));
     }
   }
 
-  const DESC = event?.description.split("..");
   interface StringtoString {
     [key: string]: string;
   }
@@ -331,8 +330,13 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                       </>
                     ) : (
                       <div className="pr-4 text-left text-wrap w-full pl-4">
-                        <div className="text-2xl pb-2 font-semibold text-left text-wrap">You&apos;re In</div>
-                        <div className="text-base text-left text-wrap font-medium">A confirmation email has been sent to {users[0]?.email || "your Email"}.</div>
+                        <div className="text-2xl pb-2 font-semibold text-left text-wrap">
+                          You&apos;re In
+                        </div>
+                        <div className="text-base text-left text-wrap font-medium">
+                          A confirmation email has been sent to{" "}
+                          {users[0]?.email || "your Email"}.
+                        </div>
                       </div>
                     )}
                   </div>
@@ -344,23 +348,14 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 About Event
                 <hr className="dark:border-gray-600 border-gray-300 mt-3" />
               </div>
-              <article className="mt-5 ml-3 mr-3 text-wrap">
-                <ul className="text-base sm:text-large">
-                  {DESC.map(
-                    (description: string, index: any) =>
-                      description.length > 0 && (
-                        <>
-                          <li
-                            key={uuidv4()}
-                            className="dark:text-white text-black"
-                          >
-                            {description}.
-                          </li>
-                          <br />
-                        </>
-                      )
-                  )}
-                </ul>
+              <article className="mt-5 ml-3 mr-3 text-wrap ">
+                {event.description && (
+                  <div
+                    className={styles.dynamicContent}
+                    dangerouslySetInnerHTML={{ __html: event.description }}
+                  />
+                )}
+
                 <p className="text-base sm:text-large">
                   <b>Register for the FREE Demo Class now!</b> <br /> <br />
                   For more queries and event updates, join the SoarX Network on{" "}

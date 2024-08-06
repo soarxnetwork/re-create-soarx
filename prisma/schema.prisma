@@ -156,6 +156,7 @@ model Event {
   meeturl     String?
   venue       String?
   description String
+  home_description String?
   imageUrl    String
   location    String
   slug        String?  @unique
