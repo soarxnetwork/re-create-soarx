@@ -30,6 +30,8 @@ export const eventSchema = z.object({
   hostInstgramId: z.string().optional(),
   updatedAt: z.date().optional(),
   creatorId: z.string(),
+  redirectionwhileRegister: z.boolean().optional(),
+  RedirectionLink: z.string().optional()
 });
 
 export const eventInitialValues = {
@@ -44,6 +46,8 @@ export const eventInitialValues = {
   hostName: "",
   hostLinkedinId: "",
   hostInstgramId: "",
+  redirectionwhileRegister: false,
+  RedirectionLink: ""
 };
 export const eventFormResolver = zodResolver(eventSchema);
 export type EventSchema = z.infer<typeof eventSchema>;
