@@ -53,7 +53,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     });
 
   const onSubmit = (data: EventSchema) => {
-    console.log("The data is: ", data);
+    // console.log("The data is: ", data);
     if (Location.location === "Online" && !data.meeturl) {
       toast.error("Meeting Link is required");
       return;
@@ -65,7 +65,6 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
       toast.error("Image URL is required");
       return;
     }
-    // console.log("The data is: ", data);
     startTransition(() =>
       action(data)
         .then(() => {
@@ -221,6 +220,23 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
               className="p-2"
               {...register("hostInstgramId")}
             />
+            
+            <div className="flex">
+            <label htmlFor="Any Redirection">Registeration on another website</label>
+            <input
+              type="checkbox"
+              id="redirectionwhileRegister"
+              {...register("redirectionwhileRegister")}
+            />
+            </div>
+
+            <input
+              type="text"
+              placeholder="Redirection Link"
+              className="p-2"
+              {...register("RedirectionLink")}
+            />
+
           </div>
         </div>
 

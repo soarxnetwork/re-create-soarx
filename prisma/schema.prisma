@@ -164,6 +164,8 @@ model Event {
   hostName    String?
   hostLinkedinId String?
   hostInstgramId  String?
+  redirectionwhileRegister Boolean? @default(false)
+  RedirectionLink  String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   price       Float?

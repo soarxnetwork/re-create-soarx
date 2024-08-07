@@ -308,6 +308,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                     contact the host or join the Whatsapp Group.
                   </button>
                 ) : (
+                 
                   <div className="flex flex-col gap-y-5 w-full items-center">
                     {new Date() > event?.date && isUserAlreadyRegistered ? (
                       <div>
@@ -316,17 +317,37 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                       </div>
                     ) : new Date() < event?.date && !isUserAlreadyRegistered ? (
                       <>
-                        <div className="text-center text-wrap text-[1.1rem] px-2">
-                          Welcome! To join the event, please register below.
-                        </div>
-                        <div className="w-full flex justify-center">
-                          <button
-                            onClick={RegisterUser}
-                            className="w-full Event-reg-button"
-                          >
-                            Register
-                          </button>
-                        </div>
+                        {event?.redirectionwhileRegister == true ? (
+                            <>
+                              <div className="text-center text-wrap text-[1.1rem] px-2">
+                                Welcome! To join the event, please register
+                                below.
+                              </div>
+                              <div className="w-full flex justify-center">
+                                <Link href={event?.RedirectionLink} target="_blank">
+                                  <button
+                                    className="w-full Event-reg-button"
+                                  >
+                                    Redirect
+                                  </button>
+                                </Link>
+                              </div>
+                            </>
+                        ) : (
+                          <>
+                            <div className="text-center text-wrap text-[1.1rem] px-2">
+                              Welcome! To join the event, please register below.
+                            </div>
+                            <div className="w-full flex justify-center">
+                              <button
+                                onClick={RegisterUser}
+                                className="w-full Event-reg-button"
+                              >
+                                Register
+                              </button>
+                            </div>
+                          </>
+                        )}
                       </>
                     ) : (
                       <div className="pr-4 text-left text-wrap w-full pl-4">
