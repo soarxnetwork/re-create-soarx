@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { FaPython, FaSalesforce } from "react-icons/fa";
 
 const InitiativesDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,7 +68,7 @@ const InitiativesDropdown = () => {
             </Link>
           </li> */}
 
-          <li>
+          {/* <li>
             <Link
               href="/java-bootcamp"
               className="block px-4 py-2 md:hover:text-primaryPurple"
@@ -83,25 +84,32 @@ const InitiativesDropdown = () => {
                 <span className="text-2xl">2-Week Java Bootcamp</span>
               </p>
             </Link>
-          </li>
-            <hr />
+          </li> */}
+            {/* <hr /> */}
           <li>
             <Link
               href="/python-bootcamp"
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
-              <p className="flex gap-x-3 text-2xl">
-                <Image
-                  src="/images/online-learning.png"
-                  alt="Python Bootcamp"
-                  width={23}
-                  height={23}
-                  className="h py-0.5 "
-                />
+              <p className="flex items-center gap-x-3 text-2xl">
+              <FaPython size={24}/>
                 <span className="text-2xl">5 Days Python Bootcamp</span>
               </p>
             </Link>
           </li>
+            <hr />
+          <li>
+            <Link
+              href="/salesforce-pioneers"
+              className="block px-4 py-2 md:hover:text-primaryPurple"
+            >
+              <p className="flex  items-center gap-x-3 text-2xl">
+              <FaSalesforce size={24}/>
+                <span className="text-2xl">Salesforce Training Program</span>
+              </p>
+            </Link>
+          </li>
+
         </ul>
       )}
     </div>

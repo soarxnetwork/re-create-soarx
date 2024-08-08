@@ -217,6 +217,111 @@ export const faqDlc = [
   },
 ];
 
+
+export const faqDlcSalesForce = [
+  {
+    question: "What is Salesforce?",
+    answer: "Salesforce is the worlds number one Customer Relationship Management (CRM) platform that helps businesses manage their relationships with customers, streamline processes, and improve profitability. Fortune 500 companies use Salesforce to manage customer interactions, sales, and marketing efforts, improve customer service, and streamline business operations to drive growth and innovation.",
+    id: "1",
+  },
+  {
+    question: "What are the job opportunities in Salesforce technology?",
+    answer: "There are numerous job opportunities in Salesforce technology, including roles such as Salesforce Administrator, Salesforce Developer, Salesforce Consultant, Salesforce Business Analyst, and many more. Salesforce is considered a booming market due to its widespread adoption, continuous innovation, and the increasing demand for Salesforce professionals across various industries.",
+    id: "2",
+  },
+  {
+    question: "What does the IDC report say about the growing demand for Salesforce professionals especially in India?",
+    answer: "The IDC report forecasts that Salesforce and its ecosystem of customers and partners in India are expected to create a net gain of 1.8 million new jobs and generate $88.6 billion in new revenues from 2022 to 2028. This highlights the significant demand for Salesforce professionals and the growth potential in this field.",
+    id: "3",
+  },
+  {
+    question: "Who is this training program for?",
+    answer: "This program is designed for 3rd and 4th-year students, recent graduates, and professionals looking to upskill in Salesforce.",
+    id: "4",
+  },
+  {
+    question: "Is this training program free?",
+    answer: "Yes, the training program is completely free of charge. No registration charge is there at all.",
+    id: "5",
+  },
+  {
+    question: "What is the duration of the training program?",
+    answer: "The training program encompasses over 60 hours of comprehensive instruction, delivered through engaging daily live sessions of one hour each. Commencing on August 10th, this meticulously structured program will unfold over two months, ensuring an in-depth and immersive learning experience.",
+    id: "6",
+  },
+  {
+    question: "What topics will be covered in the training?",
+    answer: "The training will cover fundamentals to advanced Salesforce concepts, including hands-on projects and real-world scenarios.",
+    id: "7",
+  },
+  {
+    question: "Who will be conducting the sessions?",
+    answer: "The sessions will be conducted by Mr. Nikhil Chowdhury (Technology Architect Manager at Cognizant having 10 years of experience in Salesforce) and his team of seasoned Salesforce professionals and industry experts.",
+    id: "8",
+  },
+  {
+    question: "Are there any special sessions included in the program?",
+    answer: "Yes, there will be weekly career guidance sessions from Salesforce MVPs and experts.",
+    id: "9",
+  },
+  {
+    question: "Will there be any mentorship opportunities?",
+    answer: "Yes, participants will receive guidance and mentorship from industry experts to help navigate their career paths in Salesforce.",
+    id: "10",
+  },
+  {
+    question: "What kind of projects will we work on?",
+    answer: "Participants will work on hands-on projects that simulate real-world scenarios to build practical Salesforce skills.",
+    id: "11",
+  },
+  {
+    question: "Will this program help in resume and interview preparation?",
+    answer: "Yes, the program includes workshops on resume and interview preparation to enhance employability.",
+    id: "12",
+  },
+  {
+    question: "Are there job or internship opportunities after completing the training?",
+    answer: "Yes, the best-trained students will have job and internship referral opportunities. However, this is not a Job guarantee program, only students who meet the referred company's conditions will be given the opportunity.",
+    id: "13",
+  },
+  {
+    question: "Do I need any prior knowledge of Salesforce to join this program?",
+    answer: "No prior knowledge of Salesforce is required; the program is designed for beginners and those looking to advance their skills.",
+    id: "14",
+  },
+  {
+    question: "How do I register for the program?",
+    answer: "You can register for the program at bit.ly/salesforce-pioneers",
+    id: "15",
+  },
+  {
+    question: "What if I miss a live session?",
+    answer: "Recorded sessions will be available for participants who miss any live sessions.",
+    id: "16",
+  },
+  {
+    question: "Will there be any assessments or tests during the training?",
+    answer: "Yes, there will be periodic assessments to track progress and understanding of the concepts.",
+    id: "17",
+  },
+  {
+    question: "Will I receive a certificate upon completing the training?",
+    answer: "Yes, participants will receive a certificate of completion from our side which they can add to their resume.",
+    id: "18",
+  },
+  {
+    question: "How will this training help me in my career?",
+    answer: "This training will equip you with in-demand Salesforce skills, prepare you for certifications, and enhance your employability through practical experience and career preparation workshops.",
+    id: "19",
+  },
+  {
+    question: "Who can I contact for more information?",
+    answer: "For more information, you can contact team@soarx.tech or pioneersalesforce@gmail.com",
+    id: "20",
+  },
+];
+
+
 export const courseDetailsHero = [
   "No Pre-requisite Required",
   "Live Interaction with MNC Experts",
@@ -241,3 +346,8 @@ export const courseDetailsHeroFloat = [
 ];
 
 
+export const courseDetailsHeroFloatSalesForce = [
+  "Comprehensive Lectures",
+  "Certificate of Completion",
+  "Doubt Support",
+];
