@@ -30,7 +30,7 @@ const CourseModules = () => {
   return (
     <motion.div
       layout
-      className="sm:p-4 space-y-8 text-base sm:ml-3 sm:mr-3 lg:ml-20 md:ml-7 md:mr-7 lg:mr-16 2xl:mr-40"
+      className="sm:p-4 space-y-8 text-left text-base sm:ml-3 sm:mr-3 lg:ml-20 md:ml-7 md:mr-7 lg:mr-16 2xl:mr-40"
       ref={ref}
     >
       {SalesForceDailyClassRoutines.map((course) => (
@@ -43,7 +43,7 @@ const CourseModules = () => {
         >
           <motion.button
             layout
-            className="font-semibold fl-ic justify-between w-full"
+            className="font-semibold text-left fl-ic justify-between w-full"
             onClick={() => handleToggle(course.name)}
           >
             <span>{course.name}</span>
@@ -73,7 +73,7 @@ const CourseModules = () => {
                       transition: { duration: 0.3 },
                     }}
                   >
-                    <p className="h leading-loose">{topic.name}</p>
+                    <p className="h leading-loose text-left">{topic.name}</p>
                     {/* <p className="font-light text-white/50">{topic.duration}</p> */}
                   </motion.div>
                 ))}
