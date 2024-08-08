@@ -8,6 +8,7 @@ import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { truncateWord } from "@/utils/truncateWord";
 import Image from "next/image";
+import { FaPython, FaSalesforce } from "react-icons/fa";
 
 const dsa = [
   /*{
@@ -16,23 +17,29 @@ const dsa = [
     code: "/dsa-live-classes",
     image: "/images/online-learning.png",
   },*/
-  {
-    name: "Campus Ambassador Program",
-    desc: "Campus Leaders: Join as an Ambassador!",
-    code: "/campus-ambassador",
-    image: "/images/announcer.png",
-  },
-  {
-    name: "2-Week Java Bootcamp",
-    desc: "Master Java: Join Live Classes!",
-    code: "/java-bootcamp",
-    image: "/images/online-learning.png",
-  },
+  // {
+  //   name: "Campus Ambassador Program",
+  //   desc: "Campus Leaders: Join as an Ambassador!",
+  //   code: "/campus-ambassador",
+  //   image: "/images/announcer.png",
+  // },
+  // {
+  //   name: "2-Week Java Bootcamp",
+  //   desc: "Master Java: Join Live Classes!",
+  //   code: "/java-bootcamp",
+  //   image: "/images/online-learning.png",
+  // },
   {
     name: "5 Day Python Bootcamp",
     desc: "Master Python: Join Live Classes!",
     code: "/python-bootcamp",
-    image: "/images/online-learning.png",
+    image: <FaPython size={24}/>,
+  },
+  {
+    name: "2.5 Month Salesforce Training Program",
+    desc: "Salesforce's powerful CRM platform",
+    code: "/salesforce-pioneers",
+    image: <FaSalesforce size={24}/>,
   }
 ];
 
@@ -116,14 +123,15 @@ const HeaderDropdown = () => {
                     )}
                   >
                     <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-gray-700 ease-in-out transition-all duration-300">
-                      <div className="mt-1 flex h-11 w-11 flex-none  items-center justify-center rounded-lg bg-gray-50">
-                        <Image
+                      <div className="mt-1 flex h-11 w-11 flex-none  items-center justify-center rounded-lg">
+                        {/* <Image
                           src={d.image}
                           sizes="100vw"
                           width={23}
                           height={23}
                           alt="img"
-                        />
+                        /> */}
+                          {d.image}
                       </div>
                       <div>
                         <div className="font-semibold dark:text-white">
