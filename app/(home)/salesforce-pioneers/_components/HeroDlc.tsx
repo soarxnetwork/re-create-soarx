@@ -17,10 +17,10 @@ const HeroDlc = () => {
               {" "}
               August 10, 2024
             </span>{" "}
-            this program offers a structured approach to mastering Salesforce <span className="font-bold">Administration</span>, <span className="font-bold">Development</span>, and Lightning Web Components (LWC), tailored for both <span className="font-bold">beginners</span> and those <span className="font-bold">seeking to advance</span> their <span className="font-bold">skills</span>.
+            this program offers a structured approach to mastering Salesforce Administration, Development, and Lightning Web Components (LWC), tailored for both beginners and those <span className="font-bold">seeking to advance</span> their <span className="font-bold">skills</span>.
             <br />
             <br />
-            Our course combines expert instruction from seasoned professionals, <span className="font-bold">Nikhil Chowdhury and Neha</span>, with hands-on projects to ensure <span className="font-bold">practical learning</span>. You will gain essential skills in Salesforce <span className="font-bold">setup</span>, user management, Apex programming, and <span className="font-bold">LWC development</span>. Additionally, benefit from career <span className="font-bold">guidance sessions, resume-building workshops</span>, and job referral opportunities, setting you up for success in the Salesforce ecosystem.
+            Our course combines expert instruction from seasoned professionals, <span className="font-bold">Nikhil Chowdhury and Neha</span>, with hands-on projects to ensure <span className="font-bold">practical learning</span>. You will gain essential skills in Salesforce setup, user management, Apex programming, and LWC development. Additionally, benefit from career guidance sessions, <span className="font-bold">resume-building workshops</span>, and job referral opportunities, setting you up for success in the Salesforce ecosystem.
           </p>
         </div>
         <CoursesDlc />

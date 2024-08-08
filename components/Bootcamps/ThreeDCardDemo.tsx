@@ -13,24 +13,22 @@ export function ThreeDCardDemo() {
           translateZ="50"
           className="text-2xl font-semibold text-neutral-600 dark:text-white"
         >
-          2-Weeks Java Bootcamp
+          2.5 Month Salesforce Training Program
         </CardItem>
-        <CardItem
+        {/* <CardItem
           as="p"
           translateZ="60"
           className="text-neutral-500 text-sm max-w-sm mt-2 pt-3 pb-3 dark:text-neutral-300"
         >
-          This program aims to equip participants with essential Java skills,
-          problem-solving techniques and a strong foundation in algorithms and
-          data structures.
-        </CardItem>
+          Unlock your potential with the SoarX Salesforce Training Program, a comprehensive 10-week course designed to provide you with a deep understanding of Salesforces powerful CRM platform.
+        </CardItem> */}
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
-            src="/images/Java_Bootcamp.png"
+            src="/images/poster_salesforce.png"
             height="500"
             width="500"
             className="w-full object-cover rounded-xl group-hover/card:shadow-xl"
-            alt="thumbnail"
+            alt="Salesforce Program"
           />
         </CardItem>
         <div className="flex justify-between items-center mt-10">
@@ -43,7 +41,7 @@ export function ThreeDCardDemo() {
           >
             Try now →
           </CardItem> */}
-          <Link href="/java-bootcamp">
+          <Link href="/salesforce-pioneers">
             <CardItem translateZ={20} as="button" className="signInbut">
               Enroll now
             </CardItem>
