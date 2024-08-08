@@ -146,7 +146,7 @@ export const SalesForceCourseDetails = [
     icon: <ImEmbed2 />,
     Description: {
       question: "Class Schedule",
-      answer: "Thursday to Sunday",
+      answer: "Wed, Thurs, Sat, Sunday",
     },
   },
 
