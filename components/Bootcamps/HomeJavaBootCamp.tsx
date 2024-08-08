@@ -10,19 +10,13 @@ const HomeJavaBootCamp = () => {
     <div className="pl-8 pr-8 md:pl-28 md:pr-32">
       <h2 className="flex  justify-center gap-x-5 text-[30px] sm:text-[40px] md:text-[60px] lg:text-[70px] pt-2 font-bold leading-normal">
         <span>
-          {"Java".split("").map((child, idx) => (
+          {"Salesforce Training Program".split("").map((child, idx) => (
             <span className={"hoverText"} key={idx}>
               {child}
             </span>
           ))}
         </span>
-        <span>
-          {"Bootcamp".split("").map((child, idx) => (
-            <span className={"hoverText"} key={idx}>
-              {child}
-            </span>
-          ))}
-        </span>
+        
       </h2>
       <div className="flex flex-col justify-normal xl:flex-row w-full h-full  xl:justify-around">
         <span className="n -mt-12 xl:mt-0">
@@ -32,20 +26,11 @@ const HomeJavaBootCamp = () => {
           <div className="space-y-6 sm:pl-10 sm:pr-5 2xl:pr-10 xl:relative xl:top-10 lg:pl-10 lg:pr-20">
             <h4 className="font-semibold text-3xl pt-6">About Course</h4>
             <p>
-              Our 2-week DSA Live Classes Initiative is designed to provide{" "}
-              <span className="font-bold"> a comprehensive learning</span>{" "}
-              experience using Java in Data Structures and Algorithms (DSA).
-            </p>
-            <span className="font-bold">
-              Led by industry experts, this program
-            </span>{" "}
+            Unlock your potential with the SoarX Salesforce Training Program, a comprehensive <span className="font-bold">10-week</span> course designed to provide you with a deep understanding of <span className="font-bold">Salesforces powerful CRM platform</span>.
+          <br />
             <p>
-              aims to equip participants with the fundamental concepts,
-              <span className="font-bold">
-                problem-solving skills, and algorithmic thinking
-              </span>{" "}
-              needed to excel in coding interviews, competitive programming, and
-              <span className="font-bold">real-world</span> software development.
+            Starting on <span className="font-bold">August 10, 2024</span>, this program offers a structured approach to mastering Salesforce Administration, Development, and <span className="font-bold">Lightning Web Components</span> (LWC), tailored for both beginners and those seeking to advance their skills.
+            </p>
             </p>
             <div className="hidden xl:grid grid-cols-1 sm:grid-cols-2 gap-x-7 gap-y-8">
               <div className="border-2  hover:cursor-pointer transition-all duration-300 p-3 md:p-4 border-opacity-30 rounded-md">
@@ -57,7 +42,7 @@ const HomeJavaBootCamp = () => {
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
                       Start Date
                     </p>
-                    <p className="text-base font-medium">7 August 2024</p>
+                    <p className="text-base font-medium">10 August 2024</p>
                   </div>
                 </div>
               </div>
@@ -71,7 +56,7 @@ const HomeJavaBootCamp = () => {
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
                       Duration
                     </p>
-                    <p className="text-base font-medium">2 Week</p>
+                    <p className="text-base font-medium">10 Week</p>
                   </div>
                 </div>
               </div>
@@ -85,7 +70,7 @@ const HomeJavaBootCamp = () => {
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
                       Class Duration
                     </p>
-                    <p className="text-base font-medium">1.5 hrs</p>
+                    <p className="text-base font-medium">1 hrs</p>
                   </div>
                 </div>
               </div>
@@ -97,9 +82,9 @@ const HomeJavaBootCamp = () => {
                   </div>
                   <div className="space-y-2">
                     <p className="text-base text-gray-500 dark:text-gray-400 font-medium">
-                      No. of sessions
+                    Total Classes
                     </p>
-                    <p className="text-base font-medium">6</p>
+                    <p className="text-base font-medium">60</p>
                   </div>
                 </div>
               </div>
