@@ -32,6 +32,7 @@ interface LocationData {
 }
 
 const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
+  console.log("Event is: ", event);
   const pahname = usePathname();
   const editPath = pahname.includes("edit");
   const optToast = editPath
@@ -46,8 +47,25 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     useForm<EventSchema>({
       resolver: eventFormResolver,
       defaultValues: {
-        ...optInitialValues,
         creatorId: creatorId || event?.creatorId,
+        home_description: event?.home_description || "",
+        description: event?.description || "",
+        meeturl: event?.meeturl || "",
+        venue: event?.venue || "",
+        imageUrl: event?.imageUrl || "",
+        hostImage: event?.hostImage || "",
+        hostName: event?.hostName || "",
+        hostLinkedinId: event?.hostLinkedinId || "",
+        hostInstgramId: event?.hostInstgramId || "",
+        redirectionwhileRegister: event?.redirectionwhileRegister || false,
+        RedirectionLink: event?.RedirectionLink || "",
+        slug: event?.slug || "",
+        title: event?.title || "",
+        date: event?.date || new Date(),
+        startTime: event?.startTime || "",
+        endTime: event?.endTime || "",
+        location: event?.location || "Online",
+        
       },
       mode: "onChange",
     });
