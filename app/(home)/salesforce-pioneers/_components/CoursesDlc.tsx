@@ -41,7 +41,7 @@ const CoursesDlc = () => {
       <div className="2xl:mr-40 space-y-4 lg:ml-24 sm:ml-6 sm:mr-3 lg:mr-5">
         <h4 className="font-semibold text-3xl">This Course Includes</h4>
         <p className="text-base">
-        This course includes comprehensive lectures and hands-on exercises to enhance your understanding of Salesforce's powerful CRM platform, preparing you to tackle technical interviews with confidence.
+        This course includes comprehensive lectures and hands-on exercises to enhance your understanding of Salesforces powerful CRM platform, preparing you to tackle technical interviews with confidence.
         </p>
       </div>
       <div className="2xl:mr-40 grid sm:grid-cols-2 grid-cols-1 sm:ml-5 sm:mr-4 lg:ml-24 lg:mr-24 gap-4 text-sm ">

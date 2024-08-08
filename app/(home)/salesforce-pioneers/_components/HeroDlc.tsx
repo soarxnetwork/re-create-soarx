@@ -11,7 +11,7 @@ const HeroDlc = () => {
           Unlock your potential with the <span className="font-bold">
               {" "}
               SoarX
-            </span>{" "} <span className="font-bold">Salesforce Training Program</span>, a comprehensive 10-week course designed to provide you with a deep understanding of Salesforce's powerful <span className="font-bold">
+            </span>{" "} <span className="font-bold">Salesforce Training Program</span>, a comprehensive 10-week course designed to provide you with a deep understanding of Salesforces powerful <span className="font-bold">
               CRM Platform</span>. Starting on {" "}
             <span className="font-bold">
               {" "}
