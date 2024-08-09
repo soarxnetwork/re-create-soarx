@@ -87,7 +87,7 @@ const LeftHeroDlc = () => {
                 <span className=" text-primaryPurple text-3xl font-semibold">
                   Free
                 </span>
-                <del className=" text-shark text-xl">₹999</del>
+                <del className=" text-shark text-xl">₹4999</del>
               </div>
               <p className="text-2xl font-semibold dark:text-white text-black">
                 BONUS INCLUDES:

@@ -121,9 +121,9 @@ export const instructorsForSalesForce = [
     title: "Nikhil Chowdhury",
     image: "/images/salesforce_instructor.jpg",
     description:
-      "Nikhil Chowdhury is a distinguished Salesforce professional currently serving as a Technical Architect at Cognizant, where he has contributed his expertise for over 6 years and 10 months. With an extensive background that includes 3 years and 5 months at Trekbin, Nikhil brings over a decade of experience and 14X Salesforce certifications to the table.",
+      "Nikhil Chowdhury is a reknowned Salesforce expert with over a decade of industry experience, marked by distinguished roles at Cognizant and Trekbin. He has pioneered innovative Salesforce solutions, harnessing his vast expertise to revolutionize client operations. With a strong foundation built during his three-year tenure at Trekbin Technologies, Nikhil has continued to excel as a trailblazer at Cognizant.",
     subDescription:
-      "As an All-Star Trailhead Ranger and active member of the Trailblazer Community, he is known for his deep knowledge of Salesforce Admin and Development tools. Nikhil commitment to continuous growth, innovation, and excellence in crafting scalable solutions has consistently delivered impactful results and enhanced business operations.",
+      "Nikhil boasts an impressive portfolio, featuring 14 Salesforce certifications, over 8X Ranger Trailhead badges, and recognition as a previous J2S mentor and 2X Salesforce Lightning Champion. He has a proven track record of delivering impactful results and is dedicated to crafting effective business solutions, driving meaningful results through Salesforce, and mentoring aspiring Salesforce professionals. With deep expertise in Salesforce administration and development, Nikhil is a passionate advocate for continuous learning and a valuable asset to the Salesforce community.",
     logos: ["/images/cognizent.png", "/images/trekbin.png"],
   },
   
