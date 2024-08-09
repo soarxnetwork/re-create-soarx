@@ -5,25 +5,20 @@ import { registEventById } from "@/actions/registration";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import SoarXlogo from "../../../public/images/SoarX_Logo.png";
-import SoarXlogo from "../../../public/images/Soarx-transparent-logo.png";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiGooglemeet } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import ProfileCircles from "./ProfileCircles";
-
 import { v4 as uuidv4 } from "uuid";
-
 import { useRouter } from "next/navigation";
 import GoogleAdHeader from "@/components/googleAds";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
-
 import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
 import styles from "./Event.module.css";
-
 interface User {
   id: string;
   username: string | null;
@@ -146,40 +141,6 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
     <>
       <GoogleAdHeader />
 
-
-      <div className=" sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] ">
-        <div className="flex justify-center max-[500px]:block ">
-          <div className=" lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
-            <Image
-              src={event?.imageUrl} // Insert the image source
-              alt="poster"
-              className="rounded-[20px]"
-              width={500}
-              height={500}
-            />
-            <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">
-              Hosted by
-            </div>
-            <div className="company flex justify-between">
-              <Image
-                src={SoarXlogo}
-                alt="logo"
-                className="w-[100px]"
-                width={0}
-                height={0}
-              />
-              <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                <a
-                  href="https://www.instagram.com/soarxnetwork"
-                  className=" my-auto "
-                >
-                  <FaInstagram
-                    className="h-[20px]"
-                    style={{ color: "#828282" }}
-                  />
-                </a>
-
-
       <div className="mt-36 w-full">
         <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start w-full max-[500px]:block">
           <div className="">
@@ -262,13 +223,8 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               <></>
             )}
           </div>
-
           <div className="pb-[100px] ml-[4%] md:ml-20 md:mr-20 lg:ml-36 lg:mr-36  xl:ml-[4%] xl:mr-2 xl:w-3/5 sm:max-md:ml-8">
             <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-semibold lg:text-[2.4rem] leading-snug ">
-
-          <div className="pb-[100px] ml-[4%]   sm:max-md:ml-8">
-            <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] lg:text-[2.4rem] leading-snug ">
-
               {event?.title}
             </h1>
             <div className="flex mt-[25px]">
@@ -329,20 +285,8 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 )}
               </a>
             </div>
-
             <div className=" mt-[5%] rounded-lg shadow-md pb-4 xl:mr-28">
               <div className="rounded-t-md py-2 bg-[#F4F2FB] dark:bg-gray-900 font-semibold text-[#8919E4] dark:text-purple-500 text-[18px] flex items-center pl-4 mt-5">
-
-            <div className=" mt-[5%] rounded-lg shadow-lg pb-4">
-              <div className="rounded-t-md py-2 bg-[#F4F2FB] dark:bg-gray-900 font-semibold text-[#8919E4] dark:text-purple-500 text-[18px] flex items-center pl-4 mt-5">
-                Registration
-              </div>
-              <div className="mt-[3%] text-center text-[1.1rem] px-2">
-                Welcome! To join the event, please register below.
-              </div>
-              <div className="flex justify-center mt-[5%] mb-[5%]">
-                {" "}
-
                 {new Date() > event?.date ? (
                   <div className="flex gap-x-2 items-center">
                     <GrSubtractCircle />
@@ -425,7 +369,6 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 About Event
                 <hr className="dark:border-gray-600 border-gray-300 mt-3" />
               </div>
-
               <article className="mt-5 ml-3 mr-3 text-wrap ">
                 {event.description && (
                   <div
@@ -437,30 +380,16 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 <p className="text-base sm:text-large">
                   <b>Register for the FREE Demo Class now!</b> <br /> <br />
                   For more queries and event updates, join the SoarX Network on{" "}
-
-              <article className="mt-2 ml-3 text-wrap">
-                <p className="text-large">
-                {DESC}
-                </p>
-                <p className="text-large">
-                  <b>Register for the FREE Demo Class now!</b> <br /> <br />
-                  For more queries and event updates, join the SoarX Network on
-                  {" "}
-
                   <Link
                     href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX"
                     className="text-green-500 text-large"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-
                     <span className="flex items-center font-semibold gap-x-1">
                       <ImWhatsapp />
                       Whatsapp <MdArrowOutward />
                     </span>
-
-                    <span className="flex items-center gap-x-1">Whatsapp  <MdArrowOutward /></span>
-
                   </Link>
                 </p>
               </article>
