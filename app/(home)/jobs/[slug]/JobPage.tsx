@@ -159,77 +159,77 @@ function JobPage({ jobData }: { jobData: any }) {
             </div> */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-7 mt-8">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
                 {/* Left Side: Job Role Info */}
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-black dark:text-white">
+                  <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                     Job Role
                   </h3>
-                  <p className="text-sm text-black text-wrap dark:text-white mt-1">
+                  <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                     {jobData.jobRole}
                   </p>
                 </div>
                 {/* Right Side: Job Icon */}
                 <div className="flex-shrink-0">
-                  <FaBriefcase className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                  <FaBriefcase className="text-gray-900 dark:text-gray-300  h-8 w-8" />
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
                 {/* Left Side: Job Role Info */}
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                     Experience
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                  <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                     {jobData.experience}
                   </p>
                 </div>
                 {/* Right Side: Job Icon */}
                 <div className="flex-shrink-0">
-                  <MdOutlineHomeWork className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                  <MdOutlineHomeWork className="text-gray-900 dark:text-gray-300  h-8 w-8" />
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
                 {/* Left Side: Job Role Info */}
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                     Qualifications
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                  <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                     {jobData.qualificationRequired}
                   </p>
                 </div>
                 {/* Right Side: Job Icon */}
                 <div className="flex-shrink-0">
-                  <PiExamFill className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                  <PiExamFill className="text-gray-900 dark:text-gray-300  h-8 w-8" />
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
                 {/* Left Side: Job Role Info */}
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                     Location
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                  <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                     {jobData.location}
                   </p>
                 </div>
                 {/* Right Side: Job Icon */}
                 <div className="flex-shrink-0">
-                  <FaLocationDot className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                  <FaLocationDot className="text-gray-900 dark:text-gray-300  h-8 w-8" />
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer">
                 {/* Left Side: Job Role Info */}
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                     Skills
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                  <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                     {skills.map((skill: any, index: number) => (
                       <span key={index} className="text-wrap">
                         {skill}
@@ -240,34 +240,34 @@ function JobPage({ jobData }: { jobData: any }) {
                 </div>
                 {/* Right Side: Job Icon */}
                 <div className="flex-shrink-0">
-                  <GiSkills className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                  <GiSkills className="text-gray-900 dark:text-gray-300  h-8 w-8" />
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer ease-in-out hover:ease-in-out">
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md flex items-center space-x-4 hover:bg-gradient-to-br hover:from-purple-700 hover:to-purple-500  transition-transform duration-500 transform hover:rotate-3 hover:cursor-pointer ease-in-out hover:ease-in-out">
               {/* Left Side: Job Role Info */}
-              <div className="flex-grow">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <div className="flex-grow ">
+                <h3 className="text-lg font-semibold  text-gray-900 dark:text-gray-100">
                   Stipend
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                <p className="text-sm text-gray-900 font-medium dark:text-gray-300 mt-1">
                   {jobData.salary || "Not Disclosed"}
                 </p>
               </div>
               {/* Right Side: Job Icon */}
               <div className="flex-shrink-0">
-                <FaMoneyBills className="text-blue-500 dark:text-blue-300 h-8 w-8" />
+                <FaMoneyBills className="text-gray-900 dark:text-gray-300  h-8 w-8" />
               </div>
             </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-6 space-y-5 lg:pl-6">
-          <h3 className="text-2xl font-semibold hidden lg:block">
+        <div className="pt-6 space-y-5 lg:pl-6 hidden">
+          <h3 className="text-2xl font-semibold">
             Related Jobs
           </h3>
-          <div className="hidden lg:block">
+          <div className="">
             {jobs.map((myjob: any, index: any) => (
               <Link href={`/jobs/${myjob.id}`} key={index}>
                 <Card className="hover:cursor-pointer mb-8 pb-2 pt-2 hover:scale-105 shadow-2xl dark:shadow-gray-800">

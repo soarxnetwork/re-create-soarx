@@ -80,7 +80,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li> */}
 
-              {/* <HeaderDropdown /> */}
+              <HeaderDropdown />
 
               {admin && admin !== Admin.User && (
                 <li
@@ -163,7 +163,7 @@ const Header = ({ admin }: User) => {
 
               <p>
                 <span>
-                  {/* <InitiativesDropdown /> */}
+                  <InitiativesDropdown />
                 </span>
               </p>
 

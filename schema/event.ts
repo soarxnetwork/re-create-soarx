@@ -12,7 +12,9 @@ export const eventSchema = z.object({
   description: z.string().min(2, {
     message: "Too short",
   }),
-
+  home_description: z.string().min(2, {
+    message: "Too short",
+  }),
   location: z.string().min(2, {
     message: "Too short",
   }),
@@ -22,8 +24,14 @@ export const eventSchema = z.object({
     message: "Too short",
   }),
   imageUrl: z.string(),
+  hostImage: z.string().optional(),
+  hostName: z.string().optional(),
+  hostLinkedinId: z.string().optional(),
+  hostInstgramId: z.string().optional(),
   updatedAt: z.date().optional(),
   creatorId: z.string(),
+  redirectionwhileRegister: z.boolean().optional(),
+  RedirectionLink: z.string().optional()
 });
 
 export const eventInitialValues = {
@@ -34,6 +42,12 @@ export const eventInitialValues = {
   imageUrl: "",
   creatorId: "",
   slug: "",
+  hostImage: "",
+  hostName: "",
+  hostLinkedinId: "",
+  hostInstgramId: "",
+  redirectionwhileRegister: false,
+  RedirectionLink: ""
 };
 export const eventFormResolver = zodResolver(eventSchema);
 export type EventSchema = z.infer<typeof eventSchema>;

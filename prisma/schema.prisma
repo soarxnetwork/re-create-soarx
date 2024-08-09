@@ -156,9 +156,16 @@ model Event {
   meeturl     String?
   venue       String?
   description String
+  home_description String?
   imageUrl    String
   location    String
   slug        String?  @unique
+  hostImage   String?
+  hostName    String?
+  hostLinkedinId String?
+  hostInstgramId  String?
+  redirectionwhileRegister Boolean? @default(false)
+  RedirectionLink  String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   price       Float?

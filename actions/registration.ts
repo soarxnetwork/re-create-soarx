@@ -8,6 +8,7 @@ export const registEventById = async (eventId: string, userId: string) => {
       return {
         message: `You already registered this event!`,
         error: true,
+        alreadyRegistered: true,
       };
     }
     const regist = await db.registration.create({

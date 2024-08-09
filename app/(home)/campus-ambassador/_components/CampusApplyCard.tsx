@@ -211,10 +211,10 @@ function CampusApplyCard() {
       <div
         id="crud-modal"
         aria-hidden="true"
-        className="flex justify-center items-center w-full mt-12"
+        className="flex flex-col lg:flex-row justify-center items-center w-full mt-12"
       >
         <div className="">
-          <div className="flex mx-10 lg:flex-row gap-y-9 xl:gap-y-0 items-stretch md:justify-evenly md:pl-5 xl:pl-0 xl:pr-0 md:pr-5 lg:pr-0">
+          <div className="flex  flex-col lg:flex-row gap-y-9 xl:gap-y-0 items-stretch md:justify-evenly md:pl-5 xl:pl-0 xl:pr-0 md:pr-5 lg:pr-0">
             <div className="pl-5 pr-3 sm:pr-5 xl:pr-10 lg:w-1/2 flex flex-col">
               <div className="relative bg-white rounded-lg shadow-md shadow-gray-600 dark:bg-gray-900 flex-1">
                 <div className="flex flex-col justify-between p-4 md:p-5 rounded-t dark:border-gray-600 h-full">
