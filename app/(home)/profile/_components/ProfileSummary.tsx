@@ -15,13 +15,10 @@ function ProfileSummary() {
     }
     useEffect(() =>{
         async function gettingTheUser(){
-        const User = await fetchUser(session?.user.id!)
+        const User = await fetchUser(session?.user?.id!)
         SetUser(User);
         }
         gettingTheUser();
-        
-
-
     } , [User])
     
   return (

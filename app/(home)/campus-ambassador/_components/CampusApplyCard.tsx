@@ -133,7 +133,7 @@ function CampusApplyCard() {
     if (errors2) {
       console.log(errors2)
     }
-    CheckingUserForm(session?.user.id!);
+    CheckingUserForm(session?.user?.id!);
 
   }, [errors, errors2])
 

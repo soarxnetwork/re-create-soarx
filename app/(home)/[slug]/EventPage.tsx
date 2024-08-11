@@ -4,11 +4,10 @@ import { useSession } from "next-auth/react";
 import { registEventById } from "@/actions/registration";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import SoarXlogo from "../../../public/images/SoarX_Logo.png";
-import { FaLinkedinIn } from "react-icons/fa";
+import SoarXlogo1 from "../../../public/images/SoarX_Logo.png"; // Renamed to avoid duplicate imports
+import SoarXlogo2 from "../../../public/images/Soarx-transparent-logo.png";
+import { FaLinkedinIn, FaInstagram, FaBuilding } from "react-icons/fa";
 import { SiGooglemeet } from "react-icons/si";
-import { FaInstagram } from "react-icons/fa";
-import { FaBuilding } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import ProfileCircles from "./ProfileCircles";
 import { v4 as uuidv4 } from "uuid";
@@ -19,6 +18,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
 import styles from "./Event.module.css";
+
 interface User {
   id: string;
   username: string | null;
@@ -31,8 +31,7 @@ interface User {
 function EventPage({ event, users }: { event: any; users: User[] }) {
   const { data: session } = useSession();
   const router = useRouter();
-  const [isUserAlreadyRegistered, setIsUserAlreadyRegistered] =
-    useState<boolean>(false);
+  const [isUserAlreadyRegistered, setIsUserAlreadyRegistered] = useState<boolean>(false);
 
   useEffect(() => storePathValues, [router]);
 
@@ -46,22 +45,18 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
     storage.setItem("currentPath", globalThis.location.pathname);
   }
 
-  // console.log(event);
-  // console.log(users);
   useEffect(() => {
     const IsAlreadyRegistered = async () => {
       if (!users[0]) {
         // toast.success("Please login to register for any event!");
       } else {
-        const res = await registEventById(event.id, users[0].id);
-        // console.log(res);
+        const res = await registEventById(event?.id, users[0]?.id);
         setIsUserAlreadyRegistered(res?.alreadyRegistered || false);
       }
     };
     IsAlreadyRegistered();
   }, []);
 
-  // console.log(session)
   async function RegisterUser() {
     if (!session) {
       toast.success("Please login to register for any event!");
@@ -133,124 +128,81 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
       return "YouTube";
     }
   }
+
   function EventEnded() {
-    toast.error("Event has been ended!!");
+    toast.error("Event has ended!");
   }
 
   return (
     <>
       <GoogleAdHeader />
 
-      <div className="mt-36 w-full">
-        <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start w-full max-[500px]:block">
-          <div className="">
+      <div className="sm:mt-[20%] md:mt-[15%] lg:mt-[12%] md:mx-[15%] sm:mx-[10%] max-sm:mt-[120px] mx-[7%] ">
+        <div className="flex justify-center max-[500px]:block ">
+          <div className="lg:min-w-[300px] md:min-w-[200px] min-w-[150px] max-[500px]:max-w-[250px] mx-auto max-[500px]:mb-8 ">
             <Image
               src={event?.imageUrl} // Insert the image source
               alt="poster"
-              className="rounded-[20px] shadow-2xl dark:shadow-gray-700 shadow-gray-600"
-              width={370}
-              height={380}
+              className="rounded-[20px]"
+              width={500}
+              height={500}
             />
-            <div className="pt-8 pl-4 pr-4 font-medium pb-2">
-              <p className="pl-4 pb-3 hidden xl:block">Hosted By</p>
-              <hr className="border-1 dark:border-gray-700 border-gray-300 hidden xl:block" />
-              <div className="xl:flex justify-between pt-5 hidden">
-                <div className="flex items-center gap-x-3 ">
-                  <p className={`  ${event.hostImage ? "flex" : "hidden"}`}>
-                    {event.hostImage && (
-                      <img
-                        src={event.hostImage}
-                        alt="logo"
-                        className="w-[40px] rounded-full"
-                        width={0}
-                        height={0}
-                      />
-                    )}
-                  </p>
-                  <p
-                    className={`border-1 rounded-3xl bg-gray-100 ${
-                      !event.hostImage ? "flex" : "hidden"
-                    }`}
-                  >
-                    {
-                      <Image
-                        src={SoarXlogo}
-                        alt="logo"
-                        className="w-[40px] rounded-md"
-                        width={0}
-                        height={0}
-                      />
-                    }
-                  </p>
-                  {event?.hostName || "SoarX"}
-                </div>
-                <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                  <Link
-                    href={
-                      event.hostInstgramId ||
-                      "https://www.instagram.com/soarxnetwork"
-                    }
-                    className=" my-auto"
-                  >
-                    <FaInstagram className="h-[20px] text-purple-400 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                  </Link>
-
-                  <Link
-                    href={
-                      event.hostLinkedinId ||
-                      "https://www.linkedin.com/company/soarxnetwork/"
-                    }
-                    className="my-auto  "
-                  >
-                    <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                  </Link>
-                </div>
+            <div className="pt-6 font-semibold border-b-[1px] border-[#a8a8a8] pb-2">
+              Hosted by
+            </div>
+            <div className="company flex justify-between">
+              <Image
+                src={SoarXlogo1} // Use SoarXlogo1 to avoid conflicts
+                alt="logo"
+                className="w-[100px]"
+                width={0}
+                height={0}
+              />
+              <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
+                <a
+                  href="https://www.instagram.com/soarxnetwork"
+                  className="my-auto"
+                >
+                  <FaInstagram
+                    className="h-[20px]"
+                    style={{ color: "#828282" }}
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/soarxnetwork/"
+                  className="my-auto"
+                >
+                  <FaLinkedinIn className="h-[20px]" />
+                </a>
               </div>
             </div>
-
-            {users.length > 3 ? (
-              <>
-                <div className="pt-6 hidden xl:block font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
-                  {String(users.length)}{" "}
-                  {new Date() > event?.date ? <>Attended</> : <>Going</>}
-                </div>
-                <div className="pt-4">
-                  {" "}
-                  <ProfileCircles users={users} />{" "}
-                </div>{" "}
-              </>
-            ) : (
-              <></>
-            )}
           </div>
-          <div className="pb-[100px] ml-[4%] md:ml-20 md:mr-20 lg:ml-36 lg:mr-36  xl:ml-[4%] xl:mr-2 xl:w-3/5 sm:max-md:ml-8">
-            <h1 className=" text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-semibold lg:text-[2.4rem] leading-snug ">
+
+          <div className="pb-[100px] ml-[4%] md:ml-20 md:mr-20 lg:ml-36 lg:mr-36 xl:ml-[4%] xl:mr-2 xl:w-3/5 sm:max-md:ml-8">
+            <h1 className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-semibold lg:text-[2.4rem] leading-snug">
               {event?.title}
             </h1>
             <div className="flex mt-[25px]">
-              <div className="h-[45px] w-[40px]  border-[1px] border-[#b0aeae] rounded-lg text-center">
+              <div className="h-[45px] w-[40px] border-[1px] border-[#b0aeae] rounded-lg text-center">
                 <div className="bg-[#b0aeae] h-[20px] rounded-t-md text-[12px] font-semibold">
-                  {event ? Month[event.date.getMonth()] : <>NA</>}
+                  {event ? Month[event.date.getMonth()] : "NA"}
                 </div>
                 {event?.date.getDate()}
               </div>
               <div className="ml-[15px]">
-                <div className="">
+                <div>
                   {event?.date
                     ? new Date(event.date).toLocaleDateString("en-IN", {
                         weekday: "long",
                       })
                     : ""}
-                  , {event ? FullMonth[event.date.getMonth()] : <> NA</>}{" "}
-                  {event?.date.getDate()}
+                  , {event ? FullMonth[event.date.getMonth()] : "NA"} {event?.date.getDate()}
                 </div>
-                <div className="">
+                <div>
                   {event?.startTime
                     ? convertTo12HourFormat(event.startTime)
                     : ""}{" "}
-                  to{" "}
-                  {event?.endTime ? convertTo12HourFormat(event.endTime) : ""}{" "}
-                  IST
+                  to {event?.endTime ? convertTo12HourFormat(event.endTime) : ""} IST
                 </div>
               </div>
             </div>
@@ -264,214 +216,62 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                   {event?.location == "Online" && event.meeturl ? (
                     <>
                       {detectLinkType(event.meeturl) == "Google Meet" ? (
-                        <>
-                          {" "}
-                          <SiGooglemeet />{" "}
-                        </>
+                        <SiGooglemeet />
                       ) : (
-                        <>
-                          <FaYoutube />
-                        </>
+                        <FaYoutube />
                       )}
                     </>
                   ) : (
                     <FaBuilding />
                   )}
-                </div>{" "}
-                {event?.location == "Online" && event.meeturl ? (
-                  <>{detectLinkType(event.meeturl)}</>
-                ) : (
-                  <>{event?.venue}</>
-                )}
+                </div>
+                {event?.location == "Online" && event.meeturl
+                  ? detectLinkType(event.meeturl)
+                  : event?.venue}
               </a>
             </div>
-            <div className=" mt-[5%] rounded-lg shadow-md pb-4 xl:mr-28">
-              <div className="rounded-t-md py-2 bg-[#F4F2FB] dark:bg-gray-900 font-semibold text-[#8919E4] dark:text-purple-500 text-[18px] flex items-center pl-4 mt-5">
-                {new Date() > event?.date ? (
-                  <div className="flex gap-x-2 items-center">
-                    <GrSubtractCircle />
-                    Registration Closed
-                  </div>
-                ) : (
-                  <div>Registration</div>
-                )}
+            <div className="mt-[20px] leading-relaxed">{event?.description}</div>
+            <div className="mt-[20px] leading-relaxed">
+              <h1 className="text-[1.2rem] sm:text-[1.4rem] md:text-[1.8rem] font-semibold lg:text-[2.4rem] leading-snug">
+                Guest Speaker
+              </h1>
+              <div className="mt-[20px] flex items-center">
+                <ProfileCircles users={users}/>
+                <div className="ml-[30px]">
+                  <p>{event?.speaker.name}</p>
+                  <p>{event?.speaker.position}</p>
+                </div>
               </div>
-
-              <div className="flex justify-center mt-[5%] mb-[5%]">
-                {new Date() > event?.date && !isUserAlreadyRegistered ? (
+            </div>
+            <div className="flex flex-col mt-8 md:mt-12 xl:mt-16">
+              {isUserAlreadyRegistered ? (
+                <>
                   <button
-                    disabled
-                    onClick={EventEnded}
-                    className="text-left pl-4 text-wrap pr-2 font-medium dark:font-normal"
+                    className={`${styles.disabledBtn} px-4 py-2 cursor-default`}
                   >
-                    This event is not currently taking registrations. You may
-                    contact the host or join the Whatsapp Group.
+                    Already Registered
                   </button>
-                ) : (
-                 
-                  <div className="flex flex-col gap-y-5 w-full items-center">
-                    {new Date() > event?.date && isUserAlreadyRegistered ? (
-                      <div>
-                        <div>Thank You for Joining</div>
-                        <div>We hope you enjoyed the event!</div>
-                      </div>
-                    ) : new Date() < event?.date && !isUserAlreadyRegistered ? (
-                      <>
-                        {event?.redirectionwhileRegister == true ? (
-                            <>
-                              <div className="text-center text-wrap text-[1.1rem] px-2">
-                                Welcome! To join the event, please register
-                                below.
-                              </div>
-                              <div className="w-full flex justify-center">
-                                <Link href={event?.RedirectionLink} target="_blank">
-                                  <button
-                                    className="w-full Event-reg-button"
-                                  >
-                                    Redirect
-                                  </button>
-                                </Link>
-                              </div>
-                            </>
-                        ) : (
-                          <>
-                            <div className="text-center text-wrap text-[1.1rem] px-2">
-                              Welcome! To join the event, please register below.
-                            </div>
-                            <div className="w-full flex justify-center">
-                              <button
-                                onClick={RegisterUser}
-                                className="w-full Event-reg-button"
-                              >
-                                Register
-                              </button>
-                            </div>
-                          </>
-                        )}
-                      </>
-                    ) : (
-                      <div className="pr-4 text-left text-wrap w-full pl-4">
-                        <div className="text-2xl pb-2 font-semibold text-left text-wrap">
-                          You&apos;re In
-                        </div>
-                        <div className="text-base text-left text-wrap font-medium">
-                          A confirmation email has been sent to{" "}
-                          {users[0]?.email || "your Email"}.
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+                </>
+              ) : (
+                <button
+                  onClick={RegisterUser}
+                  className={`${styles.activeBtn} px-4 py-2`}
+                >
+                  Register
+                </button>
+              )}
+              <button
+                className="mt-4 px-4 py-2 border-[1px] border-[#828282] text-[#828282] rounded-md"
+                onClick={EventEnded}
+              >
+                Event Ended
+              </button>
             </div>
-            <div className="xl:border-l-[3px] border-[#C2A1F4] border-dashed mt-10 xl:mr-28">
-              <div className="lg:ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
-                About Event
-                <hr className="dark:border-gray-600 border-gray-300 mt-3" />
-              </div>
-              <article className="mt-5 ml-3 mr-3 text-wrap ">
-                {event.description && (
-                  <div
-                    className={styles.dynamicContent}
-                    dangerouslySetInnerHTML={{ __html: event.description }}
-                  />
-                )}
-
-                <p className="text-base sm:text-large">
-                  <b>Register for the FREE Demo Class now!</b> <br /> <br />
-                  For more queries and event updates, join the SoarX Network on{" "}
-                  <Link
-                    href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX"
-                    className="text-green-500 text-large"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="flex items-center font-semibold gap-x-1">
-                      <ImWhatsapp />
-                      Whatsapp <MdArrowOutward />
-                    </span>
-                  </Link>
-                </p>
-              </article>
-            </div>
-            <div className="pt-8 pl-4 pr-4 font-medium pb-2">
-              <p className="pb-3 text-[14px] block xl:hidden">Hosted By</p>
-              <hr className="border-1 dark:border-gray-700 border-gray-300 block xl:hidden" />
-              <div className="xl:hidden justify-between pt-4 flex">
-                <div className="flex items-center gap-x-3 ">
-                  <p
-                    className={`border-1  ${
-                      event.hostImage ? "flex" : "hidden"
-                    }`}
-                  >
-                    {event.hostImage && (
-                      <img
-                        src={event.hostImage}
-                        alt="logo"
-                        className="w-[40px] rounded-md"
-                        width={0}
-                        height={0}
-                      />
-                    )}
-                  </p>
-                  <p
-                    className={`border-1 rounded-3xl bg-gray-100 ${
-                      !event.hostImage ? "flex" : "hidden"
-                    }`}
-                  >
-                    {
-                      <Image
-                        src={SoarXlogo}
-                        alt="logo"
-                        className="w-[40px] rounded-md"
-                        width={0}
-                        height={0}
-                      />
-                    }
-                  </p>
-                  {event?.hostName || "SoarX"}
-                </div>
-                <div className="flex items-center min-[500px]:max-md:space-x-4 space-x-8">
-                  <Link
-                    href={
-                      event.hostInstgramId ||
-                      "https://www.instagram.com/soarxnetwork"
-                    }
-                    className=" my-auto"
-                  >
-                    <FaInstagram className="h-[20px] text-purple-400 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                  </Link>
-
-                  <Link
-                    href={
-                      event.hostLinkedinId ||
-                      "https://www.linkedin.com/company/soarxnetwork/"
-                    }
-                    className="my-auto  "
-                  >
-                    <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            {users.length > 3 ? (
-              <>
-                <div className="pt-6 block xl:hidden font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
-                  {String(users.length)}{" "}
-                  {new Date() > event?.date ? <>Attended</> : <>Going</>}
-                </div>
-                <div className="pt-4">
-                  {" "}
-                  <ProfileCircles users={users} />{" "}
-                </div>{" "}
-              </>
-            ) : (
-              <></>
-            )}
           </div>
         </div>
       </div>
     </>
   );
 }
+
 export default EventPage;

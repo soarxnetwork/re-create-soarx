@@ -25,25 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      {" "}
       <head>
-        {/* Google Tag Manager */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXRVL4HNDK"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5161344263980975"
-     crossOrigin="anonymous"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-KXRVL4HNDK');
-            `,
-          }}
-        />
-        <GoogleAdSense pId="5161344263980975"/> */}
-
       </head>
       <body className="myfonts">
         <NextSSRPlugin

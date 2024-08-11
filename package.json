@@ -21,6 +21,7 @@
     "@heroicons/react": "^2.1.1",
     "@hookform/resolvers": "^3.3.4",
     "@mui/material": "^5.15.11",
+    "@next/bundle-analyzer": "^14.2.5",
     "@nextui-org/card": "^2.0.33",
     "@nextui-org/dropdown": "^2.1.23",
     "@nextui-org/input": "^2.2.4",
