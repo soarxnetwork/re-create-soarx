@@ -38,7 +38,7 @@ const FloatingHero = () => {
               <span className="text-3xl font-semibold text-primaryPurple">
                 Free
               </span>
-              <del className="text-shark text-2xl">₹999</del>
+              <del className="text-shark text-2xl">₹4999</del>
             </div>
             <p className="text-xl font-semibold dark:text-white">
               This Course Includes :
