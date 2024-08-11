@@ -40,7 +40,7 @@ function ProfilePictureSection() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data: any = await fetchUser(session?.user.id!);
+      const data: any = await fetchUser(session?.user?.id!);
       setImage(data?.image);
       setBgImage(data?.bgImage);
     };
@@ -128,10 +128,10 @@ function ProfilePictureSection() {
               )}
               {/* <FaPenToSquare className="text-gray-500" /> */}
             </button>
-            <img
+            <Image
             onClick={handleProfileImageUploadFrom}
               src={image || "/placeholder.jpg"}
-              alt=""
+              alt="Image"
               className="w-[120px] hover:cursor-pointer h-[120px] bg-gray-800 md:w-[200px] md:h-[200px] rounded-full border-gray-300 border-3 object-cover"
             />
           </div>

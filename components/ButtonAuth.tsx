@@ -4,6 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { IoArrowDown } from "react-icons/io5";
 import { TiArrowSortedDown } from "react-icons/ti";
+import Image from "next/image";
 
 const ButtonAuth = () => {
   const { data: session } = useSession();
@@ -24,7 +25,7 @@ const ButtonAuth = () => {
               />
               {session.user.image && (
                 <div className="w-8 h-8">
-                  <img
+                  <Image
                     src={session.user.image}
                     alt="Profile"
                     className="rounded-full w-full h-full object-cover"
