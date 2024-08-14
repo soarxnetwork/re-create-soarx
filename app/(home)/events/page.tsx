@@ -14,6 +14,7 @@ const EventsPage = async ({ searchParams }: SearchParamsType) => {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
   const events = await getAllEvents();
+
   return (
     <section className=" mt-14 mb-28">
       <EventPage events={events!} />

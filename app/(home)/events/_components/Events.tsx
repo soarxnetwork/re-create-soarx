@@ -20,6 +20,7 @@ const Events = ({
       href={`${decodeURI(slug!)}`}
       className="events-box aim-box dark:shadow-sm dark:shadow-purple-500"
       key={id}
+      prefetch={true}
     >
       <div>
         <Image
@@ -27,6 +28,7 @@ const Events = ({
           height={420}
           src={imageUrl}
           alt="Banner"
+          loading="lazy"
           className="img-responsive rounded-t-xl object-contain"
         />
       </div>
