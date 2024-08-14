@@ -141,6 +141,7 @@ const Header = ({ admin }: User) => {
                 <Link
                   className="md:hover:text-primaryPurple p-2"
                   href="/events"
+                  prefetch={true}
                 >
                   Events
                 </Link>
