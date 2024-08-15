@@ -63,7 +63,7 @@ const Header = ({ admin }: User) => {
                     : "rounded-lg"
                 }
               >
-                <Link className="hover:text-primaryPurple p-2" href="/events">
+                <Link className="hover:text-primaryPurple p-2" href="/events" prefetch={true}>
                   Events
                 </Link>
               </li>
@@ -141,6 +141,7 @@ const Header = ({ admin }: User) => {
                 <Link
                   className="md:hover:text-primaryPurple p-2"
                   href="/events"
+                  prefetch={true}
                 >
                   Events
                 </Link>
