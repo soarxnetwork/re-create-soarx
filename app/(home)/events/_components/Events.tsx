@@ -15,6 +15,7 @@ const Events = ({
   title,
   description,
 }: Event) => {
+  const mydescription = truncateWord(description, 60).replace("<p>", "");
   return (
     <Link
       href={`${decodeURI(slug!)}`}
@@ -34,7 +35,7 @@ const Events = ({
       </div>
       <div className="event-content break-words">
         <h2 className="text-2xl font-medium">{truncateWord(title, 49)}</h2>
-        <p className="pt-2 max-w-[336px] ">{truncateWord(description, 60)}</p>
+        <p className="pt-2 max-w-[336px] ">{mydescription}</p>
 
         <p className="pt-2 flex items-center gap-2 font-medium">
           <AiOutlineCalendar />
