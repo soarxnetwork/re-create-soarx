@@ -377,11 +377,10 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                   />
                 )}
 
-                <p className="text-base sm:text-large">
-                  <b>Register for the FREE Demo Class now!</b> <br /> <br />
+                <p className="text-base sm:text-large"> <br /> 
                   For more queries and event updates, join the SoarX Network on{" "}
                   <Link
-                    href="https://chat.whatsapp.com/Lo86odRitWe6EBSeXSAkrX"
+                    href="https://chat.whatsapp.com/FCwHXkhoOwaJkjlyzRq1RG"
                     className="text-green-500 text-large"
                     target="_blank"
                     rel="noopener noreferrer"
