@@ -17,13 +17,21 @@ export const isUserRegisteredWithEvent = async (
   userId: string
 ) => {
   try {
-    return !!(await db.registration.findFirst({
+    const userExist = await db.registration.findFirst({
       where: {
         eventId,
         userId,
       },
-    }));
+    });
+    console.log("Event id: ", eventId);
+    console.log("Userid: ", userId);
+    console.log("Is User Exits, ", userExist)
+    if(userExist?.id && userExist?.userId && userExist?.eventId && userExist?.registrationDate){
+      return true;
+    }
+    return false;
   } catch (err) {
     console.error(err);
+    return false;
   }
 };

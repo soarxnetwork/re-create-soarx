@@ -25,7 +25,7 @@ const ButtonAuth = () => {
               />
               {session.user.image && (
                 <div className="w-8 h-8">
-                  <Image
+                  <img
                     src={session.user.image}
                     alt="Profile"
                     className="rounded-full w-full h-full object-cover"
@@ -55,6 +55,7 @@ const ButtonAuth = () => {
                   href="/profile"
                   className="block px-4 py-2 lg:text-md md:text-white dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
                   role="menuitem"
+                  prefetch={true}
                 >
                   Profile
                 </Link>
