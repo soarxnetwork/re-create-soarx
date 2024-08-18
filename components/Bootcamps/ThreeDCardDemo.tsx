@@ -43,7 +43,7 @@ export function ThreeDCardDemo() {
           </CardItem> */}
           <Link href="/salesforce-pioneers">
             <CardItem translateZ={20} as="button" className="signInbut">
-              Enroll now
+              Enrollment Closed
             </CardItem>
           </Link>
         </div>

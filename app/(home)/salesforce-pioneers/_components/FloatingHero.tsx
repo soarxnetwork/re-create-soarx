@@ -62,13 +62,12 @@ const FloatingHero = () => {
               transition={Flip}
             />
               <div>
-                <Link href={'https://docs.google.com/forms/d/e/1FAIpQLScMvoF385hqd9KuKQGNKU_8yKZemFeLN5BoVF-6zYVxMqRFaw/viewform'} target="_blank">
                 <button
-                  // onClick={handleNotify}
+                disabled={true}
                   className=" signInbut hover:bg-purple-800 ease-in-out transition-all duration-300 w-full text-white px-2 font-medium rounded-xl"
                 >
-                  Enroll now
-                </button></Link>
+                  Enrollment Closed
+                </button>
               </div>
           </motion.div>
         )}
