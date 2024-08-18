@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Login_girl_image from "../../../public/images/login-page-girl.png";
+import Login_image from "../../../public/images/Version-control-amico.png";
 import SigninForm from "./_components/SigninForm";
 
 interface SignInPageProps {
@@ -12,10 +12,10 @@ interface SignInPageProps {
 const SignInPage = ({ searchParams }: SignInPageProps) => {
   return (
     <section className="py-4 mt-[120px] px-5 md:px-20">
-      <div className="lg:flex lg:flex-row lg:w-full gap-y-7">
+      <div className="lg:flex lg:flex-row lg:w-full gap-y-7 lg:px-[12%]">
         <div className="flex justify-center lg:w-1/2 lg:pb-36">
           <Image
-            src={Login_girl_image}
+            src={Login_image}
             height={500}
             width={500}
             alt="girl-image"
