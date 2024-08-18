@@ -19,6 +19,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
 import styles from "./Event.module.css";
+import { isUserRegisteredWithEvent } from "@/services/registration";
 interface User {
   id: string;
   username: string | null;
@@ -50,12 +51,13 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
   // console.log(users);
   useEffect(() => {
     const IsAlreadyRegistered = async () => {
-      if (!users[0]) {
+      // console.log("HIi")
+      if (!session?.user.id) {
         // toast.success("Please login to register for any event!");
       } else {
-        const res = await registEventById(event.id, users[0].id);
+        const res = await isUserRegisteredWithEvent(event.id, session?.user.id);
         // console.log(res);
-        setIsUserAlreadyRegistered(res?.alreadyRegistered || false);
+        setIsUserAlreadyRegistered(res || false);
       }
     };
     IsAlreadyRegistered();
@@ -137,6 +139,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
     toast.error("Event has been ended!!");
   }
 
+  // console.log("User Excits cleint", isUserAlreadyRegistered)
   return (
     <>
       <GoogleAdHeader />
@@ -298,71 +301,54 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               </div>
 
               <div className="flex justify-center mt-[4%] mb-[5%]">
-                {new Date() > event?.date && !isUserAlreadyRegistered ? (
-                  <button
-                    disabled
-                    onClick={EventEnded}
-                    className="text-left pl-4 text-wrap pr-2 font-medium dark:font-normal"
-                  >
-                    This event is not currently taking registrations. You may
-                    contact the host or join the Whatsapp Group.
-                  </button>
-                ) : (
-                 
-                  <div className="flex flex-col gap-y-5 w-full items-center">
-                    {new Date() > event?.date && isUserAlreadyRegistered ? (
-                      <div>
-                        <div>Thank You for Joining</div>
-                        <div>We hope you enjoyed the event!</div>
-                      </div>
-                    ) : new Date() < event?.date && !isUserAlreadyRegistered ? (
-                      <>
-                        {event?.redirectionwhileRegister == true ? (
-                            <>
-                              <div className="text-center text-wrap text-[1.1rem] px-2">
-                                Welcome! To join the event, please register
-                                below.
-                              </div>
-                              <div className="w-full flex justify-center">
-                                <Link href={event?.RedirectionLink} target="_blank">
-                                  <button
-                                    className="w-full Event-reg-button"
-                                  >
-                                    Redirect
-                                  </button>
-                                </Link>
-                              </div>
-                            </>
-                        ) : (
-                          <>
-                            <div className="text-center text-wrap text-[1.1rem] px-2">
-                              Welcome! To join the event, please register below.
-                            </div>
-                            <div className="w-full flex justify-center">
-                              <button
-                                onClick={RegisterUser}
-                                className="w-full Event-reg-button"
-                              >
-                                Register
-                              </button>
-                            </div>
-                          </>
-                        )}
-                      </>
-                    ) : (
-                      <div className="pr-4 text-left text-wrap w-full pl-4">
-                        <div className="text-2xl pb-2 font-semibold text-left text-wrap">
-                          You&apos;re In
-                        </div>
-                        <div className="text-base text-left text-wrap font-medium">
-                          A confirmation email has been sent to{" "}
-                          {users[0]?.email || "your Email"}.
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+  {new Date() > event?.date ? (
+    // Event has ended
+    !isUserAlreadyRegistered ? (
+      <button
+        disabled
+        onClick={EventEnded}
+        className="text-left pl-4 text-wrap pr-2 font-medium dark:font-normal"
+      >
+        This event is not currently taking registrations. You may contact the host or join the Whatsapp Group.
+      </button>
+    ) : (
+      <div className="flex flex-col gap-y-5 w-full items-center">
+        <div>Thank You for Joining</div>
+        <div>We hope you enjoyed the event!</div>
+      </div>
+    )
+  ) : (
+    // Event is upcoming
+    <div className="flex flex-col gap-y-5 w-full items-center">
+      {!isUserAlreadyRegistered ? (
+        <>
+          <div className="text-center text-wrap text-[1.1rem] px-2">
+            Welcome! To join the event, please register below.
+          </div>
+          <div className="w-full flex justify-center">
+            {event?.redirectionwhileRegister ? (
+              <Link href={event?.RedirectionLink} target="_blank">
+                <button className="w-full Event-reg-button">Redirect</button>
+              </Link>
+            ) : (
+              <button onClick={RegisterUser} className="w-full Event-reg-button">
+                Register
+              </button>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="pr-4 text-left text-wrap w-full pl-4">
+          <div className="text-2xl pb-2 font-semibold text-left text-wrap">You&apos;re In</div>
+          <div className="text-base text-left text-wrap font-medium">
+            A confirmation email has been sent to {session?.user.email || "your registered Email"}.
+          </div>
+        </div>
+      )}
+    </div>
+  )}
+</div>
+
             </div>
             <div className="xl:border-l-[3px] border-[#C2A1F4] border-dashed mt-10 xl:mr-28">
               <div className="lg:ml-[3%] font-semibold text-[#8919E4]  text-[20px]">
