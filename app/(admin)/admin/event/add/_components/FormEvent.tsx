@@ -32,7 +32,6 @@ interface LocationData {
 }
 
 const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
-  console.log("Event is: ", event);
   const pahname = usePathname();
   const editPath = pahname.includes("edit");
   const optToast = editPath
@@ -47,6 +46,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     useForm<EventSchema>({
       resolver: eventFormResolver,
       defaultValues: {
+        id: event?.id,
         creatorId: creatorId || event?.creatorId,
         home_description: event?.home_description || "",
         description: event?.description || "",
@@ -71,7 +71,7 @@ const FormEvent = ({ creatorId, event, action }: FormEventProps) => {
     });
 
   const onSubmit = (data: EventSchema) => {
-    // console.log("The data is: ", data);
+   
     if (Location.location === "Online" && !data.meeturl) {
       toast.error("Meeting Link is required");
       return;
