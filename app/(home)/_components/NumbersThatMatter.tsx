@@ -7,7 +7,7 @@ import { BsMap } from "react-icons/bs";
 function NumbersThatMatter() {
   const data = [
     {
-      title: "4500+",
+      title: "10000+",
       desc: "Community Members",
     },
     {

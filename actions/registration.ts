@@ -4,9 +4,10 @@ import { isUserRegisteredWithEvent } from "@/services/registration";
 export const registEventById = async (eventId: string, userId: string) => {
   try {
     const userExist = await isUserRegisteredWithEvent(eventId, userId);
-    if (userExist) {
+    console.log("User Already Registered: ", userExist)
+    if (userExist === true) {
       return {
-        message: `You already registered this event!`,
+        message: `You already registered for this event!`,
         error: true,
         alreadyRegistered: true,
       };
