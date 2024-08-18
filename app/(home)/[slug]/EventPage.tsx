@@ -224,7 +224,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                   {String(users.length)}{" "}
                   {new Date() > event?.date ? <>Attended</> : <>Going</>}
                 </div>
-                <div className="pt-4">
+                <div className="pt-4 hidden xl:block">
                   {" "}
                   <ProfileCircles users={users} />{" "}
                 </div>{" "}
@@ -388,11 +388,11 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
             </div>
             <div className="pt-8 pl-4 pr-4 font-medium pb-2">
               <p className="pb-3 text-[14px] block xl:hidden">Hosted By</p>
-              <hr className="border-1 dark:border-gray-700 border-gray-300 block xl:hidden" />
+              <hr className="border-1 border-gray-700  block xl:hidden" />
               <div className="xl:hidden justify-between pt-4 flex">
                 <div className="flex items-center gap-x-3 ">
                   <p
-                    className={`border-1  ${
+                    className={` ${
                       event.hostImage ? "flex" : "hidden"
                     }`}
                   >
@@ -407,7 +407,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                     )}
                   </p>
                   <p
-                    className={`border-1 rounded-3xl bg-gray-100 ${
+                    className={`rounded-3xl  ${
                       !event.hostImage ? "flex" : "hidden"
                     }`}
                   >
@@ -452,7 +452,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                   {String(users.length)}{" "}
                   {new Date() > event?.date ? <>Attended</> : <>Going</>}
                 </div>
-                <div className="pt-4">
+                <div className="pt-4 block xl:hidden">
                   {" "}
                   <ProfileCircles users={users} />{" "}
                 </div>{" "}
