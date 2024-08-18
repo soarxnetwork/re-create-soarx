@@ -66,7 +66,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
 
     const timer = setTimeout(() => {
       IsAlreadyRegistered();
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 500); // 2000 milliseconds = 2 seconds
 
     // Cleanup the timeout if the component unmounts before the timeout completes
     return () => clearTimeout(timer);
