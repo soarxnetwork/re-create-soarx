@@ -55,7 +55,7 @@ const Events = ({ events }: EventProps) => {
                     <AiOutlineCalendar />
                     {formatDate(e.date)}
                   </p>
-                  <button className="events-button">
+                  <button className="events-button hidden sm:block">
                     <div className="button-box text-2xl text-[#c5c7ca]">
                       <span className="button-elem">
                         <MdArrowOutward />

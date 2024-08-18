@@ -19,7 +19,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
 import styles from "./Event.module.css";
-import { isUserRegisteredWithEvent } from "@/services/registration";
+import { CheckUserAlreadyRegistered, isUserRegisteredWithEvent } from "@/services/registration";
 interface User {
   id: string;
   username: string | null;
@@ -51,17 +51,24 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
   // console.log(users);
   useEffect(() => {
     const IsAlreadyRegistered = async () => {
-      // console.log("HIi")
+      // console.log("Session is: ", session?.user);
+      // console.log("Event Id is: ", event.id)
       if (!session?.user.id) {
         // toast.success("Please login to register for any event!");
       } else {
-        const res = await isUserRegisteredWithEvent(event.id, session?.user.id);
-        // console.log(res);
-        setIsUserAlreadyRegistered(res || false);
+        const res = await CheckUserAlreadyRegistered(event.id, session?.user.id);
+        // console.log("The response is: ", res);
+        setIsUserAlreadyRegistered(res.status || false);
       }
     };
-    IsAlreadyRegistered();
-  }, []);
+
+    const timer = setTimeout(() => {
+      IsAlreadyRegistered();
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+    // Cleanup the timeout if the component unmounts before the timeout completes
+    return () => clearTimeout(timer);
+  }, [session, event]);
 
   // console.log(session)
   async function RegisterUser() {
