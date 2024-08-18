@@ -4,7 +4,7 @@ import { activationTemplate } from "../emailTemplates";
 interface SendMailProps {
   to: string;
   subject: string;
-  body: string;
+  body: any;
 }
 
 export const sendMail = async ({ to, subject, body }: SendMailProps) => {
