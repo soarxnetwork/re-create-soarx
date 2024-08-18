@@ -2,6 +2,8 @@ import EventPage from './EventPage';
 import { getEventBySlug } from '@/services/events';
 import { getUsersRegisteredForEvent } from '@/actions/registration';
 import NotFound from '@/app/not-found';
+import { useSession } from "next-auth/react";
+
 
 async function fetchData(slug: string) {
   const eventData = await getEventBySlug(slug);
@@ -37,7 +39,7 @@ const users: User[] = response.data || [];
 
   return (
     <div className='ml-4 pr-4 xl:ml-36 xl:pr-32'>
-      <EventPage event={eventData} users={users} />
+      <EventPage event={eventData} users={users}/>
     </div>
   )
   }
