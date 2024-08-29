@@ -403,7 +403,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                 About Event
                 <hr className="dark:border-gray-600 border-gray-300 mt-3" />
               </div>
-              <article className="mt-5 ml-3 mr-3 text-wrap ">
+              <article className="mt-5 ml-3 mr-3 text-wrap text-lg">
                 {event.description && (
                   <div
                     className={styles.dynamicContent}
@@ -411,7 +411,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                   />
                 )}
 
-                <p className="text-base sm:text-large"> <br /> 
+                <p className="text-lg">
                   For more queries and event updates, join the SoarX Network on{" "}
                   <Link
                     href="https://chat.whatsapp.com/FCwHXkhoOwaJkjlyzRq1RG"
