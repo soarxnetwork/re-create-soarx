@@ -75,6 +75,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
   // console.log(session)
   async function RegisterUser() {
     if (!session) {
+      router.push("/sign-in");
       toast.success("Please login to register for any event!");
     } else if (
       !session.user.id ||
