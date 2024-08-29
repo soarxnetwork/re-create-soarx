@@ -11,7 +11,6 @@ import { FaInstagram } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import ProfileCircles from "./ProfileCircles";
-import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/navigation";
 import GoogleAdHeader from "@/components/googleAds";
 import Link from "next/link";
@@ -20,6 +19,9 @@ import { ImWhatsapp } from "react-icons/im";
 import { GrSubtractCircle } from "react-icons/gr";
 import styles from "./Event.module.css";
 import { CheckUserAlreadyRegistered, isUserRegisteredWithEvent } from "@/services/registration";
+import { sendEmail } from "@/lib/utils";
+import { compileRegistrationTemplate } from "@/lib/emailTemplates";
+
 interface User {
   id: string;
   username: string | null;
@@ -89,9 +91,48 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
       router.push("/profile");
     } else {
       const res = await registEventById(event.id, session.user.id);
-      res?.error
-        ? toast.error(res.message)
-        : (setIsUserAlreadyRegistered(true), toast.success(res?.message));
+      if (res?.error) {
+        console.error(res.message);
+        toast.error("Please contact the host to register for the event!");
+      } else {
+        const data = {
+          title: event.title,
+          month: Month[event.date.getMonth()],
+          date: event.date.getDate().toString(),
+          day: new Date(event.date).toLocaleDateString("en-IN", {
+            weekday: "long",
+          }),
+          Full_Month: FullMonth[event.date.getMonth()],
+          start_time: convertTo12HourFormat(event.startTime),
+          end_time: convertTo12HourFormat(event.endTime),
+          event_page_url: `${location.origin}/${event.slug}`,
+        };
+        // console.log(data);
+
+        const emailBody = await compileRegistrationTemplate(data);
+
+        // Send the email
+
+        sendEmail(
+          session.user.email,
+          `Registration Confirmed for the Event "${event.title}"`,
+          emailBody
+        )
+          .then((response) => {
+            console.log("Registration confirmation email sent successfully!");
+            toast.success("Registration confirmation email sent successfully!");
+          })
+          .catch((error) => {
+            toast.error("Error sending registration confirmation email");
+            console.error(
+              "Error sending registration confirmation email:",
+              error
+            );
+          });
+
+        setIsUserAlreadyRegistered(true);
+        toast.success("Registered Successfully!");
+      }
     }
   }
 

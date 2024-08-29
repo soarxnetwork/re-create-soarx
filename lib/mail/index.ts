@@ -1,34 +1,55 @@
+"use server";
 import nodemailer from "nodemailer";
 import Handlebars from "handlebars";
 import { activationTemplate } from "../emailTemplates";
-interface sendMailProps {
+import { revalidatePath } from "next/cache";
+interface SendMailProps {
   to: string;
   subject: string;
-  body: string;
+  body: any;
 }
-export const sendMail = async ({ to, subject, body }: sendMailProps) => {
-  const { SMPT_EMAIL, SMTP_PASS } = process.env;
+
+export const sendMail = async ({ to, subject, body }: SendMailProps) => {
+  const { SMTP_EMAIL, SMTP_PASS } = process.env;
+
+  if (!SMTP_EMAIL || !SMTP_PASS) {
+    console.log('SMTP_EMAIL or SMTP_PASS environment variables are not set');
+    throw new Error('SMTP_EMAIL or SMTP_PASS environment variables are not set');
+  }
+
   const transport = nodemailer.createTransport({
-    service: "gmail",
+    host: 'smtp.mailgun.org',  // Replace with your SMTP server
+    port: 587,
+    secure: false,  // Use TLS
     auth: {
-      user: SMPT_EMAIL,
+      user: SMTP_EMAIL,
       pass: SMTP_PASS,
     },
   });
 
-  try {
-    const sendResult = await transport.sendMail({
-      from: SMPT_EMAIL,
+  revalidatePath("/");
+
+    await transport.sendMail({
+      from: "team@soarx.tech", // Sender address
       to,
       subject,
       html: body,
-    });
-  } catch (error) {
-    console.log(error);
+    }).then((info) => {
+      // console.log("In index file for sending mail")
+      return { status: 200, message: "Email sent successfully!" };
+    }
+    )
+    .catch((error) => {
+      console.log(error);
+      throw new Error("Email sending failed!");
+    }
+    );
   }
-};
 
-export const compileActivationTemplate = (name: string, url: string) => {
+
+
+
+export const compileActivationTemplate = async (name: string, url: string) => {
   const template = Handlebars.compile(activationTemplate);
   const htmlBody = template({
     name,
@@ -36,7 +57,7 @@ export const compileActivationTemplate = (name: string, url: string) => {
   });
   return htmlBody;
 };
-export const compileResetPasswordTemplate = (name: string, url: string) => {
+export const compileResetPasswordTemplate =  async (name: string, url: string) => {
   const template = Handlebars.compile(activationTemplate);
   const htmlBody = template({
     name,

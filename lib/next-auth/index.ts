@@ -4,7 +4,8 @@ import bcrypt from "bcrypt";
 import NextAuth from "next-auth/next";
 import { User } from "@prisma/client";
 import { signJwt } from "@/lib/jwt";
-import { compileActivationTemplate, sendMail } from "@/lib/mail";
+import { compileActivationTemplate } from "../mail";
+import { sendEmail } from "../utils";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { AuthOptions } from "next-auth";
@@ -80,11 +81,7 @@ export const authOptions: AuthOptions = {
           });
           const activationUrl = `${process.env.NEXTAUTH_URL}/activation/${jwtUserId}`;
           const body = compileActivationTemplate(user.username!, activationUrl);
-          await sendMail({
-            to: user.email!,
-            subject: "Activate your account",
-            body,
-          });
+          await sendEmail(user.email!,"Activate your account", body);
           throw new Error("Please check your email to activate your account");
         }
 
