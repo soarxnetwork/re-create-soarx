@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 import SearchArea from "./_components/SearchArea";
 import RecentJobs from "./_components/RecentJobs";
 import JobCategory from "./_components/Catergory";
+import Card from "./_components/JobSections/Right/components/Card";
 
 const Jobs = () => {
   const { data: session } = useSession();
@@ -17,7 +18,19 @@ const Jobs = () => {
   const toast = useRef<any>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [worktypeFilter, setWorkTypeFilter] = useState("");
-  
+  const bgColors = [
+    'bg-[#ef9a9a]',  // Light Red
+    'bg-[#90caf9]',  // Light Blue
+    'bg-[#a5d6a7]',  // Light Green
+    'bg-[#ffe082]',  // Light Yellow
+    'bg-[#ffccbc]',  // Light Orange
+    'bg-[#b39ddb]',  // Light Purple
+    'bg-[#ffab91]',  // Light Coral
+    'bg-[#80cbc4]',  // Light Teal
+    'bg-[#f48fb1]',  // Light Pink
+    'bg-[#e6ee9c]'   // Light Lime
+  ];
+
 
   useEffect(() => {
     const res = async () => {
@@ -39,7 +52,43 @@ const Jobs = () => {
     res();
   }, []);
 
-  if (isLoading) {
+
+
+  function JobfilterFunction(job: any) {
+    if (
+      job?.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job?.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job?.jobRole.toLowerCase().includes(searchQuery.toLowerCase())
+    ) {
+      if (
+        worktypeFilter !== "" &&
+        job?.jobRole.toLowerCase().includes(worktypeFilter.toLowerCase())
+      ) {
+        return true;
+      } else if (worktypeFilter === "" && searchQuery === "") {
+        return true;
+      } else if (searchQuery !== "" && worktypeFilter === "") {
+        return true;
+      } else if (worktypeFilter !== "") {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  const filteredJobs = jobs.filter((job: any) => JobfilterFunction(job));
+
+  const handleSearch = (query: any) => {
+    setSearchQuery(query);
+  };
+  const handleFilters = (data: any) => {
+    console.log(data ? true : false);
+
+    setWorkTypeFilter(data);
+  };
+
+  if (isLoading || !jobs) {
     return (
       <div className="h-[700px] w-full overflow-hidden flex items-center justify-center">
         <Spinner color="secondary" labelColor="secondary" />
@@ -47,52 +96,18 @@ const Jobs = () => {
     );
   }
 
-  function JobfilterFunction(job : any) {
-    if(
-      job?.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      job?.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      job?.jobRole.toLowerCase().includes(searchQuery.toLowerCase()) 
-    )
-    {
-      if((worktypeFilter !== "" && job?.jobRole.toLowerCase().includes(worktypeFilter.toLowerCase()))){
-        return true;
-      }
-      else if( worktypeFilter === "" && searchQuery === ""){
-        return true;
-      }
-      else if(searchQuery !== "" && worktypeFilter === ""){
-        return true;
-      }
-      else if(worktypeFilter !== ""){
-        return false;
-      }
-    }
-    else{
-      return false;
-    }
-  }
-
-  const filteredJobs = jobs.filter((job : any) => JobfilterFunction(job));
-  
-  const handleSearch = (query : any) => {
-    setSearchQuery(query);
-  };
-  const handleFilters = (data : any) =>{
-    console.log(data ? true : false)
-
-    setWorkTypeFilter(data)
-  }
   return (
     <>
   <Toast ref={toast} />
-  <div className="xl:ml-44 hide-vertical-scrollbar xl:mr-24 mt-28 overflow-x-hidden xl:flex xl:gap-x-10 lg:h-[calc(200vh)] ml-5 mr-5 mb-14 lg:mb-0"> 
-    <div className="max-w-fit w-full  xl:w-7/12 sm:ml-20 md:ml-36 lg:ml-0 lg:grid grid-cols-2 gap-x-5 xl:grid-cols-1">
-      {filteredJobs.map((e: any) => <JobCardTwo key={e.id} {...e} />)}
-    </div>
-    <div className="w-full xl:w-5/12 xl:ml-2 space-y-4  sticky top-0 right-0 h-full"> 
-      <SearchArea onSearch={handleSearch} onSearchFilter={handleFilters} />
-      <RecentJobs />
-      <JobCategory />
+  <div className="mb-20 w-full flex flex-col md:justify-center  md:flex-row">
+    {/* Sidebar */}
+    {/* <div className="md:w-1/4 mt-36  w-full bg-red-900 h-40 md:h-auto md:sticky top-36">Hii</div> */}
+
+    {/* Card Section */}
+    <div className="md:w-3/4 pt-36 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      {filteredJobs.map((e: any) => (
+        <Card key={e.id} {...e} cardBg={bgColors[Math.floor(Math.random() * bgColors.length)]}/>
+      ))}
     </div>
   </div>
 </>
@@ -101,3 +116,4 @@ const Jobs = () => {
 };
 
 export default Jobs;
+// overflow-y-auto
