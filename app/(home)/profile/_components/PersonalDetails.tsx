@@ -113,10 +113,12 @@ const PersonalDetails: React.FC<Props> = ({
           profession: data.profession,
       }
     })
-    // console.log(session) 
-    if(isEventPath){
-      router.push(isEventPath); 
-    }
+    // console.log(session)
+
+    // if(isEventPath){
+    //   router.push(isEventPath); 
+    // }
+    
     // console.log(session);
     // toast.success("Profile Updated Successfully");
     // handleShowForm();
