@@ -30,6 +30,7 @@ export async function sendEmail(
     });
 
     if (response.ok) {
+      // console.log("In utils file success")
       return { status: 200, message: "Email sent successfully!" };
     } else {
       throw new Error("Email sending failed!");

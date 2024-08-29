@@ -1,12 +1,15 @@
+"use server";
 import { sendMail } from "@/lib/mail";
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
     const { to, subject , body } = await req.json();
-
+    revalidatePath("/");
     await sendMail({to : to, subject : subject, body : body})
       .then((response) => {
+        // console.log("In send mail server");
           return NextResponse.json(
             { message: response },
             { status: 200 }

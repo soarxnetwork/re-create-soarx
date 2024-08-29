@@ -107,7 +107,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
           end_time: convertTo12HourFormat(event.endTime),
           event_page_url: `${location.origin}/${event.slug}`,
         };
-        console.log(data);
+        // console.log(data);
 
         const emailBody = await compileRegistrationTemplate(data);
 

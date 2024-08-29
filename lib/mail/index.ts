@@ -1,6 +1,8 @@
+"use server";
 import nodemailer from "nodemailer";
 import Handlebars from "handlebars";
 import { activationTemplate } from "../emailTemplates";
+import { revalidatePath } from "next/cache";
 interface SendMailProps {
   to: string;
   subject: string;
@@ -25,12 +27,15 @@ export const sendMail = async ({ to, subject, body }: SendMailProps) => {
     },
   });
 
+  revalidatePath("/");
+
     await transport.sendMail({
       from: "team@soarx.tech", // Sender address
       to,
       subject,
       html: body,
     }).then((info) => {
+      // console.log("In index file for sending mail")
       return { status: 200, message: "Email sent successfully!" };
     }
     )
