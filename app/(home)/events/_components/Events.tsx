@@ -1,3 +1,4 @@
+"use client";
 import { formatDate } from "@/utils/formatDate";
 import { truncateWord } from "@/utils/truncateWord";
 import { Event } from "@prisma/client";
