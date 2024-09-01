@@ -14,8 +14,9 @@ const Events = ({
   date,
   title,
   description,
+  home_description
 }: Event) => {
-  const mydescription = truncateWord(description, 60).replace("<p>", "");
+  const mydescription = truncateWord(home_description!, 60).replace("<p>", "");
   return (
     <Link
       href={`${decodeURI(slug!)}`}
