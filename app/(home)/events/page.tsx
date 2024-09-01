@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Events from "../_components/Events";
 import { getAllEvents } from "@/services/events";
