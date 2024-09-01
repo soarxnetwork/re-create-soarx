@@ -40,7 +40,7 @@ const Events = ({
 
         <p className="pt-2 flex items-center gap-2 font-medium">
           <AiOutlineCalendar />
-          {formatDate(date)}
+          {formatDate(date)}  
         </p>
         {/* <div className="flex items-center gap-3">
                       <Link href={`/${eventSlug}`}>
