@@ -45,7 +45,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
     },
   });
 
-  const onSubmit = (data: signinType) => {
+  const onSubmit =  (data: signinType) => {
     startTransition(() => {
       signIn("credentials", {
         redirect: false,
