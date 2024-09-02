@@ -166,7 +166,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
         </div>
 
         <div className="mb-4">
-          <Link href={"/terms"} className="flex pl-4 items-center gap-x-3">
+          <div className="flex pl-4 items-center gap-x-3">
             <p>
               <input
                 type="checkbox"
@@ -175,10 +175,13 @@ const SignupForm = ({ users }: SignupFormProps) => {
                 className="mt-2"
               />
             </p>
-            <label htmlFor="accept" className="">
-              Terms & Conditions
-            </label>
-          </Link>
+            <Link href={"/terms"}>
+              {" "}
+              <label htmlFor="accept" className="hover:cursor-pointer">
+                Terms & Conditions
+              </label>
+            </Link>
+          </div>
         </div>
         {errors.accept && <p className="">{errors.accept.message}</p>}
 

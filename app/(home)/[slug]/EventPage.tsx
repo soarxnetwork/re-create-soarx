@@ -66,11 +66,13 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
 
     const timer = setTimeout(() => {
       IsAlreadyRegistered();
-    }, 500); // 2000 milliseconds = 2 seconds
+    }, 500); 
 
     // Cleanup the timeout if the component unmounts before the timeout completes
     return () => clearTimeout(timer);
   }, [session, event]);
+
+  // console.log(event)
 
   // console.log(session)
   async function RegisterUser() {
@@ -106,7 +108,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
           Full_Month: FullMonth[event.date.getMonth()],
           start_time: convertTo12HourFormat(event.startTime),
           end_time: convertTo12HourFormat(event.endTime),
-          event_page_url: `${location.origin}/${event.slug}`,
+          event_page_url: event.location === "Online" ? event.meeturl : `${location.origin}/${event.slug}`,
         };
         // console.log(data);
 
@@ -262,11 +264,11 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
 
             {users.length > 3 ? (
               <>
-                <div className="pt-6 hidden xl:block font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
+                <div className="pt-6 pl-4 hidden xl:block font-semibold text-[14px] border-b-2 dark:border-gray-700 border-gray-300 pb-2  ml-3 mr-3">
                   {String(users.length)}{" "}
                   {new Date() > event?.date ? <>Attended</> : <>Going</>}
                 </div>
-                <div className="pt-4 hidden xl:block">
+                <div className="pt-4 pl-3 hidden xl:block">
                   {" "}
                   <ProfileCircles users={users} />{" "}
                 </div>{" "}
@@ -429,7 +431,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
               </article>
             </div>
             <div className="pt-8 pl-4 pr-4 font-medium pb-2">
-              <p className="pb-3 text-[14px] block xl:hidden">Hosted By</p>
+              <p className="pb-3 text-[14px] block font-semibold xl:hidden">Hosted By</p>
               <hr className="border-1 border-gray-700  block xl:hidden" />
               <div className="xl:hidden justify-between pt-4 flex">
                 <div className="flex items-center gap-x-3 ">
@@ -490,11 +492,11 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
             </div>
             {users.length > 3 ? (
               <>
-                <div className="pt-6 block xl:hidden font-semibold text-[14px] border-b-[1px] border-[#a8a8a8] pb-2">
+                <div className="pt-6 pl-1 block xl:hidden font-semibold text-[14px] border-b-2 border-gray-700  pb-2  ml-3 mr-3">
                   {String(users.length)}{" "}
                   {new Date() > event?.date ? <>Attended</> : <>Going</>}
                 </div>
-                <div className="pt-4 block xl:hidden">
+                <div className="pt-4 pl-4 block xl:hidden">
                   {" "}
                   <ProfileCircles users={users} />{" "}
                 </div>{" "}
