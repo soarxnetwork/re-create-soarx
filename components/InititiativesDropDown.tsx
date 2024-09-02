@@ -92,8 +92,8 @@ const InitiativesDropdown = () => {
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
               <p className="flex items-center gap-x-3 text-2xl">
-              <FaPython size={24}/>
-                <span className="text-2xl">5 Days Python Bootcamp</span>
+              <FaPython size={24} className="text-white"/>
+                <span className="text-2xl text-white">5 Days Python Bootcamp</span>
               </p>
             </Link>
           </li>
@@ -104,8 +104,8 @@ const InitiativesDropdown = () => {
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
               <p className="flex  items-center gap-x-3 text-2xl">
-              <FaSalesforce size={24}/>
-                <span className="text-2xl">Salesforce Training Program</span>
+              <FaSalesforce size={24} className="text-white"/>
+                <span className="text-2xl text-white">Salesforce Training Program</span>
               </p>
             </Link>
           </li>
