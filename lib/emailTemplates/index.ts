@@ -530,7 +530,7 @@ export const defaultRegistrationTemplate = `
           <tr>
             <td style="direction: ltr; font-size: 0px; padding: 0 16px; text-align: center;"><!-- [if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="" style="" ><![endif]-->
               <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; text-align: left; color: #131517;">
-                <a href="https://lu.ma/create?ref=email" style="font-size: 12px; color: #b3b5b7; text-decoration: none !important; padding: 2px;">Host your event with SoarX ↗</a>
+                <a href="https://www.soarx.tech" style="font-size: 12px; color: #b3b5b7; text-decoration: none !important; padding: 2px;">Host your event with SoarX ↗</a>
               </div>
 <!-- [if mso | IE]></td></tr></table><![endif]-->
             </td>
