@@ -48,7 +48,7 @@ export const updateAdminPermission = async ({
 export const registerUser = async (user: signUpType) => {
   try {
     const { accept, confirmPassword, password, ...rest } = user;
-
+    revalidatePath("/sign-up");
     const existingUser = await db.user.findUnique({
       where: {
         email: rest.email,
@@ -69,8 +69,7 @@ export const registerUser = async (user: signUpType) => {
     });
 
     const activationUrl = `${process.env.NEXTAUTH_URL}/activation/${jwtUserId}`;
-    const body = compileActivationTemplate(newUser.username!, activationUrl);
-
+    const body = await compileActivationTemplate(newUser.username!, activationUrl);
     await sendMail({
       to: newUser.email!,
       subject: "Activate your account",
@@ -119,7 +118,7 @@ export const forgotPassword = async (email: string) => {
     userId: user.id,
   });
   const resetPassUrl = `${process.env.NEXTAUTH_URL}/reset-password/${jwtUserId}`;
-  const body = compileResetPasswordTemplate(user.username!, resetPassUrl);
+  const body = await compileResetPasswordTemplate(user.username!, resetPassUrl);
   const sendResult = await sendMail({
     to: user.email!,
     subject: "Reset your password",
