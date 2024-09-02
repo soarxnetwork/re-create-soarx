@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { cn } from "@/lib/utils";
@@ -8,13 +8,28 @@ import { FaPython, FaSalesforce } from "react-icons/fa";
 const InitiativesDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleClickOutside = (event: any) => {
+    // @ts-ignore
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-full z-50 dark:text-white">
+    <div ref={dropdownRef} className="relative w-full z-50 dark:text-white">
       <button
         onClick={toggleDropdown}
         onMouseEnter={() => setHovered(true)}
@@ -85,31 +100,34 @@ const InitiativesDropdown = () => {
               </p>
             </Link>
           </li> */}
-            {/* <hr /> */}
+          {/* <hr /> */}
           <li>
             <Link
               href="/python-bootcamp"
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
               <p className="flex items-center gap-x-3 text-2xl">
-              <FaPython size={24}/>
-                <span className="text-2xl">5 Days Python Bootcamp</span>
+                <FaPython size={24} className="text-white " />
+                <span className="text-2xl text-white">
+                  5 Days Python Bootcamp
+                </span>
               </p>
             </Link>
           </li>
-            <hr />
+          <hr />
           <li>
             <Link
               href="/salesforce-pioneers"
               className="block px-4 py-2 md:hover:text-primaryPurple"
             >
               <p className="flex  items-center gap-x-3 text-2xl">
-              <FaSalesforce size={24}/>
-                <span className="text-2xl">Salesforce Training Program</span>
+                <FaSalesforce size={24} className="text-white" />
+                <span className="text-2xl text-white">
+                  Salesforce Training Program
+                </span>
               </p>
             </Link>
           </li>
-
         </ul>
       )}
     </div>
