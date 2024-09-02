@@ -10,7 +10,6 @@ const ButtonAuth = () => {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   // console.log(session);
-  
   return (
     <>
     <div className="relative w-full">
@@ -38,7 +37,7 @@ const ButtonAuth = () => {
 
           {isOpen && (
             <div
-              className="absolute right-0 w-56 mt-6 dark:shadow-xl bg-[#9335e0] dark:shadow-black  origin-top-right  rounded-md shadow-lg ring-1 ring-black   ring-opacity-5 focus:outline-none transform transition duration-200 ease-in-out opacity-0 translate-y-2"
+              className="absolute right-0 w-56 mt-6 dark:shadow-xl bg-[#9335e0] dark:shadow-black  origin-top-right  rounded-md shadow-lg ring-1 ring-black dark:bg-gray-800  ring-opacity-5 focus:outline-none transform transition duration-200 ease-in-out opacity-0 translate-y-2"
              
               style={{
                 animation: isOpen
@@ -54,7 +53,7 @@ const ButtonAuth = () => {
               >
                 <Link
                   href="/profile"
-                  className="block px-4 py-2 lg:text-md border-b-1 border-white text-white dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
+                  className="block px-4 py-2 lg:text-md text-white border-white border-b-2 dark:border-black  dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
                   role="menuitem"
                   prefetch={true}
                 >
