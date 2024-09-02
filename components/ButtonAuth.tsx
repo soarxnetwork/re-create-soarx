@@ -53,7 +53,7 @@ const ButtonAuth = () => {
               >
                 <Link
                   href="/profile"
-                  className="block px-4 py-2 lg:text-md md:text-white dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
+                  className="block px-4 py-2 lg:text-md text-white border-white border-b-2 dark:border-black  dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
                   role="menuitem"
                   prefetch={true}
                 >
@@ -61,7 +61,7 @@ const ButtonAuth = () => {
                 </Link>
                 <button
                   onClick={() => signOut()}
-                  className="block w-full text-left px-4 md:text-white  py-2 lg:text-md  dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
+                  className="block w-full text-left px-4 text-white  py-2 lg:text-md  dark:hover:bg-gray-900 hover:bg-purple-500 font-medium"
                   role="menuitem"
                 >
                   Logout

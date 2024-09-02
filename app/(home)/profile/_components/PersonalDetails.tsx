@@ -39,7 +39,7 @@ const PersonalDetails: React.FC<Props> = ({
   const {data: session, update} = useSession(); 
   const [isPending, startTransition] = useTransition();
   const [selectedCountry, setSelectedCountry] = useState<any>([]);
-  const [isReadOnly, setIsReadOnly] = useState(true);
+  // const [isReadOnly, setIsReadOnly] = useState(true);
   const [selectedGender, setSelectedGender] = useState<any>([]);
   const [selectedProfession, setSelectedProfession] = useState<any>([]);
   const [isEventPath, setIsEventPath] = useState<any>("");
@@ -78,7 +78,7 @@ const PersonalDetails: React.FC<Props> = ({
 
 
   const onSubmit = async (data: userSchemaProps) => {
-    setIsReadOnly(true);
+    // setIsReadOnly(true);
     data.gender = selectedGender.label || gender || "";
     data.country = selectedCountry.label || country || "";
     data.profession = selectedProfession.label || profession || "";
@@ -384,12 +384,10 @@ const PersonalDetails: React.FC<Props> = ({
                 <Input
                 size="lg"
                   type="text"
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   {...register("username")}
                   className={`rounded-lg mt-2  w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                    "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                   placeholder="Ex: Mayank Arora"
                 />
@@ -407,12 +405,10 @@ const PersonalDetails: React.FC<Props> = ({
                 <Input
                   type="tel"
                   size="lg"
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   {...register("phone")}
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                   placeholder="Enter your phone number"
                 />
@@ -428,14 +424,12 @@ const PersonalDetails: React.FC<Props> = ({
                   College/Organization <span className="text-red-400">*</span>
                 </span>
                 <Input
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   {...register("college")}
                   type="text"
                   size="lg"
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                   placeholder="Enter your college name"
                 />
@@ -451,14 +445,12 @@ const PersonalDetails: React.FC<Props> = ({
                   City <span className="text-red-400">*</span>
                 </span>
                 <Input
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   size="lg"
                   {...register("city")}
                   type="text"
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                   placeholder="Ex: Bengaluru"
                 />
@@ -475,13 +467,11 @@ const PersonalDetails: React.FC<Props> = ({
                 </span>
                 <Select
                   //   readOnly={isReadOnly}
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   label={gender || "Select your Gender"}
                   onChange={handleChangegender}
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                 >
                   {userGender.map((gen, index) => (
@@ -497,13 +487,11 @@ const PersonalDetails: React.FC<Props> = ({
                   Country <span className="text-red-400">*</span>
                 </span>
                 <Select
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   label={country || "Select your Country"}
                   onChange={handleChangeCountry}
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                 >
                   {countries.map((co, index) => (
@@ -519,13 +507,11 @@ const PersonalDetails: React.FC<Props> = ({
                   Profession <span className="text-red-400">*</span>
                 </span>
                 <Select
-                  isDisabled={isReadOnly}
+                  // isDisabled={isReadOnly}
                   label={profession || "Select a Profession"}
                   onChange={handleChangeProfession}
                   className={`rounded-lg mt-2 w-full   ${
-                    isReadOnly
-                      ? "outline-none dark:text-gray-600 text-gray-500  dark:bg-[rgba(0, 0, 0, 0)] border-0 border-gray-600 dark:bg-[#27272a] bg-gray-100"
-                      : "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
+                     "dark:bg-[#27272a] border border-gray-300 bg-[#f4f4f5] focus:outline focus:ring-2 focus:ring-blue-500"
                   }`}
                 >
                   {Professions.map((pro, index) => (
@@ -553,16 +539,16 @@ const PersonalDetails: React.FC<Props> = ({
           </div>
 
           <div className="mt-6">
-            <button
+            {/* <button
               className={`min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 bg-purple-700 hover:bg-purple-900 ${isReadOnly == false ? "hidden" : "block"}`}
               type="button"
               onClick={() => setIsReadOnly(!isReadOnly)}
             >
               Edit
-            </button>
+            </button> */}
 
             <button
-              className={`min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 signInbut ${isReadOnly == true ? "hidden" : "block"}`}
+              className={`min-w-[90px] font-semibold py-2 px-4 rounded-lg text-white focus:outline-none focus:ring-2 transition duration-300 signInbut block`}
               disabled={isPending}
               type="submit"
               onClick={() => {
