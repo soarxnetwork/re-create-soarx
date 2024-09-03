@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { registerUser } from "@/actions/user";
 import { User } from "@prisma/client";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import GoogleLogo from "../../../../public/images/google-logo.png";
 import { signIn } from "next-auth/react";
@@ -47,6 +47,7 @@ interface SignupFormProps {
 
 const SignupForm = ({ users }: SignupFormProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
@@ -70,7 +71,19 @@ const SignupForm = ({ users }: SignupFormProps) => {
     },
   });
 
+  const redirectUrl = decodeURIComponent(
+    searchParams.get("redirect") as string
+  );
+
   const { email } = watch();
+
+  const callBack = redirectUrl ? redirectUrl : "/";
+
+  const handleSignIn = async () => {
+    await signIn("google", {
+      callbackUrl: `http://localhost:3000/${callBack}`, // Redirect URL after sign-in
+    });
+  };
 
   const onSubmit = (data: signUpType) => {
     startTransition(() => {
@@ -81,7 +94,11 @@ const SignupForm = ({ users }: SignupFormProps) => {
           if (data?.error) return toast.error(data?.error);
 
           toast.success("Please check your email to activate your account");
-          router.push("/sign-in");
+          if (redirectUrl) {
+            router.push(`/sign-in?redirect=${redirectUrl}`);
+          } else {
+            router.push("/sign-in");
+          }
           reset();
         })
         .catch((err) => {
@@ -166,7 +183,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
         </div>
 
         <div className="mb-4">
-          <Link href={"/terms"} className="flex pl-4 items-center gap-x-3">
+          <div className="flex pl-4 items-center gap-x-3">
             <p>
               <input
                 type="checkbox"
@@ -176,9 +193,9 @@ const SignupForm = ({ users }: SignupFormProps) => {
               />
             </p>
             <label htmlFor="accept" className="">
-              Terms & Conditions
+              <Link href={"/terms"}> Terms & Conditions</Link>
             </label>
-          </Link>
+          </div>
         </div>
         {errors.accept && <p className="">{errors.accept.message}</p>}
 
@@ -201,7 +218,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
           type="button"
           disabled={isPending}
           className="w-full flex items-center justify-center signInbut  rounded-lg py-2 mt-4 disabled:opacity-50"
-          onClick={() => signIn("google")}
+          onClick={handleSignIn}
         >
           <Image src={GoogleLogo} height={20} width={20} alt="google-image" />
           <span className="ml-2">Sign in with Google</span>

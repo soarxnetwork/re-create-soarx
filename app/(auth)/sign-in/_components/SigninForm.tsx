@@ -1,17 +1,18 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-import React, { useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import GoogleLogo from '../../../../public/images/google-logo.png';
-import { useRouter } from "next/navigation";
+import GoogleLogo from "../../../../public/images/google-logo.png";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
+// Define validation schema
 export const signinSchema = z.object({
   password: z.string({
     required_error: "Password is required",
@@ -28,9 +29,15 @@ interface signinProps {
 
 const SigninForm = ({ callbackUrl }: signinProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
+
+  // Extract the redirect query parameter
+  const redirectUrl = decodeURIComponent(
+    searchParams.get("redirect") as string
+  );
 
   const {
     register,
@@ -44,6 +51,14 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
       email: "",
     },
   });
+
+  const callBack = redirectUrl ? redirectUrl : "/";
+
+  const handleSignIn = async () => {
+    await signIn("google", {
+      callbackUrl: `http://localhost:3000/${callBack}`, // Redirect URL after sign-in
+    });
+  };
 
   const onSubmit = (data: signinType) => {
     startTransition(() => {
@@ -61,7 +76,12 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
             toast.error(unknownBehaviour);
             return setError(unknownBehaviour);
           }
-          router.push(callbackUrl || "/");
+          // Redirect using extracted query parameter
+          if (redirectUrl) {
+            router.push(redirectUrl);
+          } else {
+            router.push("/");
+          }
           toast.success("Login successful");
           reset();
         })
@@ -77,7 +97,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
 
   return (
     <form
-      className="w-full max-w-md mx-auto p-6  rounded-lg"
+      className="w-full max-w-md mx-auto p-6 rounded-lg"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
@@ -88,7 +108,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
           className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4 mb-4"
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        
+
         <div className="flex items-center relative mb-4">
           <input
             placeholder="Password"
@@ -104,8 +124,10 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
             {isVisiblePassword ? <EyeIcon /> : <EyeSlashIcon />}
           </button>
         </div>
-        
-        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+
+        {errors.password && (
+          <p className="text-red-500">{errors.password.message}</p>
+        )}
 
         <div className="flex flex-col items-center">
           <button
@@ -120,8 +142,8 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
           <button
             type="button"
             disabled={isPending}
-            className="w-full flex items-center justify-center  rounded-lg py-2 mb-4 space-x-2 disabled:opacity-50 signInbut"
-            onClick={() => signIn("google")}
+            className="w-full flex items-center justify-center rounded-lg py-2 mb-4 space-x-2 disabled:opacity-50 signInbut"
+            onClick={handleSignIn}
           >
             <Image src={GoogleLogo} height={20} width={20} alt="Google logo" />
             <span>Sign in with Google</span>
@@ -129,7 +151,16 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
         </div>
 
         <p className="text-center">
-          Dont have an account? <Link href="/sign-up">Sign up</Link>
+          Don{"'"}t have an account?{" "}
+          <Link
+            href={
+              redirectUrl
+                ? `/sign-up?redirect=${encodeURIComponent(redirectUrl)}`
+                : "/sign-up"
+            }
+          >
+            Sign up
+          </Link>
         </p>
         <p className="text-center mt-2">
           <Link href="/forgot-password">Forgot Password?</Link>
