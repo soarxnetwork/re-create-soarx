@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { cn } from "@/lib/utils";
@@ -8,13 +8,28 @@ import { FaPython, FaSalesforce } from "react-icons/fa";
 const InitiativesDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event: any) => {
+    // @ts-ignore
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="relative w-full z-50 dark:text-white">
+    <div ref={dropdownRef} className="relative w-full z-50 dark:text-white">
       <button
         onClick={toggleDropdown}
         onMouseEnter={() => setHovered(true)}

@@ -11,15 +11,14 @@ import HeaderDropdown from "./HeaderDropdown";
 import ButtonAuth from "./ButtonAuth";
 import ThemeSwitcher from "./DarkThemes";
 import InitiativesDropdown from "./InititiativesDropDown";
-import Pythonbootcamp from "./Bootcamps/pythonbootcamp";
-import Jobs from "@/app/(home)/jobs/page";
+
 
 const Header = ({ admin }: User) => {
-  const router = useRouter();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
   const [UpperInitiative, setUpperInitiative] = useState(false);
+
 
   useEffect(() => {
     setIsClient(true);
@@ -116,7 +115,7 @@ const Header = ({ admin }: User) => {
         </nav>
 
         {showNavbar && (
-          <div className="md:hidden ease-in-out delay-200 shadow-2xl bg-white dark:bg-gray-800 rounded-lg p-4 mt-2">
+          <div  className="md:hidden ease-in-out delay-200 shadow-2xl bg-white dark:bg-gray-800 rounded-lg p-4 mt-2">
             <ul className="flex flex-col space-y-4 text-2xl text-black dark:text-white  font-medium">
               <li
                 className={
