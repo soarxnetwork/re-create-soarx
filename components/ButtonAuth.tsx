@@ -1,18 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
-import { IoArrowDown } from "react-icons/io5";
 import { TiArrowSortedDown } from "react-icons/ti";
-import Image from "next/image";
 
 const ButtonAuth = () => {
   const { data: session } = useSession();
   const [isOpen, setIsOpen] = useState(false);
   // console.log(session);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event: any) => {
+    // @ts-ignore
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
   return (
     <>
-    <div className="relative w-full">
+    <div ref={dropdownRef} className="relative w-full">
       {session?.user ? (
         <div>
           <div className="flex items-center gap-x-2 text-2xl hover:cursor-pointer">
