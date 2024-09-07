@@ -2,7 +2,7 @@
 "use client";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import React, { useState, useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import validator from "validator";
@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { registerUser } from "@/actions/user";
 import { User } from "@prisma/client";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import GoogleLogo from "../../../../public/images/google-logo.png";
 import { signIn } from "next-auth/react";
@@ -47,10 +47,20 @@ interface SignupFormProps {
 
 const SignupForm = ({ users }: SignupFormProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
     useState(false);
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
+
+  // Extract redirectTo from the URL
+  useEffect(() => {
+    const redirectParam = searchParams.get("redirectTo");
+    if (redirectParam) {
+      setRedirectTo(decodeURIComponent(redirectParam));
+    }
+  }, [searchParams]);
 
   const {
     watch,
@@ -89,6 +99,10 @@ const SignupForm = ({ users }: SignupFormProps) => {
           throw err;
         });
     });
+  };
+
+  const handleGoogleLogin = () => {
+    signIn("google", { callbackUrl: redirectTo || "/" });
   };
 
   return (
@@ -204,7 +218,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
           type="button"
           disabled={isPending}
           className="w-full flex items-center justify-center signInbut  rounded-lg py-2 mt-4 disabled:opacity-50"
-          onClick={() => signIn("google")}
+          onClick={handleGoogleLogin}
         >
           <Image src={GoogleLogo} height={20} width={20} alt="google-image" />
           <span className="ml-2">Sign in with Google</span>
@@ -212,7 +226,12 @@ const SignupForm = ({ users }: SignupFormProps) => {
 
         <p className="mt-4 text-center">
           Already have an account?
-          <Link href="/sign-in" className="underline">
+          <Link
+            href={`/sign-in${
+              redirectTo ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ""
+            }`}
+            className="underline"
+          >
             &nbsp;Sign in
           </Link>
         </p>
