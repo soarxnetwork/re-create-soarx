@@ -2,14 +2,14 @@
 "use client";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import React, { useState, useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import GoogleLogo from '../../../../public/images/google-logo.png';
-import { useRouter } from "next/navigation";
+import GoogleLogo from "../../../../public/images/google-logo.png";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 export const signinSchema = z.object({
@@ -28,9 +28,11 @@ interface signinProps {
 
 const SigninForm = ({ callbackUrl }: signinProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
+  const [redirectTo, setRedirectTo] = useState<string | null>(null);
 
   const {
     register,
@@ -45,7 +47,15 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
     },
   });
 
-  const onSubmit =  (data: signinType) => {
+  // Extract redirectTo from the URL
+  useEffect(() => {
+    const redirectParam = searchParams.get("redirectTo");
+    if (redirectParam) {
+      setRedirectTo(decodeURIComponent(redirectParam));
+    }
+  }, [searchParams]);
+
+  const onSubmit = (data: signinType) => {
     startTransition(() => {
       signIn("credentials", {
         redirect: false,
@@ -75,6 +85,10 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
     });
   };
 
+  const handleGoogleLogin = () => {
+    signIn("google", { callbackUrl: redirectTo || "/" });
+  };
+
   return (
     <form
       className="w-full max-w-md mx-auto p-6  rounded-lg"
@@ -88,7 +102,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
           className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4 mb-4"
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        
+
         <div className="flex items-center relative mb-4">
           <input
             placeholder="Password"
@@ -104,8 +118,10 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
             {isVisiblePassword ? <EyeIcon /> : <EyeSlashIcon />}
           </button>
         </div>
-        
-        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+
+        {errors.password && (
+          <p className="text-red-500">{errors.password.message}</p>
+        )}
 
         <div className="flex flex-col items-center">
           <button
@@ -121,7 +137,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
             type="button"
             disabled={isPending}
             className="w-full flex items-center justify-center  rounded-lg py-2 mb-4 space-x-2 disabled:opacity-50 signInbut"
-            onClick={() => signIn("google")}
+            onClick={handleGoogleLogin}
           >
             <Image src={GoogleLogo} height={20} width={20} alt="Google logo" />
             <span>Sign in with Google</span>
@@ -129,7 +145,14 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
         </div>
 
         <p className="text-center">
-          Dont have an account? <Link href="/sign-up">Sign up</Link>
+          Dont have an account?{" "}
+          <Link
+            href={`/sign-up${
+              redirectTo ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ""
+            }`}
+          >
+            Sign up
+          </Link>
         </p>
         <p className="text-center mt-2">
           <Link href="/forgot-password">Forgot Password?</Link>
