@@ -17,6 +17,7 @@ const Events = ({
   description,
   home_description
 }: Event) => {
+  const eventShortTitle = truncateWord(title!, 45);
   const mydescription = truncateWord(home_description!, 60).replace("<p>", "");
   return (
     <Link
@@ -36,7 +37,7 @@ const Events = ({
         />
       </div>
       <div className="event-content break-words">
-        <h2 className="text-2xl font-medium">{truncateWord(title, 49)}</h2>
+        <h2 className="text-2xl font-medium">{eventShortTitle}</h2>
         <p className="pt-2 max-w-[336px] ">{mydescription}</p>
 
         <p className="pt-2 flex items-center gap-2 font-medium">
