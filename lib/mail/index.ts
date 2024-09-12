@@ -30,7 +30,7 @@ export const sendMail = async ({ to, subject, body }: SendMailProps) => {
   revalidatePath("/");
 
     await transport.sendMail({
-      from: "team@soarx.tech", // Sender address
+      from: "SoarX@soarx.tech", // Sender address
       to,
       subject,
       html: body,
