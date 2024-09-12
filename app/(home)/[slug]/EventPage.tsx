@@ -265,7 +265,7 @@ function EventPage({ event, users }: { event: any; users: User[] }) {
                       event.hostLinkedinId ||
                       "https://www.linkedin.com/company/soarxnetwork/"
                     }
-                    className="my-auto  "
+                    className="my-auto "
                   >
                     <FaLinkedinIn className="h-[20px] text-blue-500 transition-transform hover:rotate-180 duration-300  hover:scale-110" />
                   </Link>
