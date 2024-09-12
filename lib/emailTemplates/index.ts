@@ -8,15 +8,19 @@ export const activationTemplate = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activation Email</title>
 </head>
-<body>
-    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction= column">
-        <div style="width: 50%; height: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <h1>Activate your account {{name}}</h1>
-            <p>Click the button below to activate your account</p>
-            <a href="{{url}}" style="padding: 10px 20px; background-color: #000; color: #fff; text-decoration: none;">Activate</a>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
+    <div style="width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+        <div style="background-color: white; width: 100%; max-width: 600px; padding: 40px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center;">
+            <div style="font-size: 30px; font-weight: bold; color: #333; margin-bottom: 20px;">Activate your account</div>
+            <div style="font-size: 24px; color: #666; margin-bottom: 20px;">Hello, {{name}}!</div>
+            <div style="font-size: 16px; color: #555; margin-bottom: 30px;">Click the button below to activate your account and start using our service.</div>
+            <a href="{{url}}" style="display: inline-block; padding: 12px 24px; background-color: #9241d4; color: white; font-size: 16px; font-weight: bold; border-radius: 8px; text-decoration: none;">Activate Account</a>
         </div>
     </div>
-`;
+</body>
+</html>`;
+
+
 export const forgotPasswordTemplate = `
 <!DOCTYPE html>
 <html lang="en">
