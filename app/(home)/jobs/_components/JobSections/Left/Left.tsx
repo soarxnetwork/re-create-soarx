@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import AdvertiseMent from "./Advertisement";
+import LeftFilterComponent from "./LeftFilterComponent";
 
-const Left = () => {
+const Left = ({
+  workingSchedeule,
+  setworkingSchedeule,
+  employmentType,
+  setEmploymentType,
+}: any) => {
   return (
-    <div>
-      This is Left
+    <div className="flex flex-col space-y-4 mr-2">
+      <AdvertiseMent />
+      <LeftFilterComponent
+        workingSchedeule={workingSchedeule}
+        setworkingSchedeule={setworkingSchedeule}
+        employmentType={employmentType}
+        setEmploymentType={setEmploymentType}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Left
+export default Left;
