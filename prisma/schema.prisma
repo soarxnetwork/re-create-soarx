@@ -271,3 +271,13 @@ model Job {
   creatorId             String
   createdAt             DateTime @default(now())
 }
+
+model Otp {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  value     String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email]) // Index for quick lookup by email
+}
