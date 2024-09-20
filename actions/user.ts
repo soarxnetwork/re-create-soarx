@@ -67,14 +67,6 @@ export const registerUser = async (user: signUpType) => {
     const jwtUserId = signJwt({
       userId: newUser.id,
     });
-
-    const activationUrl = `${process.env.NEXTAUTH_URL}/activation/${jwtUserId}`;
-    const body = await compileActivationTemplate(newUser.username!, activationUrl);
-    await sendMail({
-      to: newUser.email!,
-      subject: "Activate your account",
-      body,
-    });
   } catch (err) {
     console.error(err);
     throw err;
@@ -197,4 +189,4 @@ export const fetchUser = async (id: string) => {
     console.error(err);
     throw err;
   }
-}
+};
