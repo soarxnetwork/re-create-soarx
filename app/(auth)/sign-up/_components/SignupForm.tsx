@@ -126,7 +126,6 @@ const SignupForm = ({ users }: SignupFormProps) => {
   };
 
   return (
-    // ---
     <form
       className="w-full max-w-lg mx-auto mt-8 p-6  rounded-lg shadow-md"
       onSubmit={handleSubmit(onSubmit)}

@@ -5,6 +5,7 @@ import { generateOtp } from "@/utils/generateOtp";
 
 export const sendOtp = async (email: string) => {
   try {
+    // Check if the email already exists in the users table
     const existingUser = await db.user.findUnique({
       where: { email },
     });
