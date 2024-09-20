@@ -67,6 +67,8 @@ export const registerUser = async (user: signUpType) => {
     const jwtUserId = signJwt({
       userId: newUser.id,
     });
+
+    // deleted functionality to send link to email
   } catch (err) {
     console.error(err);
     throw err;
