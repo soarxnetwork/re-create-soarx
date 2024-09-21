@@ -67,7 +67,7 @@ const Header = ({ admin }: User) => {
                 </Link>
               </li>
 
-              {/* <li
+              <li
                 className={
                   pathname.includes("/jobs")
                     ? "bg-[#9241d40d] rounded-lg text-purple-500"
@@ -77,7 +77,7 @@ const Header = ({ admin }: User) => {
                 <Link className="hover:text-primaryPurple p-2" href="/jobs">
                   Jobs
                 </Link>
-              </li> */}
+              </li>
 
               <HeaderDropdown />
 
