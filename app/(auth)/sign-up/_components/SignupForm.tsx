@@ -115,7 +115,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
   };
 
   const handleResendOtp = () => {
-    // Call sendOtp again for resending
+    // Call sendOtp again for resendin
     sendOtp(email)
       .then(() => {
         toast.success("Otp resent");
