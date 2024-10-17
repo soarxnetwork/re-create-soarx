@@ -29,15 +29,12 @@ export const signUpSchema = z
     email: z.string().email({
       message: "Invalid email",
     }),
-    accept: z.boolean(),
+    accept: z.boolean(), // Keep the accept validation for form integrity
+    otp: z.string().optional(), // Add OTP to the schema
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
     path: ["confirmPassword"],
-  })
-  .refine((data) => data.accept === true, {
-    message: "You must accept the terms and conditions",
-    path: ["accept"],
   });
 
 export type signUpType = z.infer<typeof signUpSchema>;
@@ -52,8 +49,9 @@ const SignupForm = ({ users }: SignupFormProps) => {
   const [isVisiblePassword, setIsVisiblePassword] = useState(false);
   const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
     useState(false);
-  const [showOtpVerification, setShowOtpVerification] = useState(false);
-  const [otp, setOtp] = useState("");
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpSent, setOtpSent] = useState(false); // Track if OTP has been sent
+  const [loading, setLoading] = useState(false);
 
   const {
     watch,
@@ -70,55 +68,59 @@ const SignupForm = ({ users }: SignupFormProps) => {
       phone: "",
       accept: false,
       email: "",
+      otp: "",
     },
   });
 
   const { email } = watch();
 
+  // Handle email verification and OTP sending
+  const handleVerifyEmail = () => {
+    if (!email) {
+      toast.error("Please provide a valid email");
+      return;
+    }
+
+    setLoading(true);
+    sendOtp(email)
+      .then(() => {
+        setOtpSent(true); // OTP sent, now reveal the OTP input
+        toast.success("OTP sent to your email");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const onSubmit = (data: signUpType) => {
     startTransition(() => {
-      if (showOtpVerification && otp) {
-        verifyOtp(data.email, otp)
-          .then(() => {
-            registerUser(data)
-              .then((data) => {
-                const emailExist = users.find((user) => user.email === email);
-                if (emailExist) return toast.error("Email already exists");
-                if (data?.error) return toast.error(data?.error);
+      if (otpVerified) {
+        registerUser(data)
+          .then((data) => {
+            const emailExist = users.find((user) => user.email === email);
+            if (emailExist) return toast.error("Email already exists");
+            if (data?.error) return toast.error(data?.error);
 
-                toast.success(
-                  "Please check your email to activate your account"
-                );
-                router.push("/sign-in");
-                reset();
-              })
-              .catch((err) => {
-                toast.error(err.message);
-                throw err;
-              });
+            toast.success("Your account is created");
+            router.push("/sign-in");
+            reset();
           })
           .catch((err) => {
             toast.error(err.message);
-          });
-      } else {
-        sendOtp(data.email)
-          .then(() => {
-            setShowOtpVerification(true);
-            toast.success("Otp sent");
-          })
-          .catch((err) => {
-            toast.error(err.message);
-            console.log(err);
+            throw err;
           });
       }
     });
   };
 
-  const handleResendOtp = () => {
-    // Call sendOtp again for resendin
-    sendOtp(email)
+  const handleVerifyOtp = (otp: string) => {
+    verifyOtp(email, otp)
       .then(() => {
-        toast.success("Otp resent");
+        setOtpVerified(true);
+        toast.success("OTP verified successfully");
       })
       .catch((err) => {
         toast.error(err.message);
@@ -127,38 +129,76 @@ const SignupForm = ({ users }: SignupFormProps) => {
 
   return (
     <form
-      className="w-full max-w-lg mx-auto mt-8 p-6  rounded-lg shadow-md"
+      className="w-full max-w-lg mx-auto mt-8 p-6 rounded-lg shadow-md"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
-        {!showOtpVerification ? (
+        <div className="mb-4">
+          <input
+            placeholder="Full Name"
+            type="text"
+            {...register("username")}
+            className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
+            disabled={otpVerified}
+          />
+          {errors.username && <p className="">{errors.username.message}</p>}
+        </div>
+
+        <div className="mb-1">
+          <input
+            placeholder="Your Email"
+            type="text"
+            {...register("email")}
+            className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
+            disabled={otpSent} // Disable after OTP is sent
+          />
+          {errors.email && <p className="">{errors.email.message}</p>}
+        </div>
+
+        {!otpSent && ( // Show "Verify Email" button only before OTP is sent
+          <div className="flex align-center justify-center w-full mb-2">
+            <button
+              type="button"
+              className="signInbut rounded-lg py-2 mt-2 disabled:opacity-50 w-[50%]"
+              disabled={isPending || otpVerified || loading}
+              onClick={handleVerifyEmail} // Call the OTP send function
+            >
+              {loading || isPending ? "Verifying Email..." : "Verify Email"}
+            </button>
+          </div>
+        )}
+
+        {otpSent &&
+          !otpVerified && ( // Show OTP field after OTP is sent
+            <div className="mb-4">
+              <div className="flex items-center">
+                <input
+                  placeholder="OTP"
+                  className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
+                  type="text"
+                  {...register("otp", { required: true })} // Use react-hook-form's register
+                />
+                <button
+                  type="button"
+                  className="ml-2 signInbut rounded-lg py-2"
+                  onClick={() => handleVerifyOtp(watch("otp"))} // Access OTP value via watch("otp")
+                  disabled={isPending}
+                >
+                  Verify
+                </button>
+              </div>
+            </div>
+          )}
+
+        {otpVerified && (
           <>
-            <div className="mb-4">
-              <input
-                placeholder="Full Name"
-                type="text"
-                {...register("username")}
-                className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
-              />
-              {errors.username && <p className="">{errors.username.message}</p>}
-            </div>
-
-            <div className="mb-4">
-              <input
-                placeholder="Your Email"
-                type="text"
-                {...register("email")}
-                className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
-              />
-              {errors.email && <p className="">{errors.email.message}</p>}
-            </div>
-
-            <div className="mb-4 relative">
+            <div className="mb-4 relative mt-2">
               <input
                 placeholder="Your Password"
                 className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
                 type={isVisiblePassword ? "text" : "password"}
                 {...register("password")}
+                disabled={!otpVerified}
               />
               <button
                 type="button"
@@ -176,6 +216,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
                 className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
                 type={isVisibleConfirmPassword ? "text" : "password"}
                 {...register("confirmPassword")}
+                disabled={!otpVerified}
               />
               <button
                 type="button"
@@ -197,71 +238,39 @@ const SignupForm = ({ users }: SignupFormProps) => {
                 className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
                 {...register("phone")}
                 type="text"
+                disabled={!otpVerified}
               />
               {errors.phone && <p className="">{errors.phone.message}</p>}
             </div>
 
+            {/* No need to show an error for accept */}
             <div className="mb-4">
-              <div className="flex pl-4 items-center gap-x-3">
-                <p>
-                  <input
-                    type="checkbox"
-                    id="accept"
-                    {...register("accept")}
-                    className="mt-2"
-                  />
-                </p>
+              <div className="text-xs">
+                By submitting, you have agreed to the{" "}
                 <Link href={"/terms"}>
-                  {" "}
-                  <label htmlFor="accept" className="hover:cursor-pointer">
-                    Terms & Conditions
+                  <label
+                    htmlFor="accept"
+                    className="hover:cursor-pointer underline text-blue-700"
+                  >
+                    Terms and Conditions.
                   </label>
                 </Link>
               </div>
             </div>
-            {errors.accept && <p className="">{errors.accept.message}</p>}
 
             <button
               type="submit"
               className="w-full signInbut rounded-lg py-2 mt-2 disabled:opacity-50"
-              disabled={isPending}
+              disabled={isPending || !otpVerified}
             >
               {isPending ? "Signing up..." : "Submit"}
             </button>
           </>
-        ) : (
-          <div className="mb-4">
-            <input
-              placeholder="Enter OTP"
-              className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4"
-              type="text"
-              value={otp}
-              onChange={(e) => setOtp(e.target.value)}
-              required
-            />
-            <button
-              type="button"
-              className="w-full signInbut rounded-lg py-2 mt-2 disabled:opacity-50"
-              disabled={isPending}
-              onClick={handleSubmit(onSubmit)}
-            >
-              {isPending ? "Verifying OTP..." : "Verify OTP"}
-            </button>
-
-            <button
-              type="button"
-              className="w-full text-red-500 mt-2"
-              onClick={handleResendOtp}
-              disabled={isPending}
-            >
-              Resend OTP
-            </button>
-          </div>
         )}
 
         <div className="relative mt-4">
           <div className="border-b-2"></div>
-          <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-center  px-2">
+          <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-center px-2">
             or
           </div>
         </div>
@@ -269,7 +278,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
         <button
           type="button"
           disabled={isPending}
-          className="w-full flex items-center justify-center signInbut  rounded-lg py-2 mt-4 disabled:opacity-50"
+          className="w-full flex items-center justify-center signInbut rounded-lg py-2 mt-4 disabled:opacity-50"
           onClick={() => signIn("google")}
         >
           <Image src={GoogleLogo} height={20} width={20} alt="google-image" />
@@ -277,9 +286,9 @@ const SignupForm = ({ users }: SignupFormProps) => {
         </button>
 
         <p className="mt-4 text-center">
-          Already have an account?
-          <Link href="/sign-in" className="underline">
-            &nbsp;Sign in
+          Already have an account?{" "}
+          <Link href="/sign-in" className="underline text-blue-800">
+            Sign in
           </Link>
         </p>
       </div>

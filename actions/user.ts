@@ -47,7 +47,7 @@ export const updateAdminPermission = async ({
 };
 export const registerUser = async (user: signUpType) => {
   try {
-    const { accept, confirmPassword, password, ...rest } = user;
+    const { accept, confirmPassword, password, otp, ...rest } = user;
     revalidatePath("/sign-up");
     const existingUser = await db.user.findUnique({
       where: {

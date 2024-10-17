@@ -8,7 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import Image from "next/image";
-import GoogleLogo from '../../../../public/images/google-logo.png';
+import GoogleLogo from "../../../../public/images/google-logo.png";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -45,7 +45,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
     },
   });
 
-  const onSubmit =  (data: signinType) => {
+  const onSubmit = (data: signinType) => {
     startTransition(() => {
       signIn("credentials", {
         redirect: false,
@@ -88,7 +88,7 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
           className="w-full border-2 placeholder:text-[#5F5F5F] rounded-lg py-2 px-4 mb-4"
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-        
+
         <div className="flex items-center relative mb-4">
           <input
             placeholder="Password"
@@ -104,8 +104,10 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
             {isVisiblePassword ? <EyeIcon /> : <EyeSlashIcon />}
           </button>
         </div>
-        
-        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+
+        {errors.password && (
+          <p className="text-red-500">{errors.password.message}</p>
+        )}
 
         <div className="flex flex-col items-center">
           <button
@@ -129,7 +131,10 @@ const SigninForm = ({ callbackUrl }: signinProps) => {
         </div>
 
         <p className="text-center">
-          Dont have an account? <Link href="/sign-up">Sign up</Link>
+          Dont have an account?{" "}
+          <Link href="/sign-up" className="text-blue-800">
+            Sign up
+          </Link>
         </p>
         <p className="text-center mt-2">
           <Link href="/forgot-password">Forgot Password?</Link>
