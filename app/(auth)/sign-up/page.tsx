@@ -1,8 +1,8 @@
-import React from 'react';
-import SignupForm from './_components/SignupForm';
-import { getAllUser } from '@/services/user';
-import Image from 'next/image';
-import Login_image from '../../../public/images/Programming-amico.png';
+import React from "react";
+import SignupForm from "./_components/SignupForm";
+import { getAllUser } from "@/services/user";
+import Image from "next/image";
+import Login_image from "../../../public/images/Programming-amico.png";
 
 const SignUpPage = async () => {
   const users = await getAllUser();
@@ -19,8 +19,8 @@ const SignUpPage = async () => {
             className="object-contain"
           />
         </div>
-        <div className="w-full lg:w-1/2 lg:pl-12 mt-8 lg:mt-0">
-          <div className="text-[32px] md:text-[40px] font-semibold pb-8 lg:pb-[40px] text-center lg:text-left">Sign Up</div>
+        <div className="flex flex-col  items-center lg:w-1/2  p-5 md:p-10">
+          <div className="text-[40px] font-semibold">Sign Up</div>
           <SignupForm users={users!} />
         </div>
       </div>
