@@ -129,7 +129,7 @@ const SignupForm = ({ users }: SignupFormProps) => {
 
   return (
     <form
-      className="w-full max-w-lg mx-auto mt-8 p-6 rounded-lg shadow-md"
+      className="w-full max-w-lg mx-auto mt-0 p-6 rounded-lg shadow-md"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
@@ -269,21 +269,28 @@ const SignupForm = ({ users }: SignupFormProps) => {
         )}
 
         <div className="relative mt-4">
-          <div className="border-b-2"></div>
-          <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-center px-2">
+          <div className="border-b-2 border-gray-300 dark:border-gray-900"></div>
+          <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-center px-2 z-10 ">
             or
           </div>
         </div>
 
-        <button
-          type="button"
-          disabled={isPending}
-          className="w-full flex items-center justify-center signInbut rounded-lg py-2 mt-4 disabled:opacity-50"
-          onClick={() => signIn("google")}
-        >
-          <Image src={GoogleLogo} height={20} width={20} alt="google-image" />
-          <span className="ml-2">Sign in with Google</span>
-        </button>
+        <div className="w-full overflow-hidden border border-solid border-gray-400 p-0 mt-4 rounded-full">
+          <button
+            type="button"
+            disabled={isPending}
+            className={`w-full flex items-center justify-center signInbut rounded-3xl py-2
+          ${isPending ? "opacity-50" : "opacity-100"} 
+          border border-solid border-gray-400 dark:border-gray-600
+          bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors`}
+            onClick={() => signIn("google")}
+          >
+            <Image src={GoogleLogo} height={20} width={20} alt="google-image" />
+            <span className="ml-2 text-gray-700 dark:text-gray-300 font-medium">
+              Sign in with Google
+            </span>
+          </button>
+        </div>
 
         <p className="mt-4 text-center">
           Already have an account?{" "}

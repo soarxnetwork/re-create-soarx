@@ -52,7 +52,7 @@ export const sendOtp = async (email: string) => {
       body,
     });
   } catch (error) {
-    throw error;
+    throw new Error("Please try again later , An Error occured");
   }
 };
 
